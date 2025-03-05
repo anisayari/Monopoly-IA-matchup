@@ -178,7 +178,14 @@ class MemoryReader:
                             try:
                                 callback(match_addr, message)
                             except Exception as e:
-                                print(f"Erreur dans le callback: {e}")
+                                print(f"Erreur dans le callback pour '{search_id}': {str(e)}")
+                                # Désactiver temporairement ce callback pour éviter les erreurs répétitives
+                                if search_id in cls._search_patterns:
+                                    print(f"Désactivation temporaire du callback pour '{search_id}' en raison d'erreurs")
+                                    # Sauvegarder le pattern mais désactiver le callback
+                                    pattern_info = cls._search_patterns[search_id]
+                                    pattern_info['callback'] = None
+                                    cls._search_patterns[search_id] = pattern_info
                 else:
                     # Pour les recherches textuelles, décoder d'abord le morceau
                     try:
@@ -200,7 +207,14 @@ class MemoryReader:
                                 try:
                                     callback(match_addr, message)
                                 except Exception as e:
-                                    print(f"Erreur dans le callback: {e}")
+                                    print(f"Erreur dans le callback pour '{search_id}': {str(e)}")
+                                    # Désactiver temporairement ce callback pour éviter les erreurs répétitives
+                                    if search_id in cls._search_patterns:
+                                        print(f"Désactivation temporaire du callback pour '{search_id}' en raison d'erreurs")
+                                        # Sauvegarder le pattern mais désactiver le callback
+                                        pattern_info = cls._search_patterns[search_id]
+                                        pattern_info['callback'] = None
+                                        cls._search_patterns[search_id] = pattern_info
                     except Exception as e:
                         print(f"Erreur lors du décodage du texte: {e}")
             except Exception as e:
@@ -355,7 +369,14 @@ class MemoryReader:
                 try:
                     callback(addr, text)
                 except Exception as e:
-                    print(f"Erreur dans le callback pour '{search_id}': {e}")
+                    print(f"Erreur dans le callback pour '{search_id}': {str(e)}")
+                    # Désactiver temporairement ce callback pour éviter les erreurs répétitives
+                    if search_id in cls._search_patterns:
+                        print(f"Désactivation temporaire du callback pour '{search_id}' en raison d'erreurs")
+                        # Sauvegarder le pattern mais désactiver le callback
+                        pattern_info = cls._search_patterns[search_id]
+                        pattern_info['callback'] = None
+                        cls._search_patterns[search_id] = pattern_info
         
         # Enregistrer le pattern de recherche
         cls._search_patterns[search_id] = {
