@@ -1,3 +1,6 @@
+⚠️ **Project Status: Under Construction** - This project is actively being developed.
+⚠️ **Statut du Projet : En Construction** - Ce projet est en cours de développement.
+
 # 🎲 MonopolyIA - LLM Matchup Arena
 
 [English](#english) | [Français](#français)
