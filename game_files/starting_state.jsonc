@@ -1,0 +1,149 @@
+{
+    "players": [
+        {
+            "id": "red",
+            "address": {
+                "name": [
+                    "90025439", // Top banner
+                    "804DFDCB",
+                    "8051C1E5",
+                    "93014C35",
+                    "93036109",
+                    "9303DD65"
+                ],
+                "money": [
+                    "9003C0C4",
+                    "9303DD5C"
+                ],
+                "money_label": [
+                    "0x90024B5B"
+                ],
+                "goto": [
+                    "0x804ED8EB",
+                    "0x804F63AB"
+                ],
+                "position": [
+                    "0x804ED8EF",
+                    "0x804F63AF"
+                ],
+                "dices": [
+                    [
+                        "0x9303DC5B"
+                    ],
+                    [
+                        "0x9303DC5F"
+                    ]
+                ],
+                "roll": [
+                    "0x9303DC6B"
+                ]
+            }
+        },
+        {
+            "id": "blue",
+            "address": {
+                "name": [
+                    "90023179", // Top banner
+                    "804DFDA1",
+                    "8051C0E5",
+                    "93014B35",
+                    "93036009",
+                    "9303DB75"
+                ],
+                "money": [
+                    "9003C0B8",
+                    "9303DB6C"
+                ],
+                "money_label": [
+                    "900226D3"
+                ],
+                "goto": [
+                    "0x804ED3AB",
+                    "0x804F63AF"
+                ],
+                "position": [
+                    "0x804ED3AF",
+                    "0x804F63AF"
+                ],
+                "dices": [
+                    [
+                        "0x9303DA6B"
+                    ],
+                    [
+                        "0x9303DA6F"
+                    ]
+                ],
+                "roll": [
+                    "0x9303DA7B"
+                ]
+            }
+        }
+    ],
+    "properties": {
+        "address_range": [
+            "0x92B96E5C",
+            "0x92B97529"
+        ]
+    },
+    "messages": {
+        "address_range": [
+            "0x90037199",
+            "0x90FA0209"
+        ],
+        "events": [
+            {
+                "id": "want_to_buy_house",
+                "type": "address",
+                "address": "0x91D617D4"
+            },
+            {
+                "id": "want_to_buy_square",
+                "type": "address",
+                "address": "91D60BAC"
+            },
+            {
+                "id": "would_you_like_to_do",
+                "type": "address",
+                "address": "0x91D5FF10"
+            },
+            {
+                "id": "won_the_roll",
+                "type": "address",
+                "address": "905AE510",
+                "byte_replace": {
+                    "%1": "process:player_names"
+                }
+            },
+            {
+                "id": "shake_to_roll_dice",
+                "type": "address",
+                "address": "90F00868",
+                "byte_replace": {
+                    "%1": "process:player_names"
+                }
+            },
+            {
+                "id": "off_to_jail",
+                "type": "address",
+                "address": "905AC174",
+                "byte_replace": {
+                    "%1": "process:player_names"
+                }
+            },
+            {
+                "id": "pay_the_bail",
+                "type": "pattern",
+                "pattern": "Do you want to pay the bail, roll for doubles or use a get out of free jail card (if you have one)?",
+                "address": "905AEBD0"
+            },
+            {
+                "id": "has_paid_a_fine",
+                "type": "address",
+                "address": "91D6100C",
+                "byte_replace": {
+                    "%1": "process:player_names"
+                }
+            }
+        ]
+    }
+}

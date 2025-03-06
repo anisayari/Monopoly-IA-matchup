@@ -1,3 +1,3 @@
-from .monopoly import MonopolyGame
+from .game import MonopolyGame
 
 __all__ = ['MonopolyGame'] 

@@ -1,4 +1,3 @@
-from .game.monopoly import MonopolyGame
-from .models.enums import PlayerColor
+from .game.game import MonopolyGame
 
-__all__ = ['MonopolyGame', 'PlayerColor'] 
+__all__ = ['MonopolyGame'] 
