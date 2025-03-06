@@ -9,8 +9,7 @@ class PlayerDataAddress(typing.TypedDict):
     money_label: typing.List[Hex]
     goto: typing.List[Hex]
     position: typing.List[Hex]
-    dices: typing.List[typing.List[Hex]]
-    dice_sum: typing.List[Hex]
+    base: Hex
 
 class PlayerData(typing.TypedDict):
     id: str
@@ -23,6 +22,7 @@ class MessageData(typing.TypedDict):
 class Manifest(typing.TypedDict):
     players: typing.List[PlayerData]
     messages: typing.List[MessageData]
+    auction: Hex
 
 class GameLoader:
     

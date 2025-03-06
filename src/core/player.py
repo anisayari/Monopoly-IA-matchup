@@ -1,53 +1,39 @@
+from src.core.attributes import DynamicArrayAttribute, IntAttribute
+from src.core.property import Property
 from .game_loader import PlayerData
-from .properties import Properties
 from .memory_reader import MemoryReader
 
 class Player:
-    
     _data: PlayerData
+
+    dice1 = IntAttribute(0x0)
+    dice2 = IntAttribute(0x4)
+    roll = IntAttribute(0x10)
+    properties = DynamicArrayAttribute(0x144, Property)
     
     def __init__(self, data: PlayerData):
         self._data = data
+
+    @property
+    def _base(self) -> int:
+        return MemoryReader.hex_to_int(self._data['address']['base'])
         
-    
     @property
     def id(self):
-        return self._data["id"]
-
+        return self._data["id"]    
     
     @property
-    def dices(self) -> list[int]:
-        dices = []
-        for dice in self._data["address"]["dices"]:
-            dices.append(MemoryReader.get_byte(dice[0]))
-        return dices
-    
-    @dices.setter
-    def dices(self, value: list[int]):
-        for dice in self._data["address"]["dices"]:
-            v = value.pop(0)
-            for address in dice:
-                MemoryReader.set_byte(address, v)
-    
+    def dices(self):
+        return [self.dice1, self.dice2]
 
-    @property
-    def roll(self):
-        return MemoryReader.get_byte(self._data["address"]["roll"][0])
-    
-    @roll.setter
-    def roll(self, value):
-        for address in self._data["address"]["roll"]:
-            MemoryReader.set_byte(address, value)
-    
     @property
     def name(self):
-        return MemoryReader.get_string(self._data["address"]["name"][0])
+        return MemoryReader.get_string(self._data["address"]["name"][0], max_length=10)
     
     @name.setter
     def name(self, value):
         for address in self._data["address"]["name"]:
             MemoryReader.set_string(address, value)
-            
             
     @property
     def money(self):
@@ -59,7 +45,7 @@ class Player:
             MemoryReader.set_i32(address, value)
         label = "{:,}".format(value)
         for address in self._data["address"]["money_label"]:
-            MemoryReader.set_string(address, label)
+            MemoryReader.set_string(address + 4, label)
             
     @property
     def goto(self):

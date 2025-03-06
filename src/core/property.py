@@ -1,25 +1,11 @@
+from src.core.attributes import StringAttribute, IntAttribute, FixedArrayAttribute
 from .memory_reader import MemoryReader
 
 class Property:
+    name = StringAttribute(0x8)
+    position = IntAttribute(0x48)
+    price = IntAttribute(0x64)
+    rents = FixedArrayAttribute(0x74, 6)
+
     def __init__(self, base):
         self._base = base
-
-    @property
-    def name(self):
-        return MemoryReader.get_string(self._base + 8)
-    
-    @property
-    def position(self):
-        return MemoryReader.get_i32(self._base + 0x48)
-    
-    @property
-    def price(self):
-        return MemoryReader.get_i32(self._base + 0x64)
-
-    @property
-    def rents(self):
-        ptr = self._base + 0x74
-        prices = []
-        for i in range(6):
-            prices.append(MemoryReader.get_i32(ptr + i * 4))
-        return prices

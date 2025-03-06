@@ -78,12 +78,16 @@ def main():
         print(game.get_property_by_player_id(game.players[0].id))
         print(game.get_property_by_player_id(game.players[1].id))
         
-        
         print(game.players[0].dices)
-        print(game.players[1].dices)
+        #print(game.players[1].dices)
         
         print(game.players[0].roll)
         print(game.players[1].roll)
+
+        if game.auction.is_active():
+            print(f"{Fore.YELLOW}Une enchère est en cours!{Style.RESET_ALL}")
+            print(f"Current winner {game.players[game.auction.current_bidder].name} for {game.auction.current_price}")
+            print(f"Next price {game.auction.next_price}")
         
         events.start()
         

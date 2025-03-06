@@ -9,11 +9,11 @@ class MemoryReader:
         return int(value, 16) if isinstance(value, str) else value
     
     @staticmethod
-    def set_string(addr: int, str: str, byteorder: str = "little") -> None:
+    def set_string(addr: Hex, str: str, byteorder: str = "big") -> None:
         dme.write_bytes(MemoryReader.hex_to_int(addr), str.encode("utf-16-le" if byteorder == "little" else "utf-16-be") + b'\x00\x00')
 
     @staticmethod
-    def get_string(addr: Hex, max_length = 1024, byteorder: str = "little") -> str:
+    def get_string(addr: Hex, max_length = 1024, byteorder: str = "big") -> str:
         string = ""
         parsed_addr = MemoryReader.hex_to_int(addr)
         i = 0
@@ -37,6 +37,12 @@ class MemoryReader:
             MemoryReader.get_i32(addr), 
             "big"
         )
+    
+    @staticmethod
+    def set_str(addr: Hex, value: str) -> None:
+        addr = MemoryReader.hex_to_int(addr)
+        MemoryReader.set_i32(addr, len(value))
+        MemoryReader.set_string(addr + 4, value)
     
     @staticmethod
     def set_i16(addr: Hex, value: int, byteorder = "big") -> None:

@@ -4,12 +4,14 @@ import dolphin_memory_engine as dme
 from ..core.memory_reader import MemoryReader
 from ..core.game_loader import GameLoader
 from ..core.player import Player
+from ..core.auction import Auction
 
 class MonopolyGame:
     """Classe principale gérant le jeu Monopoly"""
     
     _data: GameLoader
     _players: List[Player]
+    _auction: Auction
     
     def __init__(self, data):
         """Initialise le jeu Monopoly"""
@@ -30,8 +32,15 @@ class MonopolyGame:
             
         # Charger les cases
         self._squares = []
+
+        # Auction
+        self._auction = Auction(MemoryReader.hex_to_int(self._data.manifest["auction"]))
         
-        
+    @property
+    def auction(self) -> Auction:
+        """Renvoie l'instance de l'enchère"""
+        return self._auction
+
     @property
     def players(self) -> List[Player]:
         """Renvoie la liste des joueurs"""
