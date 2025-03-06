@@ -1,0 +1,297 @@
+{
+  "global": {
+    "properties": [],
+    "current_turn": 0,
+    "player_count": 2,
+    "player_names": [
+      "Charlie",
+      "Jeff"
+    ]
+  },
+  "events": [
+    {
+      "turn": 0,
+      "player": "Charlie",
+      "action": "join_game",
+      "detail": null,
+      "message": "Charlie a rejoint la partie de Monopoly."
+    },
+    {
+      "turn": 0,
+      "player": "Jeff",
+      "action": "join_game",
+      "detail": null,
+      "message": "Jeff a rejoint la partie de Monopoly."
+    }
+  ],
+  "players": {
+    "Charlie": {
+      "current_player": true,
+      "dice_result": [
+        0,
+        0
+      ],
+      "money": 0,
+      "properties": [],
+      "position": 0,
+      "current_space": "Départ",
+      "jail": false
+    },
+    "Jeff": {
+      "current_player": false,
+      "dice_result": [
+        4294967295,
+        4294967295
+      ],
+      "money": 0,
+      "properties": [],
+      "position": 0,
+      "current_space": "Départ",
+      "jail": false
+    }
+  },
+  "board": {
+    "spaces": [
+      {
+        "id": 0,
+        "name": "Départ",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 1,
+        "name": "Case 1",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 2,
+        "name": "Case 2",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 3,
+        "name": "Case 3",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 4,
+        "name": "Case 4",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 5,
+        "name": "Case 5",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 6,
+        "name": "Case 6",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 7,
+        "name": "Case 7",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 8,
+        "name": "Case 8",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 9,
+        "name": "Case 9",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 10,
+        "name": "Prison",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 11,
+        "name": "Case 11",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 12,
+        "name": "Case 12",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 13,
+        "name": "Case 13",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 14,
+        "name": "Case 14",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 15,
+        "name": "Case 15",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 16,
+        "name": "Case 16",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 17,
+        "name": "Case 17",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 18,
+        "name": "Case 18",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 19,
+        "name": "Case 19",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 20,
+        "name": "Parc Gratuit",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 21,
+        "name": "Case 21",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 22,
+        "name": "Case 22",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 23,
+        "name": "Case 23",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 24,
+        "name": "Case 24",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 25,
+        "name": "Case 25",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 26,
+        "name": "Case 26",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 27,
+        "name": "Case 27",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 28,
+        "name": "Case 28",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 29,
+        "name": "Case 29",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 30,
+        "name": "Allez en Prison",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 31,
+        "name": "Case 31",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 32,
+        "name": "Case 32",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 33,
+        "name": "Case 33",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 34,
+        "name": "Case 34",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 35,
+        "name": "Case 35",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 36,
+        "name": "Case 36",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 37,
+        "name": "Case 37",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 38,
+        "name": "Case 38",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 39,
+        "name": "Case 39",
+        "type": "special",
+        "property_ref": null
+      }
+    ]
+  }
+}

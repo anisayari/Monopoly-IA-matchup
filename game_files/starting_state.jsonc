@@ -1,6 +1,5 @@
 {
-    "players": [
-        {
+    "players": [{
             "id": "red",
             "address": {
                 "name": [
@@ -71,8 +70,7 @@
             "0x90037199",
             "0x90FA0209"
         ],
-        "events": [
-            {
+        "events": [{
                 "id": "want_to_buy_house",
                 "type": "address",
                 "address": "0x91D617D4"
@@ -81,11 +79,6 @@
                 "id": "want_to_buy_square",
                 "type": "address",
                 "address": "91D60BAC"
-            },
-            {
-                "id": "would_you_like_to_do",
-                "type": "address",
-                "address": "0x91D5FF10"
             },
             {
                 "id": "won_the_roll",
@@ -124,7 +117,108 @@
                 "byte_replace": {
                     "%1": "process:player_names"
                 }
-            }
+            },
+                {"id": "what_would_you_like_to_do", "type": "pattern", "pattern": "What would you like to do?"},
+                {"id": "current_bid", "type": "pattern", "pattern": "CURRENT BID"},
+                {"id": "rolled_doubles_options", "type": "pattern", "pattern": "%1 rolled %2 doubles.\\n[BUTTON_A]: Reroll [BUTTON_B]: Keep", "byte_replace": {"%1": "process:player_names"}},
+                {"id": "advance_to_nearest_utility", "type": "pattern", "pattern": "Advance to nearest utility.\\n\\nIf unowned, you may buy it from the bank.\\n\\nIf owned, throw dice and pay the owner a total 10,000 times amount thrown.\\n\\nIf you pass \"GO\", collect %1."},
+                {"id": "pay_rent", "type": "pattern", "pattern": "%1 must pay %2 to %3 in rent.", "byte_replace": {"%1": "process:player_names", "%3": "process:player_names"}},
+                {"id": "go_back_spaces", "type": "pattern", "pattern": "Go back three spaces."},
+                {"id": "identity_fraud_jail", "type": "pattern", "pattern": "You are investigated for identity fraud. Go to Jail. Do not pass \"GO\", do not collect %1."},
+                {"id": "mortgage", "type": "pattern", "pattern": "MORTGAGE"},
+                {"id": "pay_sample_food", "type": "pattern", "pattern": "Pay each player %1 to sample food from all over the world."},
+                {"id": "trade", "type": "pattern", "pattern": "Trade"},
+                {"id": "karaoke_ticket_sales", "type": "pattern", "pattern": "Host an exclusive karaoke club night in Tokyo, Japan. Collect %1 in ticket sales."},
+                {"id": "owned_1", "type": "pattern", "pattern": "1 Owned"},
+                {"id": "owned_4", "type": "pattern", "pattern": "4 Owned"},
+                {"id": "owned_2", "type": "pattern", "pattern": "2 Owned"},
+                {"id": "owned_3", "type": "pattern", "pattern": "3 Owned"},
+                {"id": "player_won_auction", "type": "pattern", "pattern": "%1 won %2 for %3!", "byte_replace": {"%1": "process:player_names"}},
+                {"id": "add_to_deal", "type": "pattern", "pattern": "Add to deal"},
+                {"id": "property_management", "type": "pattern", "pattern": "Point at a Property you own and press [BUTTON_A] to manage details."},
+                {"id": "used_jail_free_card", "type": "pattern", "pattern": "%1 has used a Get Out Of Jail for free card.", "byte_replace": {"%1": "process:player_names"}},
+                {"id": "toggle_viewpoint", "type": "pattern", "pattern": "Press [BUTTON_1] to toggle viewpoint."},
+                {"id": "beauty_contest_prize", "type": "pattern", "pattern": "You have won second prize in a beauty contest.\\nCollect %1."},
+                {"id": "general_repairs", "type": "pattern", "pattern": "Make general repairs on all your property.\\nFor each house pay %1.\\nFor each hotel pay %2."},
+                {"id": "next_turn", "type": "pattern", "pattern": "Next Turn"},
+                {"id": "unmortgage_value", "type": "pattern", "pattern": "Un-mortgage Value"},
+                {"id": "trip_to", "type": "pattern", "pattern": "Take a trip to %1.\\nIf you pass \"GO\" collect %2.","group":"chance"},
+                {"id": "travel_company_profit", "type": "pattern", "pattern": "Your travel company really hits the big time!\\nCollect %1."},
+                {"id": "bid_amount", "type": "pattern", "pattern": "Bid %1?"},
+                {"id": "you_are_bankrupt", "type": "pattern", "pattern": "You are Bankrupt!"},
+                {"id": "building_loan_matures", "type": "pattern", "pattern": "Your building loan matures. Collect %1."},
+                {"id": "paid_jail_fine", "type": "pattern", "pattern": "%1 has paid a fine to get out of jail!", "byte_replace": {"%1": "process:player_names"}},
+                {"id": "international_fraud_jail", "type": "pattern", "pattern": "International Fraud Squad catches up with you. Go to jail. Do not pass \"GO\", do not collect %1."},
+                {"id": "london_eye_payment", "type": "pattern", "pattern": "Pay %1 to have all 32 capsules on the London Eye washed and polished."},
+                {"id": "go_to_jail", "type": "pattern", "pattern": "Go to jail. Go directly to jail. Do not pass \"GO\". Do not collect %1."},
+                {"id": "bank_error_favour", "type": "pattern", "pattern": "Bank error in your favour. Collect %1."},
+                {"id": "stock_sale", "type": "pattern", "pattern": "From sale of stock you get %1."},
+                {"id": "income_tax_refund", "type": "pattern", "pattern": "Income tax refund. Collect %1."},
+                {"id": "roll_again", "type": "pattern", "pattern": "Roll Again"},
+                {"id": "belly_dancing_profit", "type": "pattern", "pattern": "Collect %1 profit from your belly-dancing club in the heart of Cairo."},
+                {"id": "consultancy_fee", "type": "pattern", "pattern": "Receive %1 consultancy fee."},
+                {"id": "select_property_sell_house", "type": "pattern", "pattern": "Select property to sell house for or press the B button to continue turn."},
+                {"id": "utility_1_rent", "type": "pattern", "pattern": "1 utility = x%1 amount on dice in rent."},
+                {"id": "utility_2_rent", "type": "pattern", "pattern": "2 utilities = x%1 amount on dice in rent."},
+                {"id": "unmortgage", "type": "pattern", "pattern": "UNMORTGAGE"},
+                {"id": "buy_house_prompt", "type": "pattern", "pattern": "Do you want to buy a house on %1 for %2?"},
+                {"id": "to_bid_instructions", "type": "pattern", "pattern": "To bid raise Wii Remote or press [BUTTON_A]"},
+                {"id": "bank_dividend", "type": "pattern", "pattern": "Bank pays you dividend of %1."},
+                {"id": "rolled_double_options", "type": "pattern", "pattern": "%1 rolled a double.\\n[BUTTON_A]: Reroll [BUTTON_B]: Keep", "byte_replace": {"%1": "process:player_names"}},
+                {"id": "queenstown_adventure", "type": "pattern", "pattern": "Everyone clubs together for an adrenaline rush in the 'adventure capital of the world' Queenstown, New Zealand. Collect %1 from every player."},
+                {"id": "use_jail_free_card", "type": "pattern", "pattern": "Use Get Out Of Jail Free Card?"},
+                {"id": "bought_house", "type": "pattern", "pattern": "%1 bought a house on %2.", "byte_replace": {"%1": "process:player_names"}},
+                {"id": "insufficient_assets", "type": "pattern", "pattern": "You have insufficient assets to pay your debt."},
+                {"id": "birthday_collect", "type": "pattern", "pattern": "It's your birthday. Collect %1 from every player."},
+                {"id": "art_collection_profit", "type": "pattern", "pattern": "Collect %1 by hiring out your internationally acclaimed art collection."},
+                {"id": "bought_hotel", "type": "pattern", "pattern": "%1 bought a hotel on %2.", "byte_replace": {"%1": "process:player_names"}},
+                {"id": "buy_house", "type": "pattern", "pattern": "BUY HOUSE"},
+                {"id": "speeding_fine", "type": "pattern", "pattern": "Speeding fine %1."},
+                {"id": "house_sold", "type": "pattern", "pattern": "House on %1 was sold for %2."},
+                {"id": "munich_christmas_market", "type": "pattern", "pattern": "Spend %1 at Munich's christmas market."},
+                {"id": "auction_sold", "type": "pattern", "pattern": "SOLD TO %1 FOR %2", "byte_replace": {"%1": "process:player_names"}},
+                {"id": "bad_luck", "type": "pattern", "pattern": "Bad Luck %1"},
+                {"id": "buy_hotel", "type": "pattern", "pattern": "BUY HOTEL"},
+                {"id": "advance_to_location", "type": "pattern", "pattern": "Advance to %1.\\nIf you pass \"GO\" collect %2."},
+                {"id": "sell_hotel", "type": "pattern", "pattern": "SELL HOTEL"},
+                {"id": "life_insurance_matures", "type": "pattern", "pattern": "Life insurance matures. Collect %1."},
+                {"id": "pay_jail_fine_prompt", "type": "pattern", "pattern": "Pay %1 to get out of jail?"},
+                {"id": "chairman_of_board", "type": "pattern", "pattern": "You have been elected chairman of the board. Pay each player %1."},
+                {"id": "inheritance", "type": "pattern", "pattern": "You inherit %1."},
+                {"id": "jail_free_card", "type": "pattern", "pattern": "Get out of jail free.\\nThis card may be kept until needed or traded."},
+                {"id": "advance_to_go", "type": "pattern", "pattern": "Advance to \"GO\".\\n(Collect %1)"},
+                {"id": "bid_for_property", "type": "pattern", "pattern": "Bid %1 for %2?"},
+                {"id": "three_doubles_jail", "type": "pattern", "pattern": "%1 rolled 3 doubles in a row; go to jail!", "byte_replace": {"%1": "process:player_names"}},
+                {"id": "rio_carnival_profit", "type": "pattern", "pattern": "Your fancy dress ball, part of the Rio Carnival in Brazil, nets you %1 profit."},
+                {"id": "sell_house_prompt", "type": "pattern", "pattern": "Do you want to sell a house on %1?"},
+                {"id": "paris_boutique_profit", "type": "pattern", "pattern": "Collect %1 profit from your Parisien fashion boutique."},
+                {"id": "music_festival_profit", "type": "pattern", "pattern": "Organise your own international music festival and receive %1 from ticket sales."},
+                {"id": "street_repairs", "type": "pattern", "pattern": "You are assessed for street repairs: %1 per house, %2 per hotel."},
+                {"id": "player_rolling_dice", "type": "pattern", "pattern": "%1 is rolling the dice", "byte_replace": {"%1": "process:player_names"}},
+                {"id": "advance_to_nearest_railway", "type": "pattern", "pattern": "Advance to the nearest railway station.\\nIf unowned, you may buy it from the bank.\\nIf owned, pay owner twice the rental to which they are otherwise entitled."},
+                {"id": "doctors_fees", "type": "pattern", "pattern": "Doctor's fees. Pay %1."},
+                {"id": "bondi_beach_party", "type": "pattern", "pattern": "Pay %1 to host a private beach party on Bondi Beach, Sydney."},
+                {"id": "trade_accepted", "type": "pattern", "pattern": "Trade is accepted!"},
+                {"id": "filing_bankruptcy", "type": "pattern", "pattern": "Filing for Bankruptcy\\n\\nAre you sure?"},
+                {"id": "alps_ski_trip", "type": "pattern", "pattern": "Collect %1 for hiring out your mountain in the Alps for an exclusive ski trip."},
+                {"id": "going_once", "type": "pattern", "pattern": "GOING ONCE"},
+                {"id": "pay_tax", "type": "pattern", "pattern": "%1 pays %2 in tax.", "byte_replace": {"%1": "process:player_names"}},
+                {"id": "passed_go", "type": "pattern", "pattern": "Passed Go, collect %1!"},
+                {"id": "beijing_repair_shop", "type": "pattern", "pattern": "Collect %1 from your bicycle repair shop in Bejing, China."},
+                {"id": "trade_rejected", "type": "pattern", "pattern": "Trade has been rejected!"},
+                {"id": "going_twice", "type": "pattern", "pattern": "GOING TWICE"},
+                {"id": "player_bankrupt", "type": "pattern", "pattern": "%1 is bankrupt and out of the game!", "byte_replace": {"%1": "process:player_names"}},
+                {"id": "tax_hike", "type": "pattern", "pattern": "A tax hike affects all your properties. Pay %1 per house, pay %2 per hotel."},
+                {"id": "sell_house", "type": "pattern", "pattern": "SELL HOUSE"},
+                {"id": "tax_refund", "type": "pattern", "pattern": "You get a tax rebate.\\nCollect %1."},
+                {"id": "holiday_fund_matures", "type": "pattern", "pattern": "Holiday fund matures. Receive %1."},
+                
+                {"id": "advance_to_nearest_transport", "type": "pattern", "pattern": "Advance to nearest transport space.\\n\\nIf unowned, you may buy it from the bank.\\n\\nIf owned, pay the owner twice the rental to which they are otherwise entitled.\\n\\nIf you pass \"GO\" collect %1."},
+                {"id": "dublin_festival", "type": "pattern", "pattern": "Pay %1 to host Dublin's Saint Patrick's Day festival."},
+                {"id": "hospital_fees", "type": "pattern", "pattern": "Pay hospital fees of %1."},
+                {"id": "school_fee", "type": "pattern", "pattern": "Pay school fee of %1."},
+                {"id": "designer_makeover", "type": "pattern", "pattern": "You invite a renowned international designer to make over your properties.\\nFor each house pay %1, for each hotel pay %2."},
+                {"id": "player_bought", "type": "pattern", "pattern": "%1 bought %2", "byte_replace": {"%1": "process:player_names"}}
         ]
     }
 }

@@ -67,10 +67,11 @@ class MonopolyListeners(EventListeners):
                     event = {
                         "id": message["id"],
                         "text": data["text"],
-                        "address": data["address"]
+                        "address": data["address"],
+                        "group": message.get("group", None)
                     }
                     self._message_founds.append(event)
-                    self.emit("message_added", event["id"], event["text"], event["address"])
+                    self.emit("message_added", event["id"], event["text"], event["address"], event["group"])
                    
     @staticmethod
     def find_index(lst, func): 
@@ -150,8 +151,10 @@ class MonopolyListeners(EventListeners):
         for player in self._players:
             game_player = self._game.get_player_by_id(player["id"])
             if game_player is None:
+                # Créer un objet temporaire avec les informations du joueur pour l'événement
+                removed_player = type('Player', (), {'id': player["id"], 'name': player["name"]})
                 self._players.remove(player)
-                self.emit("player_removed", game_player)
+                self.emit("player_removed", removed_player)
                 
         # add new players
         for player in self._game.players:

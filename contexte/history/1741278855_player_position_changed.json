@@ -1,0 +1,904 @@
+{
+  "global": {
+    "properties": [
+      {
+        "id": 0,
+        "name": "Old Kent Road",
+        "group": "brown",
+        "price": 60,
+        "rent": [
+          2,
+          10,
+          30,
+          90,
+          160,
+          250
+        ],
+        "house_price": 50,
+        "owner": "red",
+        "houses": 0
+      },
+      {
+        "id": 1,
+        "name": "Whitechapel Road",
+        "group": "light_blue",
+        "price": 60,
+        "rent": [
+          4,
+          20,
+          60,
+          180,
+          320,
+          450
+        ],
+        "house_price": 50,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 2,
+        "name": "Kings Cross Station",
+        "group": "pink",
+        "price": 200,
+        "rent": [
+          25,
+          50,
+          100,
+          200,
+          -1,
+          -1
+        ],
+        "house_price": -1,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 3,
+        "name": "The Angel Islington",
+        "group": "orange",
+        "price": 100,
+        "rent": [
+          6,
+          30,
+          90,
+          270,
+          400,
+          550
+        ],
+        "house_price": 50,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 4,
+        "name": "Euston Road",
+        "group": "red",
+        "price": 100,
+        "rent": [
+          6,
+          30,
+          90,
+          270,
+          400,
+          550
+        ],
+        "house_price": 50,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 5,
+        "name": "Pentonville Road",
+        "group": "yellow",
+        "price": 120,
+        "rent": [
+          8,
+          40,
+          100,
+          300,
+          450,
+          600
+        ],
+        "house_price": 50,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 6,
+        "name": "Pall Mall",
+        "group": "green",
+        "price": 140,
+        "rent": [
+          10,
+          50,
+          150,
+          450,
+          625,
+          750
+        ],
+        "house_price": 100,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 7,
+        "name": "Electric Company",
+        "group": "blue",
+        "price": 150,
+        "rent": [
+          4,
+          10,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "house_price": -1,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 8,
+        "name": "Whitehall",
+        "group": "brown",
+        "price": 140,
+        "rent": [
+          10,
+          50,
+          150,
+          450,
+          625,
+          750
+        ],
+        "house_price": 100,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 9,
+        "name": "Northhumberl'd Avenue",
+        "group": "light_blue",
+        "price": 160,
+        "rent": [
+          12,
+          60,
+          180,
+          500,
+          700,
+          900
+        ],
+        "house_price": 100,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 10,
+        "name": "Marylebone Station",
+        "group": "pink",
+        "price": 200,
+        "rent": [
+          25,
+          50,
+          100,
+          200,
+          -1,
+          -1
+        ],
+        "house_price": -1,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 11,
+        "name": "Bow Street",
+        "group": "orange",
+        "price": 180,
+        "rent": [
+          14,
+          70,
+          200,
+          550,
+          750,
+          950
+        ],
+        "house_price": 100,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 12,
+        "name": "Marborough Street",
+        "group": "red",
+        "price": 180,
+        "rent": [
+          14,
+          70,
+          200,
+          550,
+          750,
+          950
+        ],
+        "house_price": 100,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 13,
+        "name": "Vine Street",
+        "group": "yellow",
+        "price": 200,
+        "rent": [
+          16,
+          80,
+          220,
+          600,
+          800,
+          1000
+        ],
+        "house_price": 100,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 14,
+        "name": "Strand",
+        "group": "green",
+        "price": 220,
+        "rent": [
+          18,
+          90,
+          250,
+          700,
+          875,
+          1050
+        ],
+        "house_price": 150,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 15,
+        "name": "Fleet Street",
+        "group": "blue",
+        "price": 220,
+        "rent": [
+          18,
+          90,
+          250,
+          700,
+          875,
+          1050
+        ],
+        "house_price": 150,
+        "owner": "blue",
+        "houses": 0
+      },
+      {
+        "id": 16,
+        "name": "Trafalgar Square",
+        "group": "brown",
+        "price": 240,
+        "rent": [
+          20,
+          100,
+          300,
+          750,
+          925,
+          1100
+        ],
+        "house_price": 150,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 17,
+        "name": "Fenchurch St. Station",
+        "group": "light_blue",
+        "price": 200,
+        "rent": [
+          25,
+          50,
+          100,
+          200,
+          -1,
+          -1
+        ],
+        "house_price": -1,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 18,
+        "name": "Leicester Square",
+        "group": "pink",
+        "price": 260,
+        "rent": [
+          22,
+          110,
+          330,
+          800,
+          975,
+          1150
+        ],
+        "house_price": 150,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 19,
+        "name": "Water Works",
+        "group": "orange",
+        "price": 150,
+        "rent": [
+          4,
+          10,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "house_price": -1,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 20,
+        "name": "Coventry Street",
+        "group": "red",
+        "price": 260,
+        "rent": [
+          22,
+          110,
+          330,
+          800,
+          975,
+          1150
+        ],
+        "house_price": 150,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 21,
+        "name": "Piccadilly",
+        "group": "yellow",
+        "price": 280,
+        "rent": [
+          24,
+          120,
+          360,
+          850,
+          1025,
+          1200
+        ],
+        "house_price": 150,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 22,
+        "name": "Regent Street",
+        "group": "green",
+        "price": 300,
+        "rent": [
+          26,
+          130,
+          390,
+          900,
+          1100,
+          1275
+        ],
+        "house_price": 200,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 23,
+        "name": "Oxford Street",
+        "group": "blue",
+        "price": 300,
+        "rent": [
+          26,
+          130,
+          390,
+          900,
+          1100,
+          1275
+        ],
+        "house_price": 200,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 24,
+        "name": "Bond Street",
+        "group": "brown",
+        "price": 320,
+        "rent": [
+          28,
+          150,
+          450,
+          1000,
+          1200,
+          1400
+        ],
+        "house_price": 200,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 25,
+        "name": "Liverpool St. Station",
+        "group": "light_blue",
+        "price": 200,
+        "rent": [
+          25,
+          50,
+          100,
+          200,
+          -1,
+          -1
+        ],
+        "house_price": -1,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 26,
+        "name": "Park Lane",
+        "group": "pink",
+        "price": 350,
+        "rent": [
+          35,
+          175,
+          500,
+          1100,
+          1300,
+          1500
+        ],
+        "house_price": 200,
+        "owner": null,
+        "houses": 0
+      },
+      {
+        "id": 27,
+        "name": "Mayfair",
+        "group": "orange",
+        "price": 400,
+        "rent": [
+          50,
+          200,
+          600,
+          1400,
+          1700,
+          2000
+        ],
+        "house_price": 20,
+        "owner": null,
+        "houses": 0
+      }
+    ],
+    "current_turn": 1,
+    "player_count": 2,
+    "player_names": [
+      "Charlie",
+      "Jeff"
+    ]
+  },
+  "events": [
+    {
+      "turn": 0,
+      "player": "System",
+      "action": "jail_options",
+      "detail": "Do you want to pay the bail, roll for doubles or use a get out of free jail card (if you have one)?",
+      "message": "System doit choisir comment sortir de prison."
+    },
+    {
+      "turn": 0,
+      "player": "Charlie",
+      "action": "receive_money",
+      "detail": "1500€ (passage par la case départ)",
+      "message": "Charlie reçoit 1500€ pour passage par la case départ."
+    },
+    {
+      "turn": 0,
+      "player": "Jeff",
+      "action": "receive_money",
+      "detail": "1500€ (passage par la case départ)",
+      "message": "Jeff reçoit 1500€ pour passage par la case départ."
+    },
+    {
+      "turn": 0,
+      "player": "Charlie",
+      "action": "roll_dice",
+      "detail": "4+6=10",
+      "message": "Charlie a lancé les dés et avance de 10 cases."
+    },
+    {
+      "turn": 0,
+      "player": "Charlie",
+      "action": "move_and_buy",
+      "detail": "Prison -> Prison pour 200€",
+      "message": "Charlie s'est déplacé sur Prison et l'a acheté pour 200€."
+    },
+    {
+      "turn": 0,
+      "player": "Jeff",
+      "action": "roll_dice",
+      "detail": "2+1=3",
+      "message": "Jeff a lancé les dés et avance de 3 cases."
+    },
+    {
+      "turn": 0,
+      "player": "Jeff",
+      "action": "move_and_buy",
+      "detail": "Case 3 -> Case 3 pour 100€",
+      "message": "Jeff s'est déplacé sur Case 3 et l'a acheté pour 100€."
+    },
+    {
+      "turn": 0,
+      "player": "System",
+      "action": "message",
+      "detail": "Charlie won the roll and will be getting us started.",
+      "message": "Message: Charlie won the roll and will be getting us started."
+    },
+    {
+      "turn": 0,
+      "player": "Charlie",
+      "action": "roll_dice",
+      "detail": "6+1=7",
+      "message": "Charlie a lancé les dés et avance de 7 cases."
+    },
+    {
+      "turn": 0,
+      "player": "Charlie",
+      "action": "move_and_buy",
+      "detail": "Case 7 -> Case 7 pour 150€",
+      "message": "Charlie s'est déplacé sur Case 7 et l'a acheté pour 150€."
+    },
+    {
+      "turn": 0,
+      "player": "Charlie",
+      "action": "goto",
+      "detail": "Case 7",
+      "message": "Charlie se déplace directement vers Case 7."
+    },
+    {
+      "turn": 0,
+      "player": "Charlie",
+      "action": "buy_property",
+      "detail": "Case 7 pour 150€",
+      "message": "Charlie achète Case 7 pour 150€."
+    },
+    {
+      "turn": 0,
+      "player": "Charlie",
+      "action": "move_and_buy",
+      "detail": "Case 1 -> Case 1 pour 60€",
+      "message": "Charlie s'est déplacé sur Case 1 et l'a acheté pour 60€."
+    },
+    {
+      "turn": 0,
+      "player": "Charlie",
+      "action": "move_and_buy",
+      "detail": "Case 5 -> Case 5 pour 120€",
+      "message": "Charlie s'est déplacé sur Case 5 et l'a acheté pour 120€."
+    },
+    {
+      "turn": 0,
+      "player": "Charlie",
+      "action": "move",
+      "detail": "Case 7",
+      "message": "Charlie arrive sur la case Case 7."
+    },
+    {
+      "turn": 0,
+      "player": "System",
+      "action": "rent_notification",
+      "detail": "Advance to the nearest railway station.\\nIf unowned, you may buy it from the bank.\\nIf owned, pay owner twice the rental to which they are otherwise entitled.",
+      "message": "System a effectué l'action 'rent_notification' Advance to the nearest railway station.\\nIf unowned, you may buy it from the bank.\\nIf owned, pay owner twice the rental to which they are otherwise entitled.."
+    },
+    {
+      "turn": 0,
+      "player": "Charlie",
+      "action": "goto",
+      "detail": "Case 15",
+      "message": "Charlie se déplace directement vers Case 15."
+    },
+    {
+      "turn": 0,
+      "player": "Charlie",
+      "action": "buy_property",
+      "detail": "Case 15 pour 220€",
+      "message": "Charlie achète Case 15 pour 220€."
+    },
+    {
+      "turn": 1,
+      "player": "Charlie",
+      "action": "move_and_buy",
+      "detail": "Case 8 -> Case 8 pour 140€",
+      "message": "Charlie s'est déplacé sur Case 8 et l'a acheté pour 140€."
+    },
+    {
+      "turn": 1,
+      "player": "Charlie",
+      "action": "move_and_buy",
+      "detail": "Case 12 -> Case 12 pour 180€",
+      "message": "Charlie s'est déplacé sur Case 12 et l'a acheté pour 180€."
+    }
+  ],
+  "players": {
+    "Charlie": {
+      "current_player": true,
+      "dice_result": [
+        6,
+        1
+      ],
+      "money": 1500,
+      "properties": [
+        15
+      ],
+      "position": 13,
+      "current_space": "Case 13",
+      "jail": false
+    },
+    "Jeff": {
+      "current_player": false,
+      "dice_result": [
+        2,
+        1
+      ],
+      "money": 1500,
+      "properties": [
+        0
+      ],
+      "position": 0,
+      "current_space": "Départ",
+      "jail": false
+    }
+  },
+  "board": {
+    "spaces": [
+      {
+        "id": 0,
+        "name": "Départ",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 1,
+        "name": "Case 1",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 2,
+        "name": "Case 2",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 3,
+        "name": "Case 3",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 4,
+        "name": "Case 4",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 5,
+        "name": "Case 5",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 6,
+        "name": "Case 6",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 7,
+        "name": "Case 7",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 8,
+        "name": "Case 8",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 9,
+        "name": "Case 9",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 10,
+        "name": "Prison",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 11,
+        "name": "Case 11",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 12,
+        "name": "Case 12",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 13,
+        "name": "Case 13",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 14,
+        "name": "Case 14",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 15,
+        "name": "Case 15",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 16,
+        "name": "Case 16",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 17,
+        "name": "Case 17",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 18,
+        "name": "Case 18",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 19,
+        "name": "Case 19",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 20,
+        "name": "Parc Gratuit",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 21,
+        "name": "Case 21",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 22,
+        "name": "Case 22",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 23,
+        "name": "Case 23",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 24,
+        "name": "Case 24",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 25,
+        "name": "Case 25",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 26,
+        "name": "Case 26",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 27,
+        "name": "Case 27",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 28,
+        "name": "Case 28",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 29,
+        "name": "Case 29",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 30,
+        "name": "Allez en Prison",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 31,
+        "name": "Case 31",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 32,
+        "name": "Case 32",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 33,
+        "name": "Case 33",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 34,
+        "name": "Case 34",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 35,
+        "name": "Case 35",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 36,
+        "name": "Case 36",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 37,
+        "name": "Case 37",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 38,
+        "name": "Case 38",
+        "type": "special",
+        "property_ref": null
+      },
+      {
+        "id": 39,
+        "name": "Case 39",
+        "type": "special",
+        "property_ref": null
+      }
+    ]
+  }
+}

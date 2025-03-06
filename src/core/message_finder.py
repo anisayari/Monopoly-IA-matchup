@@ -70,6 +70,7 @@ class MessageFinder:
                 
             results.append({
                 "id": event["id"],
+                "group": event["group"] if "group" in event else None,
                 "data": address
             })
                   
