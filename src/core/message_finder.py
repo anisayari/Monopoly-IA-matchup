@@ -1,7 +1,7 @@
 from typing import List
 import re
 from .memory_reader import MemoryReader
-from ..game.game import MonopolyGame
+from ..game.monopoly import MonopolyGame
 from .game_loader import GameLoader
 
 class MessageFinder:

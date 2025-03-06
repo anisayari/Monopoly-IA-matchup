@@ -3,7 +3,7 @@ import random
 import time
 from src.core.game_loader import GameLoader
 from src.core.message_finder import MessageFinder
-from src.game.game import MonopolyGame
+from src.game.monopoly import MonopolyGame
 from colorama import init, Fore, Style
 
 from src.game.listeners import MonopolyListeners
