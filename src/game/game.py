@@ -12,6 +12,7 @@ class MonopolyGame:
     _data: GameLoader
     _players: List[Player]
     _auction: Auction
+    static_colors = ["red", "blue"]
     
     def __init__(self, data):
         """Initialise le jeu Monopoly"""
@@ -24,12 +25,12 @@ class MonopolyGame:
             dme.hook()
         if not dme.is_hooked():
             raise Exception("Impossible de se connecter à Dolphin Memory Engine")
-        
+
         # Charger les joueurs
         self._players = []
         for player in self._data.manifest["players"]:
             self._players.append(Player(player))
-            
+
         # Charger les cases
         self._squares = []
 

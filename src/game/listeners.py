@@ -173,12 +173,48 @@ class MonopolyListeners(EventListeners):
         self.player_dice_handler()
         self.player_goto_handler()
         self.player_position_handler()
+
+    _auction = {
+        'active': False,
+        'current': {
+            'player': None,
+            'bid': 0,
+            'next_bid': 0
+        }
+    }
+
+    def auction_active_handler(self):
+        if self._game.auction.is_active() and not self._auction['active']:
+            self._auction['active'] = True
+            self.emit("auction_started")
+        elif not self._game.auction.is_active() and self._auction['active']:
+            self._auction['active'] = False
+            self.emit("auction_ended", self._auction['current'])
+
+    def auction_bid_handler(self):
+        if self._game.auction.is_active():
+            bid = {
+                'player': self._game.auction.current_bidder, 
+                'bid': self._game.auction.current_price, 
+                'next_bid': self._game.auction.next_price
+            }
+            if bid != self._auction['current']:
+                self._auction['current'] = bid
+                self.emit("auction_bid", bid)
+
+    def auction_handler(self):
+        self.emit("auction_handling", self._game.auction)
+        
+        self.auction_active_handler()
+        self.auction_bid_handler()
         
     _last_time_message = 0
     _last_time_player = 0
+    _last_time_auction = 0
     
     interval_message = 1 # 1 second
     interval_player = 1 # 1 second
+    interval_auction = 0.1 # 0.1 second
 
     def _run(self):
         while self._running:
@@ -191,6 +227,10 @@ class MonopolyListeners(EventListeners):
             if time.time() - self._last_time_message >= self.interval_message:
                 self._last_time_message = time.time()
                 self.message_handler()
+
+            if time.time() - self._last_time_auction >= self.interval_auction:
+                self._last_time_auction = time.time()
+                self.auction_handler()
             
             time.sleep(1 / self.tps)
 

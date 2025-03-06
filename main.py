@@ -33,13 +33,17 @@ def on_message_removed(id, *args):
     print(f"{Fore.MAGENTA}{id} a été supprimé{Style.RESET_ALL}")
     
 def on_event(event, *args):
-    if event in ["loop_tick", "player_handling", "message_handling", "player_position_changed"]:
+    if event in ["loop_tick", "player_handling", "message_handling", "player_position_changed", "auction_handling"]:
         return
     print(f"{Fore.CYAN}> {event}{Style.RESET_ALL}")
     
 def on_player_goto_changed(player, new_value, old_value):
     print(f"{Fore.YELLOW}{player.name} va à la case {new_value}{Style.RESET_ALL}")
-        
+
+def on_auction_bid(bid):
+    print(f'{Fore.YELLOW}Nouvelle enchère: {bid}{Style.RESET_ALL}')
+    print(json.dumps(bid))
+
 def main():
     """Fonction principale"""
     
@@ -66,6 +70,7 @@ def main():
         events.on("player_goto_changed", on_player_goto_changed)
         events.on("message_added", on_message_added)    
         events.on("message_removed", on_message_removed)
+        events.on("auction_bid", on_auction_bid)
         
         events.on("*", on_event)
         
