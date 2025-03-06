@@ -1,10 +1,10 @@
 from typing import List
 import dolphin_memory_engine as dme
 
-from ..core.memory_reader import MemoryReader
-from ..core.game_loader import GameLoader
-from ..core.player import Player
-from ..core.auction import Auction
+from src.core.memory_reader import MemoryReader
+from src.core.game_loader import GameLoader
+from src.core.player import Player
+from src.core.auction import Auction
 
 class MonopolyGame:
     """Classe principale gérant le jeu Monopoly"""

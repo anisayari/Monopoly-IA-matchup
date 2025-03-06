@@ -1,7 +1,7 @@
 import json
-from ..core.message_finder import MessageFinder
-from ..core.listeners import EventListeners
-from .monopoly import MonopolyGame
+from src.core.message_finder import MessageFinder
+from src.core.listeners import EventListeners
+from src.game.monopoly import MonopolyGame
 
 import threading
 import time
