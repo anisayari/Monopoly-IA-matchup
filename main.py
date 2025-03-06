@@ -40,10 +40,6 @@ def on_event(event, *args):
 def on_player_goto_changed(player, new_value, old_value):
     print(f"{Fore.YELLOW}{player.name} va à la case {new_value}{Style.RESET_ALL}")
 
-def on_auction_bid(bid):
-    print(f'{Fore.YELLOW}Nouvelle enchère: {bid}{Style.RESET_ALL}')
-    print(json.dumps(bid))
-
 def main():
     """Fonction principale"""
     
@@ -57,6 +53,11 @@ def main():
         
         # Créer une instance du jeu
         game = MonopolyGame(data)
+
+        def on_auction_bid(bid):
+            p = game.players[bid['player']]
+            print(f'{Fore.YELLOW}Nouvelle enchère: {p.name} pour {bid["bid"]}{Style.RESET_ALL}')
+
         
         events = MonopolyListeners(game)
         events.tps = 30
@@ -88,11 +89,6 @@ def main():
         
         print(game.players[0].roll)
         print(game.players[1].roll)
-
-        if game.auction.is_active():
-            print(f"{Fore.YELLOW}Une enchère est en cours!{Style.RESET_ALL}")
-            print(f"Current winner {game.players[game.auction.current_bidder].name} for {game.auction.current_price}")
-            print(f"Next price {game.auction.next_price}")
         
         events.start()
         
@@ -103,6 +99,7 @@ def main():
             time.sleep(1)
     except Exception as e:
         print(f"{Fore.RED}Une erreur s'est produite: {e}{Style.RESET_ALL}")
+        print(e)
         events.stop()
 
 if __name__ == "__main__":

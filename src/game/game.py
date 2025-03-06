@@ -12,7 +12,7 @@ class MonopolyGame:
     _data: GameLoader
     _players: List[Player]
     _auction: Auction
-    static_colors = ["red", "blue"]
+    static_colors = ["blue", "red", "green", "yellow"]
     
     def __init__(self, data):
         """Initialise le jeu Monopoly"""
@@ -30,6 +30,9 @@ class MonopolyGame:
         self._players = []
         for player in self._data.manifest["players"]:
             self._players.append(Player(player))
+
+        # sort player by color with id
+        self._players = sorted(self._players, key=lambda x: MonopolyGame.static_colors.index(x.id))
 
         # Charger les cases
         self._squares = []

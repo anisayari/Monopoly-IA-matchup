@@ -192,15 +192,17 @@ class MonopolyListeners(EventListeners):
             self.emit("auction_ended", self._auction['current'])
 
     def auction_bid_handler(self):
-        if self._game.auction.is_active():
-            bid = {
-                'player': self._game.auction.current_bidder, 
-                'bid': self._game.auction.current_price, 
-                'next_bid': self._game.auction.next_price
-            }
-            if bid != self._auction['current']:
-                self._auction['current'] = bid
-                self.emit("auction_bid", bid)
+        if not self._game.auction.is_active():
+            return
+        
+        bid = {
+            'player': self._game.auction.current_bidder, 
+            'bid': self._game.auction.current_price, 
+            'next_bid': self._game.auction.next_price
+        }
+        if bid != self._auction['current'] and bid['player'] < 4:
+            self._auction['current'] = bid
+            self.emit("auction_bid", bid)
 
     def auction_handler(self):
         self.emit("auction_handling", self._game.auction)
