@@ -18,7 +18,10 @@ class GameDisplay:
         'property': '🏠',
         'time': '🕒',
         'turn': '👉',
-        'buy': '💵'
+        'buy': '💵',
+        'new_turn': '🎲',
+        'end_turn': '🎮',
+        'opportunity': '💰'
     }
     
     def __init__(self):
@@ -169,63 +172,60 @@ class GameDisplay:
         self._previous_states['auction'] = current
 
     def update_buy_property(self, message: str):
-        """
-        Met à jour l'affichage avec un message d'achat de propriété
-        
-        Args:
-            message: Message d'achat de propriété
-        """
-        # Éviter les mises à jour redondantes
+        """Met à jour l'affichage avec un message d'achat de propriété"""
+        # Vérifier si c'est le même message que le précédent
         if message == self._last_buy_property_message:
             return
         
-        # Stocker le dernier message
+        # Stocker le message pour éviter les répétitions
         self._last_buy_property_message = message
         
-        # Nettoyer le message pour supprimer les caractères binaires
-        # Garder uniquement les caractères ASCII imprimables et quelques symboles courants
-        cleaned_message = ""
-        for char in message:
-            if (32 <= ord(char) <= 126) or ('À' <= char <= 'ÿ') or char in ['€', '£', '¥', '©', '®', '™', '°', '±', '²', '³', '¼', '½', '¾']:
-                cleaned_message += char
-            else:
-                # Arrêter au premier caractère non imprimable pour éviter d'afficher des données binaires
-                break
+        # Nettoyer le message pour enlever les caractères non imprimables
+        cleaned_message = re.sub(r'[^\x20-\x7E]', '', message)
         
-        # Vérifier que le message contient des mots-clés d'achat
-        keywords = ["acheter", "buy", "achat", "purchase", "voulez-vous", "would you like"]
-        if not any(keyword in cleaned_message.lower() for keyword in keywords):
+        # Vérifier si le message contient des mots-clés liés à l'achat
+        buy_keywords = ['buy', 'purchase', 'acheter', 'acquérir']
+        if not any(keyword in cleaned_message.lower() for keyword in buy_keywords):
             return
         
-        # Extraire le nom du joueur, de la propriété et du prix si possible
-        player_name = None
+        # Initialiser les variables
         property_name = None
         property_price = None
+        player_name = "Joueur"  # Valeur par défaut
         
-        # Rechercher le nom de la propriété et le prix
-        property_match = re.search(r"buy\s+([A-Za-z\s]+(?:Station|Avenue|Road|Street|Lane|Place|Gardens|Square|Park|Boardwalk|Walk))\s+for\s+\$?(\d+|\~\d+)", cleaned_message, re.IGNORECASE)
-        if not property_match:
-            # Essayer un autre pattern pour "Do you want to buy X for Y"
-            property_match = re.search(r"want to buy\s+([A-Za-z\s]+(?:Station|Avenue|Road|Street|Lane|Place|Gardens|Square|Park|Boardwalk|Walk))\s+for\s+\$?(\d+|\~\d+)", cleaned_message, re.IGNORECASE)
+        # Extraire le nom de la propriété et le prix avec regex
+        # Essayer différents patterns pour capturer les formats possibles
+        patterns = [
+            # "Would you like to buy X for Y"
+            r"like to buy\s+([A-Za-z\s]+(?:Station|Avenue|Road|Street|Lane|Place|Gardens|Square|Park|Boardwalk|Walk))\s+for\s+\$?(\d+|\~\d+)",
+            # "Do you want to buy X for Y"
+            r"want to buy\s+([A-Za-z\s]+(?:Station|Avenue|Road|Street|Lane|Place|Gardens|Square|Park|Boardwalk|Walk))\s+for\s+\$?(\d+|\~\d+)",
+            # "buy X for ~Y?"
+            r"buy\s+([A-Za-z\s]+(?:Station|Avenue|Road|Street|Lane|Place|Gardens|Square|Park|Boardwalk|Walk))\s+for\s+\$?(\d+|\~\d+)\??",
+            # Generic pattern for any property name followed by a price
+            r"buy\s+([A-Za-z\s]+)\s+for\s+\$?(\d+|\~\d+)\??"
+        ]
         
-        if property_match:
-            property_name = property_match.group(1).strip()
-            property_price = property_match.group(2).strip()
+        for pattern in patterns:
+            property_match = re.search(pattern, cleaned_message, re.IGNORECASE)
+            if property_match:
+                property_name = property_match.group(1).strip()
+                property_price = property_match.group(2).strip()
+                break
         
         # Rechercher le nom du joueur (plus difficile, dépend du format du message)
         player_match = re.search(r"(Player\s+\d+|[A-Za-z]+)'s turn", cleaned_message, re.IGNORECASE)
         if player_match:
             player_name = player_match.group(1).strip()
         
-        # Construire le message à afficher
+        # Si nous avons extrait les informations de propriété, utiliser la méthode spécialisée
         if property_name and property_price:
-            display_message = f"{property_name} pour ${property_price}"
+            self.display_property_purchase_opportunity(player_name, property_name, property_price)
         else:
-            # Si on n'a pas pu extraire les informations, utiliser le message nettoyé
+            # Sinon, construire un message générique à afficher
             display_message = cleaned_message
-        
-        # Afficher le message
-        self._print_change('buy', f"ACHAT DE PROPRIÉTÉ: {display_message}")
+            # Afficher le message générique
+            self._print_change('buy', f"ACHAT DE PROPRIÉTÉ: {display_message}")
 
     def print_info(self, message: str):
         """Affiche une information générale"""
@@ -233,4 +233,63 @@ class GameDisplay:
         
     def print_property(self, message: str):
         """Affiche une information sur une propriété"""
-        self._print_change('property', message) 
+        self._print_change('property', message)
+
+    def print_error(self, message: str):
+        """Affiche un message d'erreur"""
+        print(f"{Fore.RED}Erreur: {message}{Style.RESET_ALL}")
+
+    def display_new_turn(self, player_name: str):
+        """Affiche un message de début de tour"""
+        # Déterminer la couleur du joueur
+        player_color = 'blue' if player_name.lower() == 'ayari' else 'red'
+        color_code = Fore.BLUE if player_color == 'blue' else Fore.RED
+        
+        # Créer une bordure pour rendre le message plus visible
+        border = f"{color_code}{'=' * 60}{Style.RESET_ALL}"
+        
+        # Afficher le message de début de tour dans la couleur du joueur
+        print(f"\n{border}")
+        print(f"{color_code}{self.EMOJIS['new_turn']} DÉBUT DU TOUR DE {player_name.upper()} {self.EMOJIS['new_turn']}{Style.RESET_ALL}")
+        print(f"{border}")
+
+    def display_end_turn(self, player_name: str):
+        """Affiche un message de fin de tour"""
+        # Déterminer la couleur du joueur
+        player_color = 'blue' if player_name.lower() == 'ayari' else 'red'
+        color_code = Fore.BLUE if player_color == 'blue' else Fore.RED
+        
+        # Créer une bordure pour rendre le message plus visible
+        border = f"{color_code}{'=' * 60}{Style.RESET_ALL}"
+        
+        # Afficher le message de fin de tour dans la couleur du joueur
+        print(f"\n{border}")
+        print(f"{color_code}{self.EMOJIS['end_turn']} FIN DU TOUR DE {player_name.upper()} {self.EMOJIS['end_turn']}{Style.RESET_ALL}")
+        print(f"{color_code}Options disponibles: Lancer les dés, Gérer les propriétés, etc.{Style.RESET_ALL}")
+        print(f"{border}")
+
+    def display_property_purchase_opportunity(self, player_name: str, property_name: str, property_price: str):
+        """Affiche une opportunité d'achat de propriété"""
+        # Créer un message formaté
+        message = f"{player_name} peut acheter la propriété {property_name} au prix de ${property_price}"
+        
+        # Déterminer la couleur du joueur
+        player_color = 'blue' if player_name.lower() == 'ayari' else 'red'
+        color_code = Fore.BLUE if player_color == 'blue' else Fore.RED
+        
+        # Créer une bordure pour rendre le message plus visible
+        border = f"{Fore.YELLOW}{'=' * 60}{Style.RESET_ALL}"
+        
+        # Afficher un titre pour l'opportunité d'achat
+        print(f"\n{border}")
+        print(f"{Fore.YELLOW}💰 OPPORTUNITÉ D'ACHAT 💰{Style.RESET_ALL}")
+        print(f"{color_code}{player_name.upper()} peut acheter la propriété {property_name} au prix de ${property_price}{Style.RESET_ALL}")
+        print(f"{border}")
+        
+        # Utiliser le format standard d'affichage avec l'emoji d'opportunité d'achat
+        # Vérifier si l'emoji 'opportunity' existe, sinon utiliser 'buy'
+        emoji_key = 'opportunity' if 'opportunity' in self.EMOJIS else 'buy'
+        self._print_change(emoji_key, message, player_color)
+        
+        # Mettre à jour le dernier message pour éviter les répétitions
+        self._last_buy_property_message = message 

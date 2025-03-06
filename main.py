@@ -1,106 +1,143 @@
-import json
-import random
-import time
-from src.core.game_loader import GameLoader
-from src.core.message_finder import MessageFinder
-from src.game.monopoly import MonopolyGame
-from colorama import init, Fore, Style
+from typing import List
+import dolphin_memory_engine as dme
 
-from src.game.listeners import MonopolyListeners
+from ..core.memory_reader import MemoryReader
+from ..core.game_loader import GameLoader
+from ..core.player import Player
+from ..core.auction import Auction
 
-def on_player_money_changed(player, new_value, old_value):
-    print(f"{Fore.YELLOW}{player.name} a maintenant {new_value}€ ({str(new_value - old_value)}€){Style.RESET_ALL}")
+class MonopolyGame:
+    """Classe principale gérant le jeu Monopoly"""
     
-def on_player_name_changed(player, new_value, old_value):
-    print(f"{Fore.YELLOW}{old_value} a changé son nom en {new_value}{Style.RESET_ALL}")
+    _data: GameLoader
+    _players: List[Player]
+    _auction: Auction
+    static_colors = ["blue", "red", "green", "yellow"]
     
-def on_player_dice_changed(player, new_value, old_value, ignore):
-    if ignore:
-        print(f"{Fore.GREEN}{player.name} a ignoré les dés: {new_value}{Style.RESET_ALL}")
-    else:
-        print(f"{Fore.YELLOW}{player.name} a lancé les dés: {new_value}{Style.RESET_ALL}")
+    def __init__(self, data):
+        """Initialise le jeu Monopoly"""
         
-def on_player_added(player):
-    print(f"{Fore.YELLOW}{player.name} a rejoint la partie!{Style.RESET_ALL}")
-    
-def on_player_removed(player):
-    print(f"{Fore.YELLOW}{player.name} a quitté la partie!{Style.RESET_ALL}")
-    
-def on_message_added(id, message, address):
-    print(f"{Fore.MAGENTA}{id}: {message}{Style.RESET_ALL}")
+        # Initialiser les données pour le jeu
+        self._data = data
+        
+        # Vérifier la connexion à Dolphin
+        if not dme.is_hooked():
+            dme.hook()
+        if not dme.is_hooked():
+            raise Exception("Impossible de se connecter à Dolphin Memory Engine")
 
-def on_message_removed(id, *args):
-    print(f"{Fore.MAGENTA}{id} a été supprimé{Style.RESET_ALL}")
-    
-def on_event(event, *args):
-    if event in ["loop_tick", "player_handling", "message_handling", "player_position_changed", "auction_handling"]:
-        return
-    print(f"{Fore.CYAN}> {event}{Style.RESET_ALL}")
-    
-def on_player_goto_changed(player, new_value, old_value):
-    print(f"{Fore.YELLOW}{player.name} va à la case {new_value}{Style.RESET_ALL}")
+        # Charger les joueurs
+        self._players = []
+        for player in self._data.manifest["players"]:
+            self._players.append(Player(player))
 
-def main():
-    """Fonction principale"""
+        # sort player by color with id
+        self._players = sorted(self._players, key=lambda x: MonopolyGame.static_colors.index(x.id))
+
+        # Charger les cases
+        self._squares = []
+
+        # Auction
+        self._auction = Auction(MemoryReader.hex_to_int(self._data.manifest["auction"]))
+        
+    @property
+    def auction(self) -> Auction:
+        """Renvoie l'instance de l'enchère"""
+        return self._auction
+
+    @property
+    def players(self) -> List[Player]:
+        """Renvoie la liste des joueurs"""
+        return self._players
     
-    init()
+    @players.setter
+    def players(self, value: List[Player]):
+        """Définit la liste des joueurs"""
+        self._players = value
+        
+    def get_player_by_id(self, player_id: str) -> Player:
+        """Renvoie un joueur par son ID"""
+        for player in self._players:
+            if player.id == player_id:
+                return player
+        return None
     
-    print(f"{Fore.GREEN}Initialisation du jeu Monopoly...{Style.RESET_ALL}")
+    def get_player_by_name(self, player_name: str) -> Player:
+        """Renvoie un joueur par son nom"""
+        for player in self._players:
+            if player.name == player_name:
+                return player
+        return None
+        
+    @property
+    def data(self) -> GameLoader:
+        """Renvoie les données du jeu"""
+        return self._data
     
-    try:
-        # Charger les données pour le jeu
-        data = GameLoader("game_files/starting_state.jsonc", "game_files/starting_state.sav")
+    @data.setter
+    def data(self, value: GameLoader):
+        """Définit les données du jeu"""
+        self._data = value
         
-        # Créer une instance du jeu
-        game = MonopolyGame(data)
+    @property
+    def properties(self):
+        data = MemoryReader.get_bytes(
+            MemoryReader.hex_to_int(self._data.manifest["properties"]["address_range"][0]),
+            MemoryReader.hex_to_int(self._data.manifest["properties"]["address_range"][1]) - MemoryReader.hex_to_int(self._data.manifest["properties"]["address_range"][0])
+        )
 
-        def on_auction_bid(bid):
-            p = game.players[bid['player']]
-            print(f'{Fore.YELLOW}Nouvelle enchère: {p.name} pour {bid["bid"]}{Style.RESET_ALL}')
+        lines = str(data)[2:-1].split("\\r\\n")
+        cols = []
+        for line in lines:
+            cols.append(line.split(","))
 
-        
-        events = MonopolyListeners(game)
-        events.tps = 30
-        events.interval_player = .1
-        
-        events.on("player_added", on_player_added)
-        events.on("player_removed", on_player_removed)
-        events.on("player_money_changed", on_player_money_changed)
-        events.on("player_name_changed", on_player_name_changed)
-        events.on("player_dice_changed", on_player_dice_changed)
-        events.on("player_goto_changed", on_player_goto_changed)
-        events.on("message_added", on_message_added)    
-        events.on("message_removed", on_message_removed)
-        events.on("auction_bid", on_auction_bid)
-        
-        events.on("*", on_event)
-        
-        # Configuration des joueurs
-        game.players[0].name = random.choice(["Alice", "Bob", "Charlie", "David", "Eve"])
-        game.players[1].name = random.choice(["Jeff", "Karen", "Linda", "Mike", "Nancy"])
-        # game.players[0].money = random.randint(100, 1000)
-        # game.players[1].money = random.randint(100, 1000)
-        
-        print(game.get_property_by_player_id(game.players[0].id))
-        print(game.get_property_by_player_id(game.players[1].id))
-        
-        print(game.players[0].dices)
-        #print(game.players[1].dices)
-        
-        print(game.players[0].roll)
-        print(game.players[1].roll)
-        
-        events.start()
-        
-        print(f"{Fore.GREEN}Initialisation terminée!{Style.RESET_ALL}")
-
-        # Await exit command
-        while True:
-            time.sleep(1)
-    except Exception as e:
-        print(f"{Fore.RED}Une erreur s'est produite: {e}{Style.RESET_ALL}")
-        print(e)
-        events.stop()
-
-if __name__ == "__main__":
-    main()
+        res = []
+        for col in cols:
+            re = {}
+            for i in range(len(col)):
+                re[cols[0][i].strip().lower()] = col[i].strip()
+            res.append(re)
+            
+        out = []
+        for r in res[1:]:
+            o = {"rents": []}
+            for k, v in r.items():
+                if k == "hybridname":
+                    o["id"] = int(v[8:])
+                elif k == "property":
+                    o["name"] = v
+                elif k == "value":
+                    o["price"] = int(v if v != "" else -1)
+                elif k == "mortgage":
+                    o["mortgage"] = int(v if v != "" else -1)
+                elif k == "housecost":
+                    o["cost"] = int(v if v != "" else -1)
+                elif k.startswith("rent"):
+                    i = int(k[4:])
+                    while len(o["rents"]) < i:
+                        o["rents"].append(-1)
+                    if len(o["rents"]) == i:
+                        o["rents"].append(int(v if v != "" else -1))
+                    else:
+                        o["rents"][i] = int(v if v != "" else -1)
+            out.append(o)
+            
+        return out
+    
+    def get_property_by_id(self, prop_id: int):
+        for prop in self.properties:
+            if prop["id"] == prop_id:
+                return prop
+        return None
+            
+    def get_property_by_name(self, prop_name: str):
+        for prop in self.properties:
+            if prop["name"] == prop_name:
+                return prop
+        return None
+    
+    def get_property_by_player_id(self, player_id: str):
+        player = self.get_player_by_id(player_id)
+        if player is None:
+            return None
+        return self.get_property_by_id(player.goto)
