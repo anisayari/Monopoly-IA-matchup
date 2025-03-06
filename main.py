@@ -1,84 +1,143 @@
-import time
-import sys
+from typing import List
 import dolphin_memory_engine as dme
-from src.game.monopoly import MonopolyGame
-from colorama import init, Fore, Style
 
-def main():
-    """Fonction principale"""
-    # Initialiser colorama pour les couleurs dans le terminal
-    init()
-    
-    print(f"{Fore.GREEN}Initialisation du jeu Monopoly...{Style.RESET_ALL}")
-    
-    try:
-        # Créer une instance du jeu
-        game = MonopolyGame()
-        
-        # Configurer les joueurs
-        game.blue_player.name = "Ayari"
-        game.red_player.name = "Claude"
-        game.blue_player.money = 5000
-        game.red_player.money = 5000
-        
-        # Initialiser le joueur actuel (par défaut, c'est le joueur bleu qui commence)
-        game._game_state['current_player'] = "Ayari"
-        game._game_state['last_property_offer'] = ('', 0)  # Initialiser pour éviter les erreurs
-        
-        # Afficher un message de début de tour pour le premier joueur
-        game._display.display_new_turn("Ayari")
-        
-        # Afficher l'état initial du jeu et la liste des propriétés une seule fois
-        game.display_properties()
-        
-        # Ajouter des recherches personnalisées
-        game.setup_custom_memory_searches()
-        
-        print(f"\n{Fore.GREEN}Surveillance des changements en cours... (Ctrl+C pour arrêter){Style.RESET_ALL}")
-        print(f"{Fore.GREEN}Les adresses mémoire trouvées seront automatiquement enregistrées et utilisées.{Style.RESET_ALL}")
-        
-        # Compteur pour afficher l'état du jeu périodiquement
-        last_state_display = time.time()
-        
-        # Boucle principale
-        while True:
-            # Vérifier l'état du jeu moins fréquemment (toutes les 1 secondes)
-            # mais n'afficher que s'il y a des changements
-            current_time = time.time()
-            if current_time - last_state_display >= 1.0:
-                game.display_game_state()
-                last_state_display = current_time
-            
-            # Pause pour éviter de surcharger le CPU
-            time.sleep(0.2)
-            
-            # Afficher les adresses trouvées toutes les 10 secondes
-            if int(time.time()) % 10 == 0:
-                try:
-                    addresses = game._dynamic_addresses
-                    if addresses:
-                        print(f"\n{Fore.CYAN}Adresses mémoire trouvées:{Style.RESET_ALL}")
-                        for key, addr in addresses.items():
-                            print(f"{Fore.CYAN}{key}: 0x{addr:08X}{Style.RESET_ALL}")
-                except Exception as e:
-                    print(f"\n{Fore.RED}Erreur lors de l'affichage des adresses: {str(e)}{Style.RESET_ALL}")
-            
-    except KeyboardInterrupt:
-        print(f"\n{Fore.YELLOW}Arrêt du programme demandé par l'utilisateur.{Style.RESET_ALL}")
-    except Exception as e:
-        print(f"\n{Fore.RED}Erreur: {str(e)}{Style.RESET_ALL}")
-        import traceback
-        traceback.print_exc()
-    finally:
-        try:
-            print(f"{Fore.GREEN}Nettoyage et fermeture...{Style.RESET_ALL}")
-            # Le nettoyage est géré par le destructeur de MonopolyGame
-        except Exception as e:
-            print(f"\n{Fore.RED}Erreur lors du nettoyage: {str(e)}{Style.RESET_ALL}")
+from ..core.memory_reader import MemoryReader
+from ..core.game_loader import GameLoader
+from ..core.player import Player
+from ..core.auction import Auction
 
-if __name__ == "__main__":
-    main()
+class MonopolyGame:
+    """Classe principale gérant le jeu Monopoly"""
     
+    _data: GameLoader
+    _players: List[Player]
+    _auction: Auction
+    static_colors = ["blue", "red", "green", "yellow"]
     
+    def __init__(self, data):
+        """Initialise le jeu Monopoly"""
+        
+        # Initialiser les données pour le jeu
+        self._data = data
+        
+        # Vérifier la connexion à Dolphin
+        if not dme.is_hooked():
+            dme.hook()
+        if not dme.is_hooked():
+            raise Exception("Impossible de se connecter à Dolphin Memory Engine")
+
+        # Charger les joueurs
+        self._players = []
+        for player in self._data.manifest["players"]:
+            self._players.append(Player(player))
+
+        # sort player by color with id
+        self._players = sorted(self._players, key=lambda x: MonopolyGame.static_colors.index(x.id))
+
+        # Charger les cases
+        self._squares = []
+
+        # Auction
+        self._auction = Auction(MemoryReader.hex_to_int(self._data.manifest["auction"]))
+        
+    @property
+    def auction(self) -> Auction:
+        """Renvoie l'instance de l'enchère"""
+        return self._auction
+
+    @property
+    def players(self) -> List[Player]:
+        """Renvoie la liste des joueurs"""
+        return self._players
     
+    @players.setter
+    def players(self, value: List[Player]):
+        """Définit la liste des joueurs"""
+        self._players = value
+        
+    def get_player_by_id(self, player_id: str) -> Player:
+        """Renvoie un joueur par son ID"""
+        for player in self._players:
+            if player.id == player_id:
+                return player
+        return None
     
+    def get_player_by_name(self, player_name: str) -> Player:
+        """Renvoie un joueur par son nom"""
+        for player in self._players:
+            if player.name == player_name:
+                return player
+        return None
+        
+    @property
+    def data(self) -> GameLoader:
+        """Renvoie les données du jeu"""
+        return self._data
+    
+    @data.setter
+    def data(self, value: GameLoader):
+        """Définit les données du jeu"""
+        self._data = value
+        
+    @property
+    def properties(self):
+        data = MemoryReader.get_bytes(
+            MemoryReader.hex_to_int(self._data.manifest["properties"]["address_range"][0]),
+            MemoryReader.hex_to_int(self._data.manifest["properties"]["address_range"][1]) - MemoryReader.hex_to_int(self._data.manifest["properties"]["address_range"][0])
+        )
+
+        lines = str(data)[2:-1].split("\\r\\n")
+        cols = []
+        for line in lines:
+            cols.append(line.split(","))
+
+        res = []
+        for col in cols:
+            re = {}
+            for i in range(len(col)):
+                re[cols[0][i].strip().lower()] = col[i].strip()
+            res.append(re)
+            
+        out = []
+        for r in res[1:]:
+            o = {"rents": []}
+            for k, v in r.items():
+                if k == "hybridname":
+                    o["id"] = int(v[8:])
+                elif k == "property":
+                    o["name"] = v
+                elif k == "value":
+                    o["price"] = int(v if v != "" else -1)
+                elif k == "mortgage":
+                    o["mortgage"] = int(v if v != "" else -1)
+                elif k == "housecost":
+                    o["cost"] = int(v if v != "" else -1)
+                elif k.startswith("rent"):
+                    i = int(k[4:])
+                    while len(o["rents"]) < i:
+                        o["rents"].append(-1)
+                    if len(o["rents"]) == i:
+                        o["rents"].append(int(v if v != "" else -1))
+                    else:
+                        o["rents"][i] = int(v if v != "" else -1)
+            out.append(o)
+            
+        return out
+    
+    def get_property_by_id(self, prop_id: int):
+        for prop in self.properties:
+            if prop["id"] == prop_id:
+                return prop
+        return None
+            
+    def get_property_by_name(self, prop_name: str):
+        for prop in self.properties:
+            if prop["name"] == prop_name:
+                return prop
+        return None
+    
+    def get_property_by_player_id(self, player_id: str):
+        player = self.get_player_by_id(player_id)
+        if player is None:
+            return None
+        return self.get_property_by_id(player.goto)

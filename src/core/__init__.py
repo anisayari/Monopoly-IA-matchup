@@ -1,4 +1,4 @@
 from .memory_reader import MemoryReader
-from .memory_addresses import MemoryAddresses
+from .property import Property
 
-__all__ = ['MemoryReader', 'MemoryAddresses'] 
+__all__ = ['MemoryReader', 'Property'] 

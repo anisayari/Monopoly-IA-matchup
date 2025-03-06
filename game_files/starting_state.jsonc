@@ -1,0 +1,130 @@
+{
+    "players": [
+        {
+            "id": "red",
+            "address": {
+                "name": [
+                    "90025438", // Top banner
+                    "804DFDCA",
+                    "8051C1E4",
+                    "93014C34",
+                    "93036108",
+                    "9303DD64"
+                ],
+                "money": [
+                    "9303DD5C",
+                    "9003C0C4"
+                ],
+                "money_label": [
+                    "0x90024B5B"
+                ],
+                "goto": [
+                    "0x804ED8EB",
+                    "0x804F63AB"
+                ],
+                "position": [
+                    "0x804ED8EF",
+                    "0x804F63AF"
+                ],
+                "base": "0x9303DC58" // First dice address
+            }
+        },
+        {
+            "id": "blue",
+            "address": {
+                "name": [
+                    "90023178", // Top banner
+                    "804DFDA0",
+                    "8051C0E4",
+                    "93014B34",
+                    "93036008",
+                    "9303DB74"
+                ],
+                "money": [
+                    "9303DB6C",
+                    "9003C0B8"
+                ],
+                "money_label": [
+                    "900226D3"
+                ],
+                "goto": [
+                    "0x804ED3AB",
+                    "0x804F63AF"
+                ],
+                "position": [
+                    "0x804ED3AF",
+                    "0x804F63AF"
+                ],
+                "base": "0x9303DA68"
+            }
+        }
+    ],
+    "properties": {
+        "address_range": [
+            "0x92B96E5C",
+            "0x92B97529"
+        ]
+    },
+    "auction": "0x8053D0A0",
+    "messages": {
+        "address_range": [
+            "0x90037199",
+            "0x90FA0209"
+        ],
+        "events": [
+            {
+                "id": "want_to_buy_house",
+                "type": "address",
+                "address": "0x91D617D4"
+            },
+            {
+                "id": "want_to_buy_square",
+                "type": "address",
+                "address": "91D60BAC"
+            },
+            {
+                "id": "would_you_like_to_do",
+                "type": "address",
+                "address": "0x91D5FF10"
+            },
+            {
+                "id": "won_the_roll",
+                "type": "address",
+                "address": "905AE510",
+                "byte_replace": {
+                    "%1": "process:player_names"
+                }
+            },
+            {
+                "id": "shake_to_roll_dice",
+                "type": "address",
+                "address": "90F00868",
+                "byte_replace": {
+                    "%1": "process:player_names"
+                }
+            },
+            {
+                "id": "off_to_jail",
+                "type": "address",
+                "address": "905AC174",
+                "byte_replace": {
+                    "%1": "process:player_names"
+                }
+            },
+            {
+                "id": "pay_the_bail",
+                "type": "pattern",
+                "pattern": "Do you want to pay the bail, roll for doubles or use a get out of free jail card (if you have one)?",
+                "address": "905AEBD0"
+            },
+            {
+                "id": "has_paid_a_fine",
+                "type": "address",
+                "address": "91D6100C",
+                "byte_replace": {
+                    "%1": "process:player_names"
+                }
+            }
+        ]
+    }
+}
