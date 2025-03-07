@@ -481,8 +481,8 @@
     "current_turn": 0,
     "player_count": 2,
     "player_names": [
-      "aaaaaaaaa",
-      "ggggggggg"
+      "䋜",
+      "ꮭ쫾聅댜"
     ]
   },
   "events": [
@@ -520,24 +520,10 @@
       "action": "receive_money",
       "detail": "1500€ (passage par la case départ)",
       "message": "ꮭ쫾聅댜 reçoit 1500€ pour passage par la case départ."
-    },
-    {
-      "turn": 0,
-      "player": "䋜",
-      "action": "change_name",
-      "detail": "aaaaaaaaa",
-      "message": "䋜 change son nom en aaaaaaaaa."
-    },
-    {
-      "turn": 0,
-      "player": "ꮭ쫾聅댜",
-      "action": "change_name",
-      "detail": "ggggggggg",
-      "message": "ꮭ쫾聅댜 change son nom en ggggggggg."
     }
   ],
   "players": {
-    "aaaaaaaaa": {
+    "䋜": {
       "current_player": true,
       "dice_result": [
         0,
@@ -551,7 +537,7 @@
       "current_space": "GO",
       "jail": false
     },
-    "ggggggggg": {
+    "ꮭ쫾聅댜": {
       "current_player": false,
       "dice_result": [
         4294967295,

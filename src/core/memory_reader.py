@@ -1,6 +1,7 @@
 import dolphin_memory_engine as dme
+from typing import Union
 
-type Hex = str | int
+Hex = Union[str, int]
 
 class MemoryReader:
     

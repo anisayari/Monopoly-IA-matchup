@@ -87,6 +87,74 @@ agent2 = LLMAgent(model="gpt-4", name="GPT-4")
 game.start_match(agent1, agent2)
 ```
 
+## Interface Web
+
+Une interface web a été ajoutée pour faciliter la gestion et la visualisation du jeu Monopoly. Cette interface permet de :
+
+- Visualiser le contexte du jeu en temps réel
+- Modifier les informations des joueurs (nom, argent)
+- Démarrer et arrêter l'émulateur Dolphin
+- Redémarrer le jeu
+- Configurer les chemins des fichiers nécessaires
+
+### Installation
+
+Pour utiliser l'interface web, assurez-vous d'avoir installé les dépendances supplémentaires :
+
+```bash
+pip install -r requirements.txt
+```
+
+### Démarrage de l'interface web
+
+Pour démarrer l'interface web, exécutez :
+
+```bash
+python run_web.py
+```
+
+L'interface sera accessible à l'adresse http://localhost:5000 dans votre navigateur.
+
+### Configuration
+
+Avant d'utiliser l'interface, vous devez configurer les chemins dans l'onglet "Configuration" :
+
+- **Chemin de Dolphin** : Chemin vers l'exécutable Dolphin (ex: `C:\Program Files\Dolphin\Dolphin.exe`)
+- **Chemin de l'ISO Monopoly** : Chemin vers le fichier ISO du jeu Monopoly
+- **Chemin du fichier de sauvegarde** : Chemin vers le fichier de sauvegarde à utiliser
+
+Vous pouvez également modifier ces chemins directement dans le fichier `config.py`.
+
+### Fonctionnalités
+
+#### Contrôle de Dolphin
+- Démarrer/arrêter l'émulateur Dolphin
+- Redémarrer le jeu Monopoly
+
+#### Gestion des joueurs
+- Modifier le nom des joueurs
+- Ajuster le montant d'argent des joueurs
+
+#### Visualisation du contexte
+- Événements du jeu
+- Informations sur les joueurs
+- Propriétés et leur statut
+- Plateau de jeu
+- JSON brut du contexte
+
+#### Terminal
+- Affichage de la sortie du terminal en temps réel
+
+### Utilisation en parallèle avec le backend
+
+Vous pouvez toujours utiliser le backend séparément pour le débogage en exécutant :
+
+```bash
+python main.py
+```
+
+L'interface web détectera automatiquement les changements dans le fichier de contexte.
+
 ---
 
 # Français

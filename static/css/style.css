@@ -1,0 +1,229 @@
+/* Importation des polices */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Styles généraux */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Terminal et fenêtre JSON */
+.terminal-window, .json-view {
+    background-color: #0a0a0a;
+    color: #f0f0f0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    height: 300px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    border-radius: 0.375rem;
+}
+
+/* Fenêtre Dolphin */
+.dolphin-window {
+    background-color: #0a0a0a;
+    color: #fff;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.375rem;
+}
+
+.dolphin-window iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Couleurs des propriétés */
+.color-brown { background-color: #8B4513; color: white; }
+.color-lightblue { background-color: #87CEEB; color: black; }
+.color-pink { background-color: #FF69B4; color: white; }
+.color-orange { background-color: #FFA500; color: black; }
+.color-red { background-color: #D93A2B; color: white; }
+.color-yellow { background-color: #FFD700; color: black; }
+.color-green { background-color: #008000; color: white; }
+.color-darkblue { background-color: #00008B; color: white; }
+.color-station { background-color: #000000; color: white; }
+.color-utility { background-color: #A9A9A9; color: white; }
+
+/* Animation de chargement */
+.loading {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-left-color: #3498db;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Plateau de jeu */
+.board-container {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    gap: 1px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #0a0a0a;
+}
+
+.board-space {
+    border: 1px solid #222;
+    padding: 2px;
+    font-size: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-color: #111;
+}
+
+.board-space.corner {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.player-marker {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 8px;
+    color: white;
+    z-index: 10;
+}
+
+/* Cartes de joueurs */
+.player-card {
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    background-color: #1a1a1a;
+    border-radius: 0.375rem;
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+.player-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.player-card .card-header {
+    font-weight: 500;
+    padding: 0.75rem;
+    background-color: #222;
+    border-bottom: 1px solid #333;
+}
+
+.player-money {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #10b981;
+}
+
+/* Liste des événements */
+.event-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.event-item {
+    padding: 0.75rem;
+    border-bottom: 1px solid #222;
+    transition: background-color 0.2s;
+}
+
+.event-item:hover {
+    background-color: #1a1a1a;
+}
+
+.event-turn {
+    font-weight: 500;
+    color: #3b82f6;
+    margin-right: 0.5rem;
+}
+
+.event-player {
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+
+/* Formulaires */
+input, select, textarea {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .terminal-window, .json-view, .dolphin-window {
+        height: 200px;
+    }
+    
+    .board-container {
+        max-width: 100%;
+    }
+    
+    .board-space {
+        font-size: 0.5rem;
+        padding: 1px;
+    }
+} 
