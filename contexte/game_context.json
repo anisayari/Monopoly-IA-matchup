@@ -15,7 +15,7 @@
           250
         ],
         "house_price": 50,
-        "owner": "blue",
+        "owner": null,
         "houses": 0
       },
       {
@@ -253,7 +253,7 @@
           1050
         ],
         "house_price": 150,
-        "owner": null,
+        "owner": "blue",
         "houses": 0
       },
       {
@@ -287,7 +287,7 @@
           1100
         ],
         "house_price": 150,
-        "owner": null,
+        "owner": "red",
         "houses": 0
       },
       {
@@ -481,24 +481,24 @@
     "current_turn": 0,
     "player_count": 2,
     "player_names": [
-      "aaaaaaaaa",
-      "ggggggggg"
+      "Bob",
+      "Linda"
     ]
   },
   "events": [
     {
       "turn": 0,
-      "player": "䋜",
+      "player": "Bob",
       "action": "join_game",
       "detail": null,
-      "message": "䋜 a rejoint la partie de Monopoly."
+      "message": "Bob a rejoint la partie de Monopoly."
     },
     {
       "turn": 0,
-      "player": "ꮭ쫾聅댜",
+      "player": "Linda",
       "action": "join_game",
       "detail": null,
-      "message": "ꮭ쫾聅댜 a rejoint la partie de Monopoly."
+      "message": "Linda a rejoint la partie de Monopoly."
     },
     {
       "turn": 0,
@@ -509,58 +509,88 @@
     },
     {
       "turn": 0,
-      "player": "䋜",
-      "action": "receive_money",
-      "detail": "1500€ (passage par la case départ)",
-      "message": "䋜 reçoit 1500€ pour passage par la case départ."
+      "player": "System",
+      "action": "message",
+      "detail": "Trade",
+      "message": "Message: Trade"
     },
     {
       "turn": 0,
-      "player": "ꮭ쫾聅댜",
-      "action": "receive_money",
-      "detail": "1500€ (passage par la case départ)",
-      "message": "ꮭ쫾聅댜 reçoit 1500€ pour passage par la case départ."
+      "player": "System",
+      "action": "message",
+      "detail": "1 Owned",
+      "message": "Message: 1 Owned"
     },
     {
       "turn": 0,
-      "player": "䋜",
-      "action": "change_name",
-      "detail": "aaaaaaaaa",
-      "message": "䋜 change son nom en aaaaaaaaa."
+      "player": "System",
+      "action": "message",
+      "detail": "4 Owned",
+      "message": "Message: 4 Owned"
     },
     {
       "turn": 0,
-      "player": "ꮭ쫾聅댜",
-      "action": "change_name",
-      "detail": "ggggggggg",
-      "message": "ꮭ쫾聅댜 change son nom en ggggggggg."
+      "player": "System",
+      "action": "message",
+      "detail": "2 Owned",
+      "message": "Message: 2 Owned"
+    },
+    {
+      "turn": 0,
+      "player": "System",
+      "action": "message",
+      "detail": "3 Owned",
+      "message": "Message: 3 Owned"
+    },
+    {
+      "turn": 0,
+      "player": "System",
+      "action": "message",
+      "detail": "Un-mortgage Value",
+      "message": "Message: Un-mortgage Value"
+    },
+    {
+      "turn": 0,
+      "player": "System",
+      "action": "rent_notification",
+      "detail": "1 utility = x4 amount on dice in rent.",
+      "message": "System a effectué l'action 'rent_notification' 1 utility = x4 amount on dice in rent.."
+    },
+    {
+      "turn": 0,
+      "player": "System",
+      "action": "rent_notification",
+      "detail": "2 utilities = x10 amount on dice in rent.",
+      "message": "System a effectué l'action 'rent_notification' 2 utilities = x10 amount on dice in rent.."
     }
   ],
   "players": {
-    "aaaaaaaaa": {
+    "Bob": {
       "current_player": true,
       "dice_result": [
-        0,
-        0
+        2,
+        5
       ],
-      "money": 1500,
+      "money": 1490,
       "properties": [
-        0
+        14
       ],
-      "position": 0,
-      "current_space": "GO",
+      "position": 14,
+      "current_space": "Northumberland Avenue",
       "jail": false
     },
-    "ggggggggg": {
+    "Linda": {
       "current_player": false,
       "dice_result": [
-        4294967295,
-        4294967295
+        6,
+        2
       ],
-      "money": 1500,
-      "properties": [],
-      "position": 0,
-      "current_space": "GO",
+      "money": 1460,
+      "properties": [
+        16
+      ],
+      "position": 16,
+      "current_space": "Bow Street",
       "jail": false
     }
   },

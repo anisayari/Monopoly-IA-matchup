@@ -1,0 +1,17 @@
+{
+  "name": "monopoly-ia-matchup",
+  "version": "1.0.0",
+  "description": "⚠️ **Project Status: Under Construction** - This project is actively being developed.\r ⚠️ **Statut du Projet : En Construction** - Ce projet est en cours de développement.",
+  "scripts": {
+    "install": "pip install -r requirements.txt",
+    "start": "python main.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anisayari/Monopoly-IA-matchup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anisayari/Monopoly-IA-matchup/issues"
+  },
+  "homepage": "https://github.com/anisayari/Monopoly-IA-matchup#readme"
+}
