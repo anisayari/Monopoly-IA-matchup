@@ -92,14 +92,11 @@ def main():
         # game.players[0].money = random.randint(100, 1000)
         # game.players[1].money = random.randint(100, 1000)
         
-        print(game.get_property_by_player_id(game.players[0].id))
-        print(game.get_property_by_player_id(game.players[1].id))
+        print(json.dumps(game.properties, indent=2, default=str))
+
+        print(game.players[0].properties)
+        print(game.players[1].properties)
         
-        print(game.players[0].dices)
-        #print(game.players[1].dices)
-        
-        print(game.players[0].roll)
-        print(game.players[1].roll)
         
         events.start()
         

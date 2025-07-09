@@ -172,3 +172,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Remove ROMs
+*.rvz
+
+contexte/history/
