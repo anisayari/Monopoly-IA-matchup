@@ -6,4 +6,5 @@ pyautogui==0.9.54
 pillow>=10.0.0
 pygetwindow==0.0.9
 opencv-python==4.8.0.76
-mss==9.0.1 
+mss==9.0.1
+pywin32==310
