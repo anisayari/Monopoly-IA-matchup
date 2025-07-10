@@ -31,7 +31,7 @@ class DolphinCalibrator:
         def enum_windows_callback(hwnd, windows):
             if win32gui.IsWindowVisible(hwnd):
                 window_text = win32gui.GetWindowText(hwnd)
-                if "dolphin" in window_text.lower() or "mario party" in window_text.lower():
+                if "dolphin" in window_text.lower():
                     windows.append((hwnd, window_text))
 
         windows = []

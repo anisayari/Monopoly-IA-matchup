@@ -1,4 +1,6 @@
 import json
+import os
+
 import numpy as np
 import tkinter as tk
 import win32gui
@@ -69,7 +71,7 @@ class AffineTransformer:
 
 
 class WiimoteDisplay:
-    def __init__(self, calibration_file: str = "calibration.json"):
+    def __init__(self, calibration_file: str = os.path.join("game_files", "calibration.json")):
         # Load calibration data
         try:
             with open(calibration_file, 'r') as f:
@@ -146,7 +148,7 @@ class WiimoteDisplay:
         def enum_windows_callback(hwnd, windows):
             if win32gui.IsWindowVisible(hwnd):
                 window_text = win32gui.GetWindowText(hwnd)
-                if "dolphin" in window_text.lower() or "monopoly" in window_text.lower() or "mario party" in window_text.lower():
+                if "dolphin" in window_text.lower() or "monopoly" in window_text.lower():
                     windows.append((hwnd, window_text))
 
         windows = []
