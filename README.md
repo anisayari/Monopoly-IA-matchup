@@ -83,86 +83,43 @@ pip install -r requirements.txt
 
 ## 🔧 Usage
 
-### Running the Game
+### 🚀 Quick Start
+
+```bash
+# Launch the interactive launcher
+python launcher.py
+```
+
+This opens an interactive menu where you can:
+- ✅ Check prerequisites (Dolphin, OpenAI API key, etc.)
+- 🎮 Launch console mode
+- 🌐 Launch web interface
+- 🤖 Launch AI mode
+- 🧪 Run tests
+
+### Launch Modes
 
 #### 1. Console Mode (without AI)
-```bash
-# Basic console mode - displays game events in real-time
-python main.py
-```
+Displays real-time game events in the terminal.
 
 #### 2. Web Interface
-```bash
-# Launch web interface
-python run_web.py
-# or
-python app.py
-```
-Then open: http://localhost:5000
+Opens a browser interface to monitor the game at http://localhost:5000
 
 #### 3. AI Mode 🤖
+Let AI players control the game automatically.
 
-##### Prerequisites:
-- Set OpenAI API key: `export OPENAI_API_KEY="your-api-key"`
-- Launch OmniParser for automatic clicks:
-  ```bash
-  cd omniparserserver
-  docker-compose up
-  ```
-
-##### Launch with AI:
-```bash
-# AI controls player 0
-python src/ai/run_ai_mode.py --ai-players 0
-
-# Multiple AI players
-python src/ai/run_ai_mode.py --ai-players 0,2 --model gpt-4
-
-# With specific temperature
-python src/ai/run_ai_mode.py --ai-players 0 --temperature 0.7
-```
-
-### Complete Launch Sequence
-
-1. **Start Dolphin Emulator** with Monopoly game
-2. **Load save state** (if needed)
-3. **Start OmniParser** (for AI mode):
+### Prerequisites for AI Mode
+1. Set OpenAI API key: `export OPENAI_API_KEY="your-api-key"`
+2. Start OmniParser (for automatic clicks):
    ```bash
    cd omniparserserver
    docker-compose up
    ```
-4. **Launch the game**:
-   ```bash
-   # Check everything is ready
-   echo "1. Is Dolphin running? (y/n)"
-   echo "2. Is Monopoly loaded? (y/n)"
-   echo "3. Is OmniParser active? (y/n)"
-   echo "4. Is OPENAI_API_KEY set? (y/n)"
-   
-   # If all OK, launch
-   python src/ai/run_ai_mode.py --ai-players 0
-   ```
 
-### AI Integration in Existing Code
-
-To add AI to your existing setup, modify `main.py`:
-```python
-from src.ai.ai_integration import AIIntegration
-
-# After creating the game
-monopoly = MonopolyGame(listeners, contexte)
-
-# Enable AI for player 0
-ai_manager = AIIntegration.add_ai_to_main(
-    monopoly, 
-    enable_ai=True,
-    ai_players=[0]
-)
-
-# Don't forget to stop at the end
-if ai_manager:
-    ai_manager.stop()
-```
+### AI Configuration Options
+- Choose which players should be AI-controlled (e.g., 0, 1, 2)
+- Select AI model (GPT-4, GPT-3.5-turbo)
+- Adjust temperature for AI behavior (0.0-1.0)
 
 ## Interface Web
 
@@ -341,86 +298,43 @@ Le système prend en charge plusieurs joueurs IA simultanément et peut utiliser
 
 ## 🔧 Utilisation
 
-### Lancer le jeu
+### 🚀 Démarrage Rapide
+
+```bash
+# Lancer le launcher interactif
+python launcher.py
+```
+
+Cela ouvre un menu interactif où vous pouvez :
+- ✅ Vérifier les prérequis (Dolphin, clé API OpenAI, etc.)
+- 🎮 Lancer le mode console
+- 🌐 Lancer l'interface web
+- 🤖 Lancer le mode IA
+- 🧪 Exécuter les tests
+
+### Modes de Lancement
 
 #### 1. Mode Console (sans IA)
-```bash
-# Mode console de base - affiche les événements du jeu en temps réel
-python main.py
-```
+Affiche les événements du jeu en temps réel dans le terminal.
 
 #### 2. Interface Web
-```bash
-# Lancer l'interface web
-python run_web.py
-# ou
-python app.py
-```
-Puis ouvrir : http://localhost:5000
+Ouvre une interface navigateur pour surveiller le jeu sur http://localhost:5000
 
 #### 3. Mode IA 🤖
+Laisse les joueurs IA contrôler le jeu automatiquement.
 
-##### Prérequis :
-- Définir la clé API OpenAI : `export OPENAI_API_KEY="votre-clé-api"`
-- Lancer OmniParser pour les clics automatiques :
-  ```bash
-  cd omniparserserver
-  docker-compose up
-  ```
-
-##### Lancer avec l'IA :
-```bash
-# L'IA contrôle le joueur 0
-python src/ai/run_ai_mode.py --ai-players 0
-
-# Plusieurs joueurs IA
-python src/ai/run_ai_mode.py --ai-players 0,2 --model gpt-4
-
-# Avec une température spécifique
-python src/ai/run_ai_mode.py --ai-players 0 --temperature 0.7
-```
-
-### Séquence de lancement complète
-
-1. **Démarrer l'émulateur Dolphin** avec le jeu Monopoly
-2. **Charger la sauvegarde** (si nécessaire)
-3. **Démarrer OmniParser** (pour le mode IA) :
+### Prérequis pour le Mode IA
+1. Définir la clé API OpenAI : `export OPENAI_API_KEY="votre-clé-api"`
+2. Démarrer OmniParser (pour les clics automatiques) :
    ```bash
    cd omniparserserver
    docker-compose up
    ```
-4. **Lancer le jeu** :
-   ```bash
-   # Vérifier que tout est prêt
-   echo "1. Dolphin est-il en cours d'exécution ? (o/n)"
-   echo "2. Monopoly est-il chargé ? (o/n)"
-   echo "3. OmniParser est-il actif ? (o/n)"
-   echo "4. OPENAI_API_KEY est-elle définie ? (o/n)"
-   
-   # Si tout est OK, lancer
-   python src/ai/run_ai_mode.py --ai-players 0
-   ```
 
-### Intégration de l'IA dans le code existant
-
-Pour ajouter l'IA à votre configuration existante, modifiez `main.py` :
-```python
-from src.ai.ai_integration import AIIntegration
-
-# Après avoir créé le jeu
-monopoly = MonopolyGame(listeners, contexte)
-
-# Activer l'IA pour le joueur 0
-ai_manager = AIIntegration.add_ai_to_main(
-    monopoly, 
-    enable_ai=True,
-    ai_players=[0]
-)
-
-# N'oubliez pas d'arrêter à la fin
-if ai_manager:
-    ai_manager.stop()
-```
+### Options de Configuration IA
+- Choisir quels joueurs sont contrôlés par l'IA (ex: 0, 1, 2)
+- Sélectionner le modèle IA (GPT-4, GPT-3.5-turbo)
+- Ajuster la température pour le comportement de l'IA (0.0-1.0)
 
 ## 🧪 Tests
 

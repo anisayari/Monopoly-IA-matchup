@@ -27,6 +27,11 @@ from monopoly_ai.game.player import Player
 from .game_event_listener import GameEventListener, DecisionContext, DecisionType
 from .action_executor import ActionExecutor
 
+try:
+    from .web_notifier import web_notifier
+except ImportError:
+    web_notifier = None
+
 
 @dataclass
 class AIPlayer:
@@ -409,11 +414,30 @@ class AIGameManager:
         if decision.get('reason'):
             print(f"[AI Manager] Reason: {decision['reason']}")
         
+        # Send decision to web interface
+        if web_notifier:
+            web_notifier.send_decision(
+                player=context.player_id,
+                decision_type=context.decision_type.value,
+                decision=action,
+                reason=decision.get('reason'),
+                confidence=decision.get('confidence'),
+                action_required=True,
+                action_info={
+                    "type": action,
+                    "target": decision.get('property') or decision.get('target') or 'Game UI',
+                    "instructions": f"Click {action} button"
+                }
+            )
+        
         # Use ActionExecutor to perform the action
         success = self.action_executor.execute_action(action, decision, context)
         
         if not success:
             print(f"[AI Manager] Failed to execute action: {action}")
+        elif web_notifier:
+            # Mark action as completed
+            web_notifier.complete_action()
     
     def _get_player_monopolies(self, player) -> List[str]:
         """Get list of monopolies owned by player."""

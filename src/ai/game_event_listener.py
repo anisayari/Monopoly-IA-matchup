@@ -15,6 +15,11 @@ import threading
 if TYPE_CHECKING:
     from src.game.monopoly import MonopolyGame
 
+try:
+    from .web_notifier import web_notifier
+except ImportError:
+    web_notifier = None
+
 
 class DecisionType(Enum):
     """Types of decisions the AI needs to make."""
@@ -124,6 +129,15 @@ class GameEventListener:
         """Handle new messages from the game."""
         message = message_data.get('message', '')
         group = message_data.get('group', '')
+        
+        # Send to web interface
+        if web_notifier:
+            web_notifier.send_event(
+                event_type="message",
+                message=message,
+                player=self._get_current_player(),
+                data=message_data
+            )
         
         # Check if this message indicates a decision is needed
         decision_type = self._detect_decision_type(message, group)
