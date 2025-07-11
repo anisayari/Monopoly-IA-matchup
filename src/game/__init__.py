@@ -1,3 +1,2 @@
-from .monopoly import MonopolyGame
-
-__all__ = ['MonopolyGame'] 
+# Game package initialization
+# Imports are done explicitly when needed to avoid circular dependencies 

@@ -1,0 +1,391 @@
+{
+  "players": [
+    "AI Alpha",
+    "AI Beta"
+  ],
+  "total_turns": 5,
+  "events": [
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 1500
+      },
+      "time": "2025-07-10T09:26:18.119606"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 5,
+        "die2": 2,
+        "total": 7
+      },
+      "time": "2025-07-10T09:26:18.119778"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 7,
+        "square": "Chance"
+      },
+      "time": "2025-07-10T09:26:18.119843"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "special_square",
+      "details": {
+        "square": "Chance"
+      },
+      "time": "2025-07-10T09:26:18.119954"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "turn_start",
+      "details": {
+        "cash": 1500
+      },
+      "time": "2025-07-10T09:26:18.882195"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "dice_roll",
+      "details": {
+        "die1": 3,
+        "die2": 2,
+        "total": 5
+      },
+      "time": "2025-07-10T09:26:18.882655"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "land_on",
+      "details": {
+        "position": 5,
+        "square": "Reading Railroad"
+      },
+      "time": "2025-07-10T09:26:18.882711"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": true,
+        "options": {
+          "property_name": "Reading Railroad",
+          "price": 200,
+          "cash": 1500,
+          "color": null
+        }
+      },
+      "time": "2025-07-10T09:26:19.761565"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "buy_property",
+      "details": {
+        "property": "Reading Railroad",
+        "price": 200
+      },
+      "time": "2025-07-10T09:26:19.761588"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 1700
+      },
+      "time": "2025-07-10T09:26:21.411671"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 5,
+        "die2": 2,
+        "total": 7
+      },
+      "time": "2025-07-10T09:26:23.189466"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 14,
+        "square": "Virginia Avenue"
+      },
+      "time": "2025-07-10T09:26:23.189595"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": true,
+        "options": {
+          "property_name": "Virginia Avenue",
+          "price": 160,
+          "cash": 1700,
+          "color": "pink"
+        }
+      },
+      "time": "2025-07-10T09:26:24.057784"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "buy_property",
+      "details": {
+        "property": "Virginia Avenue",
+        "price": 160
+      },
+      "time": "2025-07-10T09:26:24.057867"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "turn_start",
+      "details": {
+        "cash": 1300
+      },
+      "time": "2025-07-10T09:26:25.614183"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "dice_roll",
+      "details": {
+        "die1": 4,
+        "die2": 6,
+        "total": 10
+      },
+      "time": "2025-07-10T09:26:27.599145"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "land_on",
+      "details": {
+        "position": 15,
+        "square": "Pennsylvania Railroad"
+      },
+      "time": "2025-07-10T09:26:27.599185"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": true,
+        "options": {
+          "property_name": "Pennsylvania Railroad",
+          "price": 200,
+          "cash": 1300,
+          "color": null
+        }
+      },
+      "time": "2025-07-10T09:26:28.593397"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "buy_property",
+      "details": {
+        "property": "Pennsylvania Railroad",
+        "price": 200
+      },
+      "time": "2025-07-10T09:26:28.593450"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 1540
+      },
+      "time": "2025-07-10T09:26:30.121987"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 6,
+        "die2": 5,
+        "total": 11
+      },
+      "time": "2025-07-10T09:26:31.927461"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 25,
+        "square": "B&O Railroad"
+      },
+      "time": "2025-07-10T09:26:31.927499"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": true,
+        "options": {
+          "property_name": "B&O Railroad",
+          "price": 200,
+          "cash": 1540,
+          "color": null
+        }
+      },
+      "time": "2025-07-10T09:26:33.733403"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "buy_property",
+      "details": {
+        "property": "B&O Railroad",
+        "price": 200
+      },
+      "time": "2025-07-10T09:26:33.733481"
+    }
+  ],
+  "chat": [
+    {
+      "sender": "AI Alpha",
+      "message": "Good luck! Looking forward to a fun game\u2014let's make it interesting.",
+      "turn": 0,
+      "time": "2025-07-10T09:26:12.820279"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Thanks! May the best strategist win\u2014watch out for my upcoming moves!",
+      "turn": 0,
+      "time": "2025-07-10T09:26:16.108933"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Reading Railroad adds pressure. Watch out, I\u2019m ready to build up.",
+      "turn": 2,
+      "time": "2025-07-10T09:26:20.305970"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Reading Railroad\u2019s a good move. I\u2019ll keep an eye on your next step\u2014no rush, patience pays!",
+      "turn": 3,
+      "time": "2025-07-10T09:26:21.980795"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Virginia's a good start, but watch out for my next move. Game on!",
+      "turn": 3,
+      "time": "2025-07-10T09:26:24.504043"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Looking forward to your move! Let\u2019s see if I can roll the right numbers to keep the pressure on.",
+      "turn": 4,
+      "time": "2025-07-10T09:26:26.393934"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Thinking about my next move\u2014watch out for the electric company!",
+      "turn": 4,
+      "time": "2025-07-10T09:26:29.016477"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Watch out for my next move\u2014I might just surprise you. Let\u2019s see how the game unfolds!",
+      "turn": 5,
+      "time": "2025-07-10T09:26:30.723482"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "B&O is a strong start, but watch out for my upcoming property acquisitions.",
+      "turn": 5,
+      "time": "2025-07-10T09:26:34.256670"
+    }
+  ],
+  "decisions": {
+    "AI Alpha": [
+      {
+        "turn": 3,
+        "type": "buy_property",
+        "decision": true,
+        "context": {
+          "property_name": "Virginia Avenue",
+          "price": 160,
+          "cash": 1700,
+          "color": "pink"
+        }
+      },
+      {
+        "turn": 5,
+        "type": "buy_property",
+        "decision": true,
+        "context": {
+          "property_name": "B&O Railroad",
+          "price": 200,
+          "cash": 1540,
+          "color": null
+        }
+      }
+    ],
+    "AI Beta": [
+      {
+        "turn": 2,
+        "type": "buy_property",
+        "decision": true,
+        "context": {
+          "property_name": "Reading Railroad",
+          "price": 200,
+          "cash": 1500,
+          "color": null
+        }
+      },
+      {
+        "turn": 4,
+        "type": "buy_property",
+        "decision": true,
+        "context": {
+          "property_name": "Pennsylvania Railroad",
+          "price": 200,
+          "cash": 1300,
+          "color": null
+        }
+      }
+    ]
+  },
+  "summary": {
+    "turn": 5,
+    "total_events": 24,
+    "chat_messages": 9,
+    "events_by_type": {
+      "turn_start": 5,
+      "dice_roll": 5,
+      "land_on": 5,
+      "special_square": 1,
+      "decision_buy_property": 4,
+      "buy_property": 4
+    },
+    "decisions_by_player": {
+      "AI Alpha": 2,
+      "AI Beta": 2
+    }
+  }
+}

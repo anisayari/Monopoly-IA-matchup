@@ -1,0 +1,93 @@
+Monopoly AI Integration Test Report
+Generated: Ven 11 jul 2025 11:36:44 CEST
+========================================
+
+ai (unittest.loader._FailedTest) ... ERROR
+
+======================================================================
+ERROR: ai (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: ai
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 154, in loadTestsFromName
+    module = __import__(module_name)
+ModuleNotFoundError: No module named 'tests.ai'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+ai (unittest.loader._FailedTest) ... ERROR
+
+======================================================================
+ERROR: ai (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: ai
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 154, in loadTestsFromName
+    module = __import__(module_name)
+ModuleNotFoundError: No module named 'tests.ai'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+ai (unittest.loader._FailedTest) ... ERROR
+
+======================================================================
+ERROR: ai (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: ai
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 154, in loadTestsFromName
+    module = __import__(module_name)
+ModuleNotFoundError: No module named 'tests.ai'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+ai (unittest.loader._FailedTest) ... ERROR
+
+======================================================================
+ERROR: ai (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: ai
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 154, in loadTestsFromName
+    module = __import__(module_name)
+ModuleNotFoundError: No module named 'tests.ai'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+ai (unittest.loader._FailedTest) ... ERROR
+
+======================================================================
+ERROR: ai (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: ai
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 154, in loadTestsFromName
+    module = __import__(module_name)
+ModuleNotFoundError: No module named 'tests.ai'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+Total test modules: 5
+[0;32mPassed: 5[0m
+[0;31mFailed: 0[0m
+
+========================================
+Summary:
+Total modules: 5
+Passed: 5
+Failed: 0

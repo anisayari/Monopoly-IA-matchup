@@ -1,0 +1,23 @@
+{
+  "ai_players": [0, 2],
+  "openai_api_key": "your-api-key-here-or-use-env-var",
+  "model": "gpt-4-turbo-preview",
+  "temperature": 0.7,
+  "omniparser_url": "http://localhost:8000",
+  "decision_timeout": 10.0,
+  "screenshot_cache_duration": 0.5,
+  "click_delay": 0.5,
+  "action_delay": 1.0,
+  "player_configs": {
+    "0": {
+      "name": "AI Player 1",
+      "strategy": "balanced",
+      "risk_tolerance": 0.5
+    },
+    "2": {
+      "name": "AI Player 2", 
+      "strategy": "aggressive",
+      "risk_tolerance": 0.8
+    }
+  }
+}

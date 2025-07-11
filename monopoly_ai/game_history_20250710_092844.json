@@ -1,0 +1,266 @@
+{
+  "players": [
+    "AI Alpha",
+    "AI Beta"
+  ],
+  "total_turns": 2,
+  "events": [
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 1500
+      },
+      "time": "2025-07-10T09:28:33.503053"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 3,
+        "die2": 2,
+        "total": 5
+      },
+      "time": "2025-07-10T09:28:33.503085"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 5,
+        "square": "Reading Railroad"
+      },
+      "time": "2025-07-10T09:28:33.503094"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": false,
+        "options": {
+          "property_name": "Reading Railroad",
+          "price": 200,
+          "cash": 1500,
+          "color": null
+        }
+      },
+      "time": "2025-07-10T09:28:34.841715"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "decision_auction_initial_bid",
+      "details": {
+        "decision": 80,
+        "options": {
+          "property_name": "Reading Railroad",
+          "base_price": 200,
+          "property_color": null,
+          "current_cash": 1500,
+          "suggested_min_bid": 80,
+          "suggested_max_bid": 160,
+          "auction_instructions": "This is an AUCTION - you can bid ANY amount from $1 up to your available cash. The base price is just reference. Smart bidders often start LOW (40-60% of base price) to get a bargain!"
+        }
+      },
+      "time": "2025-07-10T09:28:36.585696"
+    },
+    {
+      "turn": 1,
+      "player": 1,
+      "type": "decision_auction_initial_bid",
+      "details": {
+        "decision": 80,
+        "options": {
+          "property_name": "Reading Railroad",
+          "base_price": 200,
+          "property_color": null,
+          "current_cash": 1500,
+          "suggested_min_bid": 80,
+          "suggested_max_bid": 160,
+          "auction_instructions": "This is an AUCTION - you can bid ANY amount from $1 up to your available cash. The base price is just reference. Smart bidders often start LOW (40-60% of base price) to get a bargain!"
+        }
+      },
+      "time": "2025-07-10T09:28:38.147288"
+    },
+    {
+      "turn": 1,
+      "player": 1,
+      "type": "decision_auction_counter_bid",
+      "details": {
+        "decision": {
+          "bid": false,
+          "new_bid": 0
+        },
+        "options": {
+          "property_name": "Reading Railroad",
+          "current_high_bid": 80,
+          "current_leader": "AI Alpha",
+          "my_cash": 1500,
+          "my_last_bid": 80,
+          "min_raise": 10,
+          "property_value": 200
+        }
+      },
+      "time": "2025-07-10T09:28:39.841029"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "pass_property",
+      "details": {
+        "property": "Reading Railroad"
+      },
+      "time": "2025-07-10T09:28:40.846230"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "turn_start",
+      "details": {
+        "cash": 1500
+      },
+      "time": "2025-07-10T09:28:42.191189"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "dice_roll",
+      "details": {
+        "die1": 6,
+        "die2": 1,
+        "total": 7
+      },
+      "time": "2025-07-10T09:28:43.932538"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "land_on",
+      "details": {
+        "position": 7,
+        "square": "Chance"
+      },
+      "time": "2025-07-10T09:28:43.932576"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "special_square",
+      "details": {
+        "square": "Chance"
+      },
+      "time": "2025-07-10T09:28:43.932631"
+    }
+  ],
+  "chat": [
+    {
+      "sender": "AI Alpha",
+      "message": "Good luck! Let\u2019s make this an exciting game\u2014looking forward to a fair fight.",
+      "turn": 0,
+      "time": "2025-07-10T09:28:29.918210"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Thanks! May the best strategist win\u2014let\u2019s keep it thrilling!",
+      "turn": 0,
+      "time": "2025-07-10T09:28:31.492911"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Looking forward to my next move\u2014hope you're ready to negotiate!",
+      "turn": 1,
+      "time": "2025-07-10T09:28:41.282840"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Ready when you are\u2014let\u2019s see if we can strike a deal that benefits both of us.",
+      "turn": 2,
+      "time": "2025-07-10T09:28:42.727351"
+    }
+  ],
+  "decisions": {
+    "AI Alpha": [
+      {
+        "turn": 1,
+        "type": "buy_property",
+        "decision": false,
+        "context": {
+          "property_name": "Reading Railroad",
+          "price": 200,
+          "cash": 1500,
+          "color": null
+        }
+      },
+      {
+        "turn": 1,
+        "type": "auction_initial_bid",
+        "decision": 80,
+        "context": {
+          "property_name": "Reading Railroad",
+          "base_price": 200,
+          "property_color": null,
+          "current_cash": 1500,
+          "suggested_min_bid": 80,
+          "suggested_max_bid": 160,
+          "auction_instructions": "This is an AUCTION - you can bid ANY amount from $1 up to your available cash. The base price is just reference. Smart bidders often start LOW (40-60% of base price) to get a bargain!"
+        }
+      }
+    ],
+    "AI Beta": [
+      {
+        "turn": 1,
+        "type": "auction_initial_bid",
+        "decision": 80,
+        "context": {
+          "property_name": "Reading Railroad",
+          "base_price": 200,
+          "property_color": null,
+          "current_cash": 1500,
+          "suggested_min_bid": 80,
+          "suggested_max_bid": 160,
+          "auction_instructions": "This is an AUCTION - you can bid ANY amount from $1 up to your available cash. The base price is just reference. Smart bidders often start LOW (40-60% of base price) to get a bargain!"
+        }
+      },
+      {
+        "turn": 1,
+        "type": "auction_counter_bid",
+        "decision": {
+          "bid": false,
+          "new_bid": 0
+        },
+        "context": {
+          "property_name": "Reading Railroad",
+          "current_high_bid": 80,
+          "current_leader": "AI Alpha",
+          "my_cash": 1500,
+          "my_last_bid": 80,
+          "min_raise": 10,
+          "property_value": 200
+        }
+      }
+    ]
+  },
+  "summary": {
+    "turn": 2,
+    "total_events": 12,
+    "chat_messages": 4,
+    "events_by_type": {
+      "turn_start": 2,
+      "dice_roll": 2,
+      "land_on": 2,
+      "decision_buy_property": 1,
+      "decision_auction_initial_bid": 2,
+      "decision_auction_counter_bid": 1,
+      "pass_property": 1,
+      "special_square": 1
+    },
+    "decisions_by_player": {
+      "AI Alpha": 2,
+      "AI Beta": 2
+    }
+  }
+}

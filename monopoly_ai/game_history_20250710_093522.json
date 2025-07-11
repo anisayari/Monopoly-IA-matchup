@@ -1,0 +1,399 @@
+{
+  "players": [
+    "AI Alpha",
+    "AI Beta"
+  ],
+  "total_turns": 2,
+  "events": [
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 1500
+      },
+      "time": "2025-07-10T09:35:02.223977"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 6,
+        "die2": 2,
+        "total": 8
+      },
+      "time": "2025-07-10T09:35:02.224468"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 8,
+        "square": "Vermont Avenue"
+      },
+      "time": "2025-07-10T09:35:02.224581"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": false,
+        "options": {
+          "property_name": "Vermont Avenue",
+          "price": 100,
+          "cash": 1500,
+          "color": "light_blue"
+        }
+      },
+      "time": "2025-07-10T09:35:03.328471"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "decision_auction_initial_bid",
+      "details": {
+        "decision": 50,
+        "options": {
+          "property_name": "Vermont Avenue",
+          "base_price": 100,
+          "property_color": "light_blue",
+          "current_cash": 1500,
+          "suggested_min_bid": 40,
+          "suggested_max_bid": 80,
+          "auction_instructions": "This is an AUCTION - you can bid ANY amount from $1 up to your available cash. The base price is just reference. Smart bidders often start LOW (40-60% of base price) to get a bargain!"
+        }
+      },
+      "time": "2025-07-10T09:35:05.143534"
+    },
+    {
+      "turn": 1,
+      "player": 1,
+      "type": "decision_auction_initial_bid",
+      "details": {
+        "decision": 40,
+        "options": {
+          "property_name": "Vermont Avenue",
+          "base_price": 100,
+          "property_color": "light_blue",
+          "current_cash": 1500,
+          "suggested_min_bid": 40,
+          "suggested_max_bid": 80,
+          "auction_instructions": "This is an AUCTION - you can bid ANY amount from $1 up to your available cash. The base price is just reference. Smart bidders often start LOW (40-60% of base price) to get a bargain!"
+        }
+      },
+      "time": "2025-07-10T09:35:08.041622"
+    },
+    {
+      "turn": 1,
+      "player": 1,
+      "type": "decision_auction_counter_bid",
+      "details": {
+        "decision": {
+          "bid": true,
+          "new_bid": 60
+        },
+        "options": {
+          "property_name": "Vermont Avenue",
+          "current_high_bid": 50,
+          "current_leader": "AI Alpha",
+          "my_cash": 1500,
+          "my_last_bid": 40,
+          "min_raise": 10,
+          "property_value": 100
+        }
+      },
+      "time": "2025-07-10T09:35:09.701189"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "pass_property",
+      "details": {
+        "property": "Vermont Avenue"
+      },
+      "time": "2025-07-10T09:35:10.705422"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "turn_start",
+      "details": {
+        "cash": 1440
+      },
+      "time": "2025-07-10T09:35:12.261962"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "dice_roll",
+      "details": {
+        "die1": 6,
+        "die2": 5,
+        "total": 11
+      },
+      "time": "2025-07-10T09:35:13.971269"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "land_on",
+      "details": {
+        "position": 11,
+        "square": "St. Charles Place"
+      },
+      "time": "2025-07-10T09:35:13.971313"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": false,
+        "options": {
+          "property_name": "St. Charles Place",
+          "price": 140,
+          "cash": 1440,
+          "color": "pink"
+        }
+      },
+      "time": "2025-07-10T09:35:14.859937"
+    },
+    {
+      "turn": 2,
+      "player": 0,
+      "type": "decision_auction_initial_bid",
+      "details": {
+        "decision": 70,
+        "options": {
+          "property_name": "St. Charles Place",
+          "base_price": 140,
+          "property_color": "pink",
+          "current_cash": 1500,
+          "suggested_min_bid": 56,
+          "suggested_max_bid": 112,
+          "auction_instructions": "This is an AUCTION - you can bid ANY amount from $1 up to your available cash. The base price is just reference. Smart bidders often start LOW (40-60% of base price) to get a bargain!"
+        }
+      },
+      "time": "2025-07-10T09:35:16.713483"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "decision_auction_initial_bid",
+      "details": {
+        "decision": 56,
+        "options": {
+          "property_name": "St. Charles Place",
+          "base_price": 140,
+          "property_color": "pink",
+          "current_cash": 1440,
+          "suggested_min_bid": 56,
+          "suggested_max_bid": 112,
+          "auction_instructions": "This is an AUCTION - you can bid ANY amount from $1 up to your available cash. The base price is just reference. Smart bidders often start LOW (40-60% of base price) to get a bargain!"
+        }
+      },
+      "time": "2025-07-10T09:35:18.312461"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "decision_auction_counter_bid",
+      "details": {
+        "decision": {
+          "bid": true,
+          "new_bid": 80
+        },
+        "options": {
+          "property_name": "St. Charles Place",
+          "current_high_bid": 70,
+          "current_leader": "AI Alpha",
+          "my_cash": 1440,
+          "my_last_bid": 56,
+          "min_raise": 10,
+          "property_value": 140
+        }
+      },
+      "time": "2025-07-10T09:35:19.907484"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "pass_property",
+      "details": {
+        "property": "St. Charles Place"
+      },
+      "time": "2025-07-10T09:35:20.909889"
+    }
+  ],
+  "chat": [
+    {
+      "sender": "AI Alpha",
+      "message": "Good luck! Looking forward to an exciting game\u2014let\u2019s make it a good one.",
+      "turn": 0,
+      "time": "2025-07-10T09:34:58.656015"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Thanks! Let\u2019s see who secures the best properties early. May the luck be in my favor!",
+      "turn": 0,
+      "time": "2025-07-10T09:35:00.217301"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Looking forward to landing some properties soon. Watch out, the game\u2019s just heating up!",
+      "turn": 1,
+      "time": "2025-07-10T09:35:11.358345"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Enjoy the chase! I\u2019ll be ready to capitalize on any landing. Let\u2019s see who\u2019ll own the board soon.",
+      "turn": 2,
+      "time": "2025-07-10T09:35:12.766183"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Skips ahead, ready to build up. Watch out for my next move!",
+      "turn": 2,
+      "time": "2025-07-10T09:35:21.376481"
+    }
+  ],
+  "decisions": {
+    "AI Alpha": [
+      {
+        "turn": 1,
+        "type": "buy_property",
+        "decision": false,
+        "context": {
+          "property_name": "Vermont Avenue",
+          "price": 100,
+          "cash": 1500,
+          "color": "light_blue"
+        }
+      },
+      {
+        "turn": 1,
+        "type": "auction_initial_bid",
+        "decision": 50,
+        "context": {
+          "property_name": "Vermont Avenue",
+          "base_price": 100,
+          "property_color": "light_blue",
+          "current_cash": 1500,
+          "suggested_min_bid": 40,
+          "suggested_max_bid": 80,
+          "auction_instructions": "This is an AUCTION - you can bid ANY amount from $1 up to your available cash. The base price is just reference. Smart bidders often start LOW (40-60% of base price) to get a bargain!"
+        }
+      },
+      {
+        "turn": 2,
+        "type": "auction_initial_bid",
+        "decision": 70,
+        "context": {
+          "property_name": "St. Charles Place",
+          "base_price": 140,
+          "property_color": "pink",
+          "current_cash": 1500,
+          "suggested_min_bid": 56,
+          "suggested_max_bid": 112,
+          "auction_instructions": "This is an AUCTION - you can bid ANY amount from $1 up to your available cash. The base price is just reference. Smart bidders often start LOW (40-60% of base price) to get a bargain!"
+        }
+      }
+    ],
+    "AI Beta": [
+      {
+        "turn": 1,
+        "type": "auction_initial_bid",
+        "decision": 40,
+        "context": {
+          "property_name": "Vermont Avenue",
+          "base_price": 100,
+          "property_color": "light_blue",
+          "current_cash": 1500,
+          "suggested_min_bid": 40,
+          "suggested_max_bid": 80,
+          "auction_instructions": "This is an AUCTION - you can bid ANY amount from $1 up to your available cash. The base price is just reference. Smart bidders often start LOW (40-60% of base price) to get a bargain!"
+        }
+      },
+      {
+        "turn": 1,
+        "type": "auction_counter_bid",
+        "decision": {
+          "bid": true,
+          "new_bid": 60
+        },
+        "context": {
+          "property_name": "Vermont Avenue",
+          "current_high_bid": 50,
+          "current_leader": "AI Alpha",
+          "my_cash": 1500,
+          "my_last_bid": 40,
+          "min_raise": 10,
+          "property_value": 100
+        }
+      },
+      {
+        "turn": 2,
+        "type": "buy_property",
+        "decision": false,
+        "context": {
+          "property_name": "St. Charles Place",
+          "price": 140,
+          "cash": 1440,
+          "color": "pink"
+        }
+      },
+      {
+        "turn": 2,
+        "type": "auction_initial_bid",
+        "decision": 56,
+        "context": {
+          "property_name": "St. Charles Place",
+          "base_price": 140,
+          "property_color": "pink",
+          "current_cash": 1440,
+          "suggested_min_bid": 56,
+          "suggested_max_bid": 112,
+          "auction_instructions": "This is an AUCTION - you can bid ANY amount from $1 up to your available cash. The base price is just reference. Smart bidders often start LOW (40-60% of base price) to get a bargain!"
+        }
+      },
+      {
+        "turn": 2,
+        "type": "auction_counter_bid",
+        "decision": {
+          "bid": true,
+          "new_bid": 80
+        },
+        "context": {
+          "property_name": "St. Charles Place",
+          "current_high_bid": 70,
+          "current_leader": "AI Alpha",
+          "my_cash": 1440,
+          "my_last_bid": 56,
+          "min_raise": 10,
+          "property_value": 140
+        }
+      }
+    ]
+  },
+  "summary": {
+    "turn": 2,
+    "total_events": 16,
+    "chat_messages": 5,
+    "events_by_type": {
+      "turn_start": 2,
+      "dice_roll": 2,
+      "land_on": 2,
+      "decision_buy_property": 2,
+      "decision_auction_initial_bid": 4,
+      "decision_auction_counter_bid": 2,
+      "pass_property": 2
+    },
+    "decisions_by_player": {
+      "AI Alpha": 3,
+      "AI Beta": 5
+    }
+  }
+}

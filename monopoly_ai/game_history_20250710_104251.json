@@ -1,0 +1,609 @@
+{
+  "players": [
+    "AI Alpha",
+    "AI Beta"
+  ],
+  "total_turns": 5,
+  "events": [
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 1500
+      },
+      "time": "2025-07-10T10:42:27.615546"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 6,
+        "die2": 6,
+        "total": 12
+      },
+      "time": "2025-07-10T10:42:27.615626"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 12,
+        "square": "Electric Company"
+      },
+      "time": "2025-07-10T10:42:27.615644"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": true,
+        "options": {
+          "property_name": "Electric Company",
+          "price": 150,
+          "cash": 1500,
+          "color": null
+        }
+      },
+      "time": "2025-07-10T10:42:28.539849"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "buy_property",
+      "details": {
+        "property": "Electric Company",
+        "price": 150
+      },
+      "time": "2025-07-10T10:42:28.539924"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 1350
+      },
+      "time": "2025-07-10T10:42:29.545112"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 6,
+        "die2": 3,
+        "total": 9
+      },
+      "time": "2025-07-10T10:42:29.545327"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 21,
+        "square": "Kentucky Avenue"
+      },
+      "time": "2025-07-10T10:42:29.545509"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": true,
+        "options": {
+          "property_name": "Kentucky Avenue",
+          "price": 220,
+          "cash": 1350,
+          "color": "red"
+        }
+      },
+      "time": "2025-07-10T10:42:30.584834"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "buy_property",
+      "details": {
+        "property": "Kentucky Avenue",
+        "price": 220
+      },
+      "time": "2025-07-10T10:42:30.584854"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "turn_start",
+      "details": {
+        "cash": 1500
+      },
+      "time": "2025-07-10T10:42:32.248194"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "dice_roll",
+      "details": {
+        "die1": 3,
+        "die2": 1,
+        "total": 4
+      },
+      "time": "2025-07-10T10:42:33.968906"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "land_on",
+      "details": {
+        "position": 4,
+        "square": "Income Tax"
+      },
+      "time": "2025-07-10T10:42:33.968921"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "pay_tax",
+      "details": {
+        "square": "Income Tax"
+      },
+      "time": "2025-07-10T10:42:33.968932"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 1130
+      },
+      "time": "2025-07-10T10:42:35.436279"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 4,
+        "die2": 1,
+        "total": 5
+      },
+      "time": "2025-07-10T10:42:37.106432"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 26,
+        "square": "Atlantic Avenue"
+      },
+      "time": "2025-07-10T10:42:37.106453"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": true,
+        "options": {
+          "property_name": "Atlantic Avenue",
+          "price": 260,
+          "cash": 1130,
+          "color": "yellow"
+        }
+      },
+      "time": "2025-07-10T10:42:37.762959"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "buy_property",
+      "details": {
+        "property": "Atlantic Avenue",
+        "price": 260
+      },
+      "time": "2025-07-10T10:42:37.762994"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "turn_start",
+      "details": {
+        "cash": 1300
+      },
+      "time": "2025-07-10T10:42:39.301733"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "dice_roll",
+      "details": {
+        "die1": 3,
+        "die2": 6,
+        "total": 9
+      },
+      "time": "2025-07-10T10:42:41.011407"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "land_on",
+      "details": {
+        "position": 13,
+        "square": "States Avenue"
+      },
+      "time": "2025-07-10T10:42:41.011459"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": true,
+        "options": {
+          "property_name": "States Avenue",
+          "price": 140,
+          "cash": 1300,
+          "color": "pink"
+        }
+      },
+      "time": "2025-07-10T10:42:41.969209"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "buy_property",
+      "details": {
+        "property": "States Avenue",
+        "price": 140
+      },
+      "time": "2025-07-10T10:42:41.969279"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "decision_initiate_trade",
+      "details": {
+        "decision": {
+          "initiate": true,
+          "target_player": "AI Alpha",
+          "offer_properties": [
+            "States Avenue"
+          ],
+          "offer_cash": 0,
+          "request_properties": [],
+          "request_cash": 0
+        },
+        "options": {
+          "my_properties": [
+            "States Avenue"
+          ],
+          "my_cash": 1160,
+          "opponents": [
+            {
+              "name": "AI Alpha",
+              "properties": [
+                "Electric Company",
+                "Kentucky Avenue",
+                "Atlantic Avenue"
+              ],
+              "cash": 870
+            }
+          ],
+          "game_context": "You can propose trades at any time to complete monopolies or improve your position"
+        }
+      },
+      "time": "2025-07-10T10:42:42.810445"
+    },
+    {
+      "turn": 4,
+      "player": 0,
+      "type": "decision_trade_response",
+      "details": {
+        "decision": {
+          "accept": true,
+          "counter_offer": null
+        },
+        "options": {
+          "offer": {
+            "properties": [
+              "States Avenue"
+            ],
+            "cash": 0
+          },
+          "request": {
+            "properties": [],
+            "cash": 0
+          },
+          "proposer": "AI Beta",
+          "context": {
+            "monopoly_impact": {
+              "proposer_gains_monopoly": false,
+              "recipient_gains_monopoly": false,
+              "proposer_loses_monopoly": false,
+              "recipient_loses_monopoly": false
+            },
+            "value_assessment": {
+              "proposer_gives": 140,
+              "recipient_gives": 0,
+              "net_value": 140
+            },
+            "strategic_value": {
+              "creates_threat": false,
+              "defensive_value": false,
+              "offensive_value": false
+            }
+          }
+        }
+      },
+      "time": "2025-07-10T10:42:44.741608"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "trade_completed",
+      "details": {
+        "with": "AI Alpha",
+        "gave": [
+          "States Avenue"
+        ],
+        "received": []
+      },
+      "time": "2025-07-10T10:42:44.741728"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 870
+      },
+      "time": "2025-07-10T10:42:46.271911"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 6,
+        "die2": 4,
+        "total": 10
+      },
+      "time": "2025-07-10T10:42:48.294231"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 36,
+        "square": "Chance"
+      },
+      "time": "2025-07-10T10:42:48.294266"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "special_square",
+      "details": {
+        "square": "Chance"
+      },
+      "time": "2025-07-10T10:42:48.294308"
+    }
+  ],
+  "chat": [
+    {
+      "sender": "AI Alpha",
+      "message": "Good luck! Looking forward to an exciting game.",
+      "turn": 0,
+      "time": "2025-07-10T10:42:24.069126"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Thanks! May the best strategist win\u2014let's see who makes the first bold move.",
+      "turn": 0,
+      "time": "2025-07-10T10:42:25.605295"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Watch out, Kentucky\u2019s next in line for a surprise. Your move!",
+      "turn": 1,
+      "time": "2025-07-10T10:42:31.238344"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Interesting! I\u2019ll keep my eyes open\u2014ready for some surprises too. Your move!",
+      "turn": 2,
+      "time": "2025-07-10T10:42:32.764290"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Watch out, I\u2019m stockpiling. Your move.",
+      "turn": 2,
+      "time": "2025-07-10T10:42:34.428443"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Watch your cash\u2014I\u2019m ready to strike when the time\u2019s right. Let\u2019s keep the game fun!",
+      "turn": 3,
+      "time": "2025-07-10T10:42:35.903324"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Nice buy! Watch out for my next move\u2014set to build up soon.",
+      "turn": 3,
+      "time": "2025-07-10T10:42:38.294812"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Looking forward to your move! I'll keep an eye on my finances\u2014could surprise you soon.",
+      "turn": 4,
+      "time": "2025-07-10T10:42:39.809647"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Watch out, States Avenue won\u2019t save you for long. Ready to build up!",
+      "turn": 4,
+      "time": "2025-07-10T10:42:45.268527"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Looks like you're gearing up\u2014I'll keep my eye on those properties. Let's see who can outbuild the other!",
+      "turn": 5,
+      "time": "2025-07-10T10:42:47.089358"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Looks like a quiet turn\u2014planning my next big move. Watch out!",
+      "turn": 5,
+      "time": "2025-07-10T10:42:50.088408"
+    }
+  ],
+  "decisions": {
+    "AI Alpha": [
+      {
+        "turn": 1,
+        "type": "buy_property",
+        "decision": true,
+        "context": {
+          "property_name": "Electric Company",
+          "price": 150,
+          "cash": 1500,
+          "color": null
+        }
+      },
+      {
+        "turn": 1,
+        "type": "buy_property",
+        "decision": true,
+        "context": {
+          "property_name": "Kentucky Avenue",
+          "price": 220,
+          "cash": 1350,
+          "color": "red"
+        }
+      },
+      {
+        "turn": 3,
+        "type": "buy_property",
+        "decision": true,
+        "context": {
+          "property_name": "Atlantic Avenue",
+          "price": 260,
+          "cash": 1130,
+          "color": "yellow"
+        }
+      },
+      {
+        "turn": 4,
+        "type": "trade_response",
+        "decision": {
+          "accept": true,
+          "counter_offer": null
+        },
+        "context": {
+          "offer": {
+            "properties": [
+              "States Avenue"
+            ],
+            "cash": 0
+          },
+          "request": {
+            "properties": [],
+            "cash": 0
+          },
+          "proposer": "AI Beta",
+          "context": {
+            "monopoly_impact": {
+              "proposer_gains_monopoly": false,
+              "recipient_gains_monopoly": false,
+              "proposer_loses_monopoly": false,
+              "recipient_loses_monopoly": false
+            },
+            "value_assessment": {
+              "proposer_gives": 140,
+              "recipient_gives": 0,
+              "net_value": 140
+            },
+            "strategic_value": {
+              "creates_threat": false,
+              "defensive_value": false,
+              "offensive_value": false
+            }
+          }
+        }
+      }
+    ],
+    "AI Beta": [
+      {
+        "turn": 4,
+        "type": "buy_property",
+        "decision": true,
+        "context": {
+          "property_name": "States Avenue",
+          "price": 140,
+          "cash": 1300,
+          "color": "pink"
+        }
+      },
+      {
+        "turn": 4,
+        "type": "initiate_trade",
+        "decision": {
+          "initiate": true,
+          "target_player": "AI Alpha",
+          "offer_properties": [
+            "States Avenue"
+          ],
+          "offer_cash": 0,
+          "request_properties": [],
+          "request_cash": 0
+        },
+        "context": {
+          "my_properties": [
+            "States Avenue"
+          ],
+          "my_cash": 1160,
+          "opponents": [
+            {
+              "name": "AI Alpha",
+              "properties": [
+                "Electric Company",
+                "Kentucky Avenue",
+                "Atlantic Avenue"
+              ],
+              "cash": 870
+            }
+          ],
+          "game_context": "You can propose trades at any time to complete monopolies or improve your position"
+        }
+      }
+    ]
+  },
+  "summary": {
+    "turn": 5,
+    "total_events": 31,
+    "chat_messages": 11,
+    "events_by_type": {
+      "turn_start": 6,
+      "dice_roll": 6,
+      "land_on": 6,
+      "decision_buy_property": 4,
+      "buy_property": 4,
+      "pay_tax": 1,
+      "decision_initiate_trade": 1,
+      "decision_trade_response": 1,
+      "trade_completed": 1,
+      "special_square": 1
+    },
+    "decisions_by_player": {
+      "AI Alpha": 4,
+      "AI Beta": 2
+    }
+  }
+}

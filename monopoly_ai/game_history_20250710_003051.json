@@ -1,0 +1,866 @@
+{
+  "players": [
+    "AI Alpha",
+    "AI Beta"
+  ],
+  "total_turns": 10,
+  "events": [
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 1500
+      },
+      "time": "2025-07-10T00:30:02.493493"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 2,
+        "die2": 3,
+        "total": 5
+      },
+      "time": "2025-07-10T00:30:02.493696"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 5,
+        "square": "Reading Railroad"
+      },
+      "time": "2025-07-10T00:30:02.493755"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": true,
+        "options": {
+          "property_name": "Reading Railroad",
+          "price": 200,
+          "cash": 1500,
+          "color": null
+        }
+      },
+      "time": "2025-07-10T00:30:03.445085"
+    },
+    {
+      "turn": 1,
+      "player": 0,
+      "type": "buy_property",
+      "details": {
+        "property": "Reading Railroad",
+        "price": 200
+      },
+      "time": "2025-07-10T00:30:03.445143"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "turn_start",
+      "details": {
+        "cash": 1500
+      },
+      "time": "2025-07-10T00:30:05.322667"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "dice_roll",
+      "details": {
+        "die1": 5,
+        "die2": 5,
+        "total": 10
+      },
+      "time": "2025-07-10T00:30:07.660169"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "land_on",
+      "details": {
+        "position": 10,
+        "square": "Jail/Just Visiting"
+      },
+      "time": "2025-07-10T00:30:07.660246"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "special_square",
+      "details": {
+        "square": "Jail/Just Visiting"
+      },
+      "time": "2025-07-10T00:30:07.660327"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "turn_start",
+      "details": {
+        "cash": 1500
+      },
+      "time": "2025-07-10T00:30:08.662048"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "dice_roll",
+      "details": {
+        "die1": 1,
+        "die2": 4,
+        "total": 5
+      },
+      "time": "2025-07-10T00:30:08.662148"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "land_on",
+      "details": {
+        "position": 15,
+        "square": "Pennsylvania Railroad"
+      },
+      "time": "2025-07-10T00:30:08.662179"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": true,
+        "options": {
+          "property_name": "Pennsylvania Railroad",
+          "price": 200,
+          "cash": 1500,
+          "color": null
+        }
+      },
+      "time": "2025-07-10T00:30:10.653110"
+    },
+    {
+      "turn": 2,
+      "player": 1,
+      "type": "buy_property",
+      "details": {
+        "property": "Pennsylvania Railroad",
+        "price": 200
+      },
+      "time": "2025-07-10T00:30:10.653197"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 1300
+      },
+      "time": "2025-07-10T00:30:12.406252"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 5,
+        "die2": 5,
+        "total": 10
+      },
+      "time": "2025-07-10T00:30:14.124265"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 15,
+        "square": "Pennsylvania Railroad"
+      },
+      "time": "2025-07-10T00:30:14.124284"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "pay_rent",
+      "details": {
+        "to": "AI Beta",
+        "amount": 25,
+        "property": "Pennsylvania Railroad"
+      },
+      "time": "2025-07-10T00:30:14.124295"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 1275
+      },
+      "time": "2025-07-10T00:30:15.124612"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 1,
+        "die2": 5,
+        "total": 6
+      },
+      "time": "2025-07-10T00:30:15.124672"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 21,
+        "square": "Kentucky Avenue"
+      },
+      "time": "2025-07-10T00:30:15.124718"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": false,
+        "options": {
+          "property_name": "Kentucky Avenue",
+          "price": 220,
+          "cash": 1275,
+          "color": "red"
+        }
+      },
+      "time": "2025-07-10T00:30:15.879002"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "decision_auction_initial_bid",
+      "details": {
+        "decision": 220,
+        "options": {
+          "property_name": "Kentucky Avenue",
+          "base_price": 220,
+          "property_color": "red",
+          "current_cash": 1275,
+          "max_bid": 330.0
+        }
+      },
+      "time": "2025-07-10T00:30:17.724162"
+    },
+    {
+      "turn": 3,
+      "player": 1,
+      "type": "decision_auction_initial_bid",
+      "details": {
+        "decision": 0,
+        "options": {
+          "property_name": "Kentucky Avenue",
+          "base_price": 220,
+          "property_color": "red",
+          "current_cash": 1325,
+          "max_bid": 330.0
+        }
+      },
+      "time": "2025-07-10T00:30:19.310021"
+    },
+    {
+      "turn": 3,
+      "player": 0,
+      "type": "pass_property",
+      "details": {
+        "property": "Kentucky Avenue"
+      },
+      "time": "2025-07-10T00:30:20.115789"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "turn_start",
+      "details": {
+        "cash": 1325
+      },
+      "time": "2025-07-10T00:30:21.029402"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "dice_roll",
+      "details": {
+        "die1": 3,
+        "die2": 2,
+        "total": 5
+      },
+      "time": "2025-07-10T00:30:22.707079"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "land_on",
+      "details": {
+        "position": 20,
+        "square": "Free Parking"
+      },
+      "time": "2025-07-10T00:30:22.707153"
+    },
+    {
+      "turn": 4,
+      "player": 1,
+      "type": "special_square",
+      "details": {
+        "square": "Free Parking"
+      },
+      "time": "2025-07-10T00:30:22.707214"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 1055
+      },
+      "time": "2025-07-10T00:30:24.446542"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 1,
+        "die2": 5,
+        "total": 6
+      },
+      "time": "2025-07-10T00:30:26.403764"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 27,
+        "square": "Ventnor Avenue"
+      },
+      "time": "2025-07-10T00:30:26.403806"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": false,
+        "options": {
+          "property_name": "Ventnor Avenue",
+          "price": 260,
+          "cash": 1055,
+          "color": "yellow"
+        }
+      },
+      "time": "2025-07-10T00:30:27.211272"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "decision_auction_initial_bid",
+      "details": {
+        "decision": 260,
+        "options": {
+          "property_name": "Ventnor Avenue",
+          "base_price": 260,
+          "property_color": "yellow",
+          "current_cash": 1055,
+          "max_bid": 390.0
+        }
+      },
+      "time": "2025-07-10T00:30:28.945952"
+    },
+    {
+      "turn": 5,
+      "player": 1,
+      "type": "decision_auction_initial_bid",
+      "details": {
+        "decision": 0,
+        "options": {
+          "property_name": "Ventnor Avenue",
+          "base_price": 260,
+          "property_color": "yellow",
+          "current_cash": 1325,
+          "max_bid": 390.0
+        }
+      },
+      "time": "2025-07-10T00:30:30.442222"
+    },
+    {
+      "turn": 5,
+      "player": 0,
+      "type": "pass_property",
+      "details": {
+        "property": "Ventnor Avenue"
+      },
+      "time": "2025-07-10T00:30:31.246527"
+    },
+    {
+      "turn": 6,
+      "player": 1,
+      "type": "turn_start",
+      "details": {
+        "cash": 1325
+      },
+      "time": "2025-07-10T00:30:33.080545"
+    },
+    {
+      "turn": 6,
+      "player": 1,
+      "type": "dice_roll",
+      "details": {
+        "die1": 2,
+        "die2": 4,
+        "total": 6
+      },
+      "time": "2025-07-10T00:30:34.737147"
+    },
+    {
+      "turn": 6,
+      "player": 1,
+      "type": "land_on",
+      "details": {
+        "position": 26,
+        "square": "Atlantic Avenue"
+      },
+      "time": "2025-07-10T00:30:34.737252"
+    },
+    {
+      "turn": 6,
+      "player": 1,
+      "type": "decision_buy_property",
+      "details": {
+        "decision": true,
+        "options": {
+          "property_name": "Atlantic Avenue",
+          "price": 260,
+          "cash": 1325,
+          "color": "yellow"
+        }
+      },
+      "time": "2025-07-10T00:30:35.558050"
+    },
+    {
+      "turn": 6,
+      "player": 1,
+      "type": "buy_property",
+      "details": {
+        "property": "Atlantic Avenue",
+        "price": 260
+      },
+      "time": "2025-07-10T00:30:35.558190"
+    },
+    {
+      "turn": 7,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 795
+      },
+      "time": "2025-07-10T00:30:37.395895"
+    },
+    {
+      "turn": 7,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 4,
+        "die2": 5,
+        "total": 9
+      },
+      "time": "2025-07-10T00:30:39.549704"
+    },
+    {
+      "turn": 7,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 36,
+        "square": "Chance"
+      },
+      "time": "2025-07-10T00:30:39.549789"
+    },
+    {
+      "turn": 7,
+      "player": 0,
+      "type": "special_square",
+      "details": {
+        "square": "Chance"
+      },
+      "time": "2025-07-10T00:30:39.549891"
+    },
+    {
+      "turn": 8,
+      "player": 1,
+      "type": "turn_start",
+      "details": {
+        "cash": 1065
+      },
+      "time": "2025-07-10T00:30:41.449496"
+    },
+    {
+      "turn": 8,
+      "player": 1,
+      "type": "dice_roll",
+      "details": {
+        "die1": 2,
+        "die2": 5,
+        "total": 7
+      },
+      "time": "2025-07-10T00:30:43.255350"
+    },
+    {
+      "turn": 8,
+      "player": 1,
+      "type": "land_on",
+      "details": {
+        "position": 33,
+        "square": "Community Chest"
+      },
+      "time": "2025-07-10T00:30:43.255426"
+    },
+    {
+      "turn": 8,
+      "player": 1,
+      "type": "special_square",
+      "details": {
+        "square": "Community Chest"
+      },
+      "time": "2025-07-10T00:30:43.255509"
+    },
+    {
+      "turn": 9,
+      "player": 0,
+      "type": "turn_start",
+      "details": {
+        "cash": 845
+      },
+      "time": "2025-07-10T00:30:44.997242"
+    },
+    {
+      "turn": 9,
+      "player": 0,
+      "type": "dice_roll",
+      "details": {
+        "die1": 5,
+        "die2": 1,
+        "total": 6
+      },
+      "time": "2025-07-10T00:30:45.461366"
+    },
+    {
+      "turn": 9,
+      "player": 0,
+      "type": "land_on",
+      "details": {
+        "position": 2,
+        "square": "Community Chest"
+      },
+      "time": "2025-07-10T00:30:45.461392"
+    },
+    {
+      "turn": 9,
+      "player": 0,
+      "type": "special_square",
+      "details": {
+        "square": "Community Chest"
+      },
+      "time": "2025-07-10T00:30:45.461409"
+    },
+    {
+      "turn": 10,
+      "player": 1,
+      "type": "turn_start",
+      "details": {
+        "cash": 1265
+      },
+      "time": "2025-07-10T00:30:48.838668"
+    },
+    {
+      "turn": 10,
+      "player": 1,
+      "type": "dice_roll",
+      "details": {
+        "die1": 4,
+        "die2": 5,
+        "total": 9
+      },
+      "time": "2025-07-10T00:30:50.603270"
+    },
+    {
+      "turn": 10,
+      "player": 1,
+      "type": "land_on",
+      "details": {
+        "position": 2,
+        "square": "Community Chest"
+      },
+      "time": "2025-07-10T00:30:50.603304"
+    },
+    {
+      "turn": 10,
+      "player": 1,
+      "type": "special_square",
+      "details": {
+        "square": "Community Chest"
+      },
+      "time": "2025-07-10T00:30:50.603327"
+    }
+  ],
+  "chat": [
+    {
+      "sender": "AI Alpha",
+      "message": "Good luck! Looking forward to an exciting game\u2014may the best strategist win.",
+      "turn": 0,
+      "time": "2025-07-10T00:29:58.563825"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Thanks! Let\u2019s see who can outsmart the other\u2014may the best win!",
+      "turn": 0,
+      "time": "2025-07-10T00:30:00.486978"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Watch out, Reading Railroad might become a toll booth soon. Your move!",
+      "turn": 1,
+      "time": "2025-07-10T00:30:04.014023"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Thanks for the heads-up! I'll keep an eye on Reading. Let's see if you land on my next move!",
+      "turn": 2,
+      "time": "2025-07-10T00:30:06.454342"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Watch out, I\u2019m building up. Your move.",
+      "turn": 2,
+      "time": "2025-07-10T00:30:11.100060"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Looking forward to seeing your move. Hope I can land somewhere worth building on!",
+      "turn": 3,
+      "time": "2025-07-10T00:30:12.921731"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Hope luck's on your side! Watch out\u2014I might just surprise you with a game-changing move.",
+      "turn": 4,
+      "time": "2025-07-10T00:30:21.500978"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Watch out, I\u2019m saving my next move for maximum impact.",
+      "turn": 4,
+      "time": "2025-07-10T00:30:23.140472"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Looking forward to your big move! I\u2019ll stay ready to counter.",
+      "turn": 5,
+      "time": "2025-07-10T00:30:25.199127"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Ready to build up and land on your properties soon. Watch out!",
+      "turn": 5,
+      "time": "2025-07-10T00:30:31.775356"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Bring it on! I\u2019ve got a few tricks up my sleeve\u2014let\u2019s see who lands where!",
+      "turn": 6,
+      "time": "2025-07-10T00:30:33.532942"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Nice buy. Watch out, I\u2019m planning my next move to land on your new property.",
+      "turn": 6,
+      "time": "2025-07-10T00:30:36.087657"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Good luck! I\u2019ll be ready to capitalize if you land there. Let\u2019s see how this unfolds.",
+      "turn": 7,
+      "time": "2025-07-10T00:30:38.344301"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Watch out\u2014I\u2019m ready to build up soon. Keep your properties protected!",
+      "turn": 7,
+      "time": "2025-07-10T00:30:40.141952"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Thanks for the heads-up! I'll consider trading or improving my properties to stay ahead. Watch out\u2014you might be surprised!",
+      "turn": 8,
+      "time": "2025-07-10T00:30:42.050895"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Nice, your move. Watch out, I\u2019m building up.",
+      "turn": 8,
+      "time": "2025-07-10T00:30:43.690632"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Landing on Community Chest\u2014hope it\u2019s a good one to boost my position!",
+      "turn": 9,
+      "time": "2025-07-10T00:30:46.187585"
+    },
+    {
+      "sender": "AI Alpha",
+      "message": "Looking forward to building up. Watch out for my next move!",
+      "turn": 9,
+      "time": "2025-07-10T00:30:47.531350"
+    },
+    {
+      "sender": "AI Beta",
+      "message": "Nice move! I\u2019ll keep an eye out\u2014may the best strategist win.",
+      "turn": 10,
+      "time": "2025-07-10T00:30:49.399900"
+    }
+  ],
+  "decisions": {
+    "AI Alpha": [
+      {
+        "turn": 1,
+        "type": "buy_property",
+        "decision": true,
+        "context": {
+          "property_name": "Reading Railroad",
+          "price": 200,
+          "cash": 1500,
+          "color": null
+        }
+      },
+      {
+        "turn": 3,
+        "type": "buy_property",
+        "decision": false,
+        "context": {
+          "property_name": "Kentucky Avenue",
+          "price": 220,
+          "cash": 1275,
+          "color": "red"
+        }
+      },
+      {
+        "turn": 3,
+        "type": "auction_initial_bid",
+        "decision": 220,
+        "context": {
+          "property_name": "Kentucky Avenue",
+          "base_price": 220,
+          "property_color": "red",
+          "current_cash": 1275,
+          "max_bid": 330.0
+        }
+      },
+      {
+        "turn": 5,
+        "type": "buy_property",
+        "decision": false,
+        "context": {
+          "property_name": "Ventnor Avenue",
+          "price": 260,
+          "cash": 1055,
+          "color": "yellow"
+        }
+      },
+      {
+        "turn": 5,
+        "type": "auction_initial_bid",
+        "decision": 260,
+        "context": {
+          "property_name": "Ventnor Avenue",
+          "base_price": 260,
+          "property_color": "yellow",
+          "current_cash": 1055,
+          "max_bid": 390.0
+        }
+      }
+    ],
+    "AI Beta": [
+      {
+        "turn": 2,
+        "type": "buy_property",
+        "decision": true,
+        "context": {
+          "property_name": "Pennsylvania Railroad",
+          "price": 200,
+          "cash": 1500,
+          "color": null
+        }
+      },
+      {
+        "turn": 3,
+        "type": "auction_initial_bid",
+        "decision": 0,
+        "context": {
+          "property_name": "Kentucky Avenue",
+          "base_price": 220,
+          "property_color": "red",
+          "current_cash": 1325,
+          "max_bid": 330.0
+        }
+      },
+      {
+        "turn": 5,
+        "type": "auction_initial_bid",
+        "decision": 0,
+        "context": {
+          "property_name": "Ventnor Avenue",
+          "base_price": 260,
+          "property_color": "yellow",
+          "current_cash": 1325,
+          "max_bid": 390.0
+        }
+      },
+      {
+        "turn": 6,
+        "type": "buy_property",
+        "decision": true,
+        "context": {
+          "property_name": "Atlantic Avenue",
+          "price": 260,
+          "cash": 1325,
+          "color": "yellow"
+        }
+      }
+    ]
+  },
+  "summary": {
+    "turn": 10,
+    "total_events": 57,
+    "chat_messages": 19,
+    "events_by_type": {
+      "turn_start": 12,
+      "dice_roll": 12,
+      "land_on": 12,
+      "decision_buy_property": 5,
+      "buy_property": 3,
+      "special_square": 6,
+      "pay_rent": 1,
+      "decision_auction_initial_bid": 4,
+      "pass_property": 2
+    },
+    "decisions_by_player": {
+      "AI Alpha": 5,
+      "AI Beta": 4
+    }
+  }
+}
