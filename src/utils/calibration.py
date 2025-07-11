@@ -19,22 +19,17 @@ class CalibrationUtils:
         if "points" not in data or len(data["points"]) < 3:
             raise ValueError("Need at least 3 calibration points for affine transformation")
 
-        # Extract calibration points
         self.points = data["points"]
-
-        # Calculate transformation matrices
         self._calculate_transformations()
 
     def _calculate_transformations(self):
         """Calculate affine transformation matrices"""
-        # Extract source (mouse) and target (wiimote) points
+        # Extract mouse and wiimote points
         mouse_points = np.array([[p["mouse"]["x"], p["mouse"]["y"]] for p in self.points])
         wiimote_points = np.array([[p["wiimote"]["x"], p["wiimote"]["y"]] for p in self.points])
 
-        # Calculate mouse->wiimote transformation
+        # Calculate transformation matrices
         self.mouse_to_wiimote_matrix = self._calculate_affine_matrix(mouse_points, wiimote_points)
-
-        # Calculate wiimote->mouse transformation (inverse)
         self.wiimote_to_mouse_matrix = self._calculate_affine_matrix(wiimote_points, mouse_points)
 
     def _calculate_affine_matrix(self, source: np.ndarray, target: np.ndarray) -> np.ndarray:
@@ -46,29 +41,27 @@ class CalibrationUtils:
         b = np.zeros(2 * n_points)
 
         for i in range(n_points):
-            # Row for x coordinate
-            A[2 * i, 0] = source[i, 0]  # x * a
-            A[2 * i, 1] = source[i, 1]  # y * b
-            A[2 * i, 2] = 1  # 1 * tx
-            b[2 * i] = target[i, 0]  # target x
+            # X coordinate transformation: target_x = a*source_x + b*source_y + tx
+            A[2 * i, 0] = source[i, 0]      # a coefficient
+            A[2 * i, 1] = source[i, 1]      # b coefficient
+            A[2 * i, 2] = 1                 # tx coefficient
+            b[2 * i] = target[i, 0]         # target x
 
-            # Row for y coordinate
-            A[2 * i + 1, 3] = source[i, 0]  # x * c
-            A[2 * i + 1, 4] = source[i, 1]  # y * d
-            A[2 * i + 1, 5] = 1  # 1 * ty
-            b[2 * i + 1] = target[i, 1]  # target y
+            # Y coordinate transformation: target_y = c*source_x + d*source_y + ty
+            A[2 * i + 1, 3] = source[i, 0]  # c coefficient
+            A[2 * i + 1, 4] = source[i, 1]  # d coefficient
+            A[2 * i + 1, 5] = 1             # ty coefficient
+            b[2 * i + 1] = target[i, 1]     # target y
 
-        # Solve for transformation parameters
+        # Solve for transformation parameters [a, b, tx, c, d, ty]
         params = np.linalg.lstsq(A, b, rcond=None)[0]
 
         # Construct 3x3 transformation matrix
-        transform_matrix = np.array([
+        return np.array([
             [params[0], params[1], params[2]],  # [a, b, tx]
             [params[3], params[4], params[5]],  # [c, d, ty]
-            [0, 0, 1]  # [0, 0, 1]
+            [0, 0, 1]                           # [0, 0, 1]
         ])
-
-        return transform_matrix
 
     def conversion(self, mouse_x: float, mouse_y: float) -> Tuple[float, float]:
         """Convert mouse coordinates to wiimote coordinates"""
