@@ -86,9 +86,14 @@ class AIService:
                     "confidence": {
                         "type": "string",
                         "description": "Score de confiance entre 0.0 et 1.0"
+                    },
+                    "chat_message": {
+                        "type": "string",
+                        "description": "Un message à envoyer dans le chat, sera visible par tous les autres joueurs"
+
                     }
                 },
-                "required": ["choice", "reason"],
+                "required": ["choice", "reason", "confidence", "chat_message"],
                 "additionalProperties": False
             }
 
@@ -102,7 +107,7 @@ class AIService:
 
             # Appeler l'API avec Structured Outputs
             response = self.client.responses.create(
-                model="gpt-4o-mini",
+                model="gpt-4.1-mini",
                 messages=[
                     {"role": "system", "content": "Expert Monopoly. Réponds uniquement avec un JSON valide conforme au schéma."},
                     {"role": "user", "content": user_message}
@@ -113,7 +118,7 @@ class AIService:
                     "strict": True
                 },
                 temperature=0.1,
-                max_tokens=100
+                max_tokens=1000
             )
 
             # Extraire la réponse JSON
@@ -124,6 +129,9 @@ class AIService:
             choice = str(data.get("choice", "")).lower()
             reason = data.get("reason", "Décision stratégique")
             confidence = float(data.get("confidence", 0.9))
+
+            ## Chat Message (A gérer plus tard)
+            print("Chat Message:", data.get("chat_message", "No message"))
 
             # Vérifier que le choix est valide
             if choice not in option_names:
