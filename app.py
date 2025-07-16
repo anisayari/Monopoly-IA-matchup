@@ -9,14 +9,31 @@ import threading
 import time
 import sys
 import importlib.util
+import datetime
 from flask import Flask, render_template, jsonify, request, send_from_directory
 import config
 from src.game.monopoly import MonopolyGame
 from src.game.contexte import Contexte
 from src.game.listeners import MonopolyListeners
 from src.core.game_loader import GameLoader
+from services.event_bus import EventBus, EventTypes
+from services.popup_service import PopupService
+from services.ai_service import AIService
+from services.auto_start_manager import AutoStartManager
+from services.health_check_service import HealthCheckService
+from api.popup_endpoints import create_popup_blueprint
 
 app = Flask(__name__)
+
+# Initialiser l'Event Bus et les services
+event_bus = EventBus(app)
+popup_service = PopupService(event_bus)
+ai_service = AIService(event_bus)
+auto_start_manager = AutoStartManager(config, event_bus)
+health_check_service = HealthCheckService()
+
+# Enregistrer les blueprints
+app.register_blueprint(create_popup_blueprint(popup_service))
 
 # Variables globales pour le jeu
 game = None
@@ -24,6 +41,35 @@ contexte = None
 dolphin_process = None
 terminal_output = []
 terminal_lock = threading.Lock()
+ai_process = None
+ai_script = None
+system_logs = []
+logs_lock = threading.Lock()
+monitor_process = None
+
+def check_dolphin_status():
+    """Vérifie périodiquement si Dolphin est toujours en cours d'exécution"""
+    global dolphin_process, game, contexte
+    
+    while True:
+        time.sleep(2)  # Vérifier toutes les 2 secondes
+        if dolphin_process:
+            # Vérifier si le processus est toujours actif
+            if dolphin_process.poll() is not None:
+                # Dolphin s'est fermé
+                add_log("Dolphin s'est fermé de manière inattendue", "warning")
+                dolphin_process = None
+                game = None
+                contexte = None
+                
+                # Nettoyer les processus associés
+                try:
+                    subprocess.run(['taskkill', '/F', '/IM', 'DolphinMemoryEngine.exe'], 
+                                 creationflags=subprocess.CREATE_NO_WINDOW,
+                                 stderr=subprocess.PIPE,
+                                 stdout=subprocess.PIPE)
+                except:
+                    pass
 
 def initialize_game():
     """Initialise le jeu Monopoly et le contexte en utilisant le code existant dans main.py"""
@@ -153,6 +199,16 @@ def index():
     """Page d'accueil"""
     return render_template('index.html', refresh_interval=config.REFRESH_INTERVAL)
 
+@app.route('/admin')
+def admin():
+    """Page d'administration"""
+    return render_template('admin.html')
+
+@app.route('/monitoring')
+def monitoring():
+    """Page de monitoring centralisé"""
+    return render_template('monitoring.html')
+
 @app.route('/static/<path:path>')
 def send_static(path):
     """Sert les fichiers statiques"""
@@ -229,6 +285,26 @@ def get_terminal():
     with terminal_lock:
         return jsonify(terminal_output)
 
+@app.route('/api/logs')
+def get_logs():
+    """Renvoie les logs du système"""
+    with logs_lock:
+        return jsonify(system_logs)
+
+def add_log(message, log_type='info'):
+    """Ajoute un log au système"""
+    with logs_lock:
+        log_entry = {
+            'timestamp': datetime.datetime.now().strftime('%H:%M:%S'),
+            'message': message,
+            'type': log_type
+        }
+        system_logs.append(log_entry)
+        # Garder seulement les 1000 derniers logs
+        if len(system_logs) > 1000:
+            system_logs.pop(0)
+        print(f"[{log_type.upper()}] {message}")
+
 @app.route('/api/players', methods=['GET', 'POST'])
 def manage_players():
     """Gère les informations des joueurs"""
@@ -283,11 +359,14 @@ def manage_players():
 @app.route('/api/dolphin', methods=['POST', 'DELETE'])
 def manage_dolphin():
     """Gère le démarrage et l'arrêt de Dolphin"""
-    global dolphin_process, game, contexte
+    global dolphin_process, game, contexte, monitor_process
     
     if request.method == 'POST':
         try:
-            print("Démarrage de Dolphin...")
+            print("Démarrage de Dolphin et de tous les systèmes...")
+            add_log("Démarrage de tous les systèmes...", "info")
+            
+            # Ne pas lancer les systèmes ici - on attend que Dolphin soit démarré
             
             # Nettoyer les processus existants
             print("Nettoyage des processus existants...")
@@ -308,15 +387,21 @@ def manage_dolphin():
                 if not os.path.exists(config.SAVE_FILE_PATH):
                     print(f"ATTENTION: Fichier de sauvegarde introuvable: {config.SAVE_FILE_PATH}")
                 
-                # Lancement de Dolphin avec la sauvegarde
+                # Lancement de Dolphin avec la sauvegarde et résolution plus grande
                 # Note: Dolphin utilise différents paramètres selon les versions
                 # -s : pour charger un état de sauvegarde (state)
                 # -l : pour charger un fichier de sauvegarde (load)
                 dolphin_cmd = [
                     config.DOLPHIN_PATH,
-                    '-b',  # Démarrer en mode batch
+                    '-b',
                     '-e', config.MONOPOLY_ISO_PATH,
-                    '-s', config.SAVE_FILE_PATH  # Utiliser -s pour charger un état de sauvegarde
+                    '-s', config.SAVE_FILE_PATH,
+                    '-C', 'Dolphin.Display.Fullscreen=False',
+                    '-C', 'Dolphin.Display.RenderWindowWidth=1280',
+                    '-C', 'Dolphin.Display.RenderWindowHeight=720',
+                    '-C', 'GFX.Settings.EFBScale=2',
+                    '-C', 'GFX.Settings.InternalResolution=2',
+                    '-C', 'GFX.Enhancements.InternalResolution=2'  # Autre nom possible
                 ]
                 
                 print(f"Commande: {' '.join(dolphin_cmd)}")
@@ -373,7 +458,24 @@ def manage_dolphin():
                 
                 if game and contexte:
                     print("Jeu initialisé avec succès")
-                    return jsonify({"success": True, "message": "Dolphin started successfully"})
+                    add_log("Jeu initialisé avec succès", "success")
+                    
+                    # Maintenant démarrer tous les systèmes auxiliaires
+                    def on_systems_ready(success, message):
+                        global monitor_process
+                        if success:
+                            add_log("✅ Tous les systèmes auxiliaires démarrés", "success")
+                            monitor_process = auto_start_manager.processes.get('monitor')
+                            print(f"Monitor process: {monitor_process}")
+                        else:
+                            add_log(f"❌ Erreur démarrage systèmes: {message}", "error")
+                            print(f"Erreur démarrage systèmes: {message}")
+                    
+                    # Lancer les systèmes en arrière-plan
+                    print("🚀 Lancement des systèmes auxiliaires...")
+                    auto_start_manager.start_all_systems(callback=on_systems_ready)
+                    
+                    return jsonify({"success": True, "message": "Dolphin started and all systems launching"})
                 else:
                     print("Échec de l'initialisation du jeu")
                     return jsonify({"error": "Failed to initialize game"}), 500
@@ -388,13 +490,21 @@ def manage_dolphin():
     elif request.method == 'DELETE':
         try:
             if dolphin_process:
-                print("Arrêt de Dolphin...")
+                print("Arrêt de tous les systèmes...")
+                add_log("Arrêt de tous les systèmes...", "info")
+                
+                # Utiliser AutoStartManager pour arrêter tous les systèmes
+                auto_start_manager.stop_all_systems()
+                
+                # Arrêter Dolphin et Memory Engine
                 cleanup_existing_processes()
                 dolphin_process = None
                 game = None
                 contexte = None
-                print("Dolphin arrêté avec succès")
-                return jsonify({"success": True, "message": "Dolphin stopped successfully"})
+                monitor_process = None
+                
+                print("Tous les systèmes arrêtés avec succès")
+                return jsonify({"success": True, "message": "All systems stopped successfully"})
             else:
                 print("Dolphin n'est pas en cours d'exécution")
                 return jsonify({"error": "Dolphin is not running"}), 404
@@ -432,6 +542,8 @@ def manage_config():
         config_data = {
             'dolphinPath': config.DOLPHIN_PATH,
             'isoPath': config.MONOPOLY_ISO_PATH,
+            'savePath': config.SAVE_FILE_PATH,
+            'memoryEnginePath': config.DOLPHIN_MEMORY_ENGINE_PATH,
             'refreshInterval': config.REFRESH_INTERVAL
         }
         return jsonify(config_data)
@@ -442,16 +554,19 @@ def manage_config():
             data = request.json
             
             # Mettre à jour les variables de configuration
-            if 'dolphinPath' in data:
-                config.DOLPHIN_PATH = data['dolphinPath']
-            if 'isoPath' in data:
-                config.MONOPOLY_ISO_PATH = data['isoPath']
-            if 'refreshInterval' in data:
-                config.REFRESH_INTERVAL = int(data['refreshInterval'])
+            if 'dolphin_path' in data:
+                config.DOLPHIN_PATH = data['dolphin_path']
+            if 'monopoly_iso_path' in data:
+                config.MONOPOLY_ISO_PATH = data['monopoly_iso_path']
+            if 'save_file_path' in data:
+                config.SAVE_FILE_PATH = data['save_file_path']
+            if 'memory_engine_path' in data:
+                config.DOLPHIN_MEMORY_ENGINE_PATH = data['memory_engine_path']
+            if 'refresh_interval' in data:
+                config.REFRESH_INTERVAL = int(data['refresh_interval'])
             
-            # Sauvegarder la configuration dans un fichier
-            config_file = os.path.join(config.WORKSPACE_DIR, 'user_config.json')
-            with open(config_file, 'w', encoding='utf-8') as f:
+            # Sauvegarder la configuration dans le dossier config
+            with open(config.USER_CONFIG_FILE, 'w', encoding='utf-8') as f:
                 json.dump(data, f, indent=2)
             
             return jsonify({'success': True, 'message': 'Configuration updated successfully'})
@@ -473,6 +588,256 @@ def get_dolphin_status():
                       else 'Dolphin is not running'
         })
     except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/omniparser/status')
+def get_omniparser_status():
+    """Renvoie l'état actuel d'OmniParser"""
+    try:
+        # Vérifier si OmniParser est accessible
+        try:
+            import urllib.request
+            response = urllib.request.urlopen('http://localhost:8000/probe/', timeout=2)
+            is_running = response.status == 200
+        except:
+            is_running = False
+            
+        return jsonify({
+            'running': is_running,
+            'url': 'http://localhost:8000'
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/omniparser', methods=['POST', 'DELETE'])
+def manage_omniparser():
+    """Gère le démarrage et l'arrêt d'OmniParser"""
+    if request.method == 'POST':
+        try:
+            if sys.platform == 'win32':
+                # Windows : utiliser le script batch qui lance OmniParser + monitoring
+                script_path = os.path.join(config.WORKSPACE_DIR, 'start_omniparser_with_monitor.bat')
+                cmd = f'start "OmniParser avec Monitoring" cmd /k "{script_path}"'
+                subprocess.Popen(cmd, shell=True)
+            else:
+                # Linux/Mac : ouvrir un nouveau terminal
+                omniparser_dir = os.path.join(config.WORKSPACE_DIR, 'omniparserserver')
+                subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', 
+                                f'cd {omniparser_dir} && docker compose up & sleep 30 && cd {config.WORKSPACE_DIR} && python monitor_popups.py; read'], 
+                               cwd=omniparser_dir)
+            
+            add_log('OmniParser démarré avec monitoring automatique', 'success')
+            return jsonify({'success': True, 'message': 'OmniParser démarré avec monitoring'})
+        except Exception as e:
+            add_log(f'Erreur lors du démarrage d\'OmniParser: {str(e)}', 'error')
+            return jsonify({'error': str(e)}), 500
+    
+    elif request.method == 'DELETE':
+        try:
+            # Arrêter OmniParser
+            omniparser_dir = os.path.join(config.WORKSPACE_DIR, 'omniparserserver')
+            subprocess.Popen(['docker compose', 'down'], cwd=omniparser_dir)
+            add_log('OmniParser arrêté', 'info')
+            return jsonify({'success': True, 'message': 'OmniParser arrêté'})
+        except Exception as e:
+            add_log(f'Erreur lors de l\'arrêt d\'OmniParser: {str(e)}', 'error')
+            return jsonify({'error': str(e)}), 500
+
+@app.route('/api/ai/status')
+def get_ai_status():
+    """Renvoie l'état actuel des AI Actions"""
+    global ai_process
+    try:
+        is_running = ai_process is not None and ai_process.poll() is None
+        return jsonify({
+            'running': is_running,
+            'script': ai_script if is_running else None
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/ai', methods=['POST', 'DELETE'])
+def manage_ai():
+    """Gère le démarrage et l'arrêt des AI Actions"""
+    global ai_process, ai_script
+    
+    if request.method == 'POST':
+        try:
+            data = request.json
+            script = data.get('script', 'test_search_popup.py')
+            
+            # Vérifier que le script existe
+            script_path = os.path.join(config.WORKSPACE_DIR, script)
+            if not os.path.exists(script_path):
+                add_log(f'Script {script} introuvable', 'error')
+                return jsonify({'error': f'Script {script} introuvable'}), 404
+            
+            # Démarrer le script AI dans un nouveau terminal
+            if sys.platform == 'win32':
+                # Windows : ouvrir un nouveau terminal cmd
+                cmd = f'start "AI Actions - {script}" cmd /k "cd /d {config.WORKSPACE_DIR} && python {script}"'
+                ai_process = subprocess.Popen(cmd, shell=True)
+            else:
+                # Linux/Mac : ouvrir un nouveau terminal
+                ai_process = subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', 
+                                             f'cd {config.WORKSPACE_DIR} && python {script}; read'])
+            
+            ai_script = script
+            add_log(f'AI Actions démarré avec {script} dans un nouveau terminal', 'success')
+            
+            return jsonify({'success': True, 'message': f'AI Actions démarré avec {script}'})
+        except Exception as e:
+            add_log(f'Erreur lors du démarrage des AI Actions: {str(e)}', 'error')
+            return jsonify({'error': str(e)}), 500
+    
+    elif request.method == 'DELETE':
+        try:
+            if ai_process:
+                ai_process.terminate()
+                ai_process = None
+                ai_script = None
+                add_log('AI Actions arrêté', 'info')
+                return jsonify({'success': True, 'message': 'AI Actions arrêté'})
+            else:
+                return jsonify({'error': 'AI Actions n\'est pas en cours d\'exécution'}), 404
+        except Exception as e:
+            add_log(f'Erreur lors de l\'arrêt des AI Actions: {str(e)}', 'error')
+            return jsonify({'error': str(e)}), 500
+
+@app.route('/api/monitor/start', methods=['POST'])
+def start_monitor():
+    """Démarre le monitor centralisé"""
+    global monitor_process
+    
+    try:
+        if monitor_process and monitor_process.poll() is None:
+            return jsonify({'error': 'Monitor already running'}), 400
+        
+        # Lancer le monitor centralisé
+        monitor_script = os.path.join(config.WORKSPACE_DIR, 'monitor_centralized.py')
+        
+        if sys.platform == 'win32':
+            cmd = f'start "Monopoly Monitor" cmd /k "python {monitor_script}"'
+            monitor_process = subprocess.Popen(cmd, shell=True)
+        else:
+            monitor_process = subprocess.Popen(['python', monitor_script])
+        
+        add_log('Monitor centralisé démarré', 'success')
+        
+        # Publier l'événement
+        event_bus.publish(EventTypes.SERVICE_STARTED, {
+            'service': 'monitor',
+            'pid': monitor_process.pid
+        })
+        
+        return jsonify({'success': True, 'message': 'Monitor started'})
+        
+    except Exception as e:
+        add_log(f'Erreur démarrage monitor: {str(e)}', 'error')
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/monitor/stop', methods=['POST'])
+def stop_monitor():
+    """Arrête le monitor centralisé"""
+    global monitor_process
+    
+    try:
+        if monitor_process:
+            monitor_process.terminate()
+            monitor_process = None
+            add_log('Monitor arrêté', 'info')
+            
+            event_bus.publish(EventTypes.SERVICE_STOPPED, {
+                'service': 'monitor'
+            })
+            
+            return jsonify({'success': True})
+        else:
+            return jsonify({'error': 'Monitor not running'}), 404
+            
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/monitor/status')
+def get_monitor_status():
+    """Renvoie le statut du monitor"""
+    try:
+        is_running = monitor_process is not None and monitor_process.poll() is None
+        return jsonify({
+            'running': is_running,
+            'pid': monitor_process.pid if is_running else None
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/ai/service/status')
+def get_ai_service_status():
+    """Renvoie le statut du service IA interne"""
+    return jsonify({
+        'available': ai_service.available,
+        'model': 'gpt-4o-mini' if ai_service.available else None
+    })
+
+@app.route('/api/calibration/status')
+def get_calibration_status():
+    """Vérifie le statut de la calibration"""
+    try:
+        import subprocess
+        result = subprocess.run(['python', 'check_calibration.py'], 
+                              capture_output=True, text=True)
+        
+        is_valid = result.returncode == 0
+        
+        # Lire les infos de calibration si disponible
+        calibration_info = None
+        calibration_file = os.path.join(config.WORKSPACE_DIR, 'game_files', 'calibration.json')
+        if os.path.exists(calibration_file):
+            try:
+                with open(calibration_file, 'r') as f:
+                    import json
+                    calibration_info = json.load(f)
+            except:
+                pass
+        
+        return jsonify({
+            'valid': is_valid,
+            'message': result.stdout.strip() if result.stdout else 'Unknown status',
+            'calibration_info': calibration_info
+        })
+    except Exception as e:
+        return jsonify({'valid': False, 'error': str(e)}), 500
+
+@app.route('/api/calibration', methods=['POST'])
+def start_calibration():
+    """Lance le processus de calibration"""
+    try:
+        # Choisir le script selon si Dolphin est en cours ou non
+        is_dolphin_running = dolphin_process is not None and dolphin_process.poll() is None
+        
+        if is_dolphin_running:
+            # Si Dolphin tourne déjà, utiliser l'ancienne méthode
+            calibration_script = os.path.join(config.WORKSPACE_DIR, 'run_calibration.py')
+            script_name = 'Calibration (Dolphin déjà ouvert)'
+        else:
+            # Sinon, utiliser le nouveau script qui lance Dolphin
+            calibration_script = os.path.join(config.WORKSPACE_DIR, 'run_calibration_with_dolphin.py')
+            script_name = 'Calibration avec Dolphin'
+        
+        if not os.path.exists(calibration_script):
+            return jsonify({'error': 'Script de calibration introuvable'}), 404
+        
+        # Lancer la calibration dans un nouveau terminal
+        if sys.platform == 'win32':
+            cmd = f'start "{script_name}" cmd /k "python {calibration_script}"'
+            subprocess.Popen(cmd, shell=True)
+        else:
+            subprocess.Popen(['gnome-terminal', '--', 'python', calibration_script])
+        
+        message = f'{script_name} lancée dans un nouveau terminal'
+        add_log(message, 'info')
+        return jsonify({'success': True, 'message': message})
+    except Exception as e:
+        add_log(f'Erreur lors du lancement de la calibration: {str(e)}', 'error')
         return jsonify({'error': str(e)}), 500
 
 @app.route('/api/create_demo_image')
@@ -505,6 +870,35 @@ def create_demo_image():
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
 
+@app.route('/api/health')
+def health_check():
+    """Endpoint pour vérifier la santé du système"""
+    try:
+        status = health_check_service.get_system_status()
+        return jsonify(status)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/health/check', methods=['POST'])
+def perform_health_check():
+    """Effectue un health check complet avec option de démarrage automatique"""
+    try:
+        auto_start = request.json.get('auto_start', True) if request.json else True
+        all_healthy, messages = health_check_service.perform_startup_checks(auto_start=auto_start)
+        
+        return jsonify({
+            'success': True,
+            'all_healthy': all_healthy,
+            'messages': messages
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/health')
+def simple_health():
+    """Simple endpoint de santé pour OmniParser"""
+    return jsonify({"status": "healthy", "service": "monopoly-ia"})
+
 def run_app():
     """Démarre l'application Flask"""
     # Créer le dossier de contexte s'il n'existe pas
@@ -514,6 +908,10 @@ def run_app():
     # Démarrer le thread de capture du terminal
     terminal_thread = threading.Thread(target=capture_terminal_output, daemon=True)
     terminal_thread.start()
+    
+    # Démarrer le thread de vérification du statut de Dolphin
+    dolphin_check_thread = threading.Thread(target=check_dolphin_status, daemon=True)
+    dolphin_check_thread.start()
     
     # Démarrer l'application Flask
     app.run(host=config.FLASK_HOST, port=config.FLASK_PORT, debug=config.FLASK_DEBUG, use_reloader=False)

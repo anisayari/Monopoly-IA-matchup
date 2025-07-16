@@ -1,256 +1,404 @@
-⚠️ **Project Status: Under Construction** - This project is actively being developed.
-⚠️ **Statut du Projet : En Construction** - Ce projet est en cours de développement.
-
 # 🎲 MonopolyIA - LLM Matchup Arena
 
 [English](#english) | [Français](#français)
 
 # English
 
-A groundbreaking framework for evaluating Large Language Models (LLMs) performance through Monopoly gameplay, combining game memory analysis and artificial intelligence.
+A cutting-edge framework for evaluating Large Language Models (LLMs) performance through Monopoly gameplay, featuring centralized architecture, real-time monitoring, and AI-powered decision making with GPU-accelerated popup detection.
 
-## 🎯 Project Goal
+## 🚀 Quick Start
 
-This project aims to create a standardized environment to:
-- Evaluate LLMs' strategic reasoning capabilities
-- Compare different models in a complex game context
-- Analyze AI decision-making in simulated economic situations
-- Measure LLM performance in a rule-based environment
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Start everything
+START_MONOPOLY.bat
+
+# 3. Open browser
+http://localhost:5000
+```
 
 ## 🏗️ Architecture
+
+### Centralized Event-Driven System
+
+```
+┌─────────────────────────────────────────────────────┐
+│           Flask Server (Port 5000)                  │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────┐│
+│  │Event Bus │ │  Popup   │ │    AI    │ │Activity││
+│  │ (Redis)  │ │ Service  │ │ Service  │ │Terminal││
+│  └──────────┘ └──────────┘ └──────────┘ └────────┘│
+└─────────────────────────────────────────────────────┘
+         ▲               ▲               ▲         ▲
+         │               │               │         │
+    ┌────┴────┐    ┌────┴────┐    ┌────┴────┐ ┌──┴───┐
+    │ Monitor │    │OmniParser│    │Dashboard│ │ RAM  │
+    │         │    │ (GPU)    │    │(WebSocket)│Memory│
+    └─────────┘    └─────────┘    └─────────┘ └──────┘
+```
+
+### Directory Structure
 
 ```
 monopolyIA/
 ├── src/
 │   ├── core/              # Core engine
-│   │   ├── memory_reader.py   # Dolphin interface
-│   │   └── memory_addresses.py # Memory mapping
 │   ├── models/            # Data structures
-│   │   ├── player.py      # Player management
-│   │   ├── property.py    # Property management
-│   │   └── enums.py       # Constants and enums
 │   ├── game/              # Game logic
-│   │   └── monopoly.py    # Main controller
 │   └── ai/               # AI integration
-│       ├── agents/       # LLM models
-│       └── evaluator.py  # Performance metrics
-└── main.py               # Entry point
+├── services/              # Centralized services
+│   ├── event_bus.py      # Real-time messaging
+│   ├── popup_service.py  # Popup management
+│   └── ai_service.py     # AI decisions
+├── api/                  # REST endpoints
+├── templates/            # Web interfaces
+├── static/               # Frontend assets
+└── app.py               # Main Flask application
 ```
 
-## 🚀 Installation
+## 💡 Key Features
 
-1. Clone the repository:
+### 🎮 Core Features
+- **Dolphin Memory Engine Integration** - Direct game memory reading
+- **Multi-LLM Support** - Claude, GPT-4, local models
+- **Real-time Performance Metrics** - Track decisions and outcomes
+- **Replay System** - Post-game analysis
+
+### 🏗️ New Centralized Architecture
+- **Event Bus (WebSocket)** - Real-time communication
+- **Centralized Monitoring Dashboard** - Live popup tracking with activity terminal
+- **AI Decision Service** - Intelligent gameplay choices
+- **OmniParser with GPU** - Fast UI element detection (YOLO + OCR)
+- **Continuous Game Monitor** - RAM reading and idle detection
+- **Unified Decision Server** - Centralized AI decision making
+- **REST API** - Complete control interface
+
+### 📊 Monitoring Features
+- **Activity Terminal** - Real-time logs of all system events
+- **Live Popup Detection** - See popups as they appear
+- **AI Decision Timeline** - Track all AI choices
+- **Performance Statistics** - Response times, success rates
+- **Screenshot Archive** - Visual history of decisions
+- **RAM Events** - Memory state changes tracking
+- **Idle State Detection** - Automatic action after 2 minutes of inactivity
+- **Continuous Context Building** - Global and per-player game state tracking
+
+## 🔧 Installation
+
+### Prerequisites
+- Python 3.11+
+- NVIDIA GPU (for OmniParser acceleration)
+- Dolphin Emulator
+- Windows 10/11
+- Docker (optional, for Redis)
+
+### Step 1: Clone Repository
 ```bash
 git clone https://github.com/your-username/MonopolyIA-matchup.git
 cd MonopolyIA-matchup
 ```
 
-2. Install dependencies:
+### Step 2: Install Dependencies
 ```bash
+# Install all dependencies including OmniParser
 pip install -r requirements.txt
 ```
 
-3. Environment setup:
-- Install Dolphin Emulator
-- Configure paths in `config.yaml`
-- Set up LLM API credentials (if needed)
+### Step 3: Fix NumPy for GPU compatibility
+```bash
+# Important: Fix NumPy version for CUDA
+pip uninstall numpy -y
+pip install numpy==1.26.4
+```
 
-## 💡 Features
+### Step 4: Setup Redis (Optional - not required)
+```bash
+# The system works without Redis
+# If you want to enable it:
+docker run -d --name monopoly-redis -p 6379:6379 redis:alpine
+```
 
-### Core Features
-- 🎮 Dolphin Memory Engine Integration
-- 🤖 Multi-LLM Support (Claude, GPT-4, etc.)
-- 📊 Real-time Performance Metrics
-- 🔄 Replay System for Post-game Analysis
+### Step 5: Configure AI (Optional)
+```bash
+# Windows
+setx OPENAI_API_KEY "your-api-key"
 
-### Monitoring
-- 💰 Transaction and Asset Tracking
-- 📍 Position and Movement Monitoring
-- 🎲 Game Decision Analysis
-- 📈 Progress Graphs
+# Or create .env file
+echo OPENAI_API_KEY=your-api-key > .env
+```
 
-## 🔧 Usage
+## 🎮 Usage
 
-### Basic Configuration
+### 1. Start Everything
+```bash
+START_MONOPOLY.bat
+```
+
+This will:
+- Clean up old processes
+- Start OmniParser with GPU (port 8000)
+- Launch Flask server (port 5000)
+- Monitor service starts automatically when Dolphin launches
+- Open web browser
+
+### 2. Web Interface
+
+#### Main Dashboard (http://localhost:5000)
+- Configure paths (Dolphin, ISO, Save file)
+- Start/Stop Dolphin
+- View game context
+- Configure players
+
+#### Admin Panel (/admin)
+- System controls
+- Live logs
+- Terminal output
+- Service management
+
+#### Monitoring Dashboard (/monitoring) 🆕
+- Real-time popup tracking
+- AI decision timeline
+- Performance statistics
+- Live WebSocket updates
+
+### 3. Start Services
+
+1. **Dolphin**: Click "Start Dolphin" on main page
+2. **OmniParser**: Start from Admin panel
+3. **Monitor**: Start from Monitoring dashboard
+
+### 4. Watch AI Play!
+
+The system will:
+- Detect game popups automatically
+- Analyze options with OmniParser
+- Make intelligent decisions with AI
+- Execute clicks in the game
+- Display everything in real-time
+
+## 🤖 AI Integration
+
+### Supported Models
+- OpenAI GPT-4o-mini (default)
+- Claude 3.5
+- Local models (via API)
+
+### Decision Making
+The AI considers:
+- Current game state
+- Player finances
+- Property ownership
+- Strategic positioning
+
+### Fallback Logic
+If AI is unavailable, the system uses priority-based decisions:
+1. Buy
+2. Next Turn
+3. Roll Again
+4. Auction
+5. Trade
+
+## 📡 API Endpoints
+
+### Popup Management
+- `POST /api/popups/detected` - Report new popup
+- `GET /api/popups/{id}/status` - Get popup status
+- `GET /api/popups/active` - List active popups
+- `POST /api/popups/{id}/execute` - Execute decision
+
+### Service Control
+- `POST /api/monitor/start` - Start monitor
+- `POST /api/monitor/stop` - Stop monitor
+- `GET /api/monitor/status` - Monitor status
+- `GET /api/ai/status` - AI service status
+
+### Game Control
+- `POST /api/dolphin` - Start Dolphin
+- `DELETE /api/dolphin` - Stop Dolphin
+- `GET /api/context` - Get game context
+
+## 🛠️ Configuration
+
+### config/user_config.json
+```json
+{
+  "dolphin_path": "C:\\path\\to\\Dolphin.exe",
+  "monopoly_iso_path": "C:\\path\\to\\monopoly.rvz",
+  "save_file_path": "C:\\path\\to\\save.sav",
+  "memory_engine_path": "C:\\path\\to\\DolphinMemoryEngine.exe",
+  "refresh_interval": 2000
+}
+```
+
+### Environment Variables
+- `OPENAI_API_KEY` - For AI decisions
+- `REDIS_URL` - Redis connection (default: localhost:6379)
+
+## 📊 Performance Metrics
+
+The system tracks:
+- **Response Time** - Popup detection to action
+- **Decision Accuracy** - AI choice quality
+- **Success Rate** - Completed actions
+- **System Health** - Service uptime
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **ModuleNotFoundError: flask_socketio**
+   ```bash
+   pip install flask-socketio python-socketio eventlet
+   ```
+
+2. **Redis Connection Error**
+   - Redis is optional, system works without it
+   - To enable: `docker run -d -p 6379:6379 redis:alpine`
+
+3. **Dolphin Memory Engine Error**
+   - Ensure Dolphin is running first
+   - Check memory engine path in config
+
+4. **No AI Decisions**
+   - Check OpenAI API key: `echo %OPENAI_API_KEY%`
+   - System will use fallback logic
+
+### Debug Tools
+```bash
+# Check dependencies
+python check_dependencies.py
+
+# Test AI setup
+python test_ai_setup.py
+
+# View logs
+# Check Admin panel > Logs tab
+```
+
+## 🚀 Advanced Features
+
+### Custom AI Agents
 ```python
-from src import MonopolyGame
-from src.ai import LLMAgent
+from services.ai_service import AIService
 
-# Initialize a game
-game = MonopolyGame()
-
-# Configure AI agents
-agent1 = LLMAgent(model="claude-3", name="Claude")
-agent2 = LLMAgent(model="gpt-4", name="GPT-4")
-
-# Start a match
-game.start_match(agent1, agent2)
+class CustomAI(AIService):
+    def make_decision(self, popup_text, options, context):
+        # Your logic here
+        return {'choice': 'buy', 'reason': 'Custom logic'}
 ```
 
-## Interface Web
+### Event Subscriptions
+```python
+from services.event_bus import EventBus, EventTypes
 
-Une interface web a été ajoutée pour faciliter la gestion et la visualisation du jeu Monopoly. Cette interface permet de :
-
-- Visualiser le contexte du jeu en temps réel
-- Modifier les informations des joueurs (nom, argent)
-- Démarrer et arrêter l'émulateur Dolphin
-- Redémarrer le jeu
-- Configurer les chemins des fichiers nécessaires
-
-### Installation
-
-Pour utiliser l'interface web, assurez-vous d'avoir installé les dépendances supplémentaires :
-
-```bash
-pip install -r requirements.txt
+event_bus.subscribe(EventTypes.POPUP_DETECTED, my_handler)
 ```
 
-### Démarrage de l'interface web
-
-Pour démarrer l'interface web, exécutez :
-
-```bash
-python run_web.py
+### Extending the Monitor
+```python
+class CustomMonitor(CentralizedMonitor):
+    def process_popup(self, text, screenshot):
+        # Custom processing
+        super().process_popup(text, screenshot)
 ```
 
-L'interface sera accessible à l'adresse http://localhost:5000 dans votre navigateur.
+## 📈 Roadmap
 
-### Configuration
+- [ ] Multi-game support
+- [ ] Tournament mode
+- [ ] Advanced analytics
+- [ ] Cloud deployment
+- [ ] Mobile monitoring app
 
-Avant d'utiliser l'interface, vous devez configurer les chemins dans l'onglet "Configuration" :
+## 🤝 Contributing
 
-- **Chemin de Dolphin** : Chemin vers l'exécutable Dolphin (ex: `C:\Program Files\Dolphin\Dolphin.exe`)
-- **Chemin de l'ISO Monopoly** : Chemin vers le fichier ISO du jeu Monopoly
-- **Chemin du fichier de sauvegarde** : Chemin vers le fichier de sauvegarde à utiliser
+Contributions welcome! Please read our contributing guidelines.
 
-Vous pouvez également modifier ces chemins directement dans le fichier `config.py`.
+## 📝 License
 
-### Fonctionnalités
-
-#### Contrôle de Dolphin
-- Démarrer/arrêter l'émulateur Dolphin
-- Redémarrer le jeu Monopoly
-
-#### Gestion des joueurs
-- Modifier le nom des joueurs
-- Ajuster le montant d'argent des joueurs
-
-#### Visualisation du contexte
-- Événements du jeu
-- Informations sur les joueurs
-- Propriétés et leur statut
-- Plateau de jeu
-- JSON brut du contexte
-
-#### Terminal
-- Affichage de la sortie du terminal en temps réel
-
-### Utilisation en parallèle avec le backend
-
-Vous pouvez toujours utiliser le backend séparément pour le débogage en exécutant :
-
-```bash
-python main.py
-```
-
-L'interface web détectera automatiquement les changements dans le fichier de contexte.
+MIT License - see LICENSE file
 
 ---
 
 # Français
 
-Un framework innovant pour évaluer les performances des modèles de langage (LLMs) à travers des parties de Monopoly, combinant l'analyse de mémoire de jeu et l'intelligence artificielle.
+Un framework de pointe pour évaluer les performances des modèles de langage (LLMs) à travers le jeu Monopoly, avec une architecture centralisée, un monitoring en temps réel et des décisions basées sur l'IA.
 
-## 🎯 Objectif du Projet
+## 🚀 Démarrage Rapide
 
-Ce projet vise à créer un environnement standardisé permettant de :
-- Évaluer les capacités de raisonnement stratégique des LLMs
-- Comparer différents modèles dans un contexte de jeu complexe
-- Analyser la prise de décision des IA dans des situations économiques simulées
-- Mesurer la performance des LLMs dans un environnement aux règles strictes
-
-## 🏗️ Architecture
-
-```
-monopolyIA/
-├── src/
-│   ├── core/              # Moteur principal
-│   │   ├── memory_reader.py   # Interface avec Dolphin
-│   │   └── memory_addresses.py # Mapping mémoire
-│   ├── models/            # Structures de données
-│   │   ├── player.py      # Gestion des joueurs
-│   │   ├── property.py    # Gestion des propriétés
-│   │   └── enums.py       # Constantes et énumérations
-│   ├── game/              # Logique de jeu
-│   │   └── monopoly.py    # Contrôleur principal
-│   └── ai/               # Intégration IA
-│       ├── agents/       # Différents modèles LLM
-│       └── evaluator.py  # Métriques de performance
-└── main.py               # Point d'entrée
-```
-
-## 🚀 Installation
-
-1. Cloner le repository :
 ```bash
-git clone https://github.com/votre-username/MonopolyIA-matchup.git
-cd MonopolyIA-matchup
+# 1. Installer les dépendances
+pip install -r requirements_complete.txt
+
+# 2. Tout démarrer
+START_MONOPOLY.bat
+
+# 3. Ouvrir le navigateur
+http://localhost:5000
 ```
 
-2. Installer les dépendances :
-```bash
-pip install -r requirements.txt
-```
+## 💡 Fonctionnalités Principales
 
-3. Configuration de l'environnement :
-- Installer Dolphin Emulator
-- Configurer les chemins d'accès dans `config.yaml`
-- Préparer les credentials API pour les LLMs (si nécessaire)
+### 🎮 Fonctionnalités de Base
+- **Intégration Dolphin Memory Engine** - Lecture directe de la mémoire
+- **Support Multi-LLM** - Claude, GPT-4, modèles locaux
+- **Métriques en Temps Réel** - Suivi des décisions
+- **Système de Replay** - Analyse post-partie
 
-## 💡 Fonctionnalités
+### 🏗️ Nouvelle Architecture Centralisée
+- **Event Bus (WebSocket)** - Communication temps réel
+- **Dashboard de Monitoring Centralisé** - Suivi des popups en direct
+- **Service de Décision IA** - Choix de jeu intelligents
+- **Monitor Continu** - Lecture RAM et détection d'inactivité
+- **Serveur de Décision Unifié** - Décisions IA centralisées
+- **API REST** - Interface de contrôle complète
 
-### Fonctionnalités Principales
-- 🎮 Interface avec Dolphin Memory Engine
-- 🤖 Support multi-LLM (Claude, GPT-4, etc.)
-- 📊 Métriques de performance en temps réel
-- 🔄 Système de replay pour analyse post-partie
+### 📊 Fonctionnalités de Monitoring
+- **Détection de Popups en Direct** - Voir les popups apparaître
+- **Timeline des Décisions IA** - Suivre tous les choix
+- **Statistiques de Performance** - Temps de réponse, taux de succès
+- **Archive de Screenshots** - Historique visuel
 
-### Surveillance
-- 💰 Suivi des transactions et des actifs
-- 📍 Tracking des positions et mouvements
-- 🎲 Analyse des décisions de jeu
-- 📈 Graphiques de progression
+## 🔧 Installation et Configuration
 
-## 🔧 Utilisation
+[Voir la section anglaise pour les détails complets]
 
-### Configuration de Base
-```python
-from src import MonopolyGame
-from src.ai import LLMAgent
+## 🎮 Utilisation
 
-# Initialiser une partie
-game = MonopolyGame()
+1. **Démarrer tout** : `START_MONOPOLY.bat`
+2. **Interface Web** : http://localhost:5000
+3. **Panneau Admin** : Cliquer sur "Admin"
+4. **Dashboard Monitoring** : Cliquer sur "Monitoring"
 
-# Configurer les agents IA
-agent1 = LLMAgent(model="claude-3", name="Claude")
-agent2 = LLMAgent(model="gpt-4", name="GPT-4")
+Le système va :
+- Détecter automatiquement les popups
+- Analyser les options avec OmniParser
+- Prendre des décisions intelligentes avec l'IA
+- Exécuter les clics dans le jeu
+- Afficher tout en temps réel
 
-# Démarrer un match
-game.start_match(agent1, agent2)
-```
+## 🤖 Intégration IA
 
-## 📊 Métriques d'Évaluation
+L'IA prend en compte :
+- L'état actuel du jeu
+- Les finances des joueurs
+- La propriété des terrains
+- Le positionnement stratégique
 
-- Taux de victoire
-- Rentabilité des investissements
-- Temps de décision moyen
-- Qualité des négociations
-- Adaptabilité stratégique
+## 📊 Métriques de Performance
+
+Le système suit :
+- **Temps de Réponse** - Détection à l'action
+- **Précision des Décisions** - Qualité des choix IA
+- **Taux de Succès** - Actions complétées
+- **Santé du Système** - Disponibilité des services
 
 ## 🤝 Contribution
 
-Les contributions sont les bienvenues ! Consultez notre guide de contribution pour plus de détails.
+Les contributions sont les bienvenues ! Consultez nos directives de contribution.
 
-## 📝 License
+## 📝 Licence
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+Licence MIT - voir le fichier LICENSE
