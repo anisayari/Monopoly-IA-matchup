@@ -70,37 +70,69 @@ class AIService:
             # Préparer le contexte
             context_str = self._format_game_context(game_context)
             
-            # Créer le prompt
-            prompt = f"""Tu es un expert du Monopoly. Contexte actuel:
-{context_str}
+            # Définir le schéma JSON pour la sortie structurée
+            schema = {
+                "type": "object",
+                "properties": {
+                    "choice": {
+                        "type": "string",
+                        "description": "Nom exact de l'option choisie",
+                        "enum": option_names
+                    },
+                    "reason": {
+                        "type": "string",
+                        "description": "Courte explication (max 20 mots)"
+                    },
+                    "confidence": {
+                        "type": "string",
+                        "description": "Score de confiance entre 0.0 et 1.0"
+                    },
+                    "chat_message": {
+                        "type": "string",
+                        "description": "Un message à envoyer dans le chat, sera visible par tous les autres joueurs"
 
-Popup: "{popup_text}"
-Options disponibles: {', '.join(option_names)}
+                    }
+                },
+                "required": ["choice", "reason", "confidence", "chat_message"],
+                "additionalProperties": False
+            }
 
-Quelle est la MEILLEURE option stratégique? Réponds avec:
-1. Le nom exact de l'option (ex: "buy", "auction", "next turn")
-2. Une courte explication (max 20 mots)
-
-Format: option|explication"""
-
-            # Appeler l'API
-            response = self.client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[
-                    {"role": "system", "content": "Expert Monopoly. Réponses concises au format: option|explication"},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.1,
-                max_tokens=50
+            # Construire le message utilisateur
+            user_message = (
+                f"Tu es un expert du Monopoly.\n"
+                f"Contexte actuel:\n{context_str}\n\n"
+                f"Popup: \"{popup_text}\"\n"
+                f"Options disponibles: {', '.join(option_names)}\n\n"
             )
-            
-            # Parser la réponse
-            result = response.choices[0].message.content.strip()
-            parts = result.split('|')
-            
-            choice = parts[0].strip().lower()
-            reason = parts[1].strip() if len(parts) > 1 else "Décision stratégique"
-            
+
+            # Appeler l'API avec Structured Outputs
+            response = self.client.responses.create(
+                model="gpt-4.1-mini",
+                messages=[
+                    {"role": "system", "content": "Expert Monopoly. Réponds uniquement avec un JSON valide conforme au schéma."},
+                    {"role": "user", "content": user_message}
+                ],
+                response_format={
+                    "type": "json_schema",
+                    "schema": schema,
+                    "strict": True
+                },
+                temperature=0.1,
+                max_tokens=1000
+            )
+
+            # Extraire la réponse JSON
+            result_json_str = getattr(response, "output_text", None)
+
+            data = json.loads(result_json_str)
+
+            choice = str(data.get("choice", "")).lower()
+            reason = data.get("reason", "Décision stratégique")
+            confidence = float(data.get("confidence", 0.9))
+
+            ## Chat Message (A gérer plus tard)
+            print("Chat Message:", data.get("chat_message", "No message"))
+
             # Vérifier que le choix est valide
             if choice not in option_names:
                 print(f"⚠️  IA a choisi '{choice}' qui n'est pas dans les options")
@@ -109,7 +141,7 @@ Format: option|explication"""
             return {
                 'choice': choice,
                 'reason': reason,
-                'confidence': 0.9
+                'confidence': confidence
             }
             
         except Exception as e:
