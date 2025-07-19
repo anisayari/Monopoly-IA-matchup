@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T18:54:53.392208",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "accounts ",
+    "next turn "
+  ],
+  "decision": "next turn ",
+  "reason": "Commencer à jouer permet de prendre des décisions basées sur la situation actuelle du plateau et des autres joueurs.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

@@ -1,205 +1,193 @@
 """
-AI Actions Server - Gère les décisions IA et affiche le contexte du jeu
+AI Actions & Game Context Monitor
+Affiche les actions des IA et l'état du jeu en temps réel
 """
-import os
-import sys
-import time
-import json
-import requests
-from datetime import datetime
-from typing import Dict, Optional
-import threading
-from colorama import init, Fore, Back, Style
 
-# Initialiser colorama pour les couleurs Windows
+import asyncio
+import aiohttp
+from aiohttp import web
+import json
+from datetime import datetime
+from colorama import init, Fore, Style, Back
+import sys
+
+# Initialiser colorama pour Windows
 init()
 
-class AIActionsServer:
-    def __init__(self, api_url="http://localhost:5000"):
-        self.api_url = api_url
-        self.running = False
-        self.game_context = {}
-        self.last_update = None
-        self.last_action = None
-        self.stats = {
-            'popups_detected': 0,
-            'decisions_made': 0,
-            'ai_calls': 0,
-            'errors': 0,
-            'keyboard_actions': 0
+class AIActionsMonitor:
+    def __init__(self, port=8004):
+        self.app = web.Application()
+        self.port = port
+        self.current_context = {}
+        self.setup_routes()
+        
+    def setup_routes(self):
+        """Configure les routes du serveur"""
+        self.app.router.add_post('/action', self.handle_action)
+        self.app.router.add_post('/context', self.handle_context)
+        self.app.router.add_get('/health', self.health_check)
+        
+    async def handle_action(self, request):
+        """Reçoit et affiche une action d'IA"""
+        try:
+            data = await request.json()
+            
+            # Extraire les données
+            player = data.get('player', 'Unknown')
+            action_type = data.get('type', 'unknown')
+            decision = data.get('decision', '')
+            reason = data.get('reason', '')
+            confidence = data.get('confidence', 0)
+            options = data.get('options', [])
+            timestamp = data.get('timestamp', datetime.now().isoformat())
+            
+            # Afficher l'action
+            self.display_action(player, action_type, decision, reason, confidence, options, timestamp)
+            
+            return web.json_response({'status': 'ok'})
+        except Exception as e:
+            print(f"❌ Erreur: {e}")
+            return web.json_response({'error': str(e)}, status=500)
+            
+    async def handle_context(self, request):
+        """Reçoit et affiche le contexte du jeu"""
+        try:
+            data = await request.json()
+            self.current_context = data
+            
+            # Afficher le contexte
+            self.display_context(data)
+            
+            return web.json_response({'status': 'ok'})
+        except Exception as e:
+            print(f"❌ Erreur: {e}")
+            return web.json_response({'error': str(e)}, status=500)
+            
+    async def health_check(self, request):
+        """Endpoint de santé"""
+        return web.json_response({'status': 'healthy', 'service': 'ai_actions_monitor'})
+        
+    def display_action(self, player, action_type, decision, reason, confidence, options, timestamp):
+        """Affiche une action d'IA formatée"""
+        time_str = datetime.fromisoformat(timestamp).strftime("%H:%M:%S")
+        
+        # Emojis par type d'action
+        action_emojis = {
+            'buy': '🏠',
+            'sell': '💰',
+            'trade': '🤝',
+            'build': '🏗️',
+            'roll': '🎲',
+            'jail': '🔒',
+            'card': '🃏',
+            'auction': '🔨',
+            'rent': '💸',
+            'turn': '⏭️',
+            'unknown': '❓'
         }
         
-    def clear_screen(self):
-        """Efface l'écran"""
-        os.system('cls' if os.name == 'nt' else 'clear')
+        emoji = action_emojis.get(action_type, '❓')
         
-    def display_header(self):
-        """Affiche l'en-tête"""
-        print(f"{Back.BLUE}{Fore.WHITE} AI ACTIONS & GAME CONTEXT MONITOR {Style.RESET_ALL}")
-        print(f"{Fore.CYAN}{'='*60}{Style.RESET_ALL}")
-        print(f"API: {self.api_url} | Dernière mise à jour: {self.last_update or 'N/A'}")
-        print(f"{Fore.CYAN}{'='*60}{Style.RESET_ALL}\n")
-        
-    def display_players(self):
-        """Affiche les informations des joueurs"""
-        players = self.game_context.get('players', {})
-        if not players:
-            print(f"{Fore.YELLOW}Aucun joueur détecté{Style.RESET_ALL}\n")
-            return
+        # Couleur selon la confiance
+        if confidence >= 0.8:
+            conf_color = Fore.GREEN
+        elif confidence >= 0.5:
+            conf_color = Fore.YELLOW
+        else:
+            conf_color = Fore.RED
             
-        print(f"{Fore.GREEN}JOUEURS:{Style.RESET_ALL}")
-        print(f"{'Nom':<15} {'Argent':>10} {'Position':>10} {'Propriétés':>12}")
-        print("-" * 50)
+        print(f"\n{Fore.LIGHTBLACK_EX}[{time_str}]{Style.RESET_ALL} {emoji} {Fore.CYAN}{player}{Style.RESET_ALL} - ACTION")
+        print(f"   {Fore.WHITE}Décision:{Style.RESET_ALL} {Fore.YELLOW}{decision}{Style.RESET_ALL}")
+        print(f"   {Fore.WHITE}Raison:{Style.RESET_ALL} {reason}")
+        print(f"   {Fore.WHITE}Confiance:{Style.RESET_ALL} {conf_color}{confidence:.0%}{Style.RESET_ALL}")
         
-        for player_id, player in players.items():
-            name = player.get('name', 'Inconnu')
-            money = player.get('money', 0)
-            position = player.get('position', 0)
-            properties = len(player.get('properties', []))
+        if options:
+            print(f"   {Fore.WHITE}Options disponibles:{Style.RESET_ALL} {', '.join(options)}")
             
-            # Couleur selon l'argent
-            if money < 500:
-                color = Fore.RED
-            elif money < 1500:
-                color = Fore.YELLOW
-            else:
-                color = Fore.GREEN
+        print(f"{Fore.LIGHTBLACK_EX}{'─' * 60}{Style.RESET_ALL}")
+        
+    def display_context(self, context):
+        """Affiche le contexte du jeu"""
+        print(f"\n{Fore.GREEN}╔══════════════════════════════════════════════════════════╗{Style.RESET_ALL}")
+        print(f"{Fore.GREEN}║                    GAME CONTEXT UPDATE                    ║{Style.RESET_ALL}")
+        print(f"{Fore.GREEN}╚══════════════════════════════════════════════════════════╝{Style.RESET_ALL}")
+        
+        # Informations globales
+        global_data = context.get('global', {})
+        print(f"\n{Fore.YELLOW}📊 État Global:{Style.RESET_ALL}")
+        print(f"   Tour: {global_data.get('current_turn', 'N/A')}")
+        print(f"   Joueur actuel: {Fore.CYAN}{global_data.get('current_player', 'N/A')}{Style.RESET_ALL}")
+        
+        # Informations des joueurs
+        players = context.get('players', {})
+        if players:
+            print(f"\n{Fore.YELLOW}👥 Joueurs:{Style.RESET_ALL}")
+            for player_key, player_data in players.items():
+                name = player_data.get('name', player_key)
+                money = player_data.get('money', 0)
+                position = player_data.get('current_space', 'Unknown')
+                properties = len(player_data.get('properties', []))
+                is_current = "🎮" if player_data.get('is_current', False) else "  "
+                jail = " 🔒" if player_data.get('jail', False) else ""
                 
-            print(f"{name:<15} {color}{money:>10}€{Style.RESET_ALL} {position:>10} {properties:>12}")
-        print()
+                # Couleur selon l'argent
+                if money >= 1500:
+                    money_color = Fore.GREEN
+                elif money >= 500:
+                    money_color = Fore.YELLOW
+                else:
+                    money_color = Fore.RED
+                    
+                print(f"   {is_current} {Fore.CYAN}{name}{Style.RESET_ALL}: {money_color}${money}{Style.RESET_ALL} | 🏠 {properties} props | 📍 {position}{jail}")
         
-    def display_game_state(self):
-        """Affiche l'état global du jeu"""
-        global_info = self.game_context.get('global', {})
+        # Propriétés par groupe
+        properties = global_data.get('properties', [])
+        if properties:
+            print(f"\n{Fore.YELLOW}🏘️ Propriétés par groupe:{Style.RESET_ALL}")
+            groups = {}
+            for prop in properties:
+                if prop.get('owner'):
+                    group = prop.get('group', 'Other')
+                    owner = prop['owner']
+                    if group not in groups:
+                        groups[group] = {}
+                    if owner not in groups[group]:
+                        groups[group][owner] = []
+                    groups[group][owner].append(prop['name'])
+            
+            for group, owners in groups.items():
+                print(f"   {Fore.LIGHTBLACK_EX}{group}:{Style.RESET_ALL}")
+                for owner, props in owners.items():
+                    print(f"      {owner}: {', '.join(props[:3])}" + (" ..." if len(props) > 3 else ""))
+                    
+        # Statistiques rapides
+        if players:
+            total_money = sum(p.get('money', 0) for p in players.values())
+            avg_money = total_money / len(players) if players else 0
+            print(f"\n{Fore.YELLOW}📈 Statistiques:{Style.RESET_ALL}")
+            print(f"   Argent total en jeu: ${total_money}")
+            print(f"   Argent moyen: ${avg_money:.0f}")
+            
+        print(f"\n{Fore.LIGHTBLACK_EX}{'═' * 60}{Style.RESET_ALL}")
         
-        print(f"{Fore.GREEN}ÉTAT DU JEU:{Style.RESET_ALL}")
-        print(f"Tour actuel: {global_info.get('current_turn', 0)}")
-        print(f"Nombre de joueurs: {global_info.get('player_count', 0)}")
-        print(f"Propriétés sur le plateau: {len(global_info.get('properties', []))}")
+    async def start(self):
+        """Démarre le serveur"""
+        print(f"{Fore.BLUE}╔══════════════════════════════════════════════════════════╗{Style.RESET_ALL}")
+        print(f"{Fore.BLUE}║      AI ACTIONS & GAME CONTEXT MONITOR - PORT {self.port}      ║{Style.RESET_ALL}")
+        print(f"{Fore.BLUE}╚══════════════════════════════════════════════════════════╝{Style.RESET_ALL}")
+        print(f"\n{Fore.CYAN}📡 En attente des actions et du contexte du jeu...{Style.RESET_ALL}\n")
         
-        # Afficher le dernier événement
-        events = self.game_context.get('events', [])
-        if events:
-            last_event = events[-1]
-            print(f"\nDernier événement: {Fore.CYAN}{last_event.get('description', 'N/A')}{Style.RESET_ALL}")
-        print()
+        runner = web.AppRunner(self.app)
+        await runner.setup()
+        site = web.TCPSite(runner, 'localhost', self.port)
+        await site.start()
         
-    def display_ai_stats(self):
-        """Affiche les statistiques IA"""
-        print(f"{Fore.GREEN}STATISTIQUES IA:{Style.RESET_ALL}")
-        print(f"Popups détectés: {self.stats['popups_detected']}")
-        print(f"Décisions prises: {self.stats['decisions_made']}")
-        print(f"Appels IA: {self.stats['ai_calls']}")
-        print(f"Actions clavier: {self.stats['keyboard_actions']}")
-        print(f"Erreurs: {Fore.RED}{self.stats['errors']}{Style.RESET_ALL}")
-        print()
-        
-    def display_active_popups(self):
-        """Affiche les popups actifs"""
+        # Garder le serveur actif
         try:
-            response = requests.get(f"{self.api_url}/api/popups/active", timeout=2)
-            if response.ok:
-                popups = response.json()
-                if popups:
-                    print(f"{Fore.YELLOW}POPUPS ACTIFS:{Style.RESET_ALL}")
-                    for popup in popups:
-                        print(f"- [{popup.get('id', 'N/A')}] {popup.get('text', 'N/A')[:50]}...")
-                        if popup.get('decision'):
-                            print(f"  → Décision: {Fore.GREEN}{popup['decision']}{Style.RESET_ALL}")
-                    print()
-        except:
-            pass
-    
-    def display_last_action(self):
-        """Affiche la dernière action effectuée"""
-        if hasattr(self, 'last_action') and self.last_action is not None:
-            print(f"{Fore.CYAN}DERNIÈRE ACTION:{Style.RESET_ALL}")
-            print(f"Type: {self.last_action.get('type', 'N/A')}")
-            print(f"Description: {self.last_action.get('description', 'N/A')}")
-            print(f"Timestamp: {self.last_action.get('timestamp', 'N/A')}")
-            print()
-            
-    def fetch_game_context(self):
-        """Récupère le contexte du jeu"""
-        try:
-            response = requests.get(f"{self.api_url}/api/context", timeout=2)
-            if response.ok:
-                self.game_context = response.json()
-                self.last_update = datetime.now().strftime("%H:%M:%S")
-                return True
-        except Exception as e:
-            self.stats['errors'] += 1
-        return False
-        
-    def handle_popup_decisions(self):
-        """Gère les décisions de popups en attente"""
-        try:
-            # Vérifier les popups actifs
-            response = requests.get(f"{self.api_url}/api/popups/active", timeout=2)
-            if response.ok:
-                popups = response.json()
-                
-                for popup in popups:
-                    if popup.get('status') == 'analyzed' and not popup.get('decision'):
-                        # Popup en attente de décision
-                        self.stats['popups_detected'] += 1
-                        
-                        # Demander une décision
-                        decision_response = requests.post(
-                            f"{self.api_url}/api/popups/{popup['id']}/decide",
-                            json={'game_context': self.game_context},
-                            timeout=5
-                        )
-                        
-                        if decision_response.ok:
-                            self.stats['decisions_made'] += 1
-                            self.stats['ai_calls'] += 1
-                            print(f"{Fore.GREEN}✓ Décision prise pour popup {popup['id']}{Style.RESET_ALL}")
-                        
-        except Exception as e:
-            self.stats['errors'] += 1
-            
-    def display_loop(self):
-        """Boucle d'affichage principal"""
-        while self.running:
-            self.clear_screen()
-            self.display_header()
-            
-            if self.fetch_game_context():
-                self.display_game_state()
-                self.display_players()
-                self.display_active_popups()
-                self.display_last_action()
-                self.display_ai_stats()
-                
-                # Gérer les décisions en arrière-plan
-                threading.Thread(target=self.handle_popup_decisions, daemon=True).start()
-            else:
-                print(f"{Fore.RED}⚠ Impossible de récupérer le contexte du jeu{Style.RESET_ALL}")
-                print("Vérifiez que le serveur Flask est démarré sur http://localhost:5000")
-                
-            # Instructions
-            print(f"\n{Fore.CYAN}{'='*60}{Style.RESET_ALL}")
-            print("Appuyez sur Ctrl+C pour arrêter")
-            print(f"Rafraîchissement automatique toutes les 2 secondes")
-            
-            time.sleep(2)
-            
-    def run(self):
-        """Lance le serveur"""
-        self.running = True
-        print(f"{Fore.GREEN}🚀 AI Actions Server démarré !{Style.RESET_ALL}")
-        print("Connexion au serveur principal...")
-        
-        try:
-            self.display_loop()
+            await asyncio.Event().wait()
         except KeyboardInterrupt:
             print(f"\n{Fore.YELLOW}Arrêt du serveur...{Style.RESET_ALL}")
-            self.running = False
-
-if __name__ == "__main__":
-    # Permettre de spécifier l'URL du serveur
-    api_url = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:5000"
-    
-    server = AIActionsServer(api_url)
-    server.run()
+            
+if __name__ == '__main__':
+    monitor = AIActionsMonitor(port=8004)
+    asyncio.run(monitor.start())

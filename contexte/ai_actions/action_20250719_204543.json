@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T18:45:41.151383",
+  "trigger": "you want to buy",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "continue ",
+    "resign "
+  ],
+  "decision": "continue ",
+  "reason": "Acheter la station augmente les chances de revenus futurs et de positionnement stratégique sur le plateau.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

@@ -9,14 +9,27 @@ class CalibrationUtils:
 
     def __init__(self, calibration_file: str = "game_files/calibration.json"):
         """Initialize with calibration data from JSON file"""
-        # Rendre le chemin absolu basé sur la racine du projet (un dossier au-dessus de src/)
+        # Si le chemin n'est pas absolu, on le cherche par rapport à la racine du projet
         if not os.path.isabs(calibration_file):
-            project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-            calibration_file = os.path.join(project_root, calibration_file)
+            # Trouve la racine du projet en cherchant le dossier qui contient 'src'
+            current = os.path.dirname(os.path.abspath(__file__))
+            while current != os.path.dirname(current):  # Tant qu'on n'est pas à la racine
+                if os.path.exists(os.path.join(current, 'src')) and os.path.exists(os.path.join(current, 'game_files')):
+                    # On a trouvé la racine du projet
+                    calibration_file = os.path.join(current, calibration_file)
+                    break
+                current = os.path.dirname(current)
+            
             calibration_file = os.path.normpath(calibration_file)
+        
         try:
+            print(f"🔍 CalibrationUtils opening: {calibration_file}")
             with open(calibration_file, 'r') as f:
                 data = json.load(f)
+                print(f"📊 Loaded data has {len(data.get('points', []))} points")
+                if data.get('points'):
+                    print(f"   First point: {data['points'][0]}")
+
         except FileNotFoundError:
             raise FileNotFoundError(f"Calibration file '{calibration_file}' not found")
         except json.JSONDecodeError:

@@ -17,16 +17,15 @@ from src.game.contexte import Contexte
 from src.game.listeners import MonopolyListeners
 from src.core.game_loader import GameLoader
 from services.event_bus import EventBus, EventTypes
-from services.ai_service import AIService
 from services.auto_start_manager import AutoStartManager
 from services.health_check_service import HealthCheckService
 from api.popup_endpoints import create_popup_blueprint
+import requests
 
 app = Flask(__name__)
 
 # Initialiser l'Event Bus et les services
 event_bus = EventBus(app)
-ai_service = AIService(event_bus)
 auto_start_manager = AutoStartManager(config, event_bus)
 health_check_service = HealthCheckService()
 
@@ -934,10 +933,65 @@ def perform_health_check():
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
 
+@app.route('/api/actions/save', methods=['POST'])
+def save_ai_action():
+    """Sauvegarde une action de l'IA"""
+    try:
+        action_data = request.json
+        
+        # Créer le dossier d'actions s'il n'existe pas
+        actions_dir = os.path.join(config.CONTEXT_DIR, "ai_actions")
+        os.makedirs(actions_dir, exist_ok=True)
+        
+        # Créer un nom de fichier avec timestamp
+        timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+        filename = f"action_{timestamp}.json"
+        filepath = os.path.join(actions_dir, filename)
+        
+        # Sauvegarder l'action
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(action_data, f, ensure_ascii=False, indent=2)
+        
+        # Ajouter aussi à un fichier de log global
+        log_file = os.path.join(actions_dir, "all_actions.jsonl")
+        with open(log_file, 'a', encoding='utf-8') as f:
+            f.write(json.dumps(action_data, ensure_ascii=False) + '\n')
+        
+        add_log(f"Action IA sauvegardée: {action_data.get('decision', 'Unknown')} - {action_data.get('reason', '')}", 'info')
+        
+        return jsonify({'success': True, 'filename': filename})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
 @app.route('/health')
 def simple_health():
     """Simple endpoint de santé pour OmniParser"""
     return jsonify({"status": "healthy", "service": "monopoly-ia"})
+
+def update_context_periodically():
+    """Met à jour le contexte du jeu périodiquement"""
+    global contexte
+    while True:
+        try:
+            time.sleep(2)  # Mise à jour toutes les 2 secondes
+            if contexte and hasattr(contexte, '_update_context'):
+                contexte._update_context()
+                contexte._save_context()
+                
+                # Envoyer le contexte au serveur d'actions (port 8004)
+                if hasattr(contexte, 'context'):
+                    try:
+                        requests.post(
+                            'http://localhost:8004/context',
+                            json=contexte.context,
+                            timeout=1
+                        )
+                    except:
+                        # Ignorer si le serveur n'est pas disponible
+                        pass
+        except Exception as e:
+            # Erreur silencieuse pour ne pas polluer le terminal principal
+            pass
 
 def run_app():
     """Démarre l'application Flask"""
@@ -952,6 +1006,10 @@ def run_app():
     # Démarrer le thread de vérification du statut de Dolphin
     dolphin_check_thread = threading.Thread(target=check_dolphin_status, daemon=True)
     dolphin_check_thread.start()
+    
+    # Démarrer le thread de mise à jour du contexte
+    context_thread = threading.Thread(target=update_context_periodically, daemon=True)
+    context_thread.start()
     
     # Démarrer l'application Flask
     app.run(host=config.FLASK_HOST, port=config.FLASK_PORT, debug=config.FLASK_DEBUG, use_reloader=False)

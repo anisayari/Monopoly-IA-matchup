@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T18:53:50.633286",
+  "trigger": "Next Turn",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "accounts ",
+    "next turn "
+  ],
+  "decision": "next turn ",
+  "reason": "Il est encore tôt dans la partie, mieux vaut attendre pour voir les mouvements des autres joueurs.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

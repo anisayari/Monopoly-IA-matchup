@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T18:55:55.891335",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acquérir Whitechapel Road dès le début peut établir un bon revenu locatif et commencer à construire un monopole.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

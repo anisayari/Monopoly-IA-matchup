@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-07-19T18:56:58.049622",
+  "trigger": "would you like",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "Commencer le jeu est essentiel pour établir une stratégie de propriété et d'échanges.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

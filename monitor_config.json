@@ -8,6 +8,20 @@
       "text": ["would you like to"],
       "icon": ["accounts", "next turn", "roll again"]
     },
+    "would you like": {
+      "text": ["would you like to"],
+      "icon": ["accounts", "next turn"]
+    },
+    "Pause": {
+      "text": ["Pause"],
+      "icon": [
+          "continue",
+          "resign"
+      ],
+      "default": [
+          "continue"
+      ]
+  },
     "you want to buy": {
       "text": ["you want to buy"],
       "icon": ["auction", "buy"]
@@ -63,6 +77,10 @@
     "Go to Jail": {
       "text": ["Go To Jail"],
       "icon": ["OK"]
+    },
+    "Pay the Bail": {
+      "text": ["pay the bail"],
+      "icon": ["Pay Bail"]
     },
     "Property Deeds": {
       "text": ["Property Deeds"],

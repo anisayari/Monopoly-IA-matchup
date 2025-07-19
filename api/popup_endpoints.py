@@ -43,29 +43,7 @@ def create_popup_blueprint(omniparser_url="http://localhost:8000", ai_decision_u
             text_content = []
             
             for item in parsed_content:
-                if item.get('type') == 'text':
-                    text = item.get('content', '').lower()
-                    text_content.append(item.get('content', ''))
-                    
-                    # Détecter les boutons Monopoly
-                    button_keywords = [
-                        'ok', 'cancel', 'yes', 'no', 'confirm', 'accept', 'decline', 'pay',
-                        'accounts', 'next turn', 'roll again', 'auction', 'buy', 'back', 
-                        'trade', 'pay bail', 'roll dice', 'use card', 'bid', 'deal', 
-                        'no deal', 'propose', 'request cash', 'add cash', 'mortgage',
-                        'buy 1', 'buy set', 'sell 1', 'sell set', 'done'
-                    ]
-                    
-                    if any(keyword in text for keyword in button_keywords):
-                        options.append({
-                            'name': text,
-                            'original_text': item.get('content', ''),
-                            'bbox': item.get('bbox', []),
-                            'confidence': item.get('confidence', 1.0),
-                            'type': 'button'
-                        })
-                
-                elif item.get('type') == 'icon':
+                if item.get('type') == 'icon':
                     options.append({
                         'name': item['content'].lower(),
                         'bbox': item.get('bbox', []),

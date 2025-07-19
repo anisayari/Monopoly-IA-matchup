@@ -15,6 +15,9 @@ from io import BytesIO
 from PIL import Image
 import json
 from datetime import datetime
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from services.ai_service import get_ai_service
 
 class UnifiedDecisionServer:
     """Serveur unifié pour gérer toutes les décisions tierces"""
@@ -23,6 +26,8 @@ class UnifiedDecisionServer:
         self.app = app or Flask(__name__)
         self.logger = logging.getLogger(__name__)
         self.game_settings = self._load_game_settings()
+        
+        # Configuration des services
         self.services = {
             "omniparser": {
                 "url": "http://localhost:8000",
@@ -30,14 +35,24 @@ class UnifiedDecisionServer:
                     "parse": "/parse/",
                     "health": "/health"
                 }
-            },
-            "openai": {
-                "api_key": os.getenv("OPENAI_API_KEY"),
-                "model": self.game_settings.get("game", {}).get("default_model", "gpt-4.1-mini"),
-                "base_url": "https://api.openai.com/v1"
             }
         }
+        
+        # Initialiser le service AI
+        self.ai_service = get_ai_service()
+        
         self.setup_routes()
+        
+    def _load_game_settings(self):
+        """Charge les paramètres du jeu depuis settings.json"""
+        settings_path = os.path.join("config", "settings.json")
+        if os.path.exists(settings_path):
+            try:
+                with open(settings_path, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            except Exception as e:
+                self.logger.error(f"Erreur chargement settings: {e}")
+        return {}
         
     def setup_routes(self):
         """Configure les routes du serveur unifié"""
@@ -49,18 +64,19 @@ class UnifiedDecisionServer:
                 data = request.json
                 if not data or 'image' not in data:
                     return jsonify({'error': 'No image provided'}), 400
-                    
-                # Transmettre à OmniParser
+                
+                # Appeler OmniParser
+                omniparser_url = f"{self.services['omniparser']['url']}{self.services['omniparser']['endpoints']['parse']}"
                 response = requests.post(
-                    f"{self.services['omniparser']['url']}/parse/",
-                    json={"image": data['image']}
+                    omniparser_url,
+                    json={'base64_image': data['image']},
+                    timeout=30
                 )
                 
                 if response.status_code == 200:
                     return jsonify({
                         'success': True,
-                        'result': response.json(),
-                        'service': 'omniparser'
+                        'data': response.json()
                     })
                 else:
                     return jsonify({
@@ -71,465 +87,76 @@ class UnifiedDecisionServer:
             except Exception as e:
                 self.logger.error(f"Error parsing image: {e}")
                 return jsonify({'success': False, 'error': str(e)}), 500
-                
-        @self.app.route('/api/decision/ai', methods=['POST'])
-        def make_ai_decision():
-            """Prend une décision IA basée sur le contexte"""
-            try:
-                data = request.json
-                if not data:
-                    return jsonify({'error': 'No data provided'}), 400
-                    
-                context = data.get('context', {})
-                parsed_elements = data.get('parsed_elements', {})
-                decision_type = data.get('type', 'popup')
-                
-                # Construire le prompt
-                prompt = self._build_ai_prompt(context, parsed_elements, decision_type)
-                
-                # Appeler OpenAI
-                headers = {
-                    "Authorization": f"Bearer {self.services['openai']['api_key']}",
-                    "Content-Type": "application/json"
-                }
-                
-                payload = {
-                    "model": self.services['openai']['model'],
-                    "messages": [
-                        {"role": "system", "content": self._get_system_prompt(decision_type)},
-                        {"role": "user", "content": prompt}
-                    ],
-                    "temperature": 0.7,
-                    "max_tokens": 200
-                }
-                
-                response = requests.post(
-                    f"{self.services['openai']['base_url']}/chat/completions",
-                    headers=headers,
-                    json=payload
-                )
-                
-                if response.status_code == 200:
-                    result = response.json()
-                    decision = self._parse_ai_response(result, decision_type)
-                    
-                    return jsonify({
-                        'success': True,
-                        'decision': decision,
-                        'service': 'openai',
-                        'model': self.services['openai']['model']
-                    })
-                else:
-                    return jsonify({
-                        'success': False,
-                        'error': f'OpenAI error: {response.status_code}'
-                    }), response.status_code
-                    
-            except Exception as e:
-                self.logger.error(f"Error making AI decision: {e}")
-                return jsonify({'success': False, 'error': str(e)}), 500
-                
-        @self.app.route('/api/decision/unified', methods=['POST'])
-        def unified_decision():
-            """Endpoint unifié qui combine parsing et décision IA"""
-            try:
-                data = request.json
-                if not data:
-                    return jsonify({'error': 'No data provided'}), 400
-                    
-                image_data = data.get('image')
-                context = data.get('context', {})
-                decision_type = data.get('type', 'popup')
-                
-                # Étape 1: Parser l'image si fournie
-                parsed_elements = {}
-                if image_data:
-                    parse_response = requests.post(
-                        f"{self.services['omniparser']['url']}/parse/",
-                        json={"image": image_data}
-                    )
-                    
-                    if parse_response.status_code == 200:
-                        parsed_elements = parse_response.json()
-                    else:
-                        self.logger.warning("Failed to parse image, continuing without parsed elements")
-                        
-                # Étape 2: Prendre une décision IA
-                prompt = self._build_ai_prompt(context, parsed_elements, decision_type)
-                
-                headers = {
-                    "Authorization": f"Bearer {self.services['openai']['api_key']}",
-                    "Content-Type": "application/json"
-                }
-                
-                payload = {
-                    "model": self.services['openai']['model'],
-                    "messages": [
-                        {"role": "system", "content": self._get_system_prompt(decision_type)},
-                        {"role": "user", "content": prompt}
-                    ],
-                    "temperature": 0.7,
-                    "max_tokens": 200
-                }
-                
-                ai_response = requests.post(
-                    f"{self.services['openai']['base_url']}/chat/completions",
-                    headers=headers,
-                    json=payload
-                )
-                
-                if ai_response.status_code == 200:
-                    result = ai_response.json()
-                    decision = self._parse_ai_response(result, decision_type)
-                    
-                    return jsonify({
-                        'success': True,
-                        'decision': decision,
-                        'parsed_elements': parsed_elements,
-                        'timestamp': datetime.now().isoformat()
-                    })
-                else:
-                    return jsonify({
-                        'success': False,
-                        'error': f'AI decision error: {ai_response.status_code}'
-                    }), ai_response.status_code
-                    
-            except Exception as e:
-                self.logger.error(f"Error in unified decision: {e}")
-                return jsonify({'success': False, 'error': str(e)}), 500
-                
+        
         @self.app.route('/api/decide', methods=['POST'])
         def decide():
-            """Endpoint simple pour les décisions IA compatibles avec l'ancien système"""
+            """Endpoint unique pour les décisions IA"""
             try:
                 data = request.json
                 if not data:
                     return jsonify({'error': 'No data provided'}), 400
                 
+                # Extraire les données
                 popup_text = data.get('popup_text', '')
                 options = data.get('options', [])
                 game_context = data.get('game_context', {})
+                keywords = data.get('keywords', [])
+                all_detected_icons = data.get('all_detected_icons', [])
                 
-                # Construire le contexte pour l'IA
-                context_str = "Contexte du jeu Monopoly:\n"
-                if game_context:
-                    # Ajouter les infos des joueurs
-                    if "players" in game_context:
-                        context_str += "\nJoueurs:\n"
-                        for player_id, player in game_context["players"].items():
-                            context_str += f"- {player.get('name', 'Inconnu')}: {player.get('money', 0)}€, position {player.get('position', 0)}\n"
-                    
-                    # Ajouter les propriétés
-                    if "global" in game_context and "properties" in game_context["global"]:
-                        context_str += f"\nPropriétés sur le plateau: {len(game_context['global']['properties'])}\n"
-                
-                prompt = f"""Tu es un expert du Monopoly. Voici la situation actuelle:
-
-{context_str}
-
-Un popup est apparu avec le message: "{popup_text}"
-
-Les options disponibles sont: {', '.join(options)}
-
-Quelle est la MEILLEURE option stratégique à choisir? Réponds UNIQUEMENT avec le nom exact de l'option (par exemple: "buy", "auction", "next turn", etc.)
-
-Considère:
-- L'argent disponible des joueurs
-- La position sur le plateau
-- La stratégie optimale pour gagner
-- Si c'est une propriété, est-ce intéressant de l'acheter?
-
-Réponse (une seule option):"""
-
-                # Appeler OpenAI
-                headers = {
-                    "Authorization": f"Bearer {self.services['openai']['api_key']}",
-                    "Content-Type": "application/json"
-                }
-                
-                payload = {
-                    "model": self.services['openai']['model'],
-                    "messages": [
-                        {"role": "system", "content": "Tu es un expert du Monopoly. Réponds toujours avec UNE SEULE option, exactement comme elle apparaît dans la liste."},
-                        {"role": "user", "content": prompt}
-                    ],
-                    "temperature": 0.1,
-                    "max_tokens": 10
-                }
-                
-                response = requests.post(
-                    f"{self.services['openai']['base_url']}/chat/completions",
-                    headers=headers,
-                    json=payload
+                # Utiliser le service AI pour prendre la décision
+                result = self.ai_service.make_decision(
+                    popup_text=popup_text,
+                    options=options,
+                    game_context=game_context
                 )
                 
-                if response.status_code == 200:
-                    result = response.json()
-                    decision = result['choices'][0]['message']['content'].strip().lower()
-                    
-                    self.logger.info(f"AI decision made: {decision}")
-                    
-                    return jsonify({
-                        'success': True,
-                        'decision': decision,
-                        'model': self.services['openai']['model']
-                    })
-                else:
-                    return jsonify({
-                        'success': False,
-                        'error': f'OpenAI error: {response.status_code}'
-                    }), response.status_code
+                # Retourner la réponse formatée
+                return jsonify({
+                    'success': True,
+                    'decision': result['decision'],
+                    'reason': result['reason'],
+                    'confidence': result['confidence']
+                })
                     
             except Exception as e:
                 self.logger.error(f"Error making decision: {e}")
                 return jsonify({'success': False, 'error': str(e)}), 500
         
-        @self.app.route('/api/decide', methods=['POST'])
-        def decide_popup():
-            """Endpoint principal pour les décisions de popup - compatible avec l'ancien format"""
+        @self.app.route('/api/decision/health', methods=['GET'])
+        def health_check():
+            """Vérifie l'état des services"""
             try:
-                data = request.json
-                if not data:
-                    return jsonify({'error': 'No data provided'}), 400
+                services_status = {}
                 
-                # Extraire les données du format attendu
-                popup_text = data.get('popup_text', '')
-                options = data.get('options', [])  # Liste des noms d'options
-                game_context = data.get('game_context', {})
-                full_options = data.get('full_options', [])  # Infos complètes avec bbox
-                text_content = data.get('text_content', [])
-                parsed_content = data.get('parsed_content', [])
+                # Vérifier OmniParser
+                try:
+                    omni_response = requests.get(
+                        f"{self.services['omniparser']['url']}{self.services['omniparser']['endpoints']['health']}",
+                        timeout=2
+                    )
+                    services_status['omniparser'] = omni_response.status_code == 200
+                except:
+                    services_status['omniparser'] = False
                 
-                # Construire le prompt pour l'IA
-                prompt = f"""Tu es un joueur de Monopoly. Une popup est apparue avec le texte suivant:
-"{popup_text}"
-
-Options disponibles: {', '.join(options)}
-
-Contexte du jeu:
-- Joueurs: {json.dumps(game_context.get('players', {}), indent=2)}
-- Tour actuel: {game_context.get('global', {}).get('current_turn', 'inconnu')}
-
-Analyse le contexte et choisis la meilleure option parmi celles disponibles. Réponds UNIQUEMENT avec le nom exact de l'option choisie."""
-
-                # Appeler OpenAI
-                headers = {
-                    "Authorization": f"Bearer {self.services['openai']['api_key']}",
-                    "Content-Type": "application/json"
-                }
+                # Vérifier AI Service
+                services_status['ai_service'] = self.ai_service.available
                 
-                payload = {
-                    "model": self.services['openai']['model'],
-                    "messages": [
-                        {"role": "system", "content": "Tu es un joueur expert de Monopoly. Tu dois prendre des décisions stratégiques pour gagner la partie. Réponds toujours avec le nom exact de l'option choisie, sans aucun texte supplémentaire."},
-                        {"role": "user", "content": prompt}
-                    ],
-                    "temperature": 0.7,
-                    "max_tokens": 50
-                }
-                
-                response = requests.post(
-                    f"{self.services['openai']['base_url']}/chat/completions",
-                    headers=headers,
-                    json=payload,
-                    timeout=30
-                )
-                
-                if response.status_code == 200:
-                    result = response.json()
-                    decision = result['choices'][0]['message']['content'].strip().lower()
-                    
-                    # Essayer de matcher la décision avec les options disponibles
-                    matched_option = None
-                    for opt in options:
-                        if opt.lower() == decision or decision in opt.lower() or opt.lower() in decision:
-                            matched_option = opt
-                            break
-                    
-                    # Si pas de match exact, prendre la première option par défaut
-                    if not matched_option and options:
-                        matched_option = options[0]
-                        reason = f"Pas de match exact trouvé pour '{decision}', utilisation de l'option par défaut"
-                    else:
-                        reason = f"Décision basée sur l'analyse du contexte de jeu"
-                    
-                    return jsonify({
-                        'success': True,
-                        'decision': matched_option or decision,
-                        'reason': reason,
-                        'raw_response': decision
-                    })
-                else:
-                    self.logger.error(f"OpenAI API error: {response.status_code}")
-                    # Fallback: choisir une option par défaut
-                    default_option = options[0] if options else 'ok'
-                    return jsonify({
-                        'success': True,
-                        'decision': default_option,
-                        'reason': 'Erreur API OpenAI - choix par défaut'
-                    })
-                    
-            except Exception as e:
-                self.logger.error(f"Error in popup decision: {e}")
-                # En cas d'erreur, retourner une décision par défaut
-                default_option = data.get('options', ['ok'])[0]
                 return jsonify({
                     'success': True,
-                    'decision': default_option,
-                    'reason': f'Erreur: {str(e)} - choix par défaut'
+                    'services': services_status
                 })
-        
-        @self.app.route('/api/decision/health')
-        def health_check():
-            """Vérifie la santé de tous les services de décision"""
-            health_status = {
-                "unified_server": "healthy",
-                "services": {}
-            }
-            
-            # Vérifier OmniParser
-            try:
-                response = requests.get(
-                    f"{self.services['omniparser']['url']}/health",
-                    timeout=5
-                )
-                health_status["services"]["omniparser"] = {
-                    "status": "healthy" if response.status_code == 200 else "unhealthy",
-                    "response_time": response.elapsed.total_seconds()
-                }
-            except:
-                health_status["services"]["omniparser"] = {
-                    "status": "unreachable"
-                }
                 
-            # Vérifier OpenAI
-            health_status["services"]["openai"] = {
-                "status": "configured" if self.services['openai']['api_key'] else "not_configured"
-            }
-            
-            overall_health = all(
-                service.get("status") in ["healthy", "configured"] 
-                for service in health_status["services"].values()
-            )
-            
-            return jsonify({
-                **health_status,
-                "overall_health": "healthy" if overall_health else "degraded"
-            }), 200 if overall_health else 503
-            
-    def _get_system_prompt(self, decision_type: str) -> str:
-        """Return the appropriate system prompt based on decision type"""
-        prompts = {
-            "popup": """You are an AI assistant expert in Monopoly. 
-                       Analyze game popups and make strategic decisions.
-                       Always respond with JSON containing: 
-                       {"action": "yes/no/buy/sell/etc", "confidence": 0-100, "reason": "explanation"}""",
-            
-            "property": """You are a real estate expert in Monopoly.
-                          Evaluate properties and recommend strategic purchases/sales.""",
-                          
-            "trade": """You are an expert negotiator in Monopoly.
-                       Analyze trade proposals and recommend the best options.""",
-                       
-            "idle_action": """You are a Monopoly game assistant helping when the game is idle.
-                            Analyze the screen to determine what action the current player should take.
-                            Common actions include: rolling dice, ending turn, making decisions.
-                            Respond with JSON: {"action": "roll/end_turn/click_button", "target": "element to click", "reason": "why"}"""
-        }
-        return prompts.get(decision_type, prompts["popup"])
-        
-    def _build_ai_prompt(self, context: Dict, parsed_elements: Dict, decision_type: str) -> str:
-        """Build the prompt for AI"""
-        prompt_parts = []
-        
-        # Game context
-        if context:
-            prompt_parts.append(f"Game context: {json.dumps(context, indent=2)}")
-            
-        # Parsed elements
-        if parsed_elements:
-            prompt_parts.append(f"Detected elements: {json.dumps(parsed_elements, indent=2)}")
-            
-        # Specific question
-        if decision_type == "popup":
-            prompt_parts.append("What action do you recommend for this popup?")
-        elif decision_type == "property":
-            prompt_parts.append("Should I buy this property?")
-        elif decision_type == "trade":
-            prompt_parts.append("Is this trade advantageous?")
-        elif decision_type == "idle_action":
-            idle_instruction = context.get("instruction", "The game appears idle. What should the player do?")
-            prompt_parts.append(idle_instruction)
-            
-        return "\n\n".join(prompt_parts)
-        
-    def _parse_ai_response(self, response: Dict, decision_type: str) -> Dict:
-        """Parse la réponse de l'IA"""
-        try:
-            message = response['choices'][0]['message']['content']
-            
-            # Essayer de parser comme JSON
-            try:
-                return json.loads(message)
-            except:
-                # Si pas du JSON, créer une structure par défaut
-                return {
-                    "action": self._extract_action_from_text(message),
-                    "confidence": 70,
-                    "reason": message,
-                    "raw_response": message
-                }
-        except Exception as e:
-            self.logger.error(f"Error parsing AI response: {e}")
-            return {
-                "action": "no",
-                "confidence": 0,
-                "reason": "Error parsing response",
-                "error": str(e)
-            }
-            
-    def _extract_action_from_text(self, text: str) -> str:
-        """Extrait l'action du texte de réponse"""
-        text_lower = text.lower()
-        
-        # Mots-clés pour différentes actions
-        if any(word in text_lower for word in ["oui", "yes", "accepter", "accept"]):
-            return "yes"
-        elif any(word in text_lower for word in ["non", "no", "refuser", "refuse"]):
-            return "no"
-        elif any(word in text_lower for word in ["acheter", "buy", "purchase"]):
-            return "buy"
-        elif any(word in text_lower for word in ["vendre", "sell"]):
-            return "sell"
-        else:
-            return "unknown"
+            except Exception as e:
+                return jsonify({'success': False, 'error': str(e)}), 500
     
-    def _load_game_settings(self) -> dict:
-        """Charge les paramètres du jeu depuis le fichier de configuration"""
-        try:
-            settings_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config', 'game_settings.json')
-            if os.path.exists(settings_path):
-                with open(settings_path, 'r', encoding='utf-8') as f:
-                    return json.load(f)
-        except Exception as e:
-            self.logger.error(f"Error loading game_settings.json: {e}")
-        
-        # Paramètres par défaut
-        return {
-            "players": {
-                "player1": {"name": "GPT1", "model": "gpt-4.1-mini", "enabled": True},
-                "player2": {"name": "GPT2", "model": "gpt-4.1-mini", "enabled": True}
-            },
-            "game": {"default_model": "gpt-4.1-mini"}
-        }
-            
-    def run(self, host='0.0.0.0', port=7000, debug=False):
-        """Démarre le serveur unifié"""
-        self.logger.info(f"Starting Unified Decision Server on port {port}")
-        self.app.run(host=host, port=port, debug=debug)
+    
+    def run(self, host='0.0.0.0', port=7000):
+        """Lance le serveur"""
+        self.logger.info(f"Starting Unified Decision Server on {host}:{port}")
+        self.app.run(host=host, port=port, debug=False)
 
-
-if __name__ == "__main__":
+# Point d'entrée pour lancer le serveur
+if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
     server = UnifiedDecisionServer()
-    server.run(debug=False)
+    server.run()

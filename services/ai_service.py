@@ -1,5 +1,6 @@
 """
 Service IA centralisé pour les décisions de jeu
+Utilisé directement par unified_decision_server.py
 """
 import sys
 import os
@@ -8,13 +9,15 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import json
 from typing import Dict, List, Optional
 from openai import OpenAI
-from services.event_bus import EventBus, EventTypes
+import logging
+import requests
+from datetime import datetime
 
 class AIService:
     """Service IA pour prendre des décisions dans Monopoly"""
     
-    def __init__(self, event_bus: EventBus):
-        self.event_bus = event_bus
+    def __init__(self):
+        self.logger = logging.getLogger(__name__)
         self.client = None
         self.available = False
         self.game_settings = self._load_game_settings()
@@ -25,89 +28,97 @@ class AIService:
             try:
                 self.client = OpenAI(api_key=api_key)
                 self.available = True
-                print("✅ Service IA activé")
+                self.logger.info("✅ Service IA activé")
             except Exception as e:
-                print(f"⚠️  Erreur initialisation IA: {e}")
+                self.logger.error(f"⚠️  Erreur initialisation IA: {e}")
         else:
-            print("⚠️  Service IA désactivé (pas de clé API)")
-        
-        # S'abonner aux demandes de décision
-        self.event_bus.subscribe(EventTypes.AI_DECISION_REQUESTED, self._on_decision_requested)
-        # S'abonner aux mises à jour des paramètres du jeu
-        self.event_bus.subscribe('game_settings.updated', self._on_game_settings_updated)
+            self.logger.warning("⚠️  Service IA désactivé (pas de clé API)")
     
-    def _on_decision_requested(self, event: dict):
-        """Callback quand une décision est demandée"""
-        data = event['data']
-        popup_id = data.get('popup_id')
-        popup_text = data.get('popup_text')
-        options = data.get('options', [])
-        game_context = data.get('game_context', {})
-        
-        # Prendre la décision
-        decision = self.make_decision(popup_text, options, game_context)
-        
-        # Publier le résultat
-        self.event_bus.publish(
-            EventTypes.AI_DECISION_MADE,
-            {
-                'popup_id': popup_id,
-                'decision': decision['choice'],
-                'reason': decision['reason'],
-                'confidence': decision['confidence']
-            },
-            source='ai_service'
-        )
+    def _load_game_settings(self):
+        """Charge les paramètres du jeu depuis settings.json"""
+        settings_path = os.path.join("config", "settings.json")
+        if os.path.exists(settings_path):
+            try:
+                with open(settings_path, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            except Exception as e:
+                self.logger.error(f"Erreur chargement settings: {e}")
+        return {}
     
-    def make_decision(self, popup_text: str, options: List[Dict], game_context: Dict) -> Dict:
-        """Prend une décision basée sur le contexte"""
+    def _send_to_monitor(self, endpoint: str, data: Dict, port: int = 8003):
+        """Envoie des données aux serveurs de monitoring"""
+        try:
+            url = f"http://localhost:{port}/{endpoint}"
+            requests.post(url, json=data, timeout=1)
+        except:
+            # Ignorer les erreurs si le monitor n'est pas lancé
+            pass
+    
+    def make_decision(self, popup_text: str, options: List[str], game_context: Dict) -> Dict:
+        """
+        Prend une décision basée sur le contexte
+        
+        Args:
+            popup_text: Le texte du popup
+            options: Liste des options disponibles (strings)
+            game_context: Contexte complet du jeu
+            
+        Returns:
+            Dict avec 'decision', 'reason', 'confidence'
+        """
         
         # Si l'IA n'est pas disponible, utiliser la logique par défaut
         if not self.available or not self.client:
             return self._default_decision(options)
         
         try:
-            # Extraire les noms des options
-            option_names = [opt.get('name', '') for opt in options]
-            print(f"🤖 Options disponibles: {option_names}")
-            
             # Préparer le contexte
             context_str = self._format_game_context(game_context)
-            print(f"🤖 Contexte: {context_str}")
             
             # Déterminer quel modèle utiliser basé sur le joueur actuel
-            current_player = self._get_current_player_from_context(game_context)
-            print(f"🤖 Joueur actuel: {current_player}")
+            current_player = game_context.get('global', {}).get('current_player', 'Unknown')
             model = self._get_model_for_player(current_player)
             
-            # Obtenir le nom du joueur
-            player_name = self._get_player_name(current_player, game_context)
-            print(f"🤖 Nom du joueur: {player_name}")
+            # Envoyer le contexte au monitor d'actions
+            self._send_to_monitor('context', game_context, port=8004)
+            
+            # Envoyer la pensée d'analyse au monitor de chat
+            self._send_to_monitor('thought', {
+                'player': current_player,
+                'type': 'analysis',
+                'content': {
+                    'popup': popup_text,
+                    'options_count': len(options),
+                    'argent': game_context.get('players', {}).get(current_player, {}).get('money', 0)
+                },
+                'context': {
+                    'tour': game_context.get('global', {}).get('current_turn', 0),
+                    'position': game_context.get('players', {}).get(current_player, {}).get('current_space', 'Unknown')
+                },
+                'timestamp': datetime.utcnow().isoformat()
+            }, port=8003)
             
             # Définir le schéma JSON pour la sortie structurée
             schema = {
                 "type": "object",
                 "properties": {
-                    "choice": {
+                    "decision": {
                         "type": "string",
                         "description": "Nom exact de l'option choisie",
-                        "enum": option_names
+                        "enum": options if options else ["none"]
                     },
                     "reason": {
                         "type": "string",
-                        "description": "Courte explication (max 20 mots)"
+                        "description": "Courte explication de la décision (max 30 mots)"
                     },
                     "confidence": {
-                        "type": "string",
-                        "description": "Score de confiance entre 0.0 et 1.0"
-                    },
-                    "chat_message": {
-                        "type": "string",
-                        "description": "Un message à envoyer dans le chat, sera visible par tous les autres joueurs"
-
+                        "type": "number",
+                        "description": "Niveau de confiance entre 0 et 1",
+                        "minimum": 0,
+                        "maximum": 1
                     }
                 },
-                "required": ["choice", "reason", "confidence", "chat_message"],
+                "required": ["decision", "reason", "confidence"],
                 "additionalProperties": False
             }
 
@@ -116,248 +127,196 @@ class AIService:
                 f"Tu es un expert du Monopoly.\n"
                 f"Contexte actuel:\n{context_str}\n\n"
                 f"Popup: \"{popup_text}\"\n"
-                f"Options disponibles: {', '.join(option_names)}\n\n"
+                f"Options disponibles: {', '.join(options)}\n\n"
+                f"Choisis la meilleure option stratégique."
             )
-
-            # Publier que l'IA réfléchit
-            self.event_bus.publish('ai.thought', {
-                'player': player_name,
-                'thought': f"Analyse de la situation: {popup_text[:50]}..."
-            }, source='ai_service')
             
             # Appeler l'API avec Structured Outputs
-            print(f"📡 Appel API OpenAI pour {player_name} avec le modèle {model}")
-            response = self.client.responses.create(
+            self.logger.info(f"📡 Appel API OpenAI avec le modèle {model}")
+            response = self.client.chat.completions.create(
                 model=model,
-                input=[
-                    {"role": "system", "content": "Expert Monopoly. Réponds uniquement avec un JSON valide conforme au schéma."},
+                messages=[
+                    {"role": "system", "content": "Tu es un expert Monopoly stratégique. Réponds uniquement en JSON valide."},
                     {"role": "user", "content": user_message}
                 ],
-                text={
-                    "format": {
-                        "type": "json_schema",
+                response_format={
+                    "type": "json_schema",
+                    "json_schema": {
                         "name": "monopoly_decision",
                         "schema": schema,
                         "strict": True
                     }
                 },
-                max_output_tokens=1000
+                temperature=0.7,
+                max_tokens=200
             )
 
-            # Vérifier le statut de la réponse
-            if response.status != "completed":
-                print(f"⚠️  Réponse incomplète: {response.status}")
-                if hasattr(response, 'incomplete_details'):
-                    print(f"    Raison: {response.incomplete_details.reason if hasattr(response.incomplete_details, 'reason') else response.incomplete_details}")
-                return self._default_decision(options)
-
-            # Vérifier s'il y a un refus
-            if response.output and len(response.output) > 0:
-                first_output = response.output[0]
-                if hasattr(first_output, 'content') and len(first_output.content) > 0:
-                    first_content = first_output.content[0]
-                    if hasattr(first_content, 'type') and first_content.type == "refusal":
-                        print(f"⚠️  L'IA a refusé de répondre: {getattr(first_content, 'refusal', 'Refus sans explication')}")
-                        return self._default_decision(options)
-
-            # Extraire la réponse JSON
-            result_json_str = response.output_text
-            print(f"✅ Réponse reçue: {result_json_str}")
-
-            data = json.loads(result_json_str)
-
-            choice = str(data.get("choice", "")).lower()
-            reason = data.get("reason", "Décision stratégique")
-            confidence = float(data.get("confidence", 0.9))
-            chat_message = data.get("chat_message", "")
-
-            # Publier le message de chat si présent
-            if chat_message:
-                self.event_bus.publish('ai.chat_message', {
-                    'player': player_name,
-                    'message': chat_message
-                }, source='ai_service')
+            # Parser la réponse
+            result = json.loads(response.choices[0].message.content)
             
-            # Publier la pensée sur la décision
-            self.event_bus.publish('ai.thought', {
-                'player': player_name,
-                'thought': f"J'ai décidé: {choice} (confiance: {confidence:.0%}) - {reason}"
-            }, source='ai_service')
-
-            # Vérifier que le choix est valide
-            if choice not in option_names:
-                print(f"⚠️  IA a choisi '{choice}' qui n'est pas dans les options")
-                return self._default_decision(options)
+            self.logger.info(f"✅ Décision IA: {result['decision']} - {result['reason']}")
+            
+            # Envoyer la décision au monitor de chat
+            self._send_to_monitor('thought', {
+                'player': current_player,
+                'type': 'decision',
+                'content': {
+                    'choix': result['decision'],
+                    'raison': result['reason'],
+                    'confiance': f"{result.get('confidence', 0.8):.0%}"
+                },
+                'timestamp': datetime.utcnow().isoformat()
+            }, port=8003)
+            
+            # Envoyer l'action au monitor d'actions
+            action_type = self._get_action_type(result['decision'], popup_text)
+            self._send_to_monitor('action', {
+                'player': current_player,
+                'type': action_type,
+                'decision': result['decision'],
+                'reason': result['reason'],
+                'confidence': result.get('confidence', 0.8),
+                'options': options,
+                'timestamp': datetime.utcnow().isoformat()
+            }, port=8004)
             
             return {
-                'choice': choice,
-                'reason': reason,
-                'confidence': confidence
+                'decision': result['decision'],
+                'reason': result['reason'],
+                'confidence': result.get('confidence', 0.8)
             }
             
-        except json.JSONDecodeError as e:
-            print(f"⚠️  Erreur IA - JSON invalide: {e}")
-            print(f"    Réponse reçue: {result_json_str if 'result_json_str' in locals() else 'Non disponible'}")
-            return self._default_decision(options)
-        except AttributeError as e:
-            print(f"⚠️  Erreur IA - Attribut manquant: {e}")
-            print(f"    Vérifiez la structure de la réponse API")
-            return self._default_decision(options)
         except Exception as e:
-            print(f"⚠️  Erreur IA - {type(e).__name__}: {e}")
-            import traceback
-            print(f"    Traceback: {traceback.format_exc()}")
+            self.logger.error(f"❌ Erreur IA: {e}")
             return self._default_decision(options)
     
-    def _default_decision(self, options: List[Dict]) -> Dict:
-        """Logique de décision par défaut"""
-        priority_order = ["buy", "next turn", "roll again", "auction", "trade", "back", "accounts"]
-        option_names = [opt.get('name', '') for opt in options]
+    def _get_action_type(self, decision: str, popup_text: str) -> str:
+        """Détermine le type d'action basé sur la décision et le contexte"""
+        decision_lower = decision.lower()
+        popup_lower = popup_text.lower()
         
+        if 'buy' in decision_lower or 'buy' in popup_lower:
+            return 'buy'
+        elif 'sell' in decision_lower:
+            return 'sell'
+        elif 'trade' in decision_lower or 'trade' in popup_lower:
+            return 'trade'
+        elif 'build' in decision_lower or 'house' in decision_lower or 'hotel' in decision_lower:
+            return 'build'
+        elif 'roll' in decision_lower or 'dice' in decision_lower:
+            return 'roll'
+        elif 'jail' in decision_lower or 'jail' in popup_lower:
+            return 'jail'
+        elif 'chance' in popup_lower or 'community' in popup_lower:
+            return 'card'
+        elif 'auction' in decision_lower or 'auction' in popup_lower:
+            return 'auction'
+        elif 'rent' in popup_lower:
+            return 'rent'
+        elif 'next turn' in decision_lower:
+            return 'turn'
+        else:
+            return 'unknown'
+    
+    def _format_game_context(self, game_context: Dict) -> str:
+        """Formate le contexte du jeu pour l'IA"""
+        context_str = ""
+        
+        # Informations globales
+        global_data = game_context.get('global', {})
+        context_str += f"Tour: {global_data.get('current_turn', 'N/A')}\n"
+        context_str += f"Joueur actuel: {global_data.get('current_player', 'N/A')}\n"
+        
+        # Informations des joueurs
+        players = game_context.get('players', {})
+        if players:
+            context_str += "\nJoueurs:\n"
+            for player_key, player_data in players.items():
+                name = player_data.get('name', player_key)
+                money = player_data.get('money', 0)
+                position = player_data.get('current_space', 'Unknown')
+                props = len(player_data.get('properties', []))
+                is_current = "→" if player_data.get('is_current', False) else " "
+                in_jail = " (En prison)" if player_data.get('jail', False) else ""
+                context_str += f"{is_current} {name}: ${money}, {props} propriétés, position: {position}{in_jail}\n"
+        
+        # Propriétés importantes
+        properties = global_data.get('properties', [])
+        if properties:
+            owned_props = [p for p in properties if p.get('owner') is not None]
+            context_str += f"\nPropriétés: {len(owned_props)}/{len(properties)} possédées\n"
+            
+            # Groupes de couleurs
+            color_groups = {}
+            for prop in properties:
+                if prop.get('owner') and prop.get('group'):
+                    owner = prop['owner']
+                    group = prop['group']
+                    if owner not in color_groups:
+                        color_groups[owner] = {}
+                    if group not in color_groups[owner]:
+                        color_groups[owner][group] = 0
+                    color_groups[owner][group] += 1
+            
+            if color_groups:
+                context_str += "Monopoles potentiels:\n"
+                for owner, groups in color_groups.items():
+                    for group, count in groups.items():
+                        if count >= 2:  # Au moins 2 propriétés du même groupe
+                            context_str += f"  - {owner}: {count} {group}\n"
+        
+        return context_str
+    
+    def _get_model_for_player(self, player_id: str) -> str:
+        """Détermine quel modèle utiliser pour un joueur"""
+        # Vérifier les paramètres personnalisés par joueur
+        players_config = self.game_settings.get('players', {})
+        if player_id in players_config:
+            player_config = players_config[player_id]
+            if 'ai_model' in player_config:
+                return player_config['ai_model']
+        
+        # Modèle par défaut
+        return self.game_settings.get('game', {}).get('default_model', 'gpt-4o-mini')
+    
+    def _default_decision(self, options: List[str]) -> Dict:
+        """Décision par défaut quand l'IA n'est pas disponible"""
+        # Priorité des actions par défaut
+        priority_order = [
+            'next turn', 'ok', 'continue', 'yes', 
+            'buy', 'roll dice', 'pay bail', 'auction'
+        ]
+        
+        # Chercher dans l'ordre de priorité
         for priority in priority_order:
-            if priority in option_names:
-                return {
-                    'choice': priority,
-                    'reason': 'Priorité par défaut',
-                    'confidence': 0.5
-                }
+            for option in options:
+                if priority in option.lower():
+                    return {
+                        'decision': option,
+                        'reason': 'Décision par défaut (IA non disponible)',
+                        'confidence': 0.5
+                    }
         
-        # Si aucune priorité, prendre la première option
+        # Si aucune priorité trouvée, prendre la première option
         if options:
             return {
-                'choice': options[0].get('name', 'unknown'),
+                'decision': options[0],
                 'reason': 'Première option disponible',
                 'confidence': 0.3
             }
         
         return {
-            'choice': 'none',
+            'decision': 'none',
             'reason': 'Aucune option disponible',
             'confidence': 0.0
         }
-    
-    def _format_game_context(self, context: Dict) -> str:
-        """Formate le contexte du jeu pour l'IA"""
-        lines = []
-        
-        # Joueurs
-        if "players" in context:
-            lines.append("Joueurs:")
-            for player_id, player in context["players"].items():
-                name = player.get('name', 'Inconnu')
-                money = player.get('money', 0)
-                position = player.get('position', 0)
-                lines.append(f"- {name}: {money}€, case {position}")
-        
-        # Tour actuel
-        if "global" in context:
-            turn = context["global"].get("current_turn", 0)
-            lines.append(f"\nTour: {turn}")
-        
-        return "\n".join(lines)
-    
-    def _load_game_settings(self) -> Dict:
-        """Charge les paramètres du jeu depuis le fichier de configuration"""
-        try:
-            settings_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config', 'game_settings.json')
-            if os.path.exists(settings_path):
-                with open(settings_path, 'r', encoding='utf-8') as f:
-                    return json.load(f)
-        except Exception as e:
-            print(f"⚠️  Erreur chargement game_settings.json: {e}")
-        
-        # Paramètres par défaut
-        return {
-            "players": {
-                "player1": {"name": "GPT1", "model": "gpt-4.1-mini", "enabled": True},
-                "player2": {"name": "GPT2", "model": "gpt-4.1-mini", "enabled": True}
-            },
-            "game": {"default_model": "gpt-4.1-mini"}
-        }
-    
-    def _on_game_settings_updated(self, event: dict):
-        """Met à jour les paramètres du jeu quand ils changent"""
-        self.game_settings = self._load_game_settings()
-        print(f"✅ Paramètres du jeu mis à jour")
-    
-    def _get_current_player_from_context(self, game_context: Dict) -> Optional[str]:
-        """Détermine quel joueur est en train de jouer depuis le contexte"""
-        # Chercher dans le contexte global
-        if "global" in game_context:
-            current_player = game_context["global"].get("current_player")
-            if current_player:
-                return str(current_player)
-        
-        # Chercher le joueur actif dans la liste des joueurs
-        if "players" in game_context:
-            for player_id, player_data in game_context["players"].items():
-                if player_data.get("is_current", False) or player_data.get("active", False):
-                    return player_id
-        
-        # Par défaut, retourner player1
-        return "player1"
-    
-    def _get_model_for_player(self, player_id: Optional[str]) -> str:
-        """Retourne le modèle configuré pour un joueur donné"""
-        if not player_id:
-            return self.game_settings.get("game", {}).get("default_model", "gpt-4.1-mini")
-        
-        # Chercher le modèle pour ce joueur
-        player_settings = self.game_settings.get("players", {}).get(player_id, {})
-        model = player_settings.get("model")
-        
-        # Si pas de modèle spécifique, utiliser le modèle par défaut
-        if not model:
-            model = self.game_settings.get("game", {}).get("default_model", "gpt-4.1-mini")
-        
-        print(f"🤖 Utilisation du modèle {model} pour {player_settings.get('name', player_id)}")
-        return model
-    
-    def _get_player_name(self, player_id: Optional[str], game_context: Dict) -> str:
-        """Retourne le nom du joueur depuis le contexte ou les settings"""
-        if not player_id:
-            return "Unknown"
-        
-        # Chercher dans le contexte du jeu
-        players = game_context.get("players", {})
-        if player_id in players:
-            return players[player_id].get("name", player_id)
-        
-        # Chercher dans les settings
-        player_settings = self.game_settings.get("players", {}).get(player_id, {})
-        return player_settings.get("name", player_id)
 
+# Instance globale du service (singleton)
+_ai_service_instance = None
 
-if __name__ == "__main__":
-    print("AI Service - Standalone Mode")
-    print("=" * 50)
-    print()
-    
-    # Create a simple event bus for standalone mode
-    from flask import Flask
-    app = Flask(__name__)
-    event_bus = EventBus(app)
-    
-    # Initialize AI Service
-    ai_service = AIService(event_bus)
-    
-    if ai_service.available:
-        print("✅ AI Service is ready")
-        print("   - OpenAI API key found")
-        print("   - Waiting for decision requests...")
-    else:
-        print("❌ AI Service is NOT available")
-        print("   - No OpenAI API key found")
-        print("   - Set OPENAI_API_KEY environment variable")
-    
-    print()
-    print("This service normally runs integrated with the main Flask app.")
-    print("Running in standalone mode for testing only.")
-    
-    # Keep the service running
-    try:
-        import time
-        while True:
-            time.sleep(1)
-    except KeyboardInterrupt:
-        print("\n\nAI Service stopped.")
+def get_ai_service() -> AIService:
+    """Retourne l'instance singleton du service IA"""
+    global _ai_service_instance
+    if _ai_service_instance is None:
+        _ai_service_instance = AIService()
+    return _ai_service_instance

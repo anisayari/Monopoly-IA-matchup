@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T18:57:20.386154",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "accounts ",
+    "roll again "
+  ],
+  "decision": "roll again ",
+  "reason": "Lancer à nouveau les dés permet d'avancer sur le plateau et d'augmenter les opportunités d'achat.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

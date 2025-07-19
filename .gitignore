@@ -203,6 +203,7 @@ dolphin/
 
 # Captures and screenshots
 captures/
+detections/
 temp_screenshot.png
 *.png
 *.jpg

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T18:51:36.023015",
+  "trigger": "you want to buy",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "continue ",
+    "resign "
+  ],
+  "decision": "continue ",
+  "reason": "Acheter une station permet de générer des revenus et de contrôler le jeu dès le début.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

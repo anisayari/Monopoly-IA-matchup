@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T18:53:28.642123",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Park Lane est une propriété stratégique avec un fort potentiel de revenu, l'acheter maintenant est une bonne décision.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

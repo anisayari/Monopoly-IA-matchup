@@ -93,8 +93,9 @@ class CentralizedMonitor:
             "Pay Rent": "rent",
             "trading": "trade",
             "auction": "auction",
-            "go to jail": "jail",
-            "property deeds": "property_management"
+            "Go To Jail": "jail",
+            "property deeds": "property_management",
+            "shake the Wii":"roll dice"
         }
         
         for trigger, category in popup_keywords.items():
@@ -150,6 +151,8 @@ class CentralizedMonitor:
             return 'status'
         elif 'rent' in msg_id_lower:
             return 'rent'
+        elif 'roll' in msg_id_lower or 'dice' in msg_id_lower or 'turn' in msg_id_lower:
+            return 'roll dice'
         else:
             return 'other'
     
@@ -263,33 +266,24 @@ class CentralizedMonitor:
         
         return unified_results
     
-    def filter_options(self, options, selected_keywords=None):
-        """Filtre les options en fonction des keywords sélectionnés (ou tous si None)"""
-        if selected_keywords is not None:
-            # On ne garde que les icônes des keywords sélectionnés
-            all_icons = [
-                icon.lower()
-                for k in selected_keywords
-                for icon in self.monitor_config['keywords'][k].get('icon', [])
-            ]
-        else:
-            # Ancien comportement : tous les icônes
-            all_icons = [
-                icon.lower()
-                for keyword in self.monitor_config.get('keywords', {}).values()
-                for icon in keyword.get('icon', [])
-            ]
-        filtered_options = []
-        for opt in options:
-            print(f"🔍 Option: {opt['name']}")
-            if opt['name'].lower() in all_icons:
-                print(f"🔍 Option filtrée: {opt['name']}")
-                filtered_options.append(opt)
-        return filtered_options
-    
-    def process_popup(self, popup_text, screenshot_base64):
+    def process_popup(self, popup_text, screenshot_base64, trigger):
         """Traite un popup en deux étapes: analyse puis décision"""
         try:
+            # Cas spécial : "shake the Wii" retourne directement CLICK
+            if trigger == 'shake the Wii' or 'shake the wii' in popup_text.lower():
+                print("🎲 Cas spécial 'shake the Wii' détecté - retour direct CLICK")
+                return {
+                    'success': True,
+                    'decision': 'CLICK',
+                    'reason': "Shake the Wii pour lancer les dés",
+                    'options': [{
+                        "bbox": [914, 510, 914, 510],  # Centre approximatif de l'écran
+                        "confidence": 1.0,
+                        "name": "CLICK",
+                        "type": "icon"
+                    }],
+                    'analysis': {'text_content': [popup_text], 'options': []}
+                }
             # Étape 1: Analyser le screenshot avec OmniParser
             print("📸 Analyse du screenshot...")
             max_retries = 10
@@ -310,101 +304,180 @@ class CentralizedMonitor:
                 return None
             
             analysis = analyze_response.json()
-            text_content = analysis.get('text_content', [])
-            all_text = ' '.join(text_content).lower()
-            print(f"🔍 All text: {all_text}")
-            candidate_keywords = []
-            for keyword_key, keyword_obj in self.monitor_config.get('keywords', {}).items():
-                for keyword in keyword_obj.get('text', []):
-                    keyword_lower = keyword.lower()
-                    keyword_words = keyword_lower.split()
-                    
-                    # Méthode 1 : Recherche exacte de la sous-chaîne
-                    if keyword_lower in all_text:
-                        candidate_keywords.append((keyword_key, 1.0))
-                        print(f"✅ Keyword trouvé (exact): {keyword_key}")
-                        continue
-                        
-                    # Méthode 2 : Vérifier si tous les mots sont présents (peu importe l'ordre)
-                    all_words_found = True
-                    for word in keyword_words:
-                        if word not in all_text:
-                            all_words_found = False
-                            break
-                    
-                    if all_words_found:
-                        # Calculer un score basé sur la proximité des mots
-                        # Plus les mots sont proches, meilleur est le score
-                        score = 0.85  # Score de base si tous les mots sont trouvés
-                        
-                        # Bonus si les mots sont dans le bon ordre et proches
-                        if len(keyword_words) > 1:
-                            # Chercher la distance minimale entre les mots
-                            positions = []
-                            for word in keyword_words:
-                                pos = all_text.find(word)
-                                if pos != -1:
-                                    positions.append(pos)
-                            
-                            if len(positions) == len(keyword_words):
-                                # Si les mots sont dans l'ordre et proches
-                                if positions == sorted(positions):
-                                    # Distance moyenne entre les mots
-                                    avg_distance = sum(positions[i+1] - positions[i] for i in range(len(positions)-1)) / (len(positions)-1)
-                                    if avg_distance < 20:  # Mots très proches
-                                        score = 0.95
-                        
-                        candidate_keywords.append((keyword_key, score))
-                        print(f"✅ Keyword trouvé (mots séparés): {keyword_key} (score: {score})")
-
-            selected_keywords = [k for k, score in candidate_keywords]
-
-            # SPECIAL CASE: If 'New turn Roll the dice' is detected, return 'CLICK' immediately
-            if 'New turn Roll the dice' in selected_keywords or any('remote and press to roll the' in t.lower() for t in text_content):
-                print("🎲 Detected 'New turn Roll the dice' situation, returning 'CLICK' directly.")
+            
+            # Vérifier si "shake the Wii" est dans le texte détecté
+            raw_content = analysis.get('raw_parsed_content', [])
+            all_text = ' '.join([item.get('content', '') for item in raw_content if item.get('type') == 'text']).lower()
+            
+            if 'shake the wii' in all_text:
+                print("🎲 'shake the Wii' détecté dans le texte OCR - retour direct CLICK")
                 return {
                     'success': True,
                     'decision': 'CLICK',
-                    'reason': "Auto-detected 'New turn Roll the dice', no AI needed.",
+                    'reason': "Shake the Wii détecté dans le texte",
+                    'options': [{
+                        "bbox": [914, 510, 914, 510],  # Centre de l'écran
+                        "confidence": 1.0,
+                        "name": "CLICK",
+                        "type": "icon"
+                    }],
+                    'analysis': analysis
+                }
+            
+            monitor_config = self.monitor_config
+            monitor_keywords = monitor_config.get('keywords', {})
+            
+            # Toujours récupérer les icônes pour la suite
+            icon_options = [opt for opt in analysis.get('options', []) if opt.get('type') == 'icon']
+            detected_icons = [opt.get('name', '').strip().lower() for opt in icon_options]
+            
+            # Étape 1: Vérifier si le trigger correspond directement à une clé
+            trigger_found = trigger in monitor_keywords
+            selected_keywords = None
+            
+            if trigger_found:
+                # Vérifier que les icônes du trigger sont présentes
+                trigger_icons = [icon.strip().lower() for icon in monitor_keywords[trigger].get('icon', []) if isinstance(icon, str) and icon.strip()]
+                matching_trigger_icons = [icon for icon in trigger_icons if icon in detected_icons]
+                
+                if matching_trigger_icons:
+                    selected_keywords = [trigger]
+                    print(f"✅ Trigger '{trigger}' trouvé et icônes présentes: {matching_trigger_icons}")
+                else:
+                    print(f"⚠️ Trigger '{trigger}' trouvé mais aucune icône correspondante détectée")
+                    print(f"   Icônes attendues: {trigger_icons}")
+                    print(f"   Icônes détectées: {detected_icons[:5]}...")  # Afficher les 5 premières
+                    trigger_found = False  # Forcer la recherche par icônes
+            
+            if not trigger_found or selected_keywords is None:
+                # Étape 2: Utiliser les icônes pour identifier la situation
+                print(f"🔍 Trigger '{trigger}' non trouvé, recherche via les icônes...")
+                print(f"🔍 Icônes détectées: {detected_icons}")
+                
+                # Chercher les keywords avec le meilleur match
+                best_match = None
+                best_match_ratio = 0
+                best_match_count = 0
+                
+                for keyword, data in monitor_keywords.items():
+                    icons_in_config = [icon.strip().lower() for icon in data.get('icon', []) if isinstance(icon, str) and icon.strip()]
+                    
+                    # Skip si pas d'icônes configurées
+                    if not icons_in_config:
+                        continue
+                    
+                    # Compter combien d'icônes sont trouvées
+                    found_icons = []
+                    for config_icon in icons_in_config:
+                        if config_icon in detected_icons:
+                            found_icons.append(config_icon)
+                    
+                    found_count = len(found_icons)
+                    total_count = len(icons_in_config)
+                    ratio = found_count / total_count if total_count > 0 else 0
+                    
+                    if found_count > 0:
+                        if found_count == total_count:
+                            print(f"✅ Keyword '{keyword}' - TOUTES les icônes trouvées ({found_count}/{total_count}): {found_icons}")
+                        else:
+                            print(f"⚠️ Keyword '{keyword}' - {found_count}/{total_count} icônes trouvées: {found_icons}")
+                        
+                        # Préférer d'abord le ratio le plus élevé, puis le nombre absolu d'icônes trouvées
+                        if ratio > best_match_ratio or (ratio == best_match_ratio and found_count > best_match_count):
+                            best_match = keyword
+                            best_match_ratio = ratio
+                            best_match_count = found_count
+                
+                if best_match:
+                    if best_match_ratio == 1.0:
+                        print(f"✅ Match parfait trouvé: '{best_match}'")
+                    else:
+                        print(f"✅ Meilleur match partiel: '{best_match}' ({best_match_count} icônes, ratio {best_match_ratio:.1%})")
+                    selected_keywords = [best_match]
+                else:
+                    selected_keywords = None
+                    print(f"❌ Aucun keyword trouvé (aucune icône ne correspond)")
+
+            # SPECIAL CASE: If 'New turn Roll the dice' is detected via icons
+            if selected_keywords and 'New turn Roll the dice' in selected_keywords:
+                print("🎲 Detected 'New turn Roll the dice' situation via icons, returning 'CLICK' directly.")
+                return {
+                    'success': True,
+                    'decision': 'CLICK',
+                    'reason': "Auto-detected 'New turn Roll the dice' via icons, no AI needed.",
                     'options':[{
                                 "bbox": [42, 42, 42, 42],
                                 "confidence": 1.0,
                                 "name": "CLICK",
                                 "original_text": "CLICK",
-                                "type": "button"
+                                "type": "icon"
                             }],
                     'analysis': analysis
                 }
 
-            options = analysis.get('options', [])
-            options = self.filter_options(options, selected_keywords)
+            if selected_keywords:
+                all_icons = [
+                    icon.strip().lower()
+                    for k in selected_keywords
+                    for icon in monitor_config['keywords'][k].get('icon', [])
+                    if isinstance(icon, str)
+                ]
+                options = [opt for opt in icon_options if opt.get('name', '').strip().lower() in all_icons]
+            else:
+                options = []
+            
             raw_parsed_content = analysis.get('raw_parsed_content', [])
             
             print(f"🔍 Options détectées: {options}")
             if options == []:
+                # Si aucune option détectée, mais qu'il y a une option 'ok' dans les icônes, clique dessus sans IA
+                for opt in icon_options:
+                    if opt.get('name', '').strip().lower() == 'ok':
+                        print("✅ Option 'ok' détectée, clic direct sans IA !")
+                        return {
+                            'success': True,
+                            'decision': 'ok',
+                            'reason': "Option 'ok' détectée, clic direct sans IA.",
+                            'options': [opt],
+                            'analysis': analysis
+                        }
+                    elif opt.get('name', '').strip().lower() == 'continue':
+                        print("✅ Option 'continue' détectée, clic direct sans IA !")
+                        return {
+                            'success': True,
+                            'decision': 'continue',
+                            'reason': "Option 'continue' détectée, clic direct sans IA.",
+                            'options': [opt],
+                            'analysis': analysis
+                        }
                 print(f"🔍 Aucune option détectée, skipping AI decision...")
                 return None
             
             # Étape 2: Obtenir le contexte du jeu
             game_context = {}
             try:
-                context_response = requests.get(f"{self.api_url}/api/context", timeout=2)
+                context_response = requests.get(f"{self.api_url}/api/context", timeout=5)
                 if context_response.ok:
                     game_context = context_response.json()
-            except:
-                pass
+                    # Le contexte est maintenant envoyé au serveur d'actions
+                    # pour être affiché dans le terminal dédié
+                else:
+                    game_context = {}
+            except Exception as e:
+                print(f"⚠️ Erreur contexte: {e}")
+                game_context = {}
             
             # Étape 3: Demander la décision à l'IA directement
             print("🤖 Demande de décision à l'IA...")
             
-            # Préparer la requête pour l'IA (même format que avant)
+            # Préparer la requête pour l'IA (basée uniquement sur les icônes)
             ai_request = {
                 'popup_text': popup_text,
                 'options': [option['name'] for option in options],  # Liste des noms d'options
                 'game_context': game_context,
                 'full_options': options,  # Infos complètes des options avec bbox
-                'text_content': text_content,
-                'parsed_content': raw_parsed_content  # Contenu parsé complet
+                'keywords': selected_keywords,  # Keywords identifiés via les icônes
+                'all_detected_icons': detected_icons  # Toutes les icônes détectées
             }
             
             # Appeler directement le serveur AI sur le port 7000
@@ -426,6 +499,33 @@ class CentralizedMonitor:
             reason = decision_data.get('reason', '')
             
             print(f"✅ Décision: {decision} - {reason}")
+            
+            # Sauvegarder l'action de l'IA
+            try:
+                action_data = {
+                    'timestamp': datetime.utcnow().isoformat(),
+                    'trigger': trigger,
+                    'keywords': selected_keywords,
+                    'options': [opt['name'] for opt in options],
+                    'decision': decision,
+                    'reason': reason,
+                    'game_context': {
+                        'current_player': game_context.get('global', {}).get('current_player', 'Unknown'),
+                        'current_turn': game_context.get('global', {}).get('current_turn', 0),
+                        'money': {player_data.get('name', player_key): player_data.get('money', 0) 
+                                for player_key, player_data in game_context.get('players', {}).items()}
+                    }
+                }
+                
+                # Envoyer l'action au serveur pour sauvegarde
+                requests.post(
+                    f"{self.api_url}/api/actions/save",
+                    json=action_data,
+                    timeout=2
+                )
+                print(f"💾 Action sauvegardée")
+            except Exception as e:
+                print(f"⚠️ Erreur sauvegarde action: {e}")
             
             # Retourner toutes les infos nécessaires
             return {
@@ -474,7 +574,8 @@ class CentralizedMonitor:
             # Récupérer les coordonnées depuis les données du popup
             if 'options' in popup_data:
                 for option in popup_data['options']:
-                    if option.get('name', '').lower() == decision.lower():
+                    # Comparer en enlevant les espaces au début et à la fin
+                    if option.get('name', '').strip().lower() == decision.strip().lower():
                         # Les coordonnées sont déjà en pixels absolus
                         bbox = option.get('bbox', [])
                         if len(bbox) == 4 and 'window_bbox' in popup_data:
@@ -509,7 +610,7 @@ class CentralizedMonitor:
                             time.sleep(0.5)
                             
                             # Effectuer le clic
-                            pyautogui.moveTo(abs_x, abs_y, duration=0.3)
+                            pyautogui.moveTo(abs_x, abs_y+30, duration=0.3)
                             time.sleep(0.3)
                             self.focus_dolphin_window()
                             pyautogui.mouseDown()
@@ -601,30 +702,40 @@ class CentralizedMonitor:
             matches = self.scan_memory()
             scan_count += 1
 
-            # Simulation d'un match factice après 15 scans
-            if scan_count >= 15:
+            # Simulation d'un match factice après 5 scans
+            if scan_count >= 5:
                 print("🛠️ Forçage d'un match factice pour simulation (capture + décision)")
                 # Crée un match factice qui suit la même structure que les vrais matches
+                import random
+                fake_address = random.randint(0x90000000, 0x90200000)  # Adresse aléatoire pour éviter les doublons
                 fake_match = {
                     'type': 'popup',
                     'id': 'fake_simulation',
-                    'address': 0xDEADBEEF,
+                    'address': fake_address,
                     'bytes': 'Simulation forced popup'.encode('utf-16-le'),
-                    'trigger': 'Simulation',
-                    'category': 'other',
+                    'trigger': 'would you like',  # Utiliser un trigger qui existe dans monitor_config
+                    'category': 'turn',
                     'pattern': 'Simulation',
-                    'group': 'other'
+                    'group': 'turn'
                 }
                 matches = [fake_match]
                 scan_count = 0  # Reset pour pouvoir re-simuler plus tard
 
             for match in matches[:1]:
+                print(f"🔍 Match: {match}")
                 # Tous les matches sont maintenant des dictionnaires
                 raw_text = match['bytes'].decode('utf-16-le', errors='ignore')
                 cleaned_text = ''.join(c for c in raw_text if 32 <= ord(c) < 127)
                 
                 key = f"{match['type']}:{match['id']}:{match['address']:08X}:{cleaned_text[:40]}"
-                if key not in self.already_seen:
+                
+                # Cas spécial : "shake the Wii" doit toujours être traité
+                force_process = False
+                if match.get('trigger') == 'shake the Wii' or 'shake the wii' in cleaned_text.lower():
+                    print("🎲 Détection spéciale 'shake the Wii' - forçage du traitement")
+                    force_process = True
+                
+                if key not in self.already_seen or force_process:
                     # Emojis par catégorie
                     category_emojis = {
                         "jail": "🔒",
@@ -638,6 +749,7 @@ class CentralizedMonitor:
                         "rent": "💸",
                         "general": "🎮",
                         "status": "⚠️",
+                        "roll dice": "🎲",
                         "other": "📨"
                     }
                     emoji = category_emojis.get(match['category'], "📨")
@@ -657,7 +769,7 @@ class CentralizedMonitor:
                         print(f"🖼️ Screenshot capturé !")
                         
                         # Traiter le popup (analyse + décision)
-                        result = self.process_popup(cleaned_text, screenshot)
+                        result = self.process_popup(cleaned_text, screenshot, match.get('trigger'))
                         if result is None:
                             print("🔍 No result found, skipping...")
                             continue
@@ -668,14 +780,17 @@ class CentralizedMonitor:
                             # Trouver l'option sélectionnée
                             selected_option = None
                             for opt in options:
-                                if opt['name'].lower() == decision.lower():
+                                # Comparaison avec strip() pour ignorer les espaces
+                                if opt['name'].strip().lower() == decision.strip().lower():
                                     selected_option = opt
                                     break
                             
                             if not selected_option:
                                 # Essayer une correspondance partielle
                                 for opt in options:
-                                    if decision.lower() in opt['name'].lower() or opt['name'].lower() in decision.lower():
+                                    opt_name = opt['name'].strip().lower()
+                                    dec_name = decision.strip().lower()
+                                    if dec_name in opt_name or opt_name in dec_name:
                                         selected_option = opt
                                         break
                             

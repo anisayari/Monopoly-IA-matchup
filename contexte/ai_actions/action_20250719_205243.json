@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T18:52:41.609247",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "next turn ",
+    "accounts "
+  ],
+  "decision": "next turn ",
+  "reason": "Avancer permet de maximiser les possibilités d'achat et d'opportunités de propriété dès le début du jeu.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

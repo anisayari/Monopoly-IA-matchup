@@ -19,6 +19,8 @@ class WiimoteDisplay:
         # Initialize CalibrationUtils
         try:
             self.calibrator = CalibrationUtils(calibration_file)
+            actual_path = os.path.abspath(calibration_file)
+            print(f"🔍 Trying to load from: {actual_path}")
         except (FileNotFoundError, ValueError) as e:
             raise e
 
