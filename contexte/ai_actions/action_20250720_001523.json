@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T22:15:21.599631",
+  "trigger": "shake the Wii",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "yes ",
+    "no "
+  ],
+  "decision": "yes ",
+  "reason": "Commencer à jouer en lançant les dés maximise les opportunités d'acquérir des propriétés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1500,
+      "GPT2": 1500
+    }
+  }
+}

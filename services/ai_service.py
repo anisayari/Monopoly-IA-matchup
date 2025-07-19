@@ -131,15 +131,14 @@ class AIService:
                 f"Choisis la meilleure option stratégique."
             )
             
-            # Appeler l'API avec Structured Outputs
-            self.logger.info(f"📡 Appel API OpenAI avec le modèle {model}")
-            response = self.client.chat.completions.create(
-                model=model,
-                messages=[
+            # Construire la requête complète
+            request_data = {
+                "model": model,
+                "messages": [
                     {"role": "system", "content": "Tu es un expert Monopoly stratégique. Réponds uniquement en JSON valide."},
                     {"role": "user", "content": user_message}
                 ],
-                response_format={
+                "response_format": {
                     "type": "json_schema",
                     "json_schema": {
                         "name": "monopoly_decision",
@@ -147,9 +146,19 @@ class AIService:
                         "strict": True
                     }
                 },
-                temperature=0.7,
-                max_tokens=200
-            )
+                "temperature": 0.7,
+                "max_tokens": 200
+            }
+            
+            # Afficher la requête JSON complète
+            self.logger.info("📡 === REQUÊTE OPENAI ===")
+            self.logger.info(f"Model: {model}")
+            self.logger.info(f"Messages: {json.dumps(request_data['messages'], indent=2, ensure_ascii=False)}")
+            self.logger.info(f"Schema: {json.dumps(schema, indent=2)}")
+            self.logger.info("========================")
+            
+            # Appeler l'API avec Structured Outputs
+            response = self.client.chat.completions.create(**request_data)
 
             # Parser la réponse
             result = json.loads(response.choices[0].message.content)
@@ -235,10 +244,27 @@ class AIService:
                 name = player_data.get('name', player_key)
                 money = player_data.get('money', 0)
                 position = player_data.get('current_space', 'Unknown')
-                props = len(player_data.get('properties', []))
+                props = player_data.get('properties', [])
                 is_current = "→" if player_data.get('is_current', False) else " "
                 in_jail = " (En prison)" if player_data.get('jail', False) else ""
-                context_str += f"{is_current} {name}: ${money}, {props} propriétés, position: {position}{in_jail}\n"
+                
+                # Informations de base
+                context_str += f"{is_current} {name}: ${money}, {len(props)} propriétés, position: {position}{in_jail}\n"
+                
+                # Liste des propriétés du joueur
+                if props:
+                    props_by_group = {}
+                    for prop in props:
+                        group = prop.get('group', 'unknown')
+                        if group not in props_by_group:
+                            props_by_group[group] = []
+                        props_by_group[group].append(prop.get('name', 'Unknown'))
+                    
+                    context_str += "   Propriétés: "
+                    prop_list = []
+                    for group, names in props_by_group.items():
+                        prop_list.append(f"{group} ({', '.join(names)})")
+                    context_str += ", ".join(prop_list) + "\n"
         
         # Propriétés importantes
         properties = global_data.get('properties', [])

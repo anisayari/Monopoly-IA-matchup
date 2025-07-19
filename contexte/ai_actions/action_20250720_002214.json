@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T22:22:12.519144",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "back ",
+    "trade "
+  ],
+  "decision": "back ",
+  "reason": "Il est préférable de ne pas prendre de risque au début. Reculer permet de mieux évaluer les opportunités futures.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1400,
+      "GPT2": 1500
+    }
+  }
+}

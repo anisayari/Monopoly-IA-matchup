@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T22:54:24.943588",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acquérir The Angel Islington renforce ma position dès le début du jeu avec un monopole potentiel.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1400,
+      "GPT2": 1440
+    }
+  }
+}

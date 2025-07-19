@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T22:20:34.572941",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "accounts ",
+    "next turn "
+  ],
+  "decision": "accounts ",
+  "reason": "Vérifier les comptes pour évaluer les options d'achat de propriétés dès le début.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1400,
+      "GPT2": 1500
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T22:13:57.543043",
+  "trigger": "would you like",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "continue "
+  ],
+  "decision": "continue ",
+  "reason": "Aucune propriété n'est possédée et les joueurs sont à la case GO, il est stratégique de rester en attente.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1500,
+      "GPT2": 1500
+    }
+  }
+}

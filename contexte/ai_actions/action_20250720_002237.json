@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T22:22:35.552193",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "accounts ",
+    "next turn "
+  ],
+  "decision": "next turn ",
+  "reason": "Passer au tour suivant pour maximiser les opportunités d'achat de propriétés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1400,
+      "GPT2": 1500
+    }
+  }
+}

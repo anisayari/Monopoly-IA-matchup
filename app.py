@@ -47,15 +47,59 @@ system_logs = []
 logs_lock = threading.Lock()
 monitor_process = None
 
+def check_and_init_game():
+    """Vérifie si Dolphin est lancé et initialise le jeu si possible"""
+    global game, contexte, dolphin_process
+    
+    try:
+        # Vérifier si Dolphin est déjà lancé
+        import pygetwindow as gw
+        windows = gw.getWindowsWithTitle("SMPP69")
+        dolphin_running = False
+        
+        for w in windows:
+            if "monopoly" in w.title.lower():
+                dolphin_running = True
+                print("🎮 Dolphin détecté en cours d'exécution !")
+                break
+        
+        if dolphin_running and not game:
+            print("🔄 Tentative d'initialisation du contexte...")
+            # Tenter de se connecter à Dolphin Memory Engine
+            try:
+                import dolphin_memory_engine as dme
+                dme.hook()
+                if dme.is_hooked():
+                    print("✅ Connecté à Dolphin Memory Engine")
+                    # Initialiser le jeu
+                    game, contexte = initialize_game()
+                    if game and contexte:
+                        print("🎲 Jeu et contexte initialisés avec succès !")
+                        # Marquer dolphin_process comme actif même si on ne l'a pas lancé nous-mêmes
+                        dolphin_process = True  # Placeholder pour indiquer que Dolphin est actif
+                    else:
+                        print("⚠️  Échec de l'initialisation du jeu")
+                else:
+                    print("⚠️  Impossible de se connecter à Dolphin Memory Engine")
+            except Exception as e:
+                print(f"❌ Erreur lors de la connexion: {e}")
+    except Exception as e:
+        print(f"⚠️  Erreur lors de la vérification de Dolphin: {e}")
+
 def check_dolphin_status():
     """Vérifie périodiquement si Dolphin est toujours en cours d'exécution"""
     global dolphin_process, game, contexte
     
     while True:
         time.sleep(2)  # Vérifier toutes les 2 secondes
+        
+        # Si on n'a pas encore de jeu initialisé, essayer de le charger
+        if not game:
+            check_and_init_game()
+        
         if dolphin_process:
-            # Vérifier si le processus est toujours actif
-            if dolphin_process.poll() is not None:
+            # Vérifier si le processus est toujours actif (et que ce n'est pas juste True)
+            if dolphin_process != True and dolphin_process.poll() is not None:
                 # Dolphin s'est fermé
                 add_log("Dolphin s'est fermé de manière inattendue", "warning")
                 dolphin_process = None
@@ -116,6 +160,30 @@ def initialize_game():
         events.on("message_added", main_module.on_message_added)
         events.on("message_removed", main_module.on_message_removed)
         events.on("*", main_module.on_event)
+        
+        # Charger la configuration des joueurs
+        config_path = os.path.join(config.WORKSPACE_DIR, "config", "game_settings.json")
+        if os.path.exists(config_path):
+            with open(config_path, 'r', encoding='utf-8') as f:
+                game_settings = json.load(f)
+            
+            # Synchroniser les noms des joueurs depuis la configuration
+            if 'players' in game_settings:
+                if 'player1' in game_settings['players'] and len(game.players) > 0:
+                    player1_name = game_settings['players']['player1'].get('name', 'GPT1')
+                    game.players[0].name = player1_name
+                    print(f"✅ Nom du joueur 1 défini: {player1_name}")
+                    
+                if 'player2' in game_settings['players'] and len(game.players) > 1:
+                    player2_name = game_settings['players']['player2'].get('name', 'GPT2')
+                    game.players[1].name = player2_name
+                    print(f"✅ Nom du joueur 2 défini: {player2_name}")
+        else:
+            print("⚠️  Configuration des joueurs introuvable, utilisation des noms par défaut")
+            if len(game.players) > 0:
+                game.players[0].name = "GPT1"
+            if len(game.players) > 1:
+                game.players[1].name = "GPT2"
         
         # Initialiser le contexte
         contexte = Contexte(game, events)
@@ -218,8 +286,24 @@ def send_static(path):
 def get_context():
     """Renvoie le contexte actuel du jeu"""
     try:
-        # Si Dolphin n'est pas en cours d'exécution, renvoyer un contexte initial
-        if not dolphin_process or dolphin_process.poll() is not None:
+        # Si on a un contexte valide, le retourner directement
+        if contexte and hasattr(contexte, 'context'):
+            return jsonify(contexte.context)
+        
+        # Essayer de charger depuis le fichier si disponible
+        context_path = os.path.join(config.CONTEXT_DIR, "game_context.json")
+        if os.path.exists(context_path):
+            try:
+                with open(context_path, 'r', encoding='utf-8') as f:
+                    saved_context = json.load(f)
+                    # Vérifier que le contexte a des données valides
+                    if saved_context and 'players' in saved_context and saved_context['players']:
+                        return jsonify(saved_context)
+            except:
+                pass
+        
+        # Si Dolphin n'est pas en cours d'exécution ET qu'on n'a pas de contexte, renvoyer un contexte initial
+        if (not dolphin_process or (dolphin_process != True and dolphin_process.poll() is not None)) and not contexte:
             return jsonify({
                 "global": {
                     "status": "stopped",
@@ -968,12 +1052,81 @@ def simple_health():
     """Simple endpoint de santé pour OmniParser"""
     return jsonify({"status": "healthy", "service": "monopoly-ia"})
 
+@app.route('/api/debug/force-update')
+def force_context_update():
+    """Force la mise à jour du contexte (pour debug)"""
+    global contexte, game
+    try:
+        if not contexte:
+            return jsonify({
+                'success': False,
+                'error': 'Contexte non initialisé',
+                'hint': 'Lancez d\'abord Dolphin via l\'interface'
+            }), 400
+            
+        # Forcer la mise à jour
+        contexte._update_context()
+        contexte._save_context()
+        
+        # Afficher des infos de debug
+        debug_info = {
+            'game_initialized': game is not None,
+            'contexte_initialized': contexte is not None,
+            'player_count': len(game.players) if game else 0,
+            'players': []
+        }
+        
+        if game:
+            for i, player in enumerate(game.players):
+                try:
+                    debug_info['players'].append({
+                        'index': i,
+                        'id': player.id,
+                        'name': player.name,
+                        'money': player.money,
+                        'position': player.position,
+                        'properties_count': len(player.properties)
+                    })
+                except Exception as e:
+                    debug_info['players'].append({
+                        'index': i,
+                        'error': str(e)
+                    })
+        
+        return jsonify({
+            'success': True,
+            'message': 'Contexte mis à jour',
+            'debug': debug_info,
+            'context': contexte.context if contexte else None
+        })
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'traceback': traceback.format_exc()
+        }), 500
+
 def update_context_periodically():
     """Met à jour le contexte du jeu périodiquement"""
-    global contexte
+    global contexte, game
+    
+    # Attendre un peu au démarrage pour laisser l'initialisation se faire
+    time.sleep(5)
+    
+    # Première tentative d'initialisation si pas encore fait
+    if not contexte and not game:
+        print("🔄 Tentative d'auto-initialisation du contexte...")
+        check_and_init_game()
+    
     while True:
         try:
             time.sleep(2)  # Mise à jour toutes les 2 secondes
+            
+            # Si toujours pas de contexte, réessayer
+            if not contexte and not game:
+                check_and_init_game()
+                continue
+            
             if contexte and hasattr(contexte, '_update_context'):
                 contexte._update_context()
                 contexte._save_context()
@@ -981,11 +1134,16 @@ def update_context_periodically():
                 # Envoyer le contexte au serveur d'actions (port 8004)
                 if hasattr(contexte, 'context'):
                     try:
-                        requests.post(
+                        response = requests.post(
                             'http://localhost:8004/context',
                             json=contexte.context,
                             timeout=1
                         )
+                        # Log seulement la première fois
+                        if not hasattr(update_context_periodically, 'first_send_done'):
+                            update_context_periodically.first_send_done = True
+                            if response.status_code == 200:
+                                print("✅ Contexte envoyé au serveur AI Actions")
                     except:
                         # Ignorer si le serveur n'est pas disponible
                         pass
@@ -998,6 +1156,9 @@ def run_app():
     # Créer le dossier de contexte s'il n'existe pas
     os.makedirs(config.CONTEXT_DIR, exist_ok=True)
     os.makedirs(config.CONTEXT_HISTORY_DIR, exist_ok=True)
+    
+    # Vérifier si Dolphin est déjà lancé et initialiser le jeu si possible
+    check_and_init_game()
     
     # Démarrer le thread de capture du terminal
     terminal_thread = threading.Thread(target=capture_terminal_output, daemon=True)

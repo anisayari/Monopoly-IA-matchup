@@ -364,16 +364,30 @@ class CentralizedMonitor:
                 else:
                     selected_keywords = None
                     print(f"❌ Aucun keyword trouvé (aucune icône ne correspond)")
-                    print("check if shake the wii is in the text")
-                    raw_content = analysis.get('raw_parsed_content', [])
-                    all_text = ' '.join([item.get('content', '') for item in raw_content if item.get('type') == 'text']).lower()
-                    print(f"🔍 All text: {all_text}")
-                    if 'shake the wii' in all_text:
-                        print("🎲 'shake the Wii' détecté dans le texte OCR - retour direct CLICK")
+                    
+                    # Vérifier "shake the wii" dans les icônes détectées
+                    shake_wii_found = False
+                    for icon in detected_icons:
+                        if 'shake the wii' in icon.lower():
+                            print(f"🎲 'shake the Wii' détecté dans l'icône: {icon}")
+                            shake_wii_found = True
+                            break
+                    
+                    # Si pas trouvé dans les icônes, vérifier dans le texte
+                    if not shake_wii_found:
+                        print("check if shake the wii is in the text")
+                        raw_content = analysis.get('raw_parsed_content', [])
+                        all_text = ' '.join([item.get('content', '') for item in raw_content if item.get('type') == 'text']).lower()
+                        print(f"🔍 All text: {all_text}")
+                        if 'shake the wii' in all_text:
+                            shake_wii_found = True
+                    
+                    if shake_wii_found:
+                        print("🎲 'shake the Wii' détecté - retour direct CLICK")
                         return {
                             'success': True,
                             'decision': 'CLICK',
-                            'reason': "Shake the Wii détecté dans le texte",
+                            'reason': "Shake the Wii détecté",
                             'options': [{
                                 "bbox": [914, 510, 914, 510],  # Centre de l'écran
                                 "confidence": 1.0,

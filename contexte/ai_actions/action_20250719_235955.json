@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T21:59:53.129348",
+  "trigger": "would you like",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "C'est le début du jeu, il est préférable d'accepter la simulation pour optimiser les chances d'acquérir des propriétés plus tard.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 0,
+      "GPT2": 0
+    }
+  }
+}

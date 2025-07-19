@@ -95,6 +95,32 @@ class Contexte:
         ]
         return board
     
+    def _get_property_details(self, position, color_group):
+        """Retourne les détails standard d'une propriété selon sa position et son groupe"""
+        # Prix et loyers standards du Monopoly UK
+        property_data = {
+            "brown": {"price": 60, "house": 50, "rents": [2, 10, 30, 90, 160, 250]},
+            "light_blue": {"price": 100, "house": 50, "rents": [6, 30, 90, 270, 400, 550]},
+            "pink": {"price": 140, "house": 100, "rents": [10, 50, 150, 450, 625, 750]},
+            "orange": {"price": 180, "house": 100, "rents": [14, 70, 200, 550, 750, 950]},
+            "red": {"price": 220, "house": 150, "rents": [18, 90, 250, 700, 875, 1050]},
+            "yellow": {"price": 260, "house": 150, "rents": [22, 110, 330, 800, 975, 1150]},
+            "green": {"price": 300, "house": 200, "rents": [26, 130, 390, 900, 1100, 1275]},
+            "dark_blue": {"price": 350, "house": 200, "rents": [35, 175, 500, 1100, 1300, 1500]},
+            "station": {"price": 200, "house": 0, "rents": [25, 50, 100, 200, 0, 0]},
+            "utility": {"price": 150, "house": 0, "rents": [4, 10, 0, 0, 0, 0]}
+        }
+        
+        # Cas spéciaux pour certaines propriétés
+        if position == 37:  # Park Lane
+            return 350, 200, [35, 175, 500, 1100, 1300, 1500]
+        elif position == 39:  # Mayfair
+            return 400, 200, [50, 200, 600, 1400, 1700, 2000]
+        
+        # Utiliser les données par défaut selon le groupe de couleur
+        data = property_data.get(color_group, {"price": 200, "house": 100, "rents": [10, 50, 150, 450, 625, 750]})
+        return data["price"], data["house"], data["rents"]
+    
     def _register_events(self):
         """Enregistre les callbacks pour les événements intéressants"""
         # Événements des joueurs
@@ -105,6 +131,7 @@ class Contexte:
         self.listeners.on("player_dice_changed", self._on_player_dice_changed)
         self.listeners.on("player_goto_changed", self._on_player_goto_changed)
         self.listeners.on("player_position_changed", self._on_player_position_changed)
+        self.listeners.on("player_properties_changed", self._on_player_properties_changed)
         
         # Événements des enchères
         self.listeners.on("auction_started", self._on_auction_started)
@@ -135,6 +162,9 @@ class Contexte:
     
     def _update_context(self):
         """Met à jour le contexte avec l'état actuel du jeu"""
+        # Debug: afficher le nombre de joueurs (désactivé pour éviter le spam)
+        # print(f"[DEBUG] Nombre de joueurs détectés: {len(self.game.players)}")
+        
         # Mise à jour des informations globales
         player_names = []
         
@@ -158,51 +188,39 @@ class Contexte:
         
         # Mise à jour des propriétés
         properties = []
-        try:
-            for prop in self.game.properties:
-                try:
-                    prop_id = prop.get('id', 0)
-                    
-                    # Obtenir le nom réel de la propriété à partir du plateau
-                    prop_name = prop.get('name', 'Unknown')
-                    if 0 <= prop_id < len(self.monopoly_board):
-                        board_space = self.monopoly_board[prop_id]
-                        if board_space["type"] == "property":
-                            prop_name = board_space["name"]
-                    
-                    prop_price = prop.get('price', 0)
-                    prop_rents = prop.get('rents', [0, 0, 0, 0, 0, 0])
-                    prop_cost = prop.get('cost', 0)
-                    
-                    # Déterminer le groupe de couleur à partir du plateau
-                    color = "unknown"
-                    if 0 <= prop_id < len(self.monopoly_board):
-                        board_space = self.monopoly_board[prop_id]
-                        if "color" in board_space:
-                            color = board_space["color"]
-                    else:
-                        color = self.get_property_color(prop)
-                    
-                    # Déterminer le propriétaire
-                    owner = self.get_property_owner(prop_id)
-                    
-                    # Déterminer le nombre de maisons (à implémenter selon votre logique de jeu)
-                    houses = 0
-                    
-                    properties.append({
-                        "id": prop_id,
-                        "name": prop_name,
-                        "group": color,
-                        "price": prop_price,
-                        "rent": prop_rents,
-                        "house_price": prop_cost,
-                        "owner": owner,
-                        "houses": houses
-                    })
-                except Exception as e:
-                    print(f"Erreur lors de la mise à jour d'une propriété: {e}")
-        except Exception as e:
-            print(f"Erreur lors de l'accès aux propriétés: {e}")
+        property_owners = {}  # Pour stocker quel joueur possède quelle propriété
+        
+        # Récupérer les propriétés de chaque joueur
+        for i, player in enumerate(self.game.players):
+            try:
+                for prop in player.properties:
+                    try:
+                        prop_position = prop.position
+                        property_owners[prop_position] = player.id
+                    except:
+                        pass
+            except:
+                pass
+        
+        # Créer la liste de toutes les propriétés du plateau
+        for space in self.monopoly_board:
+            if space["type"] == "property":
+                prop_id = space["id"]
+                owner = property_owners.get(prop_id, None)
+                
+                # Obtenir les informations de prix standard
+                price, house_price, rents = self._get_property_details(prop_id, space["color"])
+                
+                properties.append({
+                    "id": prop_id,
+                    "name": space["name"],
+                    "group": space["color"],
+                    "price": price,
+                    "rent": rents,
+                    "house_price": house_price,
+                    "owner": owner,
+                    "houses": 0  # TODO: implémenter la détection des maisons
+                })
         
         self.context["global"]["properties"] = properties
         
@@ -220,11 +238,44 @@ class Contexte:
                 else:
                     player_name = player.name
                 
+                # Vérifier si le nom est corrompu (caractères non-ASCII)
+                if player_name and any(ord(c) > 127 for c in player_name):
+                    # Logger seulement la première fois
+                    if not hasattr(self, '_corruption_logged'):
+                        self._corruption_logged = True
+                        print(f"⚠️  Nom corrompu détecté pour {player_key}. Utilisation du nom de configuration.")
+                    # Utiliser le nom de la configuration
+                    config_name = self.game_settings.get('players', {}).get(player_key, {}).get('name', f'GPT{i+1}')
+                    player_name = config_name
+                    
+                    # Essayer d'écrire le nom correct en mémoire
+                    try:
+                        player.name = config_name
+                    except Exception as e:
+                        pass  # Ignorer silencieusement les erreurs
+                
+                # Debug: afficher les infos du joueur (désactivé pour éviter le spam)
+                # print(f"[DEBUG] Joueur {i+1}: id={player_id}, nom={player_name}, argent={player.money}, position={player.position}")
+                
                 # Récupérer les propriétés du joueur
                 player_properties = []
-                for prop in properties:
-                    if prop["owner"] == player_id:
-                        player_properties.append(prop["id"])
+                try:
+                    # Utiliser la méthode owned_properties qui filtre les propriétés valides
+                    for prop in player.owned_properties:
+                        try:
+                            prop_position = prop.position
+                            if 0 <= prop_position < len(self.monopoly_board):
+                                prop_info = self.monopoly_board[prop_position]
+                                if prop_info["type"] == "property":
+                                    player_properties.append({
+                                        "id": prop_position,
+                                        "name": prop_info["name"],
+                                        "group": prop_info.get("color", "unknown")
+                                    })
+                        except:
+                            pass
+                except:
+                    pass
                 
                 # Déterminer l'espace actuel
                 position = getattr(player, 'position', 0)
@@ -241,6 +292,10 @@ class Contexte:
                 
                 # Déterminer si le joueur est en prison
                 in_jail = position == 10 and getattr(player, 'jail_turns', 0) > 0
+                
+                # Debug: afficher les propriétés du joueur (version simplifiée)
+                if len(player_properties) > 0:
+                    print(f"[INFO] {player_name}: {len(player_properties)} propriétés")
                 
                 # Utiliser player_key comme clé au lieu du nom
                 players[player_key] = {
@@ -846,6 +901,42 @@ class Contexte:
         self._update_context()
         self._save_context()
         self._save_history("player_position_changed")
+    
+    def _on_player_properties_changed(self, player, new_properties, old_properties):
+        """Gère les changements de propriétés d'un joueur"""
+        player_name = getattr(player, 'name', 'Unknown')
+        
+        # Comparer les propriétés pour détecter les nouvelles acquisitions
+        old_positions = set(prop.get('position', -1) for prop in old_properties)
+        new_positions = set(prop.get('position', -1) for prop in new_properties)
+        
+        # Propriétés acquises
+        acquired = new_positions - old_positions
+        for prop_position in acquired:
+            if 0 <= prop_position < len(self.monopoly_board):
+                prop_info = self.monopoly_board[prop_position]
+                if prop_info["type"] == "property":
+                    # Trouver le prix de la propriété
+                    price = "un prix inconnu"
+                    for prop in new_properties:
+                        if prop.get('position') == prop_position:
+                            price = prop.get('price', price)
+                            break
+                    
+                    self._add_event(player_name, "buy_property", f"{prop_info['name']} pour {price}€")
+        
+        # Propriétés perdues (hypothéquées, vendues, etc.)
+        lost = old_positions - new_positions
+        for prop_position in lost:
+            if 0 <= prop_position < len(self.monopoly_board):
+                prop_info = self.monopoly_board[prop_position]
+                if prop_info["type"] == "property":
+                    self._add_event(player_name, "lose_property", prop_info['name'])
+        
+        # Mettre à jour le contexte
+        self._update_context()
+        self._save_context()
+        self._save_history("player_properties_changed")
     
     def _on_auction_started(self):
         # Déterminer la propriété mise aux enchères (si possible)

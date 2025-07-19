@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-07-19T21:24:09.195432",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "continue "
+  ],
+  "decision": "continue ",
+  "reason": "Il est préférable de ne pas hypothéquer pour garder des liquidités pour des achats futurs.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

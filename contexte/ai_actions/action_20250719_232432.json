@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-07-19T21:24:30.606913",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "continue "
+  ],
+  "decision": "continue ",
+  "reason": "Pas de liquidités à générer immédiatement, mieux vaut attendre pour voir les prochaines opportunités.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

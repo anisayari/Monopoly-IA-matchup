@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T22:01:23.279171",
+  "trigger": "would you like",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "C'est le début du jeu, il faut avancer et acquérir des propriétés dès que possible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1500,
+      "GPT2": 1500
+    }
+  }
+}

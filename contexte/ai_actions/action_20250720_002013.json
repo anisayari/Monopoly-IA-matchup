@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T22:20:11.565035",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acquérir la première propriété dès le début renforce ma position stratégique pour le reste de la partie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1500,
+      "GPT2": 1500
+    }
+  }
+}

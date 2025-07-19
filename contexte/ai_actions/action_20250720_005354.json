@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T22:53:52.325469",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acquérir Whitechapel Road renforce ma position et m'offre un potentiel de revenu immédiat.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1500,
+      "GPT2": 1440
+    }
+  }
+}

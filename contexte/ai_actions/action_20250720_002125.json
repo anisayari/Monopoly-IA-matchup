@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T22:21:23.472019",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "back ",
+    "trade "
+  ],
+  "decision": "trade ",
+  "reason": "Négocier un échange peut permettre d'obtenir des propriétés précieuses dès le début, renforçant ainsi ma position pour l'avenir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1400,
+      "GPT2": 1500
+    }
+  }
+}

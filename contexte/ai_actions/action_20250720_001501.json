@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T22:14:59.571491",
+  "trigger": "would you like",
+  "keywords": [
+    "Whitout saving"
+  ],
+  "options": [
+    "continue without saving/loading "
+  ],
+  "decision": "continue without saving/loading ",
+  "reason": "Il est trop tôt pour prendre des décisions stratégiques, les ressources sont égales et aucune propriété n'est détenue.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1500,
+      "GPT2": 1500
+    }
+  }
+}

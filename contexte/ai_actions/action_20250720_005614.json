@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T22:56:11.884115",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acquérir Whitehall renforce ma position et me rapproche d'un monopole, augmentant mes revenus futurs.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1400,
+      "GPT2": 1280
+    }
+  }
+}

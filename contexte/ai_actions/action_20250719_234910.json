@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-07-19T21:49:08.561682",
+  "trigger": "would you like",
+  "keywords": [
+    "Who's playing"
+  ],
+  "options": [
+    "house rules ",
+    "next ",
+    "back "
+  ],
+  "decision": "next ",
+  "reason": "Avancer permet d'explorer plus d'options stratégiques pour maximiser les gains futurs.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

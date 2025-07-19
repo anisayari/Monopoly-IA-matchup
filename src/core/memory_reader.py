@@ -17,17 +17,27 @@ class MemoryReader:
     def get_string(addr: Hex, max_length = 1024, byteorder: str = "big") -> str:
         string = ""
         parsed_addr = MemoryReader.hex_to_int(addr)
+        # Désactiver les logs pour éviter le spam
+        # print(f"[DEBUG MemoryReader] Reading string from address 0x{parsed_addr:08X}, byteorder={byteorder}")
         i = 0
         while i < max_length:
             char = dme.read_bytes(parsed_addr, 2)
             if char == b"\x00\x00":
                 break
             try:
-                string += char.decode("utf-16-le" if byteorder == "little" else "utf-16-be")
-            except:
+                decoded = char.decode("utf-16-le" if byteorder == "little" else "utf-16-be")
+                string += decoded
+                # Désactiver les logs verbeux
+                # if i < 10:  # Log first few chars
+                #     print(f"[DEBUG MemoryReader] Char {i}: {char.hex()} -> '{decoded}'")
+            except Exception as e:
                 string += "?"
+                # Désactiver les logs d'erreur qui spamment
+                # print(f"[DEBUG MemoryReader] Failed to decode char at offset {i}: {char.hex()}, error: {e}")
             parsed_addr += 2
             i += 1
+        # Désactiver le log final
+        # print(f"[DEBUG MemoryReader] Final string: '{string}' (length: {len(string)})")
         return string
     
     

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T22:24:35.414382",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "accounts ",
+    "next turn "
+  ],
+  "decision": "accounts ",
+  "reason": "Analyser les finances permet de planifier des achats et d'anticiper les mouvements futurs plus efficacement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1400,
+      "GPT2": 1300
+    }
+  }
+}

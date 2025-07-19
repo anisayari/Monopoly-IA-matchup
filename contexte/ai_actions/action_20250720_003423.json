@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T22:34:21.785513",
+  "trigger": "shake the Wii",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "continue ",
+    "resign "
+  ],
+  "decision": "continue ",
+  "reason": "Lancer les dés peut permettre d'acquérir plus de propriétés et d'augmenter les chances de victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1400,
+      "GPT2": 1300
+    }
+  }
+}

@@ -10,6 +10,8 @@ import json
 from datetime import datetime
 from colorama import init, Fore, Style, Back
 import sys
+import requests
+import os
 
 # Initialiser colorama pour Windows
 init()
@@ -18,7 +20,10 @@ class AIActionsMonitor:
     def __init__(self, port=8004):
         self.app = web.Application()
         self.port = port
-        self.current_context = {}
+        self.current_context = {
+            'global': {'current_turn': 0, 'current_player': 'N/A'},
+            'players': {}
+        }
         self.setup_routes()
         
     def setup_routes(self):
@@ -118,15 +123,23 @@ class AIActionsMonitor:
         print(f"   Tour: {global_data.get('current_turn', 'N/A')}")
         print(f"   Joueur actuel: {Fore.CYAN}{global_data.get('current_player', 'N/A')}{Style.RESET_ALL}")
         
-        # Informations des joueurs
+        # Informations des joueurs - TOUJOURS les afficher
         players = context.get('players', {})
+        print(f"\n{Fore.YELLOW}👥 Joueurs:{Style.RESET_ALL}")
         if players:
-            print(f"\n{Fore.YELLOW}👥 Joueurs:{Style.RESET_ALL}")
             for player_key, player_data in players.items():
                 name = player_data.get('name', player_key)
+                
+                # Vérifier si le nom est corrompu (caractères non-ASCII)
+                if name and any(ord(c) > 127 for c in name):
+                    print(f"\n   {Fore.RED}⚠️  {player_key}: Nom corrompu détecté - réinitialisation nécessaire{Style.RESET_ALL}")
+                    print(f"      {Fore.YELLOW}💡 Relancez Dolphin via l'interface web pour réinitialiser les noms{Style.RESET_ALL}")
+                    continue
+                
                 money = player_data.get('money', 0)
                 position = player_data.get('current_space', 'Unknown')
-                properties = len(player_data.get('properties', []))
+                player_properties = player_data.get('properties', [])
+                properties_count = len(player_properties)
                 is_current = "🎮" if player_data.get('is_current', False) else "  "
                 jail = " 🔒" if player_data.get('jail', False) else ""
                 
@@ -138,44 +151,142 @@ class AIActionsMonitor:
                 else:
                     money_color = Fore.RED
                     
-                print(f"   {is_current} {Fore.CYAN}{name}{Style.RESET_ALL}: {money_color}${money}{Style.RESET_ALL} | 🏠 {properties} props | 📍 {position}{jail}")
+                print(f"   {is_current} {Fore.CYAN}{name}{Style.RESET_ALL}: {money_color}${money}{Style.RESET_ALL} | 🏠 {properties_count} props | 📍 {position}{jail}")
+                
+                # Toujours afficher les propriétés du joueur (même si vide)
+                print(f"      {Fore.LIGHTBLACK_EX}Propriétés:{Style.RESET_ALL}")
+                if player_properties:
+                    # Grouper par couleur
+                    props_by_group = {}
+                    for prop in player_properties:
+                        group = prop.get('group', 'unknown')
+                        if group not in props_by_group:
+                            props_by_group[group] = []
+                        props_by_group[group].append(prop.get('name', 'Unknown'))
+                    
+                    # Afficher par groupe avec emojis
+                    group_emojis = {
+                        'brown': '🏞️',
+                        'light_blue': '🌊',
+                        'pink': '🌸',
+                        'orange': '🍊',
+                        'red': '🔴',
+                        'yellow': '🌟',
+                        'green': '🌳',
+                        'dark_blue': '🌃',
+                        'station': '🚂',
+                        'utility': '⚡'
+                    }
+                    
+                    for group, props in props_by_group.items():
+                        emoji = group_emojis.get(group, '🏠')
+                        group_color = self._get_group_color(group)
+                        print(f"        {emoji} {group_color}{group.replace('_', ' ').title()}{Style.RESET_ALL}: {', '.join(props)}")
+                else:
+                    print(f"        {Fore.LIGHTBLACK_EX}Aucune propriété pour le moment{Style.RESET_ALL}")
+                print()  # Ligne vide entre les joueurs
+        else:
+            print(f"   {Fore.LIGHTBLACK_EX}Aucun joueur détecté pour le moment{Style.RESET_ALL}")
         
-        # Propriétés par groupe
+        # Résumé global des propriétés
         properties = global_data.get('properties', [])
         if properties:
-            print(f"\n{Fore.YELLOW}🏘️ Propriétés par groupe:{Style.RESET_ALL}")
-            groups = {}
-            for prop in properties:
-                if prop.get('owner'):
+            owned_properties = [p for p in properties if p.get('owner') is not None]
+            if owned_properties:
+                print(f"\n{Fore.YELLOW}🏘️ Résumé des propriétés:{Style.RESET_ALL}")
+                print(f"   Total possédées: {len(owned_properties)}/{len(properties)}")
+                
+                # Compter par groupe
+                groups_count = {}
+                for prop in owned_properties:
                     group = prop.get('group', 'Other')
-                    owner = prop['owner']
-                    if group not in groups:
-                        groups[group] = {}
-                    if owner not in groups[group]:
-                        groups[group][owner] = []
-                    groups[group][owner].append(prop['name'])
-            
-            for group, owners in groups.items():
-                print(f"   {Fore.LIGHTBLACK_EX}{group}:{Style.RESET_ALL}")
-                for owner, props in owners.items():
-                    print(f"      {owner}: {', '.join(props[:3])}" + (" ..." if len(props) > 3 else ""))
+                    if group not in groups_count:
+                        groups_count[group] = 0
+                    groups_count[group] += 1
+                
+                if groups_count:
+                    print(f"   Par groupe: {', '.join([f'{g}: {c}' for g, c in groups_count.items()])}")
                     
-        # Statistiques rapides
+        # Statistiques rapides - TOUJOURS les afficher
+        print(f"\n{Fore.YELLOW}📈 Statistiques:{Style.RESET_ALL}")
         if players:
             total_money = sum(p.get('money', 0) for p in players.values())
             avg_money = total_money / len(players) if players else 0
-            print(f"\n{Fore.YELLOW}📈 Statistiques:{Style.RESET_ALL}")
             print(f"   Argent total en jeu: ${total_money}")
             print(f"   Argent moyen: ${avg_money:.0f}")
             
+            # Statistiques des propriétés
+            total_props_owned = sum(len(p.get('properties', [])) for p in players.values())
+            print(f"   Propriétés possédées: {total_props_owned}")
+        else:
+            print(f"   {Fore.LIGHTBLACK_EX}En attente des données...{Style.RESET_ALL}")
+            
         print(f"\n{Fore.LIGHTBLACK_EX}{'═' * 60}{Style.RESET_ALL}")
+    
+    def _get_group_color(self, group):
+        """Retourne la couleur Colorama pour un groupe de propriétés"""
+        color_map = {
+            'brown': Fore.YELLOW,
+            'light_blue': Fore.LIGHTCYAN_EX,
+            'pink': Fore.LIGHTMAGENTA_EX,
+            'orange': Fore.LIGHTYELLOW_EX,
+            'red': Fore.RED,
+            'yellow': Fore.YELLOW,
+            'green': Fore.GREEN,
+            'dark_blue': Fore.BLUE,
+            'station': Fore.WHITE,
+            'utility': Fore.LIGHTWHITE_EX
+        }
+        return color_map.get(group, Fore.WHITE)
         
+    async def fetch_initial_context(self):
+        """Récupère le contexte initial depuis l'API Flask"""
+        try:
+            # Essayer de récupérer le contexte depuis l'API
+            response = requests.get('http://localhost:5000/api/context', timeout=2)
+            if response.status_code == 200:
+                context = response.json()
+                if context and 'players' in context and context['players']:
+                    print(f"{Fore.GREEN}✅ Contexte récupéré depuis l'API Flask{Style.RESET_ALL}")
+                    self.current_context = context
+                    return True
+                else:
+                    print(f"{Fore.YELLOW}⚠️  Contexte vide ou incomplet{Style.RESET_ALL}")
+            else:
+                print(f"{Fore.YELLOW}⚠️  Impossible de récupérer le contexte (status: {response.status_code}){Style.RESET_ALL}")
+        except requests.exceptions.ConnectionError:
+            print(f"{Fore.RED}❌ Impossible de se connecter à l'API Flask (localhost:5000){Style.RESET_ALL}")
+            print(f"{Fore.YELLOW}💡 Assurez-vous que app.py est lancé{Style.RESET_ALL}")
+        except Exception as e:
+            print(f"{Fore.RED}❌ Erreur lors de la récupération du contexte: {e}{Style.RESET_ALL}")
+        
+        # Essayer de charger depuis le fichier si disponible
+        try:
+            context_path = os.path.join(os.path.dirname(__file__), 'contexte', 'game_context.json')
+            if os.path.exists(context_path):
+                with open(context_path, 'r', encoding='utf-8') as f:
+                    context = json.load(f)
+                    if context and 'players' in context and context['players']:
+                        print(f"{Fore.GREEN}✅ Contexte chargé depuis le fichier{Style.RESET_ALL}")
+                        self.current_context = context
+                        return True
+        except Exception as e:
+            print(f"{Fore.YELLOW}⚠️  Impossible de charger le contexte depuis le fichier: {e}{Style.RESET_ALL}")
+        
+        return False
+    
     async def start(self):
         """Démarre le serveur"""
         print(f"{Fore.BLUE}╔══════════════════════════════════════════════════════════╗{Style.RESET_ALL}")
         print(f"{Fore.BLUE}║      AI ACTIONS & GAME CONTEXT MONITOR - PORT {self.port}      ║{Style.RESET_ALL}")
         print(f"{Fore.BLUE}╚══════════════════════════════════════════════════════════╝{Style.RESET_ALL}")
         print(f"\n{Fore.CYAN}📡 En attente des actions et du contexte du jeu...{Style.RESET_ALL}\n")
+        
+        # Essayer de récupérer le contexte initial
+        await self.fetch_initial_context()
+        
+        # Afficher le contexte initial
+        self.display_context(self.current_context)
         
         runner = web.AppRunner(self.app)
         await runner.setup()

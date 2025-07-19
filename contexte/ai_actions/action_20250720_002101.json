@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T22:20:59.097147",
+  "trigger": "Trade",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "Aucun échange n'est possible, il faut attendre d'acquérir des propriétés pour négocier.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1400,
+      "GPT2": 1500
+    }
+  }
+}

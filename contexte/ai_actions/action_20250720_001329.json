@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T22:13:26.976957",
+  "trigger": "would you like",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "continue "
+  ],
+  "decision": "continue ",
+  "reason": "Il est trop tôt pour prendre des risques, la stratégie doit se concentrer sur l'acquisition de propriétés plus tard.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1500,
+      "GPT2": 1500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T21:59:22.039066",
+  "trigger": "would you like",
+  "keywords": [
+    "Who's playing"
+  ],
+  "options": [
+    "house rules ",
+    "back "
+  ],
+  "decision": "house rules ",
+  "reason": "Permet de commencer avec des règles personnalisées qui peuvent donner un avantage stratégique dès le début.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 0,
+      "GPT2": 0
+    }
+  }
+}

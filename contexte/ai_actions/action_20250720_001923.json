@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T22:19:21.300099",
+  "trigger": "shake the Wii",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "continue "
+  ],
+  "decision": "continue ",
+  "reason": "Commencer à jouer permet de prendre des décisions basées sur les résultats du dé, maximisant les opportunités d'achat de propriétés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1500,
+      "GPT2": 1500
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T22:14:29.199724",
+  "trigger": "would you like",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "C'est le début du jeu, il est préférable de continuer sans prendre de risque pour maximiser les opportunités futures.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1500,
+      "GPT2": 1500
+    }
+  }
+}

@@ -10,28 +10,67 @@ echo.
 
 :: Run cleanup script if it exists
 if exist cleanup_obsolete_files.bat (
-    echo [1/7] Cleaning up obsolete files...
+    echo [1/8] Cleaning up obsolete files...
     call cleanup_obsolete_files.bat
     echo       [OK]
 ) else (
-    echo [1/7] Cleanup script not found, skipping...
+    echo [1/8] Cleanup script not found, skipping...
 )
 
-:: Clean up any process using port 8000 (with progress)
-echo [2/7] Checking port 8000...
-set port_cleaned=0
-for /f "tokens=5" %%a in ('netstat -aon 2^>nul ^| findstr :8000 ^| findstr LISTENING') do (
-    taskkill /F /PID %%a >nul 2>&1
-    set port_cleaned=1
-)
-if %port_cleaned%==1 (
-    echo       [OK] Port 8000 cleaned
+:: Clean up ports from previous runs
+echo [2/8] Cleaning up ports from previous runs...
+if exist cleanup_ports.py (
+    python cleanup_ports.py
+    if %errorlevel% neq 0 (
+        echo       [WARNING] Some ports could not be cleaned
+        echo       You may need to close applications manually
+    )
 ) else (
-    echo       [OK] Port 8000 available
+    :: Fallback: Clean up critical ports manually
+    echo       Cleaning critical ports...
+    setlocal EnableDelayedExpansion
+    set ports_cleaned=0
+    
+    :: Port 5000 (Flask)
+    for /f "tokens=5" %%a in ('netstat -aon 2^>nul ^| findstr :5000 ^| findstr LISTENING') do (
+        taskkill /F /PID %%a >nul 2>&1
+        set /a ports_cleaned=1
+    )
+    
+    :: Port 8000 (OmniParser)
+    for /f "tokens=5" %%a in ('netstat -aon 2^>nul ^| findstr :8000 ^| findstr LISTENING') do (
+        taskkill /F /PID %%a >nul 2>&1
+        set /a ports_cleaned=1
+    )
+    
+    :: Port 7000 (AI Decision)
+    for /f "tokens=5" %%a in ('netstat -aon 2^>nul ^| findstr :7000 ^| findstr LISTENING') do (
+        taskkill /F /PID %%a >nul 2>&1
+        set /a ports_cleaned=1
+    )
+    
+    :: Port 8003 (AI Chat)
+    for /f "tokens=5" %%a in ('netstat -aon 2^>nul ^| findstr :8003 ^| findstr LISTENING') do (
+        taskkill /F /PID %%a >nul 2>&1
+        set /a ports_cleaned=1
+    )
+    
+    :: Port 8004 (AI Actions)
+    for /f "tokens=5" %%a in ('netstat -aon 2^>nul ^| findstr :8004 ^| findstr LISTENING') do (
+        taskkill /F /PID %%a >nul 2>&1
+        set /a ports_cleaned=1
+    )
+    
+    if !ports_cleaned!==1 (
+        echo       [OK] Ports cleaned
+    ) else (
+        echo       [OK] All ports available
+    )
+    endlocal
 )
 
 :: Check calibration first
-echo [3/7] Checking calibration...
+echo [3/8] Checking calibration...
 python check_calibration.py >nul 2>&1
 if %errorlevel% neq 0 goto ask_calibration
 echo       [OK] Valid calibration found
@@ -59,7 +98,7 @@ if %errorlevel% neq 0 (
 
 :check_terminal_mode
 echo.
-echo [4/7] Checking terminal options...
+echo [4/8] Checking terminal options...
 
 :: Check if Windows Terminal is available
 where wt >nul 2>&1
@@ -82,7 +121,7 @@ if %errorlevel% equ 0 (
 
 :integrated_mode
 echo.
-echo [5/7] Starting services in integrated terminal...
+echo [5/8] Starting services in integrated terminal...
 echo.
 echo Layout:
 echo +------------------+------------------+
@@ -122,7 +161,7 @@ goto open_browser
 
 :classic_mode
 echo.
-echo [5/7] Starting services in separate windows...
+echo [5/8] Starting services in separate windows...
 
 :: Clean up old processes
 echo Cleaning up old processes...
@@ -172,7 +211,7 @@ goto open_browser
 
 :minimal_mode
 echo.
-echo [5/7] Starting minimal mode (Flask only)...
+echo [5/8] Starting minimal mode (Flask only)...
 start "Monopoly IA - Flask" cmd /k "cd /d %~dp0 && python app.py"
 echo.
 echo [i] You can start other services manually from the Admin panel
@@ -180,12 +219,12 @@ goto open_browser
 
 :open_browser
 echo.
-echo [6/7] Opening web interface...
+echo [6/8] Opening web interface...
 timeout /t 3 >nul
 start http://localhost:5000
 
 echo.
-echo [7/7] Auto-launch check...
+echo [7/8] Auto-launch check...
 
 :: Check if user wants auto-launch from a config file
 if exist "config\autolaunch.txt" (
@@ -207,6 +246,8 @@ if exist "config\autolaunch.txt" (
     echo    To enable: Create file "config\autolaunch.txt"
 )
 
+echo.
+echo [8/8] System ready!
 echo.
 echo ================================================
 echo                SYSTEM READY!

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T22:23:26.242665",
+  "trigger": "shake the Wii",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "Commencer à jouer en lançant les dés permet d'avancer et potentiellement acquérir des propriétés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1400,
+      "GPT2": 1500
+    }
+  }
+}

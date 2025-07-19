@@ -21,10 +21,14 @@ class MonopolyListeners(EventListeners):
 
     def start(self):
         if not self._running:
+            print("[DEBUG Listeners] Starting listeners thread")
             self._running = True
             self._thread = threading.Thread(target=self._run)
             self._thread.daemon = True  # Ensure the thread does not block main thread exit
             self._thread.start()
+            print("[DEBUG Listeners] Listeners thread started")
+        else:
+            print("[DEBUG Listeners] Listeners already running")
 
     def stop(self):
         if self._running:
@@ -87,6 +91,36 @@ class MonopolyListeners(EventListeners):
         return next((i for i, x in enumerate(lst) if func(x)), -1)
     
     _players = []
+    
+    def player_properties_handler(self):
+        """Gère les changements de propriétés des joueurs"""
+        for player in self._players:
+            game_player = self._game.get_player_by_id(player["id"])
+            if game_player is None:
+                self.emit("warning", "Player not found in player_properties_handler")
+                continue
+            
+            # Récupérer les propriétés actuelles
+            current_properties = []
+            try:
+                for prop in game_player.properties:
+                    prop_data = {
+                        "name": prop.name,
+                        "position": prop.position,
+                        "price": prop.price,
+                        "rents": prop.rents
+                    }
+                    current_properties.append(prop_data)
+            except Exception as e:
+                # Les propriétés peuvent ne pas être encore disponibles
+                pass
+            
+            old_properties = player.get("properties", [])
+            
+            # Vérifier si les propriétés ont changé
+            if old_properties != current_properties:
+                player["properties"] = current_properties
+                self.emit("player_properties_changed", game_player, current_properties, old_properties)
     
     def player_money_handler(self):
         for player in self._players:
@@ -177,12 +211,14 @@ class MonopolyListeners(EventListeners):
                         "dices": player.dices,
                         "ignore_next_dice": False,
                         "goto": player.goto,
-                        "position": player.position
+                        "position": player.position,
+                        "properties": []
                     })
                     self.emit("player_added", player)
                     
             self.player_name_handler()
             self.player_money_handler()
+            self.player_properties_handler()
             self.player_dice_handler()
             self.player_goto_handler()
             self.player_position_handler()
@@ -239,8 +275,15 @@ class MonopolyListeners(EventListeners):
     interval_auction = 0.1 # 0.1 second
 
     def _run(self):
+        # print("[DEBUG Listeners] Listener thread running")
+        tick_count = 0
         while self._running:
             self.emit("loop_tick")
+            tick_count += 1
+            
+            # Réduire la fréquence des logs
+            if tick_count % 1000 == 0:  # Log every 1000 ticks instead of 100
+                print(f"[DEBUG Listeners] Still running, tick {tick_count}, {len(self._players)} players detected")
             
             if time.time() - self._last_time_player >= self.interval_player:
                 self._last_time_player = time.time()
@@ -255,6 +298,8 @@ class MonopolyListeners(EventListeners):
                 self.auction_handler()
             
             time.sleep(1 / self.tps)
+        
+        # print("[DEBUG Listeners] Listener thread stopped")
 
 
 

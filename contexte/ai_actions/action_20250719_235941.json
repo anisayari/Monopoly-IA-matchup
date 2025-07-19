@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T21:59:39.108044",
+  "trigger": "would you like",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "Il n'y a pas d'autres options disponibles et il est important de continuer le jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 0,
+      "GPT2": 0
+    }
+  }
+}

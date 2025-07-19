@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T22:55:22.021402",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "accounts ",
+    "next turn "
+  ],
+  "decision": "next turn ",
+  "reason": "Conserver les liquidités pour des enchères futures et éviter des investissements risqués en début de jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1400,
+      "GPT2": 1280
+    }
+  }
+}

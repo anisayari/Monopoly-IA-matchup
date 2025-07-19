@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T22:01:32.767579",
+  "trigger": "would you like",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "Commencer la partie sans propriétés est normal, mais il faut se préparer à acheter lors des prochains tours.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 1500,
+      "GPT2": 1500
+    }
+  }
+}
