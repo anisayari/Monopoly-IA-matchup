@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-07-19T19:37:07.890431",
+  "trigger": "would you like",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "Commencer le jeu en acceptant la simulation permet de définir la stratégie dès le départ.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

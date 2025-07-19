@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T19:28:21.558508",
+  "trigger": "would you like",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "back "
+  ],
+  "decision": "back ",
+  "reason": "Revenir en arrière permet d'éviter de perdre des ressources précieuses dès le début du jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT1": 0,
+      "GPT2": 0
+    }
+  }
+}

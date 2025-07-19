@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-07-19T19:36:24.220717",
+  "trigger": "would you like",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "Commencer la simulation permet de mieux évaluer la stratégie et les ressources disponibles pour les prochains tours.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

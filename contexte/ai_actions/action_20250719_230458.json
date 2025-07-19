@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T21:04:56.581384",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Bow Street est une propriété stratégique à acquérir tôt pour débuter la construction de monopoles.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

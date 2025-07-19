@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-07-19T21:03:26.643006",
+  "trigger": "Next Turn",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "accounts "
+  ],
+  "decision": "accounts ",
+  "reason": "Utiliser l'option 'accounts' permet de planifier les investissements futurs et d'analyser les ressources disponibles.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

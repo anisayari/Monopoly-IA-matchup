@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T19:06:41.414167",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "yes ",
+    "no "
+  ],
+  "decision": "no ",
+  "reason": "Mortgager dès le début peut limiter les options futures et causer des problèmes de liquidité.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

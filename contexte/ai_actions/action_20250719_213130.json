@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-07-19T19:31:28.091782",
+  "trigger": "would you like",
+  "keywords": [
+    "Who's playing"
+  ],
+  "options": [
+    "house rules ",
+    "next ",
+    "back "
+  ],
+  "decision": "next ",
+  "reason": "Commencer la partie sans modifier les règles pour une expérience classique. C'est essentiel pour établir une base de jeu.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

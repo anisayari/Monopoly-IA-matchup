@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T21:03:49.239246",
+  "trigger": "would you like",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "continue ",
+    "resign "
+  ],
+  "decision": "continue ",
+  "reason": "Il est trop tôt pour abandonner, les opportunités de stratégie se développeront au fil du jeu.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

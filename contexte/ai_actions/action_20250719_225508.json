@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T20:55:06.508014",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Pall Mall est une propriété stratégique qui peut générer des revenus. L'acheter dès le début est judicieux pour renforcer ma position.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

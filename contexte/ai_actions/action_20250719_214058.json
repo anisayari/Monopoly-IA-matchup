@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-07-19T19:40:56.562322",
+  "trigger": "would you like",
+  "keywords": [
+    "Whitout saving"
+  ],
+  "options": [
+    "continue without saving/loading "
+  ],
+  "decision": "continue without saving/loading ",
+  "reason": "Il est préférable de poursuivre la partie pour évaluer la stratégie en cours sans interruptions.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

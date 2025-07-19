@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T19:06:19.657271",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "yes ",
+    "no "
+  ],
+  "decision": "no ",
+  "reason": "Il est trop tôt pour hypothéquer, conserve tes propriétés pour maximiser les revenus future.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

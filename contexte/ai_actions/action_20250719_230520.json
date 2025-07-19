@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T21:05:18.641667",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "accounts ",
+    "next turn "
+  ],
+  "decision": "next turn ",
+  "reason": "Passer au tour suivant permet de maximiser les opportunités d'acheter des propriétés et de développer ma stratégie.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

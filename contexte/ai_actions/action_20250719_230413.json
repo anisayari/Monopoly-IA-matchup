@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T21:04:11.073707",
+  "trigger": "Next Turn",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "accounts ",
+    "next turn "
+  ],
+  "decision": "next turn ",
+  "reason": "Prendre un tour supplémentaire peut permettre d'acheter des propriétés et de mieux se positionner pour la suite du jeu.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

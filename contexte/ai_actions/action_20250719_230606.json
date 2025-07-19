@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T21:06:04.827547",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acquérir Whitehall dès le début augmente les chances de contrôle des propriétés et de génération de revenus rapides.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

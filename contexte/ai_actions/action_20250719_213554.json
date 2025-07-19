@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-07-19T19:35:51.993212",
+  "trigger": "would you like",
+  "keywords": [
+    "Press to continue"
+  ],
+  "options": [
+    "press to continue "
+  ],
+  "decision": "press to continue ",
+  "reason": "C'est le seul choix disponible pour continuer la simulation et avancer dans le jeu.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

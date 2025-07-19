@@ -108,15 +108,15 @@ wt ^
   new-tab --title "Monopoly IA" ^
   cmd /k "cd /d \"%SCRIPT_DIR%\" && echo === FLASK SERVER === && python app.py" ^
   ; split-pane -V ^
-  cmd /k "cd /d \"%SCRIPT_DIR%\" && echo === OMNIPARSER === && timeout /t 5 && %OMNIPARSER_CMD%" ^
+  cmd /k "cd /d \"%SCRIPT_DIR%\" && echo === OMNIPARSER SERVER === && %OMNIPARSER_CMD%" ^
   ; split-pane -V ^
-  cmd /k "cd /d \"%SCRIPT_DIR%\" && echo === DECISION SERVER === && timeout /t 7 && python services\unified_decision_server.py" ^
-  ; split-pane -V ^
-  cmd /k "cd /d \"%SCRIPT_DIR%\" && echo === MONITOR (Popups) === && timeout /t 10 && python monitor_centralized.py" ^
-  ; move-focus left ; move-focus left ; move-focus left ; split-pane -H ^
-  cmd /k "cd /d \"%SCRIPT_DIR%\" && echo === AI CHAT + THOUGHTS === && timeout /t 12 && python ai_chat_server.py" ^
+  cmd /k "cd /d \"%SCRIPT_DIR%\" && echo === DECISION SERVER === && python services\unified_decision_server.py" ^
+  ;move-focus left ;move-focus left ; split-pane -H ^
+  cmd /k "cd /d \"%SCRIPT_DIR%\" && echo === MONITOR (Popups) === && timeout /t 15 && python monitor_centralized.py" ^
   ; move-focus right ; split-pane -H ^
-  cmd /k "cd /d \"%SCRIPT_DIR%\" && echo === AI ACTIONS (Game Context) === && timeout /t 15 && python ai_actions_server.py"
+  cmd /k "cd /d \"%SCRIPT_DIR%\" && echo === AI CHAT + THOUGHTS === && python ai_chat_server.py" ^
+  ; move-focus right ; split-pane -H ^
+  cmd /k "cd /d \"%SCRIPT_DIR%\" && echo === AI ACTIONS (Game Context) === && python ai_actions_server.py"
 
 goto open_browser
 

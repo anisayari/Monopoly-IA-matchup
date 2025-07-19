@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-19T21:03:04.570414",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acheter Euston Road dès le début permet de commencer à construire un monopole et générer des revenus rapidement.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

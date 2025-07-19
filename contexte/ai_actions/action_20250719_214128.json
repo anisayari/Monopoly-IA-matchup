@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-07-19T19:41:26.416815",
+  "trigger": "would you like",
+  "keywords": [
+    "Whitout saving"
+  ],
+  "options": [
+    "continue without saving/loading "
+  ],
+  "decision": "continue without saving/loading ",
+  "reason": "Il est trop tôt pour prendre des décisions de sauvegarde. Maximiser le jeu dès le début est stratégique.",
+  "game_context": {
+    "current_player": "Unknown",
+    "current_turn": 0,
+    "money": {}
+  }
+}

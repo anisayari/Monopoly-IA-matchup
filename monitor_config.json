@@ -89,6 +89,19 @@
     "New turn Roll the dice": {
       "text": ["Remote and press to roll the"],
       "icon": ["CLICK"]
+    },
+    "Who's playing": {
+      "text": ["Who's playing"],
+      "icon": ["house rules", "next","back"]
+    },
+    "Press to continue": {
+      "text": ["Press to continue"],
+      "icon": ["press to continue"]
+    },
+    "Whitout saving": {
+      "text": ["Whitout saving"],
+      "icon": ["continue without saving/loading"]
     }
+    
   }
 }

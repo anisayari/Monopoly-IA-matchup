@@ -269,21 +269,7 @@ class CentralizedMonitor:
     def process_popup(self, popup_text, screenshot_base64, trigger):
         """Traite un popup en deux étapes: analyse puis décision"""
         try:
-            # Cas spécial : "shake the Wii" retourne directement CLICK
-            if trigger == 'shake the Wii' or 'shake the wii' in popup_text.lower():
-                print("🎲 Cas spécial 'shake the Wii' détecté - retour direct CLICK")
-                return {
-                    'success': True,
-                    'decision': 'CLICK',
-                    'reason': "Shake the Wii pour lancer les dés",
-                    'options': [{
-                        "bbox": [914, 510, 914, 510],  # Centre approximatif de l'écran
-                        "confidence": 1.0,
-                        "name": "CLICK",
-                        "type": "icon"
-                    }],
-                    'analysis': {'text_content': [popup_text], 'options': []}
-                }
+
             # Étape 1: Analyser le screenshot avec OmniParser
             print("📸 Analyse du screenshot...")
             max_retries = 10
@@ -304,25 +290,6 @@ class CentralizedMonitor:
                 return None
             
             analysis = analyze_response.json()
-            
-            # Vérifier si "shake the Wii" est dans le texte détecté
-            raw_content = analysis.get('raw_parsed_content', [])
-            all_text = ' '.join([item.get('content', '') for item in raw_content if item.get('type') == 'text']).lower()
-            
-            if 'shake the wii' in all_text:
-                print("🎲 'shake the Wii' détecté dans le texte OCR - retour direct CLICK")
-                return {
-                    'success': True,
-                    'decision': 'CLICK',
-                    'reason': "Shake the Wii détecté dans le texte",
-                    'options': [{
-                        "bbox": [914, 510, 914, 510],  # Centre de l'écran
-                        "confidence": 1.0,
-                        "name": "CLICK",
-                        "type": "icon"
-                    }],
-                    'analysis': analysis
-                }
             
             monitor_config = self.monitor_config
             monitor_keywords = monitor_config.get('keywords', {})
@@ -397,23 +364,25 @@ class CentralizedMonitor:
                 else:
                     selected_keywords = None
                     print(f"❌ Aucun keyword trouvé (aucune icône ne correspond)")
-
-            # SPECIAL CASE: If 'New turn Roll the dice' is detected via icons
-            if selected_keywords and 'New turn Roll the dice' in selected_keywords:
-                print("🎲 Detected 'New turn Roll the dice' situation via icons, returning 'CLICK' directly.")
-                return {
-                    'success': True,
-                    'decision': 'CLICK',
-                    'reason': "Auto-detected 'New turn Roll the dice' via icons, no AI needed.",
-                    'options':[{
-                                "bbox": [42, 42, 42, 42],
+                    print("check if shake the wii is in the text")
+                    raw_content = analysis.get('raw_parsed_content', [])
+                    all_text = ' '.join([item.get('content', '') for item in raw_content if item.get('type') == 'text']).lower()
+                    print(f"🔍 All text: {all_text}")
+                    if 'shake the wii' in all_text:
+                        print("🎲 'shake the Wii' détecté dans le texte OCR - retour direct CLICK")
+                        return {
+                            'success': True,
+                            'decision': 'CLICK',
+                            'reason': "Shake the Wii détecté dans le texte",
+                            'options': [{
+                                "bbox": [914, 510, 914, 510],  # Centre de l'écran
                                 "confidence": 1.0,
                                 "name": "CLICK",
-                                "original_text": "CLICK",
                                 "type": "icon"
                             }],
-                    'analysis': analysis
-                }
+                            'analysis': analysis
+                        }
+
 
             if selected_keywords:
                 all_icons = [
@@ -450,8 +419,42 @@ class CentralizedMonitor:
                             'options': [opt],
                             'analysis': analysis
                         }
+                    elif opt.get('name', '').strip().lower() == 'house rules':
+                        print("✅ Option 'house rules' détectée, clic direct sans IA !")
+                        return {
+                            'success': True,
+                            'decision': 'next',
+                            'reason': "Option 'house rules' détectée, clic direct sans IA.",
+                            'options': [opt],
+                            'analysis': analysis
+                        }
+                    elif opt.get('name', '').strip().lower() == 'continue without saving/loading':
+                        print("✅ Option 'continue without saving/loading' détectée, clic direct sans IA !")
+                        return {
+                            'success': True,
+                            'decision': 'continue without saving/loading',
+                            'reason': "Option 'continue without saving/loading' détectée, clic direct sans IA.",
+                            'options': [opt],
+                            'analysis': analysis
+                        }
+                    elif opt.get('name', '').strip().lower() == 'CLICK' or opt.get('name', '').strip().lower() == 'press to continue':
+                        print("✅ Option 'CLICK' détectée, clic direct sans IA !")
+                        return {
+                            'success': True,
+                            'decision': 'CLICK',
+                            'reason': "Option 'CLICK' détectée, clic direct sans IA.",
+                            'options': [opt],   
+                            'analysis': analysis
+                        }
                 print(f"🔍 Aucune option détectée, skipping AI decision...")
                 return None
+            
+            # Vérifier si "shake the Wii" est dans le texte détecté
+            raw_content = analysis.get('raw_parsed_content', [])
+            all_text = ' '.join([item.get('content', '') for item in raw_content if item.get('type') == 'text']).lower()
+            
+
+            
             
             # Étape 2: Obtenir le contexte du jeu
             game_context = {}
