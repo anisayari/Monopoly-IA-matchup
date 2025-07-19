@@ -17,7 +17,6 @@ from src.game.contexte import Contexte
 from src.game.listeners import MonopolyListeners
 from src.core.game_loader import GameLoader
 from services.event_bus import EventBus, EventTypes
-from services.popup_service import PopupService
 from services.ai_service import AIService
 from services.auto_start_manager import AutoStartManager
 from services.health_check_service import HealthCheckService
@@ -27,13 +26,15 @@ app = Flask(__name__)
 
 # Initialiser l'Event Bus et les services
 event_bus = EventBus(app)
-popup_service = PopupService(event_bus)
 ai_service = AIService(event_bus)
 auto_start_manager = AutoStartManager(config, event_bus)
 health_check_service = HealthCheckService()
 
-# Enregistrer les blueprints
-app.register_blueprint(create_popup_blueprint(popup_service))
+# Enregistrer les blueprints pour les popups (sans event bus)
+app.register_blueprint(create_popup_blueprint(
+    omniparser_url="http://localhost:8000",
+    ai_decision_url="http://localhost:7000"
+))
 
 # Variables globales pour le jeu
 game = None
@@ -814,14 +815,9 @@ def start_calibration():
         # Choisir le script selon si Dolphin est en cours ou non
         is_dolphin_running = dolphin_process is not None and dolphin_process.poll() is None
         
-        if is_dolphin_running:
-            # Si Dolphin tourne déjà, utiliser l'ancienne méthode
-            calibration_script = os.path.join(config.WORKSPACE_DIR, 'run_calibration.py')
-            script_name = 'Calibration (Dolphin déjà ouvert)'
-        else:
-            # Sinon, utiliser le nouveau script qui lance Dolphin
-            calibration_script = os.path.join(config.WORKSPACE_DIR, 'run_calibration_with_dolphin.py')
-            script_name = 'Calibration avec Dolphin'
+        # Always use the complete visual calibration script
+        calibration_script = os.path.join(config.WORKSPACE_DIR, 'calibration', 'run_visual_calibration_complete.py')
+        script_name = 'Calibration Visuelle Complète'
         
         if not os.path.exists(calibration_script):
             return jsonify({'error': 'Script de calibration introuvable'}), 404
@@ -838,6 +834,50 @@ def start_calibration():
         return jsonify({'success': True, 'message': message})
     except Exception as e:
         add_log(f'Erreur lors du lancement de la calibration: {str(e)}', 'error')
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/game-settings')
+def get_game_settings():
+    """Récupère les paramètres du jeu"""
+    try:
+        # Lire depuis le fichier de configuration
+        settings_file = os.path.join('config', 'game_settings.json')
+        if os.path.exists(settings_file):
+            with open(settings_file, 'r', encoding='utf-8') as f:
+                return jsonify(json.load(f))
+        else:
+            # Paramètres par défaut
+            return jsonify({
+                "starting_money": 15000000,
+                "salary": 2000000,
+                "free_parking_bonus": 0,
+                "auction_enabled": True,
+                "speed_die": False,
+                "jail_fine": 500000,
+                "luxury_tax": 1000000,
+                "income_tax": 2000000
+            })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/messages/detected', methods=['POST'])
+def message_detected():
+    """Endpoint pour recevoir les messages détectés dans la RAM"""
+    try:
+        data = request.json
+        message_text = data.get('text', '')
+        category = data.get('category', 'other')
+        
+        # Logger le message
+        print(f"[MESSAGE] {category}: {message_text}")
+        
+        # Si on a un contexte actif, on pourrait l'ajouter aux événements
+        if contexte:
+            # Ajouter le message au contexte (optionnel)
+            pass
+        
+        return jsonify({'success': True})
+    except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 @app.route('/api/create_demo_image')

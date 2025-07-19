@@ -20,6 +20,7 @@ class Contexte:
         self.turn_events = []  # Événements du tour actuel
         self.monopoly_board = self._initialize_monopoly_board()  # Initialiser le plateau de Monopoly
         self.duplicate_events = set()  # Pour éviter les événements en double
+        self.game_settings = self._load_game_settings()  # Charger les paramètres du jeu
         
         # Créer le dossier d'historique s'il n'existe pas
         if not os.path.exists(self.context_history_dir):
@@ -31,7 +32,8 @@ class Contexte:
                 "properties": [],
                 "current_turn": 0,
                 "player_count": 0,
-                "player_names": []
+                "player_names": [],
+                "current_player": None
             },
             "events": [],
             "players": {},
@@ -112,19 +114,47 @@ class Contexte:
         # Événements des messages
         self.listeners.on("message_added", self._on_message_added)
     
+    def _load_game_settings(self):
+        """Charge les paramètres du jeu depuis le fichier de configuration"""
+        try:
+            settings_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'config', 'game_settings.json')
+            if os.path.exists(settings_path):
+                with open(settings_path, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+        except Exception as e:
+            print(f"Erreur chargement game_settings.json: {e}")
+        
+        # Paramètres par défaut
+        return {
+            "players": {
+                "player1": {"name": "GPT1", "model": "gpt-4.1-mini", "enabled": True},
+                "player2": {"name": "GPT2", "model": "gpt-4.1-mini", "enabled": True}
+            },
+            "game": {"default_model": "gpt-4.1-mini"}
+        }
+    
     def _update_context(self):
         """Met à jour le contexte avec l'état actuel du jeu"""
         # Mise à jour des informations globales
         player_names = []
-        for player in self.game.players:
+        
+        # Utiliser les noms configurés si disponibles
+        for i, player in enumerate(self.game.players):
             try:
-                player_names.append(player.name)
+                # Utiliser le nom configuré pour ce joueur
+                player_key = f"player{i+1}"
+                if player_key in self.game_settings.get("players", {}):
+                    configured_name = self.game_settings["players"][player_key].get("name", player.name)
+                    player_names.append(configured_name)
+                else:
+                    player_names.append(player.name)
             except:
                 pass
         
         self.context["global"]["player_count"] = len(self.game.players)
         self.context["global"]["player_names"] = player_names
         self.context["global"]["current_turn"] = self.current_turn
+        self.context["global"]["current_player"] = f"player{self.current_player_index + 1}"
         
         # Mise à jour des propriétés
         properties = []
@@ -182,7 +212,13 @@ class Contexte:
         for i, player in enumerate(self.game.players):
             try:
                 player_id = player.id
-                player_name = player.name
+                
+                # Utiliser le nom configuré pour ce joueur
+                player_key = f"player{i+1}"
+                if player_key in self.game_settings.get("players", {}):
+                    player_name = self.game_settings["players"][player_key].get("name", player.name)
+                else:
+                    player_name = player.name
                 
                 # Récupérer les propriétés du joueur
                 player_properties = []
@@ -206,8 +242,11 @@ class Contexte:
                 # Déterminer si le joueur est en prison
                 in_jail = position == 10 and getattr(player, 'jail_turns', 0) > 0
                 
-                players[player_name] = {
+                # Utiliser player_key comme clé au lieu du nom
+                players[player_key] = {
+                    "name": player_name,
                     "current_player": (i == self.current_player_index),
+                    "is_current": (i == self.current_player_index),  # Ajout pour la compatibilité
                     "dice_result": getattr(player, 'dices', None),
                     "money": getattr(player, 'money', 0),
                     "properties": player_properties,
@@ -593,11 +632,15 @@ class Contexte:
         """Met à jour le joueur actuel dans le contexte"""
         for i, player in enumerate(self.game.players):
             try:
-                player_name = player.name
-                if player_name in self.context["players"]:
-                    self.context["players"][player_name]["current_player"] = (i == self.current_player_index)
+                player_key = f"player{i+1}"
+                if player_key in self.context["players"]:
+                    self.context["players"][player_key]["current_player"] = (i == self.current_player_index)
+                    self.context["players"][player_key]["is_current"] = (i == self.current_player_index)
             except Exception as e:
                 print(f"Erreur lors de la mise à jour du joueur actuel: {e}")
+        
+        # Mettre à jour le joueur actuel dans global
+        self.context["global"]["current_player"] = f"player{self.current_player_index + 1}"
     
     # Callbacks pour les événements
     def _on_player_added(self, player):

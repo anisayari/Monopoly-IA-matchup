@@ -3,6 +3,8 @@
  * Gère les éléments d'interface et les interactions
  */
 
+import config from './config.js';
+
 // État de l'interface
 let state = {
     activeTab: 'events-tab'
@@ -18,23 +20,33 @@ async function initUI() {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const config = await response.json();
+        const configData = await response.json();
         
         // Mettre à jour les champs de configuration
         const dolphinPathInput = document.getElementById('dolphin-path');
         const isoPathInput = document.getElementById('iso-path');
+        const savePathInput = document.getElementById('save-path');
+        const memoryEnginePathInput = document.getElementById('memory-engine-path');
         const refreshIntervalInput = document.getElementById('refresh-interval');
         
         if (dolphinPathInput) {
-            dolphinPathInput.value = config.dolphinPath || '';
+            dolphinPathInput.value = configData.dolphinPath || '';
         }
         
         if (isoPathInput) {
-            isoPathInput.value = config.isoPath || '';
+            isoPathInput.value = configData.isoPath || '';
+        }
+        
+        if (savePathInput) {
+            savePathInput.value = configData.savePath || '';
+        }
+        
+        if (memoryEnginePathInput) {
+            memoryEnginePathInput.value = configData.memoryEnginePath || '';
         }
         
         if (refreshIntervalInput) {
-            refreshIntervalInput.value = (config.refreshInterval || 2000) / 1000;
+            refreshIntervalInput.value = (configData.refreshInterval || 2000) / 1000;
         }
     } catch (error) {
         console.error('Error loading configuration:', error);
@@ -45,6 +57,9 @@ async function initUI() {
     this.setupConfigDropdown();
     this.setupDolphinControls();
     this.setupPlayerConfig();
+    
+    // Initialiser le bouton de sauvegarde de configuration
+    config.initSaveButton();
 }
 
 /**
@@ -135,21 +150,8 @@ function updateDolphinStatus(running) {
         startButton.classList.remove('bg-white', 'hover:bg-zinc-200', 'text-black');
         startButton.classList.add('bg-red-600', 'hover:bg-red-700', 'text-white');
         
-        // Mettre à jour le conteneur Dolphin avec un placeholder statique
-        dolphinContainer.innerHTML = `
-            <div class="relative w-full h-full bg-black flex items-center justify-center">
-                <div class="text-center text-white max-w-md">
-                    <i class="fas fa-gamepad text-6xl mb-6"></i>
-                    <h3 class="text-2xl font-medium mb-4">Monopoly is running</h3>
-                    <p class="text-zinc-400 mb-6">The game is now running in a separate window.</p>
-                    <div class="bg-zinc-800 p-4 rounded-lg text-left mb-6">
-                        <p class="text-sm mb-2"><i class="fas fa-keyboard mr-2"></i><strong>Windows+Tab</strong> or <strong>Alt+Tab</strong></p>
-                        <p class="text-zinc-500 text-sm">Use these keyboard shortcuts to switch between windows and access the game.</p>
-                    </div>
-                    <p class="text-zinc-500 text-sm">When you're done playing, return here and click "Stop Dolphin" to close the emulator.</p>
-                </div>
-            </div>
-        `;
+        // Créer la fenêtre de partage d'écran au lieu du message statique
+        createDolphinWindow();
 
         // Mettre à jour les joueurs après un court délai
         setTimeout(async () => {
@@ -302,120 +304,173 @@ function createDolphinWindow() {
     // Vider le conteneur
     dolphinContainer.innerHTML = '';
     
-    // Créer un message d'information
-    const infoMessage = document.createElement('div');
-    infoMessage.className = 'absolute top-0 left-0 right-0 bg-black/70 text-white p-2 text-xs text-center z-10';
-    infoMessage.textContent = 'Dolphin is running. Use Alt+Tab to interact with the window.';
-    dolphinContainer.appendChild(infoMessage);
+    // Créer le conteneur vidéo pour le partage d'écran
+    const videoContainer = document.createElement('div');
+    videoContainer.className = 'video-crop-container';
+    
+    // Créer l'élément vidéo
+    const video = document.createElement('video');
+    video.id = 'dolphin-video';
+    video.className = 'w-full h-full object-contain';
+    video.autoplay = true;
+    video.playsInline = true;
+    videoContainer.appendChild(video);
+    
+    // Message initial
+    const messageContainer = document.createElement('div');
+    messageContainer.id = 'dolphin-message';
+    messageContainer.className = 'absolute inset-0 flex flex-col items-center justify-center text-white text-center p-8';
+    messageContainer.innerHTML = `
+        <div class="mb-6">
+            <i class="fas fa-spinner fa-spin text-6xl mb-4"></i>
+            <h3 class="text-xl font-medium mb-2">Configuration du partage d'écran...</h3>
+            <p class="text-sm text-zinc-400 mb-2">Une boîte de dialogue va s'ouvrir dans 5 secondes</p>
+            <div class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 mt-4 text-left max-w-md">
+                <p class="text-sm font-medium mb-2">📋 Instructions :</p>
+                <ol class="text-sm text-zinc-300 space-y-1 list-decimal list-inside">
+                    <li>Attendez la boîte de dialogue de partage</li>
+                    <li>Sélectionnez l'onglet <span class="text-white font-medium">"Fenêtre"</span></li>
+                    <li>Cherchez <span class="text-white font-medium">"Dolphin 2412"</span></li>
+                    <li>Cliquez sur la fenêtre Dolphin</li>
+                    <li>Cliquez sur <span class="text-white font-medium">"Partager"</span></li>
+                </ol>
+            </div>
+        </div>
+    `;
+    videoContainer.appendChild(messageContainer);
     
     // Créer un conteneur pour les contrôles
     const controlsContainer = document.createElement('div');
-    controlsContainer.className = 'absolute bottom-0 left-0 right-0 bg-black/70 p-2 flex justify-center space-x-2 z-10';
+    controlsContainer.id = 'video-controls';
+    controlsContainer.className = 'absolute bottom-0 left-0 right-0 bg-black/70 p-2 flex justify-center space-x-2 z-10 hidden';
     
-    // Bouton pour rafraîchir manuellement la capture d'écran
-    const refreshButton = document.createElement('button');
-    refreshButton.className = 'bg-blue-600 hover:bg-blue-700 text-white py-1 px-2 rounded text-xs flex items-center';
-    refreshButton.innerHTML = '<i class="fas fa-sync-alt mr-1"></i> Refresh';
+    // Bouton pour arrêter le partage
+    const stopShareButton = document.createElement('button');
+    stopShareButton.className = 'bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded text-sm flex items-center';
+    stopShareButton.innerHTML = '<i class="fas fa-stop mr-1"></i> Arrêter le partage';
     
-    // Ajouter les contrôles au conteneur
-    controlsContainer.appendChild(refreshButton);
-    dolphinContainer.appendChild(controlsContainer);
+    controlsContainer.appendChild(stopShareButton);
+    videoContainer.appendChild(controlsContainer);
     
-    // Créer une image pour afficher la capture d'écran de Dolphin
-    const screenshotImg = document.createElement('img');
-    screenshotImg.className = 'w-full h-full object-contain';
-    screenshotImg.alt = 'Dolphin Screenshot';
+    dolphinContainer.appendChild(videoContainer);
     
-    // Afficher un loader en attendant la première capture
-    screenshotImg.src = '/static/img/loading.gif';
-    dolphinContainer.appendChild(screenshotImg);
+    // Variable pour stocker le stream
+    let mediaStream = null;
     
-    // Variables pour gérer les erreurs et les tentatives
-    let errorCount = 0;
-    let isCapturing = false;
-    let isInitializing = true;
-    
-    // Fonction pour mettre à jour la capture d'écran
-    const updateScreenshot = async () => {
-        // Vérifier si Dolphin est en cours d'exécution
-        if (!document.getElementById('dolphin-status').textContent.includes('running')) {
-            return;
-        }
-        
-        // Éviter les requêtes simultanées
-        if (isCapturing) {
-            return;
-        }
-        
-        isCapturing = true;
-        
+    // Fonction pour démarrer le partage d'écran
+    const startScreenShare = async () => {
         try {
-            // Vérifier d'abord si Dolphin est prêt
-            const response = await fetch('/api/dolphin/status');
-            const status = await response.json();
-            
-            if (!status.running) {
-                if (isInitializing) {
-                    screenshotImg.src = '/static/img/loading.gif';
-                    return;
-                }
-                throw new Error('Dolphin is not ready');
-            }
-            
-            // Ajouter un timestamp pour éviter la mise en cache du navigateur
-            const timestamp = new Date().getTime();
-            
-            // Créer une nouvelle image pour éviter les problèmes de cache
-            const newImg = new Image();
-            newImg.onload = () => {
-                // Mettre à jour l'image affichée
-                screenshotImg.src = newImg.src;
-                errorCount = 0;
-                isCapturing = false;
-                isInitializing = false;
+            // Options pour le partage d'écran - privilégier les fenêtres
+            const displayMediaOptions = {
+                video: {
+                    displaySurface: 'window',
+                    logicalSurface: true,
+                    cursor: 'always'
+                },
+                audio: false,
+                preferCurrentTab: false
             };
             
-            newImg.onerror = () => {
-                errorCount++;
-                isCapturing = false;
-                
-                // Si trop d'erreurs consécutives, afficher un message d'erreur
-                if (errorCount > 5) {
-                    screenshotImg.src = '/static/img/error.png';
-                    showNotification('Cannot capture Dolphin window. The emulator might be minimized or not visible.', 'error');
-                }
-            };
+            // Demander à l'utilisateur de sélectionner une fenêtre
+            mediaStream = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
             
-            // Charger la nouvelle image
-            newImg.src = `/api/dolphin/screenshot?t=${timestamp}`;
+            // Attacher le stream à l'élément vidéo
+            video.srcObject = mediaStream;
+            
+            // Masquer le message et afficher les contrôles
+            messageContainer.classList.add('hidden');
+            controlsContainer.classList.remove('hidden');
+            
+            // Gérer l'arrêt du partage par l'utilisateur
+            mediaStream.getVideoTracks()[0].addEventListener('ended', () => {
+                stopScreenShare();
+            });
+            
+            showNotification('Partage d\'écran démarré', 'success');
         } catch (error) {
-            console.error('Error updating screenshot:', error);
-            isCapturing = false;
+            console.error('Erreur lors du partage d\'écran:', error);
+            // Si l'utilisateur annule, afficher le bouton de partage manuel
+            messageContainer.innerHTML = `
+                <div class="mb-6">
+                    <i class="fas fa-desktop text-6xl mb-4"></i>
+                    <h3 class="text-xl font-medium mb-2">Monopoly est en cours d'exécution</h3>
+                    <p class="text-sm text-zinc-400 mb-4">Le jeu tourne dans une fenêtre séparée.</p>
+                </div>
+                <button id="share-screen-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg flex items-center">
+                    <i class="fas fa-share-square mr-2"></i>
+                    Partager la fenêtre Dolphin
+                </button>
+                <p class="text-xs text-zinc-500 mt-4">Cliquez sur le bouton pour sélectionner et afficher la fenêtre Dolphin ici</p>
+            `;
             
-            if (isInitializing) {
-                screenshotImg.src = '/static/img/loading.gif';
-            } else {
-                screenshotImg.src = '/static/img/error.png';
+            // Réattacher l'événement au bouton
+            const shareButton = document.getElementById('share-screen-btn');
+            if (shareButton) {
+                shareButton.addEventListener('click', startScreenShare);
             }
         }
     };
     
-    // Mettre à jour la capture d'écran toutes les 500ms
-    const screenshotInterval = setInterval(updateScreenshot, 500);
-    
-    // Ajouter un événement au bouton de rafraîchissement
-    refreshButton.addEventListener('click', () => {
-        updateScreenshot();
-        showNotification('Refreshing Dolphin window', 'info');
+    // Configurer le bouton d'arrêt
+    stopShareButton.addEventListener('click', () => {
+        stopScreenShare();
     });
     
-    // Nettoyer l'intervalle lorsque la fenêtre est fermée
+    // Fonction pour arrêter le partage
+    const stopScreenShare = () => {
+        if (mediaStream) {
+            mediaStream.getTracks().forEach(track => track.stop());
+            mediaStream = null;
+            video.srcObject = null;
+        }
+        
+        // Réafficher le message avec le bouton de partage
+        messageContainer.classList.remove('hidden');
+        controlsContainer.classList.add('hidden');
+        messageContainer.innerHTML = `
+            <div class="mb-6">
+                <i class="fas fa-desktop text-6xl mb-4"></i>
+                <h3 class="text-xl font-medium mb-2">Monopoly est en cours d'exécution</h3>
+                <p class="text-sm text-zinc-400 mb-4">Le jeu tourne dans une fenêtre séparée.</p>
+            </div>
+            <button id="share-screen-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg flex items-center">
+                <i class="fas fa-share-square mr-2"></i>
+                Partager la fenêtre Dolphin
+            </button>
+            <p class="text-xs text-zinc-500 mt-4">Cliquez sur le bouton pour sélectionner et afficher la fenêtre Dolphin ici</p>
+        `;
+        
+        // Réattacher l'événement au bouton
+        const shareButton = document.getElementById('share-screen-btn');
+        if (shareButton) {
+            shareButton.addEventListener('click', startScreenShare);
+        }
+        
+        showNotification('Partage d\'écran arrêté', 'info');
+    };
+    
+    // Nettoyer lors de la fermeture
     window.addEventListener('beforeunload', () => {
-        clearInterval(screenshotInterval);
+        stopScreenShare();
     });
     
-    // Déclencher la première mise à jour
-    setTimeout(updateScreenshot, 1000);
+    // Démarrer automatiquement le partage d'écran après un délai pour que Dolphin ait le temps de s'ouvrir
+    let countdown = 5;
+    const countdownElement = document.createElement('div');
+    countdownElement.className = 'text-3xl font-bold text-blue-400 mt-4';
+    countdownElement.textContent = countdown;
+    messageContainer.querySelector('.mb-6').appendChild(countdownElement);
+    
+    const countdownInterval = setInterval(() => {
+        countdown--;
+        countdownElement.textContent = countdown;
+        
+        if (countdown === 0) {
+            clearInterval(countdownInterval);
+            countdownElement.textContent = '🖱️';
+            startScreenShare();
+        }
+    }, 1000);
     
     return true;
 }
@@ -467,8 +522,33 @@ const ui = {
         const configButton = document.getElementById('config-button');
         const configDropdown = document.getElementById('config-dropdown');
 
-        configButton.addEventListener('click', () => {
+        configButton.addEventListener('click', async () => {
             configDropdown.classList.toggle('hidden');
+            
+            // Si on ouvre le dropdown, charger la configuration actuelle
+            if (!configDropdown.classList.contains('hidden')) {
+                try {
+                    const response = await fetch('/api/config');
+                    if (response.ok) {
+                        const configData = await response.json();
+                        
+                        // Mettre à jour les champs
+                        const dolphinPath = document.getElementById('dolphin-path');
+                        const isoPath = document.getElementById('iso-path');
+                        const savePath = document.getElementById('save-path');
+                        const memoryEnginePath = document.getElementById('memory-engine-path');
+                        const refreshInterval = document.getElementById('refresh-interval');
+                        
+                        if (dolphinPath) dolphinPath.value = configData.dolphinPath || '';
+                        if (isoPath) isoPath.value = configData.isoPath || '';
+                        if (savePath) savePath.value = configData.savePath || '';
+                        if (memoryEnginePath) memoryEnginePath.value = configData.memoryEnginePath || '';
+                        if (refreshInterval) refreshInterval.value = (configData.refreshInterval || 2000) / 1000;
+                    }
+                } catch (error) {
+                    console.error('Erreur lors du chargement de la configuration:', error);
+                }
+            }
         });
 
         document.addEventListener('click', (e) => {

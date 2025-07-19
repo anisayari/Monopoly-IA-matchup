@@ -25,6 +25,23 @@
         #terminal-output span {
             white-space: pre-wrap;
         }
+        /* Conteneur vidéo avec crop */
+        .video-crop-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+        /* Style de la vidéo - zoom pour cropper les bandes noires */
+        #dolphin-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Zoom légèrement pour cropper les bandes noires en haut et en bas */
+            transform: scale(1.2);
+            transform-origin: center center;
+        }
     </style>
 </head>
 <body class="bg-black text-white min-h-screen">
@@ -37,16 +54,44 @@
                 <h1 class="text-xl font-medium">Monopoly Manager</h1>
             </div>
 
-            <!-- Configuration des joueurs -->
-            <div class="flex space-x-6">
-                <div class="player-config flex space-x-2">
-                    <input type="text" value="GPT 4-o" placeholder="Joueur 1" class="bg-white text-black border border-zinc-700 rounded px-3 py-1 text-sm focus:outline-none focus:border-zinc-400">
-                    <input type="number" value="1500" placeholder="1500" class="bg-white text-black border border-zinc-700 rounded px-3 py-1 text-sm w-24 focus:outline-none focus:border-zinc-400">
+            <!-- Indicateurs d'état des systèmes -->
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-xs text-zinc-400">Dolphin:</span>
+                    <span id="dolphin-status-indicator" class="inline-block w-2 h-2 rounded-full bg-red-500"></span>
                 </div>
-                <div class="player-config flex space-x-2">
-                    <input type="text" value="Claude 3.5" placeholder="Joueur 2" class="bg-white text-black border border-zinc-700 rounded px-3 py-1 text-sm focus:outline-none focus:border-zinc-400">
-                    <input type="number" value="1500" placeholder="1500" class="bg-white text-black border border-zinc-700 rounded px-3 py-1 text-sm w-24 focus:outline-none focus:border-zinc-400">
+                <div class="flex items-center space-x-2">
+                    <span class="text-xs text-zinc-400">OmniParser:</span>
+                    <span id="omniparser-status-indicator" class="inline-block w-2 h-2 rounded-full bg-red-500"></span>
                 </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-xs text-zinc-400">AI Actions:</span>
+                    <span id="ai-status-indicator" class="inline-block w-2 h-2 rounded-full bg-red-500"></span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-xs text-zinc-400">Monitor:</span>
+                    <span id="monitor-status-indicator" class="inline-block w-2 h-2 rounded-full bg-red-500"></span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-xs text-zinc-400">Calibration:</span>
+                    <span id="calibration-status-indicator" class="inline-block w-2 h-2 rounded-full bg-red-500"></span>
+                </div>
+            </div>
+
+            <!-- Boutons de navigation -->
+            <div class="flex space-x-4">
+                <button id="game-settings-btn" class="bg-blue-600 hover:bg-blue-700 px-4 py-1 rounded text-sm border border-blue-700 flex items-center">
+                    <i class="fas fa-cog mr-2"></i>
+                    Game Setup
+                </button>
+                <a href="/monitoring" class="bg-green-600 hover:bg-green-700 px-4 py-1 rounded text-sm border border-green-700 flex items-center">
+                    <i class="fas fa-chart-line mr-2"></i>
+                    Monitoring
+                </a>
+                <a href="/admin" class="bg-purple-600 hover:bg-purple-700 px-4 py-1 rounded text-sm border border-purple-700 flex items-center">
+                    <i class="fas fa-tools mr-2"></i>
+                    Admin
+                </a>
                 
                 <!-- Bouton de configuration -->
                 <div class="relative">
@@ -65,9 +110,21 @@
                                 <input type="text" id="iso-path" class="w-full bg-white text-black border border-zinc-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-zinc-400">
                             </div>
                             <div>
-                                <label class="block text-sm text-zinc-400 mb-1">Intervalle de rafraîchissement (ms)</label>
-                                <input type="number" id="refresh-interval" class="w-full bg-white text-black border border-zinc-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-zinc-400">
+                                <label class="block text-sm text-zinc-400 mb-1">Chemin fichier de sauvegarde</label>
+                                <input type="text" id="save-path" class="w-full bg-white text-black border border-zinc-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-zinc-400">
                             </div>
+                            <div>
+                                <label class="block text-sm text-zinc-400 mb-1">Chemin Dolphin Memory Engine</label>
+                                <input type="text" id="memory-engine-path" class="w-full bg-white text-black border border-zinc-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-zinc-400">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-zinc-400 mb-1">Intervalle de rafraîchissement (secondes)</label>
+                                <input type="number" id="refresh-interval" class="w-full bg-white text-black border border-zinc-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-zinc-400" min="1" value="2">
+                            </div>
+                            <button id="save-config-button" class="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm transition-colors duration-200 flex items-center justify-center">
+                                <i class="fas fa-save mr-2"></i>
+                                Sauvegarder la configuration
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -126,11 +183,206 @@
         </div>
     </main>
 
+    <!-- Modal Game Settings -->
+    <div id="game-settings-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-6 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-medium flex items-center">
+                    <i class="fas fa-gamepad mr-2"></i>
+                    Game Setup
+                </h2>
+                <button id="close-game-settings" class="text-zinc-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Nombre de joueurs -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium mb-2">Number of Players</label>
+                <select id="player-count" class="bg-zinc-800 border border-zinc-700 rounded px-3 py-2 w-full" disabled>
+                    <option value="2" selected>2 Players (current save limitation)</option>
+                </select>
+            </div>
+            
+            <!-- Configuration des joueurs -->
+            <div class="space-y-4 mb-6">
+                <h3 class="text-lg font-medium">Player Configuration</h3>
+                
+                <!-- Player 1 -->
+                <div class="bg-zinc-800 rounded-lg p-4 border border-zinc-700">
+                    <h4 class="font-medium mb-3 text-blue-400">Player 1</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm mb-1">Name</label>
+                            <input type="text" id="player1-name" value="GPT1" class="bg-zinc-700 border border-zinc-600 rounded px-3 py-2 w-full">
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-1">AI Model</label>
+                            <select id="player1-model" class="bg-zinc-700 border border-zinc-600 rounded px-3 py-2 w-full">
+                                <option value="gpt-4.1-mini">GPT-4.1 Mini</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Player 2 -->
+                <div class="bg-zinc-800 rounded-lg p-4 border border-zinc-700">
+                    <h4 class="font-medium mb-3 text-green-400">Player 2</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm mb-1">Name</label>
+                            <input type="text" id="player2-name" value="GPT2" class="bg-zinc-700 border border-zinc-600 rounded px-3 py-2 w-full">
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-1">AI Model</label>
+                            <select id="player2-model" class="bg-zinc-700 border border-zinc-600 rounded px-3 py-2 w-full">
+                                <option value="gpt-4.1-mini">GPT-4.1 Mini</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Global AI Settings -->
+            <div class="bg-zinc-800 rounded-lg p-4 border border-zinc-700 mb-6">
+                <h3 class="text-lg font-medium mb-3">AI Settings</h3>
+                <div class="flex items-center justify-between">
+                    <label class="text-sm">Enable AI for all players</label>
+                    <input type="checkbox" id="ai-enabled" checked class="w-4 h-4">
+                </div>
+            </div>
+            
+            <!-- Boutons -->
+            <div class="flex justify-end space-x-3">
+                <button id="cancel-game-settings" class="px-4 py-2 bg-zinc-700 hover:bg-zinc-600 rounded">
+                    Cancel
+                </button>
+                <button id="save-game-settings" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded">
+                    <i class="fas fa-save mr-2"></i>
+                    Save Settings
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Admin -->
+    <div id="admin-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-6 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-medium flex items-center">
+                    <i class="fas fa-tools mr-2"></i>
+                    Panneau d'Administration
+                </h2>
+                <button id="close-admin-modal" class="text-zinc-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Dolphin Control -->
+                <div class="bg-zinc-800 rounded-lg p-4">
+                    <h3 class="text-lg font-medium mb-3 flex items-center">
+                        <i class="fas fa-desktop mr-2"></i>
+                        Dolphin Emulator
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm">État:</span>
+                            <span id="dolphin-admin-status" class="text-sm font-medium text-red-400">Arrêté</span>
+                        </div>
+                        <button id="dolphin-toggle" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm">
+                            <i class="fas fa-play mr-2"></i>
+                            Démarrer Dolphin
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- OmniParser Control -->
+                <div class="bg-zinc-800 rounded-lg p-4">
+                    <h3 class="text-lg font-medium mb-3 flex items-center">
+                        <i class="fas fa-eye mr-2"></i>
+                        OmniParser API
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm">État:</span>
+                            <span id="omniparser-admin-status" class="text-sm font-medium text-red-400">Arrêté</span>
+                        </div>
+                        <button id="omniparser-toggle" class="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm">
+                            <i class="fas fa-play mr-2"></i>
+                            Démarrer OmniParser
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- AI Actions Control -->
+                <div class="bg-zinc-800 rounded-lg p-4">
+                    <h3 class="text-lg font-medium mb-3 flex items-center">
+                        <i class="fas fa-robot mr-2"></i>
+                        AI Actions
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm">État:</span>
+                            <span id="ai-admin-status" class="text-sm font-medium text-red-400">Arrêté</span>
+                        </div>
+                        <button id="ai-toggle" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded text-sm">
+                            <i class="fas fa-play mr-2"></i>
+                            Démarrer AI Actions
+                        </button>
+                        <div class="mt-2">
+                            <label class="text-xs text-zinc-400">Script:</label>
+                            <select id="ai-script-select" class="w-full bg-zinc-700 text-white border border-zinc-600 rounded px-2 py-1 text-sm mt-1">
+                                <option value="test_search_popup.py">test_search_popup.py</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- RAM Listener Control -->
+                <div class="bg-zinc-800 rounded-lg p-4">
+                    <h3 class="text-lg font-medium mb-3 flex items-center">
+                        <i class="fas fa-memory mr-2"></i>
+                        RAM Listener
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm">État:</span>
+                            <span id="ram-admin-status" class="text-sm font-medium text-green-400">Actif</span>
+                        </div>
+                        <button id="ram-toggle" class="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm" disabled>
+                            <i class="fas fa-stop mr-2"></i>
+                            Arrêter RAM Listener
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Calibration -->
+                <div class="bg-zinc-800 rounded-lg p-4 col-span-2">
+                    <h3 class="text-lg font-medium mb-3 flex items-center">
+                        <i class="fas fa-crosshairs mr-2"></i>
+                        Calibration
+                        <span id="calibration-status-badge" class="ml-2 px-2 py-1 text-xs rounded-full bg-red-600 text-white">Non configurée</span>
+                    </h3>
+                    <div class="space-y-2">
+                        <p class="text-sm text-zinc-400">Calibrer la correspondance entre la souris et la Wiimote</p>
+                        <div id="calibration-info" class="text-xs text-zinc-500 mb-2"></div>
+                        <button id="calibration-start" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded text-sm">
+                            <i class="fas fa-play mr-2"></i>
+                            Lancer la calibration
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script type="module" src="/static/js/modules/config.js"></script>
     <script type="module" src="/static/js/modules/data.js"></script>
     <script type="module" src="/static/js/modules/ui.js"></script>
     <script type="module" src="/static/js/modules/refresh.js"></script>
+    <script type="module" src="/static/js/modules/admin.js"></script>
     <script type="module" src="/static/js/app.js"></script>
 </body>
 </html> 

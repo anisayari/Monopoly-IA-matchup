@@ -15,7 +15,7 @@
           250
         ],
         "house_price": 50,
-        "owner": null,
+        "owner": "red",
         "houses": 0
       },
       {
@@ -100,7 +100,7 @@
           600
         ],
         "house_price": 50,
-        "owner": null,
+        "owner": "blue",
         "houses": 0
       },
       {
@@ -253,7 +253,7 @@
           1050
         ],
         "house_price": 150,
-        "owner": "blue",
+        "owner": null,
         "houses": 0
       },
       {
@@ -287,7 +287,7 @@
           1100
         ],
         "house_price": 150,
-        "owner": "red",
+        "owner": null,
         "houses": 0
       },
       {
@@ -481,24 +481,25 @@
     "current_turn": 0,
     "player_count": 2,
     "player_names": [
-      "Bob",
-      "Linda"
-    ]
+      "GPT1",
+      "GPT2"
+    ],
+    "current_player": "player1"
   },
   "events": [
     {
       "turn": 0,
-      "player": "Bob",
+      "player": "䋜",
       "action": "join_game",
       "detail": null,
-      "message": "Bob a rejoint la partie de Monopoly."
+      "message": "䋜 a rejoint la partie de Monopoly."
     },
     {
       "turn": 0,
-      "player": "Linda",
+      "player": "ꮭ쫾聅댜",
       "action": "join_game",
       "detail": null,
-      "message": "Linda a rejoint la partie de Monopoly."
+      "message": "ꮭ쫾聅댜 a rejoint la partie de Monopoly."
     },
     {
       "turn": 0,
@@ -509,88 +510,141 @@
     },
     {
       "turn": 0,
-      "player": "System",
-      "action": "message",
-      "detail": "Trade",
-      "message": "Message: Trade"
+      "player": "䋜",
+      "action": "receive_money",
+      "detail": "1500€ (passage par la case départ)",
+      "message": "䋜 reçoit 1500€ pour passage par la case départ."
+    },
+    {
+      "turn": 0,
+      "player": "ꮭ쫾聅댜",
+      "action": "receive_money",
+      "detail": "1500€ (passage par la case départ)",
+      "message": "ꮭ쫾聅댜 reçoit 1500€ pour passage par la case départ."
+    },
+    {
+      "turn": 0,
+      "player": "䋜",
+      "action": "change_name",
+      "detail": "aaaaaaaaa",
+      "message": "䋜 change son nom en aaaaaaaaa."
+    },
+    {
+      "turn": 0,
+      "player": "ꮭ쫾聅댜",
+      "action": "change_name",
+      "detail": "ggggggggg",
+      "message": "ꮭ쫾聅댜 change son nom en ggggggggg."
+    },
+    {
+      "turn": 0,
+      "player": "aaaaaaaaa",
+      "action": "roll_dice",
+      "detail": "5+3=8",
+      "message": "aaaaaaaaa a lancé les dés et avance de 8 cases."
+    },
+    {
+      "turn": 0,
+      "player": "aaaaaaaaa",
+      "action": "move_and_buy",
+      "detail": "Euston Road -> Euston Road pour 140€",
+      "message": "aaaaaaaaa s'est déplacé sur Euston Road et l'a acheté pour 140€."
+    },
+    {
+      "turn": 0,
+      "player": "ggggggggg",
+      "action": "roll_dice",
+      "detail": "1+6=7",
+      "message": "ggggggggg a lancé les dés et avance de 7 cases."
+    },
+    {
+      "turn": 0,
+      "player": "ggggggggg",
+      "action": "move_and_buy",
+      "detail": "Chance -> Chance pour 150€",
+      "message": "ggggggggg s'est déplacé sur Chance et l'a acheté pour 150€."
     },
     {
       "turn": 0,
       "player": "System",
       "action": "message",
-      "detail": "1 Owned",
-      "message": "Message: 1 Owned"
+      "detail": "aaaaaaaaa won the roll and will be getting us started.",
+      "message": "Message: aaaaaaaaa won the roll and will be getting us started."
+    },
+    {
+      "turn": 0,
+      "player": "aaaaaaaaa",
+      "action": "roll_dice",
+      "detail": "2+3=5",
+      "message": "aaaaaaaaa a lancé les dés et avance de 5 cases."
+    },
+    {
+      "turn": 0,
+      "player": "aaaaaaaaa",
+      "action": "move_and_buy",
+      "detail": "Kings Cross Station -> Kings Cross Station pour 120€",
+      "message": "aaaaaaaaa s'est déplacé sur Kings Cross Station et l'a acheté pour 120€."
+    },
+    {
+      "turn": 0,
+      "player": "aaaaaaaaa",
+      "action": "goto",
+      "detail": "Kings Cross Station",
+      "message": "aaaaaaaaa se déplace directement vers Kings Cross Station."
+    },
+    {
+      "turn": 0,
+      "player": "aaaaaaaaa",
+      "action": "move_and_buy",
+      "detail": "Community Chest -> Community Chest pour 200€",
+      "message": "aaaaaaaaa s'est déplacé sur Community Chest et l'a acheté pour 200€."
     },
     {
       "turn": 0,
       "player": "System",
-      "action": "message",
-      "detail": "4 Owned",
-      "message": "Message: 4 Owned"
+      "action": "property_offer",
+      "detail": "Do you want to buy Kings Cross Station for ~200?",
+      "message": "System a la possibilité d'acheter Kings Cross Station."
     },
     {
       "turn": 0,
-      "player": "System",
-      "action": "message",
-      "detail": "2 Owned",
-      "message": "Message: 2 Owned"
-    },
-    {
-      "turn": 0,
-      "player": "System",
-      "action": "message",
-      "detail": "3 Owned",
-      "message": "Message: 3 Owned"
-    },
-    {
-      "turn": 0,
-      "player": "System",
-      "action": "message",
-      "detail": "Un-mortgage Value",
-      "message": "Message: Un-mortgage Value"
-    },
-    {
-      "turn": 0,
-      "player": "System",
-      "action": "rent_notification",
-      "detail": "1 utility = x4 amount on dice in rent.",
-      "message": "System a effectué l'action 'rent_notification' 1 utility = x4 amount on dice in rent.."
-    },
-    {
-      "turn": 0,
-      "player": "System",
-      "action": "rent_notification",
-      "detail": "2 utilities = x10 amount on dice in rent.",
-      "message": "System a effectué l'action 'rent_notification' 2 utilities = x10 amount on dice in rent.."
+      "player": "aaaaaaaaa",
+      "action": "pay_money",
+      "detail": "200€ (transaction)",
+      "message": "aaaaaaaaa paie 200€ pour transaction."
     }
   ],
   "players": {
-    "Bob": {
+    "player1": {
+      "name": "GPT1",
       "current_player": true,
+      "is_current": true,
       "dice_result": [
         2,
+        3
+      ],
+      "money": 1300,
+      "properties": [
         5
       ],
-      "money": 1490,
-      "properties": [
-        14
-      ],
-      "position": 14,
-      "current_space": "Northumberland Avenue",
+      "position": 5,
+      "current_space": "Kings Cross Station",
       "jail": false
     },
-    "Linda": {
+    "player2": {
+      "name": "GPT2",
       "current_player": false,
+      "is_current": false,
       "dice_result": [
-        6,
-        2
+        0,
+        0
       ],
-      "money": 1460,
+      "money": 1500,
       "properties": [
-        16
+        0
       ],
-      "position": 16,
-      "current_space": "Bow Street",
+      "position": 0,
+      "current_space": "GO",
       "jail": false
     }
   },

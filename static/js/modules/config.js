@@ -79,12 +79,32 @@ async function saveConfig(newConfig) {
         }
         
         config = { ...config, ...newConfig };
-        ui.showNotification('Configuration saved', 'success');
+        ui.showNotification('Configuration sauvegardée avec succès', 'success');
         return true;
     } catch (error) {
         console.error('Error saving config:', error);
-        ui.showNotification('Error saving configuration', 'error');
+        ui.showNotification('Erreur lors de la sauvegarde de la configuration', 'error');
         return false;
+    }
+}
+
+/**
+ * Initialise l'écouteur du bouton de sauvegarde
+ */
+function initSaveButton() {
+    const saveButton = document.getElementById('save-config-button');
+    if (saveButton) {
+        saveButton.addEventListener('click', async () => {
+            const configData = {
+                dolphin_path: document.getElementById('dolphin-path')?.value || '',
+                monopoly_iso_path: document.getElementById('iso-path')?.value || '',
+                save_file_path: document.getElementById('save-path')?.value || '',
+                memory_engine_path: document.getElementById('memory-engine-path')?.value || '',
+                refresh_interval: (document.getElementById('refresh-interval')?.value || 2) * 1000
+            };
+            
+            await saveConfig(configData);
+        });
     }
 }
 
@@ -107,5 +127,6 @@ export default {
     saveConfig,
     getConfig,
     getAllConfig,
-    updateConfigFields
+    updateConfigFields,
+    initSaveButton
 }; 

@@ -100,7 +100,7 @@ def parse_image_lite(base64_img: str) -> List[ParsedElement]:
     try:
         ocr_results = reader.readtext(image_np)
         for (bbox, text, conf) in ocr_results:
-            if conf > 0.5:  # Seuil de confiance
+            if conf > 0.2:  # Seuil de confiance
                 x1, y1 = bbox[0]
                 x2, y2 = bbox[2]
                 elements.append(ParsedElement(
@@ -174,7 +174,7 @@ async def parse_image(request: ImageRequest):
     try:
         # Parser l'image
         parsed_elements = parse_image_lite(request.base64_image)
-        
+
         # Convertir en format attendu
         parsed_content_list = []
         for elem in parsed_elements:

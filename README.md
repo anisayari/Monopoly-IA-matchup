@@ -12,10 +12,13 @@ A cutting-edge framework for evaluating Large Language Models (LLMs) performance
 # 1. Install dependencies
 pip install -r requirements.txt
 
-# 2. Start everything
+# 2. Check calibration (optional but recommended)
+python check_calibration.py
+
+# 3. Start everything
 START_MONOPOLY.bat
 
-# 3. Open browser
+# 4. Open browser
 http://localhost:5000
 ```
 
@@ -50,9 +53,17 @@ monopolyIA/
 │   └── ai/               # AI integration
 ├── services/              # Centralized services
 │   ├── event_bus.py      # Real-time messaging
-│   ├── popup_service.py  # Popup management
-│   └── ai_service.py     # AI decisions
+│   ├── ai_service.py     # AI decisions
+│   ├── decision_service.py # Decision server
+│   ├── logging_service.py # Centralized logging
+│   └── terminal_manager.py # Terminal management
 ├── api/                  # REST endpoints
+├── calibration/          # Calibration tools
+│   ├── visual_calibration.py
+│   └── run_visual_calibration_complete.py
+├── config/               # Configuration files
+│   ├── user_config.json
+│   └── game_settings.json
 ├── templates/            # Web interfaces
 ├── static/               # Frontend assets
 └── app.py               # Main Flask application
@@ -73,6 +84,9 @@ monopolyIA/
 - **OmniParser with GPU** - Fast UI element detection (YOLO + OCR)
 - **Continuous Game Monitor** - RAM reading and idle detection
 - **Unified Decision Server** - Centralized AI decision making
+- **Visual Calibration System** - Improved click accuracy with visual interface
+- **Multi-terminal Support** - Integrated terminal mode with Windows Terminal
+- **Auto-launch Support** - Automatic Dolphin startup option
 - **REST API** - Complete control interface
 
 ### 📊 Monitoring Features
@@ -138,10 +152,14 @@ START_MONOPOLY.bat
 
 This will:
 - Clean up old processes
+- Check calibration status
+- Offer terminal mode options (integrated, classic, minimal)
 - Start OmniParser with GPU (port 8000)
 - Launch Flask server (port 5000)
-- Monitor service starts automatically when Dolphin launches
+- Start Unified Decision Server (port 7000)
+- Start Monitor service
 - Open web browser
+- Optional: Auto-launch Dolphin if configured
 
 ### 2. Web Interface
 
@@ -163,13 +181,22 @@ This will:
 - Performance statistics
 - Live WebSocket updates
 
-### 3. Start Services
+### 3. Calibration
 
+Run calibration for accurate click positioning:
+```bash
+python calibration\run_visual_calibration_complete.py
+```
+
+Or use the web interface: Admin Panel > Calibration
+
+### 4. Start Services
+
+Services start automatically with START_MONOPOLY.bat, or manually:
 1. **Dolphin**: Click "Start Dolphin" on main page
-2. **OmniParser**: Start from Admin panel
-3. **Monitor**: Start from Monitoring dashboard
+2. **Services**: Use Admin panel to control individual services
 
-### 4. Watch AI Play!
+### 5. Watch AI Play!
 
 The system will:
 - Detect game popups automatically
@@ -265,6 +292,14 @@ The system tracks:
    - Check OpenAI API key: `echo %OPENAI_API_KEY%`
    - System will use fallback logic
 
+5. **Clicks not working properly**
+   - Run calibration: `python calibration\run_visual_calibration_complete.py`
+   - Or use Admin Panel > Calibration
+
+6. **Port 8000 already in use**
+   - The system automatically cleans up ports on startup
+   - If issue persists, manually stop conflicting process
+
 ### Debug Tools
 ```bash
 # Check dependencies
@@ -330,12 +365,15 @@ Un framework de pointe pour évaluer les performances des modèles de langage (L
 
 ```bash
 # 1. Installer les dépendances
-pip install -r requirements_complete.txt
+pip install -r requirements.txt
 
-# 2. Tout démarrer
+# 2. Vérifier la calibration (optionnel mais recommandé)
+python check_calibration.py
+
+# 3. Tout démarrer
 START_MONOPOLY.bat
 
-# 3. Ouvrir le navigateur
+# 4. Ouvrir le navigateur
 http://localhost:5000
 ```
 
@@ -353,6 +391,9 @@ http://localhost:5000
 - **Service de Décision IA** - Choix de jeu intelligents
 - **Monitor Continu** - Lecture RAM et détection d'inactivité
 - **Serveur de Décision Unifié** - Décisions IA centralisées
+- **Système de Calibration Visuelle** - Précision des clics améliorée
+- **Support Multi-terminal** - Mode terminal intégré avec Windows Terminal
+- **Support Auto-launch** - Démarrage automatique de Dolphin
 - **API REST** - Interface de contrôle complète
 
 ### 📊 Fonctionnalités de Monitoring

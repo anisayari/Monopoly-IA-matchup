@@ -35,7 +35,16 @@ class MonopolyListeners(EventListeners):
     _message_founds = []
     
     def message_handler(self):
-        messages = MessageFinder.messages(self._game)
+        try:
+            messages = MessageFinder.messages(self._game)
+        except RuntimeError as e:
+            if "Could not read memory" in str(e):
+                # Dolphin s'est probablement fermé
+                print("⚠️ Erreur de lecture mémoire - Dolphin semble être fermé")
+                self._running = False
+                return
+            else:
+                raise
         self.emit("message_handling", messages)
          
         # remove old messages
@@ -147,35 +156,43 @@ class MonopolyListeners(EventListeners):
     def player_handler(self):
         self.emit("player_handling", self._players)
         
-        # remove old players
-        for player in self._players:
-            game_player = self._game.get_player_by_id(player["id"])
-            if game_player is None:
-                # Créer un objet temporaire avec les informations du joueur pour l'événement
-                removed_player = type('Player', (), {'id': player["id"], 'name': player["name"]})
-                self._players.remove(player)
-                self.emit("player_removed", removed_player)
-                
-        # add new players
-        for player in self._game.players:
-            index = MonopolyListeners.find_index(self._players, lambda x: x["id"] == player.id)
-            if index == -1:
-                self._players.append({
-                    "id": player.id,
-                    "name": player.name,
-                    "money": player.money,
-                    "dices": player.dices,
-                    "ignore_next_dice": False,
-                    "goto": player.goto,
-                    "position": player.position
-                })
-                self.emit("player_added", player)
-                
-        self.player_name_handler()
-        self.player_money_handler()
-        self.player_dice_handler()
-        self.player_goto_handler()
-        self.player_position_handler()
+        try:
+            # remove old players
+            for player in self._players:
+                game_player = self._game.get_player_by_id(player["id"])
+                if game_player is None:
+                    # Créer un objet temporaire avec les informations du joueur pour l'événement
+                    removed_player = type('Player', (), {'id': player["id"], 'name': player["name"]})
+                    self._players.remove(player)
+                    self.emit("player_removed", removed_player)
+                    
+            # add new players
+            for player in self._game.players:
+                index = MonopolyListeners.find_index(self._players, lambda x: x["id"] == player.id)
+                if index == -1:
+                    self._players.append({
+                        "id": player.id,
+                        "name": player.name,
+                        "money": player.money,
+                        "dices": player.dices,
+                        "ignore_next_dice": False,
+                        "goto": player.goto,
+                        "position": player.position
+                    })
+                    self.emit("player_added", player)
+                    
+            self.player_name_handler()
+            self.player_money_handler()
+            self.player_dice_handler()
+            self.player_goto_handler()
+            self.player_position_handler()
+        except RuntimeError as e:
+            if "Could not read memory" in str(e):
+                print("⚠️ Erreur de lecture mémoire dans player_handler - Dolphin semble être fermé")
+                self._running = False
+                return
+            else:
+                raise
 
     _auction = {
         'active': False,

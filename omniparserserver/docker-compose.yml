@@ -1,13 +1,17 @@
+version: "3.8"
+
 services:
   omniparserserver:
     build: .
     ports:
-      - "8000:8000"  # Mappe le port interne 8000 sur le port 8000 de l'hôte
+      - "8000:8000"  # Port OmniParser original
     environment:
       - NVIDIA_VISIBLE_DEVICES=all  # Rendre tous les GPU visibles
+      - CUDA_VISIBLE_DEVICES=0  # Force GPU 0
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
+              count: all
               capabilities: [gpu]

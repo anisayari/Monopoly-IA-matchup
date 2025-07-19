@@ -88,6 +88,7 @@ class PopupService:
                     
                     elif item.get('type') == 'icon':
                         # Les icônes peuvent aussi être des boutons
+                        print(f"🤖 Icon: {item['content']}")
                         options.append({
                             'name': item['content'].lower(),
                             'bbox': item.get('bbox', []),
@@ -141,6 +142,7 @@ class PopupService:
             raise ValueError(f"Popup {popup_id} not found")
         
         popup = self.active_popups[popup_id]
+        print(f"🤖 Popup: {popup}")
         
         # Publier la demande de décision
         self.event_bus.publish(
@@ -193,7 +195,22 @@ class PopupService:
         data = event['data']
         if 'screenshot_base64' in data:
             # Analyser automatiquement
-            self.analyze_popup(data['id'], data['screenshot_base64'])
+            popup_id = data['id']
+            print(f"[EVENT] Auto-analyzing popup {popup_id} from event")
+            analysis_result = self.analyze_popup(popup_id, data['screenshot_base64'])
+            
+            if analysis_result.get('success'):
+                # Récupérer le contexte du jeu
+                try:
+                    # Importer ici pour éviter les imports circulaires
+                    from src.game.contexte import GameContext
+                    context = GameContext()
+                    game_context = context.get_state()
+                except:
+                    game_context = {}
+                
+                # Demander une décision à l'IA
+                self.request_ai_decision(popup_id, game_context)
     
     def _on_decision_made(self, event: dict):
         """Callback quand une décision est prise"""

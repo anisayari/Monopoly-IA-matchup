@@ -1,0 +1,26 @@
+{
+  "players": {
+    "player1": {
+      "name": "GPT1",
+      "model": "gpt-4.1-mini",
+      "enabled": true
+    },
+    "player2": {
+      "name": "GPT2", 
+      "model": "gpt-4.1-mini",
+      "enabled": true
+    }
+  },
+  "game": {
+    "player_count": 2,
+    "ai_enabled": true,
+    "default_model": "gpt-4.1-mini"
+  },
+  "available_models": [
+    {
+      "id": "gpt-4.1-mini",
+      "name": "GPT-4.1 Mini",
+      "description": "Fast and efficient model"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "auto_mode": true,
+  "debug": false,
+  "delay_seconds": 2,
+  "priority_order": ["buy", "next turn", "roll again", "auction", "trade", "back", "accounts"],
+  "keywords": {
+    "would you like to": {
+      "text": ["would you like to"],
+      "icon": ["accounts", "next turn", "roll again"]
+    },
+    "you want to buy": {
+      "text": ["you want to buy"],
+      "icon": ["auction", "buy"]
+    },
+    "a Property you own": {
+      "text": ["a Property you own"],
+      "icon": ["back", "trade"]
+    },
+    "chance": {
+      "text": ["Chance"],
+      "icon": ["OK"]
+    },
+    "In Jail": {
+      "text": ["In Jail"],
+      "icon": ["Pay Bail", "Roll Dice", "Use Card"]
+    },
+    "Community Chest": {
+      "text": ["Community Chest"],
+      "icon": ["OK"]
+    },
+    "Auction": {
+      "text": ["Bid"],
+      "icon": ["Yes", "No"]
+    },
+    "Accounts 1": {
+      "text": ["Accounts"],
+      "icon": ["OK"]
+    },
+    "Accounts 2": {
+      "text": ["Accounts"],
+      "icon": ["Back", "Trade"]
+    },
+    "Trading 1": {
+      "text": ["Select player"],
+      "icon": ["Nom de joueur à selectionner"]
+    },
+    "Trading 2": {
+      "text": ["Choose wich properties you want to trade"],
+      "icon": [""]
+    },
+    "Trading 3": {
+      "text": ["Trading"],
+      "icon": ["Cancel", "Propose", "Request Cash", "Add Cash"]
+    },
+    "Trading 4": {
+      "text": ["Trading"],
+      "icon": ["Deal", "No Deal"]
+    },
+    "Pay Rent": {
+      "text": ["Pay Rent"],
+      "icon": ["OK"]
+    },
+    "Go to Jail": {
+      "text": ["Go To Jail"],
+      "icon": ["OK"]
+    },
+    "Property Deeds": {
+      "text": ["Property Deeds"],
+      "icon": ["Mortage", "Buy 1", "Buy Set", "Sell 1", "Sell Set", "Done"]
+    },
+    "New turn Roll the dice": {
+      "text": ["Remote and press to roll the"],
+      "icon": ["CLICK"]
+    }
+  }
+}

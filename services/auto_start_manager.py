@@ -41,25 +41,23 @@ class AutoStartManager:
     def _start_sequence(self, callback):
         """Séquence de démarrage des systèmes"""
         try:
-            # 1. Vérifier/Démarrer OmniParser
-            self._log("📡 Démarrage d'OmniParser...")
-            if not self._is_omniparser_running():
-                self._start_omniparser()
-                # Attendre qu'OmniParser soit prêt
-                self._wait_for_omniparser(timeout=30)
-            else:
+            # 1. OmniParser est déjà lancé par START_MONOPOLY.bat
+            self._log("📡 Vérification d'OmniParser...")
+            if self._is_omniparser_running():
                 self._log("✅ OmniParser déjà actif")
+            else:
+                self._log("⚠️  OmniParser non détecté - lancez-le manuellement si nécessaire")
             
             # 2. Attendre un peu pour Dolphin
             self._log("⏳ Attente de l'initialisation de Dolphin...")
             time.sleep(5)
             
-            # 3. Démarrer les terminaux pour OmniParser et AI Actions
-            self._log("💻 Ouverture des terminaux...")
-            self._start_omniparser_terminal()
-            self._start_ai_actions_terminal()
+            # 3. Les terminaux sont déjà lancés par START_MONOPOLY.bat
+            # Ne pas les relancer pour éviter les doublons
+            # self._start_omniparser_terminal()
+            # self._start_ai_actions_terminal()
             
-            # 4. Démarrer le Monitor
+            # 4. Lancer le Monitor maintenant que Dolphin est démarré
             self._log("🔍 Démarrage du Monitor...")
             self._start_monitor()
             
@@ -100,11 +98,16 @@ class AutoStartManager:
     
     def _start_monitor(self):
         """Démarre le Monitor centralisé"""
+        # Vérifier si le monitor n'est pas déjà en cours d'exécution
+        if self._is_monitor_running():
+            self._log("✅ Monitor déjà en cours d'exécution")
+            return
+            
         monitor_script = os.path.join(self.config.WORKSPACE_DIR, 'monitor_centralized.py')
         
         if sys.platform == 'win32':
             # Windows - démarrer minimisé
-            cmd = f'start "Monitor" /min cmd /k "python {monitor_script}"'
+            cmd = f'start "Monopoly IA - Monitor" /min cmd /k "python {monitor_script}"'
             self.processes['monitor'] = subprocess.Popen(cmd, shell=True)
         else:
             # Linux/Mac
@@ -115,28 +118,29 @@ class AutoStartManager:
             )
     
     def _start_omniparser_terminal(self):
-        """Ouvre un terminal pour OmniParser avec docker logs"""
+        """Ouvre un terminal pour OmniParser"""
         if sys.platform == 'win32':
-            # Windows - utiliser le script batch
-            script_path = os.path.join(self.config.WORKSPACE_DIR, 'launch_omniparser_terminal.bat')
-            cmd = f'start "OmniParser Terminal" "{script_path}"'
+            # Windows - lancer directement omniparser_lite.py ou omniparser_server_native.py
+            if os.path.exists(os.path.join(self.config.WORKSPACE_DIR, 'omniparser_lite.py')):
+                cmd = f'start "OmniParser Terminal" cmd /k "cd /d {self.config.WORKSPACE_DIR} && python omniparser_lite.py"'
+            else:
+                cmd = f'start "OmniParser Terminal" cmd /k "cd /d {self.config.WORKSPACE_DIR} && python omniparser_server_native.py"'
             self.processes['omniparser_terminal'] = subprocess.Popen(cmd, shell=True)
         else:
-            # Linux/Mac - terminal pour voir les logs OmniParser
-            cmd = ['gnome-terminal', '--', 'docker', 'logs', '-f', 'omniparserserver-omniparserserver-1']
+            # Linux/Mac - terminal pour OmniParser
+            cmd = ['gnome-terminal', '--', 'python', 'omniparser_server_native.py']
             self.processes['omniparser_terminal'] = subprocess.Popen(cmd)
     
     def _start_ai_actions_terminal(self):
         """Ouvre un terminal pour AI Actions (prêt à utiliser)"""
         if sys.platform == 'win32':
-            # Windows - utiliser le script batch
-            script_path = os.path.join(self.config.WORKSPACE_DIR, 'launch_ai_actions_terminal.bat')
-            cmd = f'start "AI Actions Terminal" "{script_path}"'
+            # Windows - lancer directement ai_actions_server.py
+            cmd = f'start "AI Actions Terminal" cmd /k "cd /d {self.config.WORKSPACE_DIR} && python ai_actions_server.py"'
             self.processes['ai_actions_terminal'] = subprocess.Popen(cmd, shell=True)
         else:
             # Linux/Mac - terminal pour AI Actions
-            ai_script = os.path.join(self.config.WORKSPACE_DIR, 'ai_actions.py')
-            cmd = ['gnome-terminal', '--', 'bash', '-c', f'echo "AI Actions Terminal Ready"; echo "Run: python {ai_script}"; bash']
+            ai_script = os.path.join(self.config.WORKSPACE_DIR, 'ai_actions_server.py')
+            cmd = ['gnome-terminal', '--', 'python', ai_script]
             self.processes['ai_actions_terminal'] = subprocess.Popen(cmd)
     
     def _is_omniparser_running(self) -> bool:
@@ -147,6 +151,32 @@ class AutoStartManager:
             return response.status == 200
         except:
             return False
+    
+    def _is_monitor_running(self) -> bool:
+        """Vérifie si le Monitor est déjà en cours d'exécution"""
+        if sys.platform == 'win32':
+            # Windows - vérifier si un processus python avec monitor_centralized.py existe
+            try:
+                result = subprocess.run(
+                    'wmic process where "name=\'python.exe\'" get commandline',
+                    shell=True,
+                    capture_output=True,
+                    text=True
+                )
+                return 'monitor_centralized.py' in result.stdout
+            except:
+                return False
+        else:
+            # Linux/Mac - utiliser ps
+            try:
+                result = subprocess.run(
+                    ['ps', 'aux'],
+                    capture_output=True,
+                    text=True
+                )
+                return 'monitor_centralized.py' in result.stdout
+            except:
+                return False
     
     def _wait_for_omniparser(self, timeout=30):
         """Attend qu'OmniParser soit prêt"""

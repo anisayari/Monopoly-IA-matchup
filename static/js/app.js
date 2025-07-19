@@ -9,6 +9,7 @@ import ui from './modules/ui.js';
 import dolphin from './modules/dolphin.js';
 import data from './modules/data.js';
 import refresh from './modules/refresh.js';
+import admin from './modules/admin.js';
 
 // Configuration
 const REFRESH_INTERVAL = 2000; // ms
@@ -27,6 +28,18 @@ const elements = {
     isoPath: document.getElementById('iso-path'),
     savePath: document.getElementById('save-path'),
     refreshInterval: document.getElementById('refresh-interval'),
+    
+    // Game Settings
+    gameSettingsBtn: document.getElementById('game-settings-btn'),
+    gameSettingsModal: document.getElementById('game-settings-modal'),
+    closeGameSettings: document.getElementById('close-game-settings'),
+    cancelGameSettings: document.getElementById('cancel-game-settings'),
+    saveGameSettings: document.getElementById('save-game-settings'),
+    player1Name: document.getElementById('player1-name'),
+    player1Model: document.getElementById('player1-model'),
+    player2Name: document.getElementById('player2-name'),
+    player2Model: document.getElementById('player2-model'),
+    aiEnabled: document.getElementById('ai-enabled'),
     
     // Affichage
     playersContainer: document.getElementById('players-container'),
@@ -63,11 +76,29 @@ let appState = {
 };
 
 // Initialisation de l'application
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     console.log('Initializing Monopoly Manager...');
     
     // Initialiser l'interface utilisateur
     ui.initUI();
+    
+    // Initialiser le module admin
+    admin.init();
+    
+    // Vérifier si Dolphin est déjà en cours d'exécution
+    try {
+        const response = await fetch('/api/dolphin/status');
+        const status = await response.json();
+        
+        if (status.running) {
+            // Restaurer l'état de Dolphin
+            ui.updateDolphinStatus(true);
+            // Démarrer la vérification automatique
+            refresh.startAutoRefresh();
+        }
+    } catch (error) {
+        console.error('Error checking Dolphin status:', error);
+    }
     
     console.log('Monopoly Manager initialized successfully');
 });
@@ -841,11 +872,112 @@ async function updatePlayerField(playerId, field, value) {
     }
 }
 
+/**
+ * Gère les paramètres de jeu
+ */
+async function loadGameSettings() {
+    try {
+        const response = await fetch('/api/game-settings');
+        if (response.ok) {
+            const settings = await response.json();
+            
+            // Mettre à jour les champs du formulaire
+            if (elements.player1Name) elements.player1Name.value = settings.players.player1.name;
+            if (elements.player1Model) elements.player1Model.value = settings.players.player1.model;
+            if (elements.player2Name) elements.player2Name.value = settings.players.player2.name;
+            if (elements.player2Model) elements.player2Model.value = settings.players.player2.model;
+            if (elements.aiEnabled) elements.aiEnabled.checked = settings.game.ai_enabled;
+        }
+    } catch (error) {
+        console.error('Error loading game settings:', error);
+    }
+}
+
+async function saveGameSettings() {
+    try {
+        const settings = {
+            players: {
+                player1: {
+                    name: elements.player1Name.value,
+                    model: elements.player1Model.value,
+                    enabled: true
+                },
+                player2: {
+                    name: elements.player2Name.value,
+                    model: elements.player2Model.value,
+                    enabled: true
+                }
+            },
+            game: {
+                player_count: 2,
+                ai_enabled: elements.aiEnabled.checked,
+                default_model: 'gpt-4.1-mini'
+            }
+        };
+        
+        const response = await fetch('/api/game-settings', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(settings)
+        });
+        
+        if (response.ok) {
+            ui.showNotification('Game settings saved successfully!', 'success');
+            elements.gameSettingsModal.classList.add('hidden');
+        } else {
+            const error = await response.json();
+            ui.showNotification(`Error: ${error.error}`, 'error');
+        }
+    } catch (error) {
+        console.error('Error saving game settings:', error);
+        ui.showNotification('Failed to save settings', 'error');
+    }
+}
+
+// Ajouter les événements pour le modal des paramètres
+document.addEventListener('DOMContentLoaded', () => {
+    // Ouvrir le modal
+    if (elements.gameSettingsBtn) {
+        elements.gameSettingsBtn.addEventListener('click', () => {
+            loadGameSettings();
+            elements.gameSettingsModal.classList.remove('hidden');
+        });
+    }
+    
+    // Fermer le modal
+    if (elements.closeGameSettings) {
+        elements.closeGameSettings.addEventListener('click', () => {
+            elements.gameSettingsModal.classList.add('hidden');
+        });
+    }
+    
+    if (elements.cancelGameSettings) {
+        elements.cancelGameSettings.addEventListener('click', () => {
+            elements.gameSettingsModal.classList.add('hidden');
+        });
+    }
+    
+    // Sauvegarder les paramètres
+    if (elements.saveGameSettings) {
+        elements.saveGameSettings.addEventListener('click', saveGameSettings);
+    }
+    
+    // Charger les paramètres au démarrage
+    loadGameSettings();
+});
+
 // Exporter les modules pour un accès global (utile pour le débogage)
 window.monopolyManager = {
     config,
     ui,
     dolphin,
     data,
-    refresh
+    refresh,
+    admin,
+    gameSettings: {
+        load: loadGameSettings,
+        save: saveGameSettings
+    }
 }; 

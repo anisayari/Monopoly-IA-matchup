@@ -1,13 +1,19 @@
 import json
 import numpy as np
 from typing import Tuple
+import os
 
 
 class CalibrationUtils:
     """Utility class for coordinate conversion using perspective transformation"""
 
-    def __init__(self, calibration_file: str = "calibration.json"):
+    def __init__(self, calibration_file: str = "game_files/calibration.json"):
         """Initialize with calibration data from JSON file"""
+        # Rendre le chemin absolu basé sur la racine du projet (un dossier au-dessus de src/)
+        if not os.path.isabs(calibration_file):
+            project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            calibration_file = os.path.join(project_root, calibration_file)
+            calibration_file = os.path.normpath(calibration_file)
         try:
             with open(calibration_file, 'r') as f:
                 data = json.load(f)

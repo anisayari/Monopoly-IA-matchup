@@ -1,0 +1,56 @@
+{
+  "popup_actions": {
+    "turn_options": {
+      "default": "next turn",
+      "conditions": {
+        "low_money": "accounts",
+        "can_buy_house": "accounts"
+      }
+    },
+    "property_purchase": {
+      "default": "buy",
+      "conditions": {
+        "money_below_500": "auction",
+        "already_owns_color_group": "buy",
+        "strategic_property": "buy"
+      }
+    },
+    "property_management": {
+      "default": "back",
+      "conditions": {
+        "need_money": "trade",
+        "complete_color_group_possible": "trade"
+      }
+    },
+    "jail_decision": {
+      "default": "roll dice",
+      "conditions": {
+        "has_get_out_card": "use card",
+        "early_game": "pay bail",
+        "late_game": "roll dice"
+      }
+    },
+    "auction_bid": {
+      "default": "no",
+      "conditions": {
+        "strategic_property": "yes",
+        "money_above_1000": "yes"
+      }
+    },
+    "trading_confirm": {
+      "default": "no deal",
+      "conditions": {
+        "good_trade": "deal",
+        "completes_color_group": "deal"
+      }
+    },
+    "information": {
+      "default": "ok"
+    },
+    "confirmation": {
+      "default": "ok"
+    }
+  },
+  "priority_order": ["buy", "next turn", "roll again", "auction", "trade", "back", "accounts", "ok"],
+  "ai_fallback": true
+}

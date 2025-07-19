@@ -1,4 +1,4 @@
-import os.path
+import os
 
 import win32gui
 import win32api
@@ -33,7 +33,9 @@ class DolphinCalibrator:
         def enum_windows_callback(hwnd, windows):
             if win32gui.IsWindowVisible(hwnd):
                 window_text = win32gui.GetWindowText(hwnd)
-                if "dolphin" in window_text.lower():
+                # Look for Dolphin in window title or class name
+                class_name = win32gui.GetClassName(hwnd)
+                if "dolphin" in window_text.lower() or "dolphin" in class_name.lower():
                     windows.append((hwnd, window_text))
 
         windows = []
@@ -71,39 +73,57 @@ class DolphinCalibrator:
         if not self.dolphin_hwnd:
             return x, y
 
-        # Get window position
-        window_rect = win32gui.GetWindowRect(self.dolphin_hwnd)
-        client_rect = win32gui.GetClientRect(self.dolphin_hwnd)
+        try:
+            # Verify window still exists
+            if not win32gui.IsWindow(self.dolphin_hwnd):
+                raise Exception("Dolphin window no longer exists")
+                
+            # Get window position
+            window_rect = win32gui.GetWindowRect(self.dolphin_hwnd)
+            client_rect = win32gui.GetClientRect(self.dolphin_hwnd)
 
-        # Calculate title bar and border offsets
-        border_x = (window_rect[2] - window_rect[0] - client_rect[2]) // 2
-        title_height = window_rect[3] - window_rect[1] - client_rect[3] - border_x
+            # Calculate title bar and border offsets
+            border_x = (window_rect[2] - window_rect[0] - client_rect[2]) // 2
+            title_height = window_rect[3] - window_rect[1] - client_rect[3] - border_x
 
-        # Convert to window-relative coordinates
-        rel_x = x - window_rect[0] - border_x
-        rel_y = y - window_rect[1] - title_height
+            # Convert to window-relative coordinates
+            rel_x = x - window_rect[0] - border_x
+            rel_y = y - window_rect[1] - title_height
 
-        return rel_x, rel_y
+            return rel_x, rel_y
+        except Exception as e:
+            print(f"⚠️  Error getting window coordinates: {e}")
+            # Return original coordinates as fallback
+            return x, y
 
     def get_corner_coordinates(self, corner_index: int) -> Tuple[int, int]:
         """Get the coordinates of window corners based on actual window rect"""
         if not self.dolphin_hwnd:
             return 0, 0
 
-        # Get actual client area dimensions
-        client_rect = win32gui.GetClientRect(self.dolphin_hwnd)
-        width = client_rect[2] - client_rect[0]
-        height = client_rect[3] - client_rect[1]
+        try:
+            # Verify window still exists
+            if not win32gui.IsWindow(self.dolphin_hwnd):
+                raise Exception("Dolphin window no longer exists")
+                
+            # Get actual client area dimensions
+            client_rect = win32gui.GetClientRect(self.dolphin_hwnd)
+            width = client_rect[2] - client_rect[0]
+            height = client_rect[3] - client_rect[1]
 
-        # Clockwise ordering starting from top-left
-        corners = [
-            (0, 0),  # upper left
-            (width, 0),  # upper right
-            (width, height),  # lower right
-            (0, height)  # lower left
-        ]
+            # Clockwise ordering starting from top-left
+            corners = [
+                (0, 0),  # upper left
+                (width, 0),  # upper right
+                (width, height),  # lower right
+                (0, height)  # lower left
+            ]
 
-        return corners[corner_index]
+            return corners[corner_index]
+        except Exception as e:
+            print(f"❌ Error getting window coordinates: {e}")
+            print("   Make sure Dolphin window is still open and visible")
+            raise
 
     def is_point_in_dolphin_window(self, x: int, y: int) -> bool:
         """Check if a point is inside the Dolphin window"""
@@ -175,6 +195,12 @@ class DolphinCalibrator:
 
         input("\nPress Enter when ready to start calibration...")
 
+        # Verify window is still valid after user pressed Enter
+        if not win32gui.IsWindow(self.dolphin_hwnd):
+            print("\n❌ Dolphin window was closed!")
+            print("   Please make sure Dolphin stays open during calibration")
+            return False
+
         try:
             for i in range(4):
                 self.current_point = i
@@ -208,18 +234,39 @@ class DolphinCalibrator:
 
         return True
 
-    def save_calibration(self, filename: str = os.path.join("../game_files", "calibration.json")) -> None:
+    def save_calibration(self, filename: str = None) -> None:
         """Save calibration data to JSON file"""
+        
+        # If no filename provided, use default path relative to script location
+        if filename is None:
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            project_root = os.path.dirname(script_dir)  # Go up one level from calibration/
+            filename = os.path.join(project_root, "game_files", "calibration.json")
 
         # Create directory if it doesn't exist
         os.makedirs(os.path.dirname(filename), exist_ok=True)
 
+        # Get window info safely
+        window_title = "Unknown"
+        window_width = 0
+        window_height = 0
+        
+        if self.dolphin_hwnd:
+            try:
+                if win32gui.IsWindow(self.dolphin_hwnd):
+                    window_title = win32gui.GetWindowText(self.dolphin_hwnd)
+                    client_rect = win32gui.GetClientRect(self.dolphin_hwnd)
+                    window_width = client_rect[2]
+                    window_height = client_rect[3]
+            except:
+                pass  # Use defaults if window is no longer valid
+
         calibration_data = {
-            "window_title": win32gui.GetWindowText(self.dolphin_hwnd) if self.dolphin_hwnd else "Unknown",
+            "window_title": window_title,
             "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
             "window_size": {
-                "width": win32gui.GetClientRect(self.dolphin_hwnd)[2] if self.dolphin_hwnd else 0,
-                "height": win32gui.GetClientRect(self.dolphin_hwnd)[3] if self.dolphin_hwnd else 0
+                "width": window_width,
+                "height": window_height
             },
             "points": [
                 {

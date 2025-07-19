@@ -175,5 +175,51 @@ cython_debug/
 
 # Remove ROMs
 *.rvz
+*.iso
+*.gcm
+*.wbfs
+*.ciso
+*.gcz
 
 contexte/history/
+
+# Game files
+game_files/iso/
+
+# Model weights
+weights/
+*.safetensors
+*.pt
+*.pth
+*.onnx
+*.pb
+*.h5
+*.ckpt
+
+# Dolphin executables
+dolphin/
+*.exe
+*.dll
+
+# Captures and screenshots
+captures/
+temp_screenshot.png
+*.png
+*.jpg
+*.jpeg
+*.bmp
+
+# Config files that might contain sensitive data
+user_config.json
+config/user_config.json
+
+# Temporary files
+temp_*
+tmp_*
+*.tmp
+*.temp
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store

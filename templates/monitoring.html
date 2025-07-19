@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Centralisé - Monopoly Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <style>
+        .event-item {
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .popup-card {
+            transition: all 0.3s ease;
+        }
+        .popup-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        /* Terminal styles */
+        #activity-terminal {
+            scrollbar-width: thin;
+            scrollbar-color: #4ade80 #000;
+        }
+        #activity-terminal::-webkit-scrollbar {
+            width: 6px;
+        }
+        #activity-terminal::-webkit-scrollbar-track {
+            background: #000;
+        }
+        #activity-terminal::-webkit-scrollbar-thumb {
+            background: #4ade80;
+            border-radius: 3px;
+        }
+        .terminal-line {
+            margin-bottom: 2px;
+            padding: 2px 0;
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+        .terminal-ram { color: #60a5fa; }
+        .terminal-popup { color: #f59e0b; }
+        .terminal-ai { color: #a78bfa; }
+        .terminal-action { color: #34d399; }
+        .terminal-error { color: #ef4444; }
+        .terminal-success { color: #10b981; }
+        .terminal-info { color: #6b7280; }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-zinc-900 border-b border-zinc-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="/" class="flex items-center space-x-2 hover:text-zinc-300">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Retour</span>
+                </a>
+                <div class="border-l border-zinc-700 pl-4">
+                    <h1 class="text-xl font-medium flex items-center">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        Monitoring Centralisé
+                    </h1>
+                </div>
+            </div>
+            
+            <!-- Status indicators -->
+            <div class="flex items-center space-x-6">
+                <div class="flex items-center space-x-2">
+                    <span class="text-xs text-zinc-400">Monitor:</span>
+                    <span id="monitor-status" class="inline-block w-2 h-2 rounded-full bg-red-500"></span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-xs text-zinc-400">Event Bus:</span>
+                    <span id="eventbus-status" class="inline-block w-2 h-2 rounded-full bg-red-500"></span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-xs text-zinc-400">IA:</span>
+                    <span id="ai-status" class="inline-block w-2 h-2 rounded-full bg-red-500"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4">
+        <div class="grid grid-cols-3 gap-4">
+            <!-- Left: Activity Terminal -->
+            <div class="col-span-1">
+                <!-- Activity Terminal -->
+                <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-4">
+                    <h2 class="text-lg font-medium mb-4 flex items-center justify-between">
+                        <span><i class="fas fa-terminal mr-2"></i>Terminal d'Activité</span>
+                        <button id="clear-terminal" class="text-xs text-zinc-500 hover:text-white">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </h2>
+                    <div id="activity-terminal" class="bg-black rounded p-3 font-mono text-xs text-green-400 h-64 overflow-y-auto">
+                        <div class="terminal-line">[SYSTEM] Terminal d'activité initialisé...</div>
+                    </div>
+                </div>
+
+                <!-- Active Popups -->
+                <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-4 mt-4">
+                    <h2 class="text-lg font-medium mb-4 flex items-center justify-between">
+                        <span><i class="fas fa-window-restore mr-2"></i>Popups Actifs</span>
+                        <span id="popup-count" class="text-sm text-zinc-400">0</span>
+                    </h2>
+                    <div id="active-popups" class="space-y-3 max-h-[300px] overflow-y-auto">
+                        <!-- Popups will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-4 mt-4">
+                    <h3 class="text-lg font-medium mb-4">
+                        <i class="fas fa-chart-bar mr-2"></i>Statistiques
+                    </h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-zinc-400">Total détectés:</span>
+                            <span id="stat-total">0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-zinc-400">Décisions IA:</span>
+                            <span id="stat-ai">0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-zinc-400">Temps moyen:</span>
+                            <span id="stat-time">0s</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-zinc-400">Taux succès:</span>
+                            <span id="stat-success">100%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center: Event Timeline -->
+            <div class="col-span-1">
+                <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-4">
+                    <h2 class="text-lg font-medium mb-4 flex items-center justify-between">
+                        <span><i class="fas fa-stream mr-2"></i>Timeline</span>
+                        <button id="clear-timeline" class="text-xs text-zinc-500 hover:text-white">
+                            <i class="fas fa-trash"></i> Clear
+                        </button>
+                    </h2>
+                    <div id="event-timeline" class="space-y-2 max-h-[700px] overflow-y-auto">
+                        <!-- Events will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Details -->
+            <div class="col-span-1">
+                <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-4">
+                    <h2 class="text-lg font-medium mb-4">
+                        <i class="fas fa-info-circle mr-2"></i>Détails
+                    </h2>
+                    <div id="popup-details" class="text-sm">
+                        <p class="text-zinc-500 text-center py-8">
+                            Sélectionnez un popup pour voir les détails
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-4 mt-4">
+                    <h3 class="text-lg font-medium mb-4">
+                        <i class="fas fa-cogs mr-2"></i>Contrôles
+                    </h3>
+                    <div class="space-y-3">
+                        <button id="start-monitor" class="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm">
+                            <i class="fas fa-play mr-2"></i>Démarrer Monitor
+                        </button>
+                        <button id="stop-monitor" class="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm" disabled>
+                            <i class="fas fa-stop mr-2"></i>Arrêter Monitor
+                        </button>
+                        <div class="border-t border-zinc-700 pt-3">
+                            <label class="flex items-center space-x-2 text-sm">
+                                <input type="checkbox" id="auto-mode" checked class="form-checkbox">
+                                <span>Mode automatique</span>
+                            </label>
+                            <label class="flex items-center space-x-2 text-sm mt-2">
+                                <input type="checkbox" id="sound-alerts" class="form-checkbox">
+                                <span>Alertes sonores</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/js/monitoring.js"></script>
+</body>
+</html>

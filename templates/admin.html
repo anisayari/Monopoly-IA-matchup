@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monopoly Manager - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/dba0ydo.css">
+    <style>
+        body {
+            font-family: "degular", sans-serif;
+        }
+        .font-mono {
+            font-family: "JetBrains Mono", monospace;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-button.active {
+            background-color: #7c3aed;
+            color: white;
+        }
+        #logs-container {
+            font-family: "Consolas", "Monaco", "Courier New", monospace;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        .log-entry {
+            padding: 2px 8px;
+            border-bottom: 1px solid #27272a;
+        }
+        .log-error {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #fca5a5;
+        }
+        .log-warning {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: #fcd34d;
+        }
+        .log-info {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #93bbfc;
+        }
+        .log-success {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #86efac;
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-zinc-900 border-b border-zinc-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <i class="fas fa-tools text-purple-500 text-2xl"></i>
+                <h1 class="text-xl font-medium">Monopoly Manager - Admin Panel</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <!-- Indicateurs d'état -->
+                <div class="flex items-center space-x-4 mr-8">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs text-zinc-400">Dolphin:</span>
+                        <span id="dolphin-status-indicator" class="inline-block w-2 h-2 rounded-full bg-red-500"></span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs text-zinc-400">OmniParser:</span>
+                        <span id="omniparser-status-indicator" class="inline-block w-2 h-2 rounded-full bg-red-500"></span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs text-zinc-400">AI:</span>
+                        <span id="ai-status-indicator" class="inline-block w-2 h-2 rounded-full bg-red-500"></span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs text-zinc-400">RAM:</span>
+                        <span id="ram-status-indicator" class="inline-block w-2 h-2 rounded-full bg-red-500"></span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <a href="/" class="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded text-sm border border-zinc-700 flex items-center">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Retour au jeu
+                    </a>
+                    <a href="/monitoring" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-sm border border-purple-700 flex items-center">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        Monitoring
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-4">
+        <!-- Tabs -->
+        <div class="bg-zinc-900 rounded-lg border border-zinc-800 mb-4">
+            <div class="flex border-b border-zinc-800">
+                <button class="tab-button active px-6 py-3 text-sm font-medium hover:bg-zinc-800 transition-colors" data-tab="systems">
+                    <i class="fas fa-server mr-2"></i>
+                    Systèmes
+                </button>
+                <button class="tab-button px-6 py-3 text-sm font-medium hover:bg-zinc-800 transition-colors" data-tab="logs">
+                    <i class="fas fa-file-alt mr-2"></i>
+                    Logs
+                </button>
+                <button class="tab-button px-6 py-3 text-sm font-medium hover:bg-zinc-800 transition-colors" data-tab="terminal">
+                    <i class="fas fa-terminal mr-2"></i>
+                    Terminal
+                </button>
+                <button class="tab-button px-6 py-3 text-sm font-medium hover:bg-zinc-800 transition-colors" data-tab="config">
+                    <i class="fas fa-cog mr-2"></i>
+                    Configuration
+                </button>
+                <button class="tab-button px-6 py-3 text-sm font-medium hover:bg-zinc-800 transition-colors" data-tab="monitoring">
+                    <i class="fas fa-chart-line mr-2"></i>
+                    Monitoring
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-6">
+            <!-- Systems Tab -->
+            <div id="systems-tab" class="tab-content active">
+                <h2 class="text-lg font-medium mb-6">Gestion des Systèmes</h2>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Dolphin Control -->
+                    <div class="bg-zinc-800 rounded-lg p-4">
+                        <h3 class="text-lg font-medium mb-3 flex items-center">
+                            <i class="fas fa-desktop mr-2"></i>
+                            Dolphin Emulator
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">État:</span>
+                                <span id="dolphin-admin-status" class="text-sm font-medium text-red-400">Arrêté</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">PID:</span>
+                                <span id="dolphin-pid" class="text-sm font-mono text-zinc-400">-</span>
+                            </div>
+                            <button id="dolphin-toggle" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm mt-3">
+                                <i class="fas fa-play mr-2"></i>
+                                Démarrer Dolphin
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- OmniParser Control -->
+                    <div class="bg-zinc-800 rounded-lg p-4">
+                        <h3 class="text-lg font-medium mb-3 flex items-center">
+                            <i class="fas fa-eye mr-2"></i>
+                            OmniParser API
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">État:</span>
+                                <span id="omniparser-admin-status" class="text-sm font-medium text-red-400">Arrêté</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">URL:</span>
+                                <span class="text-sm font-mono text-zinc-400">localhost:8000</span>
+                            </div>
+                            <button id="omniparser-toggle" class="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm mt-3">
+                                <i class="fas fa-play mr-2"></i>
+                                Démarrer OmniParser
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Actions Control -->
+                    <div class="bg-zinc-800 rounded-lg p-4">
+                        <h3 class="text-lg font-medium mb-3 flex items-center">
+                            <i class="fas fa-robot mr-2"></i>
+                            AI Actions
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">État:</span>
+                                <span id="ai-admin-status" class="text-sm font-medium text-red-400">Arrêté</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">Script:</span>
+                                <select id="ai-script-select" class="bg-zinc-700 text-white border border-zinc-600 rounded px-2 py-1 text-sm">
+                                    <option value="test_search_popup.py">test_search_popup.py</option>
+                                </select>
+                            </div>
+                            <button id="ai-toggle" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded text-sm mt-3">
+                                <i class="fas fa-play mr-2"></i>
+                                Démarrer AI Actions
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- RAM Listener Control -->
+                    <div class="bg-zinc-800 rounded-lg p-4">
+                        <h3 class="text-lg font-medium mb-3 flex items-center">
+                            <i class="fas fa-memory mr-2"></i>
+                            RAM Listener
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">État:</span>
+                                <span id="ram-admin-status" class="text-sm font-medium text-green-400">Actif</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">Mémoire surveillée:</span>
+                                <span class="text-sm font-mono text-zinc-400">2 MB</span>
+                            </div>
+                            <button id="ram-toggle" class="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm mt-3" disabled>
+                                <i class="fas fa-stop mr-2"></i>
+                                Arrêter RAM Listener
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Calibration -->
+                    <div class="bg-zinc-800 rounded-lg p-4 col-span-2">
+                        <h3 class="text-lg font-medium mb-3 flex items-center">
+                            <i class="fas fa-crosshairs mr-2"></i>
+                            Calibration
+                        </h3>
+                        <div class="space-y-2">
+                            <p class="text-sm text-zinc-400">Calibrer la correspondance entre la souris et la Wiimote</p>
+                            <div class="flex space-x-2">
+                                <button id="calibration-start" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded text-sm">
+                                    <i class="fas fa-play mr-2"></i>
+                                    Lancer la calibration
+                                </button>
+                                <button id="view-calibration" class="bg-zinc-700 hover:bg-zinc-600 text-white px-4 py-2 rounded text-sm">
+                                    <i class="fas fa-file mr-2"></i>
+                                    Voir la calibration actuelle
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logs Tab -->
+            <div id="logs-tab" class="tab-content">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-medium">Logs du Système</h2>
+                    <div class="flex space-x-2">
+                        <select id="log-filter" class="bg-zinc-800 text-white border border-zinc-700 rounded px-3 py-1 text-sm">
+                            <option value="all">Tous les logs</option>
+                            <option value="error">Erreurs</option>
+                            <option value="warning">Avertissements</option>
+                            <option value="info">Info</option>
+                            <option value="success">Succès</option>
+                        </select>
+                        <button id="clear-logs" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm">
+                            <i class="fas fa-trash mr-1"></i>
+                            Vider
+                        </button>
+                        <button id="export-logs" class="bg-zinc-700 hover:bg-zinc-600 text-white px-3 py-1 rounded text-sm">
+                            <i class="fas fa-download mr-1"></i>
+                            Exporter
+                        </button>
+                    </div>
+                </div>
+                <div id="logs-container" class="bg-black rounded border border-zinc-800 h-96 overflow-y-auto"></div>
+            </div>
+
+            <!-- Terminal Tab -->
+            <div id="terminal-tab" class="tab-content">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-medium">Terminal Output</h2>
+                    <div class="flex space-x-2">
+                        <button id="clear-terminal" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm">
+                            <i class="fas fa-trash mr-1"></i>
+                            Vider
+                        </button>
+                        <button id="auto-scroll-toggle" class="bg-zinc-700 hover:bg-zinc-600 text-white px-3 py-1 rounded text-sm">
+                            <i class="fas fa-arrow-down mr-1"></i>
+                            Auto-scroll: ON
+                        </button>
+                    </div>
+                </div>
+                <div id="terminal-output" class="bg-black rounded border border-zinc-800 h-96 overflow-y-auto font-mono text-sm text-green-400 p-4"></div>
+            </div>
+
+            <!-- Config Tab -->
+            <div id="config-tab" class="tab-content">
+                <h2 class="text-lg font-medium mb-6">Configuration</h2>
+                <div class="max-w-2xl">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm text-zinc-400 mb-1">Chemin Dolphin</label>
+                            <input type="text" id="dolphin-path" class="w-full bg-zinc-800 text-white border border-zinc-700 rounded px-3 py-2 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-zinc-400 mb-1">Chemin ISO Monopoly</label>
+                            <input type="text" id="iso-path" class="w-full bg-zinc-800 text-white border border-zinc-700 rounded px-3 py-2 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-zinc-400 mb-1">Chemin fichier de sauvegarde</label>
+                            <input type="text" id="save-path" class="w-full bg-zinc-800 text-white border border-zinc-700 rounded px-3 py-2 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-zinc-400 mb-1">Intervalle de rafraîchissement (secondes)</label>
+                            <input type="number" id="refresh-interval" class="w-full bg-zinc-800 text-white border border-zinc-700 rounded px-3 py-2 text-sm" min="1" value="2">
+                        </div>
+                        <button id="save-config-button" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded flex items-center">
+                            <i class="fas fa-save mr-2"></i>
+                            Sauvegarder la configuration
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monitoring Tab -->
+            <div id="monitoring-tab" class="tab-content">
+                <h2 class="text-lg font-medium mb-6">Monitoring</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-zinc-800 rounded-lg p-4">
+                        <h3 class="text-sm font-medium mb-2">CPU Usage</h3>
+                        <div class="text-3xl font-mono" id="cpu-usage">--%</div>
+                    </div>
+                    <div class="bg-zinc-800 rounded-lg p-4">
+                        <h3 class="text-sm font-medium mb-2">Memory Usage</h3>
+                        <div class="text-3xl font-mono" id="memory-usage">-- MB</div>
+                    </div>
+                    <div class="bg-zinc-800 rounded-lg p-4">
+                        <h3 class="text-sm font-medium mb-2">Active Processes</h3>
+                        <div class="text-3xl font-mono" id="process-count">0</div>
+                    </div>
+                    <div class="bg-zinc-800 rounded-lg p-4">
+                        <h3 class="text-sm font-medium mb-2">Uptime</h3>
+                        <div class="text-3xl font-mono" id="uptime">00:00:00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module" src="/static/js/admin.js"></script>
+</body>
+</html>

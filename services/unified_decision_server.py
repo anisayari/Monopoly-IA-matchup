@@ -22,6 +22,7 @@ class UnifiedDecisionServer:
     def __init__(self, app: Flask = None):
         self.app = app or Flask(__name__)
         self.logger = logging.getLogger(__name__)
+        self.game_settings = self._load_game_settings()
         self.services = {
             "omniparser": {
                 "url": "http://localhost:8000",
@@ -32,7 +33,7 @@ class UnifiedDecisionServer:
             },
             "openai": {
                 "api_key": os.getenv("OPENAI_API_KEY"),
-                "model": "gpt-4o-mini",
+                "model": self.game_settings.get("game", {}).get("default_model", "gpt-4.1-mini"),
                 "base_url": "https://api.openai.com/v1"
             }
         }
@@ -197,6 +198,187 @@ class UnifiedDecisionServer:
                 self.logger.error(f"Error in unified decision: {e}")
                 return jsonify({'success': False, 'error': str(e)}), 500
                 
+        @self.app.route('/api/decide', methods=['POST'])
+        def decide():
+            """Endpoint simple pour les décisions IA compatibles avec l'ancien système"""
+            try:
+                data = request.json
+                if not data:
+                    return jsonify({'error': 'No data provided'}), 400
+                
+                popup_text = data.get('popup_text', '')
+                options = data.get('options', [])
+                game_context = data.get('game_context', {})
+                
+                # Construire le contexte pour l'IA
+                context_str = "Contexte du jeu Monopoly:\n"
+                if game_context:
+                    # Ajouter les infos des joueurs
+                    if "players" in game_context:
+                        context_str += "\nJoueurs:\n"
+                        for player_id, player in game_context["players"].items():
+                            context_str += f"- {player.get('name', 'Inconnu')}: {player.get('money', 0)}€, position {player.get('position', 0)}\n"
+                    
+                    # Ajouter les propriétés
+                    if "global" in game_context and "properties" in game_context["global"]:
+                        context_str += f"\nPropriétés sur le plateau: {len(game_context['global']['properties'])}\n"
+                
+                prompt = f"""Tu es un expert du Monopoly. Voici la situation actuelle:
+
+{context_str}
+
+Un popup est apparu avec le message: "{popup_text}"
+
+Les options disponibles sont: {', '.join(options)}
+
+Quelle est la MEILLEURE option stratégique à choisir? Réponds UNIQUEMENT avec le nom exact de l'option (par exemple: "buy", "auction", "next turn", etc.)
+
+Considère:
+- L'argent disponible des joueurs
+- La position sur le plateau
+- La stratégie optimale pour gagner
+- Si c'est une propriété, est-ce intéressant de l'acheter?
+
+Réponse (une seule option):"""
+
+                # Appeler OpenAI
+                headers = {
+                    "Authorization": f"Bearer {self.services['openai']['api_key']}",
+                    "Content-Type": "application/json"
+                }
+                
+                payload = {
+                    "model": self.services['openai']['model'],
+                    "messages": [
+                        {"role": "system", "content": "Tu es un expert du Monopoly. Réponds toujours avec UNE SEULE option, exactement comme elle apparaît dans la liste."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    "temperature": 0.1,
+                    "max_tokens": 10
+                }
+                
+                response = requests.post(
+                    f"{self.services['openai']['base_url']}/chat/completions",
+                    headers=headers,
+                    json=payload
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    decision = result['choices'][0]['message']['content'].strip().lower()
+                    
+                    self.logger.info(f"AI decision made: {decision}")
+                    
+                    return jsonify({
+                        'success': True,
+                        'decision': decision,
+                        'model': self.services['openai']['model']
+                    })
+                else:
+                    return jsonify({
+                        'success': False,
+                        'error': f'OpenAI error: {response.status_code}'
+                    }), response.status_code
+                    
+            except Exception as e:
+                self.logger.error(f"Error making decision: {e}")
+                return jsonify({'success': False, 'error': str(e)}), 500
+        
+        @self.app.route('/api/decide', methods=['POST'])
+        def decide_popup():
+            """Endpoint principal pour les décisions de popup - compatible avec l'ancien format"""
+            try:
+                data = request.json
+                if not data:
+                    return jsonify({'error': 'No data provided'}), 400
+                
+                # Extraire les données du format attendu
+                popup_text = data.get('popup_text', '')
+                options = data.get('options', [])  # Liste des noms d'options
+                game_context = data.get('game_context', {})
+                full_options = data.get('full_options', [])  # Infos complètes avec bbox
+                text_content = data.get('text_content', [])
+                parsed_content = data.get('parsed_content', [])
+                
+                # Construire le prompt pour l'IA
+                prompt = f"""Tu es un joueur de Monopoly. Une popup est apparue avec le texte suivant:
+"{popup_text}"
+
+Options disponibles: {', '.join(options)}
+
+Contexte du jeu:
+- Joueurs: {json.dumps(game_context.get('players', {}), indent=2)}
+- Tour actuel: {game_context.get('global', {}).get('current_turn', 'inconnu')}
+
+Analyse le contexte et choisis la meilleure option parmi celles disponibles. Réponds UNIQUEMENT avec le nom exact de l'option choisie."""
+
+                # Appeler OpenAI
+                headers = {
+                    "Authorization": f"Bearer {self.services['openai']['api_key']}",
+                    "Content-Type": "application/json"
+                }
+                
+                payload = {
+                    "model": self.services['openai']['model'],
+                    "messages": [
+                        {"role": "system", "content": "Tu es un joueur expert de Monopoly. Tu dois prendre des décisions stratégiques pour gagner la partie. Réponds toujours avec le nom exact de l'option choisie, sans aucun texte supplémentaire."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    "temperature": 0.7,
+                    "max_tokens": 50
+                }
+                
+                response = requests.post(
+                    f"{self.services['openai']['base_url']}/chat/completions",
+                    headers=headers,
+                    json=payload,
+                    timeout=30
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    decision = result['choices'][0]['message']['content'].strip().lower()
+                    
+                    # Essayer de matcher la décision avec les options disponibles
+                    matched_option = None
+                    for opt in options:
+                        if opt.lower() == decision or decision in opt.lower() or opt.lower() in decision:
+                            matched_option = opt
+                            break
+                    
+                    # Si pas de match exact, prendre la première option par défaut
+                    if not matched_option and options:
+                        matched_option = options[0]
+                        reason = f"Pas de match exact trouvé pour '{decision}', utilisation de l'option par défaut"
+                    else:
+                        reason = f"Décision basée sur l'analyse du contexte de jeu"
+                    
+                    return jsonify({
+                        'success': True,
+                        'decision': matched_option or decision,
+                        'reason': reason,
+                        'raw_response': decision
+                    })
+                else:
+                    self.logger.error(f"OpenAI API error: {response.status_code}")
+                    # Fallback: choisir une option par défaut
+                    default_option = options[0] if options else 'ok'
+                    return jsonify({
+                        'success': True,
+                        'decision': default_option,
+                        'reason': 'Erreur API OpenAI - choix par défaut'
+                    })
+                    
+            except Exception as e:
+                self.logger.error(f"Error in popup decision: {e}")
+                # En cas d'erreur, retourner une décision par défaut
+                default_option = data.get('options', ['ok'])[0]
+                return jsonify({
+                    'success': True,
+                    'decision': default_option,
+                    'reason': f'Erreur: {str(e)} - choix par défaut'
+                })
+        
         @self.app.route('/api/decision/health')
         def health_check():
             """Vérifie la santé de tous les services de décision"""
@@ -321,6 +503,25 @@ class UnifiedDecisionServer:
             return "sell"
         else:
             return "unknown"
+    
+    def _load_game_settings(self) -> dict:
+        """Charge les paramètres du jeu depuis le fichier de configuration"""
+        try:
+            settings_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config', 'game_settings.json')
+            if os.path.exists(settings_path):
+                with open(settings_path, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+        except Exception as e:
+            self.logger.error(f"Error loading game_settings.json: {e}")
+        
+        # Paramètres par défaut
+        return {
+            "players": {
+                "player1": {"name": "GPT1", "model": "gpt-4.1-mini", "enabled": True},
+                "player2": {"name": "GPT2", "model": "gpt-4.1-mini", "enabled": True}
+            },
+            "game": {"default_model": "gpt-4.1-mini"}
+        }
             
     def run(self, host='0.0.0.0', port=7000, debug=False):
         """Démarre le serveur unifié"""
@@ -331,4 +532,4 @@ class UnifiedDecisionServer:
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     server = UnifiedDecisionServer()
-    server.run(debug=True)
+    server.run(debug=False)

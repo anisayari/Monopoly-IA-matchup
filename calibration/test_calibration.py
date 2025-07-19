@@ -1,11 +1,15 @@
 import json
 import os
+import sys
 import tkinter as tk
 import win32gui
 import win32api
 import time
 import threading
 from typing import List, Tuple, Optional
+
+# Add parent directory to path to import from src
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.utils.calibration import CalibrationUtils
 
