@@ -650,7 +650,7 @@
     "player_count": 2,
     "player_names": [
       "GPT1",
-      "GPT2"
+      "Claude"
     ],
     "current_player": "player2"
   },
@@ -664,10 +664,10 @@
     },
     {
       "turn": 0,
-      "player": "GPT2",
+      "player": "Claude",
       "action": "join_game",
       "detail": null,
-      "message": "GPT2 a rejoint la partie de Monopoly."
+      "message": "Claude a rejoint la partie de Monopoly."
     },
     {
       "turn": 0,
@@ -685,24 +685,24 @@
     },
     {
       "turn": 1,
-      "player": "GPT2",
+      "player": "Claude",
       "action": "buy_property",
       "detail": "Whitechapel Road pour 60€",
-      "message": "GPT2 achète Whitechapel Road pour 60€."
+      "message": "Claude achète Whitechapel Road pour 60€."
     },
     {
       "turn": 1,
-      "player": "GPT2",
+      "player": "Claude",
       "action": "buy_property",
       "detail": "Trafalgar Square pour 240€",
-      "message": "GPT2 achète Trafalgar Square pour 240€."
+      "message": "Claude achète Trafalgar Square pour 240€."
     },
     {
       "turn": 2,
-      "player": "GPT2",
+      "player": "Claude",
       "action": "buy_property",
       "detail": "Northumberland Avenue pour 160€",
-      "message": "GPT2 achète Northumberland Avenue pour 160€."
+      "message": "Claude achète Northumberland Avenue pour 160€."
     },
     {
       "turn": 2,
@@ -781,7 +781,7 @@
       "jail": false
     },
     "player2": {
-      "name": "GPT2",
+      "name": "Claude",
       "current_player": true,
       "is_current": true,
       "dice_result": [

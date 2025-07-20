@@ -4,10 +4,16 @@ Script pour vérifier que les clés API sont correctement configurées
 """
 
 import os
-from dotenv import load_dotenv
 
-# Charger les variables d'environnement depuis .env
-load_dotenv()
+# Charger les variables d'environnement depuis .env manuellement
+env_file = '.env'
+if os.path.exists(env_file):
+    with open(env_file, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                key, value = line.split('=', 1)
+                os.environ[key] = value
 
 print("🔍 Vérification des clés API...\n")
 

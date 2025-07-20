@@ -73,12 +73,16 @@ class AIChatMonitor:
         """Affiche un message de chat formaté"""
         time_str = datetime.fromisoformat(timestamp).strftime("%H:%M:%S")
         
-        # Couleurs par joueur
+        # Couleurs par joueur - détection intelligente
         player_colors = {
-            'Player1': Fore.CYAN,
-            'Player2': Fore.GREEN,
-            'Player3': Fore.YELLOW,
-            'Player4': Fore.MAGENTA,
+            'player1': Fore.CYAN,
+            'player2': Fore.GREEN,
+            'player3': Fore.YELLOW,
+            'player4': Fore.MAGENTA,
+            'GPT1': Fore.CYAN + Style.BRIGHT,
+            'GPT2': Fore.GREEN + Style.BRIGHT,
+            'Claude': Fore.MAGENTA + Style.BRIGHT,
+            'Gemini': Fore.YELLOW + Style.BRIGHT,
             'Unknown': Fore.WHITE
         }
         
@@ -115,22 +119,50 @@ class AIChatMonitor:
         emoji = thought_emojis.get(thought_type, '💭')
         color = thought_colors.get(thought_type, Fore.WHITE)
         
-        print(f"\n{Fore.LIGHTBLACK_EX}[{time_str}]{Style.RESET_ALL} {emoji} {player} - {color}{thought_type.upper()}{Style.RESET_ALL}")
+        # Déterminer la couleur du joueur
+        player_color = Fore.CYAN + Style.BRIGHT
+        if 'Claude' in player:
+            player_color = Fore.MAGENTA + Style.BRIGHT
+        elif 'GPT2' in player:
+            player_color = Fore.GREEN + Style.BRIGHT
+        elif 'Gemini' in player:
+            player_color = Fore.YELLOW + Style.BRIGHT
+            
+        print(f"\n{Fore.LIGHTBLACK_EX}[{time_str}]{Style.RESET_ALL} {emoji} {player_color}{player}{Style.RESET_ALL} - {color}{thought_type.upper()}{Style.RESET_ALL}")
         
-        # Afficher le contenu principal
+        # Afficher le contenu principal avec formatage amélioré
         if isinstance(content, dict):
-            for key, value in content.items():
-                print(f"   {Fore.LIGHTBLACK_EX}{key}:{Style.RESET_ALL} {value}")
+            if thought_type == 'analysis':
+                if 'popup' in content:
+                    print(f"   📋 {Fore.WHITE}Popup:{Style.RESET_ALL} \"{content['popup']}\"")
+                if 'options_count' in content:
+                    print(f"   🔢 {Fore.WHITE}Options:{Style.RESET_ALL} {content['options_count']} choix disponibles")
+                if 'argent' in content:
+                    print(f"   💰 {Fore.WHITE}Argent:{Style.RESET_ALL} {content['argent']}€")
+            elif thought_type == 'decision':
+                if 'choix' in content:
+                    print(f"   ✅ {Fore.GREEN}Décision:{Style.RESET_ALL} {content['choix']}")
+                if 'raison' in content:
+                    print(f"   💭 {Fore.WHITE}Raison:{Style.RESET_ALL} {content['raison']}")
+                if 'confiance' in content:
+                    print(f"   📊 {Fore.WHITE}Confiance:{Style.RESET_ALL} {content['confiance']}")
+            else:
+                for key, value in content.items():
+                    print(f"   {Fore.LIGHTBLACK_EX}{key}:{Style.RESET_ALL} {value}")
         else:
             print(f"   {content}")
             
-        # Afficher le contexte si disponible
+        # Afficher le contexte si disponible avec meilleur formatage
         if context:
-            print(f"   {Fore.LIGHTBLACK_EX}Context:{Style.RESET_ALL}")
-            for key, value in context.items():
-                print(f"      - {key}: {value}")
+            context_items = []
+            if 'tour' in context:
+                context_items.append(f"Tour {context['tour']}")
+            if 'position' in context:
+                context_items.append(f"Position: {context['position']}")
+            if context_items:
+                print(f"   {Fore.LIGHTBLACK_EX}[{' | '.join(context_items)}]{Style.RESET_ALL}")
                 
-        print(f"{Fore.LIGHTBLACK_EX}{'─' * 60}{Style.RESET_ALL}")
+        print(f"{Fore.LIGHTBLACK_EX}{'═' * 60}{Style.RESET_ALL}")
         
     async def start(self):
         """Démarre le serveur"""

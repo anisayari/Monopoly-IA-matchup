@@ -13,6 +13,8 @@ import logging
 import requests
 from datetime import datetime
 from src.utils import property_manager
+import random
+import re
 
 class AIService:
     """Service IA pour prendre des décisions dans Monopoly"""
@@ -147,9 +149,12 @@ class AIService:
             # Envoyer le contexte au monitor d'actions
             self._send_to_monitor('context', game_context, port=8004)
             
+            # Récupérer le nom réel du joueur
+            player_name = game_context.get('players', {}).get(current_player, {}).get('name', current_player)
+            
             # Envoyer la pensée d'analyse au monitor de chat
             self._send_to_monitor('thought', {
-                'player': current_player,
+                'player': player_name,
                 'type': 'analysis',
                 'content': {
                     'popup': popup_text,
@@ -305,7 +310,7 @@ ANALYSE → STRATÉGIE → DÉCISION. Sois impitoyable et calculateur."""
             
             # Envoyer la décision au monitor de chat
             self._send_to_monitor('thought', {
-                'player': current_player,
+                'player': player_name,
                 'type': 'decision',
                 'content': {
                     'choix': result['decision'],
@@ -314,6 +319,16 @@ ANALYSE → STRATÉGIE → DÉCISION. Sois impitoyable et calculateur."""
                 },
                 'timestamp': datetime.utcnow().isoformat()
             }, port=8003)
+            
+            # Générer un message de chat selon la décision
+            chat_message = self._generate_chat_message(result['decision'], popup_text, game_context, player_name)
+            if chat_message:
+                self._send_to_monitor('chat', {
+                    'from': player_name,
+                    'to': 'All',
+                    'message': chat_message,
+                    'timestamp': datetime.utcnow().isoformat()
+                }, port=8003)
             
             # Envoyer l'action au monitor d'actions
             action_type = self._get_action_type(result['decision'], popup_text)
@@ -336,6 +351,89 @@ ANALYSE → STRATÉGIE → DÉCISION. Sois impitoyable et calculateur."""
         except Exception as e:
             self.logger.error(f"❌ Erreur IA: {e}")
             return self._default_decision(options)
+    
+    def _generate_chat_message(self, decision: str, popup_text: str, game_context: Dict, player_name: str) -> Optional[str]:
+        """Génère un message de chat basé sur la décision prise"""
+        decision_lower = decision.lower()
+        popup_lower = popup_text.lower()
+        
+        # Messages selon le type de décision
+        if 'buy' in decision_lower and 'buy' in popup_lower:
+            property_match = re.search(r'buy\s+(.+?)\s+for', popup_text, re.IGNORECASE)
+            if property_match:
+                property_name = property_match.group(1)
+                messages = [
+                    f"Je prends {property_name}! 🏠",
+                    f"Excellente acquisition avec {property_name}!",
+                    f"{property_name} sera rentable à long terme.",
+                    f"Un pas de plus vers la victoire avec {property_name}!"
+                ]
+                return random.choice(messages)
+        
+        elif 'auction' in decision_lower:
+            messages = [
+                "Voyons qui va remporter cette enchère...",
+                "Je passe mon tour sur les enchères.",
+                "Laissons les autres se battre pour ça.",
+                "Les enchères ne m'intéressent pas cette fois."
+            ]
+            return random.choice(messages)
+        
+        elif 'trade' in decision_lower:
+            messages = [
+                "Intéressant... Voyons ce trade.",
+                "Hmm, cette offre mérite réflexion.",
+                "Je vais analyser cette proposition.",
+                "Un échange pourrait être profitable..."
+            ]
+            return random.choice(messages)
+        
+        elif 'next turn' in decision_lower:
+            messages = [
+                "Au suivant! 🎲",
+                "C'est parti pour le prochain tour!",
+                "Voyons ce que les dés nous réservent...",
+                "J'ai hâte de voir la suite!"
+            ]
+            return random.choice(messages)
+        
+        elif 'roll' in decision_lower:
+            if 'jail' in popup_lower:
+                messages = [
+                    "Je tente ma chance avec les dés! 🎲🎲",
+                    "Allez, double pour sortir!",
+                    "Les dés vont me libérer!",
+                    "Je mise sur un double!"
+                ]
+            else:
+                messages = [
+                    "C'est parti! 🎲",
+                    "Lançons les dés!",
+                    "Voyons où je vais atterrir...",
+                    "Les dés sont lancés!"
+                ]
+            return random.choice(messages)
+        
+        elif 'pay' in decision_lower and 'bail' in decision_lower:
+            messages = [
+                "Je préfère payer et sortir rapidement.",
+                "50€ pour la liberté, c'est raisonnable.",
+                "Pas le temps de rester en prison!",
+                "Je paie la caution et je continue!"
+            ]
+            return random.choice(messages)
+        
+        # Si c'est une propriété qu'on possède déjà
+        if 'already own' in popup_lower:
+            messages = [
+                "Ah, je suis chez moi ici! 😊",
+                "Toujours agréable de visiter ses propriétés.",
+                "Ma propriété me protège!",
+                "Home sweet home!"
+            ]
+            return random.choice(messages)
+        
+        return None
     
     def _get_action_type(self, decision: str, popup_text: str) -> str:
         """Détermine le type d'action basé sur la décision et le contexte"""
