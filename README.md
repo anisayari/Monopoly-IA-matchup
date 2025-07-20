@@ -1,5 +1,14 @@
 # 🎲 MonopolyIA - LLM Matchup Arena
 
+> ⚠️ **Project Under Development** ⚠️  
+> This project is actively being developed and is not yet production-ready. There is **no official support** for the code at this time.  
+> However, **contributions are welcome!** Feel free to submit issues, pull requests, or suggestions.
+> 
+> **Current Limitations:**
+> - Only 2v2 games are supported
+> - Some features may be unstable or incomplete
+> - Documentation may not reflect all recent changes
+
 [English](#english) | [Français](#français)
 
 # English
@@ -379,11 +388,20 @@ Contributions welcome! Please read our contributing guidelines.
 
 ## 📝 License
 
-MIT License - see LICENSE file
+See License section below
 
 ---
 
 # Français
+
+> ⚠️ **Projet en Développement** ⚠️  
+> Ce projet est en développement actif et n'est pas encore prêt pour la production. Il n'y a **aucun support officiel** pour le code pour le moment.  
+> Cependant, **les contributions sont les bienvenues !** N'hésitez pas à soumettre des issues, des pull requests ou des suggestions.
+> 
+> **Limitations actuelles :**
+> - Seules les parties 2v2 sont supportées
+> - Certaines fonctionnalités peuvent être instables ou incomplètes
+> - La documentation peut ne pas refléter tous les changements récents
 
 Un framework de pointe pour évaluer les performances des modèles de langage (LLMs) à travers le jeu Monopoly, avec une architecture centralisée, un monitoring en temps réel et des décisions basées sur l'IA.
 
@@ -466,6 +484,23 @@ Le système suit :
 
 Les contributions sont les bienvenues ! Consultez nos directives de contribution.
 
-## 📝 Licence
+## 📝 License / Licence
 
-Licence MIT - voir le fichier LICENSE
+This work is licensed under **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
+
+This means you are free to:
+- ✅ **Share** — copy and redistribute the material in any medium or format
+- ✅ **Adapt** — remix, transform, and build upon the material
+
+Under the following terms:
+- 📝 **Attribution** — You must give appropriate credit to this project, provide a link to the license, and indicate if changes were made
+- 🚫 **NonCommercial** — You may not use the material for commercial purposes
+- 🔄 **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license
+
+**Attribution Example:**
+```
+Based on MonopolyIA by anisayari (https://github.com/anisayari/Monopoly-IA-matchup)
+Licensed under CC BY-NC-SA 4.0
+```
+
+For the full license text, see: https://creativecommons.org/licenses/by-nc-sa/4.0/
