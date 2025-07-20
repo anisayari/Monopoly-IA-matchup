@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T23:21:04.002521",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "next turn ",
+    "accounts "
+  ],
+  "decision": "accounts ",
+  "reason": "Vérifier les finances et les propriétés permet de planifier une stratégie d'achat ou de vente efficace pour le prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT1": 1260,
+      "GPT2": 1040
+    }
+  }
+}

@@ -183,12 +183,38 @@ This will:
 
 ### 3. Calibration
 
+#### Click Calibration
 Run calibration for accurate click positioning:
 ```bash
 python calibration\run_visual_calibration_complete.py
 ```
 
 Or use the web interface: Admin Panel > Calibration
+
+#### Property Detection 🆕
+Map property locations on the game board:
+```bash
+python calibration\property_detector.py
+```
+
+This tool helps you:
+- Automatically load all properties from `MonopolyProperties.json`
+- Guide you through each property to mark its position
+- Save coordinates (relative and absolute) for each property
+- Updates `game_files/MonopolyProperties.json` with:
+  - `x_relative` / `y_relative`: Position as percentage (0.0 to 1.0)
+  - `x_pixel` / `y_pixel`: Absolute pixel coordinates
+  - `window_size`: Window dimensions at capture time
+  - `timestamp`: When the property was mapped
+
+Usage:
+1. Start Monopoly in Dolphin
+2. Run `property_detector.py`
+3. Right-click on each property as instructed
+4. Use "Skip" if a property is not visible
+5. Save to update MonopolyProperties.json
+
+This is essential for automated trading where the AI needs to click on specific properties.
 
 ### 4. Start Services
 

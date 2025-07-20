@@ -1,0 +1,742 @@
+{
+  "properties": [
+    {
+      "id": "Property00",
+      "name": "Old Kent Road",
+      "value": 60,
+      "mortgage": 30,
+      "rent": {
+        "base": 2,
+        "oneHouse": 10,
+        "twoHouses": 30,
+        "threeHouses": 90,
+        "fourHouses": 160,
+        "hotel": 250
+      },
+      "houseCost": 50,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.6359,
+        "y_relative": 0.8235,
+        "x_pixel": 1163,
+        "y_pixel": 840,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property01",
+      "name": "Whitechapel Road",
+      "value": 60,
+      "mortgage": 30,
+      "rent": {
+        "base": 4,
+        "oneHouse": 20,
+        "twoHouses": 60,
+        "threeHouses": 180,
+        "fourHouses": 320,
+        "hotel": 450
+      },
+      "houseCost": 50,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.5653,
+        "y_relative": 0.8137,
+        "x_pixel": 1034,
+        "y_pixel": 830,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property02",
+      "name": "Kings Cross Station",
+      "value": 200,
+      "mortgage": 100,
+      "rent": {
+        "oneStation": 25,
+        "twoStations": 50,
+        "threeStations": 100,
+        "fourStations": 200
+      },
+      "type": "station",
+      "coordinates": {
+        "x_relative": 0.5008,
+        "y_relative": 0.8147,
+        "x_pixel": 916,
+        "y_pixel": 831,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property03",
+      "name": "The Angel Islington",
+      "value": 100,
+      "mortgage": 50,
+      "rent": {
+        "base": 6,
+        "oneHouse": 30,
+        "twoHouses": 90,
+        "threeHouses": 270,
+        "fourHouses": 400,
+        "hotel": 550
+      },
+      "houseCost": 50,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.4653,
+        "y_relative": 0.8167,
+        "x_pixel": 851,
+        "y_pixel": 833,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property04",
+      "name": "Euston Road",
+      "value": 100,
+      "mortgage": 50,
+      "rent": {
+        "base": 6,
+        "oneHouse": 30,
+        "twoHouses": 90,
+        "threeHouses": 270,
+        "fourHouses": 400,
+        "hotel": 550
+      },
+      "houseCost": 50,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.3986,
+        "y_relative": 0.8157,
+        "x_pixel": 728,
+        "y_pixel": 832,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property05",
+      "name": "Pentonville Road",
+      "value": 120,
+      "mortgage": 60,
+      "rent": {
+        "base": 8,
+        "oneHouse": 40,
+        "twoHouses": 100,
+        "threeHouses": 300,
+        "fourHouses": 450,
+        "hotel": 600
+      },
+      "houseCost": 50,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.3647,
+        "y_relative": 0.8127,
+        "x_pixel": 667,
+        "y_pixel": 829,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property06",
+      "name": "Pall Mall",
+      "value": 140,
+      "mortgage": 70,
+      "rent": {
+        "base": 10,
+        "oneHouse": 50,
+        "twoHouses": 150,
+        "threeHouses": 450,
+        "fourHouses": 625,
+        "hotel": 750
+      },
+      "houseCost": 100,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.3204,
+        "y_relative": 0.7382,
+        "x_pixel": 586,
+        "y_pixel": 753,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property07",
+      "name": "Electric Company",
+      "value": 150,
+      "mortgage": 75,
+      "rent": {
+        "multiplier": {
+          "oneUtility": 4,
+          "twoUtilities": 10
+        }
+      },
+      "type": "utility",
+      "coordinates": {
+        "x_relative": 0.322,
+        "y_relative": 0.6725,
+        "x_pixel": 589,
+        "y_pixel": 686,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property08",
+      "name": "Whitehall",
+      "value": 140,
+      "mortgage": 70,
+      "rent": {
+        "base": 10,
+        "oneHouse": 50,
+        "twoHouses": 150,
+        "threeHouses": 450,
+        "fourHouses": 625,
+        "hotel": 750
+      },
+      "houseCost": 100,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.3204,
+        "y_relative": 0.6196,
+        "x_pixel": 586,
+        "y_pixel": 632,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property09",
+      "name": "Northumberland Avenue",
+      "value": 160,
+      "mortgage": 80,
+      "rent": {
+        "base": 12,
+        "oneHouse": 60,
+        "twoHouses": 180,
+        "threeHouses": 500,
+        "fourHouses": 700,
+        "hotel": 900
+      },
+      "houseCost": 100,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.3188,
+        "y_relative": 0.5569,
+        "x_pixel": 583,
+        "y_pixel": 568,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property10",
+      "name": "Marylebone Station",
+      "value": 200,
+      "mortgage": 100,
+      "rent": {
+        "oneStation": 25,
+        "twoStations": 50,
+        "threeStations": 100,
+        "fourStations": 200
+      },
+      "type": "station",
+      "coordinates": {
+        "x_relative": 0.3209,
+        "y_relative": 0.4961,
+        "x_pixel": 587,
+        "y_pixel": 506,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property11",
+      "name": "Bow Street",
+      "value": 180,
+      "mortgage": 90,
+      "rent": {
+        "base": 14,
+        "oneHouse": 70,
+        "twoHouses": 200,
+        "threeHouses": 550,
+        "fourHouses": 750,
+        "hotel": 950
+      },
+      "houseCost": 100,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.3209,
+        "y_relative": 0.4422,
+        "x_pixel": 587,
+        "y_pixel": 451,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property12",
+      "name": "Marlborough Street",
+      "value": 180,
+      "mortgage": 90,
+      "rent": {
+        "base": 14,
+        "oneHouse": 70,
+        "twoHouses": 200,
+        "threeHouses": 550,
+        "fourHouses": 750,
+        "hotel": 950
+      },
+      "houseCost": 100,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.3188,
+        "y_relative": 0.3275,
+        "x_pixel": 583,
+        "y_pixel": 333,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property13",
+      "name": "Vine Street",
+      "value": 200,
+      "mortgage": 100,
+      "rent": {
+        "base": 16,
+        "oneHouse": 80,
+        "twoHouses": 220,
+        "threeHouses": 600,
+        "fourHouses": 800,
+        "hotel": 1000
+      },
+      "houseCost": 100,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.3182,
+        "y_relative": 0.2706,
+        "x_pixel": 582,
+        "y_pixel": 276,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property14",
+      "name": "Strand",
+      "value": 220,
+      "mortgage": 110,
+      "rent": {
+        "base": 18,
+        "oneHouse": 90,
+        "twoHouses": 250,
+        "threeHouses": 700,
+        "fourHouses": 875,
+        "hotel": 1050
+      },
+      "houseCost": 150,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.3674,
+        "y_relative": 0.1824,
+        "x_pixel": 672,
+        "y_pixel": 186,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property15",
+      "name": "Fleet Street",
+      "value": 220,
+      "mortgage": 110,
+      "rent": {
+        "base": 18,
+        "oneHouse": 90,
+        "twoHouses": 250,
+        "threeHouses": 700,
+        "fourHouses": 875,
+        "hotel": 1050
+      },
+      "houseCost": 150,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.4314,
+        "y_relative": 0.1853,
+        "x_pixel": 789,
+        "y_pixel": 189,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property16",
+      "name": "Trafalgar Square",
+      "value": 240,
+      "mortgage": 120,
+      "rent": {
+        "base": 20,
+        "oneHouse": 100,
+        "twoHouses": 300,
+        "threeHouses": 750,
+        "fourHouses": 925,
+        "hotel": 1100
+      },
+      "houseCost": 150,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.4675,
+        "y_relative": 0.1863,
+        "x_pixel": 855,
+        "y_pixel": 190,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property17",
+      "name": "Fenchurch St. Station",
+      "value": 200,
+      "mortgage": 100,
+      "rent": {
+        "oneStation": 25,
+        "twoStations": 50,
+        "threeStations": 100,
+        "fourStations": 200
+      },
+      "type": "station",
+      "coordinates": {
+        "x_relative": 0.5014,
+        "y_relative": 0.1853,
+        "x_pixel": 917,
+        "y_pixel": 189,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property18",
+      "name": "Leicester Square",
+      "value": 260,
+      "mortgage": 130,
+      "rent": {
+        "base": 22,
+        "oneHouse": 110,
+        "twoHouses": 330,
+        "threeHouses": 800,
+        "fourHouses": 975,
+        "hotel": 1150
+      },
+      "houseCost": 150,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.5336,
+        "y_relative": 0.1824,
+        "x_pixel": 975,
+        "y_pixel": 186,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property19",
+      "name": "Water Works",
+      "value": 150,
+      "mortgage": 75,
+      "rent": {
+        "multiplier": {
+          "oneUtility": 4,
+          "twoUtilities": 10
+        }
+      },
+      "type": "utility",
+      "coordinates": {
+        "x_relative": 0.5664,
+        "y_relative": 0.1833,
+        "x_pixel": 1036,
+        "y_pixel": 187,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property20",
+      "name": "Coventry Street",
+      "value": 260,
+      "mortgage": 130,
+      "rent": {
+        "base": 22,
+        "oneHouse": 110,
+        "twoHouses": 330,
+        "threeHouses": 800,
+        "fourHouses": 975,
+        "hotel": 1150
+      },
+      "houseCost": 150,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.6031,
+        "y_relative": 0.1824,
+        "x_pixel": 1103,
+        "y_pixel": 186,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property21",
+      "name": "Piccadilly",
+      "value": 280,
+      "mortgage": 140,
+      "rent": {
+        "base": 24,
+        "oneHouse": 120,
+        "twoHouses": 360,
+        "threeHouses": 850,
+        "fourHouses": 1025,
+        "hotel": 1200
+      },
+      "houseCost": 150,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.6359,
+        "y_relative": 0.1794,
+        "x_pixel": 1163,
+        "y_pixel": 183,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property22",
+      "name": "Regent Street",
+      "value": 300,
+      "mortgage": 150,
+      "rent": {
+        "base": 26,
+        "oneHouse": 130,
+        "twoHouses": 390,
+        "threeHouses": 900,
+        "fourHouses": 1100,
+        "hotel": 1275
+      },
+      "houseCost": 200,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.6845,
+        "y_relative": 0.2647,
+        "x_pixel": 1252,
+        "y_pixel": 270,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property23",
+      "name": "Oxford Street",
+      "value": 300,
+      "mortgage": 150,
+      "rent": {
+        "base": 26,
+        "oneHouse": 130,
+        "twoHouses": 390,
+        "threeHouses": 900,
+        "fourHouses": 1100,
+        "hotel": 1275
+      },
+      "houseCost": 200,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.6829,
+        "y_relative": 0.3235,
+        "x_pixel": 1249,
+        "y_pixel": 329,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property24",
+      "name": "Bond Street",
+      "value": 320,
+      "mortgage": 160,
+      "rent": {
+        "base": 28,
+        "oneHouse": 150,
+        "twoHouses": 450,
+        "threeHouses": 1000,
+        "fourHouses": 1200,
+        "hotel": 1400
+      },
+      "houseCost": 200,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.6791,
+        "y_relative": 0.4441,
+        "x_pixel": 1242,
+        "y_pixel": 453,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property25",
+      "name": "Liverpool St. Station",
+      "value": 200,
+      "mortgage": 100,
+      "rent": {
+        "oneStation": 25,
+        "twoStations": 50,
+        "threeStations": 100,
+        "fourStations": 200
+      },
+      "type": "station",
+      "coordinates": {
+        "x_relative": 0.6807,
+        "y_relative": 0.502,
+        "x_pixel": 1245,
+        "y_pixel": 512,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property26",
+      "name": "Park Lane",
+      "value": 350,
+      "mortgage": 175,
+      "rent": {
+        "base": 35,
+        "oneHouse": 175,
+        "twoHouses": 500,
+        "threeHouses": 1100,
+        "fourHouses": 1300,
+        "hotel": 1500
+      },
+      "houseCost": 200,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.6823,
+        "y_relative": 0.6157,
+        "x_pixel": 1247,
+        "y_pixel": 628,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    },
+    {
+      "id": "Property27",
+      "name": "Mayfair",
+      "value": 400,
+      "mortgage": 200,
+      "rent": {
+        "base": 50,
+        "oneHouse": 200,
+        "twoHouses": 600,
+        "threeHouses": 1400,
+        "fourHouses": 1700,
+        "hotel": 2000
+      },
+      "houseCost": 200,
+      "type": "property",
+      "coordinates": {
+        "x_relative": 0.6796,
+        "y_relative": 0.7353,
+        "x_pixel": 1243,
+        "y_pixel": 750,
+        "window_size": {
+          "width": 1829,
+          "height": 1020
+        },
+        "timestamp": "2025-07-20 10:31:03"
+      }
+    }
+  ]
+}

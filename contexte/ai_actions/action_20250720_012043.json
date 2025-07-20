@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-19T23:20:41.820100",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acquérir Trafalgar Square permettra de renforcer ma position et d'augmenter mes chances de monopoliser les propriétés pink.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "GPT1": 1260,
+      "GPT2": 1280
+    }
+  }
+}

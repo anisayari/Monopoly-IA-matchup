@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-19T23:22:36.945463",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "back ",
+    "trade "
+  ],
+  "decision": "trade ",
+  "reason": "Échanger une propriété pour renforcer ma position et tenter d'atteindre un monopole.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT1": 1260,
+      "GPT2": 1040
+    }
+  }
+}

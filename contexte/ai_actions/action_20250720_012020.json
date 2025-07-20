@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T23:20:18.463857",
+  "trigger": "shake the Wii",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "Lancer les dés permet de progresser dans le jeu et d'augmenter les chances d'acquérir des propriétés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "GPT1": 1260,
+      "GPT2": 1280
+    }
+  }
+}

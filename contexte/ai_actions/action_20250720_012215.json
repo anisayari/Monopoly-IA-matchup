@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-19T23:22:13.585528",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "cancel "
+  ],
+  "decision": "cancel ",
+  "reason": "Aucune propriété à hypothéquer pour l'instant. Mieux vaut conserver les actifs.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT1": 1260,
+      "GPT2": 1040
+    }
+  }
+}
