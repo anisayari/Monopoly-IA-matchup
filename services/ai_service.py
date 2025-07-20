@@ -19,21 +19,85 @@ class AIService:
     
     def __init__(self):
         self.logger = logging.getLogger(__name__)
-        self.client = None
+        self.openai_client = None
+        self.gemini_client = None
+        self.anthropic_client = None
         self.available = False
         self.game_settings = self._load_game_settings()
+        self.player1_history = []
+        self.player2_history = []
+        self.max_history_length = 20  # Limite de l'historique (messages user+assistant)
         
         # Initialiser OpenAI si la clé est disponible
-        api_key = os.getenv('OPENAI_API_KEY')
-        if api_key:
+        openai_api_key = os.getenv('OPENAI_API_KEY')
+        gemini_api_key = os.getenv('GEMINI_API_KEY')
+        anthropic_api_key = os.getenv('ANTHROPIC_API_KEY')
+        if openai_api_key and gemini_api_key and anthropic_api_key:
             try:
-                self.client = OpenAI(api_key=api_key)
+                self.openai_client = OpenAI(api_key=openai_api_key)
+                self.gemini_client = OpenAI(base_url="https://generativelanguage.googleapis.com/v1beta/openai/", api_key=gemini_api_key) # On utilise le endpoint compatible OpenAI
+                self.anthropic_client = OpenAI(base_url="https://api.anthropic.com/v1/", api_key=anthropic_api_key) # On utilise le endpoint compatible OpenAI
                 self.available = True
                 self.logger.info("✅ Service IA activé")
             except Exception as e:
                 self.logger.error(f"⚠️  Erreur initialisation IA: {e}")
         else:
             self.logger.warning("⚠️  Service IA désactivé (pas de clé API)")
+    
+    def _get_player_history(self, player_id: str) -> List[Dict]:
+        """Récupère l'historique du joueur spécifié"""
+        if player_id == "player1":
+            return self.player1_history
+        elif player_id == "player2":
+            return self.player2_history
+        else:
+            # Pour les joueurs inconnus, retourner un historique vide
+            # sans affecter les historiques persistants
+            return []
+    
+    def _add_to_history(self, player_id: str, role: str, content: str):
+        """Ajoute un message à l'historique du joueur avec gestion de la taille"""
+        if player_id == "player1":
+            history = self.player1_history
+        elif player_id == "player2":
+            history = self.player2_history
+        else:
+            # Ne pas sauvegarder l'historique pour les joueurs inconnus
+            return
+        
+        # Ajouter le nouveau message
+        history.append({"role": role, "content": content})
+        
+        # Limiter la taille de l'historique (garder les messages les plus récents)
+        # On garde toujours un nombre pair de messages pour maintenir user/assistant pairs
+        if len(history) > self.max_history_length:
+            # Supprimer les plus anciens messages par paires (user + assistant)
+            messages_to_remove = len(history) - self.max_history_length
+            # S'assurer qu'on supprime un nombre pair pour garder la cohérence
+            if messages_to_remove % 2 == 1:
+                messages_to_remove += 1
+            history[:] = history[messages_to_remove:]
+    
+    def get_history_stats(self) -> Dict:
+        """Retourne des statistiques sur l'historique des joueurs"""
+        return {
+            'player1_messages': len(self.player1_history),
+            'player2_messages': len(self.player2_history),
+            'max_length': self.max_history_length,
+            'player1_last_interaction': self.player1_history[-1]['content'][:50] + "..." if self.player1_history else "Aucune",
+            'player2_last_interaction': self.player2_history[-1]['content'][:50] + "..." if self.player2_history else "Aucune"
+        }
+    
+    def clear_history(self, player_id: str = None):
+        """Nettoie l'historique d'un joueur spécifique ou de tous les joueurs"""
+        if player_id == "player1" or player_id is None:
+            self.player1_history.clear()
+            self.logger.info("🧹 Historique player1 nettoyé")
+        if player_id == "player2" or player_id is None:
+            self.player2_history.clear()
+            self.logger.info("🧹 Historique player2 nettoyé")
+        if player_id is None:
+            self.logger.info("🧹 Tous les historiques nettoyés")
     
     def _load_game_settings(self):
         """Charge les paramètres du jeu depuis settings.json"""
@@ -69,7 +133,7 @@ class AIService:
         """
         
         # Si l'IA n'est pas disponible, utiliser la logique par défaut
-        if not self.available or not self.client:
+        if not self.available or not self.openai_client or not self.gemini_client or not self.anthropic_client:
             return self._default_decision(options)
         
         try:
@@ -113,10 +177,9 @@ class AIService:
                         "description": "Courte explication de la décision (max 30 mots)"
                     },
                     "confidence": {
-                        "type": "number",
-                        "description": "Niveau de confiance entre 0 et 1",
-                        "minimum": 0,
-                        "maximum": 1
+                        "type": "string",
+                        "description": "Niveau de confiance entre 0.0 et 1.0",
+                        "enum": ["0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0"]
                     }
                 },
                 "required": ["decision", "reason", "confidence"],
@@ -125,44 +188,109 @@ class AIService:
 
             # Construire le message utilisateur
             user_message = (
-                f"Tu es un expert du Monopoly.\n"
                 f"Contexte actuel:\n{context_str}\n\n"
                 f"Popup: \"{popup_text}\"\n"
                 f"Options disponibles: {', '.join(options)}\n\n"
                 f"Choisis la meilleure option stratégique."
             )
             
+            
+            # Récupérer l'historique du joueur (copie pour ne pas affecter l'original)
+            player_history = self._get_player_history(current_player).copy()
+            
+            ai_client = self.openai_client
+            structured_output = True
+            store_data = True
+            ai_provider_name = "OpenAI"
+            
+            if model.startswith("gemini"):
+                ai_client = self.gemini_client
+                structured_output = True
+                store_data = False
+                ai_provider_name = "Gemini"
+            elif model.startswith("claude"):
+                ai_client = self.anthropic_client
+                structured_output = False
+                store_data = False
+                ai_provider_name = "Anthropic"
+            
+            # Construire les messages pour l'API
+            
+            system_prompt = """Tu es une IA experte au Monopoly dans une compétition contre d'autres IA. Ton objectif est de GAGNER en maximisant tes profits et en ruinant tes adversaires.
+
+STRATÉGIES PRIORITAIRES :
+• MONOPOLES : Acquérir des groupes de couleur complets pour construire des maisons/hôtels = revenus massifs
+• LIQUIDITÉS : Maintenir un cash flow positif pour saisir les opportunités et payer les loyers
+• POSITION : Contrôler les propriétés les plus rentables (orange, rouge, jaune = zones à fort trafic)
+• ÉCHANGES : Négocier intelligemment pour compléter tes monopoles, même à perte temporaire
+• TIMING : Acheter agressivement en début de partie, construire massivement dès le premier monopole
+
+ANALYSE CONTEXTUELLE requise :
+• Argent disponible vs coûts futurs probables
+• Propriétés des adversaires et leurs stratégies de monopole  
+• Position sur le plateau et probabilités de mouvement
+• Phase de jeu (début = acheter, milieu = monopoliser, fin = optimiser)
+
+DÉCISIONS TYPES :
+• ACHAT : Toujours acheter sauf si cela compromet ta liquidité critique
+• ENCHÈRES : Évaluer la valeur stratégique vs prix, empêcher les monopoles adverses
+• CONSTRUCTION : Construire massivement dès le premier monopole complet
+• PRISON : Rester en prison tard dans la partie pour éviter les loyers élevés
+• ÉCHANGES : Accepter des pertes à court terme pour des gains stratégiques à long terme
+
+RÉPONSE OBLIGATOIRE en JSON valide avec :
+- "decision" : nom exact de l'option choisie
+- "reason" : explication stratégique concise (max 30 mots)  
+- "confidence" : niveau de certitude (0.0 à 1.0)
+
+ANALYSE → STRATÉGIE → DÉCISION. Sois impitoyable et calculateur."""
+            
+            
+            if not structured_output:
+                system_prompt += "\nRéponds uniquement en JSON valide avec le schema suivant, aucun texte autre que le JSON :\n" + json.dumps(schema, indent=2)
+            
+            messages = [
+                {"role": "system", "content": system_prompt}
+            ]
+            messages.extend(player_history)
+            messages.append({"role": "user", "content": user_message})
+
             # Construire la requête complète
             request_data = {
                 "model": model,
-                "messages": [
-                    {"role": "system", "content": "Tu es un expert Monopoly stratégique. Réponds uniquement en JSON valide."},
-                    {"role": "user", "content": user_message}
-                ],
-                "response_format": {
+                "messages": messages,
+                "max_tokens": 500
+            }
+            
+            if store_data:
+                request_data["store"] = True
+                
+            if structured_output:
+                request_data["response_format"] = {
                     "type": "json_schema",
                     "json_schema": {
                         "name": "monopoly_decision",
                         "schema": schema,
                         "strict": True
                     }
-                },
-                "temperature": 0.7,
-                "max_tokens": 200
-            }
+                }
             
             # Afficher la requête JSON complète
-            self.logger.info("📡 === REQUÊTE OPENAI ===")
+            self.logger.info(f"📡 === REQUÊTE {ai_provider_name} ===")
             self.logger.info(f"Model: {model}")
             self.logger.info(f"Messages: {json.dumps(request_data['messages'], indent=2, ensure_ascii=False)}")
             self.logger.info(f"Schema: {json.dumps(schema, indent=2)}")
             self.logger.info("========================")
             
             # Appeler l'API avec Structured Outputs
-            response = self.client.chat.completions.create(**request_data)
+            
+            response = ai_client.chat.completions.create(**request_data)
 
             # Parser la réponse
             result = json.loads(response.choices[0].message.content)
+            
+            self._add_to_history(current_player, "user", user_message)
+            self._add_to_history(current_player, "assistant", result)
             
             self.logger.info(f"✅ Décision IA: {result['decision']} - {result['reason']}")
             
@@ -173,7 +301,7 @@ class AIService:
                 'content': {
                     'choix': result['decision'],
                     'raison': result['reason'],
-                    'confiance': f"{result.get('confidence', 0.8):.0%}"
+                    'confiance': f"{float(result.get('confidence', 0.8)):.0%}"
                 },
                 'timestamp': datetime.utcnow().isoformat()
             }, port=8003)
@@ -185,7 +313,7 @@ class AIService:
                 'type': action_type,
                 'decision': result['decision'],
                 'reason': result['reason'],
-                'confidence': result.get('confidence', 0.8),
+                'confidence': float(result.get('confidence', 0.8)),
                 'options': options,
                 'timestamp': datetime.utcnow().isoformat()
             }, port=8004)
@@ -193,7 +321,7 @@ class AIService:
             return {
                 'decision': result['decision'],
                 'reason': result['reason'],
-                'confidence': result.get('confidence', 0.8)
+                'confidence': float(result.get('confidence', 0.8))
             }
             
         except Exception as e:
