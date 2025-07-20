@@ -92,7 +92,7 @@ class SimplePopupService:
             ai_response = requests.post(
                 f"{self.ai_decision_url}/api/decide",
                 json=ai_request,
-                timeout=30
+                timeout=300  # 5 minutes pour permettre les longues conversations
             )
             
             if not ai_response.ok:
