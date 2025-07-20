@@ -5,6 +5,7 @@ from typing import Dict, List, Any
 from .monopoly import MonopolyGame
 from .listeners import MonopolyListeners
 from src.utils import property_manager
+from src.utils.property_helpers import get_property_house_count
 
 class Contexte:
     """Classe gérant le contexte global du jeu Monopoly"""
@@ -223,19 +224,55 @@ class Contexte:
                         'y_pixel': prop_details['coordinates']['y_pixel']
                     }
                 
+                # Récupérer le nombre de maisons/hôtels sur cette propriété
+                house_count = 0
+                try:
+                    house_count = get_property_house_count(space["name"]) or 0
+                except Exception as e:
+                    # En cas d'erreur, laisser à 0
+                    pass
+                
+                # Calculer le loyer actuel en fonction du nombre de maisons
+                current_rent = 0
+                if owner and house_count >= 0 and house_count < len(rents):
+                    current_rent = rents[house_count]
+                
                 properties.append({
                     "id": prop_id,
                     "name": space["name"],
                     "group": space["color"],
                     "price": price,
                     "rent": rents,
+                    "current_rent": current_rent,  # Loyer actuel basé sur les constructions
                     "house_price": house_price,
                     "owner": owner,
-                    "houses": 0,  # TODO: implémenter la détection des maisons
+                    "houses": house_count,  # Nombre de maisons/hôtel (5 = hôtel)
+                    "has_hotel": house_count == 5,  # True si la propriété a un hôtel
                     "coordinates": coords  # Ajout des coordonnées
                 })
         
         self.context["global"]["properties"] = properties
+        
+        # Ajouter un résumé des constructions
+        total_houses = sum(1 for p in properties if 0 < p["houses"] < 5) 
+        total_hotels = sum(1 for p in properties if p["houses"] == 5)
+        properties_with_buildings = [p for p in properties if p["houses"] > 0]
+        
+        self.context["global"]["buildings_summary"] = {
+            "total_houses": sum(p["houses"] for p in properties if p["houses"] < 5),
+            "total_hotels": total_hotels,
+            "properties_with_houses": [{
+                "name": p["name"],
+                "houses": p["houses"],
+                "owner": p["owner"],
+                "group": p["group"]
+            } for p in properties_with_buildings if p["houses"] < 5],
+            "properties_with_hotels": [{
+                "name": p["name"],
+                "owner": p["owner"],
+                "group": p["group"]
+            } for p in properties_with_buildings if p["houses"] == 5]
+        }
         
         # Mise à jour des joueurs
         players = {}
