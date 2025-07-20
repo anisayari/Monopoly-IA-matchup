@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:33:16.391062",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "next turn ",
+    "accounts "
+  ],
+  "decision": "next turn ",
+  "reason": "Passer au prochain tour permet de gérer mes finances après le paiement de l'impôt et d'évaluer les nouvelles opportunités sur le plateau.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT-Joueur": 906,
+      "Claude-IA": 1114
+    }
+  }
+}

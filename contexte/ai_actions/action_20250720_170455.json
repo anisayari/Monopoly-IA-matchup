@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:04:52.788112",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acheter Euston Road permet de commencer à constituer un monopole sur les propriétés bleues et renforcer ma position.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT-Joueur": 1500,
+      "Claude-IA": 1500
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T14:39:40.334900",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "cancel "
+  ],
+  "decision": "cancel ",
+  "reason": "Aucune opportunité de prêt hypothécaire ne répond à mes objectifs. Conserver mes liquidités et propriétés est plus stratégique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT1": 1719,
+      "Claude": 1630
+    }
+  }
+}

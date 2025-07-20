@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T14:38:50.239073",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "accounts "
+  ],
+  "decision": "accounts ",
+  "reason": "Il est nécessaire de gérer ma liquidité pour faire face aux coûts des loyers, surtout avec des adversaires puissants sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT1": 1719,
+      "Claude": 1630
+    }
+  }
+}

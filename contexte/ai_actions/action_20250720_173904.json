@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:39:02.667047",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "back ",
+    "trade "
+  ],
+  "decision": "trade ",
+  "reason": "Proposer un échange peut alimenter ma stratégie à long terme, surtout si je peux renforcer ma position en propriétés ou liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT-Joueur": 766,
+      "Claude-IA": 574
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:10:43.522070",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acheter Trafalgar Square pour renforcer mon portefeuille et potentiellement créer un monopole avec d'autres propriétés rouges. Cela augmente mes revenus futurs.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT-Joueur": 1406,
+      "Claude-IA": 1494
+    }
+  }
+}

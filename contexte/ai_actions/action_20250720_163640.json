@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T14:36:38.252142",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "Payer le loyer maintenant est nécessaire pour maintenir ma position dans le jeu et éviter une faillite immédiate, tout en planifiant les étapes suivantes.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 18,
+    "money": {
+      "GPT1": 1719,
+      "Claude": 1630
+    }
+  }
+}

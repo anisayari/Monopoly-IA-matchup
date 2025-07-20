@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:16:11.577622",
+  "trigger": "would you like",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acheter King’s Cross Station pour solidifier ma position avec une station supplémentaire, ce qui génère des revenus passifs.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "GPT-Joueur": 966,
+      "Claude-IA": 1314
+    }
+  }
+}

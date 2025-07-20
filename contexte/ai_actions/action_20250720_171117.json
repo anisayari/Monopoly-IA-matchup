@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:11:15.498319",
+  "trigger": "Next Turn",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "accounts ",
+    "next turn "
+  ],
+  "decision": "next turn ",
+  "reason": "Je choisis de passer mon tour pour surveiller les actions de Claude-IA avant de prendre une décision d'achat ou de mouvement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "GPT-Joueur": 1166,
+      "Claude-IA": 1494
+    }
+  }
+}

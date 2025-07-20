@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T14:35:37.117864",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "yes ",
+    "no "
+  ],
+  "decision": "yes ",
+  "reason": "Construire massivement sur les monopoles existants pour maximiser les loyers et mettre la pression sur les adversaires.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT1": 1789,
+      "Claude": 1360
+    }
+  }
+}

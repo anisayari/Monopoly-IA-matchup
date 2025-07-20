@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T14:28:16.064905",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Whitout saving"
+  ],
+  "options": [
+    "continue without saving/loading "
+  ],
+  "decision": "continue without saving/loading ",
+  "reason": "Décision par défaut (IA non disponible)",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT1": 1789,
+      "Claude": 1360
+    }
+  }
+}

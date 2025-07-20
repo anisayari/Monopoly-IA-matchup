@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:35:33.379412",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acquérir Pall Mall renforce ma position avec une propriété de haute valeur et augmente la pression sur Claude-IA pour obtenir l'ensemble des propriétés orange.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT-Joueur": 906,
+      "Claude-IA": 934
+    }
+  }
+}

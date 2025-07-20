@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:12:36.335938",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acheter Bow Street pour renforcer ma position et ajouter une propriété à mon empire immobilier, réduisant les opportunités pour Claude-IA.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "GPT-Joueur": 1166,
+      "Claude-IA": 1494
+    }
+  }
+}

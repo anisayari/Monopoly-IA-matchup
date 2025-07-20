@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-20T15:00:08.151448",
+  "trigger": "would you like",
+  "keywords": [
+    "Who's playing"
+  ],
+  "options": [
+    "house rules ",
+    "next ",
+    "back "
+  ],
+  "decision": "next ",
+  "reason": "Passer ce tour pour voir les décisions des autres joueurs. Avoir plus d'info sur leurs stratégies peut influencer ma prise de décision ultérieure.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT-Joueur": 0,
+      "Claude-IA": 0
+    }
+  }
+}

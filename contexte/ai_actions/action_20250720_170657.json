@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T15:06:55.634855",
+  "trigger": "would you like",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "Je valide la simulation, car je n'ai pas d'autres choix, et cela tient le jeu en marche pour la suite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT-Joueur": 1400,
+      "Claude-IA": 1500
+    }
+  }
+}

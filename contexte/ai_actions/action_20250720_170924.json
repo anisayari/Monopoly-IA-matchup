@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:09:22.288257",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "accounts ",
+    "next turn "
+  ],
+  "decision": "next turn ",
+  "reason": "Passer au tour suivant est crucial pour avancer dans le jeu et explorer davantage d'options d'achat.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT-Joueur": 1406,
+      "Claude-IA": 1494
+    }
+  }
+}

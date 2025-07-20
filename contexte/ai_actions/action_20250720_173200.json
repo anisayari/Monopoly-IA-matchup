@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T15:31:58.039825",
+  "trigger": "Go To Jail",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "Mieux vaut garder ma position et ne pas risquer de perdre de l'argent en négociant avec d'autres. J'ai déjà un bon capital.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT-Joueur": 1106,
+      "Claude-IA": 1114
+    }
+  }
+}

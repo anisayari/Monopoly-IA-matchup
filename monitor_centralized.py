@@ -844,6 +844,10 @@ class CentralizedMonitor:
                             print("🔍 No result found, skipping...")
                             continue
                         if result and result.get('success'):
+                            #IF TRADE BOUCLE DE RESOLUTION
+                            if result.current_event == "trade":
+                                
+                            #IF AUCTION BOUCLE DE RESOLUTION
                             decision = result['decision']
                             options = result.get('options', [])
                             

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T14:38:25.349307",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "back "
+  ],
+  "decision": "back ",
+  "reason": "Pas de gestion nécessaire pour le moment ; je dois conserver ma liquidité et préparer un plan pour le prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT1": 1719,
+      "Claude": 1630
+    }
+  }
+}

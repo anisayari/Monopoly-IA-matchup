@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T13:00:05.035387",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "continue ",
+    "resign "
+  ],
+  "decision": "continue ",
+  "reason": "Décision par défaut (IA non disponible)",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "GPT1": 1260,
+      "Claude": 1040
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T14:37:58.803059",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "accounts ",
+    "roll again "
+  ],
+  "decision": "accounts ",
+  "reason": "Gérer les liquidités est crucial; j'ai besoin de fonds pour faire face aux coûts futurs des loyers des adversaires en monopole.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT1": 1719,
+      "Claude": 1630
+    }
+  }
+}

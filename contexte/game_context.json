@@ -14,9 +14,11 @@
           160,
           250
         ],
+        "current_rent": 2,
         "house_price": 50,
-        "owner": null,
+        "owner": "blue",
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.6359,
           "y_relative": 0.8235,
@@ -37,9 +39,11 @@
           160,
           250
         ],
+        "current_rent": 0,
         "house_price": 50,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.5653,
           "y_relative": 0.8137,
@@ -60,9 +64,11 @@
           0,
           0
         ],
+        "current_rent": 0,
         "house_price": 0,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.5008,
           "y_relative": 0.8147,
@@ -83,9 +89,11 @@
           400,
           550
         ],
+        "current_rent": 0,
         "house_price": 50,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.4653,
           "y_relative": 0.8167,
@@ -106,9 +114,11 @@
           400,
           550
         ],
+        "current_rent": 6,
         "house_price": 50,
-        "owner": null,
+        "owner": "blue",
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3986,
           "y_relative": 0.8157,
@@ -129,9 +139,11 @@
           400,
           550
         ],
+        "current_rent": 0,
         "house_price": 50,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3647,
           "y_relative": 0.8127,
@@ -152,9 +164,11 @@
           625,
           750
         ],
+        "current_rent": 10,
         "house_price": 100,
-        "owner": null,
+        "owner": "blue",
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3204,
           "y_relative": 0.7382,
@@ -175,9 +189,11 @@
           0,
           0
         ],
+        "current_rent": 0,
         "house_price": 0,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.322,
           "y_relative": 0.6725,
@@ -198,9 +214,11 @@
           625,
           750
         ],
+        "current_rent": 0,
         "house_price": 100,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3204,
           "y_relative": 0.6196,
@@ -221,9 +239,11 @@
           625,
           750
         ],
+        "current_rent": 0,
         "house_price": 100,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3188,
           "y_relative": 0.5569,
@@ -244,9 +264,11 @@
           0,
           0
         ],
+        "current_rent": 0,
         "house_price": 0,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3209,
           "y_relative": 0.4961,
@@ -267,9 +289,11 @@
           750,
           950
         ],
+        "current_rent": 14,
         "house_price": 100,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3209,
           "y_relative": 0.4422,
@@ -290,9 +314,11 @@
           750,
           950
         ],
+        "current_rent": 14,
         "house_price": 100,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3188,
           "y_relative": 0.3275,
@@ -313,9 +339,11 @@
           750,
           950
         ],
+        "current_rent": 0,
         "house_price": 100,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3182,
           "y_relative": 0.2706,
@@ -336,9 +364,11 @@
           875,
           1050
         ],
+        "current_rent": 0,
         "house_price": 150,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3674,
           "y_relative": 0.1824,
@@ -359,9 +389,11 @@
           875,
           1050
         ],
+        "current_rent": 0,
         "house_price": 150,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.4314,
           "y_relative": 0.1853,
@@ -382,9 +414,11 @@
           875,
           1050
         ],
+        "current_rent": 18,
         "house_price": 150,
-        "owner": "red",
+        "owner": "blue",
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.4675,
           "y_relative": 0.1863,
@@ -405,9 +439,11 @@
           0,
           0
         ],
+        "current_rent": 25,
         "house_price": 0,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.5014,
           "y_relative": 0.1853,
@@ -428,9 +464,11 @@
           975,
           1150
         ],
+        "current_rent": 22,
         "house_price": 150,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.5336,
           "y_relative": 0.1824,
@@ -451,9 +489,11 @@
           975,
           1150
         ],
+        "current_rent": 0,
         "house_price": 150,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.5664,
           "y_relative": 0.1833,
@@ -474,9 +514,11 @@
           0,
           0
         ],
+        "current_rent": 0,
         "house_price": 0,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.6031,
           "y_relative": 0.1824,
@@ -497,9 +539,11 @@
           975,
           1150
         ],
+        "current_rent": 0,
         "house_price": 150,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.6359,
           "y_relative": 0.1794,
@@ -520,9 +564,11 @@
           1100,
           1275
         ],
+        "current_rent": 0,
         "house_price": 200,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.6845,
           "y_relative": 0.2647,
@@ -543,9 +589,11 @@
           1100,
           1275
         ],
+        "current_rent": 0,
         "house_price": 200,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.6829,
           "y_relative": 0.3235,
@@ -566,9 +614,11 @@
           1100,
           1275
         ],
+        "current_rent": 0,
         "house_price": 200,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.6791,
           "y_relative": 0.4441,
@@ -589,9 +639,11 @@
           0,
           0
         ],
+        "current_rent": 25,
         "house_price": 0,
-        "owner": null,
+        "owner": "blue",
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.6807,
           "y_relative": 0.502,
@@ -612,9 +664,11 @@
           1300,
           1500
         ],
+        "current_rent": 0,
         "house_price": 200,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.6823,
           "y_relative": 0.6157,
@@ -635,9 +689,11 @@
           1700,
           2000
         ],
+        "current_rent": 0,
         "house_price": 200,
         "owner": null,
         "houses": 0,
+        "has_hotel": false,
         "coordinates": {
           "x_relative": 0.6796,
           "y_relative": 0.7353,
@@ -646,108 +702,156 @@
         }
       }
     ],
-    "current_turn": 2,
+    "current_turn": 3,
     "player_count": 2,
     "player_names": [
-      "GPT1",
-      "Claude"
+      "GPT-Joueur",
+      "Claude-IA"
     ],
-    "current_player": "player2"
+    "current_player": "player2",
+    "buildings_summary": {
+      "total_houses": 0,
+      "total_hotels": 0,
+      "properties_with_houses": [],
+      "properties_with_hotels": []
+    }
   },
   "events": [
     {
-      "turn": 0,
-      "player": "GPT1",
-      "action": "join_game",
-      "detail": null,
-      "message": "GPT1 a rejoint la partie de Monopoly."
-    },
-    {
-      "turn": 0,
-      "player": "Claude",
-      "action": "join_game",
-      "detail": null,
-      "message": "Claude a rejoint la partie de Monopoly."
-    },
-    {
-      "turn": 0,
-      "player": "GPT1",
-      "action": "buy_property",
-      "detail": "The Angel Islington pour 100€",
-      "message": "GPT1 achète The Angel Islington pour 100€."
-    },
-    {
-      "turn": 0,
-      "player": "GPT1",
-      "action": "buy_property",
-      "detail": "Whitehall pour 140€",
-      "message": "GPT1 achète Whitehall pour 140€."
-    },
-    {
-      "turn": 1,
-      "player": "Claude",
-      "action": "buy_property",
-      "detail": "Whitechapel Road pour 60€",
-      "message": "Claude achète Whitechapel Road pour 60€."
-    },
-    {
-      "turn": 1,
-      "player": "Claude",
-      "action": "buy_property",
-      "detail": "Trafalgar Square pour 240€",
-      "message": "Claude achète Trafalgar Square pour 240€."
-    },
-    {
-      "turn": 2,
-      "player": "Claude",
-      "action": "buy_property",
-      "detail": "Northumberland Avenue pour 160€",
-      "message": "Claude achète Northumberland Avenue pour 160€."
-    },
-    {
-      "turn": 2,
+      "turn": 3,
       "player": "System",
-      "action": "jail_options",
-      "detail": "Do you want to pay the bail, roll for doubles or use a get out of free jail card (if you have one)?",
-      "message": "System doit choisir comment sortir de prison."
+      "action": "property_offer",
+      "detail": "Do you want to buy Pall Mall for ~140?",
+      "message": "System a la possibilité d'acheter Pall Mall."
     },
     {
-      "turn": 2,
+      "turn": 3,
+      "player": "GPT-Joueur",
+      "action": "pay_money",
+      "detail": "140€ (transaction)",
+      "message": "GPT-Joueur paie 140€ pour transaction."
+    },
+    {
+      "turn": 3,
+      "player": "System",
+      "action": "message",
+      "detail": "Wh逃? would you like to do?",
+      "message": "Message: Wh逃? would you like to do?"
+    },
+    {
+      "turn": 3,
+      "player": "Claude-IA",
+      "action": "move_and_buy",
+      "detail": "Leicester Square -> Leicester Square pour 260€",
+      "message": "Claude-IA s'est déplacé sur Leicester Square et l'a acheté pour 260€."
+    },
+    {
+      "turn": 3,
+      "player": "Claude-IA",
+      "action": "goto",
+      "detail": "Leicester Square",
+      "message": "Claude-IA se déplace directement vers Leicester Square."
+    },
+    {
+      "turn": 3,
+      "player": "Claude-IA",
+      "action": "move",
+      "detail": "Free Parking",
+      "message": "Claude-IA arrive sur Free Parking."
+    },
+    {
+      "turn": 3,
+      "player": "System",
+      "action": "property_offer",
+      "detail": "Do you want to buy Leicester Square for ~260?",
+      "message": "System a la possibilité d'acheter Leicester Square."
+    },
+    {
+      "turn": 3,
+      "player": "Claude-IA",
+      "action": "pay_money",
+      "detail": "260€ (transaction)",
+      "message": "Claude-IA paie 260€ pour transaction."
+    },
+    {
+      "turn": 3,
+      "player": "Claude-IA",
+      "action": "roll_dice",
+      "detail": "6+6=12",
+      "message": "Claude-IA a lancé les dés et avance de 12 cases."
+    },
+    {
+      "turn": 3,
+      "player": "Claude-IA",
+      "action": "move",
+      "detail": "Super Tax",
+      "message": "Claude-IA arrive sur Super Tax."
+    },
+    {
+      "turn": 3,
+      "player": "Claude-IA",
+      "action": "goto",
+      "detail": "Super Tax",
+      "message": "Claude-IA se déplace directement vers Super Tax."
+    },
+    {
+      "turn": 3,
+      "player": "Claude-IA",
+      "action": "move_and_buy",
+      "detail": "Park Lane -> Park Lane pour 350€",
+      "message": "Claude-IA s'est déplacé sur Park Lane et l'a acheté pour 350€."
+    },
+    {
+      "turn": 3,
+      "player": "Claude-IA",
+      "action": "pay_money",
+      "detail": "100€ (taxe ou carte chance/caisse de communauté)",
+      "message": "Claude-IA paie 100€ pour taxe ou carte chance/caisse de communauté."
+    },
+    {
+      "turn": 3,
+      "player": "System",
+      "action": "message",
+      "detail": "Ro逃틀 Again",
+      "message": "Message: Ro逃틀 Again"
+    },
+    {
+      "turn": 3,
       "player": "System",
       "action": "message",
       "detail": "Trade",
       "message": "Message: Trade"
     },
     {
-      "turn": 2,
+      "turn": 3,
       "player": "System",
       "action": "message",
       "detail": "1 Owned",
       "message": "Message: 1 Owned"
     },
     {
-      "turn": 2,
+      "turn": 3,
       "player": "System",
       "action": "message",
       "detail": "4 Owned",
       "message": "Message: 4 Owned"
     },
     {
-      "turn": 2,
+      "turn": 3,
       "player": "System",
       "action": "message",
       "detail": "2 Owned",
       "message": "Message: 2 Owned"
     },
     {
-      "turn": 2,
+      "turn": 3,
       "player": "System",
       "action": "message",
       "detail": "3 Owned",
       "message": "Message: 3 Owned"
     },
     {
-      "turn": 2,
+      "turn": 3,
       "player": "System",
       "action": "message",
       "detail": "Un-mortgage Value",
@@ -756,58 +860,78 @@
   ],
   "players": {
     "player1": {
-      "name": "GPT1",
+      "name": "GPT-Joueur",
       "current_player": false,
       "is_current": false,
       "dice_result": [
         2,
         5
       ],
-      "money": 1260,
+      "money": 766,
       "properties": [
         {
-          "id": 6,
-          "name": "The Angel Islington",
+          "id": 8,
+          "name": "Euston Road",
           "group": "light_blue"
-        },
-        {
-          "id": 13,
-          "name": "Whitehall",
-          "group": "pink"
-        }
-      ],
-      "position": 13,
-      "current_space": "Whitehall",
-      "jail": false
-    },
-    "player2": {
-      "name": "Claude",
-      "current_player": true,
-      "is_current": true,
-      "dice_result": [
-        6,
-        2
-      ],
-      "money": 1040,
-      "properties": [
-        {
-          "id": 3,
-          "name": "Whitechapel Road",
-          "group": "brown"
-        },
-        {
-          "id": 14,
-          "name": "Northumberland Avenue",
-          "group": "pink"
         },
         {
           "id": 24,
           "name": "Trafalgar Square",
           "group": "red"
+        },
+        {
+          "id": 35,
+          "name": "Liverpool Street Station",
+          "group": "station"
+        },
+        {
+          "id": 1,
+          "name": "Old Kent Road",
+          "group": "brown"
+        },
+        {
+          "id": 11,
+          "name": "Pall Mall",
+          "group": "pink"
         }
       ],
-      "position": 24,
-      "current_space": "Trafalgar Square",
+      "position": 11,
+      "current_space": "Pall Mall",
+      "jail": false
+    },
+    "player2": {
+      "name": "Claude-IA",
+      "current_player": true,
+      "is_current": true,
+      "dice_result": [
+        6,
+        6
+      ],
+      "money": 574,
+      "properties": [
+        {
+          "id": 16,
+          "name": "Bow Street",
+          "group": "orange"
+        },
+        {
+          "id": 25,
+          "name": "Fenchurch Street Station",
+          "group": "station"
+        },
+        {
+          "id": 18,
+          "name": "Marlborough Street",
+          "group": "orange"
+        },
+        {
+          "id": 26,
+          "name": "Leicester Square",
+          "group": "yellow"
+        }
+      ],
+      "position": 38,
+      "current_space": "Super Tax",
       "jail": false
     }
   },

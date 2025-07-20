@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T15:08:46.746852",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "J'accepte de payer le loyer, car Claude-IA est sur ma propriété, cela fait partie du jeu et je dois éviter de perturber mes finances.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT-Joueur": 1406,
+      "Claude-IA": 1494
+    }
+  }
+}

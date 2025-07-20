@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T15:33:41.579138",
+  "trigger": "Do you want to pay the bail, roll for doubles or use a get out of free jail card (if you have one)?",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "roll dice "
+  ],
+  "decision": "roll dice ",
+  "reason": "Il est judicieux de tenter de sortir de la case Jail, car cela me permettra de revenir dans le jeu et d'acquérir d'autres propriétés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT-Joueur": 906,
+      "Claude-IA": 1114
+    }
+  }
+}

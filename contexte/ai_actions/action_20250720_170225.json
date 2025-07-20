@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T15:02:22.899059",
+  "trigger": "would you like",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "Je vais choisir d'acheter les propriétés disponibles pour construire un meilleur empire immobilier et influencer la dynamique du jeu. ",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT-Joueur": 1500,
+      "Claude-IA": 1500
+    }
+  }
+}

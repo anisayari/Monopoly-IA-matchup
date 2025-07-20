@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T14:49:33.552152",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "continue ",
+    "resign "
+  ],
+  "decision": "continue ",
+  "reason": "Je possède plusieurs monopoles rentables et mon argent est suffisant pour construire des maisons, ce qui augmentera mes revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT1": 1719,
+      "Claude": 1630
+    }
+  }
+}

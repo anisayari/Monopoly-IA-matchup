@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:14:18.703306",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acheter Liverpool Street Station pour diversifier mes revenus et générer des loyers supplémentaires grâce aux stations.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "GPT-Joueur": 1166,
+      "Claude-IA": 1314
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T14:39:15.362660",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "back ",
+    "trade "
+  ],
+  "decision": "trade ",
+  "reason": "Évaluer la possibilité d'échanges stratégiques peut optimisés mes monopoles ou renforcer ma position avec des propriétés clés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT1": 1719,
+      "Claude": 1630
+    }
+  }
+}

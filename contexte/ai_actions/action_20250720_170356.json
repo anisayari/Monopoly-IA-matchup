@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T15:03:53.890796",
+  "trigger": "would you like",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "ok "
+  ],
+  "decision": "ok ",
+  "reason": "Je confirme l'achat des propriétés disponibles pour commencer à générer des revenus et augmenter ma position sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT-Joueur": 1500,
+      "Claude-IA": 1500
+    }
+  }
+}

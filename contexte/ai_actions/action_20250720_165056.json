@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T14:50:54.204885",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "back ",
+    "trade "
+  ],
+  "decision": "trade ",
+  "reason": "Négocier un échange pourrait renforcer ma position tout en affaiblissant Claude, qui possède de nombreux monopoles. C’est une chance de créer une alliance.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT1": 1719,
+      "Claude": 1630
+    }
+  }
+}

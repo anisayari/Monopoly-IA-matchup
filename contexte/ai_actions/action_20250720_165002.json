@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T14:50:00.223768",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "back ",
+    "trade "
+  ],
+  "decision": "trade ",
+  "reason": "Je peux créer des alliances potentielles pour éviter des échecs futurs tout en renforçant ma position. Un échange stratégique pourrait être bénéfique.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT1": 1719,
+      "Claude": 1630
+    }
+  }
+}

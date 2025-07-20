@@ -204,6 +204,7 @@ class AIService:
             }
 
             # Construire le message utilisateur
+            chat_messages = '\n'.join(self.global_chat_messages)
             user_message = f"""
 <game_context>
     Contexte actuel:
@@ -212,12 +213,12 @@ class AIService:
 
 <popup_data>
     Texte du popup: "{popup_text}"
-    Options disponibles: {', '.join(options)}
+    Options disponibles: {', '.join(extended_options)}
 </popup_data>
 
 <chat_global>
     Messages du chat global du jeu:
-    {"\n".join(self.global_chat_messages)}
+    {chat_messages}
 </chat_global>
 
 Choisis la meilleure option stratégique."""
@@ -253,28 +254,20 @@ Choisis la meilleure option stratégique."""
             
             # Construire les messages pour l'API
             
-            system_prompt = """Tu es une IA experte au Monopoly dans une compétition contre d'autres IA. Ton objectif est de GAGNER en maximisant tes profits et en ruinant tes adversaires.
+            system_prompt = """Tu es une IA qui joue au Monopoly dans une compétition contre une autre IA. Ton objectif est de GAGNER.
 
-ANALYSE CONTEXTUELLE requise :
-• Argent disponible vs coûts futurs probables
-• Propriétés des adversaires et leurs stratégies de monopole  
-• Position sur le plateau et probabilités de mouvement
-• Phase de jeu (début = acheter, milieu = monopoliser, fin = optimiser)
+Tu as accés au contexte du jeu entre chaque tour. Et tu dois prendre des décisions en fonctions de tes options.
 
+A n'importe quel moment tu peux utiliser la decisions TALK_TO_OTHER_PLAYERS pour discuter avec les autres joueurs.
 
-OPTION: TALK_TO_OTHER_PLAYERS :
-- Cette option permet d'engager une conversation avec les autres joueurs.
-- Utilise cette option pour négocier / poser des questions / faire des propositions / etc.
-- Ne l'utilise que quand tu as besoin d'une réponse de l'un des autres joueurs.
-- Tu pourras choisir l'option à choisir pour continuer la partie à la fin de la conversation.
+IMPORTANT: Si tu veux terminer cette conversation, tu DOIS répondre UNIQUEMENT avec le texte exact:  END_CONVERSATION Ne rajoute RIEN d'autre, pas de ponctuation, pas d'espaces. Juste ces deux mots. Si la conversation semble terminée (remerciements échangés, au revoir dit),réponds immédiatement: END_CONVERSATION.
 
 RÉPONSE OBLIGATOIRE en JSON valide avec :
-- "decision" : nom exact de l'option choisie ou "talk_to_other_players" si tu veux engager une conversation avec les autres joueurs.
+- "decision" : nom exact de l'option choisie .
 - "reason" : explication stratégique concise (max 30 mots)  
 - "confidence" : niveau de certitude (0.0 à 1.0)
 - "chat_message" : message a envoyer dans le chat global du jeu. Visible par tous les joueurs.
-
-ANALYSE → STRATÉGIE → DÉCISION. Sois impitoyable et calculateur."""
+"""
             
             
             if not structured_output:
@@ -321,11 +314,11 @@ ANALYSE → STRATÉGIE → DÉCISION. Sois impitoyable et calculateur."""
             result = json.loads(response.choices[0].message.content)
             
             self._add_to_history(current_player, "user", user_message)
-            self._add_to_history(current_player, "assistant", result)
+            self._add_to_history(current_player, "assistant", json.dumps(result))
 
             self.global_chat_messages.append(f"{player_name} : {result['chat_message']}")
             
-            
+            #result['decision'] = "talk_to_other_players" #FORCE TO TEST
             ## Gestion de la conversation avec les autres joueurs
             if result['decision'] == "talk_to_other_players":
                 self.logger.info("💬 Début d'une conversation avec les autres joueurs")
@@ -616,6 +609,7 @@ ANALYSE → STRATÉGIE → DÉCISION. Sois impitoyable et calculateur."""
             player_need_answer = "player1"
             self.logger.info(f"💬 {player2_name} : {result['chat_message']}")
         while True:
+            conversation_messages = '\n'.join(conversation_data)
             messages = [
                 {"role": "system", "content": f"""
 Tu es une IA experte au Monopoly dans une compétition contre d'autres IA.
@@ -636,7 +630,7 @@ Tu es le joueur {player_need_answer} ({player1_name if player_need_answer == "pl
 
 <conversation>
     Messages de la conversation:
-    {"\n".join(conversation_data)}
+    {conversation_messages}
 </conversation>
 
 Répond au message de l'autre joueur ou répond le texte "END_CONVERSATION" pour terminer la conversation."""}
@@ -657,7 +651,7 @@ Répond au message de l'autre joueur ou répond le texte "END_CONVERSATION" pour
                 new_request_data['messages'].append({"role": "user", "content": f"""Tu as terminé la conversation avec l'autre joueur.
 <conversation>
     Messages de la conversation:
-    {"\n".join(conversation_data)}
+    {conversation_messages}
 </conversation>
 
 <popup_data>
@@ -674,13 +668,22 @@ Répond maintenant à la question du popup."""})
                     self.logger.error(f"Erreur parsing JSON après conversation: {e}")
                     new_result = result  # fallback
                 self._add_to_history(current_player, "user", user_message)
-                self._add_to_history(current_player, "assistant", new_result)
+                self._add_to_history(current_player, "assistant", json.dumps(new_result))
                 return new_result
             # Alterner le joueur qui doit répondre
             player_need_answer = "player2" if player_need_answer == "player1" else "player1"
 
 # Instance globale du service (singleton)
 _ai_service_instance = None
+
+def get_ai_decision_json(last_messages):
+    system_prompt = """Tu dois retourner un JSON valide avec le schema suivant, aucun texte autre que le JSON :"""
+    response = ai_client.chat.completions.create(
+    model="gpt-4.1",
+    messages=last_messages,
+    max_tokens=500
+            )
+    return json
 
 def get_ai_service() -> AIService:
     """Retourne l'instance singleton du service IA"""

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:21:36.559942",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "next turn ",
+    "accounts "
+  ],
+  "decision": "next turn ",
+  "reason": "Éviter de bloquer le tour pour négocier, permettant de revenir à Claude-IA plus tard après qu'il ait joué et eu le temps de réfléchir.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "GPT-Joueur": 966,
+      "Claude-IA": 1114
+    }
+  }
+}

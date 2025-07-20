@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:30:37.982622",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "auction ",
+    "buy "
+  ],
+  "decision": "buy ",
+  "reason": "Acheter Old Kent Road renforce ma position en début de jeu et commence à construire un monopole sur le secteur marron.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT-Joueur": 1166,
+      "Claude-IA": 1114
+    }
+  }
+}

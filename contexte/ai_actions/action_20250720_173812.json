@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T15:38:09.792985",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "accounts "
+  ],
+  "decision": "accounts ",
+  "reason": "Vérifier les états financiers me permettra de mieux planifier ma stratégie d'achat et d'évaluer la situation par rapport à Claude-IA.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT-Joueur": 766,
+      "Claude-IA": 574
+    }
+  }
+}

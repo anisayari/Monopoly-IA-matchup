@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-20T15:00:43.563537",
+  "trigger": "would you like",
+  "keywords": [
+    "Who's playing"
+  ],
+  "options": [
+    "house rules ",
+    "next ",
+    "back "
+  ],
+  "decision": "next ",
+  "reason": "Je continue le tour en attendant que Claude-IA prenne sa décision pour ensuite analyser ses actions et stratégies.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT-Joueur": 0,
+      "Claude-IA": 0
+    }
+  }
+}

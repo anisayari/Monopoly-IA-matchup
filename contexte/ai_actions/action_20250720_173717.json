@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:37:15.192528",
+  "trigger": "Roll Again",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "roll again ",
+    "accounts "
+  ],
+  "decision": "roll again ",
+  "reason": "Tenter à nouveau de lancer les dés permet d'avancer et d'éventuellement acquérir de nouvelles propriétés pour renforcer ma position.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT-Joueur": 766,
+      "Claude-IA": 674
+    }
+  }
+}

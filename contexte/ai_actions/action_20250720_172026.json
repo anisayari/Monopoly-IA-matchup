@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T15:20:24.107171",
+  "trigger": "MORTGAGE",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "accounts "
+  ],
+  "decision": "accounts ",
+  "reason": "Première option disponible",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "GPT-Joueur": 966,
+      "Claude-IA": 1114
+    }
+  }
+}

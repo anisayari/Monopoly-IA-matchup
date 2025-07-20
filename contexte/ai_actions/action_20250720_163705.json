@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T14:37:02.953902",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "accounts ",
+    "next turn "
+  ],
+  "decision": "next turn ",
+  "reason": "Passer au tour suivant pour minimiser les impacts et évaluer les mouvements de l'adversaire tout en préparant des actions futures.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 18,
+    "money": {
+      "GPT1": 1719,
+      "Claude": 1630
+    }
+  }
+}

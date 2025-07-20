@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T15:05:24.955987",
+  "trigger": "Roll Again",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "accounts ",
+    "roll again "
+  ],
+  "decision": "roll again ",
+  "reason": "Lancer à nouveau me donne une chance d'atterrir sur d'autres propriétés, idéal pour construire mon monopole.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT-Joueur": 1400,
+      "Claude-IA": 1500
+    }
+  }
+}
