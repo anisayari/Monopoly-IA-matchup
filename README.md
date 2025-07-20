@@ -145,13 +145,38 @@ pip install numpy==1.26.4
 docker run -d --name monopoly-redis -p 6379:6379 redis:alpine
 ```
 
-### Step 5: Configure AI (Optional)
-```bash
-# Windows
-setx OPENAI_API_KEY "your-api-key"
+### Step 5: Configure AI (Required for AI features)
 
-# Or create .env file
-echo OPENAI_API_KEY=your-api-key > .env
+Create a `.env` file in the project root with your API keys:
+
+```bash
+# Copy the example file
+cp .env.example .env
+
+# Edit .env and add your API keys
+# You need at least one provider configured
+```
+
+Add your API keys in `.env`:
+```env
+# OpenAI (GPT models)
+OPENAI_API_KEY=sk-...
+
+# Anthropic (Claude models)
+ANTHROPIC_API_KEY=sk-ant-...
+
+# Google (Gemini models)
+GEMINI_API_KEY=AIza...
+```
+
+**Get API Keys:**
+- 🤖 OpenAI: https://platform.openai.com/api-keys
+- 🧠 Anthropic: https://console.anthropic.com/settings/keys
+- 💎 Google Gemini: https://makersuite.google.com/app/apikey
+
+**Verify Configuration:**
+```bash
+python check_api_keys.py
 ```
 
 ## 🎮 Usage
@@ -450,7 +475,44 @@ http://localhost:5000
 
 ## 🔧 Installation et Configuration
 
-[Voir la section anglaise pour les détails complets]
+### Prérequis
+- Python 3.11+
+- GPU NVIDIA (pour OmniParser)
+- Dolphin Emulator
+- Windows 10/11
+
+### Configuration des clés API
+
+Créez un fichier `.env` à la racine du projet:
+
+```bash
+# Copier le fichier exemple
+cp .env.example .env
+
+# Éditer .env et ajouter vos clés API
+```
+
+Ajoutez vos clés dans `.env`:
+```env
+# OpenAI (modèles GPT)
+OPENAI_API_KEY=sk-...
+
+# Anthropic (modèles Claude)
+ANTHROPIC_API_KEY=sk-ant-...
+
+# Google (modèles Gemini)
+GEMINI_API_KEY=AIza...
+```
+
+**Obtenir des clés API:**
+- 🤖 OpenAI: https://platform.openai.com/api-keys
+- 🧠 Anthropic: https://console.anthropic.com/settings/keys
+- 💎 Google Gemini: https://makersuite.google.com/app/apikey
+
+**Vérifier la configuration:**
+```bash
+python check_api_keys.py
+```
 
 ## 🎮 Utilisation
 
