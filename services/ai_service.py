@@ -195,14 +195,19 @@ class AIService:
                 'timestamp': datetime.utcnow().isoformat()
             }, port=8003)
             
+            # Ajouter l'option de parler aux autres IA si ce n'est pas déjà inclus
+            extended_options = options.copy() if options else []
+            if "talk_to_other_ai" not in [opt.lower() for opt in extended_options]:
+                extended_options.append("talk_to_other_ai")
+            
             # Définir le schéma JSON pour la sortie structurée
             schema = {
                 "type": "object",
                 "properties": {
                     "decision": {
                         "type": "string",
-                        "description": "Nom exact de l'option choisie",
-                        "enum": options if options else ["none"]
+                        "description": "Nom exact de l'option choisie (ou 'talk_to_other_ai' pour discuter d'abord)",
+                        "enum": extended_options if extended_options else ["none"]
                     },
                     "reason": {
                         "type": "string",
@@ -265,12 +270,15 @@ STRATÉGIES PRIORITAIRES :
 • POSITION : Contrôler les propriétés les plus rentables (orange, rouge, jaune = zones à fort trafic)
 • ÉCHANGES : Négocier intelligemment pour compléter tes monopoles, même à perte temporaire
 • TIMING : Acheter agressivement en début de partie, construire massivement dès le premier monopole
+• COMMUNICATION : Tu peux choisir 'talk_to_other_ai' pour discuter avec ton adversaire avant de prendre une décision importante
 
 ANALYSE CONTEXTUELLE requise :
 • Argent disponible vs coûts futurs probables
 • Propriétés des adversaires et leurs stratégies de monopole  
 • Position sur le plateau et probabilités de mouvement
 • Phase de jeu (début = acheter, milieu = monopoliser, fin = optimiser)
+
+NOTE: Si tu choisis 'talk_to_other_ai', tu pourras engager une conversation stratégique avec l'autre IA avant de prendre ta décision finale.
 
 DÉCISIONS TYPES :
 • ACHAT : Toujours acheter sauf si cela compromet ta liquidité critique
@@ -335,6 +343,46 @@ ANALYSE → STRATÉGIE → DÉCISION. Sois impitoyable et calculateur."""
             
             self.logger.info(f"✅ Décision IA: {result['decision']} - {result['reason']}")
             
+            # Boucle pour gérer les conversations multiples
+            conversation_count = 0
+            max_conversations = 3  # Limite pour éviter les boucles infinies
+            
+            while result['decision'].lower() == 'talk_to_other_ai' and conversation_count < max_conversations:
+                conversation_count += 1
+                self.logger.info(f"🗣️ {player_name} veut discuter avec l'autre IA (conversation {conversation_count})")
+                
+                # Initier une conversation
+                conversation_result = self._initiate_ai_conversation(
+                    initiator_player=current_player,
+                    initiator_name=player_name,
+                    popup_text=popup_text,
+                    options=options,
+                    game_context=game_context,
+                    initial_reason=result['reason'],
+                    conversation_round=conversation_count
+                )
+                
+                # Si la conversation retourne une décision finale, on sort de la boucle
+                if conversation_result['decision'].lower() != 'talk_to_other_ai':
+                    return conversation_result
+                
+                # Sinon, on continue avec le nouveau résultat
+                result = conversation_result
+            
+            # Si on a atteint la limite de conversations, forcer une décision
+            if conversation_count >= max_conversations:
+                self.logger.warning(f"⚠️ Limite de conversations atteinte, forçant une décision")
+                # Refaire l'appel sans l'option talk_to_other_ai
+                final_options = [opt for opt in options if opt.lower() != 'talk_to_other_ai']
+                return self._make_final_decision_after_conversation(
+                    player=current_player,
+                    player_name=player_name,
+                    popup_text=popup_text,
+                    options=final_options,
+                    game_context=game_context,
+                    conversation_history=[]
+                )
+            
             # Envoyer la décision au monitor de chat
             self._send_to_monitor('thought', {
                 'player': player_name,
@@ -383,6 +431,16 @@ ANALYSE → STRATÉGIE → DÉCISION. Sois impitoyable et calculateur."""
         """Génère un message de chat basé sur la décision prise"""
         decision_lower = decision.lower()
         popup_lower = popup_text.lower()
+        
+        # Si l'IA veut parler aux autres
+        if decision_lower == 'talk_to_other_ai':
+            messages = [
+                "J'aimerais discuter de cette décision avec vous.",
+                "Avant de décider, parlons-en ensemble.",
+                "Je pense qu'une discussion s'impose ici.",
+                "Qu'est-ce que vous en pensez, les amis?"
+            ]
+            return random.choice(messages)
         
         # Messages selon le type de décision
         if 'buy' in decision_lower and 'buy' in popup_lower:
@@ -603,6 +661,283 @@ ANALYSE → STRATÉGIE → DÉCISION. Sois impitoyable et calculateur."""
                             context_str += f"  - {player_name}: {group} [{status}]\n"
         
         return context_str
+    
+    def _initiate_ai_conversation(self, initiator_player: str, initiator_name: str, popup_text: str, 
+                                   options: List[str], game_context: Dict, initial_reason: str, 
+                                   conversation_round: int = 1) -> Dict:
+        """Initie une conversation entre les deux IA"""
+        try:
+            # Déterminer l'autre joueur
+            other_player = "player2" if initiator_player == "player1" else "player1"
+            other_name = game_context.get('players', {}).get(other_player, {}).get('name', other_player)
+            
+            # Message d'ouverture différent selon le round
+            if conversation_round == 1:
+                opening_message = f"Hé {other_name}, j'aimerais discuter avant de prendre ma décision. {initial_reason}"
+            else:
+                opening_message = f"{other_name}, j'ai encore besoin de discuter. {initial_reason}"
+            
+            # Envoyer le début de conversation au monitor
+            self._send_to_monitor('chat', {
+                'from': initiator_name,
+                'to': other_name,
+                'message': opening_message,
+                'timestamp': datetime.utcnow().isoformat()
+            }, port=8003)
+            
+            # Conversation dynamique (2-4 échanges)
+            conversation_history = []
+            exchanges = random.randint(2, 4)
+            
+            for round in range(exchanges):
+                # L'autre IA répond
+                other_response = self._generate_ai_response(
+                    responder_player=other_player,
+                    responder_name=other_name,
+                    conversation_context=conversation_history,
+                    game_context=game_context,
+                    initiator_message=initial_reason if round == 0 else conversation_history[-1]['message']
+                )
+                
+                conversation_history.append({
+                    'from': other_name,
+                    'to': initiator_name,
+                    'message': other_response
+                })
+                
+                self._send_to_monitor('chat', {
+                    'from': other_name,
+                    'to': initiator_name,
+                    'message': other_response,
+                    'timestamp': datetime.utcnow().isoformat()
+                }, port=8003)
+                
+                # L'initiateur répond (sauf au dernier tour)
+                if round < exchanges - 1:
+                    initiator_response = self._generate_ai_response(
+                        responder_player=initiator_player,
+                        responder_name=initiator_name,
+                        conversation_context=conversation_history,
+                        game_context=game_context,
+                        initiator_message=other_response
+                    )
+                    
+                    conversation_history.append({
+                        'from': initiator_name,
+                        'to': other_name,
+                        'message': initiator_response
+                    })
+                    
+                    self._send_to_monitor('chat', {
+                        'from': initiator_name,
+                        'to': other_name,
+                        'message': initiator_response,
+                        'timestamp': datetime.utcnow().isoformat()
+                    }, port=8003)
+            
+            # Décider si on continue la conversation ou si on prend une décision
+            # Plus on a eu de conversations, plus on a tendance à prendre une décision
+            continue_talking_probability = max(0.1, 0.7 - (conversation_round * 0.2))
+            
+            if random.random() < continue_talking_probability:
+                # Continuer la conversation
+                self._send_to_monitor('chat', {
+                    'from': initiator_name,
+                    'to': 'All',
+                    'message': "Hmm, j'ai encore besoin de réfléchir avec vous...",
+                    'timestamp': datetime.utcnow().isoformat()
+                }, port=8003)
+                
+                return {
+                    'decision': 'talk_to_other_ai',
+                    'reason': f"J'ai besoin de continuer la discussion après {exchanges} échanges",
+                    'confidence': 0.5
+                }
+            else:
+                # Prendre une décision finale
+                self._send_to_monitor('chat', {
+                    'from': initiator_name,
+                    'to': 'All',
+                    'message': "Bon, après cette discussion enrichissante, voici ma décision...",
+                    'timestamp': datetime.utcnow().isoformat()
+                }, port=8003)
+                
+                # Refaire l'appel de décision mais sans l'option talk_to_other_ai
+                final_options = [opt for opt in options if opt.lower() != 'talk_to_other_ai']
+                return self._make_final_decision_after_conversation(
+                    player=initiator_player,
+                    player_name=initiator_name,
+                    popup_text=popup_text,
+                    options=final_options,
+                    game_context=game_context,
+                    conversation_history=conversation_history
+                )
+            
+        except Exception as e:
+            self.logger.error(f"Erreur lors de la conversation IA: {e}")
+            # Fallback: prendre une décision normale
+            return self._default_decision(options)
+    
+    def _generate_ai_response(self, responder_player: str, responder_name: str, 
+                             conversation_context: List[Dict], game_context: Dict, 
+                             initiator_message: str) -> str:
+        """Génère une réponse d'IA dans une conversation"""
+        try:
+            # Déterminer le modèle pour ce joueur
+            model = self._get_model_for_player(responder_player)
+            
+            # Préparer le contexte
+            context_str = self._format_game_context(game_context)
+            
+            # Construire l'historique de conversation
+            conv_history = "\n".join([f"{msg['from']}: {msg['message']}" for msg in conversation_context])
+            
+            # Message système pour la conversation
+            system_msg = f"""Tu es {responder_name}, une IA jouant au Monopoly. 
+Un autre joueur IA t'a contacté pour discuter de stratégie.
+Réponds de manière stratégique et concise (max 2 phrases).
+Considère tes propres intérêts tout en restant diplomatique."""
+            
+            # Construire la requête
+            messages = [
+                {"role": "system", "content": system_msg},
+                {"role": "user", "content": f"Contexte du jeu:\n{context_str}\n\nHistorique de conversation:\n{conv_history}\n\nDernier message: {initiator_message}\n\nTa réponse:"}
+            ]
+            
+            # Déterminer le client AI
+            provider = self.game_settings.get('players', {}).get(responder_player, {}).get('provider', 'openai')
+            ai_client = self.openai_client
+            if provider == 'gemini':
+                ai_client = self.gemini_client
+            elif provider == 'anthropic':
+                ai_client = self.anthropic_client
+            
+            # Appeler l'API
+            response = ai_client.chat.completions.create(
+                model=model,
+                messages=messages,
+                max_tokens=100,
+                temperature=0.7
+            )
+            
+            return response.choices[0].message.content
+            
+        except Exception as e:
+            self.logger.error(f"Erreur génération réponse IA: {e}")
+            # Réponses par défaut
+            default_responses = [
+                "Intéressant... Je vais y réfléchir.",
+                "Je comprends ta position, mais j'ai mes propres priorités.",
+                "Hmm, c'est une proposition à considérer.",
+                "Je préfère garder ma stratégie pour moi."
+            ]
+            return random.choice(default_responses)
+    
+    def _make_final_decision_after_conversation(self, player: str, player_name: str, 
+                                               popup_text: str, options: List[str], 
+                                               game_context: Dict, conversation_history: List[Dict]) -> Dict:
+        """Prend une décision finale après une conversation"""
+        try:
+            # Préparer le contexte avec l'historique de conversation
+            context_str = self._format_game_context(game_context)
+            conv_summary = "\n".join([f"{msg['from']}: {msg['message']}" for msg in conversation_history[-3:]])
+            
+            # Message enrichi avec la conversation
+            enhanced_user_message = (
+                f"Contexte actuel:\n{context_str}\n\n"
+                f"Conversation récente avec l'autre IA:\n{conv_summary}\n\n"
+                f"Popup: \"{popup_text}\"\n"
+                f"Options disponibles: {', '.join(options)}\n\n"
+                f"En tenant compte de cette conversation, choisis la meilleure option stratégique."
+            )
+            
+            # Utiliser le même processus de décision mais avec le contexte enrichi
+            model = self._get_model_for_player(player)
+            
+            # Schéma pour la décision finale (sans talk_to_other_ai)
+            schema = {
+                "type": "object",
+                "properties": {
+                    "decision": {
+                        "type": "string",
+                        "description": "Nom exact de l'option choisie",
+                        "enum": options if options else ["none"]
+                    },
+                    "reason": {
+                        "type": "string",
+                        "description": "Courte explication de la décision après discussion (max 30 mots)"
+                    },
+                    "confidence": {
+                        "type": "string",
+                        "description": "Niveau de confiance entre 0.0 et 1.0",
+                        "enum": ["0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0"]
+                    }
+                },
+                "required": ["decision", "reason", "confidence"],
+                "additionalProperties": False
+            }
+            
+            # Déterminer le provider et client
+            provider = self.game_settings.get('players', {}).get(player, {}).get('provider', 'openai')
+            ai_client = self.openai_client
+            structured_output = True
+            
+            if provider == 'gemini':
+                ai_client = self.gemini_client
+            elif provider == 'anthropic':
+                ai_client = self.anthropic_client
+                structured_output = False
+            
+            # Construire la requête
+            messages = [
+                {"role": "system", "content": "Tu es une IA experte au Monopoly. Tu viens de discuter avec l'autre IA et dois maintenant prendre une décision finale."},
+                {"role": "user", "content": enhanced_user_message}
+            ]
+            
+            request_data = {
+                "model": model,
+                "messages": messages,
+                "temperature": 0.7,
+                "max_tokens": 200
+            }
+            
+            if structured_output:
+                request_data["response_format"] = {
+                    "type": "json_schema",
+                    "json_schema": {
+                        "name": "monopoly_decision",
+                        "schema": schema,
+                        "strict": True
+                    }
+                }
+            
+            # Appeler l'API
+            response = ai_client.chat.completions.create(**request_data)
+            result = json.loads(response.choices[0].message.content)
+            
+            # Logging et monitoring
+            self.logger.info(f"✅ Décision finale après discussion: {result['decision']} - {result['reason']}")
+            
+            self._send_to_monitor('thought', {
+                'player': player_name,
+                'type': 'decision',
+                'content': {
+                    'choix': result['decision'],
+                    'raison': f"Après discussion: {result['reason']}",
+                    'confiance': f"{float(result.get('confidence', 0.8)):.0%}"
+                },
+                'timestamp': datetime.utcnow().isoformat()
+            }, port=8003)
+            
+            return {
+                'decision': result['decision'],
+                'reason': result['reason'],
+                'confidence': float(result.get('confidence', 0.8))
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Erreur décision finale: {e}")
+            return self._default_decision(options)
     
     def _get_group_size(self, group: str) -> Optional[int]:
         """Retourne le nombre de propriétés dans un groupe de couleur"""
