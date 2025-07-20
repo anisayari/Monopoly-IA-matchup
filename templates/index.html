@@ -211,15 +211,23 @@
                 <!-- Player 1 -->
                 <div class="bg-zinc-800 rounded-lg p-4 border border-zinc-700">
                     <h4 class="font-medium mb-3 text-blue-400">Player 1</h4>
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-3 gap-4">
                         <div>
                             <label class="block text-sm mb-1">Name</label>
                             <input type="text" id="player1-name" value="GPT1" class="bg-zinc-700 border border-zinc-600 rounded px-3 py-2 w-full">
                         </div>
                         <div>
+                            <label class="block text-sm mb-1">AI Provider</label>
+                            <select id="player1-provider" class="bg-zinc-700 border border-zinc-600 rounded px-3 py-2 w-full">
+                                <option value="openai">OpenAI</option>
+                                <option value="anthropic">Anthropic</option>
+                                <option value="gemini">Google Gemini</option>
+                            </select>
+                        </div>
+                        <div>
                             <label class="block text-sm mb-1">AI Model</label>
                             <select id="player1-model" class="bg-zinc-700 border border-zinc-600 rounded px-3 py-2 w-full">
-                                <option value="gpt-4.1-mini">GPT-4.1 Mini</option>
+                                <option value="gpt-4o-mini">GPT-4o Mini</option>
                             </select>
                         </div>
                     </div>
@@ -228,15 +236,23 @@
                 <!-- Player 2 -->
                 <div class="bg-zinc-800 rounded-lg p-4 border border-zinc-700">
                     <h4 class="font-medium mb-3 text-green-400">Player 2</h4>
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-3 gap-4">
                         <div>
                             <label class="block text-sm mb-1">Name</label>
                             <input type="text" id="player2-name" value="GPT2" class="bg-zinc-700 border border-zinc-600 rounded px-3 py-2 w-full">
                         </div>
                         <div>
+                            <label class="block text-sm mb-1">AI Provider</label>
+                            <select id="player2-provider" class="bg-zinc-700 border border-zinc-600 rounded px-3 py-2 w-full">
+                                <option value="openai">OpenAI</option>
+                                <option value="anthropic">Anthropic</option>
+                                <option value="gemini">Google Gemini</option>
+                            </select>
+                        </div>
+                        <div>
                             <label class="block text-sm mb-1">AI Model</label>
                             <select id="player2-model" class="bg-zinc-700 border border-zinc-600 rounded px-3 py-2 w-full">
-                                <option value="gpt-4.1-mini">GPT-4.1 Mini</option>
+                                <option value="gpt-4o-mini">GPT-4o Mini</option>
                             </select>
                         </div>
                     </div>

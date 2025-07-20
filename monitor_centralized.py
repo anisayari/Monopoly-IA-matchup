@@ -701,11 +701,53 @@ class CentralizedMonitor:
             print(f"❌ Erreur lors de l'envoi des touches: {e}")
             return False
     
+    def display_player_info(self):
+        """Affiche les informations des joueurs et leurs modèles AI"""
+        try:
+            # Récupérer les paramètres du jeu
+            response = requests.get(f"{self.api_url}/api/game-settings", timeout=5)
+            if response.status_code == 200:
+                settings = response.json()
+                
+                print("🎮 === Configuration des Joueurs ===")
+                
+                if 'players' in settings:
+                    for player_id, player_info in settings['players'].items():
+                        name = player_info.get('name', 'Unknown')
+                        provider = player_info.get('provider', 'openai')
+                        model = player_info.get('ai_model', 'unknown')
+                        
+                        # Symboles pour les providers
+                        provider_symbols = {
+                            'openai': '🤖',
+                            'anthropic': '🧠',
+                            'gemini': '💎'
+                        }
+                        symbol = provider_symbols.get(provider, '🎲')
+                        
+                        # Nom du provider
+                        provider_names = {
+                            'openai': 'OpenAI',
+                            'anthropic': 'Anthropic',
+                            'gemini': 'Google Gemini'
+                        }
+                        provider_name = provider_names.get(provider, provider.title())
+                        
+                        # Afficher les informations
+                        print(f"{symbol} {name.upper()}: {provider_name} - {model}")
+                
+                print("================================\n")
+        except Exception as e:
+            print(f"⚠️  Impossible de charger les informations des joueurs: {e}\n")
+    
     def run(self):
         """Boucle principale du monitor"""
         print("\n🔍 Démarrage du monitoring centralisé...")
         print(f"📡 Serveur API: {self.api_url}")
         print("📊 Appuyez sur Ctrl+C pour arrêter\n")
+        
+        # Afficher les informations des joueurs
+        self.display_player_info()
         
         if not self.connect_to_dolphin():
             return

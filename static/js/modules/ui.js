@@ -713,21 +713,67 @@ const ui = {
         });
     },
 
-    updateGameInfo(context) {
+    async updateGameInfo(context) {
         const playersList = document.getElementById('players-list');
         const eventsList = document.getElementById('events-list');
 
         if (context.players) {
+            // Charger les paramètres de jeu pour obtenir les infos AI
+            let gameSettings = null;
+            try {
+                const response = await fetch('/api/game-settings');
+                if (response.ok) {
+                    gameSettings = await response.json();
+                }
+            } catch (error) {
+                console.error('Error loading game settings:', error);
+            }
+            
             playersList.innerHTML = Object.entries(context.players)
-                .map(([id, player]) => `
-                    <div class="bg-zinc-800 border border-zinc-700 rounded p-3">
-                        <div class="flex justify-between items-center mb-2">
-                            <div class="font-medium">${player.name}</div>
-                            <div class="text-white">${player.money}€</div>
+                .map(([id, player]) => {
+                    // Récupérer les infos AI depuis les paramètres
+                    let aiInfo = '';
+                    if (gameSettings && gameSettings.players[id]) {
+                        const playerSettings = gameSettings.players[id];
+                        const provider = playerSettings.provider;
+                        const model = playerSettings.ai_model;
+                        
+                        // Obtenir le nom du modèle depuis les providers disponibles
+                        let modelName = model;
+                        if (gameSettings.available_providers && 
+                            gameSettings.available_providers[provider] && 
+                            gameSettings.available_providers[provider].models) {
+                            const modelData = gameSettings.available_providers[provider].models.find(m => m.id === model);
+                            if (modelData) {
+                                modelName = modelData.name;
+                            }
+                        }
+                        
+                        const providerIcons = {
+                            'openai': 'fas fa-robot',
+                            'anthropic': 'fas fa-brain',
+                            'gemini': 'fas fa-gem'
+                        };
+                        
+                        aiInfo = `
+                            <div class="text-xs text-zinc-500 mt-1 flex items-center">
+                                <i class="${providerIcons[provider] || 'fas fa-microchip'} mr-1"></i>
+                                ${modelName}
+                            </div>
+                        `;
+                    }
+                    
+                    return `
+                        <div class="bg-zinc-800 border border-zinc-700 rounded p-3">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="font-medium">${player.name}</div>
+                                <div class="text-white">${player.money}€</div>
+                            </div>
+                            <div class="text-sm text-zinc-400">Position: ${player.position}</div>
+                            ${aiInfo}
                         </div>
-                        <div class="text-sm text-zinc-400">Position: ${player.position}</div>
-                    </div>
-                `).join('');
+                    `;
+                }).join('');
         }
 
         if (context.events) {

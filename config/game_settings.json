@@ -2,25 +2,73 @@
   "players": {
     "player1": {
       "name": "GPT1",
-      "model": "gpt-4.1-mini",
+      "ai_model": "gpt-4o-mini",
+      "provider": "openai",
       "enabled": true
     },
     "player2": {
-      "name": "GPT2", 
-      "model": "gpt-4.1-mini",
+      "name": "Claude",
+      "ai_model": "claude-3-5-sonnet-20241022",
+      "provider": "anthropic",
       "enabled": true
     }
   },
   "game": {
     "player_count": 2,
     "ai_enabled": true,
-    "default_model": "gpt-4.1-mini"
+    "default_model": "gpt-4o-mini",
+    "default_provider": "openai"
   },
-  "available_models": [
-    {
-      "id": "gpt-4.1-mini",
-      "name": "GPT-4.1 Mini",
-      "description": "Fast and efficient model"
+  "available_providers": {
+    "openai": {
+      "name": "OpenAI",
+      "models": [
+        {
+          "id": "gpt-4o-mini",
+          "name": "GPT-4o Mini",
+          "description": "Fast and efficient GPT-4 model"
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "description": "Most capable GPT-4 model"
+        }
+      ]
+    },
+    "anthropic": {
+      "name": "Anthropic",
+      "models": [
+        {
+          "id": "claude-3-5-sonnet-20241022",
+          "name": "Claude 3.5 Sonnet",
+          "description": "Most capable Claude model"
+        },
+        {
+          "id": "claude-3-5-haiku-20241022",
+          "name": "Claude 3.5 Haiku",
+          "description": "Fast and efficient Claude model"
+        }
+      ]
+    },
+    "gemini": {
+      "name": "Google Gemini",
+      "models": [
+        {
+          "id": "gemini-2.0-flash-exp",
+          "name": "Gemini 2.0 Flash Exp",
+          "description": "Latest experimental Gemini model"
+        },
+        {
+          "id": "gemini-1.5-pro",
+          "name": "Gemini 1.5 Pro",
+          "description": "Advanced Gemini model"
+        },
+        {
+          "id": "gemini-1.5-flash",
+          "name": "Gemini 1.5 Flash",
+          "description": "Fast Gemini model"
+        }
+      ]
     }
-  ]
+  }
 }

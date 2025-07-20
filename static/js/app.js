@@ -36,8 +36,10 @@ const elements = {
     cancelGameSettings: document.getElementById('cancel-game-settings'),
     saveGameSettings: document.getElementById('save-game-settings'),
     player1Name: document.getElementById('player1-name'),
+    player1Provider: document.getElementById('player1-provider'),
     player1Model: document.getElementById('player1-model'),
     player2Name: document.getElementById('player2-name'),
+    player2Provider: document.getElementById('player2-provider'),
     player2Model: document.getElementById('player2-model'),
     aiEnabled: document.getElementById('ai-enabled'),
     
@@ -873,6 +875,49 @@ async function updatePlayerField(playerId, field, value) {
 }
 
 /**
+ * Met à jour les modèles disponibles selon le provider sélectionné
+ */
+async function updateModelsForProvider(playerNum) {
+    const providerSelect = document.getElementById(`player${playerNum}-provider`);
+    const modelSelect = document.getElementById(`player${playerNum}-model`);
+    
+    if (!providerSelect || !modelSelect) return;
+    
+    const provider = providerSelect.value;
+    
+    try {
+        const response = await fetch('/api/game-settings');
+        if (response.ok) {
+            const settings = await response.json();
+            const availableProviders = settings.available_providers;
+            
+            if (availableProviders && availableProviders[provider]) {
+                const models = availableProviders[provider].models;
+                
+                // Vider le select
+                modelSelect.innerHTML = '';
+                
+                // Ajouter les modèles disponibles
+                models.forEach(model => {
+                    const option = document.createElement('option');
+                    option.value = model.id;
+                    option.textContent = model.name;
+                    modelSelect.appendChild(option);
+                });
+                
+                // Sélectionner le modèle actuel si disponible
+                const currentModel = settings.players[`player${playerNum}`].ai_model;
+                if (models.find(m => m.id === currentModel)) {
+                    modelSelect.value = currentModel;
+                }
+            }
+        }
+    } catch (error) {
+        console.error('Error updating models:', error);
+    }
+}
+
+/**
  * Gère les paramètres de jeu
  */
 async function loadGameSettings() {
@@ -883,10 +928,14 @@ async function loadGameSettings() {
             
             // Mettre à jour les champs du formulaire
             if (elements.player1Name) elements.player1Name.value = settings.players.player1.name;
-            if (elements.player1Model) elements.player1Model.value = settings.players.player1.model;
+            if (elements.player1Provider) elements.player1Provider.value = settings.players.player1.provider || 'openai';
             if (elements.player2Name) elements.player2Name.value = settings.players.player2.name;
-            if (elements.player2Model) elements.player2Model.value = settings.players.player2.model;
+            if (elements.player2Provider) elements.player2Provider.value = settings.players.player2.provider || 'openai';
             if (elements.aiEnabled) elements.aiEnabled.checked = settings.game.ai_enabled;
+            
+            // Mettre à jour les modèles disponibles
+            await updateModelsForProvider(1);
+            await updateModelsForProvider(2);
         }
     } catch (error) {
         console.error('Error loading game settings:', error);
@@ -899,19 +948,22 @@ async function saveGameSettings() {
             players: {
                 player1: {
                     name: elements.player1Name.value,
-                    model: elements.player1Model.value,
+                    provider: elements.player1Provider.value,
+                    ai_model: elements.player1Model.value,
                     enabled: true
                 },
                 player2: {
                     name: elements.player2Name.value,
-                    model: elements.player2Model.value,
+                    provider: elements.player2Provider.value,
+                    ai_model: elements.player2Model.value,
                     enabled: true
                 }
             },
             game: {
                 player_count: 2,
                 ai_enabled: elements.aiEnabled.checked,
-                default_model: 'gpt-4.1-mini'
+                default_model: elements.player1Model.value,
+                default_provider: elements.player1Provider.value
             }
         };
         
@@ -962,6 +1014,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sauvegarder les paramètres
     if (elements.saveGameSettings) {
         elements.saveGameSettings.addEventListener('click', saveGameSettings);
+    }
+    
+    // Gérer le changement de provider
+    if (elements.player1Provider) {
+        elements.player1Provider.addEventListener('change', () => {
+            updateModelsForProvider(1);
+        });
+    }
+    
+    if (elements.player2Provider) {
+        elements.player2Provider.addEventListener('change', () => {
+            updateModelsForProvider(2);
+        });
     }
     
     // Charger les paramètres au démarrage

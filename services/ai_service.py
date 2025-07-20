@@ -198,17 +198,26 @@ class AIService:
             # Récupérer l'historique du joueur (copie pour ne pas affecter l'original)
             player_history = self._get_player_history(current_player).copy()
             
+            # Charger les paramètres du joueur pour déterminer le provider
+            player_settings = None
+            game_settings = self._load_game_settings()
+            if game_settings and 'players' in game_settings and current_player in game_settings['players']:
+                player_settings = game_settings['players'][current_player]
+            
+            # Déterminer le provider et le client à utiliser
+            provider = player_settings.get('provider', 'openai') if player_settings else 'openai'
+            
             ai_client = self.openai_client
             structured_output = True
             store_data = True
             ai_provider_name = "OpenAI"
             
-            if model.startswith("gemini"):
+            if provider == 'gemini' or model.startswith("gemini"):
                 ai_client = self.gemini_client
                 structured_output = True
                 store_data = False
                 ai_provider_name = "Gemini"
-            elif model.startswith("claude"):
+            elif provider == 'anthropic' or model.startswith("claude"):
                 ai_client = self.anthropic_client
                 structured_output = False
                 store_data = False

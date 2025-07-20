@@ -210,6 +210,12 @@ temp_screenshot.png
 *.jpeg
 *.bmp
 
+# But allow static images
+!static/img/*.png
+!static/img/*.jpg
+!static/img/*.jpeg
+!static/img/*.bmp
+
 # Config files that might contain sensitive data
 user_config.json
 config/user_config.json

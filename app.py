@@ -935,6 +935,31 @@ def get_game_settings():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+@app.route('/api/game-settings', methods=['POST'])
+def save_game_settings():
+    """Sauvegarde les paramètres du jeu"""
+    try:
+        settings = request.json
+        settings_file = os.path.join('config', 'game_settings.json')
+        
+        # Charger les paramètres existants pour préserver available_providers
+        existing_settings = {}
+        if os.path.exists(settings_file):
+            with open(settings_file, 'r', encoding='utf-8') as f:
+                existing_settings = json.load(f)
+        
+        # Fusionner avec les nouveaux paramètres
+        existing_settings['players'] = settings.get('players', existing_settings.get('players', {}))
+        existing_settings['game'] = settings.get('game', existing_settings.get('game', {}))
+        
+        # Sauvegarder
+        with open(settings_file, 'w', encoding='utf-8') as f:
+            json.dump(existing_settings, f, indent=2, ensure_ascii=False)
+        
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 @app.route('/api/messages/detected', methods=['POST'])
 def message_detected():
     """Endpoint pour recevoir les messages détectés dans la RAM"""
