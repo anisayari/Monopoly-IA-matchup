@@ -322,6 +322,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             ## Gestion de la conversation avec les autres joueurs
             if result['decision'] == "talk_to_other_players":
                 self.logger.info("💬 Début d'une conversation avec les autres joueurs")
+                # TODO: Gérer "is_trade_available"
                 result = self._run_conversation_between_players(
                     current_player=current_player,
                     result=result,
@@ -331,7 +332,8 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                     options=options,
                     user_message=user_message,
                     request_data=request_data,
-                    ai_client=ai_client
+                    ai_client=ai_client,
+                    is_trade_available=True
                 )
             
             self.logger.info(f"✅ Décision IA: {result['decision']} - {result['reason']}")
@@ -589,7 +591,77 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             'confidence': 0.0
         }
 
-    def _run_conversation_between_players(self, current_player, result, game_context, context_str, popup_text, options, user_message, request_data, ai_client):
+    def _get_ai_trade_decision_json(player1_name, player2_name, last_messages):
+        system_prompt = """
+        Tu dois retourner un JSON valide avec le schema suivant, aucun texte autre que le JSON.
+        
+        Contexte:
+        - Player1: {player1_name}
+        - Player2: {player2_name}
+        """
+
+        exchange_schema = {
+            "type": "object",
+            "properties": {
+                "player1": {
+                    "type": "object",
+                    "properties": {
+                        "offers": {
+                            "type": "object",
+                            "properties": {
+                                "money": {"type": "number"},
+                                "properties": {
+                                    "type": "array",
+                                    "items": {"type": "string"}
+                                }
+                            },
+                            "required": ["money", "properties"]
+                        }
+                    },
+                    "required": ["offers"]
+                },
+                "player2": {
+                    "type": "object",
+                    "properties": {
+                        "offers": {
+                            "type": "object",
+                            "properties": {
+                                "money": {"type": "number"},
+                                "properties": {
+                                    "type": "array",
+                                    "items": {"type": "string"}
+                                }
+                            },
+                            "required": ["money", "properties"]
+                        }
+                    },
+                    "required": ["offers"]
+                }
+            },
+            "required": ["player1", "player2"],
+            "additionalProperties": False
+        }
+
+        response = self.openai_client.chat.completions.create(
+            model="o4-mini",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": f"{"\n".join(last_messages)}"}
+            ],
+            max_tokens=500,
+            response_format={
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "monopoly_trade",
+                    "schema": exchange_schema,
+                    "strict": True
+                }
+            }
+        )
+        json_result = json.loads(response.choices[0].message.content)
+        return json_result
+
+    def _run_conversation_between_players(self, current_player, result, game_context, context_str, popup_text, options, user_message, request_data, ai_client, is_trade_available):
         """
         Gère la boucle de conversation entre deux IA jusqu'à END_CONVERSATION, puis relance la décision.
         Retourne le nouveau résultat de décision.
@@ -610,6 +682,12 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             self.logger.info(f"💬 {player2_name} : {result['chat_message']}")
         while True:
             conversation_messages = '\n'.join(conversation_data)
+            if is_trade_available:
+                trade_message = """
+                - "[INIT_TRADE]" pour déclencher un échange de propriétés après avoir négocié avec l'autre joueur et que les deux joueurs sont d'accord.
+                """
+            else:
+                trade_message = ""
             messages = [
                 {"role": "system", "content": f"""
 Tu es une IA experte au Monopoly dans une compétition contre d'autres IA.
@@ -633,7 +711,10 @@ Tu es le joueur {player_need_answer} ({player1_name if player_need_answer == "pl
     {conversation_messages}
 </conversation>
 
-Répond au message de l'autre joueur ou répond le texte "END_CONVERSATION" pour terminer la conversation."""}
+Répond au message de l'autre joueur. Tu peux finir ta réponse par un des mots clé suivant pour déclencher une action:
+ - "[END_CONVERSATION]" pour terminer la conversation.
+ {trade_message}
+ """}
             ]
             response = ai_client.chat.completions.create(
                 model=player1_model if player_need_answer == "player1" else player2_model,
@@ -643,7 +724,14 @@ Répond au message de l'autre joueur ou répond le texte "END_CONVERSATION" pour
             conversation_result = response.choices[0].message.content
             conversation_data.append(f"{player_need_answer} : {conversation_result}")
             self.logger.info(f"💬 {player_need_answer} : {conversation_result}")
-            if conversation_result == "END_CONVERSATION":
+            if conversation_result.find("[END_CONVERSATION]") != -1 or conversation_result.find("[INIT_TRADE]") != -1:
+                if conversation_result.find("[INIT_TRADE]") != -1:
+                    # TODO: Les IA décident de faire un échange de propriétés
+                    exchange_result = self._get_ai_trade_decision_json(player1_name, player2_name, conversation_data)
+                    self.logger.info(f"💬 Échange de propriétés: {exchange_result}")
+                    # TODO: Gérer l'échange de propriétés
+                    conversation_messages.append(f"[TRADE_COMPLETED]")
+                    pass
                 new_request_data = request_data.copy()
                 new_request_data['messages'] = list(request_data['messages'])  # copy list
                 new_request_data['messages'].append({"role": "user", "content": user_message})
@@ -675,15 +763,6 @@ Répond maintenant à la question du popup."""})
 
 # Instance globale du service (singleton)
 _ai_service_instance = None
-
-def get_ai_decision_json(last_messages):
-    system_prompt = """Tu dois retourner un JSON valide avec le schema suivant, aucun texte autre que le JSON :"""
-    response = ai_client.chat.completions.create(
-    model="gpt-4.1",
-    messages=last_messages,
-    max_tokens=500
-            )
-    return json
 
 def get_ai_service() -> AIService:
     """Retourne l'instance singleton du service IA"""
