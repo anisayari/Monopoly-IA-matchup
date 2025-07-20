@@ -4,6 +4,7 @@ import time
 from typing import Dict, List, Any
 from .monopoly import MonopolyGame
 from .listeners import MonopolyListeners
+from src.utils import property_manager
 
 class Contexte:
     """Classe gérant le contexte global du jeu Monopoly"""
@@ -211,6 +212,17 @@ class Contexte:
                 # Obtenir les informations de prix standard
                 price, house_price, rents = self._get_property_details(prop_id, space["color"])
                 
+                # Récupérer les coordonnées depuis property_manager
+                coords = None
+                prop_details = property_manager.get_property_by_position(prop_id)
+                if prop_details and 'coordinates' in prop_details:
+                    coords = {
+                        'x_relative': prop_details['coordinates']['x_relative'],
+                        'y_relative': prop_details['coordinates']['y_relative'],
+                        'x_pixel': prop_details['coordinates']['x_pixel'],
+                        'y_pixel': prop_details['coordinates']['y_pixel']
+                    }
+                
                 properties.append({
                     "id": prop_id,
                     "name": space["name"],
@@ -219,7 +231,8 @@ class Contexte:
                     "rent": rents,
                     "house_price": house_price,
                     "owner": owner,
-                    "houses": 0  # TODO: implémenter la détection des maisons
+                    "houses": 0,  # TODO: implémenter la détection des maisons
+                    "coordinates": coords  # Ajout des coordonnées
                 })
         
         self.context["global"]["properties"] = properties

@@ -12,6 +12,7 @@ from openai import OpenAI
 import logging
 import requests
 from datetime import datetime
+from src.utils import property_manager
 
 class AIService:
     """Service IA pour prendre des décisions dans Monopoly"""
@@ -251,28 +252,73 @@ class AIService:
                 # Informations de base
                 context_str += f"{is_current} {name}: ${money}, {len(props)} propriétés, position: {position}{in_jail}\n"
                 
-                # Liste des propriétés du joueur
+                # Liste des propriétés du joueur avec détails complets
                 if props:
                     props_by_group = {}
-                    for prop in props:
-                        group = prop.get('group', 'unknown')
-                        if group not in props_by_group:
-                            props_by_group[group] = []
-                        props_by_group[group].append(prop.get('name', 'Unknown'))
+                    total_property_value = 0
                     
-                    context_str += "   Propriétés: "
-                    prop_list = []
-                    for group, names in props_by_group.items():
-                        prop_list.append(f"{group} ({', '.join(names)})")
-                    context_str += ", ".join(prop_list) + "\n"
+                    for prop in props:
+                        prop_name = prop.get('name', 'Unknown')
+                        group = prop.get('group', 'unknown')
+                        
+                        # Récupérer les détails complets depuis property_manager
+                        details = property_manager.get_property_details(prop_name)
+                        if details:
+                            total_property_value += details.get('value', 0)
+                            
+                            if group not in props_by_group:
+                                props_by_group[group] = []
+                            
+                            # Créer une description enrichie de la propriété
+                            prop_info = {
+                                'name': prop_name,
+                                'value': details.get('value', 0),
+                                'rent': details.get('rent', {}).get('base', 0) if details.get('type') == 'property' else 'special'
+                            }
+                            props_by_group[group].append(prop_info)
+                    
+                    context_str += f"   Propriétés ({len(props)}, valeur totale: ${total_property_value}):\n"
+                    
+                    for group, group_props in props_by_group.items():
+                        prop_names = [f"{p['name']} (${ p['value']})" for p in group_props]
+                        context_str += f"     - {group}: {', '.join(prop_names)}\n"
+                        
+                        # Vérifier si le groupe est complet pour un monopole
+                        group_size = self._get_group_size(group)
+                        if group_size and len(group_props) == group_size:
+                            context_str += f"       ⚠️ MONOPOLE COMPLET! Peut construire des maisons.\n"
         
         # Propriétés importantes
         properties = global_data.get('properties', [])
         if properties:
             owned_props = [p for p in properties if p.get('owner') is not None]
-            context_str += f"\nPropriétés: {len(owned_props)}/{len(properties)} possédées\n"
+            available_props = [p for p in properties if p.get('owner') is None]
             
-            # Groupes de couleurs
+            context_str += f"\nPropriétés sur le plateau: {len(owned_props)}/{len(properties)} possédées\n"
+            
+            # Propriétés disponibles à l'achat
+            if available_props:
+                context_str += f"\nPropriétés disponibles ({len(available_props)}):\n"
+                # Grouper par couleur
+                available_by_group = {}
+                for prop in available_props[:5]:  # Limiter à 5 pour ne pas surcharger
+                    group = prop.get('group', 'unknown')
+                    if group not in available_by_group:
+                        available_by_group[group] = []
+                    
+                    # Récupérer les détails
+                    details = property_manager.get_property_details(prop.get('name'))
+                    if details:
+                        available_by_group[group].append({
+                            'name': prop.get('name'),
+                            'value': details.get('value', 0)
+                        })
+                
+                for group, props in available_by_group.items():
+                    prop_list = [f"{p['name']} (${p['value']})" for p in props]
+                    context_str += f"  - {group}: {', '.join(prop_list)}\n"
+            
+            # Groupes de couleurs et monopoles
             color_groups = {}
             for prop in properties:
                 if prop.get('owner') and prop.get('group'):
@@ -281,17 +327,43 @@ class AIService:
                     if owner not in color_groups:
                         color_groups[owner] = {}
                     if group not in color_groups[owner]:
-                        color_groups[owner][group] = 0
-                    color_groups[owner][group] += 1
+                        color_groups[owner][group] = []
+                    color_groups[owner][group].append(prop.get('name'))
             
             if color_groups:
-                context_str += "Monopoles potentiels:\n"
+                context_str += "\nSituation des monopoles:\n"
                 for owner, groups in color_groups.items():
-                    for group, count in groups.items():
-                        if count >= 2:  # Au moins 2 propriétés du même groupe
-                            context_str += f"  - {owner}: {count} {group}\n"
+                    player_name = self._get_player_name_by_id(owner, players)
+                    for group, prop_names in groups.items():
+                        group_size = self._get_group_size(group)
+                        if group_size:
+                            status = "MONOPOLE!" if len(prop_names) == group_size else f"{len(prop_names)}/{group_size}"
+                            context_str += f"  - {player_name}: {group} [{status}]\n"
         
         return context_str
+    
+    def _get_group_size(self, group: str) -> Optional[int]:
+        """Retourne le nombre de propriétés dans un groupe de couleur"""
+        group_sizes = {
+            'brown': 2,
+            'light_blue': 3,
+            'pink': 3,
+            'orange': 3,
+            'red': 3,
+            'yellow': 3,
+            'green': 3,
+            'dark_blue': 2,
+            'station': 4,
+            'utility': 2
+        }
+        return group_sizes.get(group.lower())
+    
+    def _get_player_name_by_id(self, player_id: str, players: Dict) -> str:
+        """Trouve le nom du joueur par son ID"""
+        for player_key, player_data in players.items():
+            if player_data.get('id') == player_id or player_key == player_id:
+                return player_data.get('name', player_key)
+        return player_id
     
     def _get_model_for_player(self, player_id: str) -> str:
         """Détermine quel modèle utiliser pour un joueur"""
