@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T23:16:01.890848",
+  "trigger": "would you like to",
+  "keywords": [
+    "Who's playing"
+  ],
+  "options": [
+    "Next"
+  ],
+  "decision": "Next",
+  "reason": "Accord conclu avec GPT4.1: $550 contre moratoire 3 tours sur dark_blue/red. Prêt pour la suite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1719,
+      "Claude-SONNET-4": 351
+    }
+  }
+}

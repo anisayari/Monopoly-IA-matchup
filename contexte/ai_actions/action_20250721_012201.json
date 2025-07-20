@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T23:21:58.969660",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Interface de trading non fonctionnelle. Retour au menu principal pour continuer le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 24,
+    "money": {
+      "GPT4.1": 1693,
+      "Claude-SONNET-4": 327
+    }
+  }
+}

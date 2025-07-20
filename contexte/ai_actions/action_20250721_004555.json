@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T22:45:53.717113",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts",
+  "reason": "Vérifier mes finances avant négociations d'échange pour optimiser ma stratégie de construction",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1719,
+      "Claude-SONNET-4": 351
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T23:07:23.371239",
+  "trigger": "Trading",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Trader n'est pas prioritaire : il vaut mieux d'abord construire des maisons avec mon cash pour maximiser la pression locative, surtout que Claude manque de liquidités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1719,
+      "Claude-SONNET-4": 351
+    }
+  }
+}

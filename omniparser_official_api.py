@@ -44,7 +44,7 @@ try:
         'caption_model_path': 'weights/icon_caption_florence',
         'caption_model_name': 'florence2',
         'device': DEVICE,
-        'BOX_TRESHOLD': 0.01  # Notez la casse exacte utilisée dans le code original
+        'BOX_TRESHOLD': 0.05  # Notez la casse exacte utilisée dans le code original
     }
     
     parser = Omniparser(config)
@@ -151,6 +151,49 @@ async def parse_image(request: ImageRequest):
                         img_pil = Image.fromarray((labeled_img * 255).astype(np.uint8) if labeled_img.max() <= 1 else labeled_img.astype(np.uint8))
                         img_pil.save(buffered, format="PNG")
                 labeled_base64 = base64.b64encode(buffered.getvalue()).decode('ascii')
+            
+            # Sauvegarder l'image annotée dans le dossier detections
+            try:
+                from datetime import datetime
+                
+                # Créer le dossier detections s'il n'existe pas
+                detections_dir = Path("detections")
+                detections_dir.mkdir(exist_ok=True)
+                
+                # Nom de fichier horodaté
+                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+                filename = f"omniparser_official_{timestamp}.png"
+                filepath = detections_dir / filename
+                
+                # Décoder et sauvegarder l'image
+                labeled_data = base64.b64decode(labeled_base64)
+                with open(filepath, 'wb') as f:
+                    f.write(labeled_data)
+                
+                # Sauvegarder aussi les métadonnées JSON
+                json_filename = f"omniparser_official_{timestamp}.json"
+                json_filepath = detections_dir / json_filename
+                
+                metadata = {
+                    'timestamp': datetime.now().isoformat(),
+                    'source': 'omniparser_official_api',
+                    'detected_elements': len(parsed_content_list),
+                    'element_types': {
+                        'text': len([e for e in parsed_content_list if e.get('type') == 'text']),
+                        'icon': len([e for e in parsed_content_list if e.get('type') == 'icon']),
+                        'unknown': len([e for e in parsed_content_list if e.get('type') == 'unknown'])
+                    },
+                    'image_size': list(image.size),
+                    'image_file': filename,
+                    'device': DEVICE
+                }
+                
+                with open(json_filepath, 'w', encoding='utf-8') as f:
+                    json.dump(metadata, f, indent=2, ensure_ascii=False)
+                
+                print(f"🖼️ Image annotée sauvegardée: {filepath}")
+            except Exception as e:
+                print(f"⚠️ Erreur sauvegarde image annotée: {e}")
         
         # Adapter le format pour être compatible avec votre système
         formatted_elements = []

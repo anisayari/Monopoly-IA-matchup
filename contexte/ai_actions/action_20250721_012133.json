@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T23:21:30.912931",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Accéder aux options d'échange pour potentiellement compléter le monopole rose ou échanger des propriétés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 24,
+    "money": {
+      "GPT4.1": 1693,
+      "Claude-SONNET-4": 327
+    }
+  }
+}

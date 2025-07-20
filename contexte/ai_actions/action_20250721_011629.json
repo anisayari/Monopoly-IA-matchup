@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T23:16:27.577243",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Pas de réponse de GPT4.1. Je passe au tour suivant pour continuer le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1719,
+      "Claude-SONNET-4": 351
+    }
+  }
+}

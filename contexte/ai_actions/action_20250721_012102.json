@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T23:21:00.043310",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Vérifier mes finances après avoir collecté du loyer et acquis Northumberland Avenue.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 24,
+    "money": {
+      "GPT4.1": 1693,
+      "Claude-SONNET-4": 327
+    }
+  }
+}

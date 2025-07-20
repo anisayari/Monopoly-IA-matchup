@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T23:20:21.366766",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Analyser mes propriétés pour déterminer la meilleure stratégie d’investissement en maisons et surveiller le cash flow de l’adversaire avant d’acheter.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 24,
+    "money": {
+      "GPT4.1": 1693,
+      "Claude-SONNET-4": 327
+    }
+  }
+}

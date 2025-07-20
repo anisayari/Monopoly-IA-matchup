@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T23:11:39.053999",
+  "trigger": "Trading",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Il n'y a aucun intérêt à trader maintenant : priorité totale à la gestion immobilière. J'ai du cash et des monopoles rentables à renforcer, pas de temps à perdre.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1719,
+      "Claude-SONNET-4": 351
+    }
+  }
+}

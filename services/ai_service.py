@@ -150,13 +150,14 @@ class AIService:
             
             # Déterminer quel modèle utiliser basé sur le joueur actuel
             current_player = game_context.get('global', {}).get('current_player', 'Unknown')
-            model = self._get_model_for_player(current_player)
+            # model = self._get_model_for_player(current_player)
             
             # Envoyer le contexte au monitor d'actions
             self._send_to_monitor('context', game_context, port=8004)
             
             # Récupérer le nom réel du joueur
             player_name = game_context.get('players', {}).get(current_player, {}).get('name', current_player)
+            model = game_context.get('players', {}).get(current_player, {}).get('ai_model', "gpt-4.1-mini")
             
             # Envoyer la pensée d'analyse au monitor de chat
             self._send_to_monitor('thought', {
@@ -235,7 +236,7 @@ Choisis la meilleure option stratégique."""
                 player_settings = game_settings['players'][current_player]
             
             # Déterminer le provider et le client à utiliser
-            provider = player_settings.get('provider', 'openai') if player_settings else 'openai'
+            provider = game_context.get('players', {}).get(current_player, {}).get('provider', "openai")          
             
             ai_client = self.openai_client
             structured_output = True
@@ -331,7 +332,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                     options=options,
                     user_message=user_message,
                     request_data=request_data,
-                    ai_client=ai_client,
+                    request_ai_client=ai_client,
                     is_trade_available= category is 'trade'
                 )
 
@@ -661,7 +662,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         json_result = json.loads(response.choices[0].message.content)
         return json_result
 
-    def _run_conversation_between_players(self, current_player, result, game_context, context_str, popup_text, options, user_message, request_data, is_trade_available):
+    def _run_conversation_between_players(self, current_player, result, game_context, context_str, popup_text, options, user_message, request_ai_client, request_data, is_trade_available):
         """
         Gère la boucle de conversation entre deux IA jusqu'à END_CONVERSATION, puis relance la décision.
         Retourne le nouveau résultat de décision.
@@ -789,7 +790,7 @@ EXEMPLES:
 </popup_data>
 
 Répond maintenant à la question du popup."""})
-                response = ai_client.chat.completions.create(**new_request_data)
+                response = request_ai_client.chat.completions.create(**new_request_data)
                 # Parser la réponse
                 try:
                     new_result = json.loads(response.choices[0].message.content)

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T23:23:52.333280",
+  "trigger": "a Property you own",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Confirmer pour continuer et accéder aux options de gestion de propriétés ou construction.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 24,
+    "money": {
+      "GPT4.1": 1693,
+      "Claude-SONNET-4": 327
+    }
+  }
+}

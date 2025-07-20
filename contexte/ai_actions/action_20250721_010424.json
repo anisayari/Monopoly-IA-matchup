@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T23:04:22.669274",
+  "trigger": "Trading",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Back "
+  ],
+  "decision": "Back",
+  "reason": "Négociation terminée, accord de trêve de 2 tours conclu, retour au jeu",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1719,
+      "Claude-SONNET-4": 351
+    }
+  }
+}

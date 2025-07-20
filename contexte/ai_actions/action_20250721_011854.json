@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T23:18:51.901808",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Pas d'option de construction disponible maintenant. Je passe au tour suivant pour continuer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 18,
+    "money": {
+      "GPT4.1": 1669,
+      "Claude-SONNET-4": 351
+    }
+  }
+}

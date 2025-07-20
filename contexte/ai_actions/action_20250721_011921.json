@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T23:19:19.517219",
+  "trigger": "would you like",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Roll Dice ",
+    "Use Card "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "C'est mon tour, je lance les dés pour avancer et potentiellement collecter des loyers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 18,
+    "money": {
+      "GPT4.1": 1669,
+      "Claude-SONNET-4": 351
+    }
+  }
+}

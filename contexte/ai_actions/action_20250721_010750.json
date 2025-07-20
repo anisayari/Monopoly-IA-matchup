@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T23:07:48.058811",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je veux concrètement investir maintenant dans les maisons sur mes monopoles, en particulier Orange et Rose, pour maximiser mes futurs loyers alors que Claude est sous pression financière.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1719,
+      "Claude-SONNET-4": 351
+    }
+  }
+}

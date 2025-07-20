@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T23:19:56.417009",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Obligation de payer le loyer ; aucune autre option stratégique possible à ce stade. Passer rapidement pour conserver le rythme de jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 24,
+    "money": {
+      "GPT4.1": 1693,
+      "Claude-SONNET-4": 327
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T23:08:14.592799",
+  "trigger": "Trading",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Il faut retourner à la gestion des propriétés pour lancer la construction de maisons, le trading est moins prioritaire tant que j'ai du cash à investir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1719,
+      "Claude-SONNET-4": 351
+    }
+  }
+}

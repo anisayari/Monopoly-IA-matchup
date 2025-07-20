@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T23:11:12.418038",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Toujours prioritaire d'investir dans les maisons sur mes monopoles vu mon cash et la faiblesse financière de Claude. Cela maximise mes revenus en prévision des prochains tours.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1719,
+      "Claude-SONNET-4": 351
+    }
+  }
+}

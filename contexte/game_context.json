@@ -241,7 +241,7 @@
         ],
         "current_rent": 10,
         "house_price": 100,
-        "owner": "blue",
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -702,7 +702,7 @@
         }
       }
     ],
-    "current_turn": 14,
+    "current_turn": 24,
     "player_count": 2,
     "player_names": [
       "GPT4.1",
@@ -718,144 +718,144 @@
   },
   "events": [
     {
-      "turn": 10,
-      "player": "Claude-SON",
-      "action": "buy_property",
-      "detail": "Fleet Street pour 220€",
-      "message": "Claude-SON achète Fleet Street pour 220€."
-    },
-    {
-      "turn": 11,
-      "player": "Claude-SON",
-      "action": "buy_property",
-      "detail": "Trafalgar Square pour 240€",
-      "message": "Claude-SON achète Trafalgar Square pour 240€."
-    },
-    {
-      "turn": 11,
-      "player": "Claude-SON",
-      "action": "buy_property",
-      "detail": "Fenchurch Street Station pour 200€",
-      "message": "Claude-SON achète Fenchurch Street Station pour 200€."
-    },
-    {
-      "turn": 12,
+      "turn": 23,
       "player": "Claude-SON",
       "action": "buy_property",
       "detail": "Leicester Square pour 260€",
       "message": "Claude-SON achète Leicester Square pour 260€."
     },
     {
-      "turn": 12,
+      "turn": 24,
       "player": "Claude-SON",
       "action": "buy_property",
-      "detail": "Coventry Street pour 260€",
-      "message": "Claude-SON achète Coventry Street pour 260€."
+      "detail": "Northumberland Avenue pour 160€",
+      "message": "Claude-SON achète Northumberland Avenue pour 160€."
     },
     {
-      "turn": 13,
-      "player": "Claude-SON",
-      "action": "buy_property",
-      "detail": "Piccadilly pour 280€",
-      "message": "Claude-SON achète Piccadilly pour 280€."
-    },
-    {
-      "turn": 13,
-      "player": "Claude-SON",
-      "action": "buy_property",
-      "detail": "Park Lane pour 350€",
-      "message": "Claude-SON achète Park Lane pour 350€."
-    },
-    {
-      "turn": 14,
-      "player": "Claude-SON",
-      "action": "buy_property",
-      "detail": "Mayfair pour 400€",
-      "message": "Claude-SON achète Mayfair pour 400€."
-    },
-    {
-      "turn": 14,
-      "player": "System",
-      "action": "jail_options",
-      "detail": "Do you want to pay the bail, roll for doubles or use a get out of free jail card (if you have one)?",
-      "message": "System doit choisir comment sortir de prison."
-    },
-    {
-      "turn": 14,
+      "turn": 24,
       "player": "System",
       "action": "message",
       "detail": "Trade",
       "message": "Message: Trade"
     },
     {
-      "turn": 14,
+      "turn": 24,
       "player": "System",
       "action": "message",
       "detail": "1 Owned",
       "message": "Message: 1 Owned"
     },
     {
-      "turn": 14,
+      "turn": 24,
       "player": "System",
       "action": "message",
       "detail": "4 Owned",
       "message": "Message: 4 Owned"
     },
     {
-      "turn": 14,
+      "turn": 24,
       "player": "System",
       "action": "message",
       "detail": "2 Owned",
       "message": "Message: 2 Owned"
     },
     {
-      "turn": 14,
+      "turn": 24,
       "player": "System",
       "action": "message",
       "detail": "3 Owned",
       "message": "Message: 3 Owned"
     },
     {
-      "turn": 14,
+      "turn": 24,
       "player": "System",
       "action": "message",
       "detail": "Un-mortgage Value",
       "message": "Message: Un-mortgage Value"
     },
     {
-      "turn": 14,
-      "player": "System",
-      "action": "message",
-      "detail": "1 逄ned",
-      "message": "Message: 1 逄ned"
+      "turn": 24,
+      "player": "Claude-SON",
+      "action": "lose_property",
+      "detail": "Northumberland Avenue",
+      "message": "Claude-SON a effectué l'action 'lose_property' Northumberland Avenue."
     },
     {
-      "turn": 14,
-      "player": "System",
-      "action": "message",
-      "detail": "4 逄Ｐned",
-      "message": "Message: 4 逄Ｐned"
+      "turn": 24,
+      "player": "GPT4.1",
+      "action": "roll_dice",
+      "detail": "3+2=5",
+      "message": "GPT4.1 a lancé les dés et avance de 5 cases."
     },
     {
-      "turn": 14,
-      "player": "System",
-      "action": "message",
-      "detail": "2 逄ned",
-      "message": "Message: 2 逄ned"
+      "turn": 24,
+      "player": "GPT4.1",
+      "action": "move",
+      "detail": "Chance",
+      "message": "GPT4.1 arrive sur Chance."
     },
     {
-      "turn": 14,
-      "player": "System",
-      "action": "message",
-      "detail": "3 逄ned",
-      "message": "Message: 3 逄ned"
+      "turn": 24,
+      "player": "GPT4.1",
+      "action": "lose_property",
+      "detail": "Oxford Street",
+      "message": "GPT4.1 a effectué l'action 'lose_property' Oxford Street."
     },
     {
-      "turn": 14,
-      "player": "System",
-      "action": "message",
-      "detail": "Un逅׈ortgage Value",
-      "message": "Message: Un逅׈ortgage Value"
+      "turn": 24,
+      "player": "GPT4.1",
+      "action": "lose_property",
+      "detail": "Bond Street",
+      "message": "GPT4.1 a effectué l'action 'lose_property' Bond Street."
+    },
+    {
+      "turn": 24,
+      "player": "GPT4.1",
+      "action": "lose_property",
+      "detail": "Electric Company",
+      "message": "GPT4.1 a effectué l'action 'lose_property' Electric Company."
+    },
+    {
+      "turn": 24,
+      "player": "GPT4.1",
+      "action": "lose_property",
+      "detail": "Bow Street",
+      "message": "GPT4.1 a effectué l'action 'lose_property' Bow Street."
+    },
+    {
+      "turn": 24,
+      "player": "GPT4.1",
+      "action": "lose_property",
+      "detail": "Marlborough Street",
+      "message": "GPT4.1 a effectué l'action 'lose_property' Marlborough Street."
+    },
+    {
+      "turn": 24,
+      "player": "GPT4.1",
+      "action": "lose_property",
+      "detail": "Water Works",
+      "message": "GPT4.1 a effectué l'action 'lose_property' Water Works."
+    },
+    {
+      "turn": 24,
+      "player": "GPT4.1",
+      "action": "lose_property",
+      "detail": "Regent Street",
+      "message": "GPT4.1 a effectué l'action 'lose_property' Regent Street."
+    },
+    {
+      "turn": 24,
+      "player": "GPT4.1",
+      "action": "goto",
+      "detail": "Chance",
+      "message": "GPT4.1 se déplace directement vers Chance."
+    },
+    {
+      "turn": 24,
+      "player": "GPT4.1",
+      "action": "move_and_buy",
+      "detail": "Marlborough Street -> Marlborough Street pour 180€",
+      "message": "GPT4.1 s'est déplacé sur Marlborough Street et l'a acheté pour 180€."
     }
   ],
   "players": {
@@ -866,10 +866,10 @@
       "current_player": false,
       "is_current": false,
       "dice_result": [
-        5,
-        4
+        3,
+        2
       ],
-      "money": 1719,
+      "money": 1693,
       "properties": [
         {
           "id": 11,
@@ -935,15 +935,10 @@
           "id": 32,
           "name": "Oxford Street",
           "group": "green"
-        },
-        {
-          "id": 8,
-          "name": "Euston Road",
-          "group": "light_blue"
         }
       ],
-      "position": 8,
-      "current_space": "Euston Road",
+      "position": 22,
+      "current_space": "Chance",
       "jail": false
     },
     "player2": {
@@ -953,10 +948,10 @@
       "current_player": true,
       "is_current": true,
       "dice_result": [
-        6,
-        6
+        2,
+        2
       ],
-      "money": 351,
+      "money": 327,
       "properties": [
         {
           "id": 15,
@@ -1032,10 +1027,15 @@
           "id": 23,
           "name": "Fleet Street",
           "group": "red"
+        },
+        {
+          "id": 14,
+          "name": "Northumberland Avenue",
+          "group": "pink"
         }
       ],
-      "position": 27,
-      "current_space": "Coventry Street",
+      "position": 14,
+      "current_space": "Northumberland Avenue",
       "jail": false
     }
   },

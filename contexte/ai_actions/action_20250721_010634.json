@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T23:06:32.682440",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Je préfère d'abord construire des maisons plutôt que d'échanger, pour maximiser mes revenus et mettre la pression sur Claude, surtout au vu de ses faibles liquidités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1719,
+      "Claude-SONNET-4": 351
+    }
+  }
+}

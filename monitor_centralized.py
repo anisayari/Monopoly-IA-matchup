@@ -314,45 +314,7 @@ class CentralizedMonitor:
             
             # Adapter la réponse pour avoir des coordonnées absolues
             analysis = adapt_omniparser_response(analysis, img_width, img_height)
-            print(analysis)
-            # Sauvegarder l'image annotée si disponible
-            if analysis.get('labeled_image'):
-                try:
-                    # Créer le dossier detections s'il n'existe pas
-                    detections_dir = Path("detections")
-                    detections_dir.mkdir(exist_ok=True)
-                    
-                    # Nom de fichier horodaté
-                    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
-                    filename = f"detection_{timestamp}.png"
-                    filepath = detections_dir / filename
-                    
-                    # Décoder et sauvegarder l'image
-                    labeled_data = base64.b64decode(analysis['labeled_image'])
-                    with open(filepath, 'wb') as f:
-                        f.write(labeled_data)
-                    
-                    # Sauvegarder aussi les métadonnées JSON
-                    json_filename = f"detection_{timestamp}.json"
-                    json_filepath = detections_dir / json_filename
-                    
-                    metadata = {
-                        'timestamp': datetime.now().isoformat(),
-                        'trigger': trigger,
-                        'category': category,
-                        'popup_text': popup_text[:200],  # Limiter la taille
-                        'detected_elements': len(analysis.get('raw_parsed_content', [])),
-                        'detected_icons': [opt.get('name', '') for opt in analysis.get('options', []) if opt.get('type') == 'icon'],
-                        'image_size': [img_width, img_height],
-                        'image_file': filename
-                    }
-                    
-                    with open(json_filepath, 'w', encoding='utf-8') as f:
-                        json.dump(metadata, f, indent=2, ensure_ascii=False)
-                    
-                    print(f"🖼️ Image annotée sauvegardée: {filepath}")
-                except Exception as e:
-                    print(f"⚠️ Erreur sauvegarde image annotée: {e}")
+
             
             monitor_config = self.monitor_config
             monitor_keywords = monitor_config.get('keywords', {})
@@ -564,8 +526,7 @@ class CentralizedMonitor:
             ai_decision_url = "http://localhost:7000"
             decision_response = requests.post(
                 f"{ai_decision_url}/api/decide",
-                json=ai_request,
-                timeout=30
+                json=ai_request
             )
             
             if not decision_response.ok:

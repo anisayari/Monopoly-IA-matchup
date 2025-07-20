@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T23:22:56.068547",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je remarque que GPT4.1 a maintenant le monopole rose complet. Je passe au tour suivant pour continuer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 24,
+    "money": {
+      "GPT4.1": 1693,
+      "Claude-SONNET-4": 327
+    }
+  }
+}

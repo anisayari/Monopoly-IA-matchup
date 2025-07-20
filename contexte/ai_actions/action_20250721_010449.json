@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T23:04:47.239375",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again",
+  "reason": "Continuer à jouer, collecter des loyers et maintenir la pression économique",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1719,
+      "Claude-SONNET-4": 351
+    }
+  }
+}
