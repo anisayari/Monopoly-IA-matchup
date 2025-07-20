@@ -15,6 +15,10 @@ from datetime import datetime
 from src.utils import property_manager
 import random
 import re
+from dotenv import load_dotenv
+
+# Charger les variables d'environnement depuis .env
+load_dotenv()
 
 class AIService:
     """Service IA pour prendre des décisions dans Monopoly"""
@@ -34,6 +38,13 @@ class AIService:
         openai_api_key = os.getenv('OPENAI_API_KEY')
         gemini_api_key = os.getenv('GEMINI_API_KEY')
         anthropic_api_key = os.getenv('ANTHROPIC_API_KEY')
+        
+        # Log des clés trouvées
+        print("[AI Service] Checking API keys...")
+        print(f"[AI Service] OpenAI key: {'✅ Found' if openai_api_key else '❌ Not found'}")
+        print(f"[AI Service] Gemini key: {'✅ Found' if gemini_api_key else '❌ Not found'}")
+        print(f"[AI Service] Anthropic key: {'✅ Found' if anthropic_api_key else '❌ Not found'}")
+        
         if openai_api_key and gemini_api_key and anthropic_api_key:
             try:
                 self.openai_client = OpenAI(api_key=openai_api_key)
@@ -41,10 +52,13 @@ class AIService:
                 self.anthropic_client = OpenAI(base_url="https://api.anthropic.com/v1/", api_key=anthropic_api_key) # On utilise le endpoint compatible OpenAI
                 self.available = True
                 self.logger.info("✅ Service IA activé")
+                print("[AI Service] ✅ All AI providers initialized successfully")
             except Exception as e:
                 self.logger.error(f"⚠️  Erreur initialisation IA: {e}")
+                print(f"[AI Service] ❌ Error initializing AI providers: {e}")
         else:
             self.logger.warning("⚠️  Service IA désactivé (pas de clé API)")
+            print("[AI Service] ⚠️  AI Service disabled - missing API key(s)")
     
     def _get_player_history(self, player_id: str) -> List[Dict]:
         """Récupère l'historique du joueur spécifié"""
@@ -116,10 +130,15 @@ class AIService:
         """Envoie des données aux serveurs de monitoring"""
         try:
             url = f"http://localhost:{port}/{endpoint}"
-            requests.post(url, json=data, timeout=1)
-        except:
-            # Ignorer les erreurs si le monitor n'est pas lancé
-            pass
+            response = requests.post(url, json=data, timeout=1)
+            if port == 8003:  # Log for chat monitor
+                print(f"[AI Chat] Sent {endpoint} for {data.get('player', data.get('from', 'Unknown'))}")
+        except requests.exceptions.ConnectionError:
+            if port == 8003:
+                print(f"[AI Chat] Monitor not running on port {port}")
+        except Exception as e:
+            if port == 8003:
+                print(f"[AI Chat] Error sending to monitor: {e}")
     
     def make_decision(self, popup_text: str, options: List[str], game_context: Dict) -> Dict:
         """
@@ -134,8 +153,16 @@ class AIService:
             Dict avec 'decision', 'reason', 'confidence'
         """
         
+        # Log pour debug
+        current_player = game_context.get('global', {}).get('current_player', 'Unknown')
+        player_name = game_context.get('players', {}).get(current_player, {}).get('name', current_player)
+        print(f"\n[AI Service] Decision requested for {player_name}")
+        print(f"[AI Service] Popup: {popup_text[:50]}...")
+        print(f"[AI Service] Options: {options}")
+        
         # Si l'IA n'est pas disponible, utiliser la logique par défaut
         if not self.available or not self.openai_client or not self.gemini_client or not self.anthropic_client:
+            print(f"[AI Service] AI not available, using default decision")
             return self._default_decision(options)
         
         try:

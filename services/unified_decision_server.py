@@ -16,6 +16,11 @@ from PIL import Image
 import json
 from datetime import datetime
 import sys
+from dotenv import load_dotenv
+
+# Charger les variables d'environnement depuis .env
+load_dotenv()
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from services.ai_service import get_ai_service
 

@@ -19,6 +19,17 @@ from PIL import Image
 import keyboard
 from src.utils.calibration import CalibrationUtils
 import difflib
+from dotenv import load_dotenv
+import os
+
+# Charger les variables d'environnement depuis .env
+load_dotenv()
+
+# Vérifier que les clés API sont chargées
+print("[Monitor] Checking environment variables...")
+print(f"[Monitor] OpenAI API Key: {'✅ Found' if os.getenv('OPENAI_API_KEY') else '❌ Not found'}")
+print(f"[Monitor] Anthropic API Key: {'✅ Found' if os.getenv('ANTHROPIC_API_KEY') else '❌ Not found'}")
+print(f"[Monitor] Gemini API Key: {'✅ Found' if os.getenv('GEMINI_API_KEY') else '❌ Not found'}")
 
 # Désactiver le fail-safe PyAutoGUI (temporaire)
 pyautogui.FAILSAFE = False

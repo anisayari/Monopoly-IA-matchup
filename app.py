@@ -21,6 +21,10 @@ from services.auto_start_manager import AutoStartManager
 from services.health_check_service import HealthCheckService
 from api.popup_endpoints import create_popup_blueprint
 import requests
+from dotenv import load_dotenv
+
+# Charger les variables d'environnement depuis .env
+load_dotenv()
 
 app = Flask(__name__)
 

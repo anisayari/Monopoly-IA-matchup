@@ -512,24 +512,6 @@ def parse_image_lite(base64_img: str, save_detection: bool = True, return_annota
     filtered_boxes = filtered_boxes_sorted
     print(f"Éléments finaux: {len(filtered_boxes)}")
     
-    # Afficher les détails des éléments finaux
-    print("\n📋 Détails des éléments détectés:")
-    for i, elem in enumerate(filtered_boxes):
-        elem_type = elem.get('type', 'unknown')
-        content = elem.get('content', '')
-        bbox = elem.get('bbox', [])
-        
-        if elem_type == 'text':
-            print(f"  [{i}] TEXT: '{content}'")
-        elif elem_type == 'icon':
-            if content:
-                print(f"  [{i}] ICON: {content}")
-            else:
-                print(f"  [{i}] ICON: (no caption)")
-        else:
-            print(f"  [{i}] {elem_type.upper()}: {content}")
-    print("")
-    
     # Convertir les coordonnées normalisées en pixels pour la sauvegarde
     filtered_boxes_pixels = []
     for elem in filtered_boxes:
@@ -677,15 +659,6 @@ async def parse_image(request: ImageRequest):
             detection_image_path=detection_path or "",
             labeled_image=annotated_base64 or ""
         )
-        
-        # Afficher le JSON de réponse
-        print("\n📤 JSON Response:")
-        response_dict = response.dict()
-        # Ne pas afficher l'image base64 complète (trop longue)
-        if response_dict.get('labeled_image'):
-            response_dict['labeled_image'] = f"<base64 image - {len(response_dict['labeled_image'])} chars>"
-        print(json.dumps(response_dict, indent=2, ensure_ascii=False))
-        print("")
         
         return response
         

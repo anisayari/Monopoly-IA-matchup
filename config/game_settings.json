@@ -8,7 +8,7 @@
     },
     "player2": {
       "name": "Claude",
-      "ai_model": "claude-4-sonnet-20241022",
+      "ai_model": "claude-sonnet-4-0",
       "provider": "anthropic",
       "enabled": true
     }
