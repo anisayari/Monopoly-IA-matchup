@@ -661,7 +661,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         json_result = json.loads(response.choices[0].message.content)
         return json_result
 
-    def _run_conversation_between_players(self, current_player, result, game_context, context_str, popup_text, options, user_message, request_data, ai_client, is_trade_available):
+    def _run_conversation_between_players(self, current_player, result, game_context, context_str, popup_text, options, user_message, request_data, is_trade_available):
         """
         Gère la boucle de conversation entre deux IA jusqu'à END_CONVERSATION, puis relance la décision.
         Retourne le nouveau résultat de décision.
@@ -671,6 +671,23 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         player2_name = game_context.get('players', {}).get("player2", {}).get('name', "player2")
         player1_model = game_context.get('players', {}).get("player1", {}).get('ai_model', "gpt-4o-mini")
         player2_model = game_context.get('players', {}).get("player2", {}).get('ai_model', "gpt-4o-mini")
+        
+        player1_provider = game_context.get('players', {}).get("player1", {}).get('provider', "openai")
+        player2_provider = game_context.get('players', {}).get("player2", {}).get('provider', "openai")
+        
+        ai_client_player1 = self.openai_client
+        ai_client_player2 = self.openai_client
+        
+        if player1_provider == "anthropic":
+            ai_client_player1 = self.anthropic_client
+        elif player1_provider == "gemini":
+            ai_client_player1 = self.gemini_client
+        
+        if player2_provider == "anthropic":
+            ai_client_player2 = self.anthropic_client
+        elif player2_provider == "gemini":
+            ai_client_player2 = self.gemini_client
+        
         player_need_answer = "player1"
         if current_player == "player1":
             conversation_data.append(f"{player1_name} : {result['chat_message']}")
@@ -681,6 +698,9 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             player_need_answer = "player1"
             self.logger.info(f"💬 {player2_name} : {result['chat_message']}")
         while True:
+            
+            ai_client = ai_client_player1 if player_need_answer == "player1" else ai_client_player2
+            ai_model = player1_model if player_need_answer == "player1" else player2_model
             conversation_messages = '\n'.join(conversation_data)
             trade_message_system_prompt = "TU N'EST PAS SUR LA FENETRE D'ECHANGE de propriétés ou/et d'argent (qui est dans Accounts > Trade), tu ne peux pas négocier d'échange pendant cette discussion. Mais tu peux discuter avec l'autre IA quand même."
             if is_trade_available:
@@ -730,7 +750,7 @@ EXEMPLES:
  """}
             ]
             response = ai_client.chat.completions.create(
-                model=player1_model if player_need_answer == "player1" else player2_model,
+                model=ai_model,
                 messages=messages,
                 max_tokens=500
             )
