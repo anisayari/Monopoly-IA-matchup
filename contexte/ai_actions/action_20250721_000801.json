@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T22:07:59.294877",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dispose de suffisamment d'argent et je dois évaluer mes options d'achat ou de construction pour gagner l'avantage.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1719,
+      "Claude-SONNET-4": 351
+    }
+  }
+}

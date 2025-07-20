@@ -147,7 +147,7 @@ class AutoStartManager:
         """Vérifie si OmniParser est accessible"""
         try:
             import urllib.request
-            response = urllib.request.urlopen('http://localhost:8000/probe/', timeout=2)
+            response = urllib.request.urlopen('http://localhost:8002/', timeout=2)
             return response.status == 200
         except:
             return False
@@ -189,7 +189,7 @@ class AutoStartManager:
                 return True
             time.sleep(2)
             
-        self._log("⚠️ OmniParser n'est pas accessible sur http://localhost:8000")
+        self._log("⚠️ OmniParser n'est pas accessible sur http://localhost:8002")
         return False  # Continue anyway
     
     def stop_all_systems(self):

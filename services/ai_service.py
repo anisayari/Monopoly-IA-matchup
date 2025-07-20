@@ -34,6 +34,7 @@ class AIService:
         self.player2_history = []
         self.global_chat_messages = []
         self.max_history_length = 20  # Limite de l'historique (messages user+assistant)
+        self.trade_data = None  # Pour stocker les données de trade
         
         # Initialiser OpenAI si la clé est disponible
         openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -126,7 +127,7 @@ class AIService:
             # Ignorer les erreurs si le monitor n'est pas lancé
             pass
     
-    def make_decision(self, popup_text: str, options: List[str], game_context: Dict) -> Dict:
+    def make_decision(self, popup_text: str, options: List[str], game_context: Dict, category: str) -> Dict:
         """
         Prend une décision basée sur le contexte
         
@@ -260,8 +261,6 @@ Tu as accés au contexte du jeu entre chaque tour. Et tu dois prendre des décis
 
 A n'importe quel moment tu peux utiliser la decisions TALK_TO_OTHER_PLAYERS pour discuter avec les autres joueurs.
 
-IMPORTANT: Si tu veux terminer cette conversation, tu DOIS répondre UNIQUEMENT avec le texte exact:  END_CONVERSATION Ne rajoute RIEN d'autre, pas de ponctuation, pas d'espaces. Juste ces deux mots. Si la conversation semble terminée (remerciements échangés, au revoir dit),réponds immédiatement: END_CONVERSATION.
-
 RÉPONSE OBLIGATOIRE en JSON valide avec :
 - "decision" : nom exact de l'option choisie .
 - "reason" : explication stratégique concise (max 30 mots)  
@@ -333,8 +332,9 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                     user_message=user_message,
                     request_data=request_data,
                     ai_client=ai_client,
-                    is_trade_available=True
+                    is_trade_available= category is 'trade'
                 )
+
             
             self.logger.info(f"✅ Décision IA: {result['decision']} - {result['reason']}")
             
@@ -591,8 +591,8 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             'confidence': 0.0
         }
 
-    def _get_ai_trade_decision_json(player1_name, player2_name, last_messages):
-        system_prompt = """
+    def _get_ai_trade_decision_json(self, player1_name, player2_name, last_messages):
+        system_prompt = f"""
         Tu dois retourner un JSON valide avec le schema suivant, aucun texte autre que le JSON.
         
         Contexte:
@@ -646,7 +646,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             model="o4-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": f"{"\n".join(last_messages)}"}
+                {"role": "user", "content": f"{chr(10).join(last_messages)}"}
             ],
             max_tokens=500,
             response_format={
@@ -682,19 +682,26 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             self.logger.info(f"💬 {player2_name} : {result['chat_message']}")
         while True:
             conversation_messages = '\n'.join(conversation_data)
+            trade_message_system_prompt = "TU N'EST PAS SUR LA FENETRE D'ECHANGE de propriétés ou/et d'argent (qui est dans Accounts > Trade), tu ne peux pas négocier d'échange pendant cette discussion. Mais tu peux discuter avec l'autre IA quand même."
             if is_trade_available:
+                trade_message_system_prompt = "TU PEUX NEGOCIER DES ECHANGES de propriétés ou/Et d'argent !"
                 trade_message = """
                 - "[INIT_TRADE]" pour déclencher un échange de propriétés après avoir négocié avec l'autre joueur et que les deux joueurs sont d'accord.
                 """
             else:
                 trade_message = ""
+
             messages = [
                 {"role": "system", "content": f"""
-Tu es une IA experte au Monopoly dans une compétition contre d'autres IA.
-Tu es actuellement en train de discuter avec un autre joueur.
+Tu es ue IA qui joue au Monopoly contre une autre IA.
+Tu es actuellement en train de discuter avec un autre joueur IA.
                 """},
                 {"role": "user", "content": f"""
 Tu es le joueur {player_need_answer} ({player1_name if player_need_answer == "player1" else player2_name})
+
+<TRADE POSSIBILITIES ?>
+{trade_message_system_prompt}
+</TRADE POSSIBILITIES?>
 
 <game_context>
     Contexte actuel:
@@ -711,9 +718,15 @@ Tu es le joueur {player_need_answer} ({player1_name if player_need_answer == "pl
     {conversation_messages}
 </conversation>
 
-Répond au message de l'autre joueur. Tu peux finir ta réponse par un des mots clé suivant pour déclencher une action:
- - "[END_CONVERSATION]" pour terminer la conversation.
- {trade_message}
+
+MOTS-CLÉS SPÉCIAUX:
+- "[END_CONVERSATION]" : UNIQUEMENT si tu considère que la conversation est vraiment terminée (accord conclu, au revoir échangé, plus rien à négocier)
+{trade_message}
+
+EXEMPLES:
+✅ Réponse normale: "Je suis intéressé par ta propriété orange. Que veux-tu en échange ?"
+✅ Terminer: "D'accord, merci pour la discussion. [END_CONVERSATION]"
+❌ NE PAS FAIRE: "Je suis intéressé par ta propriété. [END_CONVERSATION]"
  """}
             ]
             response = ai_client.chat.completions.create(
@@ -726,16 +739,24 @@ Répond au message de l'autre joueur. Tu peux finir ta réponse par un des mots 
             self.logger.info(f"💬 {player_need_answer} : {conversation_result}")
             if conversation_result.find("[END_CONVERSATION]") != -1 or conversation_result.find("[INIT_TRADE]") != -1:
                 if conversation_result.find("[INIT_TRADE]") != -1:
-                    # TODO: Les IA décident de faire un échange de propriétés
+                    # Les IA décident de faire un échange de propriétés
                     exchange_result = self._get_ai_trade_decision_json(player1_name, player2_name, conversation_data)
                     self.logger.info(f"💬 Échange de propriétés: {exchange_result}")
-                    # TODO: Gérer l'échange de propriétés
+                    # Sauvegarder les données du trade pour monitor_centralized
+                    self.trade_data = exchange_result
                     conversation_messages.append(f"[TRADE_COMPLETED]")
-                    pass
+                    # Si un trade a été initié, modifier le résultat
+                    if hasattr(self, 'trade_data') and self.trade_data:
+                        new_result = result
+                        new_result['decision'] = 'make_trade'
+                        new_result['trade_data'] = self.trade_data
+                        # Réinitialiser pour la prochaine fois
+                        self.trade_data = None
+                    return new_result
                 new_request_data = request_data.copy()
                 new_request_data['messages'] = list(request_data['messages'])  # copy list
                 new_request_data['messages'].append({"role": "user", "content": user_message})
-                new_request_data['messages'].append({"role": "assistant", "content": result})
+                new_request_data['messages'].append({"role": "assistant", "content": json.dumps(result)})
                 new_request_data['messages'].append({"role": "user", "content": f"""Tu as terminé la conversation avec l'autre joueur.
 <conversation>
     Messages de la conversation:
@@ -757,6 +778,13 @@ Répond maintenant à la question du popup."""})
                     new_result = result  # fallback
                 self._add_to_history(current_player, "user", user_message)
                 self._add_to_history(current_player, "assistant", json.dumps(new_result))
+                
+                # Si un trade a été initié, modifier le résultat
+                if hasattr(self, 'trade_data') and self.trade_data:
+                    new_result['decision'] = 'make_trade'
+                    new_result['trade_data'] = self.trade_data
+                    # Réinitialiser pour la prochaine fois
+                    self.trade_data = None
                 return new_result
             # Alterner le joueur qui doit répondre
             player_need_answer = "player2" if player_need_answer == "player1" else "player1"

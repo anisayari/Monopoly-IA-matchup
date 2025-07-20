@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T19:14:44.681261",
+  "trigger": "would you like",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "cancel "
+  ],
+  "decision": "cancel ",
+  "reason": "Aucune action supplémentaire à entreprendre pour le moment, je choisis d'attendre le tour suivant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT-Joueur": 1789,
+      "Claude-IA": 81
+    }
+  }
+}

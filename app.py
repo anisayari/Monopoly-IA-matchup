@@ -35,7 +35,7 @@ health_check_service = HealthCheckService()
 
 # Enregistrer les blueprints pour les popups (sans event bus)
 app.register_blueprint(create_popup_blueprint(
-    omniparser_url="http://localhost:8000",
+    omniparser_url="http://localhost:8002",
     ai_decision_url="http://localhost:7000"
 ))
 
@@ -685,14 +685,14 @@ def get_omniparser_status():
         # Vérifier si OmniParser est accessible
         try:
             import urllib.request
-            response = urllib.request.urlopen('http://localhost:8000/probe/', timeout=2)
+            response = urllib.request.urlopen('http://localhost:8002/', timeout=2)
             is_running = response.status == 200
         except:
             is_running = False
             
         return jsonify({
             'running': is_running,
-            'url': 'http://localhost:8000'
+            'url': 'http://localhost:8002'
         })
     except Exception as e:
         return jsonify({'error': str(e)}), 500

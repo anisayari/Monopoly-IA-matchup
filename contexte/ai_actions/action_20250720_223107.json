@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T20:31:04.870720",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "accounts "
+  ],
+  "decision": "accounts ",
+  "reason": "Première option disponible",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT-Joueur": 1789,
+      "Claude-IA": 81
+    }
+  }
+}

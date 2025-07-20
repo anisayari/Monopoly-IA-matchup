@@ -11,7 +11,7 @@ import uuid
 class SimplePopupService:
     """Service simplifié pour gérer les popups avec des appels API directs"""
     
-    def __init__(self, omniparser_url="http://localhost:8000", ai_decision_url="http://localhost:7000"):
+    def __init__(self, omniparser_url="http://localhost:8002", ai_decision_url="http://localhost:7000"):
         self.omniparser_url = omniparser_url
         self.ai_decision_url = ai_decision_url
         self.active_popups: Dict[str, dict] = {}

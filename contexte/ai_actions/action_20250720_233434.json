@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T21:34:32.794472",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "Yes ",
+  "reason": "Je vais gérer mes propriétés pour évaluer mes options d'échange avec Claude-IA et maximiser mes possibilités de gain.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT-Joueur": 1789,
+      "Claude-IA": 81
+    }
+  }
+}

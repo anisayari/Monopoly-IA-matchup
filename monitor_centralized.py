@@ -18,9 +18,11 @@ import mss.tools
 from PIL import Image
 import keyboard
 from src.utils.calibration import CalibrationUtils
+from src.utils import property_manager, get_coordinates
 import difflib
 from dotenv import load_dotenv
 import os
+from omniparser_adapter import adapt_omniparser_response
 
 # Charger les variables d'environnement depuis .env
 load_dotenv()
@@ -102,7 +104,7 @@ class CentralizedMonitor:
             "Community Chest": "card",
             "in jail": "jail",
             "Pay Rent": "rent",
-            "trading": "trade",
+            "Trading": "trade",
             "auction": "auction",
             "Go To Jail": "jail",
             "property deeds": "property_management",
@@ -122,22 +124,22 @@ class CentralizedMonitor:
                 'address': None
             })
         
-        # Ajouter les patterns de messages
-        for msg in self.message_addresses:
-            if msg['type'] == 'pattern' and msg['pattern']:
-                category = self._get_message_category(msg['id'], msg['pattern'])
+        # # Ajouter les patterns de messages
+        # for msg in self.message_addresses:
+        #     if msg['type'] == 'pattern' and msg['pattern']:
+        #         category = self._get_message_category(msg['id'], msg['pattern'])
                 
-                self.unified_patterns.append({
-                    'id': msg['id'],
-                    'trigger': msg['pattern'],  # Le pattern fait office de trigger
-                    'category': category,
-                    'pattern': msg['pattern'],
-                    'compiled': re.compile(re.escape(msg['pattern'].encode("utf-16-le")), re.IGNORECASE | re.DOTALL),
-                    'type': 'message',
-                    'max_length': 200,
-                    'group': msg.get('group', 'other'),
-                    'address': msg.get('address', '')
-                })
+        #         self.unified_patterns.append({
+        #             'id': msg['id'],
+        #             'trigger': msg['pattern'],  # Le pattern fait office de trigger
+        #             'category': category,
+        #             'pattern': msg['pattern'],
+        #             'compiled': re.compile(re.escape(msg['pattern'].encode("utf-16-le")), re.IGNORECASE | re.DOTALL),
+        #             'type': 'message',
+        #             'max_length': 200,
+        #             'group': msg.get('group', 'other'),
+        #             'address': msg.get('address', '')
+        #         })
     
     def _get_message_category(self, msg_id, pattern):
         """Détermine la catégorie d'un message basé sur son ID ou pattern"""
@@ -277,7 +279,7 @@ class CentralizedMonitor:
         
         return unified_results
     
-    def process_popup(self, popup_text, screenshot_base64, trigger):
+    def process_popup(self, popup_text, screenshot_base64, trigger,category ):
         """Traite un popup en deux étapes: analyse puis décision"""
         try:
 
@@ -301,6 +303,56 @@ class CentralizedMonitor:
                 return None
             
             analysis = analyze_response.json()
+            
+            # Adapter la réponse si elle vient d'OmniParser officiel
+            # Récupérer les dimensions de l'image depuis le screenshot
+            from PIL import Image
+            import io
+            img_data = base64.b64decode(screenshot_base64)
+            img = Image.open(io.BytesIO(img_data))
+            img_width, img_height = img.size
+            
+            # Adapter la réponse pour avoir des coordonnées absolues
+            analysis = adapt_omniparser_response(analysis, img_width, img_height)
+            print(analysis)
+            # Sauvegarder l'image annotée si disponible
+            if analysis.get('labeled_image'):
+                try:
+                    # Créer le dossier detections s'il n'existe pas
+                    detections_dir = Path("detections")
+                    detections_dir.mkdir(exist_ok=True)
+                    
+                    # Nom de fichier horodaté
+                    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+                    filename = f"detection_{timestamp}.png"
+                    filepath = detections_dir / filename
+                    
+                    # Décoder et sauvegarder l'image
+                    labeled_data = base64.b64decode(analysis['labeled_image'])
+                    with open(filepath, 'wb') as f:
+                        f.write(labeled_data)
+                    
+                    # Sauvegarder aussi les métadonnées JSON
+                    json_filename = f"detection_{timestamp}.json"
+                    json_filepath = detections_dir / json_filename
+                    
+                    metadata = {
+                        'timestamp': datetime.now().isoformat(),
+                        'trigger': trigger,
+                        'category': category,
+                        'popup_text': popup_text[:200],  # Limiter la taille
+                        'detected_elements': len(analysis.get('raw_parsed_content', [])),
+                        'detected_icons': [opt.get('name', '') for opt in analysis.get('options', []) if opt.get('type') == 'icon'],
+                        'image_size': [img_width, img_height],
+                        'image_file': filename
+                    }
+                    
+                    with open(json_filepath, 'w', encoding='utf-8') as f:
+                        json.dump(metadata, f, indent=2, ensure_ascii=False)
+                    
+                    print(f"🖼️ Image annotée sauvegardée: {filepath}")
+                except Exception as e:
+                    print(f"⚠️ Erreur sauvegarde image annotée: {e}")
             
             monitor_config = self.monitor_config
             monitor_keywords = monitor_config.get('keywords', {})
@@ -478,15 +530,14 @@ class CentralizedMonitor:
             raw_content = analysis.get('raw_parsed_content', [])
             all_text = ' '.join([item.get('content', '') for item in raw_content if item.get('type') == 'text']).lower()
             
-
-            
-            
             # Étape 2: Obtenir le contexte du jeu
             game_context = {}
             try:
                 context_response = requests.get(f"{self.api_url}/api/context", timeout=5)
                 if context_response.ok:
                     game_context = context_response.json()
+                    # Stocker le contexte pour utilisation dans _handle_trade_event
+                    self.game_context = game_context
                     # Le contexte est maintenant envoyé au serveur d'actions
                     # pour être affiché dans le terminal dédié
                 else:
@@ -505,7 +556,8 @@ class CentralizedMonitor:
                 'game_context': game_context,
                 'full_options': options,  # Infos complètes des options avec bbox
                 'keywords': selected_keywords,  # Keywords identifiés via les icônes
-                'all_detected_icons': detected_icons  # Toutes les icônes détectées
+                'all_detected_icons': detected_icons,  # Toutes les icônes détectées
+                'category':category
             }
             
             # Appeler directement le serveur AI sur le port 7000
@@ -555,14 +607,25 @@ class CentralizedMonitor:
             except Exception as e:
                 print(f"⚠️ Erreur sauvegarde action: {e}")
             
+            # Préparer les données de trade si c'est un événement de trade
+            trade_data = None
+            if any('Trading' in kw for kw in selected_keywords):
+                trade_data = decision_data.get('trade_data', {})
+            
             # Retourner toutes les infos nécessaires
-            return {
+            result = {
                 'success': True,
                 'decision': decision,
                 'reason': reason,
                 'options': options,
                 'analysis': analysis
             }
+            
+            # Ajouter trade_data si disponible
+            if trade_data:
+                result['trade_data'] = trade_data
+                
+            return result
             
         except Exception as e:
             print(f"❌ Erreur: {e}")
@@ -621,30 +684,19 @@ class CentralizedMonitor:
 
                             cx = (x1 + x2) // 2
                             cy = (y1 + y2) // 2
-                            transformed_cx, transformed_cy = self.calibration.inverse_conversion(cx, cy)
-
-                            # Position absolue (ajouter l'offset de la fenêtre)
-                            # window_bbox est [x, y, width, height]
-                            abs_x = win_bbox[0] + transformed_cx
-                            abs_y = win_bbox[1] + transformed_cy
                             
-                            print(f"🖱️  Clic sur '{decision}' à ({abs_x}, {abs_y})")
-                            print(f"   - Bbox originale: {bbox}")
-                            print(f"   - Centre relatif: ({transformed_cx}, {transformed_cy})")
-                            print(f"   - Window position: ({win_bbox[0]}, {win_bbox[1]})")
+                            # Transformer les coordonnées (window_bbox utilisé implicitement par transform_coordinates)
+                            abs_x, abs_y, transformed_cx, transformed_cy = self.transform_coordinates(cx, cy)
                             
-                            # Focus la fenêtre
-                            self.focus_dolphin_window()
-                            time.sleep(0.5)
-                            
-                            # Effectuer le clic
-                            pyautogui.moveTo(abs_x, abs_y+30, duration=0.3)
-                            time.sleep(0.3)
-                            self.focus_dolphin_window()
-                            pyautogui.mouseDown()
-                            time.sleep(0.2)
-                            pyautogui.mouseUp()
-                            time.sleep(0.5)
+                            if abs_x is not None:
+                                print(f"🖱️  Clic sur '{decision}'")
+                                print(f"   - Bbox originale: {bbox}")
+                                print(f"   - Centre transformé: ({transformed_cx}, {transformed_cy})")
+                                
+                                # Effectuer le clic avec offset de 30 pixels
+                                self.perform_click(abs_x, abs_y, f"Clic sur '{decision}'")
+                            else:
+                                print(f"❌ Erreur de transformation pour '{decision}'")
                             
                             # Déplacer la souris au centre de la fenêtre
                             center_x = win_bbox[0] + win_bbox[2]//2
@@ -659,6 +711,67 @@ class CentralizedMonitor:
         except Exception as e:
             print(f"❌ Erreur lors du clic: {e}")
             return False
+    
+    def transform_coordinates(self, x, y, window=None):
+        """
+        Transforme des coordonnées relatives ou pixels en coordonnées absolues
+        
+        Args:
+            x: Coordonnée X (relative ou pixel)
+            y: Coordonnée Y (relative ou pixel)
+            window: Fenêtre de référence (si None, utilise get_dolphin_window)
+            
+        Returns:
+            Tuple (abs_x, abs_y, transformed_x, transformed_y) ou (None, None, None, None) si erreur
+        """
+        try:
+            if window is None:
+                window = self.get_dolphin_window()
+                if not window:
+                    return None, None, None, None
+            
+            # Appliquer inverse_conversion
+            transformed_x, transformed_y = self.calibration.inverse_conversion(x, y)
+            
+            # Position absolue
+            abs_x = window.left + transformed_x
+            abs_y = window.top + transformed_y
+            
+            return abs_x, abs_y, transformed_x, transformed_y
+            
+        except Exception as e:
+            print(f"❌ Erreur lors de la transformation des coordonnées: {e}")
+            return None, None, None, None
+    
+    def perform_click(self, x, y, description="", y_offset=30):
+        """
+        Effectue un clic aux coordonnées données avec la séquence mouseDown/mouseUp
+        
+        Args:
+            x: Coordonnée X absolue
+            y: Coordonnée Y absolue
+            description: Description du clic pour les logs
+            y_offset: Décalage Y optionnel (par défaut 0)
+        """
+        try:
+            if description:
+                print(f"🖱️  {description} à ({x}, {y + y_offset})")
+            
+            # Focus la fenêtre
+            self.focus_dolphin_window()
+            time.sleep(0.5)
+            
+            # Effectuer le clic
+            pyautogui.moveTo(x, y + y_offset, duration=0.3)
+            time.sleep(0.3)
+            self.focus_dolphin_window()
+            pyautogui.mouseDown()
+            time.sleep(0.2)
+            pyautogui.mouseUp()
+            time.sleep(0.5)
+            
+        except Exception as e:
+            print(f"❌ Erreur lors du clic: {e}")
     
     def focus_dolphin_window(self):
         """Focus la fenêtre Dolphin"""
@@ -711,6 +824,103 @@ class CentralizedMonitor:
         except Exception as e:
             print(f"❌ Erreur lors de l'envoi des touches: {e}")
             return False
+    
+    def _handle_trade_event(self, trade_data, result, screenshot):
+        """
+        Gère les événements de trade en cliquant sur les propriétés
+        
+        Args:
+            trade_data: Structure avec les offres des joueurs
+            result: Résultat du process_popup
+            screenshot: Capture d'écran actuelle
+        """
+        try:
+            print("🔄 Gestion du trade détectée")
+            
+            # Récupérer le contexte du jeu pour savoir qui est le joueur actuel
+            game_context = self.game_context if hasattr(self, 'game_context') else {}
+            current_player = game_context.get('global', {}).get('current_player', 'player1')
+            other_player = 'player2' if current_player == 'player1' else 'player1'
+            
+            print(f"📍 Joueur actuel: {current_player}")
+            print(f"📍 Ordre de clic: propriétés de {other_player} puis {current_player}")
+            
+            # Liste ordonnée des joueurs : d'abord l'autre joueur, puis le joueur actuel
+            players_order = [other_player, current_player]
+            
+            # Ajouter les propriétés dans l'ordre spécifié
+            properties_to_click = []
+            for player in players_order:
+                # Récupérer les propriétés de manière sûre (retourne [] si absent)
+                props = trade_data.get(player, {}).get('offers', {}).get('properties', [])
+                properties_to_click.extend((prop, player) for prop in props)
+            
+            # Cliquer sur toutes les propriétés dans l'ordre
+            print(f"🏠 Total de propriétés à cliquer: {len(properties_to_click)}")
+            
+            # Obtenir la fenêtre Dolphin pour les clics
+            dolphin_window = gw.getWindowsWithTitle("Dolphin")
+            if not dolphin_window:
+                print("❌ Fenêtre Dolphin non trouvée")
+                return
+            
+            win = dolphin_window[0]
+            win_x, win_y = win.left, win.top
+            
+            for prop_name, owner in properties_to_click:
+                coords = get_coordinates(prop_name, 'relative')
+                if coords:
+                    rel_x, rel_y = coords
+                    
+                    # Transformer les coordonnées
+                    abs_x, abs_y, transformed_x, transformed_y = self.transform_coordinates(
+                        rel_x * win.width, 
+                        rel_y * win.height, 
+                        win
+                    )
+                    
+                    if abs_x is not None:
+                        print(f"🏠 Propriété: {prop_name} (appartient à {owner})")
+                        print(f"   - Coordonnées relatives: ({rel_x:.3f}, {rel_y:.3f})")
+                        print(f"   - Après transformation: ({transformed_x}, {transformed_y})")
+                        
+                        # Effectuer le clic
+                        self.perform_click(abs_x, abs_y, f"Clic sur {prop_name}")
+                    else:
+                        print(f"❌ Erreur de transformation pour {prop_name}")
+                else:
+                    print(f"⚠️ Coordonnées introuvables pour {prop_name}")
+            
+            # Après avoir cliqué sur toutes les propriétés, traiter la décision
+            # (proposer, ajouter de l'argent, etc.)
+            decision = result.get('decision')
+            options = result.get('options', [])
+            
+            # Trouver et cliquer sur l'option décidée
+            for opt in options:
+                if opt['name'].strip().lower() == decision.strip().lower():
+                    bbox = opt.get('bbox')
+                    if bbox and len(bbox) >= 4:
+                        # Calculer le centre de la bbox
+                        cx = (bbox[0] + bbox[2]) / 2
+                        cy = (bbox[1] + bbox[3]) / 2
+                        
+                        # Transformer les coordonnées
+                        abs_x, abs_y, transformed_cx, transformed_cy = self.transform_coordinates(cx, cy, win)
+                        
+                        if abs_x is not None:
+                            print(f"📋 Option '{decision}':")
+                            print(f"   - Bbox originale: {bbox}")
+                            print(f"   - Centre transformé: ({transformed_cx}, {transformed_cy})")
+                            
+                            # Effectuer le clic avec offset de 30 pixels
+                            self.perform_click(abs_x, abs_y, f"Clic sur l'option '{decision}'")
+                        else:
+                            print(f"❌ Erreur de transformation pour l'option '{decision}'")
+                    break
+                    
+        except Exception as e:
+            print(f"❌ Erreur lors de la gestion du trade: {e}")
     
     def display_player_info(self):
         """Affiche les informations des joueurs et leurs modèles AI"""
@@ -839,15 +1049,28 @@ class CentralizedMonitor:
                         print(f"🖼️ Screenshot capturé !")
                         
                         # Traiter le popup (analyse + décision)
-                        result = self.process_popup(cleaned_text, screenshot, match.get('trigger'))
+                        result = self.process_popup(cleaned_text, screenshot, match.get('trigger'), match.get('category'))
                         if result is None:
                             print("🔍 No result found, skipping...")
                             continue
                         if result and result.get('success'):
-                            #IF TRADE BOUCLE DE RESOLUTION
-                            if result.current_event == "trade":
-                                
-                            #IF AUCTION BOUCLE DE RESOLUTION
+                            # Déterminer le type d'événement basé sur les keywords ou la catégorie
+                            current_event = None
+                            if match.get('category') == "trade" or any('Trading' in kw for kw in match.get('keywords', [])):
+                                current_event = "trade"
+                            elif match.get('category') == "auction" or 'Auction' in match.get('keywords', []):
+                                current_event = "auction"
+                            
+                            # Vérifier si la décision est "make_trade" (depuis ai_service)
+                            if current_event == "trade" and result.get('decision') == 'make_trade':
+                                print("🔄 Décision 'make_trade' détectée depuis ai_service")
+                                trade_data = result.get('trade_data', {})
+                                if trade_data:
+                                    self._handle_trade_event(trade_data, result, screenshot)
+                                    continue
+                                else:
+                                    print("⚠️ Aucune donnée de trade trouvée dans le résultat")
+                            
                             decision = result['decision']
                             options = result.get('options', [])
                             

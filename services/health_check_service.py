@@ -20,8 +20,8 @@ class HealthCheckService:
                 "critical": True
             },
             "omniparser": {
-                "url": "http://localhost:8000/health",
-                "port": 8000,
+                "url": "http://localhost:8002/health",
+                "port": 8002,
                 "name": "OmniParser Service",
                 "critical": True,
                 "startup_script": "start_omniparser_with_monitor.bat"

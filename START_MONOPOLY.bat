@@ -37,8 +37,8 @@ if exist cleanup_ports.py (
         set /a ports_cleaned=1
     )
     
-    :: Port 8000 (OmniParser)
-    for /f "tokens=5" %%a in ('netstat -aon 2^>nul ^| findstr :8000 ^| findstr LISTENING') do (
+    :: Port 8002 (OmniParser Official)
+    for /f "tokens=5" %%a in ('netstat -aon 2^>nul ^| findstr :8002 ^| findstr LISTENING') do (
         taskkill /F /PID %%a >nul 2>&1
         set /a ports_cleaned=1
     )
@@ -126,7 +126,7 @@ echo.
 echo Layout:
 echo +------------------+------------------+
 echo !      Flask       !    OmniParser    !
-echo !      (5000)      !      (8000)      !
+echo !      (5000)      !      (8002)      !
 echo +------------------+------------------+
 echo ! Monitor (Popups) ! AI Chat/Thoughts !
 echo +------------------+------------------+
@@ -138,9 +138,8 @@ echo.
 set "SCRIPT_DIR=%~dp0"
 set "SCRIPT_DIR=%SCRIPT_DIR:~0,-1%"
 
-:: Use omniparser_lite.py which is already working
-set OMNIPARSER_CMD=python omniparser_lite.py
-if not exist omniparser_lite.py set OMNIPARSER_CMD=python omniparser_server_native.py
+:: Use OmniParser Official on port 8002
+set OMNIPARSER_CMD=python omniparser_official_api.py
 
 :: Windows Terminal with split panes
 wt ^
@@ -167,10 +166,10 @@ echo [5/8] Starting services in separate windows...
 echo Cleaning up old processes...
 taskkill /F /IM python.exe /FI "WINDOWTITLE eq Monopoly*" >nul 2>&1
 
-:: Clean up port 8000 specifically for OmniParser
-echo Checking port 8000...
-for /f "tokens=5" %%a in ('netstat -aon ^| findstr :8000 ^| findstr LISTENING') do (
-    echo Killing process on port 8000 (PID: %%a)
+:: Clean up port 8002 specifically for OmniParser Official
+echo Checking port 8002...
+for /f "tokens=5" %%a in ('netstat -aon ^| findstr :8002 ^| findstr LISTENING') do (
+    echo Killing process on port 8002 (PID: %%a)
     taskkill /F /PID %%a >nul 2>&1
 )
 echo Done.
@@ -181,13 +180,9 @@ echo Starting Flask server...
 start "Monopoly IA - Flask" cmd /k "cd /d %~dp0 && python app.py"
 timeout /t 3 >nul
 
-:: Start OmniParser
-echo Starting OmniParser...
-if exist omniparser_lite.py (
-    start "Monopoly IA - OmniParser" cmd /k "cd /d %~dp0 && python omniparser_lite.py"
-) else (
-    start "Monopoly IA - OmniParser" cmd /k "cd /d %~dp0 && python omniparser_server_native.py"
-)
+:: Start OmniParser Official
+echo Starting OmniParser Official...
+start "Monopoly IA - OmniParser Official" cmd /k "cd /d %~dp0 && python omniparser_official_api.py"
 timeout /t 3 >nul
 
 :: Start Decision Server
@@ -255,7 +250,7 @@ echo ================================================
 echo.
 echo Services:
 echo    - Flask UI: http://localhost:5000
-echo    - OmniParser API: http://localhost:8000
+echo    - OmniParser API: http://localhost:8002
 echo    - AI Decision API: http://localhost:7000
 echo    - Admin Panel: http://localhost:5000/admin
 echo    - Monitoring: http://localhost:5000/monitoring

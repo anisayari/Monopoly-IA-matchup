@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T21:37:07.603405",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Vérifier mes finances et mes propriétés actuelles me permettra de mieux évaluer les opportunités d'échange avec Claude-IA.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 18,
+    "money": {
+      "GPT-Joueur": 1719,
+      "Claude-IA": 351
+    }
+  }
+}

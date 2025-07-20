@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T19:13:19.986029",
+  "trigger": "Trading",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "back ",
+    "trade "
+  ],
+  "decision": "trade ",
+  "reason": "Répondre à Claude-IA peut offrir une opportunité d'échange pour améliorer ma position tout en l'affaiblissant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT-Joueur": 1789,
+      "Claude-IA": 81
+    }
+  }
+}

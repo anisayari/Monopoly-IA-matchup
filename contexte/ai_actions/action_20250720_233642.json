@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T21:36:39.982980",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je ne souhaite pas gérer mes propriétés pour le moment, je préfère me concentrer sur les discussions d'échanges avec Claude-IA.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 18,
+    "money": {
+      "GPT-Joueur": 1719,
+      "Claude-IA": 351
+    }
+  }
+}

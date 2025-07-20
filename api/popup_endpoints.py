@@ -5,7 +5,7 @@ from flask import Blueprint, jsonify, request
 from datetime import datetime
 import requests
 
-def create_popup_blueprint(omniparser_url="http://localhost:8000", ai_decision_url="http://localhost:7000"):
+def create_popup_blueprint(omniparser_url="http://localhost:8002", ai_decision_url="http://localhost:7000"):
     """Crée le blueprint pour les endpoints popup"""
     
     popup_api = Blueprint('popup_api', __name__)
@@ -37,7 +37,8 @@ def create_popup_blueprint(omniparser_url="http://localhost:8000", ai_decision_u
             
             omniparser_result = omniparser_response.json()
             parsed_content = omniparser_result.get('parsed_content_list', [])
-            
+            raw_parsed_content = omniparser_result.get('raw_parsed_content', [])
+
             # Extraire les options (boutons)
             options = []
             text_content = []
@@ -55,10 +56,11 @@ def create_popup_blueprint(omniparser_url="http://localhost:8000", ai_decision_u
             
             # Retourner l'analyse
             return jsonify({
+                'parsed_content_list': parsed_content,
                 'success': True,
                 'options': options,
                 'text_content': text_content,
-                'raw_parsed_content': parsed_content
+                'raw_parsed_content': raw_parsed_content
             })
             
         except Exception as e:

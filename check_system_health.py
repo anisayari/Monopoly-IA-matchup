@@ -34,7 +34,7 @@ def main():
     
     services = [
         ("Flask Server", "http://localhost:5000/api/health", 5000),
-        ("OmniParser", "http://localhost:8000/health", 8000),
+        ("OmniParser", "http://localhost:8002/health", 8002),
         ("Unified Decision Server", "http://localhost:7000/api/decision/health", 7000),
         ("Redis (optional)", "http://localhost:6379", 6379)
     ]

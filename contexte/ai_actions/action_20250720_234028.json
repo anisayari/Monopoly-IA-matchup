@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T21:40:26.685791",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Proposer un échange pourrait renforcer ma position. Je cherche à obtenir des propriétés qui complètent mes monopoles actuels.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT-Joueur": 1719,
+      "Claude-IA": 351
+    }
+  }
+}

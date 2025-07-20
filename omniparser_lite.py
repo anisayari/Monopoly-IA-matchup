@@ -70,13 +70,7 @@ if os.path.exists(UI_MODEL_PATH):
             print(f"   Types détectés: {list(yolo_model.names.values())}")
     except Exception as e:
         print(f"❌ Erreur chargement du modèle UI: {e}")
-        # Fallback sur YOLOv8s standard
-        try:
-            yolo_model = YOLO('yolov8s.pt')
-            yolo_model.to(DEVICE)
-            print("⚠️ Utilisation du modèle YOLO standard (pas optimisé pour UI)")
-        except:
-            pass
+        raise e
 else:
     print(f"⚠️ Modèle UI non trouvé à {UI_MODEL_PATH}")
     # Essayer YOLOv8s standard
@@ -108,6 +102,7 @@ try:
             print("✅ Florence-2 chargé depuis Hugging Face")
     else:
         print("⚠️ Florence-2 non disponible - dossier non trouvé")
+
 except Exception as e:
     print(f"⚠️ Florence-2 non chargé - Erreur: {e}")
     print("   Le système fonctionnera sans génération de captions pour les icônes")

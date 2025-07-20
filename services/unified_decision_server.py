@@ -35,7 +35,7 @@ class UnifiedDecisionServer:
         # Configuration des services
         self.services = {
             "omniparser": {
-                "url": "http://localhost:8000",
+                "url": "http://localhost:8002",
                 "endpoints": {
                     "parse": "/parse/",
                     "health": "/health"
@@ -105,6 +105,7 @@ class UnifiedDecisionServer:
                 popup_text = data.get('popup_text', '')
                 options = data.get('options', [])
                 game_context = data.get('game_context', {})
+                category = data.get('category', '')
                 keywords = data.get('keywords', [])
                 all_detected_icons = data.get('all_detected_icons', [])
                 
@@ -112,7 +113,8 @@ class UnifiedDecisionServer:
                 result = self.ai_service.make_decision(
                     popup_text=popup_text,
                     options=options,
-                    game_context=game_context
+                    game_context=game_context,
+                    category = category
                 )
                 
                 # Retourner la réponse formatée

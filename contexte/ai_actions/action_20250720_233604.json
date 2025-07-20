@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T21:36:02.299516",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Payer le loyer conservera ma liquidité tout en me permettant d'attendre des opportunités de négociation ultérieures avec Claude-IA.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 18,
+    "money": {
+      "GPT-Joueur": 1719,
+      "Claude-IA": 351
+    }
+  }
+}

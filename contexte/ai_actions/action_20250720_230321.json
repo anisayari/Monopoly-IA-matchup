@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T21:03:19.508554",
+  "trigger": "would you like to",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "resign ",
+    "continue "
+  ],
+  "decision": "continue ",
+  "reason": "Poursuivre le tour me permet d'attendre la réaction de Claude-IA et de préparer ma stratégie avec les autres joueurs.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT-Joueur": 1789,
+      "Claude-IA": 81
+    }
+  }
+}

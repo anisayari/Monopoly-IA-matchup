@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(find:*)",
+      "Bash(python:*)",
+      "Bash(mv:*)",
+      "Bash(docker-compose:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(docker logs:*)",
+      "Bash(./test_system.bat)",
+      "Bash(conda create:*)",
+      "Bash(timeout 300 python3 test_omniparser_with_captures.py)",
+      "Bash(curl:*)",
+      "Bash(timeout 30 python3:*)",
+      "Bash(ls:*)",
+      "Bash(rm:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git push:*)",
+      "Bash(pip install:*)",
+      "Bash(git rm:*)",
+      "Bash(true)",
+      "Bash(touch:*)",
+      "Bash(chmod:*)",
+      "Bash(git reset:*)",
+      "Bash(git pull:*)"
+    ],
+    "deny": []
+  }
+}

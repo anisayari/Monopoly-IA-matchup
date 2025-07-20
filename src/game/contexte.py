@@ -22,7 +22,8 @@ class Contexte:
         self.turn_events = []  # Événements du tour actuel
         self.monopoly_board = self._initialize_monopoly_board()  # Initialiser le plateau de Monopoly
         self.duplicate_events = set()  # Pour éviter les événements en double
-        self.game_settings = self._load_game_settings()  # Charger les paramètres du jeu
+        self.game_settings = self._load_game_settings()
+        print(f'GAME_SETTINGS {self.game_settings}')  # Charger les paramètres du jeu
         
         # Créer le dossier d'historique s'il n'existe pas
         if not os.path.exists(self.context_history_dir):
@@ -350,6 +351,8 @@ class Contexte:
                 # Utiliser player_key comme clé au lieu du nom
                 players[player_key] = {
                     "name": player_name,
+                    "ai_model": self.game_settings.get("players", {}).get(player_key, {}).get("ai_model", "gpt-4.1-mini"),
+                    "provider": self.game_settings.get("players", {}).get(player_key, {}).get("provider", "openai"),
                     "current_player": (i == self.current_player_index),
                     "is_current": (i == self.current_player_index),  # Ajout pour la compatibilité
                     "dice_result": getattr(player, 'dices', None),
@@ -359,6 +362,7 @@ class Contexte:
                     "current_space": current_space,
                     "jail": in_jail
                 }
+                
             except Exception as e:
                 print(f"Erreur lors de la mise à jour d'un joueur: {e}")
         

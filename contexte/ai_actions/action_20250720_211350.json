@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T19:13:48.340335",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "cancel "
+  ],
+  "decision": "cancel ",
+  "reason": "Aucune autre option d'échange n'est disponible actuellement, donc je choisis de ne pas poursuivre cette conversation.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT-Joueur": 1789,
+      "Claude-IA": 81
+    }
+  }
+}

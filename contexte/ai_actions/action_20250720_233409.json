@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-20T21:34:06.978439",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Whitout saving"
+  ],
+  "options": [
+    "Continue without saving/loading "
+  ],
+  "decision": "Continue without saving/loading ",
+  "reason": "Avancer dans le jeu est crucial, je dois maximiser mes opportunités et concentrer mes efforts sur le développement de mes propriétés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT-Joueur": 1789,
+      "Claude-IA": 81
+    }
+  }
+}

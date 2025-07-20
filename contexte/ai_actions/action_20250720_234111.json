@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-20T21:41:09.438383",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "L'échange a été conclu avec succès, il est maintenant temps de passer au prochain tour et de suivre les conséquences de cet échange.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT-Joueur": 1719,
+      "Claude-IA": 351
+    }
+  }
+}
