@@ -1,3 +1,5 @@
+![MonopolyIA Header](static/img/header.jpg)
+
 # 🎲 MonopolyIA - LLM Matchup Arena
 
 > ⚠️ **Project Under Development** ⚠️  
