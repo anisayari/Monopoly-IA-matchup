@@ -1,0 +1,1046 @@
+{
+  "global": {
+    "properties": [
+      {
+        "id": 1,
+        "name": "Old Kent Road",
+        "group": "brown",
+        "price": 60,
+        "rent": [
+          2,
+          10,
+          30,
+          90,
+          160,
+          250
+        ],
+        "house_price": 50,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.6359,
+          "y_relative": 0.8235,
+          "x_pixel": 1163,
+          "y_pixel": 840
+        }
+      },
+      {
+        "id": 3,
+        "name": "Whitechapel Road",
+        "group": "brown",
+        "price": 60,
+        "rent": [
+          2,
+          10,
+          30,
+          90,
+          160,
+          250
+        ],
+        "house_price": 50,
+        "owner": "red",
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.5653,
+          "y_relative": 0.8137,
+          "x_pixel": 1034,
+          "y_pixel": 830
+        }
+      },
+      {
+        "id": 5,
+        "name": "Kings Cross Station",
+        "group": "station",
+        "price": 200,
+        "rent": [
+          25,
+          50,
+          100,
+          200,
+          0,
+          0
+        ],
+        "house_price": 0,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.5008,
+          "y_relative": 0.8147,
+          "x_pixel": 916,
+          "y_pixel": 831
+        }
+      },
+      {
+        "id": 6,
+        "name": "The Angel Islington",
+        "group": "light_blue",
+        "price": 100,
+        "rent": [
+          6,
+          30,
+          90,
+          270,
+          400,
+          550
+        ],
+        "house_price": 50,
+        "owner": "blue",
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.4653,
+          "y_relative": 0.8167,
+          "x_pixel": 851,
+          "y_pixel": 833
+        }
+      },
+      {
+        "id": 8,
+        "name": "Euston Road",
+        "group": "light_blue",
+        "price": 100,
+        "rent": [
+          6,
+          30,
+          90,
+          270,
+          400,
+          550
+        ],
+        "house_price": 50,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.3986,
+          "y_relative": 0.8157,
+          "x_pixel": 728,
+          "y_pixel": 832
+        }
+      },
+      {
+        "id": 9,
+        "name": "Pentonville Road",
+        "group": "light_blue",
+        "price": 100,
+        "rent": [
+          6,
+          30,
+          90,
+          270,
+          400,
+          550
+        ],
+        "house_price": 50,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.3647,
+          "y_relative": 0.8127,
+          "x_pixel": 667,
+          "y_pixel": 829
+        }
+      },
+      {
+        "id": 11,
+        "name": "Pall Mall",
+        "group": "pink",
+        "price": 140,
+        "rent": [
+          10,
+          50,
+          150,
+          450,
+          625,
+          750
+        ],
+        "house_price": 100,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.3204,
+          "y_relative": 0.7382,
+          "x_pixel": 586,
+          "y_pixel": 753
+        }
+      },
+      {
+        "id": 12,
+        "name": "Electric Company",
+        "group": "utility",
+        "price": 150,
+        "rent": [
+          4,
+          10,
+          0,
+          0,
+          0,
+          0
+        ],
+        "house_price": 0,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.322,
+          "y_relative": 0.6725,
+          "x_pixel": 589,
+          "y_pixel": 686
+        }
+      },
+      {
+        "id": 13,
+        "name": "Whitehall",
+        "group": "pink",
+        "price": 140,
+        "rent": [
+          10,
+          50,
+          150,
+          450,
+          625,
+          750
+        ],
+        "house_price": 100,
+        "owner": "blue",
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.3204,
+          "y_relative": 0.6196,
+          "x_pixel": 586,
+          "y_pixel": 632
+        }
+      },
+      {
+        "id": 14,
+        "name": "Northumberland Avenue",
+        "group": "pink",
+        "price": 140,
+        "rent": [
+          10,
+          50,
+          150,
+          450,
+          625,
+          750
+        ],
+        "house_price": 100,
+        "owner": "red",
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.3188,
+          "y_relative": 0.5569,
+          "x_pixel": 583,
+          "y_pixel": 568
+        }
+      },
+      {
+        "id": 15,
+        "name": "Marylebone Station",
+        "group": "station",
+        "price": 200,
+        "rent": [
+          25,
+          50,
+          100,
+          200,
+          0,
+          0
+        ],
+        "house_price": 0,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.3209,
+          "y_relative": 0.4961,
+          "x_pixel": 587,
+          "y_pixel": 506
+        }
+      },
+      {
+        "id": 16,
+        "name": "Bow Street",
+        "group": "orange",
+        "price": 180,
+        "rent": [
+          14,
+          70,
+          200,
+          550,
+          750,
+          950
+        ],
+        "house_price": 100,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.3209,
+          "y_relative": 0.4422,
+          "x_pixel": 587,
+          "y_pixel": 451
+        }
+      },
+      {
+        "id": 18,
+        "name": "Marlborough Street",
+        "group": "orange",
+        "price": 180,
+        "rent": [
+          14,
+          70,
+          200,
+          550,
+          750,
+          950
+        ],
+        "house_price": 100,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.3188,
+          "y_relative": 0.3275,
+          "x_pixel": 583,
+          "y_pixel": 333
+        }
+      },
+      {
+        "id": 19,
+        "name": "Vine Street",
+        "group": "orange",
+        "price": 180,
+        "rent": [
+          14,
+          70,
+          200,
+          550,
+          750,
+          950
+        ],
+        "house_price": 100,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.3182,
+          "y_relative": 0.2706,
+          "x_pixel": 582,
+          "y_pixel": 276
+        }
+      },
+      {
+        "id": 21,
+        "name": "Strand",
+        "group": "red",
+        "price": 220,
+        "rent": [
+          18,
+          90,
+          250,
+          700,
+          875,
+          1050
+        ],
+        "house_price": 150,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.3674,
+          "y_relative": 0.1824,
+          "x_pixel": 672,
+          "y_pixel": 186
+        }
+      },
+      {
+        "id": 23,
+        "name": "Fleet Street",
+        "group": "red",
+        "price": 220,
+        "rent": [
+          18,
+          90,
+          250,
+          700,
+          875,
+          1050
+        ],
+        "house_price": 150,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.4314,
+          "y_relative": 0.1853,
+          "x_pixel": 789,
+          "y_pixel": 189
+        }
+      },
+      {
+        "id": 24,
+        "name": "Trafalgar Square",
+        "group": "red",
+        "price": 220,
+        "rent": [
+          18,
+          90,
+          250,
+          700,
+          875,
+          1050
+        ],
+        "house_price": 150,
+        "owner": "red",
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.4675,
+          "y_relative": 0.1863,
+          "x_pixel": 855,
+          "y_pixel": 190
+        }
+      },
+      {
+        "id": 25,
+        "name": "Fenchurch Street Station",
+        "group": "station",
+        "price": 200,
+        "rent": [
+          25,
+          50,
+          100,
+          200,
+          0,
+          0
+        ],
+        "house_price": 0,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.5014,
+          "y_relative": 0.1853,
+          "x_pixel": 917,
+          "y_pixel": 189
+        }
+      },
+      {
+        "id": 26,
+        "name": "Leicester Square",
+        "group": "yellow",
+        "price": 260,
+        "rent": [
+          22,
+          110,
+          330,
+          800,
+          975,
+          1150
+        ],
+        "house_price": 150,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.5336,
+          "y_relative": 0.1824,
+          "x_pixel": 975,
+          "y_pixel": 186
+        }
+      },
+      {
+        "id": 27,
+        "name": "Coventry Street",
+        "group": "yellow",
+        "price": 260,
+        "rent": [
+          22,
+          110,
+          330,
+          800,
+          975,
+          1150
+        ],
+        "house_price": 150,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.5664,
+          "y_relative": 0.1833,
+          "x_pixel": 1036,
+          "y_pixel": 187
+        }
+      },
+      {
+        "id": 28,
+        "name": "Water Works",
+        "group": "utility",
+        "price": 150,
+        "rent": [
+          4,
+          10,
+          0,
+          0,
+          0,
+          0
+        ],
+        "house_price": 0,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.6031,
+          "y_relative": 0.1824,
+          "x_pixel": 1103,
+          "y_pixel": 186
+        }
+      },
+      {
+        "id": 29,
+        "name": "Piccadilly",
+        "group": "yellow",
+        "price": 260,
+        "rent": [
+          22,
+          110,
+          330,
+          800,
+          975,
+          1150
+        ],
+        "house_price": 150,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.6359,
+          "y_relative": 0.1794,
+          "x_pixel": 1163,
+          "y_pixel": 183
+        }
+      },
+      {
+        "id": 31,
+        "name": "Regent Street",
+        "group": "green",
+        "price": 300,
+        "rent": [
+          26,
+          130,
+          390,
+          900,
+          1100,
+          1275
+        ],
+        "house_price": 200,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.6845,
+          "y_relative": 0.2647,
+          "x_pixel": 1252,
+          "y_pixel": 270
+        }
+      },
+      {
+        "id": 32,
+        "name": "Oxford Street",
+        "group": "green",
+        "price": 300,
+        "rent": [
+          26,
+          130,
+          390,
+          900,
+          1100,
+          1275
+        ],
+        "house_price": 200,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.6829,
+          "y_relative": 0.3235,
+          "x_pixel": 1249,
+          "y_pixel": 329
+        }
+      },
+      {
+        "id": 34,
+        "name": "Bond Street",
+        "group": "green",
+        "price": 300,
+        "rent": [
+          26,
+          130,
+          390,
+          900,
+          1100,
+          1275
+        ],
+        "house_price": 200,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.6791,
+          "y_relative": 0.4441,
+          "x_pixel": 1242,
+          "y_pixel": 453
+        }
+      },
+      {
+        "id": 35,
+        "name": "Liverpool Street Station",
+        "group": "station",
+        "price": 200,
+        "rent": [
+          25,
+          50,
+          100,
+          200,
+          0,
+          0
+        ],
+        "house_price": 0,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.6807,
+          "y_relative": 0.502,
+          "x_pixel": 1245,
+          "y_pixel": 512
+        }
+      },
+      {
+        "id": 37,
+        "name": "Park Lane",
+        "group": "dark_blue",
+        "price": 350,
+        "rent": [
+          35,
+          175,
+          500,
+          1100,
+          1300,
+          1500
+        ],
+        "house_price": 200,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.6823,
+          "y_relative": 0.6157,
+          "x_pixel": 1247,
+          "y_pixel": 628
+        }
+      },
+      {
+        "id": 39,
+        "name": "Mayfair",
+        "group": "dark_blue",
+        "price": 400,
+        "rent": [
+          50,
+          200,
+          600,
+          1400,
+          1700,
+          2000
+        ],
+        "house_price": 200,
+        "owner": null,
+        "houses": 0,
+        "coordinates": {
+          "x_relative": 0.6796,
+          "y_relative": 0.7353,
+          "x_pixel": 1243,
+          "y_pixel": 750
+        }
+      }
+    ],
+    "current_turn": 2,
+    "player_count": 2,
+    "player_names": [
+      "GPT1",
+      "GPT2"
+    ],
+    "current_player": "player2"
+  },
+  "events": [
+    {
+      "turn": 0,
+      "player": "GPT1",
+      "action": "join_game",
+      "detail": null,
+      "message": "GPT1 a rejoint la partie de Monopoly."
+    },
+    {
+      "turn": 0,
+      "player": "GPT2",
+      "action": "join_game",
+      "detail": null,
+      "message": "GPT2 a rejoint la partie de Monopoly."
+    },
+    {
+      "turn": 0,
+      "player": "GPT1",
+      "action": "buy_property",
+      "detail": "The Angel Islington pour 100€",
+      "message": "GPT1 achète The Angel Islington pour 100€."
+    },
+    {
+      "turn": 0,
+      "player": "GPT1",
+      "action": "buy_property",
+      "detail": "Whitehall pour 140€",
+      "message": "GPT1 achète Whitehall pour 140€."
+    },
+    {
+      "turn": 1,
+      "player": "GPT2",
+      "action": "buy_property",
+      "detail": "Whitechapel Road pour 60€",
+      "message": "GPT2 achète Whitechapel Road pour 60€."
+    },
+    {
+      "turn": 1,
+      "player": "GPT2",
+      "action": "buy_property",
+      "detail": "Trafalgar Square pour 240€",
+      "message": "GPT2 achète Trafalgar Square pour 240€."
+    },
+    {
+      "turn": 2,
+      "player": "GPT2",
+      "action": "buy_property",
+      "detail": "Northumberland Avenue pour 160€",
+      "message": "GPT2 achète Northumberland Avenue pour 160€."
+    },
+    {
+      "turn": 2,
+      "player": "System",
+      "action": "jail_options",
+      "detail": "Do you want to pay the bail, roll for doubles or use a get out of free jail card (if you have one)?",
+      "message": "System doit choisir comment sortir de prison."
+    },
+    {
+      "turn": 2,
+      "player": "System",
+      "action": "message",
+      "detail": "Trade",
+      "message": "Message: Trade"
+    },
+    {
+      "turn": 2,
+      "player": "System",
+      "action": "message",
+      "detail": "1 Owned",
+      "message": "Message: 1 Owned"
+    },
+    {
+      "turn": 2,
+      "player": "System",
+      "action": "message",
+      "detail": "4 Owned",
+      "message": "Message: 4 Owned"
+    },
+    {
+      "turn": 2,
+      "player": "System",
+      "action": "message",
+      "detail": "2 Owned",
+      "message": "Message: 2 Owned"
+    },
+    {
+      "turn": 2,
+      "player": "System",
+      "action": "message",
+      "detail": "3 Owned",
+      "message": "Message: 3 Owned"
+    },
+    {
+      "turn": 2,
+      "player": "System",
+      "action": "message",
+      "detail": "Un-mortgage Value",
+      "message": "Message: Un-mortgage Value"
+    }
+  ],
+  "players": {
+    "player1": {
+      "name": "GPT1",
+      "current_player": false,
+      "is_current": false,
+      "dice_result": [
+        2,
+        5
+      ],
+      "money": 1260,
+      "properties": [
+        {
+          "id": 6,
+          "name": "The Angel Islington",
+          "group": "light_blue"
+        },
+        {
+          "id": 13,
+          "name": "Whitehall",
+          "group": "pink"
+        }
+      ],
+      "position": 13,
+      "current_space": "Whitehall",
+      "jail": false
+    },
+    "player2": {
+      "name": "GPT2",
+      "current_player": true,
+      "is_current": true,
+      "dice_result": [
+        6,
+        2
+      ],
+      "money": 1040,
+      "properties": [
+        {
+          "id": 3,
+          "name": "Whitechapel Road",
+          "group": "brown"
+        },
+        {
+          "id": 14,
+          "name": "Northumberland Avenue",
+          "group": "pink"
+        },
+        {
+          "id": 24,
+          "name": "Trafalgar Square",
+          "group": "red"
+        }
+      ],
+      "position": 24,
+      "current_space": "Trafalgar Square",
+      "jail": false
+    }
+  },
+  "board": {
+    "spaces": [
+      {
+        "id": 0,
+        "name": "GO",
+        "type": "special"
+      },
+      {
+        "id": 1,
+        "name": "Old Kent Road",
+        "type": "property",
+        "color": "brown"
+      },
+      {
+        "id": 2,
+        "name": "Community Chest",
+        "type": "special"
+      },
+      {
+        "id": 3,
+        "name": "Whitechapel Road",
+        "type": "property",
+        "color": "brown"
+      },
+      {
+        "id": 4,
+        "name": "Income Tax",
+        "type": "special"
+      },
+      {
+        "id": 5,
+        "name": "Kings Cross Station",
+        "type": "property",
+        "color": "station"
+      },
+      {
+        "id": 6,
+        "name": "The Angel Islington",
+        "type": "property",
+        "color": "light_blue"
+      },
+      {
+        "id": 7,
+        "name": "Chance",
+        "type": "special"
+      },
+      {
+        "id": 8,
+        "name": "Euston Road",
+        "type": "property",
+        "color": "light_blue"
+      },
+      {
+        "id": 9,
+        "name": "Pentonville Road",
+        "type": "property",
+        "color": "light_blue"
+      },
+      {
+        "id": 10,
+        "name": "Jail / Just Visiting",
+        "type": "special"
+      },
+      {
+        "id": 11,
+        "name": "Pall Mall",
+        "type": "property",
+        "color": "pink"
+      },
+      {
+        "id": 12,
+        "name": "Electric Company",
+        "type": "property",
+        "color": "utility"
+      },
+      {
+        "id": 13,
+        "name": "Whitehall",
+        "type": "property",
+        "color": "pink"
+      },
+      {
+        "id": 14,
+        "name": "Northumberland Avenue",
+        "type": "property",
+        "color": "pink"
+      },
+      {
+        "id": 15,
+        "name": "Marylebone Station",
+        "type": "property",
+        "color": "station"
+      },
+      {
+        "id": 16,
+        "name": "Bow Street",
+        "type": "property",
+        "color": "orange"
+      },
+      {
+        "id": 17,
+        "name": "Community Chest",
+        "type": "special"
+      },
+      {
+        "id": 18,
+        "name": "Marlborough Street",
+        "type": "property",
+        "color": "orange"
+      },
+      {
+        "id": 19,
+        "name": "Vine Street",
+        "type": "property",
+        "color": "orange"
+      },
+      {
+        "id": 20,
+        "name": "Free Parking",
+        "type": "special"
+      },
+      {
+        "id": 21,
+        "name": "Strand",
+        "type": "property",
+        "color": "red"
+      },
+      {
+        "id": 22,
+        "name": "Chance",
+        "type": "special"
+      },
+      {
+        "id": 23,
+        "name": "Fleet Street",
+        "type": "property",
+        "color": "red"
+      },
+      {
+        "id": 24,
+        "name": "Trafalgar Square",
+        "type": "property",
+        "color": "red"
+      },
+      {
+        "id": 25,
+        "name": "Fenchurch Street Station",
+        "type": "property",
+        "color": "station"
+      },
+      {
+        "id": 26,
+        "name": "Leicester Square",
+        "type": "property",
+        "color": "yellow"
+      },
+      {
+        "id": 27,
+        "name": "Coventry Street",
+        "type": "property",
+        "color": "yellow"
+      },
+      {
+        "id": 28,
+        "name": "Water Works",
+        "type": "property",
+        "color": "utility"
+      },
+      {
+        "id": 29,
+        "name": "Piccadilly",
+        "type": "property",
+        "color": "yellow"
+      },
+      {
+        "id": 30,
+        "name": "Go To Jail",
+        "type": "special"
+      },
+      {
+        "id": 31,
+        "name": "Regent Street",
+        "type": "property",
+        "color": "green"
+      },
+      {
+        "id": 32,
+        "name": "Oxford Street",
+        "type": "property",
+        "color": "green"
+      },
+      {
+        "id": 33,
+        "name": "Community Chest",
+        "type": "special"
+      },
+      {
+        "id": 34,
+        "name": "Bond Street",
+        "type": "property",
+        "color": "green"
+      },
+      {
+        "id": 35,
+        "name": "Liverpool Street Station",
+        "type": "property",
+        "color": "station"
+      },
+      {
+        "id": 36,
+        "name": "Chance",
+        "type": "special"
+      },
+      {
+        "id": 37,
+        "name": "Park Lane",
+        "type": "property",
+        "color": "dark_blue"
+      },
+      {
+        "id": 38,
+        "name": "Super Tax",
+        "type": "special"
+      },
+      {
+        "id": 39,
+        "name": "Mayfair",
+        "type": "property",
+        "color": "dark_blue"
+      }
+    ]
+  }
+}

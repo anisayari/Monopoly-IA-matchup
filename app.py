@@ -698,18 +698,10 @@ def manage_omniparser():
     """Gère le démarrage et l'arrêt d'OmniParser"""
     if request.method == 'POST':
         try:
-            if sys.platform == 'win32':
-                # Windows : utiliser le script batch qui lance OmniParser + monitoring
-                script_path = os.path.join(config.WORKSPACE_DIR, 'start_omniparser_with_monitor.bat')
-                cmd = f'start "OmniParser avec Monitoring" cmd /k "{script_path}"'
-                subprocess.Popen(cmd, shell=True)
-            else:
-                # Linux/Mac : ouvrir un nouveau terminal
-                omniparser_dir = os.path.join(config.WORKSPACE_DIR, 'omniparserserver')
-                subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', 
-                                f'cd {omniparser_dir} && docker compose up & sleep 30 && cd {config.WORKSPACE_DIR} && python monitor_popups.py; read'], 
-                               cwd=omniparser_dir)
-            
+            # Windows : utiliser le script batch qui lance OmniParser + monitoring
+            script_path = os.path.join(config.WORKSPACE_DIR, 'start_omniparser_with_monitor.bat')
+            cmd = f'start "OmniParser avec Monitoring" cmd /k "{script_path}"'
+            subprocess.Popen(cmd, shell=True)
             add_log('OmniParser démarré avec monitoring automatique', 'success')
             return jsonify({'success': True, 'message': 'OmniParser démarré avec monitoring'})
         except Exception as e:
