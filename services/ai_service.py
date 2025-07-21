@@ -151,7 +151,6 @@ class AIService:
             
             # Déterminer quel modèle utiliser basé sur le joueur actuel
             current_player = game_context.get('global', {}).get('current_player', 'Unknown')
-            # model = self._get_model_for_player(current_player)
             
             # Envoyer le contexte au monitor d'actions
             self._send_to_monitor('context', game_context, port=8004)
@@ -226,6 +225,8 @@ Choisis la meilleure option stratégique."""
             print(f"is_trade_available: {is_trade_available}")
             is_auction_available = category == 'auction'
             print(f"is_auction_available: {is_auction_available}")
+            is_property_management_available = category == 'property_management'
+            print(f"is_property_management_available: {is_property_management_available}")
             extra_body = None
             print(f"extra_body: {extra_body}")
 
@@ -254,13 +255,17 @@ Choisis la meilleure option stratégique."""
             
             # Construire les messages pour l'API
             
-            talk_to_other_players_message = "A n'importe quel moment tu peux utiliser la decisions TALK_TO_OTHER_PLAYERS pour discuter avec les autres joueurs."
+            talk_to_other_players_message = "A n'importe quel moment tu peux utiliser la decision `talk_to_other_players` pour discuter avec les autres joueurs."
             if is_trade_available:
-                talk_to_other_players_message += " Tu dois aussi utiliser la decisions TALK_TO_OTHER_PLAYERS pour initier un échange de propriétés avec les autres joueurs, qui amenera a une négociation et à l'échange final."
+                talk_to_other_players_message += " Tu dois aussi utiliser la decision `talk_to_other_players` pour initier un échange de propriétés avec les autres joueurs, qui amenera a une négociation et à l'échange final."
             
             if is_auction_available:
-                talk_to_other_players_message += " Tu dois aussi utiliser la decisions TALK_TO_OTHER_PLAYERS pour initier l'enchère d'une propriété, qui amenera a une négociation et au prix final / enchère gagnante."
+                talk_to_other_players_message += " Tu dois utiliser la decision `talk_to_other_players` pour initier l'enchère d'une propriété, qui amenera a une négociation et au prix final / enchère gagnante."
                 extended_options = ["talk_to_other_players"]
+
+            if is_property_management_available:
+                talk_to_other_players_message += " Tu peux aussi utiliser la decision `manage_properties` pour acheter, vendre, hypotéquer, dés-hypotéquer des propriétés."
+                extended_options.append("manage_properties")
             
             schema = {
                 "type": "object",
@@ -367,6 +372,17 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 # Re appeler la fonction make_decision, pour que l'IA puisse prendre une décision en fonction de la conversation
                 if not result:
                     return self.make_decision(popup_text, options, game_context,category)
+            elif result['decision'] == "manage_properties":
+                self.logger.info("💬 Début de la gestion de propriétés")
+                result = self._run_property_management(
+                    current_player=current_player,
+                    player_name=player_name,
+                    ai_client=ai_client,
+                    model=model,
+                    game_context=game_context,
+                    context_str=context_str,
+                    chat_message=result['chat_message']
+                )
 
             
             self.logger.info(f"✅ Décision IA: {result['decision']} - {result['reason']}")
@@ -417,6 +433,8 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 return_data['trade_data'] = result['trade_data']
             if 'auction_data' in result:
                 return_data['auction_data'] = result['auction_data']
+            if 'property_management_data' in result:
+                return_data['property_management_data'] = result['property_management_data']
             
 
             return return_data
@@ -602,17 +620,6 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 return player_data.get('name', player_key)
         return player_id
     
-    def _get_model_for_player(self, player_id: str) -> str:
-        """Détermine quel modèle utiliser pour un joueur"""
-        # Vérifier les paramètres personnalisés par joueur
-        players_config = self.game_settings.get('players', {})
-        if player_id in players_config:
-            player_config = players_config[player_id]
-            if 'ai_model' in player_config:
-                return player_config['ai_model']
-        
-        # Modèle par défaut
-        return self.game_settings.get('game', {}).get('default_model', 'gpt-4o-mini')
     
     def _default_decision(self, options: List[str]) -> Dict:
         """Décision par défaut quand l'IA n'est pas disponible"""
@@ -803,6 +810,154 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         )
         json_result = json.loads(response.choices[0].message.content)
         return json_result
+
+
+        
+    def _get_property_management_decision_json(self, current_player, game_context, player_message):
+        """
+        Détermine la décision de gestion de propriétés
+        """
+        # Récupérer les propriétés du joueur actuel
+        players = game_context.get('players', {})
+        current_player_data = players.get(current_player, {})
+        player_properties = current_player_data.get('properties', [])
+        
+        # Extraire les noms des propriétés
+        property_names = []
+        for prop in player_properties:
+            if prop.get('name'):
+                property_names.append(prop['name'])
+        
+        # Si le joueur n'a pas de propriétés, retourner un résultat vide
+        if not property_names:
+            return {
+                "decisions": {
+                    "properties": []
+                }
+            }
+        
+        system_prompt = f"""
+        Analyse le message du joueur et détermine les actions à effectuer sur les propriétés du joueur.
+        Tu dois retourner un JSON valide avec le schema suivant, aucun texte autre que le JSON.
+        """
+        
+        property_management_schema = {
+            "type": "object",
+            "properties": {
+                "decisions": {
+                    "type": "object",
+                    "properties": {
+                        "properties": {
+                            "type": "array",
+                            "description": "Liste des décisions à prendre sur chaque propriété.",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "property_name": {
+                                        "type": "string",
+                                        "description": "Nom de la propriété, choisie parmi la liste des propriétés du joueur.",
+                                        "enum": property_names
+                                    },
+                                    "action": {
+                                        "type": "string",
+                                        "description": "Type d'action à effectuer sur la propriété.",
+                                        "enum": [
+                                            "buy_house",
+                                            "sell_house",
+                                            "mortgage",
+                                            "unmortgage"
+                                        ]
+                                    },
+                                    "quantity": {
+                                        "type": "number",
+                                        "description": "Quantité de maisons/hôtels à acheter ou vendre (uniquement pour buy_house ou sell_house, sinon 1 pour mortgage ou unmortgage).",
+                                        "minimum": 1
+                                    }
+                                },
+                                "required": [
+                                    "property_name",
+                                    "action",
+                                    "quantity"
+                                ],
+                                "additionalProperties": False
+                            }
+                        }
+                    },
+                    "required": [
+                        "properties"
+                    ],
+                    "additionalProperties": False
+                }
+            },
+            "required": [
+                "decisions"
+            ],
+            "additionalProperties": False
+        }
+        
+        response = self.openai_client.chat.completions.create(
+            model="o4-mini",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": f"{player_message}"}
+            ],
+            response_format={
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "property_management",
+                    "schema": property_management_schema,
+                    "strict": True
+                }
+            }
+        )
+        
+        result = json.loads(response.choices[0].message.content)
+        return result
+
+    def _run_property_management(self, current_player, player_name, ai_client, model, game_context, context_str, chat_message):
+        """
+        Gère la gestion de propriétés
+        """
+        self.logger.info(f"💬 ({current_player} - {player_name}) Début de la gestion de propriétés: {chat_message}")
+        
+        response = ai_client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": """
+                 Tu es une IA qui joue au Monopoly contre une autre IA. Tu as choisi de gérer tes propriétés, tu dois maintenant expliquer clairement ce que tu veux faire avec tes propriétés.
+                 Tu peux construire / vendre / hypotéquer / dés-hypotéquer des propriétés.
+                 
+                 Les règles à respecter:
+                 - Tu peux acheter des maisons/hôtels sur une propriété uniquement si tu possède déjà le groupe de couleur de la propriété.
+                 - Tu dois construire uniformément les maisons/hôtels sur une propriété, tu ne peux pas construire 1 maison sur une propriété et 3 maisons sur une autre.
+                 - Tu peux hypotéquer une propriété uniquement si elle n'est pas déjà hypotéquée et si il n'y a pas de maisons/hôtels sur la propriété.
+                 - Tu peux dés-hypotéquer une propriété uniquement si elle est hypotéquée
+                 - Tu dois faire attention a tes ressources, tu ne peux pas acheter de maisons/hôtels si tu n'as pas l'argent nécessaire.
+                 
+                 
+                 Tu es le joueur: {current_player} ({player_name})
+                 """},
+                {"role": "user", "content": f"""
+    <game_context>
+        Contexte actuel:
+        {context_str}
+    </game_context>
+    
+    <actual_chat_message>
+        {player_name}: {chat_message}
+    </actual_chat_message>
+    """}
+            ]
+        )
+        
+        # data_json = json.loads(response.choices[0].message.content)
+        data_json = self._get_property_management_decision_json(current_player, game_context, response.choices[0].message.content)
+        
+        
+        new_result = result.copy()
+        new_result['decision'] = 'make_property_management'
+        new_result['property_management_data'] = data_json
+        return new_result
 
     def _run_conversation_between_players(self, current_player, result, game_context, context_str, is_trade_available, is_auction_available):
         """
