@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-07-21 18:42:03",
+  "timestamp": "2025-07-21 21:14:35",
   "window_size": {
     "width": 1254,
     "height": 693
@@ -151,6 +151,83 @@
       "y_relative": 0.1328,
       "x_pixel": 221,
       "y_pixel": 92
+    },
+    "button_mortgage_property": {
+      "name": "button_mortgage_property",
+      "x_relative": 0.5431,
+      "y_relative": 0.3506,
+      "x_pixel": 681,
+      "y_pixel": 243
+    },
+    "button_buy_1_property": {
+      "name": "button_buy_1_property",
+      "x_relative": 0.5415,
+      "y_relative": 0.4156,
+      "x_pixel": 679,
+      "y_pixel": 288
+    },
+    "button_buy_set_property": {
+      "name": "button_buy_set_property",
+      "x_relative": 0.5407,
+      "y_relative": 0.4791,
+      "x_pixel": 678,
+      "y_pixel": 332
+    },
+    "button_sell_1_property": {
+      "name": "button_sell_1_property",
+      "x_relative": 0.5407,
+      "y_relative": 0.5469,
+      "x_pixel": 678,
+      "y_pixel": 379
+    },
+    "button_sell_set_property": {
+      "name": "button_sell_set_property",
+      "x_relative": 0.5431,
+      "y_relative": 0.6118,
+      "x_pixel": 681,
+      "y_pixel": 424
+    },
+    "button_done_property": {
+      "name": "button_done_property",
+      "x_relative": 0.4992,
+      "y_relative": 0.7071,
+      "x_pixel": 626,
+      "y_pixel": 490
+    },
+    "button_yes_mortgage_property": {
+      "name": "button_yes_mortgage",
+      "x_relative": 0.6156,
+      "y_relative": 0.596,
+      "x_pixel": 772,
+      "y_pixel": 412
+    },
+    "button_no_mortgage_property": {
+      "name": "button_no_mortgage",
+      "x_relative": 0.3931,
+      "y_relative": 0.5988,
+      "x_pixel": 493,
+      "y_pixel": 415
+    },
+    "button_unmortgage_property": {
+      "name": "button_unmortgage_property",
+      "x_relative": 0.5343,
+      "y_relative": 0.3838,
+      "x_pixel": 670,
+      "y_pixel": 266
+    },
+    "button_yes_sell_property": {
+      "name": "button_yes_sell_property",
+      "x_relative": 0.6108,
+      "y_relative": 0.6032,
+      "x_pixel": 766,
+      "y_pixel": 418
+    },
+    "button_no_sell_property": {
+      "name": "button_no_sell_property",
+      "x_relative": 0.3907,
+      "y_relative": 0.5974,
+      "x_pixel": 490,
+      "y_pixel": 414
     }
   }
 }

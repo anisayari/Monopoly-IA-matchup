@@ -906,6 +906,292 @@ class CentralizedMonitor:
         except Exception as e:
             print(f"❌ Erreur lors de l'envoi des touches: {e}")
             return False
+        
+    
+    
+    def _handle_auction_event(self, auction_data, result, screenshot):
+        """
+        Gère les événements d'enchère via modification RAM après un clic initial
+        
+        Args:
+            auction_data: Structure avec les enchères max et le gagnant
+                {
+                    'player1': {'max_bid': 250},
+                    'player2': {'max_bid': 300},
+                    'winner': 'player2',
+                    'winning_bid': 300
+                }
+            result: Résultat du process_popup
+            screenshot: Capture d'écran actuelle
+        """
+        # Obtenir la fenêtre Dolphin pour les clics
+        dolphin_window = gw.getWindowsWithTitle("SMPP69")
+        if not dolphin_window:
+            print("❌ Fenêtre Dolphin non trouvée")
+            return
+        
+        win = dolphin_window[0]
+        
+        try:
+            print("💰 Gestion de l'enchère détectée")
+            print(f"🔧 Mode de modification: RAM uniquement")
+            print(f"\n----------------\nAUCTION DATA\n----------------\n {auction_data}")
+            
+            # Récupérer les infos de l'enchère
+            winner = auction_data.get('winner')
+            winning_bid = auction_data.get('winning_bid', 0)
+            player1_max = auction_data.get('player1', {}).get('max_bid', 0)
+            player2_max = auction_data.get('player2', {}).get('max_bid', 0)
+            
+            # Récupérer le contexte du jeu pour savoir qui est le joueur actuel
+            game_context = self.game_context if hasattr(self, 'game_context') else {}
+            global_data = game_context.get('global', {})
+            
+            # Déterminer qui commence l'enchère (le joueur actuel)
+            current_player_id = global_data.get('current_player', 'player1')
+            other_player_id = 'player2' if current_player_id == 'player1' else 'player1'
+            
+            # Mapper les noms des joueurs
+            players = game_context.get('players', {})
+            current_player_name = players.get(current_player_id, {}).get('name', current_player_id)
+            other_player_name = players.get(other_player_id, {}).get('name', other_player_id)
+            
+            print(f"📍 Joueur qui commence: {current_player_name} ({current_player_id})")
+            print(f"📍 Autre joueur: {other_player_name} ({other_player_id})")
+            print(f"🏆 Gagnant de l'enchère: {winner} avec ${winning_bid}")
+            
+            # Mapper le gagnant à l'ID du joueur
+            winner_id = None
+            # Le winner vient maintenant sous forme "player1" ou "player2"
+            if winner in ['player1', 'player2']:
+                winner_id = winner
+                winner_name = players.get(winner_id, {}).get('name', winner_id)
+                print(f"🏆 Gagnant mappé: {winner_name} ({winner_id})")
+            else:
+                # Ancienne logique pour compatibilité
+                if winner == current_player_name:
+                    winner_id = current_player_id
+                elif winner == other_player_name:
+                    winner_id = other_player_id
+                else:
+                    print(f"⚠️ Impossible de mapper le gagnant '{winner}' à un joueur")
+                    return
+            
+            # Utiliser la modification RAM avec un clic initial
+            print("\n🔧 Mode RAM: Clic initial puis modification directe de la mémoire")
+            self._handle_auction_via_ram(winner_id, winning_bid, win)
+            
+        except Exception as e:
+            print(f"❌ Erreur lors de la gestion de l'enchère: {e}")
+            import traceback
+            traceback.print_exc()
+
+    def _handle_property_management(self, property_data, result, screenshot):
+        """
+        Gère les événements de gestion de propriétés (achat/vente de maisons, hypothèques)
+        
+        Args:
+            property_data: Structure avec les actions à effectuer
+                {
+                    'action': 'buy_houses',  # ou 'sell_houses', 'mortgage', 'unmortgage'
+                    'properties': ['Park Place', 'Boardwalk'],
+                    'quantity': 1,  # nombre de maisons à acheter/vendre
+                    'total_cost': 400
+                }
+            result: Résultat du process_popup
+            screenshot: Capture d'écran actuelle
+        """
+        # Obtenir la fenêtre Dolphin pour les clics
+        dolphin_window = gw.getWindowsWithTitle("SMPP69")
+        if not dolphin_window:
+            print("❌ Fenêtre Dolphin non trouvée")
+            return
+        
+        win = dolphin_window[0]
+        
+        try:
+            print("🏠 Gestion des propriétés détectée")
+            print(f"\n----------------\nPROPERTY DATA\n----------------\n {property_data}")
+            
+            action = property_data.get('action')
+            properties = property_data.get('properties', [])
+            
+            # Mapper les actions aux boutons correspondants
+            action_button_map = {
+                'buy_houses': 'button_buy_1_property',
+                'buy_set': 'button_buy_set_property',
+                'sell_houses': 'button_sell_1_property', 
+                'sell_set': 'button_sell_set_property',
+                'mortgage': 'button_mortgage_property',
+                'unmortgage': 'button_unmortgage_property'
+            }
+            
+            # Récupérer le bouton correspondant à l'action
+            button_key = action_button_map.get(action)
+            if not button_key:
+                print(f"❌ Action '{action}' non reconnue")
+                return
+                
+            action_button = self.hardcoded_buttons.get(button_key)
+            if not action_button:
+                print(f"❌ Bouton '{button_key}' non trouvé dans hardcoded_buttons")
+                return
+            
+            # Traiter chaque propriété individuellement
+            for prop_name in properties:
+                coords = get_coordinates(prop_name, 'relative')
+                if coords:
+                    rel_x, rel_y = coords
+                    
+                    # Transformer les coordonnées
+                    abs_x, abs_y, transformed_x, transformed_y = self.transform_coordinates(
+                        rel_x * win.width, 
+                        rel_y * win.height, 
+                        win
+                    )
+                    
+                    if abs_x is not None:
+                        print(f"\n🏠 Traitement de la propriété: {prop_name}")
+                        
+                        # 1. Cliquer sur la propriété
+                        print(f"   1️⃣ Clic sur la propriété")
+                        self.perform_click(abs_x, abs_y, f"Clic sur {prop_name}", y_offset=6)
+                        time.sleep(0.5)
+                        
+                        # 2. Cliquer sur le bouton d'action
+                        action_abs_x, action_abs_y, _, _ = self.transform_coordinates(
+                            action_button['x_relative'] * win.width,
+                            action_button['y_relative'] * win.height,
+                            win
+                        )
+                        
+                        if action_abs_x is not None:
+                            print(f"   2️⃣ Clic sur le bouton: {action}")
+                            self.perform_click(action_abs_x, action_abs_y, f"Clic sur {action}")
+                            time.sleep(1)
+                        
+                        # 3. Si c'est une action qui nécessite confirmation, gérer les boutons yes/no
+                        if action in ['mortgage', 'sell_houses', 'sell_set']:
+                            # Chercher le bon bouton de confirmation
+                            if action == 'mortgage':
+                                yes_button_key = 'button_yes_mortgage_property'
+                            elif action in ['sell_houses', 'sell_set']:
+                                yes_button_key = 'button_yes_sell_property'
+                            
+                            yes_button = self.hardcoded_buttons.get(yes_button_key)
+                            
+                            if yes_button:
+                                yes_abs_x, yes_abs_y, _, _ = self.transform_coordinates(
+                                    yes_button['x_relative'] * win.width,
+                                    yes_button['y_relative'] * win.height,
+                                    win
+                                )
+                                
+                                if yes_abs_x is not None:
+                                    time.sleep(1)
+                                    print(f"   3️⃣ Clic sur YES pour confirmer")
+                                    self.perform_click(yes_abs_x, yes_abs_y, "Clic sur YES")
+                                    time.sleep(1)
+                        
+                        # 4. Cliquer sur "Done" pour valider cette propriété
+                        done_button = self.hardcoded_buttons.get('button_done_property')
+                        if done_button:
+                            done_abs_x, done_abs_y, _, _ = self.transform_coordinates(
+                                done_button['x_relative'] * win.width,
+                                done_button['y_relative'] * win.height,
+                                win
+                            )
+                            
+                            if done_abs_x is not None:
+                                print(f"   4️⃣ Clic sur Done pour valider")
+                                self.perform_click(done_abs_x, done_abs_y, "Clic sur Done")
+                                time.sleep(1)
+                        
+                        print(f"   ✅ Propriété {prop_name} traitée")
+                    else:
+                        print(f"❌ Erreur de transformation pour {prop_name}")
+                else:
+                    print(f"⚠️ Coordonnées introuvables pour {prop_name}")
+            
+            # Fin du traitement de toutes les propriétés
+            print("\n✅ Toutes les propriétés ont été traitées")
+                    
+        except Exception as e:
+            print(f"❌ Erreur lors de la gestion des propriétés: {e}")
+            import traceback
+            traceback.print_exc()
+    
+    def _handle_auction_via_ram(self, winner_id, winning_bid, win):
+        """
+        Gère l'enchère via modification directe de la RAM après un clic initial
+        1. Player1 commence toujours : 1 clic si player1 gagne, 2 clics si player2 gagne
+        2. Modifie la RAM pour définir le montant final et le gagnant
+        """
+        print("🔧 Mode RAM: Clic(s) initial(aux) sur 'oui' puis modification directe")
+        
+        # Récupérer le bouton "oui" pour le clic initial
+        yes_button = self.hardcoded_buttons.get('button_yes_auction')
+        if not yes_button:
+            print("❌ Bouton 'oui' de l'enchère non trouvé dans hardcoded_buttons")
+            return
+        
+        # Déterminer le nombre de clics selon le gagnant
+        clicks_count = 1 if winner_id == 'player1' else 2
+        print(f"🎯 Gagnant: {winner_id} - Nombre de clics nécessaires: {clicks_count}")
+        
+        # Effectuer le(s) clic(s) sur "oui"
+        for i in range(clicks_count):
+            print(f"🖱️ Clic #{i+1} sur 'oui'")
+            abs_x, abs_y, _, _ = self.transform_coordinates(
+                yes_button['x_relative'] * win.width,
+                yes_button['y_relative'] * win.height,
+                win
+            )
+            
+            if abs_x is not None:
+                self.perform_click(abs_x, abs_y, f"Clic OUI #{i+1}/{clicks_count}")
+                time.sleep(1.5)  # Attendre entre les clics
+            else:
+                print("❌ Erreur de transformation des coordonnées pour le bouton 'oui'")
+                return
+        
+        # Adresses RAM pour le current bid
+        AUCTION_BID_FRONT_ADDRESS = 0x8053D0A6  # Adresse front (current bid)
+        AUCTION_BID_BACK_ADDRESS = 0x9303A2DA   # Adresse back (current bid)
+        
+        print(f"\n📝 Modification RAM:")
+        print(f"   - Enchère finale: ${winning_bid}")
+        print(f"   - Gagnant: {winner_id}")
+        print(f"   - Écriture à l'adresse front {AUCTION_BID_FRONT_ADDRESS:08X}: ${winning_bid}")
+        print(f"   - Écriture à l'adresse back {AUCTION_BID_BACK_ADDRESS:08X}: ${winning_bid}")
+        # Écrire le montant de l'enchère aux deux adresses
+        try:
+            # Écrire le winning_bid aux deux adresses (front et back) - halfword (2 bytes)
+            dme.write_bytes(AUCTION_BID_FRONT_ADDRESS, winning_bid.to_bytes(2, 'big'))
+            dme.write_bytes(AUCTION_BID_BACK_ADDRESS, winning_bid.to_bytes(2, 'big'))
+            print("✅ Enchère configurée via RAM avec succès")
+        except Exception as e:
+            print(f"❌ Erreur lors de l'écriture en RAM: {e}")
+            print("⚠️ Vérifiez que Dolphin Memory Engine est connecté")
+        
+        # Cliquer sur "no" pour terminer l'enchère
+        no_button = self.hardcoded_buttons.get('button_no_auction')
+        if no_button:
+            print("\n🖱️ Clic final sur 'no' pour terminer l'enchère")
+            abs_x, abs_y, _, _ = self.transform_coordinates(
+                no_button['x_relative'] * win.width,
+                no_button['y_relative'] * win.height,
+                win
+            )
+            
+            if abs_x is not None:
+                time.sleep(1.5)  # Attendre un peu après l'écriture RAM
+                self.perform_click(abs_x, abs_y, "Clic final NO pour terminer l'enchère")
+                print("✅ Enchère terminée")
+            else:
+                print("❌ Erreur de transformation des coordonnées pour le bouton 'no'")
+        else:
+            print("❌ Bouton 'no' de l'enchère non trouvé dans hardcoded_buttons")
     
     def _handle_trade_event(self, trade_data, result, screenshot):
         """
@@ -917,7 +1203,6 @@ class CentralizedMonitor:
             screenshot: Capture d'écran actuelle
         """
 
-            
         # Obtenir la fenêtre Dolphin pour les clics
         dolphin_window = gw.getWindowsWithTitle("SMPP69")
         if not dolphin_window:
@@ -1242,7 +1527,7 @@ class CentralizedMonitor:
                                 print(f'AUCTION_DATA {auction_data}')
                                 if auction_data:
                                     # TODO: Gérer l'enchère
-                                    # self._handle_auction_event(auction_data, result, screenshot)
+                                    self._handle_auction_event(auction_data, result, screenshot)
                                     continue
                                 else:
                                     print("⚠️ Aucune donnée d'enchère trouvée dans le résultat")
