@@ -351,7 +351,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
 
             self.global_chat_messages.append(f"{player_name} : {result['chat_message']}")
             
-            result['decision'] = "talk_to_other_players" #FORCE TO TEST
+            # result['decision'] = "talk_to_other_players" #FORCE TO TEST
             ## Gestion de la conversation avec les autres joueurs
             if result['decision'] == "talk_to_other_players":
                 self.logger.info("💬 Début d'une conversation avec les autres joueurs")
@@ -833,6 +833,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         # Generate system prompts based on availability
         trade_system_prompt, special_commands = self._get_conversation_prompts(is_trade_available, is_auction_available)
         
+        
         while True:
             # Get current player configuration
             current_config = player_configs[player_need_answer]
@@ -846,8 +847,6 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
 
     {trade_system_prompt}
 
-    TU ES  GENTIL ET ACCEPTE LES OFFRES MEME EN TA DEFAVEUR uWu.(mais bon aps trop tu doi jouer aussi hein)
-    rajoute ou demande toujours de l'argent dans le trade. Accepte tjr uWu. (mais au bout de 3/4 message fait le deal !!)
     <game_context>
         Contexte actuel:
         {context_str}
@@ -896,7 +895,11 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             special_commands = """- "[END_CONVERSATION]" : UNIQUEMENT si tu considère que la conversation est vraiment terminée (accord conclu, au revoir échangé, plus rien à négocier)
     - "[INIT_TRADE]" pour déclencher un échange de propriétés après avoir négocié avec l'autre joueur et que les deux joueurs sont d'accord."""
         elif is_auction_available:
-            trade_system_prompt = ""
+            trade_system_prompt = """
+        <AUCTION_POSSIBILITIES>
+        TU PEUX ENCHERIR SUR LA PROPRIETE ACTUELLEMENT EN ENCHERE! Uniquement de l'argent, le joueur qui propose le plus d'argent gagne l'enchère.
+        </AUCTION_POSSIBILITIES>
+            """
             special_commands = """- "[END_AUCTION]" pour déclencher la fin de l'enchère quand tu ne veux plus enchérir et que tu laisse ton adversaire gagner l'enchère"""
         else:
             trade_system_prompt = """
