@@ -95,7 +95,7 @@
     },
     "Property Deeds": {
       "text": ["Property Deeds"],
-      "icon": ["Mortage", "Buy 1", "Buy Set", "Sell 1", "Sell Set", "Done"]
+      "icon": ["back","trade"]
     },
     "New turn Roll the dice": {
       "text": ["Remote and press to roll the"],

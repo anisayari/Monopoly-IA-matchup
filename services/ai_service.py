@@ -225,7 +225,7 @@ Choisis la meilleure option stratégique."""
             print(f"is_trade_available: {is_trade_available}")
             is_auction_available = category == 'auction'
             print(f"is_auction_available: {is_auction_available}")
-            is_property_management_available = category == 'property_management'
+            is_property_management_available = category == 'property'
             print(f"is_property_management_available: {is_property_management_available}")
             extra_body = None
             print(f"extra_body: {extra_body}")
@@ -606,7 +606,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             current_property = property_manager.get_property_details(current_player_position)
             context_str += f"\nEnchère en cours:\nPropriété en cours d'enchère: {current_property.get('name', 'Unknown')} (Valeur: ${current_property.get('value', 'Unknown')})\n"
         
-        if category == "property_management":
+        if category == "property":
             # Ajouter des informations détaillées pour la gestion de propriétés
             current_player = game_context.get('global', {}).get('current_player', 'Unknown')
             current_player_data = players.get(current_player, {})

@@ -718,20 +718,6 @@
   },
   "events": [
     {
-      "turn": 8,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "The Angel Islington pour 100€",
-      "message": "Gemini-2.5 achète The Angel Islington pour 100€."
-    },
-    {
-      "turn": 9,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Euston Road pour 100€",
-      "message": "Gemini-2.5 achète Euston Road pour 100€."
-    },
-    {
       "turn": 9,
       "player": "Gemini-2.5",
       "action": "buy_property",
@@ -856,6 +842,20 @@
       "action": "message",
       "detail": "Un-mortgage Value",
       "message": "Message: Un-mortgage Value"
+    },
+    {
+      "turn": 15,
+      "player": "System",
+      "action": "rent_notification",
+      "detail": "1 utility = x4 amount on dice in rent.",
+      "message": "System a effectué l'action 'rent_notification' 1 utility = x4 amount on dice in rent.."
+    },
+    {
+      "turn": 15,
+      "player": "System",
+      "action": "rent_notification",
+      "detail": "2 utilities = x10 amount on dice in rent.",
+      "message": "System a effectué l'action 'rent_notification' 2 utilities = x10 amount on dice in rent.."
     }
   ],
   "players": {
@@ -874,72 +874,86 @@
         {
           "id": 11,
           "name": "Pall Mall",
-          "group": "pink"
+          "group": "pink",
+          "houses": 0
         },
         {
           "id": 35,
           "name": "Liverpool Street Station",
-          "group": "station"
+          "group": "station",
+          "houses": 0
         },
         {
           "id": 19,
           "name": "Vine Street",
-          "group": "orange"
+          "group": "orange",
+          "houses": 0
         },
         {
           "id": 14,
           "name": "Northumberland Avenue",
-          "group": "pink"
+          "group": "pink",
+          "houses": 0
         },
         {
           "id": 5,
           "name": "Kings Cross Station",
-          "group": "station"
+          "group": "station",
+          "houses": 0
         },
         {
           "id": 13,
           "name": "Whitehall",
-          "group": "pink"
+          "group": "pink",
+          "houses": 0
         },
         {
           "id": 28,
           "name": "Water Works",
-          "group": "utility"
+          "group": "utility",
+          "houses": 0
         },
         {
           "id": 34,
           "name": "Bond Street",
-          "group": "green"
+          "group": "green",
+          "houses": 0
         },
         {
           "id": 16,
           "name": "Bow Street",
-          "group": "orange"
+          "group": "orange",
+          "houses": 0
         },
         {
           "id": 18,
           "name": "Marlborough Street",
-          "group": "orange"
+          "group": "orange",
+          "houses": 0
         },
         {
           "id": 12,
           "name": "Electric Company",
-          "group": "utility"
+          "group": "utility",
+          "houses": 0
         },
         {
           "id": 31,
           "name": "Regent Street",
-          "group": "green"
+          "group": "green",
+          "houses": 0
         },
         {
           "id": 32,
           "name": "Oxford Street",
-          "group": "green"
+          "group": "green",
+          "houses": 0
         },
         {
           "id": 8,
           "name": "Euston Road",
-          "group": "light_blue"
+          "group": "light_blue",
+          "houses": 0
         }
       ],
       "position": 8,
@@ -956,82 +970,97 @@
         6,
         6
       ],
-      "money": 351,
+      "money": 51,
       "properties": [
         {
           "id": 15,
           "name": "Marylebone Station",
-          "group": "station"
+          "group": "station",
+          "houses": 0
         },
         {
           "id": 6,
           "name": "The Angel Islington",
-          "group": "light_blue"
+          "group": "light_blue",
+          "houses": 0
         },
         {
           "id": 27,
           "name": "Coventry Street",
-          "group": "yellow"
+          "group": "yellow",
+          "houses": 0
         },
         {
           "id": 39,
           "name": "Mayfair",
-          "group": "dark_blue"
+          "group": "dark_blue",
+          "houses": 0
         },
         {
           "id": 29,
           "name": "Piccadilly",
-          "group": "yellow"
+          "group": "yellow",
+          "houses": 0
         },
         {
           "id": 9,
           "name": "Pentonville Road",
-          "group": "light_blue"
+          "group": "light_blue",
+          "houses": 0
         },
         {
           "id": 37,
           "name": "Park Lane",
-          "group": "dark_blue"
+          "group": "dark_blue",
+          "houses": 0
         },
         {
           "id": 25,
           "name": "Fenchurch Street Station",
-          "group": "station"
+          "group": "station",
+          "houses": 0
         },
         {
           "id": 24,
           "name": "Trafalgar Square",
-          "group": "red"
+          "group": "red",
+          "houses": 0
         },
         {
           "id": 3,
           "name": "Whitechapel Road",
-          "group": "brown"
+          "group": "brown",
+          "houses": 0
         },
         {
           "id": 8,
           "name": "Euston Road",
-          "group": "light_blue"
+          "group": "light_blue",
+          "houses": 0
         },
         {
           "id": 21,
           "name": "Strand",
-          "group": "red"
+          "group": "red",
+          "houses": 0
         },
         {
           "id": 1,
           "name": "Old Kent Road",
-          "group": "brown"
+          "group": "brown",
+          "houses": 0
         },
         {
           "id": 26,
           "name": "Leicester Square",
-          "group": "yellow"
+          "group": "yellow",
+          "houses": 0
         },
         {
           "id": 23,
           "name": "Fleet Street",
-          "group": "red"
+          "group": "red",
+          "houses": 0
         }
       ],
       "position": 27,

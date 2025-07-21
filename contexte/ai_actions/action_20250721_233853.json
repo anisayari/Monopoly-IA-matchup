@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T21:38:50.875290",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Engager la discussion pour clarifier la situation de l'enchère (ma propriété) et initier des échanges pour renforcer mes monopoles existants, visant la victoire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1719,
+      "Gemini-2.5-Flash": 351
+    }
+  }
+}

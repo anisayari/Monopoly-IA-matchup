@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T21:16:53.318354",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai déjà un monopole sur les propriétés jaunes, y compris Coventry Street. Je dois revoir ma stratégie pour le prochain tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1719,
+      "Gemini-2.5-Flash": 351
+    }
+  }
+}
