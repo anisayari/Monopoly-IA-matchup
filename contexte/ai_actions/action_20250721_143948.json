@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T12:39:46.349261",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Lancer à nouveau maximise mes mouvements, approche des cases de construction et accélère ma rotation pour rentabiliser mes propres monopoles et éviter ceux de l'adversaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 38,
+    "money": {
+      "GPT4.1": 1693,
+      "Gemini-2.5-Flash": 277
+    }
+  }
+}

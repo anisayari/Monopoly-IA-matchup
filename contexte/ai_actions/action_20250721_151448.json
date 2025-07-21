@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T13:14:46.699952",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Pour renforcer mes monopoles ou en obtenir de nouveaux, je propose un échange à Gemini-2.5-Flash. Cela renforcera ma position et réduira ses chances de gagner.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 915,
+      "Gemini-2.5-Flash": 780
+    }
+  }
+}

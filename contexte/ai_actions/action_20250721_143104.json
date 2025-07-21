@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T12:31:02.603302",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement 81$, je ne peux rien faire de significatif. Il est temps de passer le tour et attendre des revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 81
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T12:59:00.276860",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Aucun intérêt stratégique à échanger maintenant ; je viens d’investir dans des maisons et possède déjà 2 monopoles. Je dois garder mes atouts.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 915,
+      "Gemini-2.5-Flash": 780
+    }
+  }
+}

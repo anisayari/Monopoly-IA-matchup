@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T12:36:24.217081",
+  "trigger": "Go To Jail",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Aller en prison est un événement de jeu inévitable. 'OK' est la seule option pour progresser et gérer cette situation.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 28,
+    "money": {
+      "GPT4.1": 1719,
+      "Gemini-2.5-Flash": 351
+    }
+  }
+}

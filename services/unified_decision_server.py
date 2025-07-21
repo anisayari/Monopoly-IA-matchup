@@ -118,12 +118,18 @@ class UnifiedDecisionServer:
                 )
                 
                 # Retourner la réponse formatée
-                return jsonify({
+                response_data = {
                     'success': True,
                     'decision': result['decision'],
                     'reason': result['reason'],
                     'confidence': result['confidence']
-                })
+                }
+                
+                # Ajouter trade_data si présent
+                if 'trade_data' in result:
+                    response_data['trade_data'] = result['trade_data']
+                
+                return jsonify(response_data)
                     
             except Exception as e:
                 self.logger.error(f"Error making decision: {e}")

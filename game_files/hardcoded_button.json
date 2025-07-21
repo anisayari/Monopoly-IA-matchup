@@ -1,0 +1,142 @@
+{
+  "timestamp": "2025-07-21 13:58:09",
+  "window_size": {
+    "width": 1254,
+    "height": 693
+  },
+  "properties": {
+    "add_cash_player_2": {
+      "name": "add_cash_player_2",
+      "x_relative": 0.8716,
+      "y_relative": 0.2814,
+      "x_pixel": 1093,
+      "y_pixel": 195
+    },
+    "add_cash_player_1": {
+      "name": "add_cash_player_1",
+      "x_relative": 0.1228,
+      "y_relative": 0.2872,
+      "x_pixel": 154,
+      "y_pixel": 199
+    },
+    "propose_trade": {
+      "name": "propose_trade",
+      "x_relative": 0.5726,
+      "y_relative": 0.7085,
+      "x_pixel": 717,
+      "y_pixel": 491
+    },
+    "cancel_trade": {
+      "name": "cancel_trade",
+      "x_relative": 0.429,
+      "y_relative": 0.7085,
+      "x_pixel": 538,
+      "y_pixel": 491
+    },
+    "button_1_calculette": {
+      "name": "button_1_calculette",
+      "x_relative": 0.4258,
+      "y_relative": 0.6263,
+      "x_pixel": 534,
+      "y_pixel": 434
+    },
+    "button_2_calculette": {
+      "name": "button_2_calculette",
+      "x_relative": 0.5,
+      "y_relative": 0.6133,
+      "x_pixel": 627,
+      "y_pixel": 425
+    },
+    "button_3_calculette": {
+      "name": "button_3_calculette",
+      "x_relative": 0.5781,
+      "y_relative": 0.6118,
+      "x_pixel": 725,
+      "y_pixel": 424
+    },
+    "button_4_calculette": {
+      "name": "button_4_calculette",
+      "x_relative": 0.4219,
+      "y_relative": 0.4978,
+      "x_pixel": 529,
+      "y_pixel": 345
+    },
+    "button_6_calculette": {
+      "name": "button_6_calculette",
+      "x_relative": 0.5789,
+      "y_relative": 0.5007,
+      "x_pixel": 726,
+      "y_pixel": 346
+    },
+    "button_5_calculette": {
+      "name": "button_5_calculette",
+      "x_relative": 0.4976,
+      "y_relative": 0.4978,
+      "x_pixel": 624,
+      "y_pixel": 345
+    },
+    "button_7_calculette": {
+      "name": "button_7_calculette",
+      "x_relative": 0.4234,
+      "y_relative": 0.3781,
+      "x_pixel": 530,
+      "y_pixel": 261
+    },
+    "button_8_calculette": {
+      "name": "button_8_calculette",
+      "x_relative": 0.5024,
+      "y_relative": 0.381,
+      "x_pixel": 630,
+      "y_pixel": 264
+    },
+    "button_9_calculette": {
+      "name": "button_9_calculette",
+      "x_relative": 0.5766,
+      "y_relative": 0.3737,
+      "x_pixel": 723,
+      "y_pixel": 259
+    },
+    "button_ok_calculette": {
+      "name": "button_ok_calculette",
+      "x_relative": 0.5837,
+      "y_relative": 0.7431,
+      "x_pixel": 732,
+      "y_pixel": 515
+    },
+    "button_0_calculette": {
+      "name": "button_0_calculette",
+      "x_relative": 0.5008,
+      "y_relative": 0.7345,
+      "x_pixel": 628,
+      "y_pixel": 509
+    },
+    "delete_button_calculette": {
+      "name": "delete_button_calculette",
+      "x_relative": 0.4314,
+      "y_relative": 0.7316,
+      "x_pixel": 541,
+      "y_pixel": 507
+    },
+    "button_yes_auction": {
+      "name": "button_yes_auction",
+      "x_relative": 0.2504,
+      "y_relative": 0.5152,
+      "x_pixel": 314,
+      "y_pixel": 357
+    },
+    "button_no_auction": {
+      "name": "button_no_auction",
+      "x_relative": 0.2488,
+      "y_relative": 0.5931,
+      "x_pixel": 312,
+      "y_pixel": 411
+    },
+    "cancel_button": {
+      "name": "cancel_button",
+      "x_relative": 0.5008,
+      "y_relative": 0.6912,
+      "x_pixel": 628,
+      "y_pixel": 478
+    }
+  }
+}

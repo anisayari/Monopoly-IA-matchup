@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T12:34:28.360602",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Choisir OK est obligatoire ici. Cela me permet de payer le loyer rapidement et passer au tour suivant, minimisant les blocages et maximisant mes options futures.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 18,
+    "money": {
+      "GPT4.1": 1719,
+      "Gemini-2.5-Flash": 351
+    }
+  }
+}

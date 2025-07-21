@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T12:54:38.692831",
+  "trigger": "Trading",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai peu d'argent pour construire, et l'autre joueur n'est pas intéressé par le commerce. Revenir en arrière est la meilleure option pour l'instant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT4.1": 1721,
+      "Gemini-2.5-Flash": 249
+    }
+  }
+}

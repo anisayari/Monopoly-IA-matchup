@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T13:21:50.229968",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Tenter d'obtenir un échange pour obtenir un nouveau monopole. Négocier pour s'emparer d’un set orange, jaune ou vert amplifierait mes revenus.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 915,
+      "Gemini-2.5-Flash": 780
+    }
+  }
+}

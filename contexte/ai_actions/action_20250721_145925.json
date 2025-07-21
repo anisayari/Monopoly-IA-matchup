@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T12:59:23.610157",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai optimisé mes propriétés en construisant des maisons, aucun échange ni gestion supplémentaire n'est nécessaire avant le prochain tour. Attendre l'évolution du jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 915,
+      "Gemini-2.5-Flash": 780
+    }
+  }
+}

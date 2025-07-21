@@ -72,7 +72,7 @@ class Player:
         for address in self._data["address"]["name"]:
             # Essayer little endian (compatible avec l'architecture x86)
             MemoryReader.set_string(address, value, byteorder="little")
-            # print(f"[DEBUG Player] Name written to address {address} with little endian encoding")
+            print(f"[DEBUG Player] Name written to address {address} with little endian encoding")
             
     @property
     def money(self):

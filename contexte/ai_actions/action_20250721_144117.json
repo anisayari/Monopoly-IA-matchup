@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T12:41:15.581772",
+  "trigger": "would you like",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Cette fenêtre est une fausse alerte, il n’y a aucune action stratégique à réaliser. Annuler permet de revenir au jeu pour prendre une vraie décision utile dès que possible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 44,
+    "money": {
+      "GPT4.1": 1721,
+      "Gemini-2.5-Flash": 249
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T12:30:38.730387",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Avec seulement 81$, je ne peux pas construire. Revenir en arrière est la meilleure option pour l'instant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 81
+    }
+  }
+}

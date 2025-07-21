@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T12:53:27.956543",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "L'autre joueur ne souhaite pas échanger pour l'instant. Il est préférable de clore la discussion et de gérer mes propres actions.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT4.1": 1721,
+      "Gemini-2.5-Flash": 249
+    }
+  }
+}

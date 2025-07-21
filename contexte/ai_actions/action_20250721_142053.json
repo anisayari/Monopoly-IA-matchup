@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T12:20:51.470213",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Avec 5 monopoles et beaucoup d'argent, je suis en excellente position. Je dois construire des maisons pour augmenter les loyers et ruiner mon adversaire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 81
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T12:31:25.253029",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Whitout saving"
+  ],
+  "options": [
+    "Continue without saving/loading "
+  ],
+  "decision": "Continue without saving/loading ",
+  "reason": "Mon objectif est de gagner, et cette option me permet de continuer le jeu sans interruption.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 81
+    }
+  }
+}

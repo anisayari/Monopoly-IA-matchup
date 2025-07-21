@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T12:59:55.499924",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accéder au suivi de mes finances me permet d’ajuster ma stratégie après investissement, et de planifier une gestion optimale pour le prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 915,
+      "Gemini-2.5-Flash": 780
+    }
+  }
+}

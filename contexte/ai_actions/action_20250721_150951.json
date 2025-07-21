@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T13:09:49.538668",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Nous devons initier des négociations pour obtenir des monopoles supplémentaires ou affaiblir l’adversaire. Le trading est clé à ce stade du jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 915,
+      "Gemini-2.5-Flash": 780
+    }
+  }
+}

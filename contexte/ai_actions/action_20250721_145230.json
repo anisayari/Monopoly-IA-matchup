@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T12:52:28.562793",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "La vente de Bow Street a été fructueuse. Je dois maintenant rouler les dés pour avancer et potentiellement construire sur mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1721,
+      "Gemini-2.5-Flash": 249
+    }
+  }
+}

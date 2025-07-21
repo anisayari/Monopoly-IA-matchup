@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T12:38:18.652872",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Étant en prison, je ne peux pas agir sur le plateau. Le meilleur choix est de passer le tour pour tenter de sortir ou économiser pour payer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 32,
+    "money": {
+      "GPT4.1": 1669,
+      "Gemini-2.5-Flash": 351
+    }
+  }
+}

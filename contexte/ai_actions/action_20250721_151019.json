@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T13:10:17.739277",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "L’échange Park Lane contre Piccadilly, Electric Company et $100 a été accepté. Aller plus loin serait risqué stratégiquement sans nouveaux éléments à négocier immédiatement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 915,
+      "Gemini-2.5-Flash": 780
+    }
+  }
+}

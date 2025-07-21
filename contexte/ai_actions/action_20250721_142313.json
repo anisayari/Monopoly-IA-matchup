@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T12:23:10.877352",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "Mon argent est insuffisant pour construire efficacement. Le commerce est ma meilleure option pour acquérir des fonds ou des propriétés cruciales.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 81
+    }
+  }
+}

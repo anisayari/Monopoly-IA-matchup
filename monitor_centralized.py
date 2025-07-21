@@ -52,16 +52,25 @@ class CentralizedMonitor:
         self.load_game_config()
         self.setup_patterns()
         self.monitor_config = self.load_monitor_config()
+        self.hardcoded_buttons = self.load_hardcoded_buttons()
         self.calibration = CalibrationUtils()
     
-    def load_monitor_config(self):
-        """Charge la configuration du monitor depuis monitor_config.json"""
+    def load_json_config(self, file_path):
+        """Charge un fichier de configuration JSON générique"""
         try:
-            with open('monitor_config.json', 'r', encoding='utf-8') as f:
+            with open(file_path, 'r', encoding='utf-8') as f:
                 return json.load(f)
         except Exception as e:
-            print(f"❌ Erreur lors du chargement de monitor_config.json: {e}")
+            print(f"❌ Erreur lors du chargement de {file_path}: {e}")
             return {}
+
+    def load_hardcoded_buttons(self):
+        """Charge la configuration des boutons hardcodés"""
+        return self.load_json_config('game_files/hardcoded_buttons.json')
+
+    def load_monitor_config(self):
+        """Charge la configuration du monitor"""
+        return self.load_json_config('monitor_config.json')
     
     def load_game_config(self):
         """Charge les adresses des messages depuis starting_state.jsonc"""
@@ -105,6 +114,7 @@ class CentralizedMonitor:
             "in jail": "jail",
             "Pay Rent": "rent",
             "Trading": "trade",
+            "trading": "trade",
             "auction": "auction",
             "Go To Jail": "jail",
             "property deeds": "property_management",
@@ -795,14 +805,88 @@ class CentralizedMonitor:
             result: Résultat du process_popup
             screenshot: Capture d'écran actuelle
         """
+
+            
+        # Obtenir la fenêtre Dolphin pour les clics
+        dolphin_window = gw.getWindowsWithTitle("SMPP69")
+        if not dolphin_window:
+            print("❌ Fenêtre Dolphin non trouvée")
+            return
+        
+        win = dolphin_window[0]
+        win_x, win_y = win.left, win.top
+
+        def get_coord_cash_button(player):
+            # Map player to button key
+            button_mapping = {
+                'player1': 'add_cash_player_1',
+                'player2': 'add_cash_player_2'
+            }
+            
+            if player not in button_mapping:
+                return
+            
+            button_key = button_mapping[player]
+            coord = self.hardcoded_buttons[button_key]
+            
+            abs_x, abs_y, transformed_x, transformed_y = self.transform_coordinates(
+                coord['x_relative'] * win.width,
+                coord['y_relative'] * win.height,
+                win
+            )
+            
+            return abs_x, abs_y
+        
+        def click_on_calculette(list_number):
+            list_button_number_calculette = []
+            for num in range(0,10):
+                list_button_number_calculette.append(f"button_{num}_calculette")
+            
+            dict_button_number_calculette = {}
+            for button in list_button_number_calculette:
+                dict_button_number_calculette[button] = self.hardcoded_buttons[button]
+            for _num in list_number:
+                coord = dict_button_number_calculette[f"button_{_num}_calculette"]
+                rel_x,rel_y = coord['x_relative'] , coord['y_relative']
+                abs_x, abs_y, transformed_x, transformed_y = self.transform_coordinates(
+                    rel_x * win.width, 
+                    rel_y * win.height, 
+                    win
+                )
+                self.perform_click(abs_x, abs_y, f"Click on {_num}")
+            
+            coord_ok_button = self.hardcoded_buttons['button_ok_calculette']
+            rel_x,rel_y = coord_ok_button['x_relative'] , coord_ok_button['y_relative']
+            abs_x, abs_y, transformed_x, transformed_y = self.transform_coordinates(
+                    rel_x * win.width, 
+                    rel_y * win.height, 
+                    win
+                )
+                
+            self.perform_click(abs_x, abs_y, "Click ok button calculette")
+            time.sleep(2)
+
         try:
             print("🔄 Gestion du trade détectée")
-            
+            print(f"\n----------------\nTRADE DATA\n----------------\n {trade_data}")
             # Récupérer le contexte du jeu pour savoir qui est le joueur actuel
             game_context = self.game_context if hasattr(self, 'game_context') else {}
             current_player = game_context.get('global', {}).get('current_player', 'player1')
             other_player = 'player2' if current_player == 'player1' else 'player1'
             
+            if trade_data.get('status') == "no_deal":
+                print('LES IAS ne sont pas mis d\'accord sur un DEAL ! :-( )')
+                print('Click sur cancel')
+                coord_cancel_button = self.hardcoded_buttons['cancel_trade']
+                rel_x,rel_y = coord_cancel_button['x_relative'], coord_cancel_button['y_relative']
+                # Transformer les coordonnées
+                abs_x, abs_y, transformed_x, transformed_y = self.transform_coordinates(
+                        rel_x * win.width, 
+                        rel_y * win.height, win)
+                self.perform_click(abs_x, abs_y, "Click sur Cancel")
+                time.sleep(2)
+                return
+
             print(f"📍 Joueur actuel: {current_player}")
             print(f"📍 Ordre de clic: propriétés de {other_player} puis {current_player}")
             
@@ -814,19 +898,13 @@ class CentralizedMonitor:
             for player in players_order:
                 # Récupérer les propriétés de manière sûre (retourne [] si absent)
                 props = trade_data.get(player, {}).get('offers', {}).get('properties', [])
+                print(f"Propriétés : {props}")
+
                 properties_to_click.extend((prop, player) for prop in props)
             
             # Cliquer sur toutes les propriétés dans l'ordre
             print(f"🏠 Total de propriétés à cliquer: {len(properties_to_click)}")
-            
-            # Obtenir la fenêtre Dolphin pour les clics
-            dolphin_window = gw.getWindowsWithTitle("Dolphin")
-            if not dolphin_window:
-                print("❌ Fenêtre Dolphin non trouvée")
-                return
-            
-            win = dolphin_window[0]
-            win_x, win_y = win.left, win.top
+
             
             for prop_name, owner in properties_to_click:
                 coords = get_coordinates(prop_name, 'relative')
@@ -852,33 +930,29 @@ class CentralizedMonitor:
                 else:
                     print(f"⚠️ Coordonnées introuvables pour {prop_name}")
             
-            # Après avoir cliqué sur toutes les propriétés, traiter la décision
-            # (proposer, ajouter de l'argent, etc.)
-            decision = result.get('decision')
-            options = result.get('options', [])
-            
-            # Trouver et cliquer sur l'option décidée
-            for opt in options:
-                if opt['name'].strip().lower() == decision.strip().lower():
-                    bbox = opt.get('bbox')
-                    if bbox and len(bbox) >= 4:
-                        # Calculer le centre de la bbox
-                        cx = (bbox[0] + bbox[2]) / 2
-                        cy = (bbox[1] + bbox[3]) / 2
-                        
-                        # Transformer les coordonnées
-                        abs_x, abs_y, transformed_cx, transformed_cy = self.transform_coordinates(cx, cy, win)
-                        
-                        if abs_x is not None:
-                            print(f"📋 Option '{decision}':")
-                            print(f"   - Bbox originale: {bbox}")
-                            print(f"   - Centre transformé: ({transformed_cx}, {transformed_cy})")
-                            
-                            # Effectuer le clic avec offset de 30 pixels
-                            self.perform_click(abs_x, abs_y, f"Clic sur l'option '{decision}'")
-                        else:
-                            print(f"❌ Erreur de transformation pour l'option '{decision}'")
-                    break
+            # Extract money data for both players using a loop
+                money_requested = {}
+                for player_num in [1, 2]:
+                    player_key = f'player{player_num}'
+                    money_requested[player_key] = trade_data.get(player_key, {}).get('offers', {}).get('money', 0)
+                    print(f"Money Player {player_num}: {money_requested[player_key]}")
+                    if int(money_requested[player_key]) > 0: 
+                        abs_x, abs_y = get_coord_cash_button(player_key)
+                        self.perform_click(abs_x, abs_y, f"Clic sur Cash")
+                        time.sleep(2)
+                        list_number = list(str(money_requested[player_key]))
+                        click_on_calculette(list_number)
+
+            coord_propose_button = self.hardcoded_buttons['propose_trade']
+            rel_x, rel_y = coord_propose_button['x_relative'], coord_propose_button['y_relative']
+            abs_x, abs_y, transformed_x, transformed_y = self.transform_coordinates(
+                    rel_x * win.width, 
+                    rel_y * win.height, 
+                    win
+                )
+            self.perform_click(abs_x,abs_y, "Click sur propose")
+            time.sleep(2)
+            self.perform_click(abs_x,abs_y, "Click sur propose")
                     
         except Exception as e:
             print(f"❌ Erreur lors de la gestion du trade: {e}")
@@ -1026,6 +1100,7 @@ class CentralizedMonitor:
                             if current_event == "trade" and result.get('decision') == 'make_trade':
                                 print("🔄 Décision 'make_trade' détectée depuis ai_service")
                                 trade_data = result.get('trade_data', {})
+                                print(f'TRADE_DATA {trade_data}')
                                 if trade_data:
                                     self._handle_trade_event(trade_data, result, screenshot)
                                     continue

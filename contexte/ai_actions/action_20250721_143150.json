@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T12:31:48.452997",
+  "trigger": "would you like",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "Yes ",
+  "reason": "Le popup est générique. Choisir 'Oui' est le plus sûr pour poursuivre le jeu et potentiellement accepter un événement bénéfique.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 81
+    }
+  }
+}

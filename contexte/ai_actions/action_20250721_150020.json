@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T13:00:18.814634",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Aucune action supplémentaire requise pour optimiser ma stratégie à ce tour. Je conserve mes positions pour observer la réaction adverse.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 915,
+      "Gemini-2.5-Flash": 780
+    }
+  }
+}

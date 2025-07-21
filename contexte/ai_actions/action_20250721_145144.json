@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T12:51:42.438323",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "La négociation sur Bow Street est en pause. Je dois laisser à l'autre joueur le temps de réfléchir et de relancer. Revenir au menu principal est la meilleure option pour l'instant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1721,
+      "Gemini-2.5-Flash": 249
+    }
+  }
+}

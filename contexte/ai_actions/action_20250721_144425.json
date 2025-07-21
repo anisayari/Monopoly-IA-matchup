@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T12:44:23.278403",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Aucune opportunité d’échange intéressante : je ne veux pas affaiblir mes monopoles ou aider l’adversaire. Je conserve mes atouts et reste attentif à toute faille.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 44,
+    "money": {
+      "GPT4.1": 1721,
+      "Gemini-2.5-Flash": 249
+    }
+  }
+}

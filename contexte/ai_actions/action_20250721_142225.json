@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T12:22:23.397994",
+  "trigger": "would you like",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "Avec seulement $81, je dois envisager un échange pour obtenir plus de fonds ou des propriétés rentables afin de construire sur mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 81
+    }
+  }
+}

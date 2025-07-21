@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T13:03:25.141480",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Proposer un échange stratégique pour acquérir un troisième orange ou compléter un monopole, maximisant ainsi mes chances de victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 915,
+      "Gemini-2.5-Flash": 780
+    }
+  }
+}

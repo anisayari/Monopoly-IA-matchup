@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T12:22:00.715473",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec seulement $81, je ne peux pas construire de maisons significativement. Consulter mes comptes m'aidera à planifier la suite de ma stratégie financière.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 81
+    }
+  }
+}
