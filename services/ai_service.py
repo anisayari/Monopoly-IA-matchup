@@ -765,154 +765,184 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         Gère la boucle de conversation entre deux IA jusqu'à END_CONVERSATION, puis relance la décision.
         Retourne le nouveau résultat de décision.
         """
-        conversation_data = []
-        player1_name = game_context.get('players', {}).get("player1", {}).get('name', "player1")
-        player2_name = game_context.get('players', {}).get("player2", {}).get('name', "player2")
-        player1_model = game_context.get('players', {}).get("player1", {}).get('ai_model', "gpt-4o-mini")
-        player2_model = game_context.get('players', {}).get("player2", {}).get('ai_model', "gpt-4o-mini")
+        # Extract player information
+        players = game_context.get('players', {})
+        player_configs = {
+            "player1": {
+                'name': players.get("player1", {}).get('name', "player1"),
+                'model': players.get("player1", {}).get('ai_model', "gpt-4o-mini"),
+                'provider': players.get("player1", {}).get('provider', "openai")
+            },
+            "player2": {
+                'name': players.get("player2", {}).get('name', "player2"),
+                'model': players.get("player2", {}).get('ai_model', "gpt-4o-mini"),
+                'provider': players.get("player2", {}).get('provider', "openai")
+            }
+        }
         
-        player1_provider = game_context.get('players', {}).get("player1", {}).get('provider', "openai")
-        player2_provider = game_context.get('players', {}).get("player2", {}).get('provider', "openai")
-        
-        ai_client_player1 = self.openai_client
-        ai_client_player2 = self.openai_client
-        
-        if player1_provider == "anthropic":
-            ai_client_player1 = self.anthropic_client
-        elif player1_provider == "gemini":
-            ai_client_player1 = self.gemini_client
-        
-        if player2_provider == "anthropic":
-            ai_client_player2 = self.anthropic_client
-        elif player2_provider == "gemini":
-            ai_client_player2 = self.gemini_client
-        
-        player_need_answer = "player1"
-        if current_player == "player1":
-            conversation_data.append(f"{player1_name} : {result['chat_message']}")
-            player_need_answer = "player2"
-            self.logger.info(f"💬 {player1_name} : {result['chat_message']}")
-        else:
-            conversation_data.append(f"{player2_name} : {result['chat_message']}")
-            player_need_answer = "player1"
-            self.logger.info(f"💬 {player2_name} : {result['chat_message']}")
-        while True:
-            
-            ai_client = ai_client_player1 if player_need_answer == "player1" else ai_client_player2
-            ai_model = player1_model if player_need_answer == "player1" else player2_model
-            conversation_messages = '\n'.join(conversation_data)
-            trade_message_system_prompt = ""
-            trade_message = ""
-            auction_message = ""
-            if is_trade_available:
-                trade_message_system_prompt = """
-                <TRADE_POSSIBILITIES>
-                TU PEUX NEGOCIER DES ECHANGES de propriétés ou/Et d'argent !
-                </TRADE_POSSIBILITIES>
-                """
-                trade_message = """
-                - "[END_CONVERSATION]" : UNIQUEMENT si tu considère que la conversation est vraiment terminée (accord conclu, au revoir échangé, plus rien à négocier)
-                - "[INIT_TRADE]" pour déclencher un échange de propriétés après avoir négocié avec l'autre joueur et que les deux joueurs sont d'accord.
-                """
-            elif is_auction_available:
-                auction_message = """
-                - "[END_AUCTION]" pour déclencher la fin de l'enchère quand tu ne veux plus enchérir et que tu laisse ton adversaire gagner l'enchère
-                """
+        # Get AI clients for both players
+        ai_clients = {}
+        for player_id, config in player_configs.items():
+            if config['provider'] == "anthropic":
+                ai_clients[player_id] = self.anthropic_client
+            elif config['provider'] == "gemini":
+                ai_clients[player_id] = self.gemini_client
             else:
-                trade_message_system_prompt = """
-            <TRADE_POSSIBILITIES>
-            TU N'EST PAS SUR LA FENETRE D'ECHANGE de propriétés ou/et d'argent (qui est dans Accounts > Trade), tu ne peux pas négocier d'échange pendant cette discussion. Mais tu peux discuter avec l'autre IA quand même.
-            </TRADE_POSSIBILITIES>
-            """
-                trade_message = """
-- "[END_CONVERSATION]" : UNIQUEMENT si tu considère que la conversation est vraiment terminée (accord conclu, au revoir échangé, plus rien à négocier)
-                """
-
+                ai_clients[player_id] = self.openai_client
+        
+        # Initialize conversation
+        conversation_data = []
+        current_player_name = player_configs[current_player]['name']
+        player_need_answer = "player2" if current_player == "player1" else "player1"
+        
+        conversation_data.append(f"{current_player_name} : {result['chat_message']}")
+        self.logger.info(f"💬 {current_player_name} : {result['chat_message']}")
+        
+        # Generate system prompts based on availability
+        trade_system_prompt, special_commands = self._get_conversation_prompts(is_trade_available, is_auction_available)
+        
+        while True:
+            # Get current player configuration
+            current_config = player_configs[player_need_answer]
+            ai_client = ai_clients[player_need_answer]
+            conversation_messages = '\n'.join(conversation_data)
+            
+            # Create messages for AI
             messages = [
-                {"role": "system", "content": f"""
-Tu es une IA qui joue au Monopoly contre une autre IA.
-Tu es actuellement en train de discuter avec un autre joueur IA. Essaye de rester court dans tes réponses.
-                """},
-                {"role": "user", "content": f"""
-Tu es le joueur {player_need_answer} ({player1_name if player_need_answer == "player1" else player2_name})
+                {"role": "system", "content": "Tu es une IA qui joue au Monopoly contre une autre IA.\nTu es actuellement en train de discuter avec un autre joueur IA. Essaye de rester court dans tes réponses."},
+                {"role": "user", "content": f"""Tu es le joueur {player_need_answer} ({current_config['name']})
 
-{trade_message_system_prompt}
+    {trade_system_prompt}
 
-<game_context>
-    Contexte actuel:
-    {context_str}
-</game_context>
+    <game_context>
+        Contexte actuel:
+        {context_str}
+    </game_context>
 
-<conversation>
-    Messages de la conversation:
-    {conversation_messages}
-</conversation>
+    <conversation>
+        Messages de la conversation:
+        {conversation_messages}
+    </conversation>
 
+    MOTS-CLÉS SPÉCIAUX:
+    {special_commands}
 
-MOTS-CLÉS SPÉCIAUX:
-{trade_message}
-{auction_message}
-
-EXEMPLES:
-✅ Réponse normale: "Je suis intéressé par ta propriété orange. Que veux-tu en échange ?"
-✅ Terminer: "D'accord, merci pour la discussion. [END_CONVERSATION]"
-❌ NE PAS FAIRE: "Je suis intéressé par ta propriété. [END_CONVERSATION]"
- """}
+    EXEMPLES:
+    ✅ Réponse normale: "Je suis intéressé par ta propriété orange. Que veux-tu en échange ?"
+    ✅ Terminer: "D'accord, merci pour la discussion. [END_CONVERSATION]"
+    ❌ NE PAS FAIRE: "Je suis intéressé par ta propriété. [END_CONVERSATION]"
+    """}
             ]
+            
+            # Get AI response
             response = ai_client.chat.completions.create(
-                model=ai_model,
+                model=current_config['model'],
                 messages=messages,
             )
             conversation_result = response.choices[0].message.content
             conversation_data.append(f"{player_need_answer} : {conversation_result}")
             self.logger.info(f"💬 {player_need_answer} : {conversation_result}")
-            if conversation_result.find("[END_CONVERSATION]") != -1 or conversation_result.find("[INIT_TRADE]") != -1 or conversation_result.find("[END_AUCTION]") != -1:
+            
+            # Check for conversation end or special commands
+            end_result = self._handle_conversation_end(conversation_result, conversation_data, result, player_configs)
+            if end_result is not None:
+                return end_result
                 
-                new_user_message = f"""Tu as terminé une conversation avec l'autre joueur.
-<conversation>
-    Messages de la conversation:
-    {conversation_messages}
-</conversation>
-"""
-                self._add_to_history("player1", "user", new_user_message)
-                self._add_to_history("player2", "user", new_user_message)
-
-                if conversation_result.find("[INIT_TRADE]") != -1:
-                    # Les IA décident de faire un échange de propriétés
-                    exchange_result = self._get_ai_trade_decision_json(player1_name, player2_name, conversation_data)
-                    self.logger.info(f"💬 Échange de propriétés: {exchange_result}")
-                    # Sauvegarder les données du trade pour monitor_centralized
-                    self.trade_data = exchange_result
-                    conversation_messages.append(f"[TRADE_COMPLETED]")
-                    # Si un trade a été initié, modifier le résultat
-                    if hasattr(self, 'trade_data') and self.trade_data:
-                        new_result = result
-                        new_result['decision'] = 'make_trade'
-                        new_result['trade_data'] = self.trade_data
-                        # Réinitialiser pour la prochaine fois
-                        self.trade_data = None
-                    return new_result
-                elif conversation_result.find("[END_AUCTION]") != -1:
-                    # Les IA ont terminé l'enchère
-                    auction_result = self._get_ai_auction_decision_json(player1_name, player2_name, conversation_data)
-                    self.logger.info(f"💰 Résultat d'enchère: {auction_result}")
-                    # Sauvegarder les données de l'enchère pour monitor_centralized
-                    self.auction_data = auction_result
-                    conversation_data.append(f"[AUCTION_COMPLETED]")
-                    # Si une enchère a été complétée, modifier le résultat
-                    if hasattr(self, 'auction_data') and self.auction_data:
-                        new_result = result.copy()
-                        new_result['decision'] = 'auction_completed'
-                        new_result['auction_data'] = self.auction_data
-                        # Réinitialiser pour la prochaine fois
-                        self.auction_data = None
-                    return new_result
-                else:
-                    return False # La conversation est terminée (Conversation sans choix)
-                
-            # Alterner le joueur qui doit répondre
+            # Switch to other player
             player_need_answer = "player2" if player_need_answer == "player1" else "player1"
 
+    def _get_conversation_prompts(self, is_trade_available, is_auction_available):
+        """Helper method to generate system prompts and special commands based on availability."""
+        if is_trade_available:
+            trade_system_prompt = """
+    <TRADE_POSSIBILITIES>
+    TU PEUX NEGOCIER DES ECHANGES de propriétés ou/Et d'argent !
+    </TRADE_POSSIBILITIES>
+    """
+            special_commands = """- "[END_CONVERSATION]" : UNIQUEMENT si tu considère que la conversation est vraiment terminée (accord conclu, au revoir échangé, plus rien à négocier)
+    - "[INIT_TRADE]" pour déclencher un échange de propriétés après avoir négocié avec l'autre joueur et que les deux joueurs sont d'accord."""
+        elif is_auction_available:
+            trade_system_prompt = ""
+            special_commands = """- "[END_AUCTION]" pour déclencher la fin de l'enchère quand tu ne veux plus enchérir et que tu laisse ton adversaire gagner l'enchère"""
+        else:
+            trade_system_prompt = """
+    <TRADE_POSSIBILITIES>
+    TU N'EST PAS SUR LA FENETRE D'ECHANGE de propriétés ou/et d'argent (qui est dans Accounts > Trade), tu ne peux pas négocier d'échange pendant cette discussion. Mais tu peux discuter avec l'autre IA quand même.
+    </TRADE_POSSIBILITIES>
+    """
+            special_commands = """- "[END_CONVERSATION]" : UNIQUEMENT si tu considère que la conversation est vraiment terminée (accord conclu, au revoir échangé, plus rien à négocier)"""
+        
+        return trade_system_prompt, special_commands
+
+    def _handle_conversation_end(self, conversation_result, conversation_data, result, player_configs):
+        """Helper method to handle conversation end scenarios."""
+        end_commands = ["[END_CONVERSATION]", "[INIT_TRADE]", "[END_AUCTION]"]
+        
+        if not any(cmd in conversation_result for cmd in end_commands):
+            return None
+        
+        conversation_messages = '\n'.join(conversation_data)
+        new_user_message = f"""Tu as terminé une conversation avec l'autre joueur.
+    <conversation>
+        Messages de la conversation:
+        {conversation_messages}
+    </conversation>
+    """
+        self._add_to_history("player1", "user", new_user_message)
+        self._add_to_history("player2", "user", new_user_message)
+        
+        if "[INIT_TRADE]" in conversation_result:
+            return self._handle_trade_completion(player_configs, conversation_data, result)
+        elif "[END_AUCTION]" in conversation_result:
+            return self._handle_auction_completion(player_configs, conversation_data, result)
+        else:
+            return False  # La conversation est terminée (Conversation sans choix)
+
+    def _handle_trade_completion(self, player_configs, conversation_data, result):
+        """Helper method to handle trade completion."""
+        player1_name = player_configs["player1"]["name"]
+        player2_name = player_configs["player2"]["name"]
+        
+        exchange_result = self._get_ai_trade_decision_json(player1_name, player2_name, conversation_data)
+        self.logger.info(f"💬 Échange de propriétés: {exchange_result}")
+        
+        # Sauvegarder les données du trade pour monitor_centralized
+        self.trade_data = exchange_result
+        conversation_data.append("[TRADE_COMPLETED]")
+        
+        # Si un trade a été initié, modifier le résultat
+        if hasattr(self, 'trade_data') and self.trade_data:
+            new_result = result.copy()
+            new_result['decision'] = 'make_trade'
+            new_result['trade_data'] = self.trade_data
+            # Réinitialiser pour la prochaine fois
+            self.trade_data = None
+            return new_result
+        
+        return result
+
+    def _handle_auction_completion(self, player_configs, conversation_data, result):
+        """Helper method to handle auction completion."""
+        player1_name = player_configs["player1"]["name"]
+        player2_name = player_configs["player2"]["name"]
+        
+        auction_result = self._get_ai_auction_decision_json(player1_name, player2_name, conversation_data)
+        self.logger.info(f"💰 Résultat d'enchère: {auction_result}")
+        
+        # Sauvegarder les données de l'enchère pour monitor_centralized
+        self.auction_data = auction_result
+        conversation_data.append("[AUCTION_COMPLETED]")
+        
+        # Si une enchère a été complétée, modifier le résultat
+        if hasattr(self, 'auction_data') and self.auction_data:
+            new_result = result.copy()
+            new_result['decision'] = 'auction_completed'
+            new_result['auction_data'] = self.auction_data
+            # Réinitialiser pour la prochaine fois
+            self.auction_data = None
+            return new_result
+        
+        return result
 # Instance globale du service (singleton)
 _ai_service_instance = None
 
