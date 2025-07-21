@@ -683,7 +683,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             model="o4-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": f"{chr(10).join(last_messages)}"}
+                {"role": "user", "content": f"Conversation d'échange:\n{chr(10).join(last_messages)}\n\nAnalyse cette conversation et détermine les montants d'argent et les propriétés que chacun est prêt à échanger."}
             ],
             response_format={
                 "type": "json_schema",
