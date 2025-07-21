@@ -147,7 +147,7 @@ class AIService:
         
         try:
             # Préparer le contexte
-            context_str = self._format_game_context(game_context)
+            context_str = self._format_game_context(game_context, category)
             
             # Déterminer quel modèle utiliser basé sur le joueur actuel
             current_player = game_context.get('global', {}).get('current_player', 'Unknown')
@@ -455,7 +455,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         else:
             return 'unknown'
     
-    def _format_game_context(self, game_context: Dict) -> str:
+    def _format_game_context(self, game_context: Dict, category: str) -> str:
         """Formate le contexte du jeu pour l'IA"""
         context_str = ""
         
@@ -566,6 +566,16 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                         if group_size:
                             status = "MONOPOLE!" if len(prop_names) == group_size else f"{len(prop_names)}/{group_size}"
                             context_str += f"  - {player_name}: {group} [{status}]\n"
+        
+        if category == "auction":
+            # Récupérer la propriété en cours d'enchère
+            # Check le current player, et récupérer la position du player qui sera l'enchère en cours
+            current_player = game_context.get('global', {}).get('current_player', 'Unknown')
+            current_player_position = players.get(current_player, {}).get('current_space', 'Unknown')
+            # Récupérer la propriété en cours d'enchère
+            current_property = property_manager.get_property_details(current_player_position)
+            context_str += f"\nEnchère en cours:\nPropriété en cours d'enchère: {current_property.get('name', 'Unknown')} (Valeur: ${current_property.get('value', 'Unknown')})\n"
+            
         
         return context_str
     
@@ -762,8 +772,8 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 },
                 "winner": {
                     "type": "string",
-                    "description": "Le nom du joueur gagnant de l'enchère",
-                    "enum": [player1_name, player2_name]
+                    "description": "Le joueur gagnant de l'enchère (player1 ou player2)",
+                    "enum": ["player1", "player2"]
                 },
                 "winning_bid": {
                     "type": "number",
