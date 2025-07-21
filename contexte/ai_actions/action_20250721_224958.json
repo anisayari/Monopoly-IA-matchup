@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T20:49:56.049756",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "Première option disponible",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1719,
+      "Gemini-2.5-Flash": 351
+    }
+  }
+}

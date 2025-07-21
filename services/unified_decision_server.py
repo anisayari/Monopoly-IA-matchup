@@ -131,6 +131,9 @@ class UnifiedDecisionServer:
 
                 if 'auction_data' in result:
                     response_data['auction_data'] = result['auction_data']
+
+                if 'property_management_data' in result:
+                    response_data['property_management_data'] = result['property_management_data']
                 
                 return jsonify(response_data)
                     

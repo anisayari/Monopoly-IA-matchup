@@ -264,8 +264,8 @@ Choisis la meilleure option stratégique."""
                 extended_options = ["talk_to_other_players"]
 
             if is_property_management_available:
-                talk_to_other_players_message += " Tu peux aussi utiliser la decision `manage_properties` pour acheter, vendre, hypotéquer, dés-hypotéquer des propriétés."
-                extended_options.append("manage_properties")
+                talk_to_other_players_message += " Tu peux aussi utiliser la decision `manage_property` pour acheter, vendre, hypotéquer, dés-hypotéquer des propriétés."
+                extended_options.append("manage_property")
             
             schema = {
                 "type": "object",
@@ -372,7 +372,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 # Re appeler la fonction make_decision, pour que l'IA puisse prendre une décision en fonction de la conversation
                 if not result:
                     return self.make_decision(popup_text, options, game_context,category)
-            elif result['decision'] == "manage_properties":
+            elif result['decision'] == "manage_property":
                 self.logger.info("💬 Début de la gestion de propriétés")
                 result = self._run_property_management(
                     current_player=current_player,
@@ -381,7 +381,8 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                     model=model,
                     game_context=game_context,
                     context_str=context_str,
-                    chat_message=result['chat_message']
+                    chat_message=result['chat_message'],
+                    result=result
                 )
 
             
@@ -811,7 +812,6 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         json_result = json.loads(response.choices[0].message.content)
         return json_result
 
-
         
     def _get_property_management_decision_json(self, current_player, game_context, player_message):
         """
@@ -914,7 +914,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         result = json.loads(response.choices[0].message.content)
         return result
 
-    def _run_property_management(self, current_player, player_name, ai_client, model, game_context, context_str, chat_message):
+    def _run_property_management(self, current_player, player_name, ai_client, model, game_context, context_str, chat_message, result):
         """
         Gère la gestion de propriétés
         """

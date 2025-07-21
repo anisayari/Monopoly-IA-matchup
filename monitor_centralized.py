@@ -994,17 +994,22 @@ class CentralizedMonitor:
             import traceback
             traceback.print_exc()
 
-    def _handle_property_management(self, property_data, result, screenshot):
+    def _handle_property_management_event(self, property_data, result, screenshot):
         """
         Gère les événements de gestion de propriétés (achat/vente de maisons, hypothèques)
         
         Args:
             property_data: Structure avec les actions à effectuer
                 {
-                    'action': 'buy_houses',  # ou 'sell_houses', 'mortgage', 'unmortgage'
-                    'properties': ['Park Place', 'Boardwalk'],
-                    'quantity': 1,  # nombre de maisons à acheter/vendre
-                    'total_cost': 400
+                    "decisions": {
+                        "properties": [
+                            {
+                                "property_name": "Park Place",
+                                "action": "buy_house",
+                                "quantity": 1
+                            }
+                        ]
+                    }
                 }
             result: Résultat du process_popup
             screenshot: Capture d'écran actuelle
@@ -1021,32 +1026,48 @@ class CentralizedMonitor:
             print("🏠 Gestion des propriétés détectée")
             print(f"\n----------------\nPROPERTY DATA\n----------------\n {property_data}")
             
-            action = property_data.get('action')
-            properties = property_data.get('properties', [])
+            # Extraire les décisions depuis la nouvelle structure
+            decisions = property_data.get('decisions', {})
+            property_actions = decisions.get('properties', [])
+            
+            if not property_actions:
+                print("⚠️ Aucune action de propriété trouvée")
+                return
             
             # Mapper les actions aux boutons correspondants
             action_button_map = {
+                'buy_house': 'button_buy_1_property',
                 'buy_houses': 'button_buy_1_property',
                 'buy_set': 'button_buy_set_property',
+                'sell_house': 'button_sell_1_property',
                 'sell_houses': 'button_sell_1_property', 
                 'sell_set': 'button_sell_set_property',
                 'mortgage': 'button_mortgage_property',
                 'unmortgage': 'button_unmortgage_property'
             }
             
-            # Récupérer le bouton correspondant à l'action
-            button_key = action_button_map.get(action)
-            if not button_key:
-                print(f"❌ Action '{action}' non reconnue")
-                return
+            # Traiter chaque action de propriété individuellement
+            for property_action in property_actions:
+                prop_name = property_action.get('property_name')
+                action = property_action.get('action')
+                quantity = property_action.get('quantity', 1)
                 
-            action_button = self.hardcoded_buttons.get(button_key)
-            if not action_button:
-                print(f"❌ Bouton '{button_key}' non trouvé dans hardcoded_buttons")
-                return
-            
-            # Traiter chaque propriété individuellement
-            for prop_name in properties:
+                if not prop_name or not action:
+                    print(f"⚠️ Action invalide: {property_action}")
+                    continue
+                
+                # Récupérer le bouton correspondant à l'action
+                button_key = action_button_map.get(action)
+                if not button_key:
+                    print(f"❌ Action '{action}' non reconnue")
+                    continue
+                    
+                action_button = self.hardcoded_buttons.get(button_key)
+                if not action_button:
+                    print(f"❌ Bouton '{button_key}' non trouvé dans hardcoded_buttons")
+                    continue
+                
+                # Traiter l'action sur cette propriété
                 coords = get_coordinates(prop_name, 'relative')
                 if coords:
                     rel_x, rel_y = coords
@@ -1060,48 +1081,54 @@ class CentralizedMonitor:
                     
                     if abs_x is not None:
                         print(f"\n🏠 Traitement de la propriété: {prop_name}")
+                        print(f"   📋 Action: {action} (quantité: {quantity})")
                         
-                        # 1. Cliquer sur la propriété
-                        print(f"   1️⃣ Clic sur la propriété")
-                        self.perform_click(abs_x, abs_y, f"Clic sur {prop_name}", y_offset=6)
-                        time.sleep(0.5)
-                        
-                        # 2. Cliquer sur le bouton d'action
-                        action_abs_x, action_abs_y, _, _ = self.transform_coordinates(
-                            action_button['x_relative'] * win.width,
-                            action_button['y_relative'] * win.height,
-                            win
-                        )
-                        
-                        if action_abs_x is not None:
-                            print(f"   2️⃣ Clic sur le bouton: {action}")
-                            self.perform_click(action_abs_x, action_abs_y, f"Clic sur {action}")
-                            time.sleep(1)
-                        
-                        # 3. Si c'est une action qui nécessite confirmation, gérer les boutons yes/no
-                        if action in ['mortgage', 'sell_houses', 'sell_set']:
-                            # Chercher le bon bouton de confirmation
-                            if action == 'mortgage':
-                                yes_button_key = 'button_yes_mortgage_property'
-                            elif action in ['sell_houses', 'sell_set']:
-                                yes_button_key = 'button_yes_sell_property'
+                        # Répéter l'action selon la quantité
+                        for i in range(quantity):
+                            if quantity > 1:
+                                print(f"   🔢 Itération {i+1}/{quantity}")
                             
-                            yes_button = self.hardcoded_buttons.get(yes_button_key)
+                            # 1. Cliquer sur la propriété
+                            print(f"   1️⃣ Clic sur la propriété")
+                            self.perform_click(abs_x, abs_y, f"Clic sur {prop_name}", y_offset=6)
+                            time.sleep(0.5)
                             
-                            if yes_button:
-                                yes_abs_x, yes_abs_y, _, _ = self.transform_coordinates(
-                                    yes_button['x_relative'] * win.width,
-                                    yes_button['y_relative'] * win.height,
-                                    win
-                                )
+                            # 2. Cliquer sur le bouton d'action
+                            action_abs_x, action_abs_y, _, _ = self.transform_coordinates(
+                                action_button['x_relative'] * win.width,
+                                action_button['y_relative'] * win.height,
+                                win
+                            )
+                            
+                            if action_abs_x is not None:
+                                print(f"   2️⃣ Clic sur le bouton: {action}")
+                                self.perform_click(action_abs_x, action_abs_y, f"Clic sur {action}")
+                                time.sleep(1)
+                            
+                            # 3. Si c'est une action qui nécessite confirmation, gérer les boutons yes/no
+                            if action in ['mortgage', 'sell_house', 'sell_houses', 'sell_set']:
+                                # Chercher le bon bouton de confirmation
+                                if action == 'mortgage':
+                                    yes_button_key = 'button_yes_mortgage_property'
+                                elif action in ['sell_house', 'sell_houses', 'sell_set']:
+                                    yes_button_key = 'button_yes_sell_property'
                                 
-                                if yes_abs_x is not None:
-                                    time.sleep(1)
-                                    print(f"   3️⃣ Clic sur YES pour confirmer")
-                                    self.perform_click(yes_abs_x, yes_abs_y, "Clic sur YES")
-                                    time.sleep(1)
+                                yes_button = self.hardcoded_buttons.get(yes_button_key)
+                                
+                                if yes_button:
+                                    yes_abs_x, yes_abs_y, _, _ = self.transform_coordinates(
+                                        yes_button['x_relative'] * win.width,
+                                        yes_button['y_relative'] * win.height,
+                                        win
+                                    )
+                                    
+                                    if yes_abs_x is not None:
+                                        time.sleep(1)
+                                        print(f"   3️⃣ Clic sur YES pour confirmer")
+                                        self.perform_click(yes_abs_x, yes_abs_y, "Clic sur YES")
+                                        time.sleep(1)
                         
-                        # 4. Cliquer sur "Done" pour valider cette propriété
+                        # 4. Cliquer sur "Done" pour valider cette propriété (après toutes les itérations)
                         done_button = self.hardcoded_buttons.get('button_done_property')
                         if done_button:
                             done_abs_x, done_abs_y, _, _ = self.transform_coordinates(
@@ -1535,6 +1562,7 @@ class CentralizedMonitor:
                                     continue
                                 else:
                                     print("⚠️ Aucune donnée de trade trouvée dans le résultat")
+
                             elif match.get('category') == "auction" and result.get('decision') == 'make_auction':
                                 print("🔄 Décision 'make_auction' détectée depuis ai_service")
                                 auction_data = result.get('auction_data', {})
@@ -1545,6 +1573,17 @@ class CentralizedMonitor:
                                     continue
                                 else:
                                     print("⚠️ Aucune donnée d'enchère trouvée dans le résultat")
+
+                            elif match.get('category') == "property" and result.get('decision') == 'make_property_management':
+                                print("🔄 Décision 'make_property_management' détectée depuis ai_service")
+                                property_management_data = result.get('property_management_data', {})
+                                print(f'PROPERTY_MANAGEMENT_DATA {property_management_data}')
+                                if property_management_data:
+                                    self._handle_property_management_event(property_management_data, result, screenshot)
+                                    continue
+                                else:
+                                    print("⚠️ Aucune donnée de gestion de propriété trouvée dans le résultat")
+                            
                             
                             decision = result['decision']
                             options = result.get('options', [])
