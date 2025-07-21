@@ -618,6 +618,10 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
 
     def _get_ai_trade_decision_json(self, player1_name, player2_name, last_messages):
         system_prompt = f"""
+        Analyse la conversation entre les deux joueurs et détermine l'accord final de l'échange de propriétés ou d'argent.
+        Si les deux joueurs sont d'accord, tu dois retourner le montant d'argent et la liste des propriétés que chacun est prêt à échanger.
+        Si les deux joueurs ne sont pas d'accord, tu dois retourner 0 pour le montant d'argent et une liste vide pour les propriétés.
+        
         Tu dois retourner un JSON valide avec le schema suivant, aucun texte autre que le JSON.
         
         Contexte:
@@ -634,10 +638,14 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                         "offers": {
                             "type": "object",
                             "properties": {
-                                "money": {"type": "number"},
+                                "money": {
+                                    "type": "number",
+                                    "description": "Montant d'argent que le joueur 1 est prêt à échanger (0 si pas d'argent à échanger)"
+                                },
                                 "properties": {
                                     "type": "array",
-                                    "items": {"type": "string"}
+                                    "items": {"type": "string"},
+                                    "description": "Liste des propriétés que le joueur 1 est prêt à échanger"
                                 }
                             },
                             "required": ["money", "properties"]
@@ -651,10 +659,14 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                         "offers": {
                             "type": "object",
                             "properties": {
-                                "money": {"type": "number"},
+                                "money": {
+                                    "type": "number",
+                                    "description": "Montant d'argent que le joueur 2 est prêt à échanger (0 si pas d'argent à échanger)"
+                                },
                                 "properties": {
                                     "type": "array",
-                                    "items": {"type": "string"}
+                                    "items": {"type": "string"},
+                                    "description": "Liste des propriétés que le joueur 2 est prêt à échanger"
                                 }
                             },
                             "required": ["money", "properties"]
