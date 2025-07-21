@@ -35,6 +35,7 @@ class AIService:
         self.global_chat_messages = []
         self.max_history_length = 20  # Limite de l'historique (messages user+assistant)
         self.trade_data = None  # Pour stocker les données de trade
+        self.auction_data = None  # Pour stocker les données d'enchère
         
         # Initialiser OpenAI si la clé est disponible
         openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -179,32 +180,6 @@ class AIService:
             # Définir le schéma JSON pour la sortie structurée
             
             extended_options = options + ["talk_to_other_players"]
-            
-            schema = {
-                "type": "object",
-                "properties": {
-                    "decision": {
-                        "type": "string",
-                        "description": "Nom exact de l'option choisie",
-                        "enum": extended_options if extended_options else ["none"]
-                    },
-                    "reason": {
-                        "type": "string",
-                        "description": "Courte explication de la décision (max 30 mots)"
-                    },
-                    "confidence": {
-                        "type": "string",
-                        "description": "Niveau de confiance entre 0.0 et 1.0",
-                        "enum": ["0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0"]
-                    },
-                    "chat_message": {
-                        "type": "string",
-                        "description": "Message a envoyer dans le chat global du jeu"
-                    }
-                },
-                "required": ["decision", "reason", "confidence", "chat_message"],
-                "additionalProperties": False
-            }
 
             # Construire le message utilisateur
             chat_messages = '\n'.join(self.global_chat_messages)
@@ -243,12 +218,24 @@ Choisis la meilleure option stratégique."""
             structured_output = True
             store_data = True
             ai_provider_name = "OpenAI"
+            is_trade_available = category == 'trade'
+            is_auction_available = category == 'auction'
+            extra_body = None
             
             if provider == 'gemini':
                 ai_client = self.gemini_client
                 structured_output = True
                 store_data = False
                 ai_provider_name = "Gemini"
+                extra_body = {
+                    'extra_body': {
+                        "google": {
+                            "thinking_config": {
+                                "thinking_budget": 256
+                            }
+                        }
+                    }
+                }
             elif provider == 'anthropic':
                 ai_client = self.anthropic_client
                 structured_output = False
@@ -257,11 +244,44 @@ Choisis la meilleure option stratégique."""
             
             # Construire les messages pour l'API
             
+            talk_to_other_players_message = "A n'importe quel moment tu peux utiliser la decisions TALK_TO_OTHER_PLAYERS pour discuter avec les autres joueurs."
+            if is_trade_available:
+                talk_to_other_players_message += " Tu dois aussi utiliser la decisions TALK_TO_OTHER_PLAYERS pour initier un échange de propriétés avec les autres joueurs, qui amenera a une négociation et à l'échange final."
+            
+            if is_auction_available:
+                talk_to_other_players_message += " Tu dois aussi utiliser la decisions TALK_TO_OTHER_PLAYERS pour initier l'enchère d'une propriété, qui amenera a une négociation et au prix final / enchère gagnante."
+                extended_options = ["talk_to_other_players"]
+            
+            schema = {
+                "type": "object",
+                "properties": {
+                    "decision": {
+                        "type": "string",
+                        "description": "Nom exact de l'option choisie",
+                        "enum": extended_options if extended_options else ["none"]
+                    },
+                    "reason": {
+                        "type": "string",
+                        "description": "Courte explication de la décision (max 30 mots)"
+                    },
+                    "confidence": {
+                        "type": "string",
+                        "description": "Niveau de confiance entre 0.0 et 1.0",
+                        "enum": ["0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0"]
+                    },
+                    "chat_message": {
+                        "type": "string",
+                        "description": "Message a envoyer dans le chat global du jeu"
+                    }
+                },
+                "required": ["decision", "reason", "confidence", "chat_message"],
+                "additionalProperties": False
+            }
             system_prompt = """Tu es une IA qui joue au Monopoly dans une compétition contre une autre IA. Ton objectif est de GAGNER.
 
 Tu as accés au contexte du jeu entre chaque tour. Et tu dois prendre des décisions en fonctions de tes options.
 
-A n'importe quel moment tu peux utiliser la decisions TALK_TO_OTHER_PLAYERS pour discuter avec les autres joueurs.
+{talk_to_other_players_message}
 
 RÉPONSE OBLIGATOIRE en JSON valide avec :
 - "decision" : nom exact de l'option choisie .
@@ -298,6 +318,9 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                         "strict": True
                     }
                 }
+                
+            if extra_body:
+                request_data["extra_body"] = extra_body
             
             # Afficher la requête JSON complète
             self.logger.info(f"📡 === REQUÊTE {ai_provider_name} ===")
@@ -314,7 +337,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             result = json.loads(response.choices[0].message.content)
             
             self._add_to_history(current_player, "user", user_message)
-            self._add_to_history(current_player, "assistant", json.dumps(result))
+            self._add_to_history(current_player, "assistant", response.choices[0].message.content)
 
             self.global_chat_messages.append(f"{player_name} : {result['chat_message']}")
             
@@ -323,18 +346,21 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             if result['decision'] == "talk_to_other_players":
                 self.logger.info("💬 Début d'une conversation avec les autres joueurs")
                 # TODO: Gérer "is_trade_available"
+                ## Ajout des messages user / assistant dans "request_data" avant de lancer la conversation
+                request_data['messages'].append({"role": "user", "content": user_message})
+                request_data['messages'].append({"role": "assistant", "content": response.choices[0].message.content})
+                
                 result = self._run_conversation_between_players(
                     current_player=current_player,
                     result=result,
                     game_context=game_context,
                     context_str=context_str,
-                    popup_text=popup_text,
-                    options=options,
-                    user_message=user_message,
-                    request_data=request_data,
-                    request_ai_client=ai_client,
-                    is_trade_available = bool(category == 'trade')
+                    is_trade_available = is_trade_available,
+                    is_auction_available = is_auction_available
                 )
+                # Re appeler la fonction make_decision, pour que l'IA puisse prendre une décision en fonction de la conversation
+                if not result:
+                    return self.make_decision(options, category, game_context)
 
             
             self.logger.info(f"✅ Décision IA: {result['decision']} - {result['reason']}")
@@ -663,7 +689,78 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         json_result = json.loads(response.choices[0].message.content)
         return json_result
 
-    def _run_conversation_between_players(self, current_player, result, game_context, context_str, popup_text, options, user_message, request_ai_client, request_data, is_trade_available):
+    def _get_ai_auction_decision_json(self, player1_name, player2_name, last_messages):
+        """
+        Analyse la conversation d'enchère et détermine les montants maximum et le gagnant
+        """
+        system_prompt = f"""
+        Tu dois analyser la conversation d'enchère entre deux joueurs et déterminer:
+        1. Le montant maximum que chaque joueur est prêt à payer
+        2. Qui est le gagnant de l'enchère
+        
+        Tu dois retourner un JSON valide avec le schema suivant, aucun texte autre que le JSON.
+        
+        Contexte:
+        - Player1: {player1_name}
+        - Player2: {player2_name}
+        """
+
+        auction_schema = {
+            "type": "object",
+            "properties": {
+                "player1": {
+                    "type": "object",
+                    "properties": {
+                        "max_bid": {
+                            "type": "number",
+                            "description": "Montant maximum que le joueur 1 est prêt à payer"
+                        }
+                    },
+                    "required": ["max_bid"]
+                },
+                "player2": {
+                    "type": "object",
+                    "properties": {
+                        "max_bid": {
+                            "type": "number", 
+                            "description": "Montant maximum que le joueur 2 est prêt à payer"
+                        }
+                    },
+                    "required": ["max_bid"]
+                },
+                "winner": {
+                    "type": "string",
+                    "description": "Le nom du joueur gagnant de l'enchère",
+                    "enum": [player1_name, player2_name]
+                },
+                "winning_bid": {
+                    "type": "number",
+                    "description": "Le montant de l'enchère gagnante"
+                }
+            },
+            "required": ["player1", "player2", "winner", "winning_bid"],
+            "additionalProperties": False
+        }
+
+        response = self.openai_client.chat.completions.create(
+            model="o4-mini",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": f"Conversation d'enchère:\n{chr(10).join(last_messages)}\n\nAnalyse cette conversation et détermine les montants maximum et le gagnant."}
+            ],
+            response_format={
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "monopoly_auction",
+                    "schema": auction_schema,
+                    "strict": True
+                }
+            }
+        )
+        json_result = json.loads(response.choices[0].message.content)
+        return json_result
+
+    def _run_conversation_between_players(self, current_player, result, game_context, context_str, is_trade_available, is_auction_available):
         """
         Gère la boucle de conversation entre deux IA jusqu'à END_CONVERSATION, puis relance la décision.
         Retourne le nouveau résultat de décision.
@@ -704,14 +801,32 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             ai_client = ai_client_player1 if player_need_answer == "player1" else ai_client_player2
             ai_model = player1_model if player_need_answer == "player1" else player2_model
             conversation_messages = '\n'.join(conversation_data)
-            trade_message_system_prompt = "TU N'EST PAS SUR LA FENETRE D'ECHANGE de propriétés ou/et d'argent (qui est dans Accounts > Trade), tu ne peux pas négocier d'échange pendant cette discussion. Mais tu peux discuter avec l'autre IA quand même."
+            trade_message_system_prompt = ""
+            trade_message = ""
+            auction_message = ""
             if is_trade_available:
-                trade_message_system_prompt = "TU PEUX NEGOCIER DES ECHANGES de propriétés ou/Et d'argent !"
+                trade_message_system_prompt = """
+                <TRADE_POSSIBILITIES>
+                TU PEUX NEGOCIER DES ECHANGES de propriétés ou/Et d'argent !
+                </TRADE_POSSIBILITIES>
+                """
                 trade_message = """
+                - "[END_CONVERSATION]" : UNIQUEMENT si tu considère que la conversation est vraiment terminée (accord conclu, au revoir échangé, plus rien à négocier)
                 - "[INIT_TRADE]" pour déclencher un échange de propriétés après avoir négocié avec l'autre joueur et que les deux joueurs sont d'accord.
                 """
+            elif is_auction_available:
+                auction_message = """
+                - "[END_AUCTION]" pour déclencher la fin de l'enchère quand tu ne veux plus enchérir et que tu laisse ton adversaire gagner l'enchère
+                """
             else:
-                trade_message = ""
+                trade_message_system_prompt = """
+            <TRADE_POSSIBILITIES>
+            TU N'EST PAS SUR LA FENETRE D'ECHANGE de propriétés ou/et d'argent (qui est dans Accounts > Trade), tu ne peux pas négocier d'échange pendant cette discussion. Mais tu peux discuter avec l'autre IA quand même.
+            </TRADE_POSSIBILITIES>
+            """
+                trade_message = """
+- "[END_CONVERSATION]" : UNIQUEMENT si tu considère que la conversation est vraiment terminée (accord conclu, au revoir échangé, plus rien à négocier)
+                """
 
             messages = [
                 {"role": "system", "content": f"""
@@ -721,19 +836,12 @@ Tu es actuellement en train de discuter avec un autre joueur IA. Essaye de reste
                 {"role": "user", "content": f"""
 Tu es le joueur {player_need_answer} ({player1_name if player_need_answer == "player1" else player2_name})
 
-<TRADE POSSIBILITIES ?>
 {trade_message_system_prompt}
-</TRADE POSSIBILITIES?>
 
 <game_context>
     Contexte actuel:
     {context_str}
 </game_context>
-
-<popup_data>
-    Texte du popup: "{popup_text}"
-    Options disponibles: {', '.join(options)}
-</popup_data>
 
 <conversation>
     Messages de la conversation:
@@ -742,8 +850,8 @@ Tu es le joueur {player_need_answer} ({player1_name if player_need_answer == "pl
 
 
 MOTS-CLÉS SPÉCIAUX:
-- "[END_CONVERSATION]" : UNIQUEMENT si tu considère que la conversation est vraiment terminée (accord conclu, au revoir échangé, plus rien à négocier)
 {trade_message}
+{auction_message}
 
 EXEMPLES:
 ✅ Réponse normale: "Je suis intéressé par ta propriété orange. Que veux-tu en échange ?"
@@ -758,7 +866,17 @@ EXEMPLES:
             conversation_result = response.choices[0].message.content
             conversation_data.append(f"{player_need_answer} : {conversation_result}")
             self.logger.info(f"💬 {player_need_answer} : {conversation_result}")
-            if conversation_result.find("[END_CONVERSATION]") != -1 or conversation_result.find("[INIT_TRADE]") != -1:
+            if conversation_result.find("[END_CONVERSATION]") != -1 or conversation_result.find("[INIT_TRADE]") != -1 or conversation_result.find("[END_AUCTION]") != -1:
+                
+                new_user_message = f"""Tu as terminé une conversation avec l'autre joueur.
+<conversation>
+    Messages de la conversation:
+    {conversation_messages}
+</conversation>
+"""
+                self._add_to_history("player1", "user", new_user_message)
+                self._add_to_history("player2", "user", new_user_message)
+
                 if conversation_result.find("[INIT_TRADE]") != -1:
                     # Les IA décident de faire un échange de propriétés
                     exchange_result = self._get_ai_trade_decision_json(player1_name, player2_name, conversation_data)
@@ -774,39 +892,24 @@ EXEMPLES:
                         # Réinitialiser pour la prochaine fois
                         self.trade_data = None
                     return new_result
-                new_request_data = request_data.copy()
-                new_request_data['messages'] = list(request_data['messages'])  # copy list
-                new_request_data['messages'].append({"role": "user", "content": user_message})
-                new_request_data['messages'].append({"role": "assistant", "content": json.dumps(result)})
-                new_request_data['messages'].append({"role": "user", "content": f"""Tu as terminé la conversation avec l'autre joueur.
-<conversation>
-    Messages de la conversation:
-    {conversation_messages}
-</conversation>
-
-<popup_data>
-    Texte du popup: "{popup_text}"
-    Options disponibles: {', '.join(options)}
-</popup_data>
-
-Répond maintenant à la question du popup."""})
-                response = request_ai_client.chat.completions.create(**new_request_data)
-                # Parser la réponse
-                try:
-                    new_result = json.loads(response.choices[0].message.content)
-                except Exception as e:
-                    self.logger.error(f"Erreur parsing JSON après conversation: {e}")
-                    new_result = result  # fallback
-                self._add_to_history(current_player, "user", user_message)
-                self._add_to_history(current_player, "assistant", json.dumps(new_result))
+                elif conversation_result.find("[END_AUCTION]") != -1:
+                    # Les IA ont terminé l'enchère
+                    auction_result = self._get_ai_auction_decision_json(player1_name, player2_name, conversation_data)
+                    self.logger.info(f"💰 Résultat d'enchère: {auction_result}")
+                    # Sauvegarder les données de l'enchère pour monitor_centralized
+                    self.auction_data = auction_result
+                    conversation_data.append(f"[AUCTION_COMPLETED]")
+                    # Si une enchère a été complétée, modifier le résultat
+                    if hasattr(self, 'auction_data') and self.auction_data:
+                        new_result = result.copy()
+                        new_result['decision'] = 'auction_completed'
+                        new_result['auction_data'] = self.auction_data
+                        # Réinitialiser pour la prochaine fois
+                        self.auction_data = None
+                    return new_result
+                else:
+                    return False # La conversation est terminée (Conversation sans choix)
                 
-                # Si un trade a été initié, modifier le résultat
-                if hasattr(self, 'trade_data') and self.trade_data:
-                    new_result['decision'] = 'make_trade'
-                    new_result['trade_data'] = self.trade_data
-                    # Réinitialiser pour la prochaine fois
-                    self.trade_data = None
-                return new_result
             # Alterner le joueur qui doit répondre
             player_need_answer = "player2" if player_need_answer == "player1" else "player1"
 
