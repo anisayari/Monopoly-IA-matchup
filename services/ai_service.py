@@ -277,7 +277,7 @@ Choisis la meilleure option stratégique."""
                 "required": ["decision", "reason", "confidence", "chat_message"],
                 "additionalProperties": False
             }
-            system_prompt = """Tu es une IA qui joue au Monopoly dans une compétition contre une autre IA. Ton objectif est de GAGNER.
+            system_prompt = f"""Tu es une IA qui joue au Monopoly dans une compétition contre une autre IA. Ton objectif est de GAGNER.
 
 Tu as accés au contexte du jeu entre chaque tour. Et tu dois prendre des décisions en fonctions de tes options.
 
@@ -332,7 +332,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             # Appeler l'API avec Structured Outputs
             
             response = ai_client.chat.completions.create(**request_data)
-            print(f"-------------- \response {response}")
+            print(f"-------------- \n response {response}")
             # Parser la réponse
             result = json.loads(response.choices[0].message.content)
             
@@ -395,11 +395,19 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 'timestamp': datetime.utcnow().isoformat()
             }, port=8004)
             
-            return {
+            
+            return_data = {
                 'decision': result['decision'],
                 'reason': result['reason'],
                 'confidence': float(result.get('confidence', 0.8))
             }
+            
+            if 'trade_data' in result:
+                return_data['trade_data'] = result['trade_data']
+            if 'auction_data' in result:
+                return_data['auction_data'] = result['auction_data']
+            
+            return return_data
             
         except Exception as e:
             import traceback
