@@ -327,10 +327,18 @@ class Contexte:
                             if 0 <= prop_position < len(self.monopoly_board):
                                 prop_info = self.monopoly_board[prop_position]
                                 if prop_info["type"] == "property":
+                                    # Récupérer le nombre de maisons depuis la liste globale des propriétés
+                                    houses = 0
+                                    for global_prop in properties:
+                                        if global_prop["id"] == prop_position:
+                                            houses = global_prop.get("houses", 0)
+                                            break
+                                    
                                     player_properties.append({
                                         "id": prop_position,
                                         "name": prop_info["name"],
-                                        "group": prop_info.get("color", "unknown")
+                                        "group": prop_info.get("color", "unknown"),
+                                        "houses": houses
                                     })
                         except:
                             pass

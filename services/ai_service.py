@@ -357,6 +357,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             self.global_chat_messages.append(f"{player_name} : {result['chat_message']}")
             
             # result['decision'] = "talk_to_other_players" #FORCE TO TEST
+            result['decision'] = "manage_property"
             ## Gestion de la conversation avec les autres joueurs
             if result['decision'] == "talk_to_other_players":
                 self.logger.info("💬 Début d'une conversation avec les autres joueurs")
@@ -519,15 +520,25 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                             prop_info = {
                                 'name': prop_name,
                                 'value': details.get('value', 0),
-                                'rent': details.get('rent', {}).get('base', 0) if details.get('type') == 'property' else 'special'
+                                'rent': details.get('rent', {}).get('base', 0) if details.get('type') == 'property' else 'special',
+                                'houses': prop.get('houses', 0)
                             }
                             props_by_group[group].append(prop_info)
                     
                     context_str += f"   Propriétés ({len(props)}, valeur totale: ${total_property_value}):\n"
                     
                     for group, group_props in props_by_group.items():
-                        prop_names = [f"{p['name']} (${ p['value']})" for p in group_props]
-                        context_str += f"     - {group}: {', '.join(prop_names)}\n"
+                        prop_descriptions = []
+                        for p in group_props:
+                            desc = f"{p['name']} (${p['value']}"
+                            if p['houses'] > 0:
+                                if p['houses'] == 5:
+                                    desc += ", hôtel"
+                                else:
+                                    desc += f", {p['houses']} maison{'s' if p['houses'] > 1 else ''}"
+                            desc += ")"
+                            prop_descriptions.append(desc)
+                        context_str += f"     - {group}: {', '.join(prop_descriptions)}\n"
                         
                         # Vérifier si le groupe est complet pour un monopole
                         group_size = self._get_group_size(group)
@@ -594,7 +605,112 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             # Récupérer la propriété en cours d'enchère
             current_property = property_manager.get_property_details(current_player_position)
             context_str += f"\nEnchère en cours:\nPropriété en cours d'enchère: {current_property.get('name', 'Unknown')} (Valeur: ${current_property.get('value', 'Unknown')})\n"
+        
+        if category == "property_management":
+            # Ajouter des informations détaillées pour la gestion de propriétés
+            current_player = game_context.get('global', {}).get('current_player', 'Unknown')
+            current_player_data = players.get(current_player, {})
+            current_props = current_player_data.get('properties', [])
             
+            if current_props:
+                context_str += f"\n🏠 GESTION DE PROPRIÉTÉS - Détails pour {current_player_data.get('name', current_player)}:\n"
+                context_str += f"💰 Argent disponible: ${current_player_data.get('money', 0)}\n\n"
+                
+                # Organiser par groupes avec toutes les infos
+                props_by_group = {}
+                for prop in current_props:
+                    prop_name = prop.get('name', 'Unknown')
+                    group = prop.get('group', 'unknown')
+                    house_count = prop.get('houses', 0)
+                    is_mortgaged = prop.get('mortgaged', False)
+                    
+                    details = property_manager.get_property_details(prop_name)
+                    if details and details.get('type') == 'property':
+                        if group not in props_by_group:
+                            props_by_group[group] = []
+                        
+                        props_by_group[group].append({
+                            'name': prop_name,
+                            'houses': house_count,
+                            'mortgaged': is_mortgaged,
+                            'details': details
+                        })
+                
+                # Afficher par groupe avec tous les calculs
+                for group, group_props in props_by_group.items():
+                    group_size = self._get_group_size(group)
+                    is_monopoly = group_size and len(group_props) == group_size
+                    
+                    context_str += f"📍 Groupe {group.upper()}"
+                    if is_monopoly:
+                        context_str += " ⭐ MONOPOLE COMPLET"
+                    context_str += f" ({len(group_props)}/{group_size or '?'} propriétés):\n"
+                    
+                    for prop_data in group_props:
+                        name = prop_data['name']
+                        houses = prop_data['houses']
+                        mortgaged = prop_data['mortgaged']
+                        details = prop_data['details']
+                        
+                        context_str += f"\n  🏘️ {name}:\n"
+                        context_str += f"     - État: "
+                        if mortgaged:
+                            context_str += "❌ HYPOTHÉQUÉE"
+                        elif houses == 5:
+                            context_str += "🏨 HÔTEL"
+                        elif houses > 0:
+                            context_str += f"🏠 {houses} maison(s)"
+                        else:
+                            context_str += "✅ Terrain nu"
+                        context_str += "\n"
+                        
+                        # Prix et options
+                        house_cost = details.get('houseCost', 0)
+                        mortgage_value = details.get('mortgage', 0)
+                        
+                        if not mortgaged:
+                            # Options d'achat (seulement si monopole et pas d'hôtel)
+                            if is_monopoly and houses < 5 and house_cost > 0:
+                                context_str += f"     - Achat maison: ${house_cost} par maison\n"
+                                if houses < 3:
+                                    context_str += f"     - Achat set 3 maisons: ${house_cost * 3}\n"
+                            
+                            # Options de vente
+                            if houses > 0 and house_cost > 0:
+                                context_str += f"     - Vente maison: ${house_cost // 2} par maison\n"
+                                if houses >= 3:
+                                    context_str += f"     - Vente set 3 maisons: ${(house_cost * 3) // 2}\n"
+                            
+                            # Option hypothèque (seulement si pas de maisons)
+                            if houses == 0:
+                                context_str += f"     - Hypothéquer: ${mortgage_value}\n"
+                        else:
+                            # Option lever l'hypothèque
+                            unmortgage_price = int(mortgage_value * 1.1)
+                            context_str += f"     - Lever l'hypothèque: ${unmortgage_price}\n"
+                    
+                    context_str += "\n"
+                
+                # Ajouter les propriétés spéciales (gares, services)
+                special_props = []
+                for prop in current_props:
+                    details = property_manager.get_property_details(prop.get('name'))
+                    if details and details.get('type') in ['station', 'utility']:
+                        special_props.append({
+                            'name': prop.get('name'),
+                            'type': details.get('type'),
+                            'mortgaged': prop.get('mortgaged', False),
+                            'mortgage': details.get('mortgage', 0)
+                        })
+                
+                if special_props:
+                    context_str += "🚂 PROPRIÉTÉS SPÉCIALES:\n"
+                    for prop in special_props:
+                        context_str += f"  - {prop['name']} ({prop['type']}): "
+                        if prop['mortgaged']:
+                            context_str += f"❌ Hypothéquée (lever: ${int(prop['mortgage'] * 1.1)})\n"
+                        else:
+                            context_str += f"✅ Active (hypothéquer: ${prop['mortgage']})\n"
         
         return context_str
     
@@ -951,8 +1067,10 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         )
         
         # data_json = json.loads(response.choices[0].message.content)
-        data_json = self._get_property_management_decision_json(current_player, game_context, response.choices[0].message.content)
-        
+        ai_message = response.choices[0].message.content
+        self.logger.info(f"💬 Message de l'IA pour property management: {ai_message}")
+        data_json = self._get_property_management_decision_json(current_player, game_context, ai_message)
+        self.logger.info(f"📊 Résultat property management JSON: {data_json}")
         
         new_result = result.copy()
         new_result['decision'] = 'make_property_management'
