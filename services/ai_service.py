@@ -904,7 +904,6 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         
         # Sauvegarder les données du trade pour monitor_centralized
         self.trade_data = exchange_result
-        conversation_data.append("[TRADE_COMPLETED]")
         
         # Si un trade a été initié, modifier le résultat
         if hasattr(self, 'trade_data') and self.trade_data:
@@ -927,7 +926,6 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         
         # Sauvegarder les données de l'enchère pour monitor_centralized
         self.auction_data = auction_result
-        conversation_data.append("[AUCTION_COMPLETED]")
         
         # Si une enchère a été complétée, modifier le résultat
         if hasattr(self, 'auction_data') and self.auction_data:
