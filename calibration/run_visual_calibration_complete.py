@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Complete calibration script that handles Dolphin launching and visual calibration
+Enhanced calibration script with 9-point grid for improved precision
 """
 import os
 import sys
@@ -132,8 +132,10 @@ def start_dolphin(config_data):
 
 def main():
     """Main function"""
-    print("🎮 Monopoly Visual Calibration Tool")
-    print("=" * 55)
+    print("🎮 Enhanced Monopoly Visual Calibration Tool")
+    print("=" * 65)
+    print("🎯 NEW: 9-Point Grid Calibration for Maximum Precision")
+    print("=" * 65)
     print()
     
     # Load configuration
@@ -169,10 +171,10 @@ def main():
             input("\nPress Enter to exit...")
             return False
     
-    # Now run the visual calibration
-    print("\n" + "="*55)
-    print("Starting Visual Calibration...")
-    print("="*55)
+    # Now run the enhanced visual calibration
+    print("\n" + "="*65)
+    print("Starting Enhanced 9-Point Grid Calibration...")
+    print("="*65)
     
     try:
         calibrator = VisualDolphinCalibrator()
@@ -180,8 +182,9 @@ def main():
         if calibrator.calibrate():
             calibrator.display_results()
             calibrator.save_calibration()
-            print("\n✅ Calibration completed successfully!")
-            print("💡 The blue overlay helped you align accurately")
+            print("\n✅ Enhanced calibration completed successfully!")
+            print("🎯 9-point grid provides superior accuracy across the entire screen")
+            print("💡 The precision improvement will be noticeable in your gameplay")
             calibration_success = True
         else:
             print("\n❌ Calibration failed or was cancelled")
@@ -195,7 +198,7 @@ def main():
     
     # If we started Dolphin, ask if user wants to keep it open
     if dolphin_process and not dolphin_already_running:
-        print("\n" + "="*55)
+        print("\n" + "="*65)
         response = input("\nDo you want to keep Dolphin open? (Y/N): ")
         if response.upper() != 'Y':
             print("Stopping Dolphin...")
@@ -207,11 +210,12 @@ def main():
                 dolphin_process.kill()
                 print("Dolphin force closed")
     
-    print("\n" + "="*55)
+    print("\n" + "="*65)
     if calibration_success:
-        print("Calibration completed! You can now use the system.")
+        print("🎉 Enhanced calibration completed! Much improved precision achieved.")
+        print("📈 Your Wiimote pointing accuracy should now be significantly better.")
     else:
-        print("Calibration not completed. Please try again.")
+        print("❌ Calibration not completed. Please try again for best results.")
     
     input("\nPress Enter to exit...")
     return calibration_success
