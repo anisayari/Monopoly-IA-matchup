@@ -14,16 +14,16 @@
           160,
           250
         ],
-        "current_rent": 2,
+        "current_rent": 0,
         "house_price": 50,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
-          "x_relative": 0.6359,
-          "y_relative": 0.8235,
-          "x_pixel": 1163,
-          "y_pixel": 840
+          "x_relative": 0.6364,
+          "y_relative": 0.8297,
+          "x_pixel": 798,
+          "y_pixel": 575
         }
       },
       {
@@ -39,16 +39,16 @@
           160,
           250
         ],
-        "current_rent": 2,
+        "current_rent": 0,
         "house_price": 50,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
-          "x_relative": 0.5653,
-          "y_relative": 0.8137,
-          "x_pixel": 1034,
-          "y_pixel": 830
+          "x_relative": 0.5662,
+          "y_relative": 0.8139,
+          "x_pixel": 710,
+          "y_pixel": 564
         }
       },
       {
@@ -64,9 +64,9 @@
           0,
           0
         ],
-        "current_rent": 25,
+        "current_rent": 0,
         "house_price": 0,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -89,9 +89,9 @@
           400,
           550
         ],
-        "current_rent": 6,
+        "current_rent": 0,
         "house_price": 50,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -116,7 +116,7 @@
         ],
         "current_rent": 6,
         "house_price": 50,
-        "owner": "blue",
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -139,9 +139,9 @@
           400,
           550
         ],
-        "current_rent": 6,
+        "current_rent": 0,
         "house_price": 50,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -164,9 +164,9 @@
           625,
           750
         ],
-        "current_rent": 10,
+        "current_rent": 0,
         "house_price": 100,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -189,9 +189,9 @@
           0,
           0
         ],
-        "current_rent": 4,
+        "current_rent": 0,
         "house_price": 0,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -214,9 +214,9 @@
           625,
           750
         ],
-        "current_rent": 10,
+        "current_rent": 0,
         "house_price": 100,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -239,9 +239,9 @@
           625,
           750
         ],
-        "current_rent": 10,
+        "current_rent": 0,
         "house_price": 100,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -264,9 +264,9 @@
           0,
           0
         ],
-        "current_rent": 25,
+        "current_rent": 0,
         "house_price": 0,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -289,9 +289,9 @@
           750,
           950
         ],
-        "current_rent": 14,
+        "current_rent": 0,
         "house_price": 100,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -314,9 +314,9 @@
           750,
           950
         ],
-        "current_rent": 14,
+        "current_rent": 0,
         "house_price": 100,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -339,9 +339,9 @@
           750,
           950
         ],
-        "current_rent": 14,
+        "current_rent": 0,
         "house_price": 100,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -364,9 +364,9 @@
           875,
           1050
         ],
-        "current_rent": 18,
+        "current_rent": 0,
         "house_price": 150,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -389,9 +389,9 @@
           875,
           1050
         ],
-        "current_rent": 18,
+        "current_rent": 0,
         "house_price": 150,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -414,9 +414,9 @@
           875,
           1050
         ],
-        "current_rent": 18,
+        "current_rent": 0,
         "house_price": 150,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -439,9 +439,9 @@
           0,
           0
         ],
-        "current_rent": 25,
+        "current_rent": 0,
         "house_price": 0,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -464,9 +464,9 @@
           975,
           1150
         ],
-        "current_rent": 22,
+        "current_rent": 0,
         "house_price": 150,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -489,9 +489,9 @@
           975,
           1150
         ],
-        "current_rent": 22,
+        "current_rent": 0,
         "house_price": 150,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -514,9 +514,9 @@
           0,
           0
         ],
-        "current_rent": 4,
+        "current_rent": 0,
         "house_price": 0,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -539,9 +539,9 @@
           975,
           1150
         ],
-        "current_rent": 22,
+        "current_rent": 0,
         "house_price": 150,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -564,9 +564,9 @@
           1100,
           1275
         ],
-        "current_rent": 26,
+        "current_rent": 0,
         "house_price": 200,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -589,9 +589,9 @@
           1100,
           1275
         ],
-        "current_rent": 26,
+        "current_rent": 0,
         "house_price": 200,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -614,9 +614,9 @@
           1100,
           1275
         ],
-        "current_rent": 26,
+        "current_rent": 0,
         "house_price": 200,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -639,9 +639,9 @@
           0,
           0
         ],
-        "current_rent": 25,
+        "current_rent": 0,
         "house_price": 0,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -664,9 +664,9 @@
           1300,
           1500
         ],
-        "current_rent": 35,
+        "current_rent": 0,
         "house_price": 200,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -689,9 +689,9 @@
           1700,
           2000
         ],
-        "current_rent": 50,
+        "current_rent": 0,
         "house_price": 200,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -702,13 +702,13 @@
         }
       }
     ],
-    "current_turn": 14,
+    "current_turn": 0,
     "player_count": 2,
     "player_names": [
       "GPT4.1",
       "Gemini-2.5-Flash"
     ],
-    "current_player": "player1",
+    "current_player": "player2",
     "buildings_summary": {
       "total_houses": 0,
       "total_hotels": 0,
@@ -718,144 +718,88 @@
   },
   "events": [
     {
-      "turn": 7,
+      "turn": 0,
       "player": "GPT4.1",
-      "action": "buy_property",
-      "detail": "Water Works pour 150€",
-      "message": "GPT4.1 achète Water Works pour 150€."
+      "action": "join_game",
+      "detail": null,
+      "message": "GPT4.1 a rejoint la partie de Monopoly."
     },
     {
-      "turn": 7,
-      "player": "GPT4.1",
-      "action": "buy_property",
-      "detail": "Oxford Street pour 300€",
-      "message": "GPT4.1 achète Oxford Street pour 300€."
+      "turn": 0,
+      "player": "Gemini-2.5",
+      "action": "join_game",
+      "detail": null,
+      "message": "Gemini-2.5 a rejoint la partie de Monopoly."
     },
     {
-      "turn": 8,
-      "player": "GPT4.1",
-      "action": "buy_property",
-      "detail": "Park Lane pour 350€",
-      "message": "GPT4.1 achète Park Lane pour 350€."
-    },
-    {
-      "turn": 8,
+      "turn": 0,
       "player": "Gemini-2.5",
       "action": "buy_property",
-      "detail": "Old Kent Road pour 60€",
-      "message": "Gemini-2.5 achète Old Kent Road pour 60€."
+      "detail": "Euston Road pour 100€",
+      "message": "Gemini-2.5 achète Euston Road pour 100€."
     },
     {
-      "turn": 9,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Bond Street pour 320€",
-      "message": "Gemini-2.5 achète Bond Street pour 320€."
-    },
-    {
-      "turn": 9,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Liverpool Street Station pour 200€",
-      "message": "Gemini-2.5 achète Liverpool Street Station pour 200€."
-    },
-    {
-      "turn": 10,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Kings Cross Station pour 200€",
-      "message": "Gemini-2.5 achète Kings Cross Station pour 200€."
-    },
-    {
-      "turn": 10,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Mayfair pour 400€",
-      "message": "Gemini-2.5 achète Mayfair pour 400€."
-    },
-    {
-      "turn": 11,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Electric Company pour 150€",
-      "message": "Gemini-2.5 achète Electric Company pour 150€."
-    },
-    {
-      "turn": 11,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Whitehall pour 140€",
-      "message": "Gemini-2.5 achète Whitehall pour 140€."
-    },
-    {
-      "turn": 12,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Northumberland Avenue pour 160€",
-      "message": "Gemini-2.5 achète Northumberland Avenue pour 160€."
-    },
-    {
-      "turn": 12,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Bow Street pour 180€",
-      "message": "Gemini-2.5 achète Bow Street pour 180€."
-    },
-    {
-      "turn": 13,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Piccadilly pour 280€",
-      "message": "Gemini-2.5 achète Piccadilly pour 280€."
-    },
-    {
-      "turn": 13,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Regent Street pour 300€",
-      "message": "Gemini-2.5 achète Regent Street pour 300€."
-    },
-    {
-      "turn": 14,
+      "turn": 0,
       "player": "System",
       "action": "jail_options",
       "detail": "Do you want to pay the bail, roll for doubles or use a get out of free jail card (if you have one)?",
       "message": "System doit choisir comment sortir de prison."
     },
     {
-      "turn": 14,
+      "turn": 0,
+      "player": "System",
+      "action": "rent_notification",
+      "detail": "CURRENT BID",
+      "message": "System a effectué l'action 'rent_notification' CURRENT BID."
+    },
+    {
+      "turn": 0,
       "player": "System",
       "action": "message",
       "detail": "1 Owned",
       "message": "Message: 1 Owned"
     },
     {
-      "turn": 14,
+      "turn": 0,
       "player": "System",
       "action": "message",
       "detail": "4 Owned",
       "message": "Message: 4 Owned"
     },
     {
-      "turn": 14,
+      "turn": 0,
       "player": "System",
       "action": "message",
       "detail": "2 Owned",
       "message": "Message: 2 Owned"
     },
     {
-      "turn": 14,
+      "turn": 0,
       "player": "System",
       "action": "message",
       "detail": "3 Owned",
       "message": "Message: 3 Owned"
     },
     {
-      "turn": 14,
+      "turn": 0,
       "player": "System",
       "action": "message",
       "detail": "Un-mortgage Value",
       "message": "Message: Un-mortgage Value"
+    },
+    {
+      "turn": 0,
+      "player": "System",
+      "action": "message",
+      "detail": "Bid ~10?",
+      "message": "Message: Bid ~10?"
+    },
+    {
+      "turn": 0,
+      "player": "System",
+      "action": "auction_started",
+      "detail": "une propriété",
+      "message": "Une enchère commence pour une propriété."
     }
   ],
   "players": {
@@ -863,174 +807,38 @@
       "name": "GPT4.1",
       "ai_model": "gpt-4.1",
       "provider": "openai",
-      "current_player": true,
-      "is_current": true,
-      "dice_result": [
-        5,
-        2
-      ],
-      "money": 915,
-      "properties": [
-        {
-          "id": 15,
-          "name": "Marylebone Station",
-          "group": "station"
-        },
-        {
-          "id": 21,
-          "name": "Strand",
-          "group": "red"
-        },
-        {
-          "id": 27,
-          "name": "Coventry Street",
-          "group": "yellow"
-        },
-        {
-          "id": 6,
-          "name": "The Angel Islington",
-          "group": "light_blue"
-        },
-        {
-          "id": 19,
-          "name": "Vine Street",
-          "group": "orange"
-        },
-        {
-          "id": 26,
-          "name": "Leicester Square",
-          "group": "yellow"
-        },
-        {
-          "id": 9,
-          "name": "Pentonville Road",
-          "group": "light_blue"
-        },
-        {
-          "id": 23,
-          "name": "Fleet Street",
-          "group": "red"
-        },
-        {
-          "id": 3,
-          "name": "Whitechapel Road",
-          "group": "brown"
-        },
-        {
-          "id": 18,
-          "name": "Marlborough Street",
-          "group": "orange"
-        },
-        {
-          "id": 28,
-          "name": "Water Works",
-          "group": "utility"
-        },
-        {
-          "id": 11,
-          "name": "Pall Mall",
-          "group": "pink"
-        },
-        {
-          "id": 24,
-          "name": "Trafalgar Square",
-          "group": "red"
-        },
-        {
-          "id": 25,
-          "name": "Fenchurch Street Station",
-          "group": "station"
-        },
-        {
-          "id": 37,
-          "name": "Park Lane",
-          "group": "dark_blue"
-        },
-        {
-          "id": 32,
-          "name": "Oxford Street",
-          "group": "green"
-        },
-        {
-          "id": 8,
-          "name": "Euston Road",
-          "group": "light_blue"
-        }
-      ],
-      "position": 10,
-      "current_space": "Jail / Just Visiting",
-      "jail": false
-    },
-    "player2": {
-      "name": "Gemini-2.5-Flash",
-      "ai_model": "gemini-2.5-flash",
-      "provider": "gemini",
       "current_player": false,
       "is_current": false,
       "dice_result": [
         2,
         5
       ],
-      "money": 780,
+      "money": 1650,
+      "properties": [],
+      "position": 14,
+      "current_space": "Northumberland Avenue",
+      "jail": false
+    },
+    "player2": {
+      "name": "Gemini-2.5-Flash",
+      "ai_model": "gemini-2.5-flash",
+      "provider": "gemini",
+      "current_player": true,
+      "is_current": true,
+      "dice_result": [
+        6,
+        2
+      ],
+      "money": 1480,
       "properties": [
         {
-          "id": 12,
-          "name": "Electric Company",
-          "group": "utility"
-        },
-        {
-          "id": 16,
-          "name": "Bow Street",
-          "group": "orange"
-        },
-        {
-          "id": 29,
-          "name": "Piccadilly",
-          "group": "yellow"
-        },
-        {
-          "id": 39,
-          "name": "Mayfair",
-          "group": "dark_blue"
-        },
-        {
-          "id": 13,
-          "name": "Whitehall",
-          "group": "pink"
-        },
-        {
-          "id": 34,
-          "name": "Bond Street",
-          "group": "green"
-        },
-        {
-          "id": 14,
-          "name": "Northumberland Avenue",
-          "group": "pink"
-        },
-        {
-          "id": 1,
-          "name": "Old Kent Road",
-          "group": "brown"
-        },
-        {
-          "id": 31,
-          "name": "Regent Street",
-          "group": "green"
-        },
-        {
-          "id": 5,
-          "name": "Kings Cross Station",
-          "group": "station"
-        },
-        {
-          "id": 35,
-          "name": "Liverpool Street Station",
-          "group": "station"
+          "id": 8,
+          "name": "Euston Road",
+          "group": "light_blue"
         }
       ],
-      "position": 22,
-      "current_space": "Chance",
+      "position": 8,
+      "current_space": "Euston Road",
       "jail": false
     }
   },

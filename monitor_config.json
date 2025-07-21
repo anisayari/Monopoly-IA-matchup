@@ -47,7 +47,7 @@
     },
     "In Jail": {
       "text": ["In Jail"],
-      "icon": ["Pay Bail", "Roll Dice", "Use Card"]
+      "icon": ["Pay Bail", "Roll Dice", "Use Card", "bail pay"]
     },
     "Community Chest": {
       "text": ["Community Chest"],
@@ -100,6 +100,10 @@
     "New turn Roll the dice": {
       "text": ["Remote and press to roll the"],
       "icon": ["CLICK"]
+    },
+    "Shake the Wii": {
+      "text": ["shake the Wii", "shake the wii"],
+      "icon": ["CLICK", "press to continue"]
     },
     "Who's playing": {
       "text": ["Who's playing"],

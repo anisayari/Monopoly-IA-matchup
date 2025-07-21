@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T14:34:10.056434",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "La décision de payer est obligatoire. Utiliser le chat pour exprimer ma situation et potentiellement influencer les futures interactions.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT4.1": 937,
+      "Gemini-2.5-Flash": 758
+    }
+  }
+}

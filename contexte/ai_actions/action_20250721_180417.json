@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-21T16:04:15.403779",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "make_trade",
+  "reason": "Confirmer l'échange pour acquérir le monopole vert est crucial. Cela me permet de commencer à construire et de générer des revenus importants.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 977,
+      "Gemini-2.5-Flash": 1018
+    }
+  }
+}

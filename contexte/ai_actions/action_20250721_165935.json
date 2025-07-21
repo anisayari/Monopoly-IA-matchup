@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T14:59:33.281420",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon tour est terminé après avoir géré l'événement 'Community Chest' (payer le loyer). Il est temps de passer la main.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 25,
+    "money": {
+      "GPT4.1": 927,
+      "Gemini-2.5-Flash": 868
+    }
+  }
+}

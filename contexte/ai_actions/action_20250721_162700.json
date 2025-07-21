@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T14:26:57.866262",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Done ",
+    "Sell Set "
+  ],
+  "decision": "Done ",
+  "reason": "Je n'ai pas besoin de vendre d'ensemble et aucune négociation urgente. Je garde mes propriétés pour préserver mes atouts et préparer la construction.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 915,
+      "Gemini-2.5-Flash": 780
+    }
+  }
+}

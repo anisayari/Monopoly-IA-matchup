@@ -15,7 +15,7 @@ from src.utils.calibration import CalibrationUtils
 
 
 class WiimoteDisplay:
-    def __init__(self, calibration_file: str = os.path.join("../game_files", "calibration.json")):
+    def __init__(self, calibration_file: str = os.path.join("game_files", "calibration.json")):
         # Initialize CalibrationUtils
         try:
             self.calibrator = CalibrationUtils(calibration_file)

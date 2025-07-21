@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T15:52:54.437365",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Confirmer l'échange accepté pour obtenir le monopole vert, essentiel pour augmenter significativement les revenus locatifs et dominer le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 977,
+      "Gemini-2.5-Flash": 1018
+    }
+  }
+}

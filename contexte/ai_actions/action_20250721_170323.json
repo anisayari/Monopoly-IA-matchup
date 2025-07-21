@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T15:03:21.455529",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai atterri sur une de mes propriétés et n'ai pas de monopole à construire. Mon tour est terminé.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 28,
+    "money": {
+      "GPT4.1": 927,
+      "Gemini-2.5-Flash": 1068
+    }
+  }
+}

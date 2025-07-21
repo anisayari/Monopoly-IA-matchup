@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-21T16:34:10.927326",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "make_trade",
+  "reason": "L'échange a été accepté par les deux parties. Il faut maintenant le finaliser pour obtenir le monopole vert et se rapprocher de la victoire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 977,
+      "Gemini-2.5-Flash": 1018
+    }
+  }
+}

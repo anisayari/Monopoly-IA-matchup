@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T14:27:45.805631",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Aucune option de trade stratégique immédiate, mieux vaut patienter et garder un avantage avec mes deux monopoles potentiels et mon cash.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 915,
+      "Gemini-2.5-Flash": 780
+    }
+  }
+}

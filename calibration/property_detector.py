@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 import win32gui
 import win32api
 import win32con
@@ -11,19 +11,61 @@ from ctypes import wintypes
 import os
 from datetime import datetime
 
-
-class PropertyDetector:
+class PersistentPropertyDetector:
     def __init__(self):
         self.dolphin_hwnd = None
         self.overlay = None
         self.control_window = None
         self.canvas = None
         self.summary_text = None
-        self.properties = []
+        self.listbox = None
+        self.monopoly_data = {}
         self.tracking = False
-        self.monopoly_properties = self.load_monopoly_properties()
-        self.current_property_index = 0
-        self.property_coordinates = {}
+        self.filename = "../game_files/MonopolyProperties.json"
+
+    def load_monopoly_properties(self):
+        """Load MonopolyProperties.json with existing coordinates"""
+        try:
+            if os.path.exists(self.filename):
+                with open(self.filename, 'r', encoding='utf-8') as f:
+                    self.monopoly_data = json.load(f)
+
+                properties = self.monopoly_data.get('properties', [])
+                coordinates_count = sum(1 for p in properties if 'coordinates' in p)
+
+                print(f"✅ Loaded {len(properties)} properties from {self.filename}")
+                print(f"📍 {coordinates_count} properties already have coordinates")
+                return True
+            else:
+                print(f"❌ {self.filename} not found!")
+                return False
+        except Exception as e:
+            print(f"❌ Error loading properties: {e}")
+            return False
+
+    def save_properties(self):
+        """Save the monopoly data back to JSON file"""
+        try:
+            info = self.get_window_info()
+
+            # Update timestamp and window info
+            if 'properties' in self.monopoly_data:
+                for prop in self.monopoly_data['properties']:
+                    if 'coordinates' in prop:
+                        prop['coordinates']['window_size'] = {
+                            'width': info['width'] if info else 0,
+                            'height': info['height'] if info else 0
+                        }
+                        prop['coordinates']['timestamp'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+            with open(self.filename, 'w', encoding='utf-8') as f:
+                json.dump(self.monopoly_data, f, indent=2, ensure_ascii=False)
+
+            coordinates_count = sum(1 for p in self.monopoly_data.get('properties', []) if 'coordinates' in p)
+            print(f"💾 Auto-saved {coordinates_count} property coordinates")
+
+        except Exception as e:
+            print(f"❌ Save error: {e}")
 
     def find_dolphin_window(self):
         def enum_callback(hwnd, windows):
@@ -100,7 +142,7 @@ class PropertyDetector:
         info = self.get_window_info()
         if not info:
             return 0, 0
-        return int(percent_x * info['width']), int(percent_y * info['height'])
+        return int(percent_x * info['width'] / 100), int(percent_y * info['height'] / 100)
 
     def is_click_in_dolphin(self, screen_x, screen_y):
         info = self.get_window_info()
@@ -112,8 +154,8 @@ class PropertyDetector:
 
     def create_control_window(self):
         self.control_window = tk.Tk()
-        self.control_window.title("Property Detector")
-        self.control_window.geometry("250x300+50+50")
+        self.control_window.title("Monopoly Property Manager")
+        self.control_window.geometry("350x600+50+50")
         self.control_window.configure(bg='#2b2b2b')
         self.control_window.attributes('-topmost', True)
 
@@ -121,77 +163,84 @@ class PropertyDetector:
         main_frame.pack(fill='both', expand=True)
 
         # Title
-        title_label = tk.Label(main_frame, text="🎯 Property Detector",
+        title_label = tk.Label(main_frame, text="🏠 Monopoly Properties",
                                fg='#00ff00', bg='#2b2b2b', font=('Arial', 12, 'bold'))
         title_label.pack(pady=(0, 10))
 
         # Instructions
-        self.inst_label = tk.Label(main_frame, text="Right-click in Dolphin to mark",
+        inst_label = tk.Label(main_frame, text="Right-click in Dolphin to mark properties",
                               fg='white', bg='#2b2b2b', font=('Arial', 9))
-        self.inst_label.pack(pady=(0, 15))
-        
-        # Progress label
-        self.progress_label = tk.Label(main_frame, text="",
-                              fg='yellow', bg='#2b2b2b', font=('Arial', 10, 'bold'))
-        self.progress_label.pack(pady=(0, 10))
+        inst_label.pack(pady=(0, 10))
 
-        # Buttons frame
+        # Stats
+        properties = self.monopoly_data.get('properties', [])
+        total_count = len(properties)
+        marked_count = sum(1 for p in properties if 'coordinates' in p)
+
+        stats_label = tk.Label(main_frame, text=f"📊 {marked_count}/{total_count} properties marked",
+                               fg='yellow', bg='#2b2b2b', font=('Arial', 10, 'bold'))
+        stats_label.pack(pady=(0, 10))
+
+        # Action buttons frame
         btn_frame = tk.Frame(main_frame, bg='#2b2b2b')
-        btn_frame.pack(fill='x', pady=(0, 15))
+        btn_frame.pack(fill='x', pady=(0, 10))
 
-        # Create buttons
-        btn_style = {'font': ('Arial', 10), 'width': 8, 'height': 1}
-
-        tk.Button(btn_frame, text="Undo", bg='#ff6b6b', fg='white',
-                  command=self.undo_last, **btn_style).grid(row=0, column=0, padx=2, pady=2)
-
-        tk.Button(btn_frame, text="Skip", bg='#ffa726', fg='white',
-                  command=self.skip_property, **btn_style).grid(row=0, column=1, padx=2, pady=2)
+        btn_style = {'font': ('Arial', 9), 'width': 10, 'height': 1}
 
         tk.Button(btn_frame, text="Save", bg='#66bb6a', fg='white',
-                  command=self.save_properties, **btn_style).grid(row=1, column=0, padx=2, pady=2)
+                  command=self.manual_save, **btn_style).grid(row=0, column=0, padx=2, pady=2)
+
+        tk.Button(btn_frame, text="Clear All", bg='#ffa726', fg='white',
+                  command=self.clear_all_coordinates, **btn_style).grid(row=0, column=1, padx=2, pady=2)
 
         tk.Button(btn_frame, text="Quit", bg='#ef5350', fg='white',
-                  command=self.quit, **btn_style).grid(row=1, column=1, padx=2, pady=2)
+                  command=self.quit, **btn_style).grid(row=1, column=0, columnspan=2, padx=2, pady=2)
+
+        # Property list section
+        list_label = tk.Label(main_frame, text="📋 Properties:",
+                              fg='#00ff00', bg='#2b2b2b', font=('Arial', 10, 'bold'))
+        list_label.pack(anchor='w', pady=(10, 5))
+
+        # Listbox with scrollbar
+        list_frame = tk.Frame(main_frame, bg='#1e1e1e', relief='sunken', bd=1)
+        list_frame.pack(fill='both', expand=True)
+
+        self.listbox = tk.Listbox(list_frame, bg='#1e1e1e', fg='white',
+                                  font=('Consolas', 9), selectmode=tk.SINGLE)
+        list_scrollbar = tk.Scrollbar(list_frame, orient='vertical', command=self.listbox.yview)
+        self.listbox.configure(yscrollcommand=list_scrollbar.set)
+
+        self.listbox.pack(side='left', fill='both', expand=True)
+        list_scrollbar.pack(side='right', fill='y')
+
+        # Delete button
+        delete_btn = tk.Button(main_frame, text="🗑️ Remove Coordinates", bg='#f44336', fg='white',
+                               font=('Arial', 9), command=self.delete_selected_coordinates)
+        delete_btn.pack(pady=(5, 0))
 
         # Summary section
-        summary_label = tk.Label(main_frame, text="📊 Properties:",
+        summary_label = tk.Label(main_frame, text="📊 Details:",
                                  fg='#00ff00', bg='#2b2b2b', font=('Arial', 10, 'bold'))
-        summary_label.pack(anchor='w', pady=(0, 5))
+        summary_label.pack(anchor='w', pady=(10, 5))
 
         # Summary text area
         summary_frame = tk.Frame(main_frame, bg='#1e1e1e', relief='sunken', bd=1)
-        summary_frame.pack(fill='both', expand=True)
+        summary_frame.pack(fill='x')
 
         self.summary_text = tk.Text(summary_frame, bg='#1e1e1e', fg='white',
                                     font=('Consolas', 8), wrap=tk.WORD,
-                                    height=8, state=tk.DISABLED)
+                                    height=6, state=tk.DISABLED)
 
-        scrollbar = tk.Scrollbar(summary_frame, orient='vertical', command=self.summary_text.yview)
-        self.summary_text.configure(yscrollcommand=scrollbar.set)
+        summary_scrollbar = tk.Scrollbar(summary_frame, orient='vertical', command=self.summary_text.yview)
+        self.summary_text.configure(yscrollcommand=summary_scrollbar.set)
 
         self.summary_text.pack(side='left', fill='both', expand=True)
-        scrollbar.pack(side='right', fill='y')
+        summary_scrollbar.pack(side='right', fill='y')
 
-        self.update_summary()
-    
-    def load_monopoly_properties(self):
-        """Charge le fichier MonopolyProperties.json"""
-        try:
-            properties_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), "game_files", "MonopolyProperties.json")
-            if os.path.exists(properties_file):
-                with open(properties_file, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    # Filtrer seulement les propriétés (pas les cases spéciales)
-                    properties = [p for p in data['properties'] if p.get('type') in ['property', 'station', 'utility']]
-                    print(f"✅ Loaded {len(properties)} properties from MonopolyProperties.json")
-                    return properties
-            else:
-                print(f"❌ MonopolyProperties.json not found at {properties_file}")
-                return []
-        except Exception as e:
-            print(f"❌ Error loading properties: {e}")
-            return []
+        # Bind listbox selection
+        self.listbox.bind('<<ListboxSelect>>', self.on_select)
+
+        self.update_property_list()
 
     def create_overlay(self):
         self.overlay = tk.Tk()
@@ -231,49 +280,33 @@ class PropertyDetector:
     def redraw_markers(self):
         self.canvas.delete("all")
 
-        # Afficher les propriétés déjà marquées
-        for prop_id, coords in self.property_coordinates.items():
-            prop = next((p for p in self.monopoly_properties if p['id'] == prop_id), None)
-            if prop:
-                x, y = self.percent_to_window(coords['x_relative'], coords['y_relative'])
+        properties = self.monopoly_data.get('properties', [])
+        for i, prop in enumerate(properties):
+            if 'coordinates' in prop:
+                coords = prop['coordinates']
+                x, y = self.percent_to_window(coords['x_relative'] * 100, coords['y_relative'] * 100)
 
-                # Cercle vert pour les propriétés marquées
+                # Different colors for different types
+                color = 'lime'
+                if prop.get('type') == 'station':
+                    color = 'cyan'
+                elif prop.get('type') == 'utility':
+                    color = 'yellow'
+
                 circle = self.canvas.create_oval(x - 8, y - 8, x + 8, y + 8,
-                                                 fill='lime', outline='white', width=2)
+                                                 fill=color, outline='white', width=2)
 
-                # Nom de la propriété
-                name_bg = self.canvas.create_rectangle(x + 12, y - 8, x + 12 + len(prop['name']) * 7, y + 8,
-                                                       fill='yellow', outline='black')
+                number = self.canvas.create_text(x, y, text=str(i + 1),
+                                                 fill='black', font=('Arial', 10, 'bold'))
 
-                name_text = self.canvas.create_text(x + 15, y, text=prop['name'],
+                # Property name with background
+                display_name = prop['name'][:15] + "..." if len(prop['name']) > 15 else prop['name']
+                name_width = len(display_name) * 7
+                name_bg = self.canvas.create_rectangle(x + 12, y - 8, x + 12 + name_width, y + 8,
+                                                       fill='white', outline='black')
+
+                name_text = self.canvas.create_text(x + 15, y, text=display_name,
                                                     fill='black', font=('Arial', 9), anchor='w')
-
-    def update_summary(self):
-        self.summary_text.config(state=tk.NORMAL)
-        self.summary_text.delete(1.0, tk.END)
-
-        # Mettre à jour l'instruction pour la propriété actuelle
-        if self.current_property_index < len(self.monopoly_properties):
-            current_prop = self.monopoly_properties[self.current_property_index]
-            self.inst_label.config(text=f"Click on: {current_prop['name']}")
-            self.progress_label.config(text=f"Progress: {len(self.property_coordinates)}/{len(self.monopoly_properties)}")
-        else:
-            self.inst_label.config(text="All properties marked!")
-            self.progress_label.config(text=f"Completed: {len(self.property_coordinates)}/{len(self.monopoly_properties)}")
-
-        # Afficher les propriétés déjà marquées
-        if not self.property_coordinates:
-            self.summary_text.insert(tk.END, "No properties marked yet.\n\n")
-        else:
-            self.summary_text.insert(tk.END, f"Marked: {len(self.property_coordinates)} properties\n\n")
-            for prop_id, coords in self.property_coordinates.items():
-                prop = next((p for p in self.monopoly_properties if p['id'] == prop_id), None)
-                if prop:
-                    self.summary_text.insert(tk.END, f"✓ {prop['name']}\n")
-                    self.summary_text.insert(tk.END, f"  Rel: ({coords['x_relative']:.3f}, {coords['y_relative']:.3f})\n")
-                    self.summary_text.insert(tk.END, f"  Abs: ({coords['x_pixel']}, {coords['y_pixel']})\n\n")
-
-        self.summary_text.config(state=tk.DISABLED)
 
     def start_click_detection(self):
         def detector():
@@ -305,112 +338,231 @@ class PropertyDetector:
         thread.start()
 
     def handle_click(self, percent_x, percent_y):
-        if self.current_property_index >= len(self.monopoly_properties):
-            print("✅ All properties already marked!")
-            return
-            
-        current_prop = self.monopoly_properties[self.current_property_index]
-        print(f"\n🎯 Marking: {current_prop['name']}")
-        print(f"   Position: {percent_x:.2f}%, {percent_y:.2f}%")
+        print(f"\n🎯 Position: {percent_x:.2f}%, {percent_y:.2f}%")
 
+        # Create property selection dialog
+        self.show_property_selection_dialog(percent_x, percent_y)
+
+    def show_property_selection_dialog(self, percent_x, percent_y):
+        """Show dialog to select which property to mark at this location"""
+        dialog = tk.Toplevel(self.control_window)
+        dialog.title("Select Property")
+        dialog.geometry("400x500+200+200")
+        dialog.configure(bg='#2b2b2b')
+        dialog.attributes('-topmost', True)
+        dialog.transient(self.control_window)
+        dialog.grab_set()
+
+        # Title
+        title_label = tk.Label(dialog, text="🏠 Select Property to Mark",
+                               fg='#00ff00', bg='#2b2b2b', font=('Arial', 12, 'bold'))
+        title_label.pack(pady=10)
+
+        # Position info
+        pos_label = tk.Label(dialog, text=f"Position: {percent_x:.2f}%, {percent_y:.2f}%",
+                             fg='white', bg='#2b2b2b', font=('Arial', 10))
+        pos_label.pack(pady=5)
+
+        # Property list
+        list_frame = tk.Frame(dialog, bg='#1e1e1e', relief='sunken', bd=1)
+        list_frame.pack(fill='both', expand=True, padx=10, pady=10)
+
+        prop_listbox = tk.Listbox(list_frame, bg='#1e1e1e', fg='white',
+                                  font=('Consolas', 9), selectmode=tk.SINGLE)
+        prop_scrollbar = tk.Scrollbar(list_frame, orient='vertical', command=prop_listbox.yview)
+        prop_listbox.configure(yscrollcommand=prop_scrollbar.set)
+
+        prop_listbox.pack(side='left', fill='both', expand=True)
+        prop_scrollbar.pack(side='right', fill='y')
+
+        # Populate property list
+        properties = self.monopoly_data.get('properties', [])
+        property_items = []
+
+        for prop in properties:
+            has_coords = '✓' if 'coordinates' in prop else '✗'
+            type_icon = {'property': '🏠', 'station': '🚂', 'utility': '⚡'}.get(prop.get('type', ''), '🏠')
+            display_text = f"{has_coords} {type_icon} {prop['name']}"
+            property_items.append((prop, display_text))
+            prop_listbox.insert(tk.END, display_text)
+
+        # Buttons
+        btn_frame = tk.Frame(dialog, bg='#2b2b2b')
+        btn_frame.pack(pady=10)
+
+        def on_mark():
+            selection = prop_listbox.curselection()
+            if selection:
+                selected_prop, _ = property_items[selection[0]]
+                self.mark_property_at_position(selected_prop, percent_x, percent_y)
+                dialog.destroy()
+            else:
+                messagebox.showwarning("No Selection", "Please select a property to mark")
+
+        def on_cancel():
+            dialog.destroy()
+
+        tk.Button(btn_frame, text="Mark Property", bg='#66bb6a', fg='white',
+                  font=('Arial', 10), command=on_mark).pack(side='left', padx=5)
+
+        tk.Button(btn_frame, text="Cancel", bg='#ef5350', fg='white',
+                  font=('Arial', 10), command=on_cancel).pack(side='left', padx=5)
+
+        # Select first unmarked property by default
+        for i, (prop, _) in enumerate(property_items):
+            if 'coordinates' not in prop:
+                prop_listbox.selection_set(i)
+                prop_listbox.see(i)
+                break
+
+    def mark_property_at_position(self, selected_prop, percent_x, percent_y):
+        """Mark the selected property at the given position"""
         # Get window info for pixel coordinates
         info = self.get_window_info()
         pixel_x = int((percent_x / 100) * info['width']) if info else 0
         pixel_y = int((percent_y / 100) * info['height']) if info else 0
 
-        # Sauvegarder les coordonnées pour cette propriété
-        self.property_coordinates[current_prop['id']] = {
+        # Add/update coordinates
+        selected_prop['coordinates'] = {
             'x_relative': round(percent_x / 100, 4),
             'y_relative': round(percent_y / 100, 4),
             'x_pixel': pixel_x,
-            'y_pixel': pixel_y
+            'y_pixel': pixel_y,
+            'window_size': {
+                'width': info['width'] if info else 0,
+                'height': info['height'] if info else 0
+            },
+            'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         }
-        
-        print(f"✅ Marked: '{current_prop['name']}' ({len(self.property_coordinates)}/{len(self.monopoly_properties)})")
-        
-        # Passer à la propriété suivante
-        self.current_property_index += 1
-        self.update_summary()
 
-    def undo_last(self):
-        if self.property_coordinates and self.current_property_index > 0:
-            # Trouver la dernière propriété marquée
-            self.current_property_index -= 1
-            prop_to_remove = self.monopoly_properties[self.current_property_index]
-            
-            if prop_to_remove['id'] in self.property_coordinates:
-                del self.property_coordinates[prop_to_remove['id']]
-                print(f"↶ Removed: {prop_to_remove['name']}")
-                self.update_summary()
+        print(f"✅ Marked: '{selected_prop['name']}' at ({percent_x:.2f}%, {percent_y:.2f}%)")
+
+        # Auto-save and update UI
+        self.save_properties()
+        self.update_property_list()
+
+    def update_property_list(self):
+        self.listbox.delete(0, tk.END)
+
+        properties = self.monopoly_data.get('properties', [])
+        for prop in properties:
+            has_coords = '✓' if 'coordinates' in prop else '✗'
+            type_icon = {'property': '🏠', 'station': '🚂', 'utility': '⚡'}.get(prop.get('type', ''), '🏠')
+
+            if 'coordinates' in prop:
+                coords = prop['coordinates']
+                display_text = f"{has_coords} {type_icon} {prop['name']} ({coords['x_relative']:.3f}, {coords['y_relative']:.3f})"
+            else:
+                display_text = f"{has_coords} {type_icon} {prop['name']} (no coordinates)"
+
+            self.listbox.insert(tk.END, display_text)
+
+    def on_select(self, event):
+        selection = self.listbox.curselection()
+        if selection:
+            index = selection[0]
+            properties = self.monopoly_data.get('properties', [])
+            if index < len(properties):
+                prop = properties[index]
+
+                self.summary_text.config(state=tk.NORMAL)
+                self.summary_text.delete(1.0, tk.END)
+
+                self.summary_text.insert(tk.END, f"Name: {prop['name']}\n")
+                self.summary_text.insert(tk.END, f"ID: {prop['id']}\n")
+                self.summary_text.insert(tk.END, f"Type: {prop.get('type', 'unknown')}\n")
+                self.summary_text.insert(tk.END, f"Value: £{prop.get('value', 0)}\n")
+
+                if 'coordinates' in prop:
+                    coords = prop['coordinates']
+                    self.summary_text.insert(tk.END, f"\nCoordinates:\n")
+                    self.summary_text.insert(tk.END,
+                                             f"Relative: ({coords['x_relative']:.4f}, {coords['y_relative']:.4f})\n")
+                    self.summary_text.insert(tk.END, f"Pixel: ({coords['x_pixel']}, {coords['y_pixel']})\n")
+                    self.summary_text.insert(tk.END, f"Updated: {coords.get('timestamp', 'unknown')}")
+                else:
+                    self.summary_text.insert(tk.END, f"\nNo coordinates set")
+
+                self.summary_text.config(state=tk.DISABLED)
+
+    def delete_selected_coordinates(self):
+        selection = self.listbox.curselection()
+        if selection:
+            index = selection[0]
+            properties = self.monopoly_data.get('properties', [])
+            if index < len(properties):
+                prop = properties[index]
+
+                if 'coordinates' not in prop:
+                    messagebox.showinfo("Remove Coordinates",
+                                        f"'{prop['name']}' has no coordinates to remove",
+                                        parent=self.control_window)
+                    return
+
+                result = messagebox.askyesno("Remove Coordinates",
+                                             f"Remove coordinates from '{prop['name']}'?",
+                                             parent=self.control_window)
+                if result:
+                    del prop['coordinates']
+                    print(f"🗑️  Removed coordinates from: {prop['name']}")
+                    self.save_properties()
+                    self.update_property_list()
+
+                    # Clear summary
+                    self.summary_text.config(state=tk.NORMAL)
+                    self.summary_text.delete(1.0, tk.END)
+                    self.summary_text.config(state=tk.DISABLED)
         else:
-            print("❌ No properties to remove")
+            messagebox.showinfo("Remove Coordinates", "No property selected",
+                                parent=self.control_window)
 
-    def skip_property(self):
-        """Passer à la propriété suivante sans la marquer"""
-        if self.current_property_index < len(self.monopoly_properties):
-            skipped_prop = self.monopoly_properties[self.current_property_index]
-            print(f"⏭  Skipped: {skipped_prop['name']}")
-            self.current_property_index += 1
-            self.update_summary()
-        else:
-            print("✅ All properties already processed!")
+    def clear_all_coordinates(self):
+        properties = self.monopoly_data.get('properties', [])
+        coords_count = sum(1 for p in properties if 'coordinates' in p)
 
-    def save_properties(self):
-        if not self.property_coordinates:
-            tk.messagebox.showwarning("Save", "No properties marked to save",
-                                      parent=self.control_window)
+        if coords_count == 0:
+            messagebox.showinfo("Clear All", "No coordinates to clear",
+                                parent=self.control_window)
             return
 
-        # Charger le fichier MonopolyProperties.json existant
-        properties_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), "game_files", "MonopolyProperties.json")
-        
-        try:
-            # Charger les données existantes
-            with open(properties_file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            
-            # Obtenir les infos de la fenêtre
-            info = self.get_window_info()
-            
-            # Ajouter les coordonnées à chaque propriété
-            for prop in data['properties']:
-                if prop['id'] in self.property_coordinates:
-                    coords = self.property_coordinates[prop['id']]
-                    prop['coordinates'] = {
-                        'x_relative': coords['x_relative'],
-                        'y_relative': coords['y_relative'],
-                        'x_pixel': coords['x_pixel'],
-                        'y_pixel': coords['y_pixel'],
-                        'window_size': {
-                            'width': info['width'] if info else 0,
-                            'height': info['height'] if info else 0
-                        },
-                        'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                    }
-            
-            # Sauvegarder le fichier mis à jour
-            with open(properties_file, 'w', encoding='utf-8') as f:
-                json.dump(data, f, indent=2, ensure_ascii=False)
+        result = messagebox.askyesno("Clear All Coordinates",
+                                     f"Clear coordinates from all {coords_count} marked properties?",
+                                     parent=self.control_window)
+        if result:
+            for prop in properties:
+                if 'coordinates' in prop:
+                    del prop['coordinates']
 
-            print(f"💾 Updated {len(self.property_coordinates)} properties in {properties_file}")
-            tk.messagebox.showinfo("Saved", f"Updated {len(self.property_coordinates)} properties in:\nMonopolyProperties.json",
-                                   parent=self.control_window)
-        except Exception as e:
-            print(f"❌ Save error: {e}")
-            tk.messagebox.showerror("Error", f"Save failed:\n{e}",
-                                    parent=self.control_window)
+            print("🧹 All coordinates cleared")
+            self.save_properties()
+            self.update_property_list()
+
+            # Clear summary
+            self.summary_text.config(state=tk.NORMAL)
+            self.summary_text.delete(1.0, tk.END)
+            self.summary_text.config(state=tk.DISABLED)
+
+    def manual_save(self):
+        self.save_properties()
+        properties = self.monopoly_data.get('properties', [])
+        coords_count = sum(1 for p in properties if 'coordinates' in p)
+        messagebox.showinfo("Saved", f"Saved coordinates for {coords_count} properties to:\n{self.filename}",
+                            parent=self.control_window)
 
     def quit(self):
-        if self.property_coordinates:
-            result = tk.messagebox.askyesnocancel("Quit",
-                                                  f"Save {len(self.property_coordinates)} marked properties before quitting?",
-                                                  parent=self.control_window)
+        properties = self.monopoly_data.get('properties', [])
+        coords_count = sum(1 for p in properties if 'coordinates' in p)
+
+        if coords_count > 0:
+            result = messagebox.askyesnocancel("Quit",
+                                               f"Save coordinates for {coords_count} properties before quitting?",
+                                               parent=self.control_window)
             if result is True:
                 self.save_properties()
             elif result is None:
                 return
 
-        print(f"\n🛑 Stopping detector...")
+        print(f"\n🛑 Stopping property manager...")
         self.tracking = False
         if self.overlay:
             self.overlay.destroy()
@@ -418,16 +570,21 @@ class PropertyDetector:
             self.control_window.quit()
 
     def run(self):
-        print("🎮 Dolphin Property Detector")
-        print("=" * 40)
+        print("🏠 Persistent Monopoly Property Manager")
+        print("=" * 50)
+
+        # Load existing properties first
+        if not self.load_monopoly_properties():
+            return
 
         if not self.find_dolphin_window():
             return
 
-        print("\n▶️  Starting detection...")
-        print(f"   📋 {len(self.monopoly_properties)} properties to mark")
-        print("   📍 Right-click in Dolphin to mark properties")
-        print("   🎛️  Use control window for management")
+        print("\n▶️  Starting persistent manager...")
+        print(f"   📄 Using: {self.filename}")
+        print("   📍 Right-click in Dolphin to mark/update properties")
+        print("   🔄 All changes auto-saved")
+        print("   🏠 Properties = lime, 🚂 Stations = cyan, ⚡ Utilities = yellow")
         print()
 
         self.tracking = True
@@ -442,11 +599,9 @@ class PropertyDetector:
             print(f"❌ Error: {e}")
         finally:
             self.tracking = False
-            print("\n✅ Detection complete")
+            print("\n✅ Property manager stopped")
 
 
 if __name__ == "__main__":
-    import tkinter.messagebox
-
-    detector = PropertyDetector()
+    detector = PersistentPropertyDetector()
     detector.run()

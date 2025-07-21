@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T14:59:10.358464",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer le loyer est obligatoire. Je dois me concentrer sur l'acquisition de monopoles pour générer des revenus futurs.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 25,
+    "money": {
+      "GPT4.1": 927,
+      "Gemini-2.5-Flash": 868
+    }
+  }
+}

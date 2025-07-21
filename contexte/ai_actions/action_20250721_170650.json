@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T15:06:48.317314",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Aucun échange immédiat n'est optimal pour former un monopole. Je dois revenir au plateau pour continuer mon tour et acquérir des propriétés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 29,
+    "money": {
+      "GPT4.1": 977,
+      "Gemini-2.5-Flash": 1018
+    }
+  }
+}

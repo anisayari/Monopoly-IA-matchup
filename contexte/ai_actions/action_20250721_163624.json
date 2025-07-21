@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T14:36:22.613613",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon tour est terminé après avoir lancé les dés. Il n'y a pas d'autres actions immédiates à prendre avant le prochain tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 17,
+    "money": {
+      "GPT4.1": 937,
+      "Gemini-2.5-Flash": 758
+    }
+  }
+}

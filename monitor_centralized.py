@@ -66,7 +66,7 @@ class CentralizedMonitor:
 
     def load_hardcoded_buttons(self):
         """Charge la configuration des boutons hardcodés"""
-        return self.load_json_config('game_files/hardcoded_buttons.json')
+        return self.load_json_config('game_files/hardcoded_button.json').get('properties', {})
 
     def load_monitor_config(self):
         """Charge la configuration du monitor"""
@@ -118,7 +118,9 @@ class CentralizedMonitor:
             "auction": "auction",
             "Go To Jail": "jail",
             "property deeds": "property_management",
-            "shake the Wii":"roll dice"
+            "shake the Wii": "roll dice",
+            "shake the wii": "roll dice",
+            "Shake the Wii": "roll dice"
         }
         
         for trigger, category in popup_keywords.items():
@@ -289,10 +291,9 @@ class CentralizedMonitor:
         
         return unified_results
     
-    def process_popup(self, popup_text, screenshot_base64, trigger,category ):
+    def process_popup(self, popup_text, screenshot_base64, trigger, category):
         """Traite un popup en deux étapes: analyse puis décision"""
         try:
-
             # Étape 1: Analyser le screenshot avec OmniParser
             print("📸 Analyse du screenshot...")
             max_retries = 10
@@ -393,6 +394,7 @@ class CentralizedMonitor:
                 if best_match:
                     if best_match_ratio == 1.0:
                         print(f"✅ Match parfait trouvé: '{best_match}'")
+                        category='auction'
                     else:
                         print(f"✅ Meilleur match partiel: '{best_match}' ({best_match_count} icônes, ratio {best_match_ratio:.1%})")
                     selected_keywords = [best_match]
@@ -414,17 +416,32 @@ class CentralizedMonitor:
                         raw_content = analysis.get('raw_parsed_content', [])
                         all_text = ' '.join([item.get('content', '') for item in raw_content if item.get('type') == 'text']).lower()
                         print(f"🔍 All text: {all_text}")
-                        if 'shake the wii' in all_text:
-                            shake_wii_found = True
+                        
+                        # Vérifier différents patterns dans le texte
+                        roll_dice_patterns = ['shake the wii', 'shake the remote', 'roll the dice', 'toroll the dice']
+                        for pattern in roll_dice_patterns:
+                            if pattern in all_text:
+                                print(f"🎲 Pattern '{pattern}' trouvé dans le texte!")
+                                shake_wii_found = True
+                                break
                     
                     if shake_wii_found:
                         print("🎲 'shake the Wii' détecté - retour direct CLICK")
+                        # Récupérer les dimensions de la fenêtre
+                        win = self.get_dolphin_window()
+                        if win:
+                            center_x = win.width // 2
+                            center_y = win.height // 2
+                        else:
+                            center_x = 635
+                            center_y = 366
+                            
                         return {
                             'success': True,
                             'decision': 'CLICK',
                             'reason': "Shake the Wii détecté",
                             'options': [{
-                                "bbox": [914, 510, 914, 510],  # Centre de l'écran
+                                "bbox": [center_x, center_y, center_x, center_y],  # Centre de l'écran
                                 "confidence": 1.0,
                                 "name": "CLICK",
                                 "type": "icon"
@@ -495,12 +512,80 @@ class CentralizedMonitor:
                             'options': [opt],   
                             'analysis': analysis
                         }
+                
+                # Dernière chance pour roll dice - vérifier si c'est vraiment un roll dice même sans options
+                if category == "roll dice" or trigger.lower() in ['shake the wii', 'shake the wii']:
+                    # Vérifier qu'on n'a PAS des icônes d'autres écrans
+                    false_positive_icons = ['ok', 'community chest', 'chance', 'pay rent', 'go to jail', 'accounts']
+                    has_false_positive = any(icon.lower() in detected_icons for icon in false_positive_icons)
+                    
+                    if not has_false_positive:
+                        print("🎲 Roll dice détecté mais sans options - forçage du CLICK")
+                        win = self.get_dolphin_window()
+                        if win:
+                            center_x = win.width // 2
+                            center_y = win.height // 2
+                        else:
+                            center_x = 635
+                            center_y = 366
+                            
+                        return {
+                            'success': True,
+                            'decision': 'CLICK',
+                            'reason': "Roll dice sans options",
+                            'options': [{
+                                "bbox": [center_x, center_y, center_x, center_y],
+                                "confidence": 1.0,
+                                "name": "CLICK",
+                                "type": "icon"
+                            }],
+                            'analysis': analysis
+                        }
+                    else:
+                        print(f"⚠️ Roll dice en RAM mais écran incompatible (icônes: {detected_icons[:5]}...)")
+                
                 print(f"🔍 Aucune option détectée, skipping AI decision...")
                 return None
             
-            # Vérifier si "shake the Wii" est dans le texte détecté
+            # Vérifier si "shake the Wii" est dans le texte détecté (deuxième vérification après l'analyse)
             raw_content = analysis.get('raw_parsed_content', [])
             all_text = ' '.join([item.get('content', '') for item in raw_content if item.get('type') == 'text']).lower()
+            
+            # Si c'est un roll dice, vérifier que l'écran correspond vraiment
+            if category == "roll dice" or trigger.lower() in ['shake the wii', 'shake the wii']:
+                # Vérifier qu'on n'a PAS des icônes d'autres écrans
+                false_positive_icons = ['ok', 'community chest', 'chance', 'pay rent', 'go to jail', 'accounts']
+                has_false_positive = any(icon in detected_icons for icon in false_positive_icons)
+                
+                if has_false_positive:
+                    print(f"⚠️ Faux positif détecté - icônes incompatibles avec roll dice: {detected_icons}")
+                    # Continuer avec le flux normal, ne pas forcer un CLICK
+                else:
+                    # Vérifier si le texte analysé contient vraiment le pattern
+                    roll_patterns = ['shake the wii', 'shake the remote', 'roll the dice', 'toroll the dice', 'press to roll']
+                    for pattern in roll_patterns:
+                        if pattern in all_text:
+                            print(f"🎲 Roll dice confirmé par OmniParser - pattern '{pattern}' trouvé dans le texte analysé")
+                            win = self.get_dolphin_window()
+                            if win:
+                                center_x = win.width // 2
+                                center_y = win.height // 2
+                            else:
+                                center_x = 635
+                                center_y = 366
+                                
+                            return {
+                                'success': True,
+                                'decision': 'CLICK',
+                                'reason': f"Roll dice - {pattern}",
+                                'options': [{
+                                    "bbox": [center_x, center_y, center_x, center_y],
+                                    "confidence": 1.0,
+                                    "name": "CLICK",
+                                    "type": "icon"
+                                }],
+                                'analysis': analysis
+                            }
             
             # Étape 2: Obtenir le contexte du jeu
             game_context = {}
@@ -518,6 +603,22 @@ class CentralizedMonitor:
                 print(f"⚠️ Erreur contexte: {e}")
                 game_context = {}
             
+            # Correction de la catégorie si on détecte des icônes de trading
+            detected_icons_lower = [icon.lower() for icon in detected_icons]
+            if any('trading' in icon for icon in detected_icons_lower):
+                trading_icons = ['cancel', 'propose', 'request cash', 'add cash']
+                if any(icon in detected_icons_lower for icon in trading_icons):
+                    print(f"🔄 Détection d'écran de Trading - correction de la catégorie de '{category}' vers 'trade'")
+                    category = 'trade'
+                    # Si on a détecté Trading 3, forcer l'utilisation de ses keywords
+                    selected_keywords = ['Trading 3']
+                    
+                    # Mettre à jour les options avec toutes les icônes de Trading 3
+                    trading3_icons = ['cancel', 'propose', 'request cash', 'add cash']
+                    options = [opt for opt in icon_options if opt.get('name', '').strip().lower() in trading3_icons]
+                    print(f"🔄 Options mises à jour pour Trading: {[opt['name'] for opt in options]}")
+            
+            print('CATEGORY DETECTE \n ------------------- \n :', category)
             # Étape 3: Demander la décision à l'IA directement
             print("🤖 Demande de décision à l'IA...")
             
@@ -546,6 +647,7 @@ class CentralizedMonitor:
                 return None
             
             decision_data = decision_response.json()
+            print(f"📦 Réponse complète de l'IA: {decision_data}")
             decision = decision_data.get('decision')
             reason = decision_data.get('reason', '')
             
@@ -580,8 +682,12 @@ class CentralizedMonitor:
             
             # Préparer les données de trade si c'est un événement de trade
             trade_data = None
-            if any('Trading' in kw for kw in selected_keywords):
+            # Vérifier soit par keywords, soit par catégorie, soit par décision
+            if (any('Trading' in kw for kw in selected_keywords) or 
+                category == 'trade' or 
+                decision == 'make_trade'):
                 trade_data = decision_data.get('trade_data', {})
+                print(f"📦 Trade data extrait: {trade_data}")
             
             # Retourner toutes les infos nécessaires
             result = {
@@ -589,7 +695,8 @@ class CentralizedMonitor:
                 'decision': decision,
                 'reason': reason,
                 'options': options,
-                'analysis': analysis
+                'analysis': analysis,
+                'category': category  # IMPORTANT: Retourner la catégorie corrigée
             }
             
             # Ajouter trade_data si disponible
@@ -665,7 +772,7 @@ class CentralizedMonitor:
                                 print(f"   - Centre transformé: ({transformed_cx}, {transformed_cy})")
                                 
                                 # Effectuer le clic avec offset de 30 pixels
-                                self.perform_click(abs_x, abs_y, f"Clic sur '{decision}'")
+                                self.perform_click(abs_x, abs_y, f"Clic sur '{decision}'", y_offset=30)
                             else:
                                 print(f"❌ Erreur de transformation pour '{decision}'")
                             
@@ -714,7 +821,7 @@ class CentralizedMonitor:
             print(f"❌ Erreur lors de la transformation des coordonnées: {e}")
             return None, None, None, None
     
-    def perform_click(self, x, y, description="", y_offset=30):
+    def perform_click(self, x, y, description="", y_offset=0):
         """
         Effectue un clic aux coordonnées données avec la séquence mouseDown/mouseUp
         
@@ -874,6 +981,13 @@ class CentralizedMonitor:
             current_player = game_context.get('global', {}).get('current_player', 'player1')
             other_player = 'player2' if current_player == 'player1' else 'player1'
             
+            for _player in [current_player,other_player]:
+                coord = self.hardcoded_buttons[f'header_{_player}']
+                abs_x, abs_y, transformed_x, transformed_y = self.transform_coordinates(
+                            coord['x_relative'] * win.width, 
+                            coord['y_relative'] * win.height, win)
+                self.perform_click(abs_x,abs_y, f"click on {_player}")
+
             if trade_data.get('status') == "no_deal":
                 print('LES IAS ne sont pas mis d\'accord sur un DEAL ! :-( )')
                 print('Click sur cancel')
@@ -924,24 +1038,24 @@ class CentralizedMonitor:
                         print(f"   - Après transformation: ({transformed_x}, {transformed_y})")
                         
                         # Effectuer le clic
-                        self.perform_click(abs_x, abs_y, f"Clic sur {prop_name}")
+                        self.perform_click(abs_x, abs_y, f"Clic sur {prop_name}", y_offset=6)
                     else:
                         print(f"❌ Erreur de transformation pour {prop_name}")
                 else:
                     print(f"⚠️ Coordonnées introuvables pour {prop_name}")
             
             # Extract money data for both players using a loop
-                money_requested = {}
-                for player_num in [1, 2]:
-                    player_key = f'player{player_num}'
-                    money_requested[player_key] = trade_data.get(player_key, {}).get('offers', {}).get('money', 0)
-                    print(f"Money Player {player_num}: {money_requested[player_key]}")
-                    if int(money_requested[player_key]) > 0: 
-                        abs_x, abs_y = get_coord_cash_button(player_key)
-                        self.perform_click(abs_x, abs_y, f"Clic sur Cash")
-                        time.sleep(2)
-                        list_number = list(str(money_requested[player_key]))
-                        click_on_calculette(list_number)
+            money_requested = {}
+            for player_num in [1, 2]:
+                player_key = f'player{player_num}'
+                money_requested[player_key] = trade_data.get(player_key, {}).get('offers', {}).get('money', 0)
+                print(f"Money Player {player_num}: {money_requested[player_key]}")
+                if int(money_requested[player_key]) > 0: 
+                    abs_x, abs_y = get_coord_cash_button(player_key)
+                    self.perform_click(abs_x, abs_y, f"Clic sur Cash")
+                    time.sleep(2)
+                    list_number = list(str(money_requested[player_key]))
+                    click_on_calculette(list_number)
 
             coord_propose_button = self.hardcoded_buttons['propose_trade']
             rel_x, rel_y = coord_propose_button['x_relative'], coord_propose_button['y_relative']
@@ -1046,9 +1160,14 @@ class CentralizedMonitor:
                 
                 # Cas spécial : "shake the Wii" doit toujours être traité
                 force_process = False
-                if match.get('trigger') == 'shake the Wii' or 'shake the wii' in cleaned_text.lower():
-                    print("🎲 Détection spéciale 'shake the Wii' - forçage du traitement")
-                    force_process = True
+                shake_patterns = ['shake the wii', 'shake the remote', 'roll the dice', 'press to roll']
+                cleaned_lower = cleaned_text.lower()
+                
+                for pattern in shake_patterns:
+                    if pattern in cleaned_lower or match.get('trigger', '').lower() == pattern:
+                        print(f"🎲 Détection spéciale '{pattern}' - forçage du traitement")
+                        force_process = True
+                        break
                 
                 if key not in self.already_seen or force_process:
                     # Emojis par catégorie
@@ -1084,20 +1203,27 @@ class CentralizedMonitor:
                         print(f"🖼️ Screenshot capturé !")
                         
                         # Traiter le popup (analyse + décision)
+                        print('CATEGORY 1',match.get('category'))
                         result = self.process_popup(cleaned_text, screenshot, match.get('trigger'), match.get('category'))
+                        # Overwrite match category with corrected category from process_popup
+                        if result and 'category' in result:
+                            match['category'] = result['category']
+                            print(f"CATEGORY corrigée: {match['category']}")
+                            
+                        print('RESULT: ',result)
                         if result is None:
                             print("🔍 No result found, skipping...")
                             continue
                         if result and result.get('success'):
                             # Déterminer le type d'événement basé sur les keywords ou la catégorie
                             current_event = None
-                            if match.get('category') == "trade" or any('Trading' in kw for kw in match.get('keywords', [])):
-                                current_event = "trade"
-                            elif match.get('category') == "auction" or 'Auction' in match.get('keywords', []):
+
+                            if match.get('category') == "auction" or 'Auction' in match.get('keywords', []):
                                 current_event = "auction"
                             
+                            print('CATEGORY 2',match.get('category'))
                             # Vérifier si la décision est "make_trade" (depuis ai_service)
-                            if current_event == "trade" and result.get('decision') == 'make_trade':
+                            if match.get('category') == "trade" and result.get('decision') == 'make_trade':
                                 print("🔄 Décision 'make_trade' détectée depuis ai_service")
                                 trade_data = result.get('trade_data', {})
                                 print(f'TRADE_DATA {trade_data}')

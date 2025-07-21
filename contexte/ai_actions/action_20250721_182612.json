@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T16:26:09.926648",
+  "trigger": "Trading",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Done ",
+    "Sell Set "
+  ],
+  "decision": "make_trade",
+  "reason": "J'ai besoin d'un monopole pour gagner. GPT4.1 en a déjà deux. Je vais essayer de négocier pour compléter mes sets ou obtenir une station.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 977,
+      "Gemini-2.5-Flash": 1018
+    }
+  }
+}

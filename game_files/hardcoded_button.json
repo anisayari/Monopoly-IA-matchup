@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-07-21 13:58:09",
+  "timestamp": "2025-07-21 18:42:03",
   "window_size": {
     "width": 1254,
     "height": 693
@@ -137,6 +137,20 @@
       "y_relative": 0.6912,
       "x_pixel": 628,
       "y_pixel": 478
+    },
+    "header_player2": {
+      "name": "header_player2",
+      "x_relative": 0.8206,
+      "y_relative": 0.1198,
+      "x_pixel": 1029,
+      "y_pixel": 83
+    },
+    "header_player1": {
+      "name": "header_player1",
+      "x_relative": 0.1762,
+      "y_relative": 0.1328,
+      "x_pixel": 221,
+      "y_pixel": 92
     }
   }
 }

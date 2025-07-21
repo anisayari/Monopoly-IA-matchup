@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T15:02:30.353331",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Roll Again ",
+    "Accounts "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai consulté mes propriétés et je n'ai pas de monopole immédiat à construire ou échanger. Le meilleur coup est de relancer les dés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 28,
+    "money": {
+      "GPT4.1": 927,
+      "Gemini-2.5-Flash": 1068
+    }
+  }
+}

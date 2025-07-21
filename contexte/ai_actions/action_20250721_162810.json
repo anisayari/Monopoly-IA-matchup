@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T14:28:08.582878",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune gestion ou échange n'est nécessaire maintenant. Préserver ma position et attendre une opportunité de construire hôtels ou maisons reste optimal.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 915,
+      "Gemini-2.5-Flash": 780
+    }
+  }
+}

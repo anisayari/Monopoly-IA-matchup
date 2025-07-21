@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T14:35:27.514054",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je dois conserver mes ressources et préparer la future construction de maisons sur mes deux monopoles pour maximiser mes revenus.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 17,
+    "money": {
+      "GPT4.1": 937,
+      "Gemini-2.5-Flash": 758
+    }
+  }
+}

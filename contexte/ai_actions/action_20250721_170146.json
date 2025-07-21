@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T15:01:43.952980",
+  "trigger": "would you like",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois vérifier mes propriétés et mon argent pour identifier des opportunités de construction ou d'échanges, afin de former des monopoles rentables.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 28,
+    "money": {
+      "GPT4.1": 927,
+      "Gemini-2.5-Flash": 1068
+    }
+  }
+}

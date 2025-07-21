@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T15:01:20.039807",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Aucun échange immédiat n'est avantageux. Je me retire de l'écran de négociation pour reprendre le contrôle de mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 28,
+    "money": {
+      "GPT4.1": 927,
+      "Gemini-2.5-Flash": 1068
+    }
+  }
+}

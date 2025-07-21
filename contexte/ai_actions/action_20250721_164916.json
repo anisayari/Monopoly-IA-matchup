@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T14:49:14.710512",
+  "trigger": "shake the Wii",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Rouler les dés pour avancer. Je dois avancer dans le jeu et maximiser mes revenus par de futures constructions sur mes monopoles.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 20,
+    "money": {
+      "GPT4.1": 937,
+      "Gemini-2.5-Flash": 758
+    }
+  }
+}

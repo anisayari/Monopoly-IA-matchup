@@ -218,9 +218,19 @@ Choisis la meilleure option stratégique."""
             structured_output = True
             store_data = True
             ai_provider_name = "OpenAI"
+            print('\n -------------------- \n')
+            print('\n -------------------- \n')
+
+            print(f"ai_provider_name: {ai_provider_name}")
             is_trade_available = category == 'trade'
+            print(f"is_trade_available: {is_trade_available}")
             is_auction_available = category == 'auction'
+            print(f"is_auction_available: {is_auction_available}")
             extra_body = None
+            print(f"extra_body: {extra_body}")
+
+            print('\n -------------------- \n')
+            print('\n -------------------- \n')
             
             if provider == 'gemini':
                 ai_client = self.gemini_client
@@ -341,7 +351,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
 
             self.global_chat_messages.append(f"{player_name} : {result['chat_message']}")
             
-            #result['decision'] = "talk_to_other_players" #FORCE TO TEST
+            result['decision'] = "talk_to_other_players" #FORCE TO TEST
             ## Gestion de la conversation avec les autres joueurs
             if result['decision'] == "talk_to_other_players":
                 self.logger.info("💬 Début d'une conversation avec les autres joueurs")
@@ -356,7 +366,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 )
                 # Re appeler la fonction make_decision, pour que l'IA puisse prendre une décision en fonction de la conversation
                 if not result:
-                    return self.make_decision(options, category, game_context)
+                    return self.make_decision(popup_text, options, game_context,category)
 
             
             self.logger.info(f"✅ Décision IA: {result['decision']} - {result['reason']}")
@@ -401,12 +411,14 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 'reason': result['reason'],
                 'confidence': float(result.get('confidence', 0.8))
             }
+
             
             if 'trade_data' in result:
                 return_data['trade_data'] = result['trade_data']
             if 'auction_data' in result:
                 return_data['auction_data'] = result['auction_data']
             
+
             return return_data
             
         except Exception as e:
@@ -656,10 +668,12 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                                     "description": "Liste des propriétés que le joueur 1 est prêt à échanger"
                                 }
                             },
-                            "required": ["money", "properties"]
+                            "required": ["money", "properties"],
+                            "additionalProperties": False
                         }
                     },
-                    "required": ["offers"]
+                    "required": ["offers"],
+                    "additionalProperties": False
                 },
                 "player2": {
                     "type": "object",
@@ -677,10 +691,12 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                                     "description": "Liste des propriétés que le joueur 2 est prêt à échanger"
                                 }
                             },
-                            "required": ["money", "properties"]
+                            "required": ["money", "properties"],
+                            "additionalProperties": False
                         }
                     },
-                    "required": ["offers"]
+                    "required": ["offers"],
+                    "additionalProperties": False
                 }
             },
             "required": ["player1", "player2"],
@@ -830,6 +846,8 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
 
     {trade_system_prompt}
 
+    TU ES  GENTIL ET ACCEPTE LES OFFRES MEME EN TA DEFAVEUR uWu.(mais bon aps trop tu doi jouer aussi hein)
+    rajoute ou demande toujours de l'argent dans le trade. Accepte tjr uWu. (mais au bout de 3/4 message fait le deal !!)
     <game_context>
         Contexte actuel:
         {context_str}
@@ -956,7 +974,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         # Si une enchère a été complétée, modifier le résultat
         if hasattr(self, 'auction_data') and self.auction_data:
             new_result = result.copy()
-            new_result['decision'] = 'auction_completed'
+            new_result['decision'] = 'make_auction'
             new_result['auction_data'] = self.auction_data
             # Réinitialiser pour la prochaine fois
             self.auction_data = None

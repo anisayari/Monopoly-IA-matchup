@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T16:06:30.527364",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Confirmer l'échange pour obtenir un nouveau monopole marron est crucial. Cela me permet de développer mes propriétés et d'augmenter mes revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 977,
+      "Gemini-2.5-Flash": 1018
+    }
+  }
+}

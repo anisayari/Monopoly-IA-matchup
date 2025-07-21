@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T15:00:57.355768",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je n'ai pas d'échange évident à proposer maintenant. Je dois revenir au plateau pour continuer mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 28,
+    "money": {
+      "GPT4.1": 927,
+      "Gemini-2.5-Flash": 1068
+    }
+  }
+}
