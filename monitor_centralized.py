@@ -683,11 +683,14 @@ class CentralizedMonitor:
             # Préparer les données de trade si c'est un événement de trade
             trade_data = None
             # Vérifier soit par keywords, soit par catégorie, soit par décision
-            if (any('Trading' in kw for kw in selected_keywords) or 
-                category == 'trade' or 
-                decision == 'make_trade'):
+            if (decision == 'make_trade'):
                 trade_data = decision_data.get('trade_data', {})
                 print(f"📦 Trade data extrait: {trade_data}")
+                
+            auction_data = None
+            if (decision == 'make_auction'):
+                auction_data = decision_data.get('auction_data', {})
+                print(f"📦 Auction data extrait: {auction_data}")
             
             # Retourner toutes les infos nécessaires
             result = {
@@ -702,7 +705,8 @@ class CentralizedMonitor:
             # Ajouter trade_data si disponible
             if trade_data:
                 result['trade_data'] = trade_data
-                
+            if auction_data:
+                result['auction_data'] = auction_data
             return result
             
         except Exception as e:
@@ -1232,6 +1236,16 @@ class CentralizedMonitor:
                                     continue
                                 else:
                                     print("⚠️ Aucune donnée de trade trouvée dans le résultat")
+                            elif match.get('category') == "auction" and result.get('decision') == 'make_auction':
+                                print("🔄 Décision 'make_auction' détectée depuis ai_service")
+                                auction_data = result.get('auction_data', {})
+                                print(f'AUCTION_DATA {auction_data}')
+                                if auction_data:
+                                    # TODO: Gérer l'enchère
+                                    # self._handle_auction_event(auction_data, result, screenshot)
+                                    continue
+                                else:
+                                    print("⚠️ Aucune donnée d'enchère trouvée dans le résultat")
                             
                             decision = result['decision']
                             options = result.get('options', [])
