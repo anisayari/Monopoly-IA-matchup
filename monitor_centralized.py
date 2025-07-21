@@ -117,7 +117,7 @@ class CentralizedMonitor:
             "trading": "trade",
             "auction": "auction",
             "Go To Jail": "jail",
-            "property deeds": "property_management",
+            "Property Deeds": "property",
             "shake the Wii": "roll dice",
             "shake the wii": "roll dice",
             "Shake the Wii": "roll dice"
@@ -700,6 +700,11 @@ class CentralizedMonitor:
                 auction_data = decision_data.get('auction_data', {})
                 print(f"📦 Auction data extrait: {auction_data}")
             
+            property_management_data = None
+            if (decision == 'make_property_management'):
+                property_management_data = decision_data.get('property_management_data', {})
+                print(f"📦 Property management data extrait: {property_management_data}")
+            
             # Retourner toutes les infos nécessaires
             result = {
                 'success': True,
@@ -715,6 +720,8 @@ class CentralizedMonitor:
                 result['trade_data'] = trade_data
             if auction_data:
                 result['auction_data'] = auction_data
+            if property_management_data:
+                result['property_management_data'] = property_management_data
             return result
             
         except Exception as e:
@@ -1102,7 +1109,7 @@ class CentralizedMonitor:
                             
                             if action_abs_x is not None:
                                 print(f"   2️⃣ Clic sur le bouton: {action}")
-                                self.perform_click(action_abs_x, action_abs_y, f"Clic sur {action}")
+                                self.perform_click(action_abs_x, action_abs_y, f"Clic sur {action}",y_offset=6)
                                 time.sleep(1)
                             
                             # 3. Si c'est une action qui nécessite confirmation, gérer les boutons yes/no
@@ -1125,7 +1132,7 @@ class CentralizedMonitor:
                                     if yes_abs_x is not None:
                                         time.sleep(1)
                                         print(f"   3️⃣ Clic sur YES pour confirmer")
-                                        self.perform_click(yes_abs_x, yes_abs_y, "Clic sur YES")
+                                        self.perform_click(yes_abs_x, yes_abs_y, "Clic sur YES",y_offset=6)
                                         time.sleep(1)
                         
                         # 4. Cliquer sur "Done" pour valider cette propriété (après toutes les itérations)
@@ -1139,7 +1146,7 @@ class CentralizedMonitor:
                             
                             if done_abs_x is not None:
                                 print(f"   4️⃣ Clic sur Done pour valider")
-                                self.perform_click(done_abs_x, done_abs_y, "Clic sur Done")
+                                self.perform_click(done_abs_x, done_abs_y, "Clic sur Done",y_offset=6)
                                 time.sleep(1)
                         
                         print(f"   ✅ Propriété {prop_name} traitée")
