@@ -165,6 +165,7 @@ class AIService:
                 'type': 'analysis',
                 'content': {
                     'popup': popup_text,
+                    'options': options,
                     'options_count': len(options),
                     'argent': game_context.get('players', {}).get(current_player, {}).get('money', 0)
                 },
@@ -282,8 +283,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             # Construire la requête complète
             request_data = {
                 "model": model,
-                "messages": messages,
-                "max_tokens": 500
+                "messages": messages
             }
             
             if store_data:
@@ -309,7 +309,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             # Appeler l'API avec Structured Outputs
             
             response = ai_client.chat.completions.create(**request_data)
-
+            print(f"-------------- \response {response}")
             # Parser la réponse
             result = json.loads(response.choices[0].message.content)
             
@@ -333,7 +333,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                     user_message=user_message,
                     request_data=request_data,
                     request_ai_client=ai_client,
-                    is_trade_available= category is 'trade'
+                    is_trade_available = bool(category == 'trade')
                 )
 
             
@@ -380,7 +380,9 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             }
             
         except Exception as e:
-            self.logger.error(f"❌ Erreur IA: {e}")
+            import traceback
+            tb_str = traceback.format_exc()
+            self.logger.error(f"❌ Erreur IA: {e}\nTraceback:\n{tb_str}")
             return self._default_decision(options)
    
     def _get_action_type(self, decision: str, popup_text: str) -> str:
@@ -649,7 +651,6 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"{chr(10).join(last_messages)}"}
             ],
-            max_tokens=500,
             response_format={
                 "type": "json_schema",
                 "json_schema": {
@@ -714,8 +715,8 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
 
             messages = [
                 {"role": "system", "content": f"""
-Tu es ue IA qui joue au Monopoly contre une autre IA.
-Tu es actuellement en train de discuter avec un autre joueur IA.
+Tu es une IA qui joue au Monopoly contre une autre IA.
+Tu es actuellement en train de discuter avec un autre joueur IA. Essaye de rester court dans tes réponses.
                 """},
                 {"role": "user", "content": f"""
 Tu es le joueur {player_need_answer} ({player1_name if player_need_answer == "player1" else player2_name})
@@ -753,7 +754,6 @@ EXEMPLES:
             response = ai_client.chat.completions.create(
                 model=ai_model,
                 messages=messages,
-                max_tokens=500
             )
             conversation_result = response.choices[0].message.content
             conversation_data.append(f"{player_need_answer} : {conversation_result}")

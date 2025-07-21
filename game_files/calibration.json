@@ -1,16 +1,16 @@
 {
   "window_title": "Dolphin 2412 | JIT64 DC | Direct3D 11 | HLE | Monopoly Collection (SMPP69)",
-  "timestamp": "2025-07-19 19:40:38",
+  "timestamp": "2025-07-21 11:00:42",
   "window_size": {
-    "width": 1829,
-    "height": 1020
+    "width": 1239,
+    "height": 690
   },
   "points": [
     {
       "point_number": 1,
       "mouse": {
-        "x": 237,
-        "y": 97
+        "x": 154,
+        "y": 51
       },
       "wiimote": {
         "x": 0.0,
@@ -20,34 +20,34 @@
     {
       "point_number": 2,
       "mouse": {
-        "x": 1588,
+        "x": 1075,
         "y": 48
       },
       "wiimote": {
-        "x": 1829.0,
+        "x": 1239.0,
         "y": 0.0
       }
     },
     {
       "point_number": 3,
       "mouse": {
-        "x": 1558,
-        "y": 889
+        "x": 1058,
+        "y": 600
       },
       "wiimote": {
-        "x": 1829.0,
-        "y": 1020.0
+        "x": 1239.0,
+        "y": 690.0
       }
     },
     {
       "point_number": 4,
       "mouse": {
-        "x": 270,
-        "y": 891
+        "x": 180,
+        "y": 599
       },
       "wiimote": {
         "x": 0.0,
-        "y": 1020.0
+        "y": 690.0
       }
     }
   ]

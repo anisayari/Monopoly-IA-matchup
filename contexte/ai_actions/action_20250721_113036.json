@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T09:30:34.398830",
+  "trigger": "a Property you own",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Can't directly select a property to build houses from this screen. Need to go back to find the correct menu for building.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1693,
+      "Gemini-2.5-Flash": 327
+    }
+  }
+}

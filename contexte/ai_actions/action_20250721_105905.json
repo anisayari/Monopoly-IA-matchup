@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T08:59:03.564414",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Je dois poursuivre pour acc\n\t\tac\n\t\t\tder \n\t\t\taux options de construction de maisons. \n\t\t\tLa tr\n\t\t\t\tr\n\t\t\t\tsorerie est basse, \n\t\t\t\tla construction est prioritaire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1693,
+      "Gemini-2.5-Flash": 327
+    }
+  }
+}

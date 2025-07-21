@@ -15,13 +15,24 @@
     "Pause": {
       "text": ["Pause"],
       "icon": [
-          "continue",
-          "resign"
+        "continue",
+        "resign"
       ],
       "default": [
-          "continue"
+        "continue"
       ]
-  },
+    },
+    "Pause 2": {
+      "text": ["Pause"],
+      "icon": [
+        "continue",
+        "options",
+        "quit"
+      ],
+      "default": [
+        "continue"
+      ]
+    },
     "you want to buy": {
       "text": ["you want to buy"],
       "icon": ["auction", "buy"]
@@ -92,7 +103,7 @@
     },
     "Who's playing": {
       "text": ["Who's playing"],
-      "icon": ["house rules", "next","back"]
+      "icon": ["house rules", "next", "back"]
     },
     "Press to continue": {
       "text": ["Press to continue"],
@@ -102,6 +113,6 @@
       "text": ["Whitout saving"],
       "icon": ["continue without saving/loading"]
     }
-    
+
   }
 }

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T09:02:07.734244",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Le message pop-up est informatif et ne présente aucune action stratégique immédiate nécessitant une discussion ou une décision complexe.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1693,
+      "Gemini-2.5-Flash": 327
+    }
+  }
+}

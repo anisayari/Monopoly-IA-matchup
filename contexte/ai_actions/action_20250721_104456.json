@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T08:44:54.827026",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Décision par défaut (IA non disponible)",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1693,
+      "Gemini-2.5-Flash": 327
+    }
+  }
+}

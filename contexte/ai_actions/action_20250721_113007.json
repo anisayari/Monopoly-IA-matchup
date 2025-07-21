@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T09:30:05.265284",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Acc\neder au menu des propri\nét\n\nés pour construire des maisons sur mes monopoles, augmentant ainsi mes revenus et la pression sur l'adversaire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1693,
+      "Gemini-2.5-Flash": 327
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T09:03:32.047111",
+  "trigger": "a Property you own",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts"
+  ],
+  "decision": "Accounts",
+  "reason": "Je dois utiliser mes fonds pour construire des maisons sur mes monopoles, notamment les moins chers, afin d'augmenter mes revenus de loyer et prendre l'avantage. 'Accounts' est le chemin pour continuer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1693,
+      "Gemini-2.5-Flash": 327
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T09:04:02.640178",
+  "trigger": "would you like",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois revenir au menu principal pour g\nR\nR\n",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1693,
+      "Gemini-2.5-Flash": 327
+    }
+  }
+}

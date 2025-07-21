@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-21T09:02:33.537366",
+  "trigger": "a Property you own",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Le message pop-up est informatif et ne pr\nR\n",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1693,
+      "Gemini-2.5-Flash": 327
+    }
+  }
+}

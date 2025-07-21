@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T09:23:31.225074",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Vérifier les comptes me permet d'évaluer ma situation financière et mes options de construction pour augmenter mes revenus face à l'avance de l'adversaire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT4.1": 1693,
+      "Gemini-2.5-Flash": 327
+    }
+  }
+}

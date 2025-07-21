@@ -137,6 +137,9 @@ class AIChatMonitor:
                     print(f"   📋 {Fore.WHITE}Popup:{Style.RESET_ALL} \"{content['popup']}\"")
                 if 'options_count' in content:
                     print(f"   🔢 {Fore.WHITE}Options:{Style.RESET_ALL} {content['options_count']} choix disponibles")
+                if 'options' in content:
+                    for idx, opt in enumerate(content['options'],1):
+                        print(f"   {Fore.LIGHTBLUE_EX}{idx} Option : {Style.RESET_ALL} {opt}")
                 if 'argent' in content:
                     print(f"   💰 {Fore.WHITE}Argent:{Style.RESET_ALL} {content['argent']}€")
             elif thought_type == 'decision':
