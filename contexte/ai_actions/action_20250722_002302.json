@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T22:23:00.857707",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je veux d'abord accéder à la gestion des propriétés pour construire des maisons et maximiser mes revenus rapidement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT4.1": 1669,
+      "Gemini-2.5-Flash": 51
+    }
+  }
+}
