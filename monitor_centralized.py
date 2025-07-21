@@ -1424,7 +1424,13 @@ class CentralizedMonitor:
         self.running = True
         
         while self.running:
-            print("🔍 Scanning memory...")
+            # Lire et afficher le current player
+            from src.utils.property_helpers import get_current_player_from_ram
+            current_player = get_current_player_from_ram()
+            if current_player:
+                print(f"🔍 Scanning memory... (Current player: {current_player})")
+            else:
+                print("🔍 Scanning memory...")
             matches = self.scan_memory()
             scan_count += 1
 
