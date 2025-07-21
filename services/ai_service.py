@@ -912,6 +912,12 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         player2_name = player_configs["player2"]["name"]
         
         exchange_result = self._get_ai_trade_decision_json(player1_name, player2_name, conversation_data)
+        exchange_result["status"] = "deal"
+        
+        # Si la liste des propriétés est vide et l'argent à 0 on considère que l'échange n'a pas eu lieu
+        if exchange_result["player1"]["offers"]["money"] == 0 and len(exchange_result["player1"]["offers"]["properties"]) == 0:
+            exchange_result["status"] = "no_deal"
+        
         self.logger.info(f"💬 Échange de propriétés: {exchange_result}")
         
         # Sauvegarder les données du trade pour monitor_centralized
