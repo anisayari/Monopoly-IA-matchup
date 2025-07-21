@@ -702,13 +702,13 @@
         }
       }
     ],
-    "current_turn": 14,
+    "current_turn": 16,
     "player_count": 2,
     "player_names": [
       "GPT4.1",
       "Gemini-2.5-Flash"
     ],
-    "current_player": "player1",
+    "current_player": "player2",
     "buildings_summary": {
       "total_houses": 0,
       "total_hotels": 0,
@@ -717,132 +717,6 @@
     }
   },
   "events": [
-    {
-      "turn": 9,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Pentonville Road pour 120€",
-      "message": "Gemini-2.5 achète Pentonville Road pour 120€."
-    },
-    {
-      "turn": 9,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Marylebone Station pour 200€",
-      "message": "Gemini-2.5 achète Marylebone Station pour 200€."
-    },
-    {
-      "turn": 10,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Strand pour 220€",
-      "message": "Gemini-2.5 achète Strand pour 220€."
-    },
-    {
-      "turn": 10,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Fleet Street pour 220€",
-      "message": "Gemini-2.5 achète Fleet Street pour 220€."
-    },
-    {
-      "turn": 11,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Trafalgar Square pour 240€",
-      "message": "Gemini-2.5 achète Trafalgar Square pour 240€."
-    },
-    {
-      "turn": 11,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Fenchurch Street Station pour 200€",
-      "message": "Gemini-2.5 achète Fenchurch Street Station pour 200€."
-    },
-    {
-      "turn": 12,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Leicester Square pour 260€",
-      "message": "Gemini-2.5 achète Leicester Square pour 260€."
-    },
-    {
-      "turn": 12,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Coventry Street pour 260€",
-      "message": "Gemini-2.5 achète Coventry Street pour 260€."
-    },
-    {
-      "turn": 13,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Piccadilly pour 280€",
-      "message": "Gemini-2.5 achète Piccadilly pour 280€."
-    },
-    {
-      "turn": 13,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Park Lane pour 350€",
-      "message": "Gemini-2.5 achète Park Lane pour 350€."
-    },
-    {
-      "turn": 14,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Mayfair pour 400€",
-      "message": "Gemini-2.5 achète Mayfair pour 400€."
-    },
-    {
-      "turn": 14,
-      "player": "System",
-      "action": "jail_options",
-      "detail": "Do you want to pay the bail, roll for doubles or use a get out of free jail card (if you have one)?",
-      "message": "System doit choisir comment sortir de prison."
-    },
-    {
-      "turn": 14,
-      "player": "System",
-      "action": "message",
-      "detail": "Trade",
-      "message": "Message: Trade"
-    },
-    {
-      "turn": 14,
-      "player": "System",
-      "action": "message",
-      "detail": "1 Owned",
-      "message": "Message: 1 Owned"
-    },
-    {
-      "turn": 14,
-      "player": "System",
-      "action": "message",
-      "detail": "4 Owned",
-      "message": "Message: 4 Owned"
-    },
-    {
-      "turn": 14,
-      "player": "System",
-      "action": "message",
-      "detail": "2 Owned",
-      "message": "Message: 2 Owned"
-    },
-    {
-      "turn": 14,
-      "player": "System",
-      "action": "message",
-      "detail": "3 Owned",
-      "message": "Message: 3 Owned"
-    },
-    {
-      "turn": 14,
-      "player": "System",
-      "action": "message",
-      "detail": "Un-mortgage Value",
-      "message": "Message: Un-mortgage Value"
-    },
     {
       "turn": 14,
       "player": "System",
@@ -856,6 +730,132 @@
       "action": "rent_notification",
       "detail": "2 utilities = x10 amount on dice in rent.",
       "message": "System a effectué l'action 'rent_notification' 2 utilities = x10 amount on dice in rent.."
+    },
+    {
+      "turn": 14,
+      "player": "GPT4.1",
+      "action": "lose_property",
+      "detail": "Euston Road",
+      "message": "GPT4.1 a effectué l'action 'lose_property' Euston Road."
+    },
+    {
+      "turn": 14,
+      "player": "System",
+      "action": "message",
+      "detail": "逃?聅댨聉",
+      "message": "Message: 逃?聅댨聉"
+    },
+    {
+      "turn": 14,
+      "player": "GPT4.1",
+      "action": "buy_property",
+      "detail": "Euston Road pour 100€",
+      "message": "GPT4.1 achète Euston Road pour 100€."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "roll_dice",
+      "detail": "6+6=12",
+      "message": "Gemini-2.5 a lancé les dés et avance de 12 cases."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "move",
+      "detail": "Coventry Street",
+      "message": "Gemini-2.5 arrive sur Coventry Street."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "lose_property",
+      "detail": "Old Kent Road",
+      "message": "Gemini-2.5 a effectué l'action 'lose_property' Old Kent Road."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "lose_property",
+      "detail": "Whitechapel Road",
+      "message": "Gemini-2.5 a effectué l'action 'lose_property' Whitechapel Road."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "lose_property",
+      "detail": "Park Lane",
+      "message": "Gemini-2.5 a effectué l'action 'lose_property' Park Lane."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "lose_property",
+      "detail": "Euston Road",
+      "message": "Gemini-2.5 a effectué l'action 'lose_property' Euston Road."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "lose_property",
+      "detail": "Strand",
+      "message": "Gemini-2.5 a effectué l'action 'lose_property' Strand."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "lose_property",
+      "detail": "Fleet Street",
+      "message": "Gemini-2.5 a effectué l'action 'lose_property' Fleet Street."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "lose_property",
+      "detail": "Trafalgar Square",
+      "message": "Gemini-2.5 a effectué l'action 'lose_property' Trafalgar Square."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "lose_property",
+      "detail": "Fenchurch Street Station",
+      "message": "Gemini-2.5 a effectué l'action 'lose_property' Fenchurch Street Station."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "lose_property",
+      "detail": "Leicester Square",
+      "message": "Gemini-2.5 a effectué l'action 'lose_property' Leicester Square."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "goto",
+      "detail": "Coventry Street",
+      "message": "Gemini-2.5 se déplace directement vers Coventry Street."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "move_and_pay",
+      "detail": "Bow Street -> 14€ to GPT4.1 pour Bow Street",
+      "message": "Gemini-2.5 s'est déplacé sur Bow Street et a payé 14€ de loyer à GPT4.1."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "pay_rent",
+      "detail": "14€ to GPT4.1 pour Vine Street",
+      "message": "Gemini-2.5 paie 14€ de loyer à GPT4.1 pour Vine Street."
+    },
+    {
+      "turn": 16,
+      "player": "Gemini-2.5",
+      "action": "move_and_buy",
+      "detail": "Trafalgar Square -> Trafalgar Square pour 220€",
+      "message": "Gemini-2.5 s'est déplacé sur Trafalgar Square et l'a acheté pour 220€."
     }
   ],
   "players": {
@@ -863,8 +863,8 @@
       "name": "GPT4.1",
       "ai_model": "gpt-4.1",
       "provider": "openai",
-      "current_player": true,
-      "is_current": true,
+      "current_player": false,
+      "is_current": false,
       "dice_result": [
         5,
         4
@@ -950,11 +950,11 @@
       "name": "Gemini-2.5-Flash",
       "ai_model": "gemini-2.5-flash",
       "provider": "gemini",
-      "current_player": false,
-      "is_current": false,
+      "current_player": true,
+      "is_current": true,
       "dice_result": [
-        2,
-        5
+        6,
+        6
       ],
       "money": 351,
       "properties": [
@@ -1034,8 +1034,8 @@
           "group": "red"
         }
       ],
-      "position": 15,
-      "current_space": "Marylebone Station",
+      "position": 27,
+      "current_space": "Coventry Street",
       "jail": false
     }
   },
