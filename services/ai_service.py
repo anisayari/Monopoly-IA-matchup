@@ -214,7 +214,6 @@ Choisis la meilleure option stratégique."""
             # Déterminer le provider et le client à utiliser
             provider = game_context.get('players', {}).get(current_player, {}).get('provider', "openai")          
             
-
             ai_client = self.openai_client
             structured_output = True
             store_data = True
@@ -223,12 +222,6 @@ Choisis la meilleure option stratégique."""
             is_auction_available = category == 'auction'
             extra_body = None
             
-            print('\n ----------------------- \n')
-            print('\n ----------------------- \n')
-            print(f"CATEGORY: {category}")
-            print(f"is_trade_available: {is_trade_available}")
-            print(f"is_auction_available: {is_auction_available}")
-
             if provider == 'gemini':
                 ai_client = self.gemini_client
                 structured_output = True
@@ -253,10 +246,10 @@ Choisis la meilleure option stratégique."""
             
             talk_to_other_players_message = "A n'importe quel moment tu peux utiliser la decisions TALK_TO_OTHER_PLAYERS pour discuter avec les autres joueurs."
             if is_trade_available:
-                talk_to_other_players_message += " Tu dois aussi utiliser la decision TALK_TO_OTHER_PLAYERS pour initier un échange de propriétés avec les autres joueurs, qui amenera a une négociation et à l'échange final."
+                talk_to_other_players_message += " Tu dois aussi utiliser la decisions TALK_TO_OTHER_PLAYERS pour initier un échange de propriétés avec les autres joueurs, qui amenera a une négociation et à l'échange final."
             
             if is_auction_available:
-                talk_to_other_players_message += " Tu dois aussi utiliser la decision TALK_TO_OTHER_PLAYERS pour initier l'enchère d'une propriété, qui amenera a une négociation et au prix final / enchère gagnante."
+                talk_to_other_players_message += " Tu dois aussi utiliser la decisions TALK_TO_OTHER_PLAYERS pour initier l'enchère d'une propriété, qui amenera a une négociation et au prix final / enchère gagnante."
                 extended_options = ["talk_to_other_players"]
             
             schema = {
@@ -284,7 +277,7 @@ Choisis la meilleure option stratégique."""
                 "required": ["decision", "reason", "confidence", "chat_message"],
                 "additionalProperties": False
             }
-            system_prompt = f"""Tu es une IA qui joue au Monopoly dans une compétition contre une autre IA. Ton objectif est de GAGNER.
+            system_prompt = """Tu es une IA qui joue au Monopoly dans une compétition contre une autre IA. Ton objectif est de GAGNER.
 
 Tu as accés au contexte du jeu entre chaque tour. Et tu dois prendre des décisions en fonctions de tes options.
 
@@ -348,7 +341,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
 
             self.global_chat_messages.append(f"{player_name} : {result['chat_message']}")
             
-            result['decision'] = "talk_to_other_players" #FORCE TO TEST
+            #result['decision'] = "talk_to_other_players" #FORCE TO TEST
             ## Gestion de la conversation avec les autres joueurs
             if result['decision'] == "talk_to_other_players":
                 self.logger.info("💬 Début d'une conversation avec les autres joueurs")
@@ -363,7 +356,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 )
                 # Re appeler la fonction make_decision, pour que l'IA puisse prendre une décision en fonction de la conversation
                 if not result:
-                    return self.make_decision(popup_text, options, game_context, category)
+                    return self.make_decision(options, category, game_context)
 
             
             self.logger.info(f"✅ Décision IA: {result['decision']} - {result['reason']}")
@@ -402,20 +395,12 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 'timestamp': datetime.utcnow().isoformat()
             }, port=8004)
             
-            if 'trade_data' in result:
-                return {
-                    'trade_data': result['trade_data'],
-                    'decision': result['decision'],
-                    'reason': result['reason'],
-                    'confidence': float(result.get('confidence', 0.8))
-                    }
-            else:
-                return {
-                    'decision': result['decision'],
-                    'reason': result['reason'],
-                    'confidence': float(result.get('confidence', 0.8))
-                }
-                
+            return {
+                'decision': result['decision'],
+                'reason': result['reason'],
+                'confidence': float(result.get('confidence', 0.8))
+            }
+            
         except Exception as e:
             import traceback
             tb_str = traceback.format_exc()
@@ -663,12 +648,10 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                                     "description": "Liste des propriétés que le joueur 1 est prêt à échanger"
                                 }
                             },
-                            "required": ["money", "properties"],
-                            "additionalProperties": False
+                            "required": ["money", "properties"]
                         }
                     },
-                    "required": ["offers"],
-                    "additionalProperties": False
+                    "required": ["offers"]
                 },
                 "player2": {
                     "type": "object",
@@ -686,12 +669,10 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                                     "description": "Liste des propriétés que le joueur 2 est prêt à échanger"
                                 }
                             },
-                            "required": ["money", "properties"],
-                            "additionalProperties": False
+                            "required": ["money", "properties"]
                         }
                     },
-                    "required": ["offers"],
-                    "additionalProperties": False
+                    "required": ["offers"]
                 }
             },
             "required": ["player1", "player2"],
@@ -743,8 +724,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                             "description": "Montant maximum que le joueur 1 est prêt à payer"
                         }
                     },
-                    "required": ["max_bid"],
-                    "additionalProperties": False
+                    "required": ["max_bid"]
                 },
                 "player2": {
                     "type": "object",
@@ -754,8 +734,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                             "description": "Montant maximum que le joueur 2 est prêt à payer"
                         }
                     },
-                    "required": ["max_bid"],
-                    "additionalProperties": False
+                    "required": ["max_bid"]
                 },
                 "winner": {
                     "type": "string",
@@ -938,7 +917,6 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         # Si la liste des propriétés est vide et l'argent à 0 on considère que l'échange n'a pas eu lieu
         if exchange_result["player1"]["offers"]["money"] == 0 and len(exchange_result["player1"]["offers"]["properties"]) == 0:
             exchange_result["status"] = "no_deal"
-            
         
         self.logger.info(f"💬 Échange de propriétés: {exchange_result}")
         
@@ -952,7 +930,6 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             new_result['trade_data'] = self.trade_data
             # Réinitialiser pour la prochaine fois
             self.trade_data = None
-            print(f'new_results: {new_result}')
             return new_result
         
         return result
