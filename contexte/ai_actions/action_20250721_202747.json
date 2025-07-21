@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T18:27:45.227934",
+  "trigger": "would you like",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Initier une négociation. Je possède déjà Vine Street donc je peux faire monter les enchères pour perturber les autres et jauger leurs intérêts.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "GPT4.1": 575,
+      "Gemini-2.5-Flash": 1480
+    }
+  }
+}

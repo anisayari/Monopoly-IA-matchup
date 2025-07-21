@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T18:48:52.350817",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Il n'y a pas d'action immédiate nécessaire; j'ai suffisamment d'argent et aucun monopole à construire. Continuer est la meilleure option.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT4.1": 505,
+      "Gemini-2.5-Flash": 1660
+    }
+  }
+}

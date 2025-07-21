@@ -184,6 +184,20 @@ class Contexte:
             except:
                 pass
         
+        # Lire le joueur actuel depuis la RAM
+        try:
+            import dolphin_memory_engine as dme
+            current_player_byte = dme.read_byte(0x9303A314)
+            # Si 0 -> player2, si 1 -> player1
+            if current_player_byte == 0:
+                self.current_player_index = 1  # player2
+            else:
+                self.current_player_index = 0  # player1
+            print(f"[DEBUG] Current player from RAM: byte={current_player_byte}, player{self.current_player_index + 1}")
+        except Exception as e:
+            # Si on ne peut pas lire la RAM, garder la logique existante
+            print(f"[DEBUG] Impossible de lire le current player depuis la RAM: {e}")
+        
         self.context["global"]["player_count"] = len(self.game.players)
         self.context["global"]["player_names"] = player_names
         self.context["global"]["current_turn"] = self.current_turn

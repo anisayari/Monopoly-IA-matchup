@@ -128,6 +128,9 @@ class UnifiedDecisionServer:
                 # Ajouter trade_data si présent
                 if 'trade_data' in result:
                     response_data['trade_data'] = result['trade_data']
+
+                if 'auction_data' in result:
+                    response_data['auction_data'] = result['auction_data']
                 
                 return jsonify(response_data)
                     

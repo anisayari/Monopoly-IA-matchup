@@ -758,7 +758,8 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                             "description": "Montant maximum que le joueur 1 est prêt à payer"
                         }
                     },
-                    "required": ["max_bid"]
+                    "required": ["max_bid"],
+                    "additionalProperties": False
                 },
                 "player2": {
                     "type": "object",
@@ -768,7 +769,8 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                             "description": "Montant maximum que le joueur 2 est prêt à payer"
                         }
                     },
-                    "required": ["max_bid"]
+                    "required": ["max_bid"],
+                    "additionalProperties": False
                 },
                 "winner": {
                     "type": "string",

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T18:37:43.924538",
+  "trigger": "Trading",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je veux comprendre si c'est une enchère ou une proposition de transaction pour Leicester Square et m'assurer de ne pas la manquer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "GPT4.1": 565,
+      "Gemini-2.5-Flash": 1480
+    }
+  }
+}

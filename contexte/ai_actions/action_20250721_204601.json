@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T18:45:59.103119",
+  "trigger": "would you like to",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Initier l'enchère me permet de tenter d'obtenir Vine Street, essentielle pour un potentiel monopole orange et clé pour contrôler le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT4.1": 505,
+      "Gemini-2.5-Flash": 1680
+    }
+  }
+}

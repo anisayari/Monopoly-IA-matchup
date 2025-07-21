@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T18:31:26.125049",
+  "trigger": "would you like",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Initier une enchère pour Vine Street peut attirer de l'intérêt et maximiser la valeur, tout en empêchant d'autres joueurs de compléter un set orange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "GPT4.1": 575,
+      "Gemini-2.5-Flash": 1480
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T18:53:15.135663",
+  "trigger": "Trading",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Initier l'enchère pour Regent Street maximise mes chances de l'obtenir à un prix raisonnable et d'empêcher Gemini d'avancer vers un monopole.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT4.1": 505,
+      "Gemini-2.5-Flash": 1660
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-21T18:34:13.876307",
+  "trigger": "would you like",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Lancer l'enchère maximise mes chances d'acquérir Coventry Street à bon prix, tout en testant l'intérêt de l'autre joueur pour une couleur stratégique (vert/jaune).",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT4.1": 565,
+      "Gemini-2.5-Flash": 1480
+    }
+  }
+}

@@ -593,6 +593,19 @@ class CentralizedMonitor:
                 context_response = requests.get(f"{self.api_url}/api/context", timeout=5)
                 if context_response.ok:
                     game_context = context_response.json()
+                    
+                    # Mettre à jour le current player depuis la RAM directement
+                    try:
+                        current_player_byte = dme.read_byte(0x9303A314)
+                        # Si 0 -> player2, si 1 -> player1
+                        if current_player_byte == 0:
+                            game_context['global']['current_player'] = 'player2'
+                        else:
+                            game_context['global']['current_player'] = 'player1'
+                        print(f"🎮 Current player from RAM: byte={current_player_byte}, {game_context['global']['current_player']}")
+                    except Exception as ram_error:
+                        print(f"⚠️ Impossible de lire le current player depuis la RAM: {ram_error}")
+                    
                     # Stocker le contexte pour utilisation dans _handle_trade_event
                     self.game_context = game_context
                     # Le contexte est maintenant envoyé au serveur d'actions
