@@ -345,11 +345,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             ## Gestion de la conversation avec les autres joueurs
             if result['decision'] == "talk_to_other_players":
                 self.logger.info("💬 Début d'une conversation avec les autres joueurs")
-                # TODO: Gérer "is_trade_available"
-                ## Ajout des messages user / assistant dans "request_data" avant de lancer la conversation
-                request_data['messages'].append({"role": "user", "content": user_message})
-                request_data['messages'].append({"role": "assistant", "content": response.choices[0].message.content})
-                
+                # TODO: Gérer "is_trade_available"                
                 result = self._run_conversation_between_players(
                     current_player=current_player,
                     result=result,
