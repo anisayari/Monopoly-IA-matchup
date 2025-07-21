@@ -5,7 +5,7 @@ from typing import Dict, List, Any
 from .monopoly import MonopolyGame
 from .listeners import MonopolyListeners
 from src.utils import property_manager
-from src.utils.property_helpers import get_property_house_count
+from src.utils.property_helpers import get_property_house_count, get_current_player_index_from_ram
 
 class Contexte:
     """Classe gérant le contexte global du jeu Monopoly"""
@@ -184,19 +184,14 @@ class Contexte:
             except:
                 pass
         
-        # Lire le joueur actuel depuis la RAM
-        try:
-            import dolphin_memory_engine as dme
-            current_player_byte = dme.read_byte(0x9303A314)
-            # Si 0 -> player2, si 1 -> player1
-            if current_player_byte == 0:
-                self.current_player_index = 1  # player2
-            else:
-                self.current_player_index = 0  # player1
-            print(f"[DEBUG] Current player from RAM: byte={current_player_byte}, player{self.current_player_index + 1}")
-        except Exception as e:
+        # Lire le joueur actuel depuis la RAM via la fonction centralisée
+        current_player_index = get_current_player_index_from_ram()
+        if current_player_index is not None:
+            self.current_player_index = current_player_index
+            print(f"[DEBUG] Current player from RAM: player{self.current_player_index + 1}")
+        else:
             # Si on ne peut pas lire la RAM, garder la logique existante
-            print(f"[DEBUG] Impossible de lire le current player depuis la RAM: {e}")
+            print(f"[DEBUG] Utilisation du current player par défaut: player{self.current_player_index + 1}")
         
         self.context["global"]["player_count"] = len(self.game.players)
         self.context["global"]["player_names"] = player_names

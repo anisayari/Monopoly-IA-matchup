@@ -1,5 +1,6 @@
 from src.core.property import Property
 from src.core.memory_reader import MemoryReader
+import dolphin_memory_engine as dme
 import json
 import os
 
@@ -86,3 +87,39 @@ def can_build_hotel(property_name):
     """
     house_count = get_property_house_count(property_name)
     return house_count == 4
+
+def get_current_player_from_ram():
+    """Lit le joueur actuel depuis l'adresse RAM 0x9303A314
+    
+    Returns:
+        str: 'player1' ou 'player2' selon la valeur lue
+             None si la lecture échoue
+    """
+    try:
+        current_player_byte = dme.read_byte(0x9303A314)
+        # Si 0 -> player2, si 1 -> player1
+        if current_player_byte == 0:
+            return 'player2'
+        else:
+            return 'player1'
+    except Exception as e:
+        print(f"⚠️ Impossible de lire le current player depuis la RAM: {e}")
+        return None
+
+def get_current_player_index_from_ram():
+    """Lit l'index du joueur actuel depuis l'adresse RAM 0x9303A314
+    
+    Returns:
+        int: 0 pour player1, 1 pour player2
+             None si la lecture échoue
+    """
+    try:
+        current_player_byte = dme.read_byte(0x9303A314)
+        # Si 0 -> player2 (index 1), si 1 -> player1 (index 0)
+        if current_player_byte == 0:
+            return 1  # player2
+        else:
+            return 0  # player1
+    except Exception as e:
+        print(f"⚠️ Impossible de lire le current player index depuis la RAM: {e}")
+        return None
