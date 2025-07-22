@@ -108,13 +108,15 @@ class UnifiedDecisionServer:
                 category = data.get('category', '')
                 keywords = data.get('keywords', [])
                 all_detected_icons = data.get('all_detected_icons', [])
+                screenshot_base64 = data.get('screenshot_base64', '')
                 
                 # Utiliser le service AI pour prendre la décision
                 result = self.ai_service.make_decision(
                     popup_text=popup_text,
                     options=options,
                     game_context=game_context,
-                    category = category
+                    category = category,
+                    screenshot_base64 = screenshot_base64
                 )
                 
                 # Retourner la réponse formatée

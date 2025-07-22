@@ -508,7 +508,9 @@ class CentralizedMonitor:
                 'full_options': options,  # Infos complètes des options avec bbox
                 'keywords': selected_keywords,  # Keywords identifiés via les icônes
                 'all_detected_icons': detected_icons,  # Toutes les icônes détectées
-                'category':category
+                'category':category,
+                # Envoyer le screenshot en base64
+                'screenshot_base64': screenshot_base64
             }
             
             # Appeler directement le serveur AI sur le port 7000

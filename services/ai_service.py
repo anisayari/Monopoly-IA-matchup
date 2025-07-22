@@ -15,11 +15,22 @@ from datetime import datetime
 from src.utils import property_manager
 import random
 import re
+import io
+import base64
+import time
+from PIL import Image
+from pydantic import BaseModel, Field
+
 from dotenv import load_dotenv
 
 # Charger les variables d'environnement depuis .env
 load_dotenv()
 
+class MonopolyHUD(BaseModel):
+    popup_title: str = Field(..., description="Title of the popup if there is one.")
+    popup_text: str = Field(..., description="Text of the popup if there is one.")
+    action_buttons: List[str] = Field(..., description="List of available action buttons.")
+    
 class AIService:
     """Service IA pour prendre des décisions dans Monopoly"""
     
@@ -128,7 +139,75 @@ class AIService:
             # Ignorer les erreurs si le monitor n'est pas lancé
             pass
     
-    def make_decision(self, popup_text: str, options: List[str], game_context: Dict, category: str) -> Dict:
+    def _extract_information_from_screenshot(self, game_context: Dict, screenshot_base64: str) -> Dict:
+        """
+        Extrait les informations de la capture d'écran
+        """
+
+        player1_name = game_context.get('players', {}).get('player1', {}).get('name', 'Unknown')
+        player2_name = game_context.get('players', {}).get('player2', {}).get('name', 'Unknown')
+
+        # Fonction pour crop une image PIL en retirant 15% de chaque côté
+        def crop_image_from_base64(b64_string):
+            img_data = base64.b64decode(b64_string)
+            with Image.open(io.BytesIO(img_data)) as img:
+                width, height = img.size
+                left = int(width * 0.15)
+                top = int(height * 0.15)
+                right = int(width * 0.85)
+                bottom = int(height * 0.85)
+                cropped_img = img.crop((left, top, right, bottom))
+                # Ré-encoder en base64 sans sauvegarder sur disque
+                buffered = io.BytesIO()
+                cropped_img.save(buffered, format="PNG")
+                cropped_b64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
+                return cropped_b64
+
+
+        # Crop l'image directement depuis le base64
+        cropped_base64_image = crop_image_from_base64(screenshot_base64)
+
+        completion = self.openai_client.chat.completions.parse(
+            model="gpt-4.1-mini",
+            messages=[
+                {"role": "system", "content": f"""
+                You are a helpful assistant that can parse the HUD of a Monopoly game.
+                Context:
+                Player1 name: {player1_name}
+                Player2 name: {player2_name}
+                """},
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "What's in this image?"
+                        },
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:image/png;base64,{cropped_base64_image}"
+                            }
+                        }
+                    ],
+                }
+            ],
+            response_format=MonopolyHUD,
+        )
+
+        hud_data = completion.choices[0].message
+
+        # If the model refuses to respond, you will get a refusal message
+        if (hud_data.refusal):
+            print(hud_data.refusal)
+            return None
+        else:
+            print(hud_data.parsed)
+            # Print JSON
+            print(hud_data.parsed.model_dump_json())
+        return hud_data.parsed
+
+    def make_decision(self, popup_text: str, options: List[str], game_context: Dict, category: str, screenshot_base64: str) -> Dict:
         """
         Prend une décision basée sur le contexte
         
@@ -159,12 +238,16 @@ class AIService:
             player_name = game_context.get('players', {}).get(current_player, {}).get('name', current_player)
             model = game_context.get('players', {}).get(current_player, {}).get('ai_model', "gpt-4.1-mini")
             
+            hud_data = None
+            if category in ['chance', 'community_chest', 'in_jail', 'go_to_jail', 'buy', 'pay_bail', 'pay_rent', 'pause']:
+                hud_data = self._extract_information_from_screenshot(game_context, screenshot_base64)
+            
             # Envoyer la pensée d'analyse au monitor de chat
             self._send_to_monitor('thought', {
                 'player': player_name,
                 'type': 'analysis',
                 'content': {
-                    'popup': popup_text,
+                    'popup': hud_data.popup_text if hud_data else popup_text,
                     'options': options,
                     'options_count': len(options),
                     'argent': game_context.get('players', {}).get(current_player, {}).get('money', 0)
@@ -179,18 +262,31 @@ class AIService:
             # Définir le schéma JSON pour la sortie structurée
             
             extended_options = options + ["talk_to_other_players"]
+            
+            last_dice_result_player1 = game_context.get('players', {}).get('player1', {}).get('dice_result', [0, 0])
+            last_dice_result_player2 = game_context.get('players', {}).get('player2', {}).get('dice_result', [0, 0])
+            
+            player1_name = game_context.get('players', {}).get('player1', {}).get('name', 'Unknown')
+            player2_name = game_context.get('players', {}).get('player2', {}).get('name', 'Unknown')
 
+            # Récupérer les messages du chat global (Ne prendre que les 20 derniers messages)
+            chat_messages = '\n'.join(self.global_chat_messages[-20:])
             # Construire le message utilisateur
-            chat_messages = '\n'.join(self.global_chat_messages)
             user_message = f"""
 <game_context>
     Contexte actuel:
     {context_str}
 </game_context>
 
+<last_dice_result>
+    - Dernier résultat des dés du joueur {player1_name}: {last_dice_result_player1[0]} + {last_dice_result_player1[1]} = {sum(last_dice_result_player1)}
+    - Dernier résultat des dés du joueur {player2_name}: {last_dice_result_player2[0]} + {last_dice_result_player2[1]} = {sum(last_dice_result_player2)}
+</last_dice_result>
+
 <popup_data>
-    Texte du popup: "{popup_text}"
-    Options disponibles: {', '.join(extended_options)}
+    - Titre du popup: "{hud_data.popup_title if hud_data else "Aucun titre"}"
+    - Texte du popup: "{hud_data.popup_text if hud_data else popup_text}"
+    - Options disponibles: {', '.join(extended_options)}
 </popup_data>
 
 <chat_global>
@@ -227,6 +323,8 @@ Choisis la meilleure option stratégique."""
             print(f"is_auction_available: {is_auction_available}")
             is_property_management_available = category == 'property'
             print(f"is_property_management_available: {is_property_management_available}")
+            is_next_turn_available = category == 'next_turn'
+            print(f"is_next_turn_available: {is_next_turn_available}")
             extra_body = None
             print(f"extra_body: {extra_body}")
 
@@ -257,15 +355,18 @@ Choisis la meilleure option stratégique."""
             
             talk_to_other_players_message = "A n'importe quel moment tu peux utiliser la decision `talk_to_other_players` pour discuter avec les autres joueurs."
             if is_trade_available:
-                talk_to_other_players_message += " Tu dois aussi utiliser la decision `talk_to_other_players` pour initier un échange de propriétés avec les autres joueurs, qui amenera a une négociation et à l'échange final."
+                talk_to_other_players_message += "\nTu peux utiliser la decision `talk_to_other_players` pour initier un échange de propriétés avec les autres joueurs, qui amenera a une négociation et à l'échange final."
             
             if is_auction_available:
-                talk_to_other_players_message += " Tu dois utiliser la decision `talk_to_other_players` pour initier l'enchère d'une propriété, qui amenera a une négociation et au prix final / enchère gagnante."
+                talk_to_other_players_message += "\nTu DOIS utiliser la decision `talk_to_other_players` pour initier l'enchère d'une propriété, qui amenera a une négociation et au prix final / enchère gagnante."
                 extended_options = ["talk_to_other_players"]
 
             if is_property_management_available:
-                talk_to_other_players_message += " Tu peux aussi utiliser la decision `manage_property` pour acheter, vendre, hypotéquer, dés-hypotéquer des propriétés."
+                talk_to_other_players_message += "\nTu es actuellement sur la fenêtre de gestion de propriétés, tu peux utiliser la decision `manage_property` pour acheter, vendre, hypotéquer, dés-hypotéquer des propriétés à partir de cette fenêtre ou tu peux faire retour à la fenêtre principale en utilisant la decision `back` quand tu as terminé."
                 extended_options.append("manage_property")
+                
+            if is_next_turn_available:
+                talk_to_other_players_message += "\nPour initier un échange de propriétés avec les autres joueurs ou gérer tes propriétés, tu dois choisir l'option 'accounts' qui te permettra de faire cela."
             
             schema = {
                 "type": "object",
