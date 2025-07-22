@@ -6,6 +6,7 @@ from .monopoly import MonopolyGame
 from .listeners import MonopolyListeners
 from src.utils import property_manager
 from src.utils.property_helpers import get_property_house_count, get_current_player_index_from_ram
+from src.core.property import Property
 
 class Contexte:
     """Classe gérant le contexte global du jeu Monopoly"""
@@ -334,11 +335,15 @@ class Contexte:
                                             houses = global_prop.get("houses", 0)
                                             break
                                     
+                                    # Vérifier si la propriété est hypothéquée
+                                    is_mortgaged = Property.is_property_mortgaged(prop_info["name"])
+                                    
                                     player_properties.append({
                                         "id": prop_position,
                                         "name": prop_info["name"],
                                         "group": prop_info.get("color", "unknown"),
-                                        "houses": houses
+                                        "houses": houses,
+                                        "is_mortgaged": is_mortgaged
                                     })
                         except:
                             pass

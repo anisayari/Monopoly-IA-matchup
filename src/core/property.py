@@ -60,6 +60,23 @@ class Property:
         """Calcule le prix pour lever l'hypothèque (mortgage + 10%)"""
         return int(self.mortgage_value * 1.1)
     
+    @property
+    def is_mortgaged(self):
+        """Vérifie si la propriété est hypothéquée en lisant l'adresse mémoire"""
+        if self._property_data and self.name in self._property_data:
+            mortgage_address = self._property_data[self.name].get('adresse_mortgage')
+            if mortgage_address:
+                try:
+                    # Convertir l'adresse hexadécimale en entier
+                    address = int(mortgage_address, 16)
+                    # Lire le byte à cette adresse (0 = non hypothéquée, 1 = hypothéquée)
+                    mortgage_status = MemoryReader.get_byte(address)
+                    return mortgage_status == 1
+                except Exception as e:
+                    print(f"Erreur lors de la lecture du statut d'hypothèque pour {self.name}: {e}")
+                    return False
+        return False
+    
     def get_property_info(self):
         """Retourne toutes les informations calculées de la propriété"""
         return {
@@ -67,6 +84,7 @@ class Property:
             'price': self.price,
             'house_cost': self.house_cost,
             'mortgage': self.mortgage_value,
+            'is_mortgaged': self.is_mortgaged,
             'set_price_3_houses': self.get_set_price(3),
             'house_sell_price': self.get_house_sell_price(1),
             'set_sell_price_3_houses': self.get_set_sell_price(3),
@@ -111,3 +129,24 @@ class Property:
         except Exception as e:
             print(f"Erreur lors de la lecture du nombre de maisons: {e}")
             return None
+    
+    @staticmethod
+    def is_property_mortgaged(property_name):
+        """Vérifie si une propriété est hypothéquée par son nom"""
+        # Charger les données des propriétés
+        if Property._property_data is None:
+            Property._load_property_data()
+        
+        if Property._property_data and property_name in Property._property_data:
+            mortgage_address = Property._property_data[property_name].get('adresse_mortgage')
+            if mortgage_address:
+                try:
+                    # Convertir l'adresse hexadécimale en entier
+                    address = int(mortgage_address, 16)
+                    # Lire le byte à cette adresse (0 = non hypothéquée, 1 = hypothéquée)
+                    mortgage_status = MemoryReader.get_byte(address)
+                    return mortgage_status == 1
+                except Exception as e:
+                    print(f"Erreur lors de la lecture du statut d'hypothèque pour {property_name}: {e}")
+                    return False
+        return False

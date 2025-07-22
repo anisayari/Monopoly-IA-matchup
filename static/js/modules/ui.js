@@ -786,6 +786,101 @@ const ui = {
                     </div>
                 `).join('');
         }
+        
+        // Mise à jour du contexte des propriétés
+        this.updatePropertiesContext(context);
+    },
+    
+    updatePropertiesContext(context) {
+        const propertiesContextDiv = document.getElementById('properties-context');
+        if (!propertiesContextDiv || !context.players) return;
+        
+        let contextHTML = '';
+        
+        // Parcourir tous les joueurs
+        Object.entries(context.players).forEach(([playerId, playerData]) => {
+            const properties = playerData.properties || [];
+            if (properties.length === 0) return;
+            
+            contextHTML += `<div class="mb-4">`;
+            contextHTML += `<div class="text-yellow-400 font-bold">${playerData.name} (${properties.length} propriétés)</div>`;
+            
+            // Grouper les propriétés par groupe/couleur
+            const groupedProperties = {};
+            let mortgagedCount = 0;
+            
+            properties.forEach(prop => {
+                const group = prop.group || 'unknown';
+                if (!groupedProperties[group]) {
+                    groupedProperties[group] = [];
+                }
+                groupedProperties[group].push(prop);
+                if (prop.is_mortgaged) mortgagedCount++;
+            });
+            
+            // Afficher les propriétés hypothéquées en premier s'il y en a
+            if (mortgagedCount > 0) {
+                contextHTML += `<div class="text-red-400 mt-1">⚠️ ${mortgagedCount} propriétés hypothéquées</div>`;
+            }
+            
+            // Afficher par groupe
+            Object.entries(groupedProperties).forEach(([group, props]) => {
+                const groupColors = {
+                    'brown': 'text-yellow-600',
+                    'light blue': 'text-blue-400',
+                    'pink': 'text-pink-400',
+                    'orange': 'text-orange-400',
+                    'red': 'text-red-500',
+                    'yellow': 'text-yellow-400',
+                    'green': 'text-green-500',
+                    'dark blue': 'text-blue-700',
+                    'station': 'text-gray-400',
+                    'utility': 'text-purple-400'
+                };
+                
+                const colorClass = groupColors[group.toLowerCase()] || 'text-zinc-400';
+                contextHTML += `<div class="mt-2">`;
+                contextHTML += `<div class="${colorClass} font-semibold">${group.toUpperCase()}</div>`;
+                
+                props.forEach(prop => {
+                    let status = '';
+                    if (prop.is_mortgaged) {
+                        status = '<span class="text-red-400">HYPO</span>';
+                    } else if (prop.houses === 5) {
+                        status = '<span class="text-purple-400">HÔTEL</span>';
+                    } else if (prop.houses > 0) {
+                        status = `<span class="text-green-400">${prop.houses}🏠</span>`;
+                    }
+                    
+                    contextHTML += `<div class="ml-2 text-zinc-300">• ${prop.name} ${status}</div>`;
+                });
+                
+                contextHTML += `</div>`;
+            });
+            
+            contextHTML += `</div>`;
+        });
+        
+        // Afficher les propriétés disponibles sur le plateau
+        if (context.global && context.global.properties) {
+            const availableProps = context.global.properties.filter(p => !p.owner);
+            if (availableProps.length > 0) {
+                contextHTML += `<div class="mt-4 pt-4 border-t border-zinc-700">`;
+                contextHTML += `<div class="text-green-400 font-bold mb-2">Propriétés disponibles (${availableProps.length})</div>`;
+                contextHTML += `<div class="text-xs text-zinc-400">`;
+                availableProps.forEach(prop => {
+                    contextHTML += `${prop.name}, `;
+                });
+                contextHTML = contextHTML.slice(0, -2); // Enlever la dernière virgule
+                contextHTML += `</div></div>`;
+            }
+        }
+        
+        if (contextHTML === '') {
+            contextHTML = '<div class="text-zinc-400">Aucune propriété possédée</div>';
+        }
+        
+        propertiesContextDiv.innerHTML = contextHTML;
     },
 
     updateTerminal(output) {

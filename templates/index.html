@@ -162,23 +162,34 @@
         <!-- Panneau latéral (droite) -->
         <div class="w-96 flex flex-col space-y-4">
             <!-- Panneau des joueurs -->
-            <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-4 flex-grow">
+            <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-4" style="height: 30%;">
                 <h2 class="text-lg font-medium mb-4 flex items-center">
                     <i class="fas fa-users text-white mr-2"></i>
                     Joueurs
                 </h2>
-                <div id="players-list" class="space-y-3 overflow-y-auto max-h-[calc(50%-2rem)]"></div>
+                <div id="players-list" class="space-y-3 overflow-y-auto" style="max-height: calc(100% - 3rem);"></div>
+            </div>
+
+            <!-- Panneau des propriétés -->
+            <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-4" style="height: 40%;">
+                <h2 class="text-lg font-medium mb-4 flex items-center">
+                    <i class="fas fa-home text-white mr-2"></i>
+                    Contexte des Propriétés
+                </h2>
+                <div id="properties-context" class="text-xs font-mono overflow-y-auto" style="max-height: calc(100% - 3rem);">
+                    <div class="text-zinc-400">Chargement du contexte...</div>
+                </div>
             </div>
 
             <!-- Panneau des événements -->
-            <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-4 flex-grow">
+            <div class="bg-zinc-900 rounded-lg border border-zinc-800 p-4" style="height: 30%;">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-lg font-medium flex items-center">
                         <i class="fas fa-history text-white mr-2"></i>
                         Événements
                     </h2>
                 </div>
-                <div id="events-list" class="space-y-2 overflow-y-auto max-h-[calc(50%-2rem)]"></div>
+                <div id="events-list" class="space-y-2 overflow-y-auto" style="max-height: calc(100% - 3rem);"></div>
             </div>
         </div>
     </main>

@@ -357,7 +357,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             self.global_chat_messages.append(f"{player_name} : {result['chat_message']}")
             
             # result['decision'] = "talk_to_other_players" #FORCE TO TEST
-            result['decision'] = "manage_property"
+            #result['decision'] = "manage_property"
             ## Gestion de la conversation avec les autres joueurs
             if result['decision'] == "talk_to_other_players":
                 self.logger.info("💬 Début d'une conversation avec les autres joueurs")
@@ -521,7 +521,8 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                                 'name': prop_name,
                                 'value': details.get('value', 0),
                                 'rent': details.get('rent', {}).get('base', 0) if details.get('type') == 'property' else 'special',
-                                'houses': prop.get('houses', 0)
+                                'houses': prop.get('houses', 0),
+                                'is_mortgaged': prop.get('is_mortgaged', False)
                             }
                             props_by_group[group].append(prop_info)
                     
@@ -531,7 +532,9 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                         prop_descriptions = []
                         for p in group_props:
                             desc = f"{p['name']} (${p['value']}"
-                            if p['houses'] > 0:
+                            if p['is_mortgaged']:
+                                desc += ", HYPOTHÉQUÉE"
+                            elif p['houses'] > 0:
                                 if p['houses'] == 5:
                                     desc += ", hôtel"
                                 else:
@@ -618,11 +621,14 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 
                 # Organiser par groupes avec toutes les infos
                 props_by_group = {}
+                mortgaged_props = []
                 for prop in current_props:
+                    if prop.get('is_mortgaged', False):
+                        mortgaged_props.append(prop['name'])
                     prop_name = prop.get('name', 'Unknown')
                     group = prop.get('group', 'unknown')
                     house_count = prop.get('houses', 0)
-                    is_mortgaged = prop.get('mortgaged', False)
+                    is_mortgaged = prop.get('is_mortgaged', False)
                     
                     details = property_manager.get_property_details(prop_name)
                     if details and details.get('type') == 'property':
@@ -635,6 +641,16 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                             'mortgaged': is_mortgaged,
                             'details': details
                         })
+                
+                # Afficher les propriétés hypothéquées en premier s'il y en a
+                if mortgaged_props:
+                    context_str += f"⚠️ PROPRIÉTÉS HYPOTHÉQUÉES ({len(mortgaged_props)}):\n"
+                    for prop_name in mortgaged_props:
+                        details = property_manager.get_property_details(prop_name)
+                        if details:
+                            unmortgage_price = int(details.get('mortgage', 0) * 1.1)
+                            context_str += f"   - {prop_name}: coût pour lever l'hypothèque = ${unmortgage_price}\n"
+                    context_str += "\n"
                 
                 # Afficher par groupe avec tous les calculs
                 for group, group_props in props_by_group.items():
