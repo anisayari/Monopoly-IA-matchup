@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T19:42:04.467209",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Le loyer doit être payé pour éviter la faillite ou des pénalités. Je conserve ainsi mes options stratégiques pour le prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 18,
+    "money": {
+      "GPT4.1": 1589,
+      "Gemini-2.5-Flash": 557
+    }
+  }
+}

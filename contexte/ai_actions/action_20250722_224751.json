@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T20:47:49.526590",
+  "trigger": "In Jail",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Roll Dice ",
+    "Pay Bail "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "Rester en prison limite mon exposition aux loyers adverses tout en gardant la possibilité de construire ; je maximise ainsi ma sécurité et mes revenus potentiels.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 23,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T21:48:40.511109",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "La discussion est close. Avec si peu d'argent, je ne peux pas faire grand-chose d'autre que de passer le tour en espérant des loyers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

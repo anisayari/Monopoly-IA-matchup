@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T20:11:33.325495",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Avec 1000$ et plusieurs monopoles, investir dans les maisons est la meilleure stratégie pour générer des revenus et dominer le plateau.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 38,
+    "money": {
+      "GPT4.1": 1542,
+      "Gemini-2.5-Flash": 1000
+    }
+  }
+}

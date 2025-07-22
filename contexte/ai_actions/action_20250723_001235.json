@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:12:33.124529",
+  "trigger": "Force",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Add Cash ",
+    "Request Cash "
+  ],
+  "decision": "Add Cash ",
+  "reason": "La proposition d'échange pour Regent Street contre 400$ est complète. Je dois l'envoyer pour que GPT4.1 la valide.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

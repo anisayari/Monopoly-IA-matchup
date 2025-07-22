@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T20:44:03.685608",
+  "trigger": "Force",
+  "keywords": [
+    "a Property"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "Je n'ai pas d'autres options significatives pour le moment. Mon faible solde me contraint à attendre de générer du cash avec mes monopoles développés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT4.1": 1866,
+      "Gemini-2.5-Flash": 66
+    }
+  }
+}

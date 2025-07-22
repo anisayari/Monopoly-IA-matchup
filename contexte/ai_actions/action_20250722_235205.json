@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T21:52:03.760801",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "La conversation préalable a préparé un échange pour Regent Street. Je dois initier cette discussion pour obtenir des liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

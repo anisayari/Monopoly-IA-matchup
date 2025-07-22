@@ -357,7 +357,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             self.global_chat_messages.append(f"{player_name} : {result['chat_message']}")
             
             # result['decision'] = "talk_to_other_players" #FORCE TO TEST
-            #result['decision'] = "manage_property"
+            # result['decision'] = "manage_property"
             ## Gestion de la conversation avec les autres joueurs
             if result['decision'] == "talk_to_other_players":
                 self.logger.info("💬 Début d'une conversation avec les autres joueurs")
@@ -945,13 +945,14 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         return json_result
 
         
-    def _get_property_management_decision_json(self, current_player, game_context, player_message):
+    def _get_property_management_decision_json(self, current_player, game_context, context_str, player_message):
         """
         Détermine la décision de gestion de propriétés
         """
         # Récupérer les propriétés du joueur actuel
         players = game_context.get('players', {})
         current_player_data = players.get(current_player, {})
+        player_name = current_player_data.get('name', current_player)
         player_properties = current_player_data.get('properties', [])
         
         # Extraire les noms des propriétés
@@ -971,6 +972,21 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         system_prompt = f"""
         Analyse le message du joueur et détermine les actions à effectuer sur les propriétés du joueur.
         Tu dois retourner un JSON valide avec le schema suivant, aucun texte autre que le JSON.
+        
+        Le joueur qui effectue la gestion de propriétés est le joueur: {current_player} ({player_name})
+        
+        
+        <game_context>
+            {context_str}
+        </game_context>
+        
+        
+        Règles importantes:
+        
+        - Les maisons/hôtels sont construits uniformément sur une propriété, ton JSON de décision doit respecter l'ordre d'achat / vente des maisons/hôtels. Tu dois commencer par les propriétés qui ont le moins de maisons/hôtels pour les achats et les propriétés qui ont le plus de maisons/hôtels pour les ventes.
+        - Pour hypotéquer une propriété qui a des maisons/hôtels, tu dois d'abord vendre les maisons/hôtels puis après ça faire l'hypothèque.
+        
+        L'ordre des "decisions" est important.
         """
         
         property_management_schema = {
@@ -1085,7 +1101,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         # data_json = json.loads(response.choices[0].message.content)
         ai_message = response.choices[0].message.content
         self.logger.info(f"💬 Message de l'IA pour property management: {ai_message}")
-        data_json = self._get_property_management_decision_json(current_player, game_context, ai_message)
+        data_json = self._get_property_management_decision_json(current_player, game_context, context_str, ai_message)
         self.logger.info(f"📊 Résultat property management JSON: {data_json}")
         
         new_result = result.copy()

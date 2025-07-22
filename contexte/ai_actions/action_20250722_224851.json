@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T20:48:49.095702",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois accéder à la gestion pour construire des maisons immédiatement sur orange et vert, profitant d'un adversaire sans cash pour verrouiller le contrôle du jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 25,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

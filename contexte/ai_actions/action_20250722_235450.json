@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T21:54:48.532903",
+  "trigger": "a Property",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Add Cash ",
+    "Request Cash "
+  ],
+  "decision": "Request Cash ",
+  "reason": "J'ai déjà sélectionné la propriété et négocié le prix. Je dois maintenant formellement demander le cash à mon adversaire pour finaliser l'échange.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

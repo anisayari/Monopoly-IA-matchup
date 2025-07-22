@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T19:34:08.661072",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Whitout saving"
+  ],
+  "options": [
+    "Continue without saving/loading "
+  ],
+  "decision": "Continue without saving/loading ",
+  "reason": "Il n’y a pas de négociation ou de mouvement à faire actuellement. Mon focus est sur la gestion de mes propriétés sur mon tour, aucune discussion nécessaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 157
+    }
+  }
+}

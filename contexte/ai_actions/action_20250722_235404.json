@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T21:54:02.878030",
+  "trigger": "a Property",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Add Cash ",
+    "Request Cash "
+  ],
+  "decision": "Request Cash ",
+  "reason": "J'ai besoin de liquidités pour éviter la faillite. La demande de $300 pour Regent Street est l'étape suivante logique après la négociation.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

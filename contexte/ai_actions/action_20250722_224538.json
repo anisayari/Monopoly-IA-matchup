@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T20:45:36.751883",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois continuer pour accéder à la gestion de mes propriétés et lancer la construction sur mes monopoles verts/oranges quand l’option s’ouvre. Priorité à l’investissement rapide.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 22,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

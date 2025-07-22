@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:05:19.490606",
+  "trigger": "a Property",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Request Cash ",
+    "Add Cash "
+  ],
+  "decision": "Request Cash ",
+  "reason": "La proposition d'échange de Regent Street contre 900$ est finalisée. Je dois l'envoyer pour la valider et obtenir les liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:33:48.991268",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai hypothéqué une propriété pour avoir des fonds. Je n'ai pas les moyens de construire d'autres maisons rentables pour l'instant. Il est temps de passer le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 157
+    }
+  }
+}

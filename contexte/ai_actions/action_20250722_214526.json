@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:45:24.094555",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Dés-hypothéquer Piccadilly est la meilleure option pour maximiser mon monopole jaune et générer des revenus importants.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 23,
+    "money": {
+      "GPT4.1": 1589,
+      "Gemini-2.5-Flash": 557
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:44:08.232864",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai vérifié mes comptes, aucune transaction immobilière directe n'est possible ici. Je passe mon tour pour garder de la flexibilité et attendre une meilleure opportunité d'investissement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 18,
+    "money": {
+      "GPT4.1": 1589,
+      "Gemini-2.5-Flash": 557
+    }
+  }
+}

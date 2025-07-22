@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T20:50:38.856014",
+  "trigger": "Force",
+  "keywords": [
+    "a Property 2"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Ma trésorerie est trop basse. Le trade de Regent Street est crucial pour obtenir des liquidités et éviter la faillite, comme convenu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

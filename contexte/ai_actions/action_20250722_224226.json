@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T20:42:23.919660",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois renforcer ma position sur le groupe rose pour maximiser mes revenus et suivre ma stratégie annoncée en conversation.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT4.1": 1866,
+      "Gemini-2.5-Flash": 26
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T21:15:27.520063",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Mon argent est très faible. Je dois continuer le jeu et espérer encaisser des loyers de mes monopoles pour éviter la faillite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

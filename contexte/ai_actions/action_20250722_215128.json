@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:51:25.932501",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "La liquidité de l'adversaire est presque nulle, et aucun placement immobilier immédiat n'est préférable. Passer le tour maximise le risque pour l'adversaire au prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT4.1": 1539,
+      "Gemini-2.5-Flash": 3
+    }
+  }
+}

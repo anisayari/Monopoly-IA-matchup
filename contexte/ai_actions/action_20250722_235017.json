@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T21:50:15.331125",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "La fenêtre actuelle ne me permet pas de lancer le trade directement. Je dois l'annuler et attendre la prochaine opportunité pour agir.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

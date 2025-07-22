@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T20:39:02.135394",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Retour pour accéder à la gestion des propriétés et démarrer la construction de maisons, étape clé pour optimiser mes revenus face à un adversaire à court de cash.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1866,
+      "Gemini-2.5-Flash": 26
+    }
+  }
+}

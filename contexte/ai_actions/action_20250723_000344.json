@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:03:42.194453",
+  "trigger": "a Property",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Add Cash ",
+    "Request Cash "
+  ],
+  "decision": "make_trade",
+  "reason": "La proposition d'échange est envoyée. Je dois maintenant attendre la décision de l'adversaire et ne peux plus agir sur le trade.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

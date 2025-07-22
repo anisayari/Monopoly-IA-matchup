@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T19:52:17.507877",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai acquis une nouvelle propriété, même avec peu de fonds. Je dois continuer le jeu et surveiller mes liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 36,
+    "money": {
+      "GPT4.1": 1539,
+      "Gemini-2.5-Flash": 3
+    }
+  }
+}

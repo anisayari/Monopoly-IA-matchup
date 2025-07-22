@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T19:33:06.433398",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai suffisamment de liquidités pour le moment après l'hypothèque. Je retourne au jeu pour planifier mon prochain mouvement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 157
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:42:56.541374",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je viens d'analyser mes propriétés. Il vaut mieux retourner au menu principal pour accéder à la construction de maisons sur mes monopoles.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 18,
+    "money": {
+      "GPT4.1": 1589,
+      "Gemini-2.5-Flash": 557
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:49:29.073804",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec seulement 3$, je ne peux pas payer ma sortie de prison. Je dois vérifier mes propriétés pour voir si je peux hypothéquer pour des fonds d'urgence.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 25,
+    "money": {
+      "GPT4.1": 1589,
+      "Gemini-2.5-Flash": 3
+    }
+  }
+}

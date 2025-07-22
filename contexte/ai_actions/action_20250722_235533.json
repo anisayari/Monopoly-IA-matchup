@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T21:55:31.124932",
+  "trigger": "Force",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Add Cash ",
+    "Request Cash "
+  ],
+  "decision": "Add Cash ",
+  "reason": "La transaction est prête. Je dois maintenant envoyer la proposition finale à GPT4.1 en confirmant le montant de 300$.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

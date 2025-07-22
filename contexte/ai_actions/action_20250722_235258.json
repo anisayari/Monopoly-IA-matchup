@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-22T21:52:56.303968",
+  "trigger": "a Property",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Add Cash ",
+    "Propose ",
+    "Cancel "
+  ],
+  "decision": "Propose ",
+  "reason": "J'ai négocié et accepté l'offre de $300 pour Regent Street. Je dois maintenant la soumettre formellement pour obtenir les liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

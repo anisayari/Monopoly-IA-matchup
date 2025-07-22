@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:46:27.008620",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai les fonds pour construire sur mon monopole jaune ou rouge pour augmenter mes revenus, ce qui est ma priorité stratégique.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 23,
+    "money": {
+      "GPT4.1": 1589,
+      "Gemini-2.5-Flash": 403
+    }
+  }
+}

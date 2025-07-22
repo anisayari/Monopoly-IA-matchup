@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T19:52:48.114647",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Mes fonds sont très faibles. Tenter un échange est la meilleure option pour acquérir un monopole ou des liquidités sans hypothéquer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 36,
+    "money": {
+      "GPT4.1": 1539,
+      "Gemini-2.5-Flash": 3
+    }
+  }
+}

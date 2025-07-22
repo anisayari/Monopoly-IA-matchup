@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T20:45:56.620453",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Vérifier les comptes détaille mon cash, le coût exact de construction, et permet un calcul optimal de placement de maisons sur orange/verts selon la position adverse.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 22,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

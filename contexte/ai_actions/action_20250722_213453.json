@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:34:51.232805",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "L'enchère de Mayfair impacte grandement la partie. Initier la négociation peut permettre d'obtenir un meilleur prix ou d'affaiblir l'adversaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 157
+    }
+  }
+}

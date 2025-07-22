@@ -9,6 +9,16 @@
       "icon" : ["ok"],
       "category" : "pause"
     },
+      "Are you sure you want to continue": {
+      "text": ["Whitout saving"],
+      "icon": ["yes", "no"],
+      "category": "continue_without_saving"
+    },
+    "whitout saving": {
+      "text": ["Whitout saving"],
+      "icon": ["continue without saving/loading"],
+      "category": "continue_without_saving"
+    },
     "would you like to": {
       "text": ["would you like to"],
       "icon": ["accounts", "next turn", "roll again"],
@@ -40,6 +50,16 @@
       "text": ["you want to buy"],
       "icon": ["auction", "buy"],
       "category": "buy"
+    },
+    "a Property 2": {
+      "text": ["a Property you own"],
+      "icon": ["bankrupt", "trade"],
+      "category": "property"
+    },
+    "a Property": {
+      "text": ["a Property you own"],
+      "icon": ["pay", "trade"],
+      "category": "property"
     },
     "a Property you own": {
       "text": ["a Property you own"],
@@ -111,9 +131,14 @@
       "icon": ["Pay Bail"],
       "category": "pay_bail"
     },
+    "Property Deeds 2": {
+      "text": ["Property Deeds","property deeds"],
+      "icon": ["pay", "trade"],
+      "category": "property"
+    },
     "Property Deeds": {
       "text": ["Property Deeds","property deeds"],
-      "icon": ["back","trade","done"],
+      "icon": ["back", "trade","done"],
       "category": "property"
     },
     "New turn Roll the dice": {
@@ -135,12 +160,6 @@
       "text": ["Press to continue"],
       "icon": ["press to continue"],
       "category": "press_to_continue"
-    },
-    "Whitout saving": {
-      "text": ["Whitout saving"],
-      "icon": ["continue without saving/loading"],
-      "category": "continue_without_saving"
-    }
-
+  }
   }
 }

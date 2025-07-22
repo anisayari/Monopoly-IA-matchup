@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T21:38:42.623457",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Avec seulement $34, je n'ai aucune autre option viable. Je dois continuer le jeu et compter sur mes monopoles pour encaisser des loyers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

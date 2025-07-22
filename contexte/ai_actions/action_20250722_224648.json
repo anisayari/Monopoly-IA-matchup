@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T20:46:45.848637",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai déjà tous les détails pour construire. L'interface ne propose pas la construction ici, je dois donc passer mon tour pour avancer le jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 22,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

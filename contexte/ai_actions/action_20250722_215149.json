@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-22T19:51:47.664846",
+  "trigger": "In Jail",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Roll Dice ",
+    "Pay Bail ",
+    "Use Card "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "Avec seulement 3$, je ne peux ni payer la caution, ni utiliser de carte. Tenter les dés est ma seule option.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 28,
+    "money": {
+      "GPT4.1": 1539,
+      "Gemini-2.5-Flash": 3
+    }
+  }
+}

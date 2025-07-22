@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T19:49:08.005425",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Mes fonds sont extrêmement bas ($3) et je suis en prison. La seule action possible est de confirmer le message et attendre le prochain tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 25,
+    "money": {
+      "GPT4.1": 1589,
+      "Gemini-2.5-Flash": 3
+    }
+  }
+}

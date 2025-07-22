@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T20:49:52.553527",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je suis obligé de payer ce loyer. Mon argent est très bas, et je dois absolument générer des revenus pour continuer à jouer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

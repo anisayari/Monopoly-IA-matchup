@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:41:17.942032",
+  "trigger": "Are you sure you want to continue",
+  "keywords": [
+    "Are you sure you want to continue"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "Yes ",
+  "reason": "La situation ne nécessite ni sauvegarde spéciale ni discussion. La priorité est d'avancer le jeu pour maximiser l'effet de mes futurs investissements en maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 157
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:00:15.082987",
+  "trigger": "a Property",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Request Cash ",
+    "Add Cash "
+  ],
+  "decision": "Add Cash ",
+  "reason": "La propriété et le montant sont définis pour l'échange. Je dois finaliser l'ajout du cash avant de pouvoir l'envoyer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

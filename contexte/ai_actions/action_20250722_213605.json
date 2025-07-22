@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:36:03.065537",
+  "trigger": "a Property you own",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "J’ai sécurisé Mayfair sans concurrence. Je peux annoncer l’acquisition pour clore l’enchère et officialiser la transaction.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 157
+    }
+  }
+}

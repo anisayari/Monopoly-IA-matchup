@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T20:16:49.637279",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Tenter un échange pour la dernière propriété rose avec GPT4.1. C'est l'occasion de compléter un nouveau monopole.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 38,
+    "money": {
+      "GPT4.1": 1542,
+      "Gemini-2.5-Flash": 1000
+    }
+  }
+}

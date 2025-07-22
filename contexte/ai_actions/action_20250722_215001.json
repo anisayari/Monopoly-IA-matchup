@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:49:59.531923",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Avec seulement 3$, je ne peux ni échanger, ni dés-hypothéquer. Je dois retourner au plateau et attendre mon prochain tour en prison.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 25,
+    "money": {
+      "GPT4.1": 1589,
+      "Gemini-2.5-Flash": 3
+    }
+  }
+}

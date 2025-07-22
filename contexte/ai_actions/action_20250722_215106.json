@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T19:51:04.794967",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "La caisse de communauté doit être jouée pour poursuivre le jeu. Il n’y a aucun avantage à retarder cette action maintenant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT4.1": 1589,
+      "Gemini-2.5-Flash": 3
+    }
+  }
+}

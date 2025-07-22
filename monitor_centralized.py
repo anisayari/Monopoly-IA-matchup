@@ -263,6 +263,8 @@ class CentralizedMonitor:
             #icon_options = [opt for opt in analysis.get('options', [])]
             detected_icons = [opt.get('name', '').strip().lower() for opt in icon_options]
             
+            print('TRIGGER',trigger)
+
             trigger_found = trigger in monitor_keywords
             selected_keywords = None
             
@@ -306,8 +308,17 @@ class CentralizedMonitor:
                         # Compter combien d'icônes sont trouvées
                         found_icons = []
                         for config_icon in icons_in_config:
-                            if config_icon in detected_icons:
-                                found_icons.append(config_icon)
+                            # Vérifier la correspondance exacte ou comme mot complet
+                            for detected_icon in detected_icons:
+                                # Correspondance exacte
+                                if config_icon == detected_icon:
+                                    found_icons.append(config_icon)
+                                    break
+                                # Ou vérifier comme mot complet (avec espaces ou ponctuation autour)
+                                import re
+                                if re.search(r'\b' + re.escape(config_icon) + r'\b', detected_icon):
+                                    found_icons.append(config_icon)
+                                    break
                         
                         found_count = len(found_icons)
                         total_count = len(icons_in_config)
@@ -328,19 +339,30 @@ class CentralizedMonitor:
                     texts_in_config = [text.strip().lower() for text in data.get('text', []) if isinstance(text, str) and text.strip()]
                     
                     if texts_in_config:
-                        # Compter combien de textes correspondent (avec recherche de sous-chaînes)
+                        # Compter combien de textes correspondent (avec recherche de mots complets)
                         found_texts = []
+                        import re
                         for config_text in texts_in_config:
-                            # Recherche bidirectionnelle de sous-chaînes dans les textes détectés
+                            # Recherche de mots complets dans les textes détectés
                             for detected_text in detected_texts:
-                                if config_text in detected_text or detected_text in config_text:
+                                # Correspondance exacte
+                                if config_text == detected_text:
+                                    found_texts.append((config_text, detected_text))
+                                    break
+                                # Ou vérifier comme mot(s) complet(s) avec word boundaries
+                                if re.search(r'\b' + re.escape(config_text) + r'\b', detected_text):
                                     found_texts.append((config_text, detected_text))
                                     break
                             
                             # AUSSI chercher dans les icônes détectées (car OmniParser peut mal classifier)
                             if not any(ct == config_text for ct, _ in found_texts):
                                 for detected_icon in detected_icons:
-                                    if config_text in detected_icon or detected_icon in config_text:
+                                    # Correspondance exacte
+                                    if config_text == detected_icon:
+                                        found_texts.append((config_text, detected_icon + " [from icon]"))
+                                        break
+                                    # Ou vérifier comme mot(s) complet(s)
+                                    if re.search(r'\b' + re.escape(config_text) + r'\b', detected_icon):
                                         found_texts.append((config_text, detected_icon + " [from icon]"))
                                         break
                         
@@ -660,7 +682,7 @@ class CentralizedMonitor:
                                 print(f"   - Centre transformé: ({transformed_cx}, {transformed_cy})")
                                 
                                 # Effectuer le clic
-                                self.perform_click(abs_x, abs_y, f"Clic sur '{decision}'")
+                                self.perform_click(abs_x, abs_y, f"Clic sur '{decision}'", y_offset=6)
                             else:
                                 print(f"❌ Erreur de transformation pour '{decision}'")
                             
@@ -977,6 +999,7 @@ class CentralizedMonitor:
                             if done_abs_x is not None:
                                 print(f"   4️⃣ Clic sur Done pour valider")
                                 self.perform_click(done_abs_x, done_abs_y, "Clic sur Done",y_offset=6)
+                                pyautogui.moveTo(50, 50, duration=0.3)
                                 time.sleep(1)
                         
                         print(f"   ✅ Propriété {prop_name} traitée")
@@ -1213,7 +1236,7 @@ class CentralizedMonitor:
                 print(f"Money Player {player_num}: {money_requested[player_key]}")
                 if int(money_requested[player_key]) > 0: 
                     abs_x, abs_y = get_coord_cash_button(player_key)
-                    self.perform_click(abs_x, abs_y, f"Clic sur Cash")
+                    self.perform_click(abs_x, abs_y, f"Clic sur Cash",y_offset=6)
                     time.sleep(2)
                     list_number = list(str(money_requested[player_key]))
                     click_on_calculette(list_number)
@@ -1225,9 +1248,10 @@ class CentralizedMonitor:
                     rel_y * win.height, 
                     win
                 )
-            self.perform_click(abs_x,abs_y, "Click sur propose")
-            time.sleep(2)
-            self.perform_click(abs_x,abs_y, "Click sur propose")
+            self.perform_click(abs_x,abs_y, "Click sur propose", y_offset=6)
+            time.sleep(1)
+            self.perform_click(abs_x,abs_y, "Click sur propose",y_offset=6)
+            pyautogui.moveTo(50, 50, duration=0.3)
                     
         except Exception as e:
             print(f"❌ Erreur lors de la gestion du trade: {e}")

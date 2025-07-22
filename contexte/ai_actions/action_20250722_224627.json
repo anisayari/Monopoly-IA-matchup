@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T20:46:25.482875",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois revenir à la gestion pour placer des maisons sur orange/verts. C'est le moment de profiter de mon cash pendant que l'adversaire ne peut pas investir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 22,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

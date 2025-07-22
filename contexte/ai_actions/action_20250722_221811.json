@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T20:18:09.851502",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Avec le nouveau monopole rose, je dois construire des maisons pour maximiser mes revenus et dominer le plateau.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 39,
+    "money": {
+      "GPT4.1": 1842,
+      "Gemini-2.5-Flash": 700
+    }
+  }
+}

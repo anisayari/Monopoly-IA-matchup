@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T20:14:14.510260",
+  "trigger": "Force",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "J'ai déjà maximisé mes propriétés et n'ai pas de nouvelles opportunités d'échange immédiates. Il est temps de passer au tour suivant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 38,
+    "money": {
+      "GPT4.1": 1542,
+      "Gemini-2.5-Flash": 1000
+    }
+  }
+}

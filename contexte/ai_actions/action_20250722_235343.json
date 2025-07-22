@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-22T21:53:41.425991",
+  "trigger": "a Property",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Add Cash ",
+    "Propose ",
+    "Cancel "
+  ],
+  "decision": "Add Cash ",
+  "reason": "La vente de Regent Street pour $300 a été négociée. Je dois ajouter cet argent à la proposition d'échange pour la finaliser.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

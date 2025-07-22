@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T20:37:07.436474",
+  "trigger": "Force",
+  "keywords": [
+    "a Property"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "Avec seulement $50, je ne peux pas construire. Je dois économiser et me préparer à payer des loyers si je tombe sur une propriété adverse.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1842,
+      "Gemini-2.5-Flash": 50
+    }
+  }
+}

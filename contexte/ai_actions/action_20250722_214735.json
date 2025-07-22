@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T19:47:33.313913",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai utilisé mes fonds pour dés-hypothéquer et construire sur mes monopoles. Je n'ai plus d'argent pour d'autres actions, je retourne au jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 23,
+    "money": {
+      "GPT4.1": 1589,
+      "Gemini-2.5-Flash": 3
+    }
+  }
+}

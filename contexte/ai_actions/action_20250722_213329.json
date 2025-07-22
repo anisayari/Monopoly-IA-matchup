@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:33:27.907595",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai généré des fonds en hypothéquant. Il n'y a pas d'action immédiate de gestion ou de commerce nécessaire, donc je retourne au plateau.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 157
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T20:37:28.382568",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec $26, je ne peux pas construire. Je dois passer mon tour et espérer que l'adversaire tombe sur mes propriétés pour augmenter mes liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1866,
+      "Gemini-2.5-Flash": 26
+    }
+  }
+}

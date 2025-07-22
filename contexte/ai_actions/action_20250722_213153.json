@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:31:50.973766",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec seulement 17$, je dois vérifier mes actifs et mes options financières (hypothéquer/vendre des maisons) pour éviter la banqueroute. Mon adversaire a beaucoup d'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 17
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T20:39:23.221142",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai vu mes comptes et la gestion. Prochainement, je dois investir, mais l'interface ne propose que des options d'information ou de dialogue. Passer le tour est optimal en attendant l'ouverture construction.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1866,
+      "Gemini-2.5-Flash": 26
+    }
+  }
+}

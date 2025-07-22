@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:10:56.412683",
+  "trigger": "Force",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Request Cash ",
+    "Add Cash "
+  ],
+  "decision": "make_trade",
+  "reason": "La proposition d'échange est soumise. Je dois attendre la décision de l'adversaire et ne peux plus agir sur le trade en cours.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T20:44:25.096939",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec un faible solde, je ne peux ni construire ni lever d'hypothèques. Je dois passer mon tour et espérer de futurs loyers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

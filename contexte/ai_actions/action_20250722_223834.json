@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T20:38:32.373903",
+  "trigger": "a Property",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Vérifier mes comptes me permet de planifier précisément la construction de maisons et d'optimiser l'utilisation de mes liquidités avant que l'autre joueur ne collecte des loyers.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1866,
+      "Gemini-2.5-Flash": 26
+    }
+  }
+}

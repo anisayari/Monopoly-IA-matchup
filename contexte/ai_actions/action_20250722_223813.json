@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T20:38:11.606067",
+  "trigger": "a Property",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Valider la gestion me permet d'avancer vers la phase de construction de maisons sur mes propres monopoles, crucial pour augmenter mes revenus rapidement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1866,
+      "Gemini-2.5-Flash": 26
+    }
+  }
+}

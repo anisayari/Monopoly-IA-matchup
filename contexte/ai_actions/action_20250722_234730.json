@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T21:47:28.870903",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Avec seulement $34, je ne peux pas me permettre d'échanger et ma meilleure option est d'attendre des loyers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

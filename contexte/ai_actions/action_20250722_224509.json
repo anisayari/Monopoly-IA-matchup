@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T20:45:07.504975",
+  "trigger": "a Property",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois accéder à la gestion des propriétés pour investir mes liquidités dans la construction sur mes monopoles verts ou oranges, tirant parti du manque de cash adverse.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 22,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

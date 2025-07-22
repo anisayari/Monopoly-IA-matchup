@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:32:34.462936",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you own"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois générer de l'argent urgemment. Hypothéquer une propriété est le moyen le plus rapide d'obtenir des fonds pour éviter la banqueroute.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 17
+    }
+  }
+}

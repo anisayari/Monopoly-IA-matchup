@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T19:44:50.139801",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec 557$, je peux dés-hypothéquer Piccadilly et construire des maisons sur mes monopoles pour augmenter mes revenus locatifs.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 23,
+    "money": {
+      "GPT4.1": 1589,
+      "Gemini-2.5-Flash": 557
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-22T21:59:07.354845",
+  "trigger": "a Property",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Request Cash ",
+    "Propose ",
+    "Cancel "
+  ],
+  "decision": "Propose ",
+  "reason": "La négociation pour Regent Street contre 350$ est conclue. Je dois maintenant envoyer la proposition formelle pour la valider.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

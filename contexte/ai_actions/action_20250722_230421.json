@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T21:04:19.502444",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Avec un solde très bas, je n'ai pas d'autres actions immédiates. Je dois compter sur mes propriétés et la chance pour encaisser des loyers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

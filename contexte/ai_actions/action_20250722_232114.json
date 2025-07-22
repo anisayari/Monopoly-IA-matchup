@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T21:21:12.199797",
+  "trigger": "Force",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Avec si peu d'argent, je n'ai pas d'autre option que de continuer et d'espérer générer des revenus via mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}
