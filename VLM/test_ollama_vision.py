@@ -5,6 +5,7 @@ import base64
 from PIL import Image
 import os
 from pathlib import Path
+import time
 
 client = OpenAI(
     base_url="http://localhost:11434/v1",
@@ -64,8 +65,11 @@ cropped_image_path = crop_image(image_path, "debug_resized.png")
 # Getting the Base64 string from the cropped image
 base64_image = encode_image(cropped_image_path)
 
+print("\n⏰ Starting VLM processing...")
+start_time = time.time()
+
 completion = client.chat.completions.parse(
-    model="gemma3:4b",
+    model="gemma3:12b",
     messages=[
         {"role": "system", "content": "You are a helpful assistant that can parse the HUD of a Monopoly game."},
         {
@@ -86,6 +90,10 @@ completion = client.chat.completions.parse(
     ],
     response_format=MonopolyHUD,
 )
+
+end_time = time.time()
+processing_time = end_time - start_time
+print(f"⏱️  Processing time: {processing_time:.2f} seconds")
 
 import json
 
