@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-22T10:26:03.440388",
+  "trigger": "would you like",
+  "keywords": [
+    "Who's playing"
+  ],
+  "options": [
+    "Back ",
+    "Next ",
+    "House Rules "
+  ],
+  "decision": "Back ",
+  "reason": "Première option disponible",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 0,
+      "Gemini-2.5-Flash": 0
+    }
+  }
+}

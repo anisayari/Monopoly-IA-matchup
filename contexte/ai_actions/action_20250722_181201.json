@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:11:59.290811",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "L'achat de Piccadilly me rapproche d'un monopole rouge et solidifie ma position. Le prix est abordable et je garde des liquidités suffisantes.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "GPT4.1": 640,
+      "Gemini-2.5-Flash": 730
+    }
+  }
+}

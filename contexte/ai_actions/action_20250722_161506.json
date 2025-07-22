@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T14:15:04.397725",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "make_property_management",
+  "reason": "Début de partie, aucune information stratégique à discuter pour l'instant. Il faut avancer et découvrir le plateau.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1500,
+      "Gemini-2.5-Flash": 1500
+    }
+  }
+}

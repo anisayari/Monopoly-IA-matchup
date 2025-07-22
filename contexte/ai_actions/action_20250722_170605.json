@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T15:06:02.712369",
+  "trigger": "Order Of Play",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK"
+  ],
+  "decision": "OK",
+  "reason": "Aucune négociation nécessaire à ce stade. L'ordre du jeu n'offre pas d'opportunité stratégique à exploiter pour le moment.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1500,
+      "Gemini-2.5-Flash": 1500
+    }
+  }
+}

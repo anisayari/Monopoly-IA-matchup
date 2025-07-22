@@ -4,13 +4,20 @@
   "delay_seconds": 2,
   "priority_order": ["buy", "next turn", "roll again", "auction", "trade", "back", "accounts"],
   "keywords": {
+    "Order Of Play":{
+      "text": ["Order of Play"],
+      "icon" : ["ok"],
+      "category" : "pause"
+    },
     "would you like to": {
       "text": ["would you like to"],
-      "icon": ["accounts", "next turn", "roll again"]
+      "icon": ["accounts", "next turn", "roll again"],
+      "category": "next_turn"
     },
     "would you like": {
       "text": ["would you like to"],
-      "icon": ["accounts", "next turn"]
+      "icon": ["accounts", "next turn"],
+      "category": "next_turn"
     },
     "Pause": {
       "text": ["Pause"],
@@ -18,9 +25,7 @@
         "continue",
         "resign"
       ],
-      "default": [
-        "continue"
-      ]
+      "category": "pause"
     },
     "Pause 2": {
       "text": ["Pause"],
@@ -29,93 +34,112 @@
         "options",
         "quit"
       ],
-      "default": [
-        "continue"
-      ]
+      "category": "pause"
     },
     "you want to buy": {
       "text": ["you want to buy"],
-      "icon": ["auction", "buy"]
+      "icon": ["auction", "buy"],
+      "category": "buy"
     },
     "a Property you own": {
       "text": ["a Property you own"],
-      "icon": ["back", "trade"]
+      "icon": ["back", "trade"],
+      "category": "property"
     },
     "chance": {
       "text": ["Chance"],
-      "icon": ["OK"]
+      "icon": ["OK"],
+      "category": "chance"
     },
     "In Jail": {
       "text": ["In Jail"],
-      "icon": ["Pay Bail", "Roll Dice", "Use Card", "bail pay"]
+      "icon": ["Pay Bail", "Roll Dice", "Use Card", "bail pay"],
+      "category": "in_jail"
     },
     "Community Chest": {
       "text": ["Community Chest"],
-      "icon": ["OK"]
+      "icon": ["OK"],
+      "category": "community_chest"
     },
     "Auction": {
       "text": ["Bid"],
-      "icon": ["Yes", "No"]
+      "icon": ["Yes", "No"],
+      "category": "auction"
     },
     "Accounts 1": {
       "text": ["Accounts"],
-      "icon": ["OK"]
+      "icon": ["OK"],
+      "category": "accounts"
     },
     "Accounts 2": {
       "text": ["Accounts"],
-      "icon": ["Back", "Trade"]
+      "icon": ["Back", "Trade"],
+      "category": "property"
     },
     "Trading 1": {
       "text": ["Select player"],
-      "icon": ["Nom de joueur à selectionner"]
+      "icon": ["Nom de joueur Ã  selectionner"],
+      "category": "trade"
     },
     "Trading 2": {
       "text": ["Choose wich properties you want to trade"],
-      "icon": [""]
+      "icon": [""],
+      "category": "trade"
     },
     "Trading 3": {
       "text": ["Trading"],
-      "icon": ["Cancel", "Propose", "Request Cash", "Add Cash"]
+      "icon": ["Cancel", "Propose", "Request Cash", "Add Cash"],
+      "category": "trade"
     },
     "Trading 4": {
       "text": ["Trading"],
-      "icon": ["Deal", "No Deal"]
+      "icon": ["Deal", "No Deal"],
+      "category": "trade"
     },
     "Pay Rent": {
       "text": ["Pay Rent"],
-      "icon": ["OK"]
+      "icon": ["OK"],
+      "category": "pay_rent"
     },
     "Go to Jail": {
       "text": ["Go To Jail"],
-      "icon": ["OK"]
+      "icon": ["OK"],
+      "category": "go_to_jail"
     },
     "Pay the Bail": {
       "text": ["pay the bail"],
-      "icon": ["Pay Bail"]
+      "icon": ["Pay Bail"],
+      "category": "pay_bail"
     },
     "Property Deeds": {
-      "text": ["Property Deeds"],
-      "icon": ["back","trade"]
+      "text": ["Property Deeds","property deeds"],
+      "icon": ["back","trade","done"],
+      "category": "property"
     },
     "New turn Roll the dice": {
       "text": ["Remote and press to roll the"],
-      "icon": ["CLICK"]
+      "icon": ["CLICK"],
+      "category": "roll_the_dice"
     },
     "Shake the Wii": {
       "text": ["shake the Wii", "shake the wii"],
-      "icon": ["CLICK", "press to continue"]
+      "icon": ["CLICK", "press to continue","shake the"],
+      "category": "shake_the_wii"
     },
     "Who's playing": {
       "text": ["Who's playing"],
-      "icon": ["house rules", "next", "back"]
+      "icon": ["house rules", "next", "back"],
+      "category": "who_is_playing"
     },
     "Press to continue": {
       "text": ["Press to continue"],
-      "icon": ["press to continue"]
+      "icon": ["press to continue"],
+      "category": "press_to_continue"
     },
     "Whitout saving": {
       "text": ["Whitout saving"],
-      "icon": ["continue without saving/loading"]
+      "icon": ["continue without saving/loading"],
+      "category": "continue_without_saving"
     }
 
   }

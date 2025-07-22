@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:02:51.321963",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune opération pertinente à effectuer. Il est stratégique de laisser mon adversaire agir pour observer ses prochains choix et préserver ma trésorerie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT4.1": 800,
+      "Gemini-2.5-Flash": 1180
+    }
+  }
+}

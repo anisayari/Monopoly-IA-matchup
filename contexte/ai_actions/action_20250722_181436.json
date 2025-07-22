@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:14:34.600225",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "La carte Chance a été traitée. Mon tour est terminé. Je dois passer la main pour continuer le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT4.1": 690,
+      "Gemini-2.5-Flash": 400
+    }
+  }
+}

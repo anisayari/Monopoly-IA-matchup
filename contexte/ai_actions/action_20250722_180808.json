@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:08:06.280775",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Engager une discussion pour jauger l’intérêt de Gemini, maximiser mes chances d’obtenir Mayfair à bas prix ou faire grimper le prix.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT4.1": 500,
+      "Gemini-2.5-Flash": 1230
+    }
+  }
+}

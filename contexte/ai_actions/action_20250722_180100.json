@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:00:58.473050",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Vine Street est une propriété rouge, précieuse et rare. Acheter diversifie mon portefeuille et me rapproche d'un éventuel monopole red très rentable.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT4.1": 1260,
+      "Gemini-2.5-Flash": 1180
+    }
+  }
+}

@@ -89,10 +89,10 @@
           400,
           550
         ],
-        "current_rent": 270,
+        "current_rent": 400,
         "house_price": 50,
         "owner": "red",
-        "houses": 3,
+        "houses": 4,
         "has_hotel": false,
         "coordinates": {
           "x_relative": 0.4653,
@@ -114,10 +114,10 @@
           400,
           550
         ],
-        "current_rent": 270,
+        "current_rent": 400,
         "house_price": 50,
         "owner": "red",
-        "houses": 3,
+        "houses": 4,
         "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3986,
@@ -139,10 +139,10 @@
           400,
           550
         ],
-        "current_rent": 270,
+        "current_rent": 400,
         "house_price": 50,
         "owner": "red",
-        "houses": 3,
+        "houses": 4,
         "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3647,
@@ -164,10 +164,10 @@
           625,
           750
         ],
-        "current_rent": 50,
+        "current_rent": 10,
         "house_price": 100,
         "owner": "blue",
-        "houses": 1,
+        "houses": 0,
         "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3204,
@@ -239,10 +239,10 @@
           625,
           750
         ],
-        "current_rent": 50,
+        "current_rent": 10,
         "house_price": 100,
         "owner": "blue",
-        "houses": 1,
+        "houses": 0,
         "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3188,
@@ -289,10 +289,10 @@
           750,
           950
         ],
-        "current_rent": 70,
+        "current_rent": 14,
         "house_price": 100,
         "owner": "blue",
-        "houses": 1,
+        "houses": 0,
         "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3209,
@@ -314,10 +314,10 @@
           750,
           950
         ],
-        "current_rent": 70,
+        "current_rent": 14,
         "house_price": 100,
         "owner": "blue",
-        "houses": 1,
+        "houses": 0,
         "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3188,
@@ -364,10 +364,10 @@
           875,
           1050
         ],
-        "current_rent": 700,
+        "current_rent": 250,
         "house_price": 150,
         "owner": "red",
-        "houses": 3,
+        "houses": 2,
         "has_hotel": false,
         "coordinates": {
           "x_relative": 0.3674,
@@ -414,10 +414,10 @@
           875,
           1050
         ],
-        "current_rent": 700,
+        "current_rent": 250,
         "house_price": 150,
         "owner": "red",
-        "houses": 3,
+        "houses": 2,
         "has_hotel": false,
         "coordinates": {
           "x_relative": 0.4675,
@@ -702,62 +702,38 @@
         }
       }
     ],
-    "current_turn": 13,
+    "current_turn": 15,
     "player_count": 2,
     "player_names": [
       "GPT4.1",
       "Gemini-2.5-Flash"
     ],
-    "current_player": "player1",
+    "current_player": "player2",
     "buildings_summary": {
-      "total_houses": 24,
+      "total_houses": 21,
       "total_hotels": 2,
       "properties_with_houses": [
         {
           "name": "The Angel Islington",
-          "houses": 3,
+          "houses": 4,
           "owner": "red",
           "group": "light_blue"
         },
         {
           "name": "Euston Road",
-          "houses": 3,
+          "houses": 4,
           "owner": "red",
           "group": "light_blue"
         },
         {
           "name": "Pentonville Road",
-          "houses": 3,
+          "houses": 4,
           "owner": "red",
           "group": "light_blue"
         },
         {
-          "name": "Pall Mall",
-          "houses": 1,
-          "owner": "blue",
-          "group": "pink"
-        },
-        {
-          "name": "Northumberland Avenue",
-          "houses": 1,
-          "owner": "blue",
-          "group": "pink"
-        },
-        {
-          "name": "Bow Street",
-          "houses": 1,
-          "owner": "blue",
-          "group": "orange"
-        },
-        {
-          "name": "Marlborough Street",
-          "houses": 1,
-          "owner": "blue",
-          "group": "orange"
-        },
-        {
           "name": "Strand",
-          "houses": 3,
+          "houses": 2,
           "owner": "red",
           "group": "red"
         },
@@ -769,7 +745,7 @@
         },
         {
           "name": "Trafalgar Square",
-          "houses": 3,
+          "houses": 2,
           "owner": "red",
           "group": "red"
         },
@@ -802,144 +778,144 @@
   },
   "events": [
     {
-      "turn": 7,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Euston Road pour 100€",
-      "message": "Gemini-2.5 achète Euston Road pour 100€."
-    },
-    {
-      "turn": 8,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Pentonville Road pour 120€",
-      "message": "Gemini-2.5 achète Pentonville Road pour 120€."
-    },
-    {
-      "turn": 8,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Marylebone Station pour 200€",
-      "message": "Gemini-2.5 achète Marylebone Station pour 200€."
-    },
-    {
-      "turn": 9,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Strand pour 220€",
-      "message": "Gemini-2.5 achète Strand pour 220€."
-    },
-    {
-      "turn": 9,
-      "player": "Gemini-2.5",
-      "action": "buy_property",
-      "detail": "Fleet Street pour 220€",
-      "message": "Gemini-2.5 achète Fleet Street pour 220€."
-    },
-    {
-      "turn": 10,
+      "turn": 11,
       "player": "Gemini-2.5",
       "action": "buy_property",
       "detail": "Trafalgar Square pour 240€",
       "message": "Gemini-2.5 achète Trafalgar Square pour 240€."
     },
     {
-      "turn": 10,
+      "turn": 12,
       "player": "Gemini-2.5",
       "action": "buy_property",
       "detail": "Fenchurch Street Station pour 200€",
       "message": "Gemini-2.5 achète Fenchurch Street Station pour 200€."
     },
     {
-      "turn": 11,
+      "turn": 12,
       "player": "Gemini-2.5",
       "action": "buy_property",
       "detail": "Leicester Square pour 260€",
       "message": "Gemini-2.5 achète Leicester Square pour 260€."
     },
     {
-      "turn": 11,
+      "turn": 13,
       "player": "Gemini-2.5",
       "action": "buy_property",
       "detail": "Coventry Street pour 260€",
       "message": "Gemini-2.5 achète Coventry Street pour 260€."
     },
     {
-      "turn": 12,
+      "turn": 13,
       "player": "Gemini-2.5",
       "action": "buy_property",
       "detail": "Piccadilly pour 280€",
       "message": "Gemini-2.5 achète Piccadilly pour 280€."
     },
     {
-      "turn": 12,
+      "turn": 14,
       "player": "Gemini-2.5",
       "action": "buy_property",
       "detail": "Park Lane pour 350€",
       "message": "Gemini-2.5 achète Park Lane pour 350€."
     },
     {
-      "turn": 13,
+      "turn": 14,
       "player": "Gemini-2.5",
       "action": "buy_property",
       "detail": "Mayfair pour 400€",
       "message": "Gemini-2.5 achète Mayfair pour 400€."
     },
     {
-      "turn": 13,
+      "turn": 15,
       "player": "System",
       "action": "jail_options",
       "detail": "Do you want to pay the bail, roll for doubles or use a get out of free jail card (if you have one)?",
       "message": "System doit choisir comment sortir de prison."
     },
     {
-      "turn": 13,
+      "turn": 15,
       "player": "System",
       "action": "message",
       "detail": "Trade",
       "message": "Message: Trade"
     },
     {
-      "turn": 13,
+      "turn": 15,
       "player": "System",
       "action": "message",
       "detail": "1 Owned",
       "message": "Message: 1 Owned"
     },
     {
-      "turn": 13,
+      "turn": 15,
       "player": "System",
       "action": "message",
       "detail": "4 Owned",
       "message": "Message: 4 Owned"
     },
     {
-      "turn": 13,
+      "turn": 15,
       "player": "System",
       "action": "message",
       "detail": "2 Owned",
       "message": "Message: 2 Owned"
     },
     {
-      "turn": 13,
+      "turn": 15,
       "player": "System",
       "action": "message",
       "detail": "3 Owned",
       "message": "Message: 3 Owned"
     },
     {
-      "turn": 13,
+      "turn": 15,
       "player": "System",
       "action": "message",
       "detail": "Un-mortgage Value",
       "message": "Message: Un-mortgage Value"
     },
     {
-      "turn": 13,
-      "player": "GPT4.1",
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "receive_money",
+      "detail": "100€ (transaction)",
+      "message": "Gemini-2.5 reçoit 100€ pour transaction."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
       "action": "pay_money",
-      "detail": "100€ (taxe ou carte chance/caisse de communauté)",
-      "message": "GPT4.1 paie 100€ pour taxe ou carte chance/caisse de communauté."
+      "detail": "50€ (taxe ou carte chance/caisse de communauté)",
+      "message": "Gemini-2.5 paie 50€ pour taxe ou carte chance/caisse de communauté."
+    },
+    {
+      "turn": 15,
+      "player": "System",
+      "action": "rent_notification",
+      "detail": "1 utility = x4 amount on dice in rent.",
+      "message": "System a effectué l'action 'rent_notification' 1 utility = x4 amount on dice in rent.."
+    },
+    {
+      "turn": 15,
+      "player": "System",
+      "action": "rent_notification",
+      "detail": "2 utilities = x10 amount on dice in rent.",
+      "message": "System a effectué l'action 'rent_notification' 2 utilities = x10 amount on dice in rent.."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "receive_money",
+      "detail": "140€ (transaction)",
+      "message": "Gemini-2.5 reçoit 140€ pour transaction."
+    },
+    {
+      "turn": 15,
+      "player": "Gemini-2.5",
+      "action": "pay_money",
+      "detail": "154€ (transaction)",
+      "message": "Gemini-2.5 paie 154€ pour transaction."
     }
   ],
   "players": {
@@ -947,202 +923,237 @@
       "name": "GPT4.1",
       "ai_model": "gpt-4.1",
       "provider": "openai",
-      "current_player": true,
-      "is_current": true,
+      "current_player": false,
+      "is_current": false,
       "dice_result": [
-        4,
-        5
+        2,
+        4
       ],
-      "money": 1269,
+      "money": 1789,
       "properties": [
         {
           "id": 11,
           "name": "Pall Mall",
           "group": "pink",
-          "houses": 1
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 35,
           "name": "Liverpool Street Station",
           "group": "station",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 19,
           "name": "Vine Street",
           "group": "orange",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 14,
           "name": "Northumberland Avenue",
           "group": "pink",
-          "houses": 1
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 5,
           "name": "Kings Cross Station",
           "group": "station",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 13,
           "name": "Whitehall",
           "group": "pink",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 28,
           "name": "Water Works",
           "group": "utility",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 34,
           "name": "Bond Street",
           "group": "green",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 16,
           "name": "Bow Street",
           "group": "orange",
-          "houses": 1
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 18,
           "name": "Marlborough Street",
           "group": "orange",
-          "houses": 1
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 12,
           "name": "Electric Company",
           "group": "utility",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 31,
           "name": "Regent Street",
           "group": "green",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 32,
           "name": "Oxford Street",
           "group": "green",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": false
+        },
+        {
+          "id": 39,
+          "name": "Mayfair",
+          "group": "dark_blue",
+          "houses": 1,
+          "is_mortgaged": false
         }
       ],
-      "position": 17,
-      "current_space": "Community Chest",
+      "position": 39,
+      "current_space": "Mayfair",
       "jail": false
     },
     "player2": {
       "name": "Gemini-2.5-Flash",
       "ai_model": "gemini-2.5-flash",
       "provider": "gemini",
-      "current_player": false,
-      "is_current": false,
+      "current_player": true,
+      "is_current": true,
       "dice_result": [
-        1,
-        2
+        2,
+        5
       ],
-      "money": 51,
+      "money": 17,
       "properties": [
         {
           "id": 15,
           "name": "Marylebone Station",
           "group": "station",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": true
         },
         {
           "id": 6,
           "name": "The Angel Islington",
           "group": "light_blue",
-          "houses": 3
+          "houses": 4,
+          "is_mortgaged": false
         },
         {
           "id": 27,
           "name": "Coventry Street",
           "group": "yellow",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 39,
           "name": "Mayfair",
           "group": "dark_blue",
-          "houses": 1
+          "houses": 1,
+          "is_mortgaged": false
         },
         {
           "id": 29,
           "name": "Piccadilly",
           "group": "yellow",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 9,
           "name": "Pentonville Road",
           "group": "light_blue",
-          "houses": 3
+          "houses": 4,
+          "is_mortgaged": false
         },
         {
           "id": 37,
           "name": "Park Lane",
           "group": "dark_blue",
-          "houses": 1
+          "houses": 1,
+          "is_mortgaged": false
         },
         {
           "id": 25,
           "name": "Fenchurch Street Station",
           "group": "station",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 24,
           "name": "Trafalgar Square",
           "group": "red",
-          "houses": 3
+          "houses": 2,
+          "is_mortgaged": false
         },
         {
           "id": 3,
           "name": "Whitechapel Road",
           "group": "brown",
-          "houses": 5
+          "houses": 5,
+          "is_mortgaged": false
         },
         {
           "id": 8,
           "name": "Euston Road",
           "group": "light_blue",
-          "houses": 3
+          "houses": 4,
+          "is_mortgaged": false
         },
         {
           "id": 21,
           "name": "Strand",
           "group": "red",
-          "houses": 3
+          "houses": 2,
+          "is_mortgaged": false
         },
         {
           "id": 1,
           "name": "Old Kent Road",
           "group": "brown",
-          "houses": 5
+          "houses": 5,
+          "is_mortgaged": false
         },
         {
           "id": 26,
           "name": "Leicester Square",
           "group": "yellow",
-          "houses": 0
+          "houses": 0,
+          "is_mortgaged": false
         },
         {
           "id": 23,
           "name": "Fleet Street",
           "group": "red",
-          "houses": 3
+          "houses": 3,
+          "is_mortgaged": false
         }
       ],
-      "position": 10,
-      "current_space": "Jail / Just Visiting",
+      "position": 15,
+      "current_space": "Marylebone Station",
       "jail": false
     }
   },

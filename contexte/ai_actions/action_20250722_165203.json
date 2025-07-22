@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T14:52:00.992177",
+  "trigger": "would you like",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Aucun choix stratégique avant le premier tour, il faut poursuivre pour commencer à jouer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 2466503520,
+      "Gemini-2.5-Flash": 2466504016
+    }
+  }
+}

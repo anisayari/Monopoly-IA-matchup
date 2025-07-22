@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T15:19:15.623333",
+  "trigger": "would you like",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Début de partie, aucune action stratégique n'est disponible ou nécessaire. Il faut juste passer l'étape pour avancer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1500,
+      "Gemini-2.5-Flash": 1500
+    }
+  }
+}

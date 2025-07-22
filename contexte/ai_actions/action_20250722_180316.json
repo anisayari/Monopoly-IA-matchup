@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:03:13.758439",
+  "trigger": "In Jail",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Roll Dice ",
+    "Bail Pay "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "Il est plus économique de tenter un double que de payer la caution si les fonds sont suffisants et que la situation n'est pas critique.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT4.1": 800,
+      "Gemini-2.5-Flash": 1180
+    }
+  }
+}

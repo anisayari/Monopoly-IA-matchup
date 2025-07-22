@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T14:52:23.968192",
+  "trigger": "would you like",
+  "keywords": [
+    "Whitout saving"
+  ],
+  "options": [
+    "Continue without saving/loading "
+  ],
+  "decision": "Continue without saving/loading ",
+  "reason": "Aucune décision stratégique possible avant le début effectif du jeu. Il faut avancer pour entrer dans la phase de jeu active.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 2466503520,
+      "Gemini-2.5-Flash": 2466504016
+    }
+  }
+}

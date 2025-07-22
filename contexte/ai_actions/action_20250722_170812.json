@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T15:08:10.776021",
+  "trigger": "would you like",
+  "keywords": [
+    "Shake the Wii"
+  ],
+  "options": [
+    "shake the"
+  ],
+  "decision": "shake the",
+  "reason": "Au tour 0, le jeu n'a pas encore commencé. La meilleure décision est de lancer les dés pour initier la partie et commencer à explorer le plateau.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1500,
+      "Gemini-2.5-Flash": 1500
+    }
+  }
+}

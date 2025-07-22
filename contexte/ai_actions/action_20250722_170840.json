@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T15:08:38.916339",
+  "trigger": "would you like",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Au tour 0, le jeu n'a pas encore réellement démarré. Cliquer sur OK est la seule option pour avancer et lancer les dés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1500,
+      "Gemini-2.5-Flash": 1500
+    }
+  }
+}

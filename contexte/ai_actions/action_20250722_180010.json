@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:00:08.500230",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon tour est terminé, je dois passer la main pour que le jeu continue. Je suis toujours en prison.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT4.1": 1260,
+      "Gemini-2.5-Flash": 1180
+    }
+  }
+}

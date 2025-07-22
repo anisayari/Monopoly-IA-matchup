@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T17:12:02.746584",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Avec seulement 81$, je dois générer des revenus ou m'assurer de pouvoir payer les loyers. Je vais vendre des maisons pour avoir plus de liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 81
+    }
+  }
+}

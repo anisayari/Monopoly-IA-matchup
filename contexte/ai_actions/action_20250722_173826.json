@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T15:38:24.583170",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Il faut continuer le jeu pour avancer et avoir une chance de gagner. Démissionner n'est pas une option.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1400,
+      "Gemini-2.5-Flash": 1300
+    }
+  }
+}

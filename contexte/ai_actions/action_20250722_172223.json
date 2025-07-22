@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T15:22:20.996977",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "The Angel Islington est une propriété abordable et essentielle pour compléter la série light blue. Acheter tôt maximise mes chances de monopole et de revenus futurs.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1500,
+      "Gemini-2.5-Flash": 1500
+    }
+  }
+}

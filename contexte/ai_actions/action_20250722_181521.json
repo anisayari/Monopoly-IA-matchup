@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:15:19.114715",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Buy ",
+    "Auction "
+  ],
+  "decision": "Buy ",
+  "reason": "Whitehall permet d'approcher le monopole rose. Toujours accumuler des propriétés en début de partie pour maximiser les options d'échanges ou de monopole.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT4.1": 690,
+      "Gemini-2.5-Flash": 400
+    }
+  }
+}

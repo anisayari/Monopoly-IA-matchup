@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:07:20.944905",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Auction ",
+  "reason": "Mayfair coûte trop cher maintenant et il n'est pas possible d'avoir un monopole blue sans Park Lane. Préserver la trésorerie devient prioritaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT4.1": 500,
+      "Gemini-2.5-Flash": 1230
+    }
+  }
+}

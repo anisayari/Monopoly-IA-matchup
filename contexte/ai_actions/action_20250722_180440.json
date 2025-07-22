@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:04:37.858312",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Oxford Street complète une deuxième propriété jaune, renforçant la probabilité de monopole. Dépenser tôt maximise le contrôle et bloque l’adversaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT4.1": 800,
+      "Gemini-2.5-Flash": 1180
+    }
+  }
+}

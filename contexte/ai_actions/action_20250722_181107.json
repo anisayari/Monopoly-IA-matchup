@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:11:05.582526",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune opération ou échange pertinent pour le moment. Il vaut mieux passer le tour et voir quelles propriétés Gemini cible ensuite.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "GPT4.1": 640,
+      "Gemini-2.5-Flash": 730
+    }
+  }
+}

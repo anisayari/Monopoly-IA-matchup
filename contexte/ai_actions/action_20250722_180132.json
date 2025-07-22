@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:01:30.522848",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Rouler à nouveau maximise mes chances d'acheter encore plus de propriétés en début de partie, consolidant mon avance face à Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT4.1": 1060,
+      "Gemini-2.5-Flash": 1180
+    }
+  }
+}

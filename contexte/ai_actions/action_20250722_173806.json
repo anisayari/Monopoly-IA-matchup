@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T15:38:04.124682",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Il s'agit d'une pause, et mon objectif est de gagner. Continuer la partie est la seule option logique pour avancer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1400,
+      "Gemini-2.5-Flash": 1300
+    }
+  }
+}

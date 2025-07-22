@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T15:58:34.827910",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Buy ",
+    "Auction "
+  ],
+  "decision": "Buy ",
+  "reason": "Acquérir des propriétés est essentiel pour gagner. Strand est une propriété de bonne valeur, et j'ai largement les fonds pour l'acheter et conserver une trésorerie saine.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT4.1": 1260,
+      "Gemini-2.5-Flash": 1400
+    }
+  }
+}

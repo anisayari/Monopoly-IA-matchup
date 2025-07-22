@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T15:53:33.967527",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon action sur la Caisse de Communauté est terminée. Je dois passer mon tour pour que le jeu continue.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT4.1": 1400,
+      "Gemini-2.5-Flash": 1400
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T15:07:45.326016",
+  "trigger": "would you like",
+  "keywords": [
+    "Shake the Wii"
+  ],
+  "options": [
+    "shake the"
+  ],
+  "decision": "shake the",
+  "reason": "Lancer les dés est nécessaire pour jouer. Aucun échange stratégique à faire avant d'avancer sur le plateau au tout début de la partie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1500,
+      "Gemini-2.5-Flash": 1500
+    }
+  }
+}

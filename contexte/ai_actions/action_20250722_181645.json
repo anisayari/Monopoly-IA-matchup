@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:16:43.018104",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Marlborough Street permet de progresser vers le monopole vert et réduit les options de l’adversaire. Plus de propriétés = plus d’opportunités d’échange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT4.1": 550,
+      "Gemini-2.5-Flash": 400
+    }
+  }
+}

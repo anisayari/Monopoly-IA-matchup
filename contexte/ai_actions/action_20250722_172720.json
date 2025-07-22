@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T15:27:18.639212",
+  "trigger": "Force",
+  "keywords": [
+    "Shake the Wii"
+  ],
+  "options": [
+    "shake the"
+  ],
+  "decision": "shake the",
+  "reason": "C'est mon tour de jouer. L'action 'shake the' est la seule option pour avancer dans la partie et lancer les dés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1400,
+      "Gemini-2.5-Flash": 1500
+    }
+  }
+}

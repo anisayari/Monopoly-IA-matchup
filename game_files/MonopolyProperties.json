@@ -5,6 +5,7 @@
       "name": "Old Kent Road",
       "value": 60,
       "mortgage": 30,
+      "adresse_mortgage": "9303E320",
       "rent": {
         "base": 2,
         "oneHouse": 10,
@@ -32,6 +33,7 @@
       "name": "Whitechapel Road",
       "value": 60,
       "mortgage": 30,
+      "adresse_mortgage": "9303E3C8",
       "rent": {
         "base": 4,
         "oneHouse": 20,
@@ -59,6 +61,7 @@
       "name": "Kings Cross Station",
       "value": 200,
       "mortgage": 100,
+      "adresse_mortgage": "9303E470",
       "rent": {
         "oneStation": 25,
         "twoStations": 50,
@@ -83,6 +86,7 @@
       "name": "The Angel Islington",
       "value": 100,
       "mortgage": 50,
+      "adresse_mortgage": "9303E518",
       "rent": {
         "base": 6,
         "oneHouse": 30,
@@ -110,6 +114,7 @@
       "name": "Euston Road",
       "value": 100,
       "mortgage": 50,
+      "adresse_mortgage": "9303E5C0",
       "rent": {
         "base": 6,
         "oneHouse": 30,
@@ -137,6 +142,7 @@
       "name": "Pentonville Road",
       "value": 120,
       "mortgage": 60,
+      "adresse_mortgage": "9303E668",
       "rent": {
         "base": 8,
         "oneHouse": 40,
@@ -164,6 +170,7 @@
       "name": "Pall Mall",
       "value": 140,
       "mortgage": 70,
+      "adresse_mortgage": "9303E710",
       "rent": {
         "base": 10,
         "oneHouse": 50,
@@ -191,6 +198,7 @@
       "name": "Electric Company",
       "value": 150,
       "mortgage": 75,
+      "adresse_mortgage": "9303E7B8",
       "rent": {
         "multiplier": {
           "oneUtility": 4,
@@ -215,6 +223,7 @@
       "name": "Whitehall",
       "value": 140,
       "mortgage": 70,
+      "adresse_mortgage": "9303E860",
       "rent": {
         "base": 10,
         "oneHouse": 50,
@@ -242,6 +251,7 @@
       "name": "Northumberland Avenue",
       "value": 160,
       "mortgage": 80,
+      "adresse_mortgage": "9303E908",
       "rent": {
         "base": 12,
         "oneHouse": 60,
@@ -269,6 +279,7 @@
       "name": "Marylebone Station",
       "value": 200,
       "mortgage": 100,
+      "adresse_mortgage": "9303E9B0",
       "rent": {
         "oneStation": 25,
         "twoStations": 50,
@@ -293,6 +304,7 @@
       "name": "Bow Street",
       "value": 180,
       "mortgage": 90,
+      "adresse_mortgage": "9303EA58",
       "rent": {
         "base": 14,
         "oneHouse": 70,
@@ -320,6 +332,7 @@
       "name": "Marlborough Street",
       "value": 180,
       "mortgage": 90,
+      "adresse_mortgage": "9303EB00",
       "rent": {
         "base": 14,
         "oneHouse": 70,
@@ -347,6 +360,7 @@
       "name": "Vine Street",
       "value": 200,
       "mortgage": 100,
+      "adresse_mortgage": "9303EBA8",
       "rent": {
         "base": 16,
         "oneHouse": 80,
@@ -374,6 +388,7 @@
       "name": "Strand",
       "value": 220,
       "mortgage": 110,
+      "adresse_mortgage": "9303EC50",
       "rent": {
         "base": 18,
         "oneHouse": 90,
@@ -401,6 +416,7 @@
       "name": "Fleet Street",
       "value": 220,
       "mortgage": 110,
+      "adresse_mortgage": "9303ECF8",
       "rent": {
         "base": 18,
         "oneHouse": 90,
@@ -428,6 +444,7 @@
       "name": "Trafalgar Square",
       "value": 240,
       "mortgage": 120,
+      "adresse_mortgage": "9303EDA0",
       "rent": {
         "base": 20,
         "oneHouse": 100,
@@ -455,6 +472,7 @@
       "name": "Fenchurch St. Station",
       "value": 200,
       "mortgage": 100,
+      "adresse_mortgage": "9303EE48",
       "rent": {
         "oneStation": 25,
         "twoStations": 50,
@@ -479,6 +497,7 @@
       "name": "Leicester Square",
       "value": 260,
       "mortgage": 130,
+      "adresse_mortgage": "9303EEF0",
       "rent": {
         "base": 22,
         "oneHouse": 110,
@@ -506,6 +525,7 @@
       "name": "Water Works",
       "value": 150,
       "mortgage": 75,
+      "adresse_mortgage": "9303F040",
       "rent": {
         "multiplier": {
           "oneUtility": 4,
@@ -530,6 +550,7 @@
       "name": "Coventry Street",
       "value": 260,
       "mortgage": 130,
+      "adresse_mortgage": "9303EF98",
       "rent": {
         "base": 22,
         "oneHouse": 110,
@@ -557,6 +578,7 @@
       "name": "Piccadilly",
       "value": 280,
       "mortgage": 140,
+      "adresse_mortgage": "9303F0E8",
       "rent": {
         "base": 24,
         "oneHouse": 120,
@@ -584,6 +606,7 @@
       "name": "Regent Street",
       "value": 300,
       "mortgage": 150,
+      "adresse_mortgage": "9303F190",
       "rent": {
         "base": 26,
         "oneHouse": 130,
@@ -611,6 +634,7 @@
       "name": "Oxford Street",
       "value": 300,
       "mortgage": 150,
+      "adresse_mortgage": "9303F238",
       "rent": {
         "base": 26,
         "oneHouse": 130,
@@ -638,6 +662,7 @@
       "name": "Bond Street",
       "value": 320,
       "mortgage": 160,
+      "adresse_mortgage": "9303F2E0",
       "rent": {
         "base": 28,
         "oneHouse": 150,
@@ -665,6 +690,7 @@
       "name": "Liverpool St. Station",
       "value": 200,
       "mortgage": 100,
+      "adresse_mortgage": "9303F388",
       "rent": {
         "oneStation": 25,
         "twoStations": 50,
@@ -689,6 +715,7 @@
       "name": "Park Lane",
       "value": 350,
       "mortgage": 175,
+      "adresse_mortgage": "9303F430",
       "rent": {
         "base": 35,
         "oneHouse": 175,
@@ -716,6 +743,7 @@
       "name": "Mayfair",
       "value": 400,
       "mortgage": 200,
+      "adresse_mortgage": "9303F4D8",
       "rent": {
         "base": 50,
         "oneHouse": 200,

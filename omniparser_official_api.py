@@ -104,25 +104,24 @@ async def parse_image(request: ImageRequest):
         image_data = base64.b64decode(request.base64_image)
         image = Image.open(io.BytesIO(image_data)).convert('RGB')
         
-        print(f"📸 Image reçue: {image.size}")
+        print(f"📸 Image reçue: {image.size[0]}x{image.size[1]} pixels")
         
         # Parser l'image avec OmniParser
         # La méthode parse attend une image en base64
         result = parser.parse(request.base64_image)
         
-        # Debug: afficher le type de retour
-        print(f"🔍 Type de result: {type(result)}")
-        print(f"🔍 Longueur de result: {len(result) if hasattr(result, '__len__') else 'N/A'}")
-        
+        # Extraire les résultats
         if len(result) >= 2:
             labeled_img, parsed_content_list = result[:2]
-            print(f"🔍 Type de labeled_img: {type(labeled_img)}")
-            print(f"🔍 Type de parsed_content_list: {type(parsed_content_list)}")
             label_coordinates = {}  # Pas retourné directement par la méthode parse
         else:
             raise ValueError("Format de résultat inattendu d'OmniParser")
         
-        print(f"✅ Parsing terminé: {len(parsed_content_list)} éléments trouvés")
+        # Compter les types d'éléments détectés
+        icon_count = len([e for e in parsed_content_list if e.get('type') == 'icon' or (e.get('content', '').startswith('Icon') if e.get('type') == 'unknown' else False)])
+        text_count = len([e for e in parsed_content_list if e.get('type') == 'text' or (not e.get('content', '').startswith('Icon') if e.get('type') == 'unknown' else False)])
+        
+        print(f"✅ Analyse terminée: {len(parsed_content_list)} éléments détectés ({icon_count} icônes, {text_count} textes)")
         
         # Convertir l'image annotée en base64
         labeled_base64 = ""
@@ -191,7 +190,7 @@ async def parse_image(request: ImageRequest):
                 with open(json_filepath, 'w', encoding='utf-8') as f:
                     json.dump(metadata, f, indent=2, ensure_ascii=False)
                 
-                print(f"🖼️ Image annotée sauvegardée: {filepath}")
+                print(f"💾 Sauvegarde: {filepath.name} ({icon_count} icônes, {text_count} textes)")
             except Exception as e:
                 print(f"⚠️ Erreur sauvegarde image annotée: {e}")
         

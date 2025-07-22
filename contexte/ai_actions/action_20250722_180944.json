@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:09:42.307904",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon tour est terminé, après l'acquisition de Mayfair et le passage sur le Parc Gratuit. Je dois céder la main.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "GPT4.1": 500,
+      "Gemini-2.5-Flash": 730
+    }
+  }
+}

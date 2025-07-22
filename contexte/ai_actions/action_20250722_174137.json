@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T15:41:35.275184",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Roll Again ",
+    "Accounts "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Étant en prison 'Just Visiting', je dois lancer les dés pour essayer de sortir ou simplement continuer mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT4.1": 1400,
+      "Gemini-2.5-Flash": 1300
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T16:14:11.226861",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois valider l'action de la carte Chance pour avancer dans le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT4.1": 640,
+      "Gemini-2.5-Flash": 450
+    }
+  }
+}

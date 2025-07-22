@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T14:43:02.182000",
+  "trigger": "would you like",
+  "keywords": [
+    "chance"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "make_property_management",
+  "reason": "C'est le début du jeu, aucun échange n'est nécessaire tant que les propriétés n'ont pas encore été achetées.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 2466503520,
+      "Gemini-2.5-Flash": 2466504016
+    }
+  }
+}

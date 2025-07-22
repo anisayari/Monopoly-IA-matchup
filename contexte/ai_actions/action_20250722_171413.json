@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T15:14:11.218383",
+  "trigger": "would you like",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "C'est le début du jeu, il n'y a pas d'action stratégique à prendre autre que de passer au tour suivant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1500,
+      "Gemini-2.5-Flash": 1500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T15:22:45.466126",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action à optimiser maintenant. Je dois avancer rapidement pour acquérir plus de propriétés avant l’adversaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1400,
+      "Gemini-2.5-Flash": 1500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:15:54.543634",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Roll Again ",
+    "Accounts "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J’ai encore des liquidités et le plateau contient de nombreuses propriétés disponibles. Il faut saisir toute nouvelle opportunité d’achat rapidement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT4.1": 550,
+      "Gemini-2.5-Flash": 400
+    }
+  }
+}

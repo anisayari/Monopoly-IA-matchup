@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T15:20:53.469009",
+  "trigger": "would you like",
+  "keywords": [
+    "Whitout saving"
+  ],
+  "options": [
+    "Continue without saving/loading "
+  ],
+  "decision": "Continue without saving/loading ",
+  "reason": "C'est encore le lancement, aucun besoin de négocier ni de sauvegarder. Passons directement à l'action pour maximiser mes opportunités dès le départ.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1500,
+      "Gemini-2.5-Flash": 1500
+    }
+  }
+}

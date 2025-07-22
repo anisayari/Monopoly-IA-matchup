@@ -167,7 +167,6 @@ class CalibrationUtils:
         # Normalize input
         wiimote_norm = np.array(
             [wiimote_x - self.wiimote_center[0], wiimote_y - self.wiimote_center[1]]) / self.wiimote_scale
-
         # Apply transformation
         mouse_norm_x, mouse_norm_y = self._perspective_transform(wiimote_norm[0], wiimote_norm[1],
                                                                  self.wiimote_to_mouse_matrix)

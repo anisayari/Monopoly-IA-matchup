@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:08:49.055964",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je conserve ma trésorerie, aucune action utile à effectuer avant d’avoir d’autres opportunités de propriété ou d’échange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT4.1": 500,
+      "Gemini-2.5-Flash": 730
+    }
+  }
+}

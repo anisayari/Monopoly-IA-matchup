@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T17:15:33.615809",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Done "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai levé l'hypothèque de la gare de Marylebone pour générer des revenus passifs et augmenter ma liquidité pour la construction.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1789,
+      "Gemini-2.5-Flash": 171
+    }
+  }
+}

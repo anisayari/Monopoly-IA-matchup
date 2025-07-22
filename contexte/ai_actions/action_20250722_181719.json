@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:17:16.605250",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune nouvelle opération ou échange efficace n'est possible maintenant. Attendre le prochain tour maximise les options et la flexibilité financière.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT4.1": 370,
+      "Gemini-2.5-Flash": 400
+    }
+  }
+}

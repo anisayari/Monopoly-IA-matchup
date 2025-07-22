@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:13:16.653123",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Pas d’action pertinente immédiate ; conserver les liquidités et surveiller les acquisitions adverses reste optimal. Buy/Echanges non disponibles.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT4.1": 640,
+      "Gemini-2.5-Flash": 450
+    }
+  }
+}

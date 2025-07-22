@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T15:27:42.085079",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Roll Again ",
+    "Accounts "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai payé l'impôt sur le revenu. Je dois maintenant passer mon tour pour permettre au jeu de continuer. 'Roll Again' semble être l'action appropriée pour terminer mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT4.1": 1400,
+      "Gemini-2.5-Flash": 1300
+    }
+  }
+}

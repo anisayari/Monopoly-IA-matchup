@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T16:02:19.157617",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Coventry Street est une propriété verte, rare et chère mais très rentable. L'acheter diversifie mon portefeuille et limite les acquisitions adverses.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT4.1": 1060,
+      "Gemini-2.5-Flash": 1180
+    }
+  }
+}
