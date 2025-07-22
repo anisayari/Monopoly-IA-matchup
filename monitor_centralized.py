@@ -248,6 +248,7 @@ class CentralizedMonitor:
                 return None
             
             analysis = analyze_response.json()
+
             
             img_data = base64.b64decode(screenshot_base64)
             img = Image.open(io.BytesIO(img_data))
@@ -258,6 +259,8 @@ class CentralizedMonitor:
             monitor_keywords = self.monitor_config.get('keywords', {})
             
             icon_options = [opt for opt in analysis.get('options', []) if opt.get('type') == 'icon']
+            text_options = [opt for opt in analysis.get('options', []) if opt.get('type') == 'text']
+            #icon_options = [opt for opt in analysis.get('options', [])]
             detected_icons = [opt.get('name', '').strip().lower() for opt in icon_options]
             
             trigger_found = trigger in monitor_keywords
@@ -269,6 +272,7 @@ class CentralizedMonitor:
                 
                 if matching_trigger_icons:
                     selected_keywords = [trigger]
+                    category = monitor_keywords[trigger].get('category','other')
                     print(f"✅ Trigger '{trigger}' trouvé et icônes présentes: {matching_trigger_icons}")
                 else:
                     print(f"⚠️ Trigger '{trigger}' trouvé mais aucune icône correspondante détectée")
@@ -277,54 +281,118 @@ class CentralizedMonitor:
                     trigger_found = False  # Forcer la recherche par icônes
             
             if not trigger_found or selected_keywords is None:
-                print(f"🔍 Trigger '{trigger}' non trouvé, recherche via les icônes...")
+                print(f"🔍 Trigger '{trigger}' non trouvé, recherche via les icônes et textes...")
                 print(f"🔍 Icônes détectées: {detected_icons}")
                 
-                # Chercher les keywords avec le meilleur match
-                best_match = None
-                best_match_ratio = 0
-                best_match_count = 0
+                # Extraire les textes détectés
+                detected_texts = [opt.get('content', '').strip().lower() for opt in text_options]
+                print(f"📝 Textes détectés: {detected_texts[:5]}...")  # Afficher les 5 premiers
+                
+                # Chercher les keywords avec le meilleur match (icônes)
+                best_icon_match = None
+                best_icon_ratio = 0
+                best_icon_count = 0
+                
+                # Chercher les keywords avec le meilleur match (textes)
+                best_text_match = None
+                best_text_ratio = 0
+                best_text_count = 0
                 
                 for keyword, data in monitor_keywords.items():
+                    # === MATCHING PAR ICÔNES ===
                     icons_in_config = [icon.strip().lower() for icon in data.get('icon', []) if isinstance(icon, str) and icon.strip()]
                     
-                    # Skip si pas d'icônes configurées
-                    if not icons_in_config:
-                        continue
-                    
-                    # Compter combien d'icônes sont trouvées
-                    found_icons = []
-                    for config_icon in icons_in_config:
-                        if config_icon in detected_icons:
-                            found_icons.append(config_icon)
-                    
-                    found_count = len(found_icons)
-                    total_count = len(icons_in_config)
-                    ratio = found_count / total_count if total_count > 0 else 0
-                    
-                    if found_count > 0:
-                        if found_count == total_count:
-                            print(f"✅ Keyword '{keyword}' - TOUTES les icônes trouvées ({found_count}/{total_count}): {found_icons}")
-                        else:
-                            print(f"⚠️ Keyword '{keyword}' - {found_count}/{total_count} icônes trouvées: {found_icons}")
+                    if icons_in_config:
+                        # Compter combien d'icônes sont trouvées
+                        found_icons = []
+                        for config_icon in icons_in_config:
+                            if config_icon in detected_icons:
+                                found_icons.append(config_icon)
                         
-                        if ratio > best_match_ratio or (ratio == best_match_ratio and found_count > best_match_count):
-                            best_match = keyword
-                            best_match_ratio = ratio
-                            best_match_count = found_count
+                        found_count = len(found_icons)
+                        total_count = len(icons_in_config)
+                        ratio = found_count / total_count if total_count > 0 else 0
+                        
+                        if found_count > 0:
+                            if found_count == total_count:
+                                print(f"✅ Keyword '{keyword}' - TOUTES les icônes trouvées ({found_count}/{total_count}): {found_icons}")
+                            else:
+                                print(f"⚠️ Keyword '{keyword}' - {found_count}/{total_count} icônes trouvées: {found_icons}")
+                            
+                            if ratio > best_icon_ratio or (ratio == best_icon_ratio and found_count > best_icon_count):
+                                best_icon_match = keyword
+                                best_icon_ratio = ratio
+                                best_icon_count = found_count
+                    
+                    # === MATCHING PAR TEXTES ===
+                    texts_in_config = [text.strip().lower() for text in data.get('text', []) if isinstance(text, str) and text.strip()]
+                    
+                    if texts_in_config:
+                        # Compter combien de textes correspondent (avec recherche de sous-chaînes)
+                        found_texts = []
+                        for config_text in texts_in_config:
+                            # Recherche bidirectionnelle de sous-chaînes dans les textes détectés
+                            for detected_text in detected_texts:
+                                if config_text in detected_text or detected_text in config_text:
+                                    found_texts.append((config_text, detected_text))
+                                    break
+                            
+                            # AUSSI chercher dans les icônes détectées (car OmniParser peut mal classifier)
+                            if not any(ct == config_text for ct, _ in found_texts):
+                                for detected_icon in detected_icons:
+                                    if config_text in detected_icon or detected_icon in config_text:
+                                        found_texts.append((config_text, detected_icon + " [from icon]"))
+                                        break
+                        
+                        found_count = len(found_texts)
+                        total_count = len(texts_in_config)
+                        ratio = found_count / total_count if total_count > 0 else 0
+                        
+                        if found_count > 0:
+                            if found_count == total_count:
+                                print(f"✅ Keyword '{keyword}' - TOUS les textes trouvés ({found_count}/{total_count}): {[f[0] for f in found_texts]}")
+                            else:
+                                print(f"⚠️ Keyword '{keyword}' - {found_count}/{total_count} textes trouvés: {[f[0] for f in found_texts]}")
+                            
+                            if ratio > best_text_ratio or (ratio == best_text_ratio and found_count > best_text_count):
+                                best_text_match = keyword
+                                best_text_ratio = ratio
+                                best_text_count = found_count
                 
-                #DETECTER LA CATEGORY ICI !!! (GPT IMAGE???)
+                # Déterminer le meilleur match global entre icônes et textes
+                if best_icon_match and best_text_match:
+                    # Comparer les ratios
+                    if best_icon_ratio >= best_text_ratio:
+                        best_match = best_icon_match
+                        best_match_ratio = best_icon_ratio
+                        match_type = "icônes"
+                    else:
+                        best_match = best_text_match
+                        best_match_ratio = best_text_ratio
+                        match_type = "textes"
+                elif best_icon_match:
+                    best_match = best_icon_match
+                    best_match_ratio = best_icon_ratio
+                    match_type = "icônes"
+                elif best_text_match:
+                    best_match = best_text_match
+                    best_match_ratio = best_text_ratio
+                    match_type = "textes"
+                else:
+                    best_match = None
 
                 if best_match:
                     if best_match_ratio == 1.0:
-                        print(f"✅ Match parfait trouvé: '{best_match}'")
+                        print(f"✅ Match parfait trouvé par {match_type}: '{best_match}'")
                     else:
-                        print(f"✅ Meilleur match partiel: '{best_match}' ({best_match_count} icônes, ratio {best_match_ratio:.1%})")
+                        print(f"✅ Meilleur match partiel par {match_type}: '{best_match}' (ratio {best_match_ratio:.1%})")
                     selected_keywords = [best_match]
+                    category = monitor_keywords[best_match].get('category', 'other')
                 else:
                     selected_keywords = None
-                    print(f"❌ Aucun keyword trouvé (aucune icône ne correspond)")
-                    
+                    print(f"❌ Aucun keyword trouvé (ni icônes ni textes ne correspondent)")
+                
+
             if selected_keywords:
                 all_icons = [
                     icon.strip().lower()
@@ -362,6 +430,18 @@ class CentralizedMonitor:
                             'options': [opt],
                             'analysis': analysis
                         }
+                
+                # Si aucune option détectée mais le keyword contient "CLICK" dans ses icônes
+                if selected_keywords and 'click' in [icon.strip().lower() for icon in self.monitor_config['keywords'][selected_keywords[0]].get('icon', [])]:
+                    print(f"✅ Keyword '{selected_keywords[0]}' nécessite CLICK, action automatique!")
+                    return {
+                        'success': True,
+                        'decision': 'CLICK',
+                        'reason': f"Keyword '{selected_keywords[0]}' nécessite une action de clic.",
+                        'options': [],
+                        'analysis': analysis,
+                        'category': category
+                    }
 
                 print(f"🔍 Aucune option détectée, skipping AI decision...")
                 return None
@@ -526,7 +606,35 @@ class CentralizedMonitor:
         """Exécute le clic selon la décision"""
         try:
             print(f"popup_data: {popup_data}")
-            # Récupérer les coordonnées depuis les données du popup
+            
+            # Cas spécial pour CLICK : cliquer au centre de la fenêtre
+            if decision == 'CLICK' and 'window_bbox' in popup_data:
+                win_bbox = popup_data['window_bbox']
+                # Centre de la fenêtre
+                cx = win_bbox[2] // 2
+                cy = win_bbox[3] // 2
+                
+                # Transformer les coordonnées
+                abs_x, abs_y, transformed_cx, transformed_cy = self.transform_coordinates(cx, cy)
+                
+                if abs_x is not None:
+                    print(f"🖱️  Clic CLICK au centre de la fenêtre")
+                    print(f"   - Centre transformé: ({transformed_cx}, {transformed_cy})")
+                    
+                    # Effectuer le clic
+                    self.perform_click(abs_x, abs_y, "Clic CLICK au centre")
+                    
+                    # Déplacer la souris au centre de la fenêtre après le clic
+                    center_x = win_bbox[0] + win_bbox[2]//2
+                    center_y = win_bbox[1] + 200
+                    pyautogui.moveTo(center_x, center_y, duration=0.3)
+                    
+                    return True
+                else:
+                    print(f"❌ Erreur de transformation pour CLICK")
+                    return False
+            
+            # Cas normal : chercher dans les options
             if 'options' in popup_data:
                 for option in popup_data['options']:
                     # Comparer en enlevant les espaces au début et à la fin
@@ -540,16 +648,10 @@ class CentralizedMonitor:
                             x1, y1, x2, y2 = bbox
                             
                             # Centre de la bbox
-                            if decision == 'CLICK':
-                                x1 = win_bbox[2] // 2
-                                y1 = win_bbox[3] // 2
-                                x2 = x1
-                                y2 = y1
-
                             cx = (x1 + x2) // 2
                             cy = (y1 + y2) // 2
                             
-                            # Transformer les coordonnées (window_bbox utilisé implicitement par transform_coordinates)
+                            # Transformer les coordonnées
                             abs_x, abs_y, transformed_cx, transformed_cy = self.transform_coordinates(cx, cy)
                             
                             if abs_x is not None:
@@ -557,8 +659,8 @@ class CentralizedMonitor:
                                 print(f"   - Bbox originale: {bbox}")
                                 print(f"   - Centre transformé: ({transformed_cx}, {transformed_cy})")
                                 
-                                # Effectuer le clic avec offset de 30 pixels
-                                self.perform_click(abs_x, abs_y, f"Clic sur '{decision}'", y_offset=30)
+                                # Effectuer le clic
+                                self.perform_click(abs_x, abs_y, f"Clic sur '{decision}'")
                             else:
                                 print(f"❌ Erreur de transformation pour '{decision}'")
                             
@@ -595,8 +697,10 @@ class CentralizedMonitor:
                     return None, None, None, None
             
             # Appliquer inverse_conversion
+            print('COORDONEE')
+            print(x,y)
             transformed_x, transformed_y = self.calibration.inverse_conversion(x, y)
-            
+            print(transformed_x,transformed_y)
             # Position absolue
             abs_x = window.left + transformed_x
             abs_y = window.top + transformed_y
@@ -1198,11 +1302,14 @@ class CentralizedMonitor:
                 print("🛠️ Forçage d'un match factice pour simulation (capture + décision)")
                 fake_match = {
                     'type': 'popup',
-                    'trigger': 'would you like',  # Utiliser un trigger qui existe dans monitor_config
-                    'group': 'turn'
+                    'trigger': 'Force',  # Utiliser un trigger qui existe dans monitor_config
+                    'group': 'turn',
+                    'bytes': 'Simulation forced popup'.encode('utf-16-le')
                 }
                 matches = [fake_match]
                 scan_count = 0
+                # Reset already_seen pour permettre de capturer à nouveau
+                self.already_seen = set()
 
             for match in matches[:1]:
                 print(f"🔍 Match: {match}")
@@ -1224,15 +1331,16 @@ class CentralizedMonitor:
                         print(f"🖼️ Screenshot capturé !")
                         
                         result = self.process_popup(cleaned_text, screenshot, match.get('trigger'))
-                        category = result['category']
-                            
+                        
                         print('RESULT: ',result)
                         if result is None:
                             print("🔍 No result found, skipping...")
                             continue
+                            
+                        category = result.get('category', 'other')
+                        
                         if result and result.get('success'):
                             
-                            # Vérifier si la décision est "make_trade" (depuis ai_service)
                             if category == "trade" and result.get('decision') == 'make_trade':
                                 print("🔄 Décision 'make_trade' détectée depuis ai_service")
                                 trade_data = result.get('trade_data', {})
@@ -1267,35 +1375,43 @@ class CentralizedMonitor:
                             decision = result['decision']
                             options = result.get('options', [])
                             
-                            selected_option = None
-                            for opt in options:
-                                if opt['name'].strip().lower() == decision.strip().lower():
-                                    selected_option = opt
-                                    break
-                            
-                            if not selected_option:
-                                for opt in options:
-                                    opt_name = opt['name'].strip().lower()
-                                    dec_name = decision.strip().lower()
-                                    if dec_name in opt_name or opt_name in dec_name:
-                                        selected_option = opt
-                                        break
-                            
-                            if selected_option and window_info:
+                            # Gérer directement CLICK sans chercher dans les options
+                            if decision == 'CLICK' and window_info:
                                 popup_data = {
                                     'window_bbox': window_info,
-                                    'options': options
+                                    'options': []  # Pas besoin d'options pour CLICK
                                 }
                                 
-                                # Exécuter le clic
                                 if self.execute_click(decision, popup_data):
-                                    # Attendre un peu plus longtemps avant de retirer de already_seen
-                                    time.sleep(3)
+                                    time.sleep(1)
                             else:
-                                print(f"⚠️ Option '{decision}' non trouvée dans les options disponibles")
+                                selected_option = None
+                                for opt in options:
+                                    if opt['name'].strip().lower() == decision.strip().lower():
+                                        selected_option = opt
+                                        break
+                                
+                                if not selected_option:
+                                    for opt in options:
+                                        opt_name = opt['name'].strip().lower()
+                                        dec_name = decision.strip().lower()
+                                        if dec_name in opt_name or opt_name in dec_name:
+                                            selected_option = opt
+                                            break
+                                
+                                if selected_option and window_info:
+                                    popup_data = {
+                                        'window_bbox': window_info,
+                                        'options': options
+                                    }
+                                    
+                                    if self.execute_click(decision, popup_data):
+                                        time.sleep(1)
+                                else:
+                                    print(f"⚠️ Option '{decision}' non trouvée dans les options disponibles")
                             
-                            # Retirer pour re-détecter
-                            self.already_seen.remove(key)
+                            if key in self.already_seen:
+                                self.already_seen.remove(key)
             
             time.sleep(1)
 
