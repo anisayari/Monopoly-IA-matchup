@@ -87,10 +87,21 @@ completion = client.chat.completions.parse(
     response_format=MonopolyHUD,
 )
 
+import json
+
 hud_data = completion.choices[0].message
 
 # If the model refuses to respond, you will get a refusal message
 if (hud_data.refusal):
-    print(hud_data.refusal)
+    print("❌ Model refusal:", hud_data.refusal)
 else:
-    print(hud_data.parsed)
+    # Convert the parsed Pydantic model to dict and print as JSON
+    parsed_data = hud_data.parsed
+    print("\n✅ VLM Response (MonopolyHUD):")
+    print(json.dumps(parsed_data.model_dump(), indent=2, ensure_ascii=False))
+    
+    # Also print individual fields for clarity
+    print("\n📋 Parsed fields:")
+    print(f"  - Popup Title: {parsed_data.popup_title}")
+    print(f"  - Popup Text: {parsed_data.popup_text}")
+    print(f"  - Action Buttons: {parsed_data.action_buttons}")
