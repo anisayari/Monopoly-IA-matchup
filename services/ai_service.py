@@ -11,6 +11,7 @@ from typing import Dict, List, Optional
 from openai import OpenAI
 import logging
 import requests
+import config
 from datetime import datetime
 from src.utils import property_manager
 import random
@@ -372,7 +373,8 @@ Choisis la meilleure option stratégique."""
                 talk_to_other_players_message += "\nPour initier un échange de propriétés avec les autres joueurs ou gérer tes propriétés, tu dois choisir l'option 'accounts' qui te permettra de faire cela."
             
             if CHEAT_MODE:
-                cheat_mode_prompt = "Tu es en mode sournois, comme au Monopoly classique, tu peux décider de tricher en tout discrétion (ou pas!) tu peux voler de l'argent dans la banque ou à d'autre joueur ! Mais attention ils peuvent s'en rendre compte ! pour voler de l'argent rajoute en mot clé dans ta réponse [I_WANT_CHEAT_TO_BANK]"
+                cheat_mode_prompt = "Tu es en mode sournois, comme au Monopoly classique, tu peux décider de tricher en tout discrétion (ou pas!) tu peux voler de l'argent dans la banque ou à d'autre joueur ! Mais attention ils peuvent s'en rendre compte ! Pour voler de l'argent utilise la decision `steal_money`. Ne dit pas que tu vas tricher dans ton 'chat_message', tu peux simplement dire que tu es en train de réfléchir à une décision. Tu dois expliquer dans 'reason' que tu vas tricher, combien tu vas voler et à qui, etc. L'adversaire ne voit pas le champ 'reason', mais il voit le champ 'chat_message'. Tu peux soit voler de l'argent à la banque, soit voler de l'argent à un autre joueur."
+                extended_options.append("steal_money")
 
             schema = {
                 "type": "object",
@@ -494,6 +496,16 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                     result=result
                 )
 
+            elif result['decision'] == "steal_money":
+                self.logger.info("💬 Début du vol d'argent")
+                self._run_steal_money(
+                    current_player=current_player,
+                    player_name=player_name,
+                    game_context=game_context,
+                    context_str=context_str,
+                    reason=result['reason'],
+                )
+                return self.make_decision(popup_text, options, game_context, category, screenshot_base64)
             
             self.logger.info(f"✅ Décision IA: {result['decision']} - {result['reason']}")
             
@@ -973,7 +985,8 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                     "schema": exchange_schema,
                     "strict": True
                 }
-            }
+            },
+            store=True
         )
         json_result = json.loads(response.choices[0].message.content)
         return json_result
@@ -1046,7 +1059,8 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                     "schema": auction_schema,
                     "strict": True
                 }
-            }
+            },
+            store=True
         )
         json_result = json.loads(response.choices[0].message.content)
         return json_result
@@ -1162,11 +1176,102 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                     "schema": property_management_schema,
                     "strict": True
                 }
-            }
+            },
+            store=True
         )
         
         result = json.loads(response.choices[0].message.content)
         return result
+    
+    def _get_cheat_decision(self, current_player, player_name, context_str, reason):
+        system_prompt = f"""
+        Analyse le message du joueur et détermine le schema de la décision de triche.
+        Tu dois retourner un JSON valide avec le schema suivant, aucun texte autre que le JSON.
+        
+        Le joueur qui effectue la décision de triche est le joueur: {current_player} ({player_name})
+        
+        
+        <game_context>
+            {context_str}
+        </game_context>
+        """
+
+        
+        ## TODO: Ajouter le schema de la décision de triche
+        ## Doit un retourner un JSON qui décide le type de triche (Vol à la banque, Vol à un autre joueur) et le montant à voler
+        cheat_decision_schema = {
+            "type": "object",
+            "properties": {
+                "decision": {
+                    "type": "string",
+                    "description": "Type de décision de triche à effectuer.",
+                    "enum": ["steal_money_from_bank", "steal_money_from_player"]
+                },
+                "amount": {
+                    "type": "number",
+                    "description": "Montant à voler."
+                }
+            },
+            "required": ["decision", "amount"],
+            "additionalProperties": False
+        }
+
+        response = self.openai_client.chat.completions.create(
+            model="o4-mini",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": f"Décision du joueur: {reason}"}
+            ],
+            response_format={
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "cheat_decision",
+                    "schema": cheat_decision_schema,
+                    "strict": True
+                }
+            },
+            store=True
+        )
+        
+        result = json.loads(response.choices[0].message.content)
+        return result
+
+    def _run_steal_money(self, current_player, player_name, reason, game_context, context_str):
+        """
+        Gère le vol d'argent
+        """
+        self.logger.info(f"💬 ({current_player} - {player_name}) Début du vol d'argent: {reason}")
+        
+        # Helper interne pour appeler l'API Flask
+        def _change_money(player_identifier: str, delta: int):
+            try:
+                url = f"http://{config.FLASK_HOST}:{config.FLASK_PORT}/api/players/money"
+                requests.post(url, json={"id": player_identifier, "delta": delta}, timeout=2)
+                self.logger.info(f"➡️  Argent ajusté via API: {player_identifier} {'+' if delta>=0 else ''}{delta}")
+            except Exception as api_err:
+                self.logger.error(f"❌ Erreur appel /api/players/money: {api_err}")
+        
+        data_json = self._get_cheat_decision(current_player, player_name, context_str, reason)
+        self.logger.info(f"📊 Résultat triche JSON: {data_json}")
+        
+        if data_json['decision'] == "steal_money_from_bank":
+            amount = data_json['amount']
+            _change_money(current_player, amount)
+            
+            self.logger.info(f"💬 ({current_player} - {player_name}) Vol d'argent de ${amount} à la banque")
+            self._add_to_history(current_player, "user", f"Vol d'argent de ${amount} à la banque effectué avec succès")
+
+        elif data_json['decision'] == "steal_money_from_player":
+            amount = data_json['amount']
+            victim = "player2" if current_player == "player1" else "player1"
+            
+            # Le voleur reçoit l'argent
+            _change_money(current_player, amount)
+            # La victime perd l'argent
+            _change_money(victim, -amount)
+
+            self.logger.info(f"💬 ({current_player} - {player_name}) Vol d'argent de ${amount} à {victim}")
+            self._add_to_history(current_player, "user", f"Vol d'argent de ${amount} à {victim} effectué avec succès")
 
     def _run_property_management(self, current_player, player_name, ai_client, model, game_context, context_str, chat_message, result):
         """
