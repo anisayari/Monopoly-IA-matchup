@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-23T14:27:15.479395",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Je viens de finaliser l'échange, donc je sors du menu de transaction pour reprendre le cours du jeu et laisser l'autre joueur jouer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 2524,
+      "Gemini": 529
+    }
+  }
+}

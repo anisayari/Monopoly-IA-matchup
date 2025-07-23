@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-23T13:42:59.572631",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "Continue ",
+  "reason": "J'ai maintenant une réserve très confortable pour faire des achats agressifs ou soudoyer. Priorité à la discrétion, il faut laisser la partie reprendre son cours.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 1324,
+      "Gemini": 529
+    }
+  }
+}

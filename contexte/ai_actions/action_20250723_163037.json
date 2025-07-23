@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T14:30:35.323321",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Décision par défaut (IA non disponible)",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 7,
+    "money": {
+      "GPT": 2524,
+      "Gemini": 529
+    }
+  }
+}

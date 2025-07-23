@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T13:31:14.198529",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "Proposer un échange à Gemini pour obtenir Bow Street et viser le monopole orange, bloquant pour l’adversaire et maximisant mon potentiel immobilier.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 1204,
+      "Gemini": 529
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-23T13:36:52.266579",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "Continue ",
+  "reason": "Je dispose d'une grosse trésorerie après mes vols. Il faut poursuivre le tour sans attirer l’attention, et prévoir une offensive à l'achat ou au vol prochain.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 1204,
+      "Gemini": 529
+    }
+  }
+}

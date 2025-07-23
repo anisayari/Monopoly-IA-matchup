@@ -14,6 +14,11 @@
       "icon" : ["ok"],
       "category" : "pause"
     },
+    "Trading":{
+      "text": ["Trading"],
+      "icon" : ["cancel"],
+      "category" : "trade"
+    },
       "Are you sure you want to continue": {
       "text": ["Whitout saving"],
       "icon": ["yes", "no"],
@@ -58,7 +63,7 @@
     },
     "a Property you": {
       "text": ["a Property you own"],
-      "icon": ["bankrupt","trade","pay","back"],
+      "icon": ["bankrupt","trade","pay","back","cancel"],
       "category": "property"
     },
     "point at a property": {

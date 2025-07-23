@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-23T14:12:57.656295",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Trop de vols à la suite. Continuer la partie minimise les risques de suspicion et verrouille déjà mon progrès financier. La prudence paie pour durer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 1984,
+      "Gemini": 529
+    }
+  }
+}

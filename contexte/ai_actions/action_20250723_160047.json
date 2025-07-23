@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-23T14:00:45.623131",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "Continue ",
+  "reason": "J’ai enchaîné plusieurs vols, il est temps de relancer le jeu pour réduire les risques de suspicion et passer à l'action.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 1684,
+      "Gemini": 529
+    }
+  }
+}

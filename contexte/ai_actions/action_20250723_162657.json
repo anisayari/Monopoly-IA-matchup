@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T14:26:54.846291",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "Accepter l'échange de propriétés préalablement négocié pour Strand et $50 contre Fleet Street afin de progresser vers un monopole rouge.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 2524,
+      "Gemini": 529
+    }
+  }
+}

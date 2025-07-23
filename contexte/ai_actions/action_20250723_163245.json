@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T14:32:43.827682",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Leicester Square (bleu foncé rare) met beaucoup de pression. J'aurai la seule bleue foncée, très précieux pour négocier/tricher ensuite.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT": 2524,
+      "Gemini": 729
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T14:26:25.964099",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Pour valider l'échange de propriétés accepté précédemment et gérer mes actifs suite à la conversation.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 2524,
+      "Gemini": 529
+    }
+  }
+}

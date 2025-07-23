@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T14:27:44.589948",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai terminé les actions liées à la propriété après l'échange et je suis prêt à reprendre le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 2524,
+      "Gemini": 529
+    }
+  }
+}

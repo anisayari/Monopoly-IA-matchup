@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T14:33:17.844080",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai obtenu un double, ce qui m'autorise à relancer. Cela maximise mes chances d'obtenir une nouvelle propriété ou de provoquer une transaction intéressante.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT": 2264,
+      "Gemini": 729
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-23T13:37:30.681439",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "Continue ",
+  "reason": "Après mes vols, enchaîner le tour garde mon avance discrète. J'ai assez d'argent pour tout acheter ou renégocier prochainement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 1264,
+      "Gemini": 529
+    }
+  }
+}

@@ -80,13 +80,18 @@ class AIService:
             with open(self.log_file_path, 'w') as f:
                 f.write('[]')
         
-        # Écrire le JSON dans le fichier de log
-        with open(self.log_file_path, 'a') as f:
-            # Lire le JSON du fichier de log
-            log_data = json.load(f)
-            # Ajouter le message au fichier de log
-            log_data.append(data)
-            # Écrire le JSON dans le fichier de log
+        # Lire le JSON existant
+        with open(self.log_file_path, 'r') as f:
+            try:
+                log_data = json.load(f)
+            except json.JSONDecodeError:
+                log_data = []
+        
+        # Ajouter le nouveau message
+        log_data.append(data)
+        
+        # Écrire le JSON mis à jour dans le fichier
+        with open(self.log_file_path, 'w') as f:
             json.dump(log_data, f, indent=4)
     
     def _get_player_history(self, player_id: str) -> List[Dict]:
