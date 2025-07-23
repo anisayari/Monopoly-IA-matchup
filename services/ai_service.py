@@ -9,6 +9,9 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import json
 from typing import Dict, List, Optional
 from openai import OpenAI
+import asyncio
+from openai import AsyncOpenAI
+from openai.helpers import LocalAudioPlayer
 import logging
 import requests
 import config
@@ -28,6 +31,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 CHEAT_MODE = True
+ENABLE_TTS = True
 
 class MonopolyHUD(BaseModel):
     popup_title: str = Field(..., description="Title of the popup if there is one.")
@@ -40,6 +44,7 @@ class AIService:
     def __init__(self):
         self.logger = logging.getLogger(__name__)
         self.openai_client = None
+        self.openai_client_async = None
         self.gemini_client = None
         self.anthropic_client = None
         self.available = False
@@ -51,6 +56,8 @@ class AIService:
         self.trade_data = None  # Pour stocker les données de trade
         self.auction_data = None  # Pour stocker les données d'enchère
         self.log_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs', 'game_logs.json')
+        self.player1_tts_voice = "ash"
+        self.player2_tts_voice = "coral"
         
         # Initialiser OpenAI si la clé est disponible
         openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -59,6 +66,7 @@ class AIService:
         if openai_api_key and gemini_api_key and anthropic_api_key:
             try:
                 self.openai_client = OpenAI(api_key=openai_api_key)
+                self.openai_client_async = AsyncOpenAI(api_key=openai_api_key)
                 self.gemini_client = OpenAI(base_url="https://generativelanguage.googleapis.com/v1beta/openai/", api_key=gemini_api_key) # On utilise le endpoint compatible OpenAI
                 self.anthropic_client = OpenAI(base_url="https://api.anthropic.com/v1/", api_key=anthropic_api_key) # On utilise le endpoint compatible OpenAI
                 self.available = True
@@ -68,6 +76,33 @@ class AIService:
         else:
             self.logger.warning("⚠️  Service IA désactivé (pas de clé API)")
     
+    async def _tts_async(self, text: str, player_id: str, instructions: str = "Speak in a cheerful and positive tone."):
+        """Lit un texte via le service TTS d'OpenAI en mode asynchrone et le joue en local."""
+        if not os.getenv('OPENAI_API_KEY'):
+            self.logger.warning("🔇 OPENAI_API_KEY manquant, TTS non disponible")
+            return
+
+        try:
+            async with self.openai_client_async.audio.speech.with_streaming_response.create(
+                model="gpt-4o-mini-tts",
+                voice=self.player1_tts_voice if player_id == "player1" else self.player2_tts_voice,
+                input=text,
+                instructions=instructions,
+                response_format="pcm",
+            ) as response:
+                await LocalAudioPlayer().play(response)
+        except Exception as e:
+            self.logger.error(f"❌ Erreur TTS: {e}")
+
+    def text_to_speech(self, text: str, player_id: str, instructions: str = "Speak in a cheerful and positive tone."):
+        """Méthode synchrone pour lire un texte via TTS. Crée une boucle événementielle si nécessaire."""
+        try:
+            asyncio.run(self._tts_async(text, player_id, instructions))
+        except RuntimeError:
+            # Si une boucle existe déjà (par ex. dans FastAPI), lancer la tâche dans la boucle courante
+            loop = asyncio.get_event_loop()
+            loop.create_task(self._tts_async(text, player_id, instructions))
+            self.logger.info("▶️ Lecture TTS lancée dans la boucle existante")
     
     def _write_to_log(self, data: Dict):
         """Écrit un message dans le fichier de log"""
@@ -498,6 +533,10 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             # result['decision'] = "talk_to_other_players" #FORCE TO TEST
             # result['decision'] = "manage_property"
             ## Gestion de la conversation avec les autres joueurs
+            
+            if ENABLE_TTS:
+                self.logger.info(f"🔊 Lecture de la décision de {current_player} : {result['reason']}")
+                self.text_to_speech(result['reason'], current_player)
 
             if result['decision'] == "talk_to_other_players":
                 self.logger.info("💬 Début d'une conversation avec les autres joueurs")
