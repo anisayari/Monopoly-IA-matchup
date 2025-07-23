@@ -189,9 +189,9 @@
           0,
           0
         ],
-        "current_rent": 0,
+        "current_rent": 4,
         "house_price": 0,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -564,9 +564,9 @@
           1100,
           1275
         ],
-        "current_rent": 0,
+        "current_rent": 26,
         "house_price": 200,
-        "owner": null,
+        "owner": "blue",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -708,7 +708,7 @@
       "GPT",
       "Gemini"
     ],
-    "current_player": "player1",
+    "current_player": "player2",
     "buildings_summary": {
       "total_houses": 0,
       "total_hotels": 0,
@@ -717,62 +717,6 @@
     }
   },
   "events": [
-    {
-      "turn": 1,
-      "player": "GPT",
-      "action": "buy_property",
-      "detail": "Vine Street pour 200€",
-      "message": "GPT achète Vine Street pour 200€."
-    },
-    {
-      "turn": 2,
-      "player": "GPT",
-      "action": "buy_property",
-      "detail": "Strand pour 220€",
-      "message": "GPT achète Strand pour 220€."
-    },
-    {
-      "turn": 2,
-      "player": "GPT",
-      "action": "buy_property",
-      "detail": "Trafalgar Square pour 240€",
-      "message": "GPT achète Trafalgar Square pour 240€."
-    },
-    {
-      "turn": 3,
-      "player": "GPT",
-      "action": "buy_property",
-      "detail": "Fenchurch Street Station pour 200€",
-      "message": "GPT achète Fenchurch Street Station pour 200€."
-    },
-    {
-      "turn": 3,
-      "player": "Gemini",
-      "action": "buy_property",
-      "detail": "The Angel Islington pour 100€",
-      "message": "Gemini achète The Angel Islington pour 100€."
-    },
-    {
-      "turn": 3,
-      "player": "Gemini",
-      "action": "buy_property",
-      "detail": "Northumberland Avenue pour 160€",
-      "message": "Gemini achète Northumberland Avenue pour 160€."
-    },
-    {
-      "turn": 4,
-      "player": "Gemini",
-      "action": "buy_property",
-      "detail": "Bow Street pour 180€",
-      "message": "Gemini achète Bow Street pour 180€."
-    },
-    {
-      "turn": 4,
-      "player": "Gemini",
-      "action": "buy_property",
-      "detail": "Fleet Street pour 220€",
-      "message": "Gemini achète Fleet Street pour 220€."
-    },
     {
       "turn": 5,
       "player": "Gemini",
@@ -790,6 +734,13 @@
     {
       "turn": 6,
       "player": "System",
+      "action": "property_offer",
+      "detail": "Do you want to buy Regent Street for ~300?",
+      "message": "System a la possibilité d'acheter Regent Street."
+    },
+    {
+      "turn": 6,
+      "player": "System",
       "action": "jail_options",
       "detail": "Do you want to pay the bail, roll for doubles or use a get out of free jail card (if you have one)?",
       "message": "System doit choisir comment sortir de prison."
@@ -797,65 +748,114 @@
     {
       "turn": 6,
       "player": "GPT",
-      "action": "roll_dice",
-      "detail": "4+3=7",
-      "message": "GPT a lancé les dés et avance de 7 cases."
-    },
-    {
-      "turn": 6,
-      "player": "GPT",
-      "action": "move_and_buy",
-      "detail": "Regent Street -> Regent Street pour 300€",
-      "message": "GPT s'est déplacé sur Regent Street et l'a acheté pour 300€."
-    },
-    {
-      "turn": 6,
-      "player": "GPT",
-      "action": "lose_property",
-      "detail": "Trafalgar Square",
-      "message": "GPT a effectué l'action 'lose_property' Trafalgar Square."
-    },
-    {
-      "turn": 6,
-      "player": "GPT",
-      "action": "goto",
-      "detail": "Leicester Square",
-      "message": "GPT se déplace directement vers Leicester Square."
-    },
-    {
-      "turn": 6,
-      "player": "GPT",
-      "action": "buy_property",
-      "detail": "Leicester Square pour 260€",
-      "message": "GPT achète Leicester Square pour 260€."
-    },
-    {
-      "turn": 6,
-      "player": "GPT",
-      "action": "move",
-      "detail": "Fenchurch Street Station",
-      "message": "GPT arrive sur Fenchurch Street Station."
-    },
-    {
-      "turn": 6,
-      "player": "System",
-      "action": "property_offer",
-      "detail": "Do you want to buy Leicester Square for ~260?",
-      "message": "System a la possibilité d'acheter Leicester Square."
+      "action": "receive_money",
+      "detail": "200€ (passage par la case départ)",
+      "message": "GPT reçoit 200€ pour passage par la case départ."
     },
     {
       "turn": 6,
       "player": "GPT",
       "action": "pay_money",
-      "detail": "260€ (transaction)",
-      "message": "GPT paie 260€ pour transaction."
+      "detail": "300€ (transaction)",
+      "message": "GPT paie 300€ pour transaction."
     },
     {
       "turn": 6,
       "player": "GPT",
+      "action": "buy_property",
+      "detail": "Regent Street pour 300€",
+      "message": "GPT achète Regent Street pour 300€."
+    },
+    {
+      "turn": 6,
+      "player": "Gemini",
+      "action": "roll_dice",
+      "detail": "6+6=12",
+      "message": "Gemini a lancé les dés et avance de 12 cases."
+    },
+    {
+      "turn": 6,
+      "player": "Gemini",
+      "action": "move_and_buy",
+      "detail": "Electric Company -> Electric Company pour 150€",
+      "message": "Gemini s'est déplacé sur Electric Company et l'a acheté pour 150€."
+    },
+    {
+      "turn": 6,
+      "player": "Gemini",
+      "action": "goto",
+      "detail": "Electric Company",
+      "message": "Gemini se déplace directement vers Electric Company."
+    },
+    {
+      "turn": 6,
+      "player": "Gemini",
+      "action": "move_and_buy",
+      "detail": "Old Kent Road -> Old Kent Road pour 60€",
+      "message": "Gemini s'est déplacé sur Old Kent Road et l'a acheté pour 60€."
+    },
+    {
+      "turn": 6,
+      "player": "System",
+      "action": "property_offer",
+      "detail": "Do you want to buy Electric Company for ~150?",
+      "message": "System a la possibilité d'acheter Electric Company."
+    },
+    {
+      "turn": 6,
+      "player": "Gemini",
       "action": "receive_money",
-      "detail": "150€ (transaction)",
-      "message": "GPT reçoit 150€ pour transaction."
+      "detail": "200€ (passage par la case départ)",
+      "message": "Gemini reçoit 200€ pour passage par la case départ."
+    },
+    {
+      "turn": 6,
+      "player": "Gemini",
+      "action": "pay_money",
+      "detail": "150€ (taxe ou carte chance/caisse de communauté)",
+      "message": "Gemini paie 150€ pour taxe ou carte chance/caisse de communauté."
+    },
+    {
+      "turn": 6,
+      "player": "Gemini",
+      "action": "receive_money",
+      "detail": "250€ (transaction)",
+      "message": "Gemini reçoit 250€ pour transaction."
+    },
+    {
+      "turn": 6,
+      "player": "Gemini",
+      "action": "roll_dice",
+      "detail": "3+5=8",
+      "message": "Gemini a lancé les dés et avance de 8 cases."
+    },
+    {
+      "turn": 6,
+      "player": "Gemini",
+      "action": "move",
+      "detail": "Free Parking",
+      "message": "Gemini arrive sur Free Parking."
+    },
+    {
+      "turn": 6,
+      "player": "Gemini",
+      "action": "lose_property",
+      "detail": "Electric Company",
+      "message": "Gemini a effectué l'action 'lose_property' Electric Company."
+    },
+    {
+      "turn": 6,
+      "player": "Gemini",
+      "action": "goto",
+      "detail": "Free Parking",
+      "message": "Gemini se déplace directement vers Free Parking."
+    },
+    {
+      "turn": 6,
+      "player": "Gemini",
+      "action": "move_and_buy",
+      "detail": "Whitehall -> Whitehall pour 140€",
+      "message": "Gemini s'est déplacé sur Whitehall et l'a acheté pour 140€."
     }
   ],
   "players": {
@@ -863,13 +863,13 @@
       "name": "GPT",
       "ai_model": "gpt-4.1",
       "provider": "openai",
-      "current_player": true,
-      "is_current": true,
+      "current_player": false,
+      "is_current": false,
       "dice_result": [
         1,
-        1
+        4
       ],
-      "money": 2414,
+      "money": 2514,
       "properties": [
         {
           "id": 19,
@@ -919,23 +919,30 @@
           "group": "yellow",
           "houses": 0,
           "is_mortgaged": false
+        },
+        {
+          "id": 31,
+          "name": "Regent Street",
+          "group": "green",
+          "houses": 0,
+          "is_mortgaged": false
         }
       ],
-      "position": 26,
-      "current_space": "Leicester Square",
+      "position": 31,
+      "current_space": "Regent Street",
       "jail": false
     },
     "player2": {
       "name": "Gemini",
       "ai_model": "gemini-2.5-flash",
       "provider": "gemini",
-      "current_player": false,
-      "is_current": false,
+      "current_player": true,
+      "is_current": true,
       "dice_result": [
-        2,
-        3
+        3,
+        5
       ],
-      "money": 729,
+      "money": 1029,
       "properties": [
         {
           "id": 6,
@@ -978,10 +985,17 @@
           "group": "red",
           "houses": 0,
           "is_mortgaged": false
+        },
+        {
+          "id": 12,
+          "name": "Electric Company",
+          "group": "utility",
+          "houses": 0,
+          "is_mortgaged": false
         }
       ],
-      "position": 0,
-      "current_space": "GO",
+      "position": 20,
+      "current_space": "Free Parking",
       "jail": false
     }
   },

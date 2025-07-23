@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-23T15:16:43.534819",
+  "trigger": "you want to buy",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "Continue ",
+  "reason": "Je suis en bonne position, mais il est judicieux d'attendre un tour favorable pour voler de l'argent discrètement ensuite, après avoir observé les prochains mouvements adverses.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT": 2414,
+      "Gemini": 729
+    }
+  }
+}

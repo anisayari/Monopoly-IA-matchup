@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T15:18:39.282284",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai sécurisé de la trésorerie avec deux vols. Passons au tour suivant pour saisir de nouvelles opportunités ou investir sur de futures cases d'achat.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT": 2314,
+      "Gemini": 729
+    }
+  }
+}

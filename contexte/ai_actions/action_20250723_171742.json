@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T15:17:39.917664",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Regent Street augmente mes actifs et me rapproche du monopole vert. J'ai volé $200 pour renforcer ma trésorerie et dominer la partie à long terme.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT": 2414,
+      "Gemini": 729
+    }
+  }
+}

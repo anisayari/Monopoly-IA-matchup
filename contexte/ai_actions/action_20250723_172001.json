@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T15:19:59.499629",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Buy ",
+    "Auction "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Electric Company me donne le monopole des services publics, assurant un flux de revenus stable pour la suite du jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 2514,
+      "Gemini": 729
+    }
+  }
+}
