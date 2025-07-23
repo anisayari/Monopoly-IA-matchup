@@ -444,6 +444,70 @@ def manage_players():
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+@app.route('/api/players/money', methods=['POST'])
+def update_player_money():
+    """Ajoute ou retire de l'argent à un joueur en mémoire"""
+    global game, contexte
+
+    # Vérifier si Dolphin est en cours d'exécution
+    if not dolphin_process or (dolphin_process != True and dolphin_process.poll() is not None):
+        return jsonify({"error": "Dolphin n'est pas en cours d'exécution"}), 503
+
+    # Vérifier si le jeu est initialisé
+    if not game:
+        return jsonify({"error": "Le jeu n'est pas initialisé"}), 503
+
+    try:
+        data = request.json or {}
+
+        player_identifier = data.get('id')
+        delta = data.get('delta')
+
+        # Normaliser l'identifiant (peut être 'playerX', 1 ou l'id couleur réel)
+        target_player = None
+
+        if player_identifier is None or delta is None:
+            return jsonify({"error": "Paramètres manquants: 'id' et 'delta'"}), 400
+
+        # Cas 1 : identifiant sous forme 'playerX'
+        if isinstance(player_identifier, str) and player_identifier.lower().startswith('player'):
+            try:
+                idx = int(player_identifier.lower().replace('player', '')) - 1  # player1 -> 0
+                if 0 <= idx < len(game.players):
+                    target_player = game.players[idx]
+            except ValueError:
+                pass  # Laisser target_player à None
+
+        # Cas 2 : identifiant numérique (index 1-based)
+        if target_player is None and isinstance(player_identifier, int):
+            idx = player_identifier - 1
+            if 0 <= idx < len(game.players):
+                target_player = game.players[idx]
+
+        # Cas 3 : identifiant correspondant directement à Player.id (couleur)
+        if target_player is None:
+            for p in game.players:
+                if p.id == player_identifier:
+                    target_player = p
+                    break
+
+        if target_player is None:
+            return jsonify({"error": "Joueur introuvable"}), 404
+
+        # Calculer le nouveau montant
+        new_money = target_player.money + int(delta)
+        target_player.money = new_money  # Utilise le setter
+
+        # Mettre à jour le contexte si disponible
+        if contexte is not None:
+            contexte._update_context()
+            contexte._save_context()
+
+        return jsonify({'success': True, 'id': player_identifier, 'money': new_money})
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 @app.route('/api/dolphin', methods=['POST', 'DELETE'])
 def manage_dolphin():
     """Gère le démarrage et l'arrêt de Dolphin"""
