@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:40:47.780574",
+  "trigger": "Property ",
+  "keywords": [
+    "Property "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Avec seulement 10$, je ne peux pas construire. Tenter un échange est la seule action proactive pour améliorer ma situation financière ou foncière.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT4.1": 1498,
+      "Gemini-2.5-Flash": 10
+    }
+  }
+}

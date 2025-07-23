@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T23:01:12.360454",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acquérir cette propriété diversifie mon portefeuille. L'investissement est faible et réduit les opportunités pour l'adversaire de créer des monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1250,
+      "Gemini": 1400
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T23:05:02.702782",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter la station diversifie mes revenus et bloque Gemini sur des cases très fréquentées. Les gares sont stratégiques en début de partie pour maximiser les flux de cash.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1030,
+      "Gemini": 1020
+    }
+  }
+}

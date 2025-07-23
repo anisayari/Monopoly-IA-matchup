@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:28:59.321087",
+  "trigger": "Force",
+  "keywords": [
+    "a Property"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "make_property_management",
+  "reason": "Avec $434, je peux lever les hypothèques de toutes mes propriétés rouges pour générer des revenus futurs.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT4.1": 1498,
+      "Gemini-2.5-Flash": 434
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T23:09:40.749379",
+  "trigger": "In Jail",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Pay Bail ",
+    "Roll Dice "
+  ],
+  "decision": "Pay Bail ",
+  "reason": "Avec $1020, payer la caution de $50 est un petit coût pour revenir immédiatement dans le jeu et continuer à acheter des propriétés et construire des monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "GPT": 330,
+      "Gemini": 1020
+    }
+  }
+}

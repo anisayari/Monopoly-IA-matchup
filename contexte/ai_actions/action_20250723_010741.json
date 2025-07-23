@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T23:07:39.699600",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "La prison est une étape. Je dois confirmer pour continuer et évaluer ma sortie dès le prochain tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "GPT": 530,
+      "Gemini": 1020
+    }
+  }
+}

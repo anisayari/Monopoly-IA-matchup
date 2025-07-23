@@ -4,6 +4,11 @@
   "delay_seconds": 2,
   "priority_order": ["buy", "next turn", "roll again", "auction", "trade", "back", "accounts"],
   "keywords": {
+    "Bankruptcy":{
+      "text" : ["Bankruptcy"],
+      "icon": ["no","yes"],
+      "category":"bankrupt"
+    },
     "Order Of Play":{
       "text": ["Order of Play"],
       "icon" : ["ok"],
@@ -51,7 +56,7 @@
       "icon": ["auction", "buy"],
       "category": "buy"
     },
-    "a Property 2": {
+    "a Property you": {
       "text": ["a Property you own"],
       "icon": ["bankrupt", "trade"],
       "category": "property"
@@ -131,7 +136,12 @@
       "icon": ["Pay Bail"],
       "category": "pay_bail"
     },
-    "Property Deeds 2": {
+    "Property ": {
+      "text": ["Property Deeds","property deeds"],
+      "icon": ["bankrupt", "trade"],
+      "category": "property"
+    },
+    "Property Deeds ": {
       "text": ["Property Deeds","property deeds"],
       "icon": ["pay", "trade"],
       "category": "property"
@@ -147,8 +157,8 @@
       "category": "roll_the_dice"
     },
     "Shake the Wii": {
-      "text": ["shake the Wii", "shake the wii"],
-      "icon": ["CLICK", "press to continue","shake the"],
+      "text": ["shake the Wii", "shake the wii", "shake the" ,"press"],
+      "icon": ["CLICK", "press to continue","shake the","press"],
       "category": "shake_the_wii"
     },
     "Who's playing": {

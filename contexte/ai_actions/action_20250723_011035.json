@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T23:10:33.343088",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "La propriété est acquise. Aucune action immédiate n'est nécessaire. Passer le tour est la meilleure option stratégique.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "GPT": 330,
+      "Gemini": 790
+    }
+  }
+}

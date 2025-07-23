@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T23:08:46.859612",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter une deuxième gare augmente fortement mes revenus et mon pouvoir de négociation. Les stations sont très fréquentées et essentielles en début de partie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "GPT": 530,
+      "Gemini": 1020
+    }
+  }
+}

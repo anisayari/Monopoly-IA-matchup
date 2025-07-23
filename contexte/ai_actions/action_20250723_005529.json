@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T22:55:26.882621",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "C'est le début du jeu. Confirmer est la seule action pour continuer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

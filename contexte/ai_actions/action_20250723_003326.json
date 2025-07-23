@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T22:33:24.220172",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Je n'ai pas les fonds pour construire ou dés-hypothéquer. Le trading est ma seule option active ici pour générer des liquidités ou améliorer mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT4.1": 1498,
+      "Gemini-2.5-Flash": 10
+    }
+  }
+}

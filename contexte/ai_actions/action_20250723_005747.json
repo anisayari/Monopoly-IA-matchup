@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:57:45.254518",
+  "trigger": "Are you sure you want to continue",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action sur mes propriétés ou échanges possible en prison au tour 0. Je dois avancer et tenter de sortir de prison au plus vite.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

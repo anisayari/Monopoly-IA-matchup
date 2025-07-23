@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:46:53.669826",
+  "trigger": "Property ",
+  "keywords": [
+    "Property "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Avec seulement 10$, je ne peux pas construire ou dés-hypothéquer. Le commerce est la seule action proactive pour améliorer ma situation financière.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT4.1": 1498,
+      "Gemini-2.5-Flash": 10
+    }
+  }
+}

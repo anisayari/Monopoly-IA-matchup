@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:44:23.325308",
+  "trigger": "Bankruptcy",
+  "keywords": [
+    "a Property you"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Je ne suis pas en faillite. Avec peu d'argent, le commerce est la meilleure option pour obtenir des liquidités ou une propriété stratégique.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT4.1": 1498,
+      "Gemini-2.5-Flash": 10
+    }
+  }
+}

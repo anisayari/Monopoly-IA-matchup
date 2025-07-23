@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:27:49.497664",
+  "trigger": "Force",
+  "keywords": [
+    "a Property"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Trade ",
+  "reason": "L'échange de Piccadilly contre $400 a été convenu et initié. Je dois le confirmer pour obtenir des fonds.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT4.1": 1498,
+      "Gemini-2.5-Flash": 434
+    }
+  }
+}

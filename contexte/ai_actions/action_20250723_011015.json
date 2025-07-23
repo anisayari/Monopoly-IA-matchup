@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T23:10:12.908720",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Bow Street me rapproche d'un monopole rouge, ce qui est une priorité stratégique pour générer des revenus importants.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "GPT": 330,
+      "Gemini": 970
+    }
+  }
+}

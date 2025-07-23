@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T23:00:23.588651",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action de gestion ou négociation n'est pertinente ; priorité à l’acquisition rapide de nouvelles propriétés en rejouant aussi vite que possible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1250,
+      "Gemini": 1400
+    }
+  }
+}

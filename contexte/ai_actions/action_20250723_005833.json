@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:58:31.779717",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acquérir des propriétés est essentiel. Le prix est abordable et c'est un bon début pour un monopole bleu clair.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

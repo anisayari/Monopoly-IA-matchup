@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T23:06:19.729335",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Buy ",
+    "Auction "
+  ],
+  "decision": "Buy ",
+  "reason": "Oxford Street est une propriété hautement rentable et stratégique. L’acheter limite l’expansion de Gemini et renforce mon influence sur une couleur convoitée.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 830,
+      "Gemini": 1020
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T23:05:32.061873",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai obtenu un double, il est donc stratégique de relancer immédiatement pour maximiser mes opportunités d'achat et de placement sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 830,
+      "Gemini": 1020
+    }
+  }
+}

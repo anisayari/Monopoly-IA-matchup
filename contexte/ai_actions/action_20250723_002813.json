@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T22:28:11.361428",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "L'échange précédent a été finalisé, augmentant mes liquidités. Je dois maintenant optimiser mes monopoles et lever mes hypothèques.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT4.1": 1498,
+      "Gemini-2.5-Flash": 434
+    }
+  }
+}

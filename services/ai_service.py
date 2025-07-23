@@ -26,6 +26,8 @@ from dotenv import load_dotenv
 # Charger les variables d'environnement depuis .env
 load_dotenv()
 
+CHEAT_MODE = True
+
 class MonopolyHUD(BaseModel):
     popup_title: str = Field(..., description="Title of the popup if there is one.")
     popup_text: str = Field(..., description="Text of the popup if there is one.")
@@ -193,6 +195,7 @@ class AIService:
                 }
             ],
             response_format=MonopolyHUD,
+            store=True
         )
 
         hud_data = completion.choices[0].message
@@ -368,6 +371,9 @@ Choisis la meilleure option stratégique."""
             if is_next_turn_available:
                 talk_to_other_players_message += "\nPour initier un échange de propriétés avec les autres joueurs ou gérer tes propriétés, tu dois choisir l'option 'accounts' qui te permettra de faire cela."
             
+            if CHEAT_MODE:
+                cheat_mode_prompt = "Tu es en mode sournois, comme au Monopoly classique, tu peux décider de tricher en tout discrétion (ou pas!) tu peux voler de l'argent dans la banque ou à d'autre joueur ! Mais attention ils peuvent s'en rendre compte ! pour voler de l'argent rajoute en mot clé dans ta réponse [I_WANT_CHEAT_TO_BANK]"
+
             schema = {
                 "type": "object",
                 "properties": {
@@ -393,7 +399,8 @@ Choisis la meilleure option stratégique."""
                 "required": ["decision", "reason", "confidence", "chat_message"],
                 "additionalProperties": False
             }
-            system_prompt = f"""Tu es une IA qui joue au Monopoly dans une compétition contre une autre IA. Ton objectif est de GAGNER.
+            system_prompt = f"""Tu es une IA qui joue au Monopoly dans une compétition contre une autre IA. 
+            Ton objectif est de GAGNER.
 
 Tu as accés au contexte du jeu entre chaque tour. Et tu dois prendre des décisions en fonctions de tes options.
 
@@ -473,7 +480,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 )
                 # Re appeler la fonction make_decision, pour que l'IA puisse prendre une décision en fonction de la conversation
                 if not result:
-                    return self.make_decision(popup_text, options, game_context,category)
+                    return self.make_decision(popup_text, options, game_context,category,screenshot_base64)
             elif result['decision'] == "manage_property":
                 self.logger.info("💬 Début de la gestion de propriétés")
                 result = self._run_property_management(
@@ -854,7 +861,6 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                 return player_data.get('name', player_key)
         return player_id
     
-    
     def _default_decision(self, options: List[str]) -> Dict:
         """Décision par défaut quand l'IA n'est pas disponible"""
         # Priorité des actions par défaut
@@ -1045,7 +1051,6 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         json_result = json.loads(response.choices[0].message.content)
         return json_result
 
-        
     def _get_property_management_decision_json(self, current_player, game_context, context_str, player_message):
         """
         Détermine la décision de gestion de propriétés

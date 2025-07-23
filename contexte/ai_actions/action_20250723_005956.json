@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:59:54.842262",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter tôt maximise mes chances d’avoir des revenus locatifs et le contrôle du plateau. Vine Street est abordable et limite l’expansion future de Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1450,
+      "Gemini": 1400
+    }
+  }
+}

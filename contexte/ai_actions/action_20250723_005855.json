@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:58:53.097369",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "La propriété est acquise. Aucune autre action n'est nécessaire ou bénéfique pour l'instant. Passer le tour est logique.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1400
+    }
+  }
+}

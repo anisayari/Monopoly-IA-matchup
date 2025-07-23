@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T23:09:17.125700",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma trésorerie baisse, il vaut mieux attendre le prochain tour avant de tenter une négociation ou gestion. Il n’y a rien d’urgent à modifier pour l’instant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "GPT": 330,
+      "Gemini": 1020
+    }
+  }
+}

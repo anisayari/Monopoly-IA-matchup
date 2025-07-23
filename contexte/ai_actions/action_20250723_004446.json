@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T22:44:44.496720",
+  "trigger": "Force",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Avec seulement 10$, je ne peux pas acheter ou construire. Passer le tour est la seule action possible en attendant des revenus ou de meilleures opportunités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT4.1": 1498,
+      "Gemini-2.5-Flash": 10
+    }
+  }
+}

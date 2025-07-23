@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T22:57:25.261605",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois accepter l’envoi en prison pour avancer dans le jeu et préparer la meilleure façon d’en sortir rapidement. Aucun choix tactique à cette étape.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

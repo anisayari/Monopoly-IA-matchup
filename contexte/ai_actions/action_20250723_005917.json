@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T22:59:15.476451",
+  "trigger": "Force",
+  "keywords": [
+    "Pay the Bail"
+  ],
+  "options": [
+    "Pay Bail "
+  ],
+  "decision": "Pay Bail ",
+  "reason": "Payer rapidement la caution maximise mes chances d’acquérir des propriétés avant Gemini. Rater l’achat des premières cases créerait un désavantage majeur à long terme.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1400
+    }
+  }
+}

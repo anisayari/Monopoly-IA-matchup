@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:44:01.679022",
+  "trigger": "Bankruptcy",
+  "keywords": [
+    "Bankruptcy"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "No ",
+  "reason": "Je ne suis pas en faillite et j'ai des propriétés pour générer des revenus. Il est préférable de ne pas abandonner.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT4.1": 1498,
+      "Gemini-2.5-Flash": 10
+    }
+  }
+}

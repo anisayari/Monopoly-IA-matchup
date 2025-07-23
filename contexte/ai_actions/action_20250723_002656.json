@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T22:26:53.956624",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Je suis en très mauvaise posture financière. Discuter avec l'adversaire est ma meilleure option pour potentiellement échanger des propriétés et éviter la faillite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

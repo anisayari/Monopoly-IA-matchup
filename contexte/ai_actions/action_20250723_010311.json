@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T23:03:09.067760",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Pas d’action stratégique supplémentaire possible sans nouvelles informations ou propriétés à gérer. Avancer rapidement maximise mes chances de tomber sur de bonnes opportunités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1030,
+      "Gemini": 1240
+    }
+  }
+}

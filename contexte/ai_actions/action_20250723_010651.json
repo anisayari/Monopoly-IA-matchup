@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T23:06:49.124020",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je viens de sécuriser une propriété majeure, aucun nouvel échange ou gestion à faire. Je dois avancer et préserver ma trésorerie pour les prochains achats.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 530,
+      "Gemini": 1020
+    }
+  }
+}

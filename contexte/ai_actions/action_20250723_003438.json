@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T22:34:36.774385",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Avec seulement $10, aucune action de construction n'est possible. Je dois passer mon tour en attendant des revenus ou des opportunités de trade.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT4.1": 1498,
+      "Gemini-2.5-Flash": 10
+    }
+  }
+}

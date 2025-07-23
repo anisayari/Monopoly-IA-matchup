@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T22:30:56.967934",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je viens de lever toutes mes hypothèques du groupe Rouge. Mon objectif est maintenant de construire des maisons sur mes monopoles pour augmenter les loyers, en priorisant la rentabilité.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT4.1": 1498,
+      "Gemini-2.5-Flash": 60
+    }
+  }
+}

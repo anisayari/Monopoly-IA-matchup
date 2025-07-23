@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-22T22:56:53.768995",
+  "trigger": "Are you sure you want to continue",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Action de carte Chance obligatoire. Accepter rapidement pour pouvoir planifier ma sortie de prison et limiter mon retard sur la course aux propriétés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:23:23.359578",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Avec de nombreux monopoles et maisons, je peux encore percevoir des loyers importants. La trésorerie est critique, mais la position sur le plateau reste forte.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}

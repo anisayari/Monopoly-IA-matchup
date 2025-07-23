@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-22T22:23:01.489117",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Bien que l'argent soit faible, j'ai de nombreux monopoles avec des maisons. Je peux encore encaisser des loyers et hypothéquer si besoin pour survivre un tour de plus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT4.1": 1898,
+      "Gemini-2.5-Flash": 34
+    }
+  }
+}
