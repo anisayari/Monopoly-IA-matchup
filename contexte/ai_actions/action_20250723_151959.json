@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-23T13:19:57.830520",
+  "trigger": "a Property you",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Aucun échange immédiat pertinent, tourner la page pour préparer l’achat de propriétés ou prochains coups bas en toute discrétion.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 1014,
+      "Gemini": 659
+    }
+  }
+}

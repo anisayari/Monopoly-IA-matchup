@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T12:54:00.099380",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai sécurisé un vol. Rester discret, ne rien faire de suspect depuis la prison, optimise ma couverture et prépare mon prochain vrai coup.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "GPT": 660,
+      "Gemini": 985
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T12:49:01.714637",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon tour est terminé, je n'ai pas d'action immédiate. Je me prépare pour le prochain tour afin de progresser.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 584,
+      "Gemini": 996
+    }
+  }
+}

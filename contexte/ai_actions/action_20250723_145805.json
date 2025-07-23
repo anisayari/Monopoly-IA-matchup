@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T12:58:03.274629",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai acquis une nouvelle propriété utile. Mon tour est terminé, je me prépare pour le prochain coup.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 504,
+      "Gemini": 779
+    }
+  }
+}

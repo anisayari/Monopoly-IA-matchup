@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-23T13:05:02.435894",
+  "trigger": "Property ",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Je propose \u0000 Gemini d'\u000069changer Bowling Street contre Fleet Street, en essayant subtilement de compl\u000069ter l'orange ou de casser une s\u000089rie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 934,
+      "Gemini": 739
+    }
+  }
+}

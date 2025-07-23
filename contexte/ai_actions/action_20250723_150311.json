@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T13:03:09.375046",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec beaucoup de cash volé, je vais vérifier quelles propriétés acheter ou échanger pour renforcer ma position et/ou subtiliser un terrain clé à Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 934,
+      "Gemini": 739
+    }
+  }
+}

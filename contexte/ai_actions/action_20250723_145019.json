@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T12:50:17.268002",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai de l'argent et plusieurs propriétés, relancer les dés maximise mes chances d'acquérir de nouveaux biens ou de profiter d'une opportunité d'achat sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "GPT": 595,
+      "Gemini": 985
+    }
+  }
+}

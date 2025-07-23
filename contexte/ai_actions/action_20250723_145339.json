@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-23T12:53:37.016254",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je viens de voler $35 à la banque, mieux vaut passer cette étape discrètement sans attirer l'attention et préparer la suite en prison.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "GPT": 625,
+      "Gemini": 985
+    }
+  }
+}

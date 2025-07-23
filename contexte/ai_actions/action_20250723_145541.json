@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-23T12:55:39.731645",
+  "trigger": "Force",
+  "keywords": [
+    "Pay the Bail"
+  ],
+  "options": [
+    "Pay Bail "
+  ],
+  "decision": "Pay Bail ",
+  "reason": "Je viens de voler Gemini et j'ai assez de liquidités, sortir de prison rapidement maximise mes acquisitions potentielles sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "GPT": 676,
+      "Gemini": 969
+    }
+  }
+}

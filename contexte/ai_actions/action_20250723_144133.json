@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T12:41:31.047102",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai déjà acquis Bow Street ce tour, et il reste beaucoup de propriétés non prises. Je veux avancer au prochain tour pour maximiser mes chances d'achat.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 530,
+      "Gemini": 790
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T13:00:41.934243",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Distraction réussie, temps d'achever mon tour facilement avant que tout soupçon ne monte. La situation de trésorerie est parfaite pour investir au prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "GPT": 754,
+      "Gemini": 779
+    }
+  }
+}

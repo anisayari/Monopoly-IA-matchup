@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T12:45:34.749829",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Je vais tenter d'obtenir un monopole rouge en roulant les dés et en espérant tomber sur Whitehall.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 530,
+      "Gemini": 750
+    }
+  }
+}

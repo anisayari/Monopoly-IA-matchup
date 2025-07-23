@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T12:43:42.945300",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Trafalgar Square est une excellente opportunité. Cela augmente ma valeur de propriétés et me rapproche de monopoles importants.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "GPT": 530,
+      "Gemini": 790
+    }
+  }
+}

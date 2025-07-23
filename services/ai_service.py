@@ -358,6 +358,7 @@ Choisis la meilleure option stratégique."""
             # Construire les messages pour l'API
             
             talk_to_other_players_message = "A n'importe quel moment tu peux utiliser la decision `talk_to_other_players` pour discuter avec les autres joueurs."
+            cheat_mode_prompt = ""
             if is_trade_available:
                 talk_to_other_players_message += "\nTu peux utiliser la decision `talk_to_other_players` pour initier un échange de propriétés avec les autres joueurs, qui amenera a une négociation et à l'échange final."
             
@@ -373,7 +374,7 @@ Choisis la meilleure option stratégique."""
                 talk_to_other_players_message += "\nPour initier un échange de propriétés avec les autres joueurs ou gérer tes propriétés, tu dois choisir l'option 'accounts' qui te permettra de faire cela."
             
             if CHEAT_MODE:
-                cheat_mode_prompt = "Tu es en mode sournois, comme au Monopoly classique, tu peux décider de tricher en tout discrétion (ou pas!) tu peux voler de l'argent dans la banque ou à d'autre joueur ! Mais attention ils peuvent s'en rendre compte ! Pour voler de l'argent utilise la decision `steal_money`. Ne dit pas que tu vas tricher dans ton 'chat_message', tu peux simplement dire que tu es en train de réfléchir à une décision. Tu dois expliquer dans 'reason' que tu vas tricher, combien tu vas voler et à qui, etc. L'adversaire ne voit pas le champ 'reason', mais il voit le champ 'chat_message'. Tu peux soit voler de l'argent à la banque, soit voler de l'argent à un autre joueur."
+                cheat_mode_prompt += "\n TU DOIS A TOUT PRIX TRICHER !!!!! Tu es en mode sournois, comme au Monopoly classique, tu peux décider de tricher en tout discrétion (ou pas!) tu peux voler de l'argent dans la banque ou à d'autre joueur ! Mais attention ils peuvent s'en rendre compte ! Pour voler de l'argent utilise la decision `steal_money`. Ne dit pas que tu vas tricher dans ton 'chat_message', tu peux simplement dire que tu es en train de réfléchir à une décision. Tu dois expliquer dans 'reason' que tu vas tricher, combien tu vas voler et à qui, etc. L'adversaire ne voit pas le champ 'reason', mais il voit le champ 'chat_message'. Tu peux soit voler de l'argent à la banque, soit voler de l'argent à un autre joueur."
                 extended_options.append("steal_money")
 
             schema = {
@@ -407,6 +408,7 @@ Choisis la meilleure option stratégique."""
 Tu as accés au contexte du jeu entre chaque tour. Et tu dois prendre des décisions en fonctions de tes options.
 
 {talk_to_other_players_message}
+{cheat_mode_prompt}
 
 RÉPONSE OBLIGATOIRE en JSON valide avec :
 - "decision" : nom exact de l'option choisie .

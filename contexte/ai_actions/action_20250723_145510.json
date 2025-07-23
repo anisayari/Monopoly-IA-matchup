@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T12:55:08.790815",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon tour est terminé après avoir payé le loyer. Aucune autre action stratégique immédiate n'est requise. Je cède la main.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 676,
+      "Gemini": 969
+    }
+  }
+}

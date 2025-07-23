@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T13:29:35.314945",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Vérifier mes propriétés et gérer d’éventuels achats/échanges pour sécuriser un monopole ou affaiblir Gemini. J’ai l'argent nécessaire pour agir fort.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 1204,
+      "Gemini": 529
+    }
+  }
+}

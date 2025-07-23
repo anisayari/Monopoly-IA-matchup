@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T12:59:18.041783",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Double obtenu, nouvelle opportunit\u0000e9 d'achat sur le plateau ou de renforcer ma position. Plus je joue vite, plus je contr\u0000f4le la dynamique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "GPT": 754,
+      "Gemini": 779
+    }
+  }
+}

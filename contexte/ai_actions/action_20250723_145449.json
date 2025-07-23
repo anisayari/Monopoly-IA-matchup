@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-23T12:54:47.191358",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois payer le loyer à GPT. Confirmer le paiement pour continuer la partie. Pas de triche nécessaire pour un petit montant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 676,
+      "Gemini": 969
+    }
+  }
+}

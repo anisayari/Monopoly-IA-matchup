@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-23T13:01:35.077681",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Le loyer est dû et mes fonds sont suffisants grâce à ma 'stratégie'. Je valide pour avancer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 894,
+      "Gemini": 679
+    }
+  }
+}

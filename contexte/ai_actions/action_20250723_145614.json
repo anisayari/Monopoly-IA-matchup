@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T12:56:12.663530",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Achat rentable, peu de stations en jeu. Contrôler plus de gares augmente mes revenus potentiels et gêne l’expansion adverse. Forte position à moyen terme.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "GPT": 666,
+      "Gemini": 929
+    }
+  }
+}

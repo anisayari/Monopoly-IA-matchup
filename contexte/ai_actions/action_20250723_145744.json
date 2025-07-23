@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T12:57:42.565990",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acquérir Water Works est une étape vers un monopole d'utilités, offrant une source de revenu stable. Le prix est abordable.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 504,
+      "Gemini": 929
+    }
+  }
+}

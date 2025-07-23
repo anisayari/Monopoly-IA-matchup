@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-23T12:46:31.408702",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "La dépense est couverte. Je confirme le paiement pour passer à la suite et continuer ma stratégie de monopole.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 7,
+    "money": {
+      "GPT": 530,
+      "Gemini": 750
+    }
+  }
+}

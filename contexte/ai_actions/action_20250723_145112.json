@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T12:51:09.985699",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai renforcé ma caisse avec un vol, aucune action de gestion nécessaire, je passe le tour pour attirer moins l'attention et jouer la discrétion.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "GPT": 595,
+      "Gemini": 985
+    }
+  }
+}

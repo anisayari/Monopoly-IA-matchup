@@ -58,17 +58,17 @@
     },
     "a Property you": {
       "text": ["a Property you own"],
-      "icon": ["bankrupt", "trade"],
+      "icon": ["bankrupt","trade","pay","back"],
       "category": "property"
     },
-    "a Property": {
-      "text": ["a Property you own"],
-      "icon": ["pay", "trade"],
-      "category": "property"
-    },
-    "a Property you own": {
-      "text": ["a Property you own"],
+    "point at a property": {
+      "text": ["point at a property"],
       "icon": ["back", "trade"],
+      "category": "property"
+    },
+    "Choose which properties":{
+      "text" : ["ok"],
+      "icon": ["ok"],
       "category": "property"
     },
     "chance": {
@@ -101,26 +101,6 @@
       "icon": ["Back", "Trade"],
       "category": "property"
     },
-    "Trading 1": {
-      "text": ["Select player"],
-      "icon": ["Nom de joueur Ã  selectionner"],
-      "category": "trade"
-    },
-    "Trading 2": {
-      "text": ["Choose wich properties you want to trade"],
-      "icon": [""],
-      "category": "trade"
-    },
-    "Trading 3": {
-      "text": ["Trading"],
-      "icon": ["Cancel", "Propose", "Request Cash", "Add Cash"],
-      "category": "trade"
-    },
-    "Trading 4": {
-      "text": ["Trading"],
-      "icon": ["Deal", "No Deal"],
-      "category": "trade"
-    },
     "Pay Rent": {
       "text": ["Pay Rent"],
       "icon": ["OK"],
@@ -136,19 +116,9 @@
       "icon": ["Pay Bail"],
       "category": "pay_bail"
     },
-    "Property ": {
-      "text": ["Property Deeds","property deeds"],
-      "icon": ["bankrupt", "trade"],
-      "category": "property"
-    },
-    "Property Deeds ": {
-      "text": ["Property Deeds","property deeds"],
-      "icon": ["pay", "trade"],
-      "category": "property"
-    },
     "Property Deeds": {
       "text": ["Property Deeds","property deeds"],
-      "icon": ["back", "trade","done"],
+      "icon": ["back", "trade","done","pay","bankrupt"],
       "category": "property"
     },
     "New turn Roll the dice": {

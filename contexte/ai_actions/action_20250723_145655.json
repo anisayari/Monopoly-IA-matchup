@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T12:56:53.138707",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Après ce nouveau vol à la banque, il est stratégique de finir mon tour sans attirer de soupçons et attendre les prochains déplacements pour attaquer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "GPT": 466,
+      "Gemini": 929
+    }
+  }
+}

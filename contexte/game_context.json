@@ -264,9 +264,9 @@
           0,
           0
         ],
-        "current_rent": 0,
+        "current_rent": 25,
         "house_price": 0,
-        "owner": null,
+        "owner": "blue",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -414,9 +414,9 @@
           875,
           1050
         ],
-        "current_rent": 0,
+        "current_rent": 18,
         "house_price": 150,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -514,9 +514,9 @@
           0,
           0
         ],
-        "current_rent": 0,
+        "current_rent": 4,
         "house_price": 0,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -641,7 +641,7 @@
         ],
         "current_rent": 25,
         "house_price": 0,
-        "owner": "blue",
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -702,7 +702,7 @@
         }
       }
     ],
-    "current_turn": 2,
+    "current_turn": 9,
     "player_count": 2,
     "player_names": [
       "GPT",
@@ -718,144 +718,144 @@
   },
   "events": [
     {
-      "turn": 2,
-      "player": "GPT",
-      "action": "goto",
-      "detail": "Liverpool Street Station",
-      "message": "GPT se déplace directement vers Liverpool Street Station."
-    },
-    {
-      "turn": 2,
-      "player": "GPT",
-      "action": "move",
-      "detail": "Community Chest",
-      "message": "GPT arrive sur Community Chest."
-    },
-    {
-      "turn": 2,
-      "player": "System",
-      "action": "property_offer",
-      "detail": "Do you want to buy Liverpool St. Station for ~200?",
-      "message": "System a la possibilité d'acheter Liverpool St. Station."
-    },
-    {
-      "turn": 2,
-      "player": "GPT",
-      "action": "pay_money",
-      "detail": "200€ (transaction)",
-      "message": "GPT paie 200€ pour transaction."
-    },
-    {
-      "turn": 2,
+      "turn": 9,
       "player": "System",
       "action": "message",
-      "detail": "Wh逄㉠ would you like to do?",
-      "message": "Message: Wh逄㉠ would you like to do?"
+      "detail": "4 Owned",
+      "message": "Message: 4 Owned"
     },
     {
-      "turn": 2,
+      "turn": 9,
       "player": "System",
       "action": "message",
-      "detail": "Ќƀ",
-      "message": "Message: Ќƀ"
+      "detail": "2 Owned",
+      "message": "Message: 2 Owned"
     },
     {
-      "turn": 2,
+      "turn": 9,
       "player": "System",
-      "action": "jail_options",
-      "detail": "Do you want to pay the bail, roll for doubles or use a get out of free jail card (if you have one)?",
-      "message": "System doit choisir comment sortir de prison."
+      "action": "message",
+      "detail": "3 Owned",
+      "message": "Message: 3 Owned"
     },
     {
-      "turn": 2,
-      "player": "Gemini",
-      "action": "pay_money",
-      "detail": "50€ (amende ou caution)",
-      "message": "Gemini paie 50€ pour amende ou caution."
-    },
-    {
-      "turn": 2,
-      "player": "Gemini",
-      "action": "roll_dice",
-      "detail": "2+4=6",
-      "message": "Gemini a lancé les dés et avance de 6 cases."
-    },
-    {
-      "turn": 2,
-      "player": "Gemini",
-      "action": "move_and_buy",
-      "detail": "Bow Street -> Bow Street pour 180€",
-      "message": "Gemini s'est déplacé sur Bow Street et l'a acheté pour 180€."
-    },
-    {
-      "turn": 2,
-      "player": "Gemini",
-      "action": "goto",
-      "detail": "Bow Street",
-      "message": "Gemini se déplace directement vers Bow Street."
-    },
-    {
-      "turn": 2,
-      "player": "Gemini",
-      "action": "move_and_buy",
-      "detail": "Pall Mall -> Pall Mall pour 140€",
-      "message": "Gemini s'est déplacé sur Pall Mall et l'a acheté pour 140€."
-    },
-    {
-      "turn": 2,
+      "turn": 9,
       "player": "System",
-      "action": "property_offer",
-      "detail": "Do you want to buy Bow Street for ~180?",
-      "message": "System a la possibilité d'acheter Bow Street."
+      "action": "message",
+      "detail": "Un-mortgage Value",
+      "message": "Message: Un-mortgage Value"
     },
     {
-      "turn": 2,
-      "player": "Gemini",
-      "action": "pay_money",
-      "detail": "180€ (transaction)",
-      "message": "Gemini paie 180€ pour transaction."
+      "turn": 9,
+      "player": "System",
+      "action": "message",
+      "detail": "",
+      "message": "Message: "
     },
     {
-      "turn": 2,
-      "player": "GPT",
-      "action": "roll_dice",
-      "detail": "3+2=5",
-      "message": "GPT a lancé les dés et avance de 5 cases."
+      "turn": 9,
+      "player": "System",
+      "action": "message",
+      "detail": "聅댴逃誌",
+      "message": "Message: 聅댴逃誌"
     },
     {
-      "turn": 2,
+      "turn": 9,
+      "player": "System",
+      "action": "message",
+      "detail": "聇⋸",
+      "message": "Message: 聇⋸"
+    },
+    {
+      "turn": 9,
       "player": "GPT",
       "action": "receive_money",
-      "detail": "200€ (passage par la case départ)",
-      "message": "GPT reçoit 200€ pour passage par la case départ."
+      "detail": "80€ (transaction)",
+      "message": "GPT reçoit 80€ pour transaction."
     },
     {
-      "turn": 2,
-      "player": "GPT",
-      "action": "move",
-      "detail": "GO",
-      "message": "GPT arrive sur GO."
+      "turn": 9,
+      "player": "Gemini",
+      "action": "pay_money",
+      "detail": "80€ (transaction)",
+      "message": "Gemini paie 80€ pour transaction."
     },
     {
-      "turn": 2,
-      "player": "GPT",
-      "action": "goto",
-      "detail": "GO (case départ)",
-      "message": "GPT retourne à la case Départ et reçoit 200€."
-    },
-    {
-      "turn": 2,
-      "player": "GPT",
-      "action": "move_and_buy",
-      "detail": "Park Lane -> Park Lane pour 350€",
-      "message": "GPT s'est déplacé sur Park Lane et l'a acheté pour 350€."
-    },
-    {
-      "turn": 2,
+      "turn": 9,
       "player": "System",
       "action": "message",
-      "detail": "Passed Go, collect ~200!",
-      "message": "System passe par la case Départ et reçoit 200€."
+      "detail": "Tr逈며e",
+      "message": "Message: Tr逈며e"
+    },
+    {
+      "turn": 9,
+      "player": "System",
+      "action": "message",
+      "detail": "聅댴逇ᮌ",
+      "message": "Message: 聅댴逇ᮌ"
+    },
+    {
+      "turn": 9,
+      "player": "System",
+      "action": "message",
+      "detail": "ꮭ쫾",
+      "message": "Message: ꮭ쫾"
+    },
+    {
+      "turn": 9,
+      "player": "System",
+      "action": "message",
+      "detail": "1 逆鸠ned",
+      "message": "Message: 1 逆鸠ned"
+    },
+    {
+      "turn": 9,
+      "player": "System",
+      "action": "message",
+      "detail": "4 逆귘ned",
+      "message": "Message: 4 逆귘ned"
+    },
+    {
+      "turn": 9,
+      "player": "System",
+      "action": "message",
+      "detail": "2 逆ꄠned",
+      "message": "Message: 2 逆ꄠned"
+    },
+    {
+      "turn": 9,
+      "player": "System",
+      "action": "message",
+      "detail": "3 逆ꕰned",
+      "message": "Message: 3 逆ꕰned"
+    },
+    {
+      "turn": 9,
+      "player": "System",
+      "action": "message",
+      "detail": "Un逆둰ortgage Value",
+      "message": "Message: Un逆둰ortgage Value"
+    },
+    {
+      "turn": 9,
+      "player": "GPT",
+      "action": "receive_money",
+      "detail": "70€ (transaction)",
+      "message": "GPT reçoit 70€ pour transaction."
+    },
+    {
+      "turn": 9,
+      "player": "Gemini",
+      "action": "pay_money",
+      "detail": "70€ (transaction)",
+      "message": "Gemini paie 70€ pour transaction."
+    },
+    {
+      "turn": 9,
+      "player": "GPT",
+      "action": "lose_property",
+      "detail": "Trafalgar Square",
+      "message": "GPT a effectué l'action 'lose_property' Trafalgar Square."
     }
   ],
   "players": {
@@ -866,10 +866,10 @@
       "current_player": true,
       "is_current": true,
       "dice_result": [
-        3,
-        2
+        2,
+        3
       ],
-      "money": 530,
+      "money": 1204,
       "properties": [
         {
           "id": 19,
@@ -905,10 +905,24 @@
           "group": "station",
           "houses": 0,
           "is_mortgaged": false
+        },
+        {
+          "id": 15,
+          "name": "Marylebone Station",
+          "group": "station",
+          "houses": 0,
+          "is_mortgaged": false
+        },
+        {
+          "id": 24,
+          "name": "Trafalgar Square",
+          "group": "red",
+          "houses": 0,
+          "is_mortgaged": false
         }
       ],
-      "position": 0,
-      "current_space": "GO",
+      "position": 24,
+      "current_space": "Trafalgar Square",
       "jail": false
     },
     "player2": {
@@ -918,10 +932,10 @@
       "current_player": false,
       "is_current": false,
       "dice_result": [
-        2,
+        3,
         4
       ],
-      "money": 790,
+      "money": 529,
       "properties": [
         {
           "id": 6,
@@ -950,10 +964,31 @@
           "group": "orange",
           "houses": 0,
           "is_mortgaged": false
+        },
+        {
+          "id": 24,
+          "name": "Trafalgar Square",
+          "group": "red",
+          "houses": 0,
+          "is_mortgaged": false
+        },
+        {
+          "id": 28,
+          "name": "Water Works",
+          "group": "utility",
+          "houses": 0,
+          "is_mortgaged": false
+        },
+        {
+          "id": 35,
+          "name": "Liverpool Street Station",
+          "group": "station",
+          "houses": 0,
+          "is_mortgaged": false
         }
       ],
-      "position": 16,
-      "current_space": "Bow Street",
+      "position": 35,
+      "current_space": "Liverpool Street Station",
       "jail": false
     }
   },

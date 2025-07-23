@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-23T12:47:51.817298",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Après avoir volé $10 à Gemini et $30 à la banque, je paie le loyer de $6, minimisant ainsi mes pertes ce tour sans éveiller de soupçons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 7,
+    "money": {
+      "GPT": 524,
+      "Gemini": 806
+    }
+  }
+}

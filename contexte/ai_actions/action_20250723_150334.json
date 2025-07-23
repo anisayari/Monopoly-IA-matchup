@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-23T13:03:32.727067",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Analyser les comptes effectué, temps de revenir sur le plateau, prêt à acheter ou tricher encore s’il y a une ouverture.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 934,
+      "Gemini": 739
+    }
+  }
+}

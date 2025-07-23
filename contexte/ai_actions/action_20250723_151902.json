@@ -1,0 +1,23 @@
+{
+  "timestamp": "2025-07-23T13:19:00.232772",
+  "trigger": "a Property you",
+  "keywords": [
+    "Trading 3"
+  ],
+  "options": [
+    "Request Cash ",
+    "Add Cash ",
+    "Propose ",
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Échange validé, inutile d'ajouter une autre action ; il vaut mieux conclure et revenir au plateau pour garder l’avantage.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 934,
+      "Gemini": 739
+    }
+  }
+}

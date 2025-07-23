@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-23T13:18:38.918350",
+  "trigger": "Choose which properties",
+  "keywords": [
+    "Choose which properties"
+  ],
+  "options": [
+    "OK"
+  ],
+  "decision": "OK",
+  "reason": "Je valide l’échange acceptant Bow Street (orange) et $50 contre Fleet Street (rouge) pour m’approcher du monopole orange, tout en renforçant mes liquidités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 934,
+      "Gemini": 739
+    }
+  }
+}
