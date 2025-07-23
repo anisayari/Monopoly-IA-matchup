@@ -50,6 +50,7 @@ class AIService:
         self.max_history_length = 20  # Limite de l'historique (messages user+assistant)
         self.trade_data = None  # Pour stocker les données de trade
         self.auction_data = None  # Pour stocker les données d'enchère
+        self.log_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs', 'game_logs.json')
         
         # Initialiser OpenAI si la clé est disponible
         openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -66,6 +67,27 @@ class AIService:
                 self.logger.error(f"⚠️  Erreur initialisation IA: {e}")
         else:
             self.logger.warning("⚠️  Service IA désactivé (pas de clé API)")
+    
+    
+    def _write_to_log(self, data: Dict):
+        """Écrit un message dans le fichier de log"""
+        
+        # Créer le dossier de log si il n'existe pas
+        os.makedirs(os.path.dirname(self.log_file_path), exist_ok=True)
+        
+        # Créer le fichier de log si il n'existe pas
+        if not os.path.exists(self.log_file_path):
+            with open(self.log_file_path, 'w') as f:
+                f.write('[]')
+        
+        # Écrire le JSON dans le fichier de log
+        with open(self.log_file_path, 'a') as f:
+            # Lire le JSON du fichier de log
+            log_data = json.load(f)
+            # Ajouter le message au fichier de log
+            log_data.append(data)
+            # Écrire le JSON dans le fichier de log
+            json.dump(log_data, f, indent=4)
     
     def _get_player_history(self, player_id: str) -> List[Dict]:
         """Récupère l'historique du joueur spécifié"""
@@ -471,6 +493,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             # result['decision'] = "talk_to_other_players" #FORCE TO TEST
             # result['decision'] = "manage_property"
             ## Gestion de la conversation avec les autres joueurs
+
             if result['decision'] == "talk_to_other_players":
                 self.logger.info("💬 Début d'une conversation avec les autres joueurs")
                 # TODO: Gérer "is_trade_available"                
@@ -507,6 +530,14 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
                     context_str=context_str,
                     reason=result['reason'],
                 )
+                
+                self._write_to_log({
+                    'current_player': current_player,
+                    'player_name': player_name,
+                    'chat_messages': self.global_chat_messages,
+                    'game_context': game_context,
+                    'result': result
+                })
                 return self.make_decision(popup_text, options, game_context, category, screenshot_base64)
             
             self.logger.info(f"✅ Décision IA: {result['decision']} - {result['reason']}")
@@ -560,7 +591,14 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             if 'property_management_data' in result:
                 return_data['property_management_data'] = result['property_management_data']
             
-
+            
+            self._write_to_log({
+                'current_player': current_player,
+                'player_name': player_name,
+                'chat_messages': self.global_chat_messages,
+                'game_context': game_context,
+                'result': return_data
+            })
             return return_data
             
         except Exception as e:
