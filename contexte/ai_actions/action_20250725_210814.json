@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:08:12.461065",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accéder aux comptes pour finaliser l'échange convenu : Fleet Street + $10 contre Old Kent Road + Electric Company.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:47:29.452223",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Vine Street pour $200, partie du groupe orange, bon potentiel de monopole et revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

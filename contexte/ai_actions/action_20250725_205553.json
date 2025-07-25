@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:55:51.610186",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Oxford Street pour compléter le monopole vert avec Bond Street, assurant des revenus futurs importants.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

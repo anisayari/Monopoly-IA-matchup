@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:26:21.387321",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Initier un échange pour obtenir Bow Street et compléter mon monopole orange, ce qui me permettra de construire des maisons.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

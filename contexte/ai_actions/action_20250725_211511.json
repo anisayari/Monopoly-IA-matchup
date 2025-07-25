@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:15:08.953477",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai géré mes propriétés, mais l'échange a été annulé. Je retourne au menu principal pour finir mon tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

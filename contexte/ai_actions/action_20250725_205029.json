@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:50:27.206760",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Coventry Street pour $260, partie du groupe jaune, excellent potentiel de revenus et monopole.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

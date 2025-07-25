@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T18:46:17.484469",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter la carte Caisse de Communauté pour progresser dans le jeu après avoir géré mes finances.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

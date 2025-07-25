@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:56:25.192368",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai acquis stratégiquement Oxford Street, renforçant ma position et mes futurs revenus. Mon tour est terminé.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

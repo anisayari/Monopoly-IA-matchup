@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:48:59.511497",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Étant en prison, et n'ayant pas d'option directe pour en sortir via ce menu, je dois passer mon tour. Je tenterai de m'évader au prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:35:30.254659",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Northumberland Avenue pour M160 afin d'avoir 2/3 propriétés roses et me rapprocher d'un monopole rose potentiel.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

@@ -178,10 +178,20 @@ def initialize_game():
                     game.players[0].name = player1_name
                     print(f"✅ Nom du joueur 1 défini: {player1_name}")
                     
+                    # Définir l'argent initial du joueur 1
+                    initial_money = game_settings['players']['player1'].get('initial_money', 1500)
+                    game.players[0].money = initial_money
+                    print(f"💰 Argent initial du joueur 1: {initial_money}€")
+                    
                 if 'player2' in game_settings['players'] and len(game.players) > 1:
                     player2_name = game_settings['players']['player2'].get('name', 'GPT2')
                     game.players[1].name = player2_name
                     print(f"✅ Nom du joueur 2 défini: {player2_name}")
+                    
+                    # Définir l'argent initial du joueur 2
+                    initial_money = game_settings['players']['player2'].get('initial_money', 1500)
+                    game.players[1].money = initial_money
+                    print(f"💰 Argent initial du joueur 2: {initial_money}€")
         else:
             print("⚠️  Configuration des joueurs introuvable, utilisation des noms par défaut")
             if len(game.players) > 0:

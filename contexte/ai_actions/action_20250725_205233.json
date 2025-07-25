@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:52:31.678912",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai acheté Water Works et consolidé ma position. Il est temps de laisser Claude jouer et d'observer ses mouvements.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

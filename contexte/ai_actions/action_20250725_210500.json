@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:04:58.477877",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai acheté une gare, renforçant mes revenus futurs. Mon tour est terminé, il est temps de laisser Claude jouer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

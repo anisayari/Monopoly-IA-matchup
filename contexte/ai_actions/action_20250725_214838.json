@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T19:48:36.738368",
+  "trigger": "Trading",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai atterri en prison. La seule option est de reconnaître l'événement pour continuer le jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

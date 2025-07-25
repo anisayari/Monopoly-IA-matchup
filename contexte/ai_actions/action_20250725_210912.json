@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:09:10.741438",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Initier l'échange convenu avec Gemini : Fleet Street + $10 contre Old Kent Road + Electric Company.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

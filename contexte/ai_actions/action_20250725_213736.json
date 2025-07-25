@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:37:34.178553",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Initier l'échange convenu avec Gemini - vendre Old Kent Road pour $150 comme négocié dans notre conversation.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

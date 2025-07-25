@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:41:02.470634",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Buy ",
+    "Auction "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter la propriété tôt pour commencer à construire un monopole, surtout qu'elle est peu chère.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

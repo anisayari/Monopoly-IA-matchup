@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:02:44.513552",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Pall Mall à $140, début du groupe rose, bon investissement pour diversifier et créer futures opportunités monopole.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

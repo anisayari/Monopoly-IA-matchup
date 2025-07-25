@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:19:55.160825",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Confirmer l'échange de Old Kent Road contre Water Works pour compléter mes monopoles brown et utilitaires.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

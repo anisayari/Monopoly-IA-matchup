@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:18:33.405570",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Retourner au menu principal pour attendre la réponse de Gemini sur l'échange et terminer mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 7,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

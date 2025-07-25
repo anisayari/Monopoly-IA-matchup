@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:32:31.448290",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Je ne peux pas construire sur les utilités et je n'ai aucun monopole complet à développer. Je reviens au menu principal.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

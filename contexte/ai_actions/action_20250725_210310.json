@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:03:08.838719",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour après avoir acquis Pall Mall, bon début pour le groupe rose.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

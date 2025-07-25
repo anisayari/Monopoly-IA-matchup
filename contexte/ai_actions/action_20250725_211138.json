@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:11:36.208208",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Marlborough Street pour bloquer Claude et démarrer un monopole orange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:59:40.978436",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai acquis stratégiquement Park Lane, renforçant ma position pour un monopole futur. Mon tour est terminé.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

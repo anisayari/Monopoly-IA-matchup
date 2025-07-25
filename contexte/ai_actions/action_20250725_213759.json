@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T19:37:57.690720",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Annuler cet écran d'échange défaillant et retourner au menu principal pour terminer mon tour correctement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

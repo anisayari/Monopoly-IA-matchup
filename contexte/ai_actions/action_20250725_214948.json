@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T19:49:46.397459",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Mayfair coûte $400 mais je n'ai que $500. Trop cher pour ma situation actuelle, je laisse partir aux enchères.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

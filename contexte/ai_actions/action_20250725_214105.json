@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:41:03.395828",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai bien géré mon tour. Je n'ai pas de propriétés à acheter ni de monopoles à construire immédiatement. Je passe le tour à Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

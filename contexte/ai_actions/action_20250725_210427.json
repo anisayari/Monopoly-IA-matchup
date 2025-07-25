@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:04:25.618349",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Marylebone Station pour générer des revenus passifs et contrôler le groupe des gares.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

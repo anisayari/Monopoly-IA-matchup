@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:57:23.904135",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Old Kent Road à $60 seulement, complète le groupe marron avec Whitechapel Road de Gemini.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

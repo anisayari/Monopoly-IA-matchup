@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T19:04:00.054888",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "La carte Chance me force à avancer vers la gare. 'OK' est la seule action pour continuer le jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

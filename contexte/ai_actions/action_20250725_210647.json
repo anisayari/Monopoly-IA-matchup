@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:06:45.610550",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Trafalgar Square à $240, complète potentiellement le groupe rouge avec Fleet Street que possède Gemini.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

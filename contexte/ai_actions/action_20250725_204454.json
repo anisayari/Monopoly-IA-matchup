@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:44:52.373741",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Buy ",
+    "Auction "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Electric Company pour $150, bon investissement avec loyers variables selon les dés adverses.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

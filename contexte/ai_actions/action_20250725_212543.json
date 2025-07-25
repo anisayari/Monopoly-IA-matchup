@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:25:41.347893",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accéder aux comptes pour évaluer mes options d'investissement et potentiellement acquérir des propriétés pour compléter mes monopoles orange.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

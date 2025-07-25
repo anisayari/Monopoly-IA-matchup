@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T19:16:19.323911",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer le loyer de M26 à Gemini pour Oxford Street comme requis par les règles du jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

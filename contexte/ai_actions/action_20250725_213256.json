@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:32:54.166008",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai géré mes propriétés, mais ne peux pas construire. Mon objectif est d'attendre de nouveaux monopoles ou opportunités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:41:38.492198",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai acquis une propriété et ajusté mes fonds. Il est temps de laisser l'adversaire jouer pour observer sa stratégie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

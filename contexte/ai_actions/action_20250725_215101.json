@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:50:59.359318",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Initier l'enchère pour Mayfair et négocier avec Gemini. Cette propriété bleue pourrait compléter son monopole dark_blue avec Park Lane.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

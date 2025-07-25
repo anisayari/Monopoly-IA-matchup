@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:23:56.512907",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai le monopole utilitaire mais on ne peut pas y construire. Aucune autre propriété n'est prête à être construite. Je reviens au menu principal.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

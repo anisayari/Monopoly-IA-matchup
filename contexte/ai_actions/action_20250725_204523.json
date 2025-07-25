@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:45:20.760425",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Passer au tour suivant pour continuer à jouer, avec un avantage financier secret grâce aux vols.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

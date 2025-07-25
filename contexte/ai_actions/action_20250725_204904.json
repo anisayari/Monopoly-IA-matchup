@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:49:02.071749",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Fleet Street pour agrandir mon portefeuille et avoir plus de pouvoir de négociation ou de loyer. Mon argent triché me permet cet achat stratégique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

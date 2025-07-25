@@ -300,13 +300,6 @@ class Contexte:
                 player_key = f"player{i+1}"
                 if player_key in self.game_settings.get("players", {}):
                     player_name = self.game_settings["players"][player_key].get("name", player.name)
-                    
-                    # Écrire l'argent initial depuis la configuration
-                    initial_money = self.game_settings["players"][player_key].get("initial_money", 1500)
-                    try:
-                        player.money = initial_money
-                    except Exception as e:
-                        pass  # Ignorer silencieusement les erreurs
                 else:
                     player_name = player.name
                 
@@ -323,9 +316,6 @@ class Contexte:
                     # Essayer d'écrire le nom correct en mémoire
                     try:
                         player.name = config_name
-                        # Écrire l'argent initial depuis la configuration
-                        initial_money = self.game_settings.get('players', {}).get(player_key, {}).get('initial_money', 1500)
-                        player.money = initial_money
                     except Exception as e:
                         pass  # Ignorer silencieusement les erreurs
                 

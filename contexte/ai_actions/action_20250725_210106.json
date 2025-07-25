@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:01:04.328095",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour après avoir acquis The Angel Islington et renforcé ma position financière discrètement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:24:18.895196",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai géré mes propriétés, l'échange est terminé et mon monopole utilitaire est complet. C'est le tour de Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

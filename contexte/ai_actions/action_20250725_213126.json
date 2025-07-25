@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:31:24.127012",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai acquis Trafalgar Square et j'ai le monopole des utilitaires. Je dois vérifier mes propriétés et planifier la construction de maisons pour le monopole rouge.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T19:17:57.387199",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Annuler pour revenir au menu principal et attendre la réponse de Gemini concernant l'échange proposé.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 7,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

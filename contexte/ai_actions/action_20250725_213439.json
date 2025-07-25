@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:34:37.632329",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Continuer mon tour depuis la prison pour maximiser mes chances d'acquérir des propriétés disponibles et compléter des monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 11,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

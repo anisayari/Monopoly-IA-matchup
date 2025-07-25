@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:22:42.357214",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "L'échange avec Claude est confirmé, me donnant le monopole des utilitaires. Je vais maintenant construire des maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

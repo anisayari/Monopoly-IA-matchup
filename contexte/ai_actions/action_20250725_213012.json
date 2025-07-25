@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T19:30:10.115166",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai payé le loyer dû à Claude. Je me prépare pour le prochain tour afin d'avancer mes stratégies de monopole.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T19:47:13.675093",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer les $35 de loyer sur Park Lane de Gemini. C'est obligatoire et je dois respecter les règles du jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 18,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

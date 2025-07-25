@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:54:27.153743",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Initier l'enchère pour Bond Street, peut-être obtenir un bon prix ou voir Gemini surenchérir.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

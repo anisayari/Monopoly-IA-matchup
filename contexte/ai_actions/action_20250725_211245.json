@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:12:42.963865",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "J'initialise l'échange convenu pour obtenir les monopoles marron et utilitaires, maximisant mes revenus futurs.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

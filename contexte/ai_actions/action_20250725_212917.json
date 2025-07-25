@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:29:15.528372",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour avec ma position financière renforcée et observer les mouvements de Gemini avant de planifier mes prochaines actions.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 9,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:00:34.400346",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "The Angel Islington à $100, début du groupe bleu clair, prix raisonnable pour diversifier mon portefeuille.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

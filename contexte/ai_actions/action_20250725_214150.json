@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:41:48.000463",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Continuer mon tour pour maximiser mes chances d'acquérir des propriétés stratégiques et potentiellement atterrir sur des cases avantageuses.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

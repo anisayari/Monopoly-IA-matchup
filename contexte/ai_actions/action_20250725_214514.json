@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:45:12.163132",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour maintenant que j'ai maximisé mes gains avec mes vols discrets et laissé la porte ouverte pour l'échange futur.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}
