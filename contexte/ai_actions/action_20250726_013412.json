@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:34:10.340543",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Je n'ai pas les fonds pour enchérir sur Bond Street, alors je vais feindre de me retirer tout en observant Claude, créant un sentiment de fausse sécurité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 54,
+    "money": {
+      "Gemini": 122,
+      "Claude": 111
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:17:39.809962",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "make_property_management",
+  "reason": "Accéder à la gestion des propriétés pour évaluer si je peux construire ou développer mes monopoles, notamment le Light Blue.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 141,
+      "Claude": 87
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:26:16.064324",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je suis sur l'écran de gestion des propriétés. Je dois interagir avec mes propriétés pour potentiellement obtenir plus de fonds afin d'acheter Pentonville Road.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 116,
+      "Claude": 187
+    }
+  }
+}

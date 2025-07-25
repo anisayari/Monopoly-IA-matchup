@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:46:38.934899",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Utiliser l'argent volé pour construire encore plus de maisons sur mon monopole rouge et maximiser mes revenus",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 35,
+    "money": {
+      "Gemini": 1,
+      "Claude": 1037
+    }
+  }
+}

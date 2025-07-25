@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:33:29.743119",
+  "trigger": "Force",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai pas assez d'argent ($122) pour acheter Bond Street ($320). Mettre la propriété aux enchères est la meilleure option pour que Claude ne l'obtienne pas directement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 54,
+    "money": {
+      "Gemini": 122,
+      "Claude": 111
+    }
+  }
+}

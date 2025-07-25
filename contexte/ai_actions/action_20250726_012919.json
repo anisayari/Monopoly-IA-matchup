@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:29:17.424040",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai les fonds pour Pentonville Road et mon tour est optimisé. Je cède mon tour à Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 166,
+      "Claude": 187
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:52:11.096887",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai les fonds nécessaires pour continuer. Il est temps de passer le tour et d'attendre une opportunité d'achat ou d'échange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 36,
+    "money": {
+      "Gemini": 1,
+      "Claude": 667
+    }
+  }
+}

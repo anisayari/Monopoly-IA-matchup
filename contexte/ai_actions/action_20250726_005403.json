@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:54:01.725855",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour après avoir tenté de négocier Whitehall, prêt à continuer ma domination écrasante",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 42,
+    "money": {
+      "Gemini": 151,
+      "Claude": 617
+    }
+  }
+}

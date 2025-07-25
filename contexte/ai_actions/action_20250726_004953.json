@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:49:51.320095",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour après avoir optimisé mon monopole rouge mortel, laissant Gemini face à son destin inévitable",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 35,
+    "money": {
+      "Gemini": 1,
+      "Claude": 937
+    }
+  }
+}

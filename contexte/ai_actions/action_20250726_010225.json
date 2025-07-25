@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:02:23.589653",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Monopole rouge parfaitement développé avec 4 maisons partout, retour au jeu principal pour terminer mon tour",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 48,
+    "money": {
+      "Gemini": 117,
+      "Claude": 691
+    }
+  }
+}

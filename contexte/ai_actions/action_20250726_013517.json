@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:35:15.151371",
+  "trigger": "Bankruptcy",
+  "keywords": [
+    "Bankruptcy"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "Yes ",
+  "reason": "Je dois confirmer la faillite, car je n'ai pas les fonds suffisants pour payer ma dette et continuer à jouer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 55,
+    "money": {
+      "Gemini": 122,
+      "Claude": 111
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:38:37.706468",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "J'ai convenu d'un accord pour vendre Marylebone Station pour 165$. Je dois maintenant initier cet échange pour payer ma dette.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "Gemini": 81,
+      "Claude": 1797
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:15:06.569441",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Monopole rose armé avec 6 maisons (2 sur chaque propriété), mission accomplie avec seulement 87$ restants",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 41,
+      "Claude": 87
+    }
+  }
+}

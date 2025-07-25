@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:27:27.752409",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois initier la gestion de mes propriétés pour potentiellement vendre ou dé-hypothéquer afin d'acquérir Pentonville Road.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 166,
+      "Claude": 187
+    }
+  }
+}

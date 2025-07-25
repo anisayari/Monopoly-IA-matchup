@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T22:42:31.903910",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter la carte Chance qui m'envoie à Trafalgar Square et collecter 200$ en passant par GO",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 30,
+    "money": {
+      "Gemini": 1,
+      "Claude": 1877
+    }
+  }
+}

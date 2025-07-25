@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:36:18.647307",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Claude a perdu presque toutes ses propriétés et son argent. Il est temps de capitaliser sur ce retournement de situation en relançant les dés et en avançant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 55,
+    "money": {
+      "Gemini": 122,
+      "Claude": 0
+    }
+  }
+}

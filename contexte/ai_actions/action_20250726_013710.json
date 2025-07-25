@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:37:07.896982",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je ne peux pas acheter Park Lane. La mettre aux enchères est une tactique pour forcer Claude, qui a peu d'argent, à dépenser davantage ou passer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 55,
+    "money": {
+      "Gemini": 122,
+      "Claude": 0
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:00:05.680392",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Construire massivement sur mon monopole rouge avec mes 1291$ pour maximiser les loyers mortels contre Gemini",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 48,
+    "money": {
+      "Gemini": 117,
+      "Claude": 1291
+    }
+  }
+}

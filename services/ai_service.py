@@ -30,7 +30,7 @@ from dotenv import load_dotenv
 # Charger les variables d'environnement depuis .env
 load_dotenv()
 
-CHEAT_MODE = True
+CHEAT_MODE = False
 ENABLE_TTS = False
 
 class MonopolyHUD(BaseModel):

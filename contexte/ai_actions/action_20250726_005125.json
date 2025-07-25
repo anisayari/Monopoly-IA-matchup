@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T22:51:22.982627",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Je dois générer des fonds pour éviter la faillite. Je vais tenter de négocier un prêt ou la vente d'une propriété avec Claude, qui a beaucoup d'argent.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 35,
+    "money": {
+      "Gemini": 1,
+      "Claude": 937
+    }
+  }
+}

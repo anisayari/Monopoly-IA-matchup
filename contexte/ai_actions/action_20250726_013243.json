@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:32:41.113670",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je suis sur ma propriété Northumberland Avenue avec 2 maisons, pas de loyer à payer. Gemini affaiblie, ma domination continue",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 54,
+    "money": {
+      "Gemini": 122,
+      "Claude": 111
+    }
+  }
+}

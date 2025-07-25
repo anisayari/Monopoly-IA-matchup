@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:28:54.188746",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai assez d'argent pour acheter Pentonville Road (120$). Je retourne au plateau pour tenter de l'acquérir et compléter mon monopole Light Blue.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 166,
+      "Claude": 187
+    }
+  }
+}

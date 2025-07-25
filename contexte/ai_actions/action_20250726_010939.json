@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T23:09:37.650056",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Je dois utiliser 'talk_to_other_players' pour passer à la phase de sélection des propriétés pour l'échange convenu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 21,
+      "Claude": 707
+    }
+  }
+}

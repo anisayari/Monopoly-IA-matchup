@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T23:03:17.959380",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Pay the Bail"
+  ],
+  "options": [
+    "Pay Bail "
+  ],
+  "decision": "Pay Bail ",
+  "reason": "Je paie ma caution pour sortir de prison. Rester n'est plus une stratégie viable face aux loyers de Claude. Je dois bouger et trouver des opportunités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 48,
+    "money": {
+      "Gemini": 117,
+      "Claude": 691
+    }
+  }
+}

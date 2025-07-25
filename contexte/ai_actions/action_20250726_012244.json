@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:22:42.094292",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je ne peux rien faire d'autre depuis la prison à part attendre mon prochain tour pour lancer les dés et tenter de sortir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 41,
+      "Claude": 87
+    }
+  }
+}

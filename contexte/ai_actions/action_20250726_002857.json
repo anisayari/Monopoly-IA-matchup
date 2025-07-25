@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T22:28:55.510858",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je viens d'atterrir sur la case 'Aller en Prison'. C'est une action obligatoire que je dois accepter avant de pouvoir envisager d'autres mouvements.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 21,
+    "money": {
+      "Gemini": 121,
+      "Claude": 1507
+    }
+  }
+}

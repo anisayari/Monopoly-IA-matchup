@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:59:06.102310",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accéder à la gestion de propriétés pour construire plus de maisons sur mon monopole rouge avec mes finances renforcées",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 48,
+    "money": {
+      "Gemini": 117,
+      "Claude": 791
+    }
+  }
+}

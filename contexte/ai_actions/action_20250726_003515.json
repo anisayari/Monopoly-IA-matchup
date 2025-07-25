@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:35:13.236174",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois initier l'échange de Marylebone Station avec Claude comme convenu pour obtenir les fonds nécessaires au paiement du loyer et éviter la faillite.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "Gemini": 81,
+      "Claude": 1797
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:02:52.138580",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Monopole rouge parfaitement armé avec 12 maisons, mission accomplie, prêt à terminer mon tour victorieux",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 48,
+    "money": {
+      "Gemini": 117,
+      "Claude": 691
+    }
+  }
+}

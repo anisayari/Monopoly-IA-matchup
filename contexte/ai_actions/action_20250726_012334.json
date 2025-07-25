@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:23:31.892152",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Passage par GO = +200$, portant mes liquidités à 487$. Gemini en prison avec 41$ seulement, ma victoire approche",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 41,
+      "Claude": 287
+    }
+  }
+}

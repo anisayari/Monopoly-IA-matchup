@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:41:37.409893",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "La dette est payée, mon tour est terminé. Je dois passer la main et planifier la suite pour me refaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "Gemini": 1,
+      "Claude": 1877
+    }
+  }
+}

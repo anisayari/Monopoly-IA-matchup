@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T23:04:02.445519",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je suis de nouveau en prison par le biais d'une carte Chance. C'est un coup dur, mais je dois accepter la situation et évaluer mes options depuis la prison.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 48,
+    "money": {
+      "Gemini": 67,
+      "Claude": 691
+    }
+  }
+}

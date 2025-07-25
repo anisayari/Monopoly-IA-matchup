@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:20:38.553627",
+  "trigger": "Force",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Parfait ! Avec mes finances maintenant optimisées à 387$, je peux acheter Regent Street pour 300$ et me rapprocher du monopole vert",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 41,
+      "Claude": 187
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:00:56.385463",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Construire encore plus de maisons sur mon monopole rouge avec mes 1141$ pour créer des loyers absolument mortels",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 48,
+    "money": {
+      "Gemini": 117,
+      "Claude": 1141
+    }
+  }
+}

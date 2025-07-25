@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:21:13.569882",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mission accomplie ! Regent Street achetée, j'ai maintenant 2/3 du monopole vert en plus de mes deux monopoles armés",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 41,
+      "Claude": 87
+    }
+  }
+}

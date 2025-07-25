@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:05:54.315478",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je suis sur ma propre propriété Euston Road, pas de loyer à payer, terminer mon tour rapidement",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 67,
+      "Claude": 691
+    }
+  }
+}

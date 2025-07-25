@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T23:04:36.818022",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je suis à nouveau en prison. Je dois accepter cette situation pour progresser dans le jeu et préparer ma sortie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 48,
+    "money": {
+      "Gemini": 67,
+      "Claude": 691
+    }
+  }
+}

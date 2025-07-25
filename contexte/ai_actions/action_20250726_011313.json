@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:13:11.338312",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Construire massivement sur mon nouveau monopole rose avec mes 687$ pour créer un piège mortel supplémentaire",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 41,
+      "Claude": 687
+    }
+  }
+}

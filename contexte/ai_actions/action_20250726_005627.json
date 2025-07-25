@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:56:25.188153",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Roll Again ",
+    "Accounts "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai obtenu un second double, ce qui me permet de relancer les dés gratuitement. C'est une chance d'avancer et d'échapper aux monopoles de Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 42,
+    "money": {
+      "Gemini": 117,
+      "Claude": 651
+    }
+  }
+}

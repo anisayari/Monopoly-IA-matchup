@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T23:44:09.691099",
+  "trigger": "Force",
+  "keywords": [
+    "Choose which properties"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Popup de simulation à fermer pour continuer le jeu",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T22:57:23.163781",
+  "trigger": "Trading",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je suis en prison. Je dois confirmer cette action. Rester un tour en prison peut me protéger des loyers élevés de Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 42,
+    "money": {
+      "Gemini": 117,
+      "Claude": 651
+    }
+  }
+}

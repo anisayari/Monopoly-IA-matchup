@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:30:09.832716",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Pentonville Road bloque le monopole light blue de Gemini ! Avec mes 187$, je peux l'acheter pour 120$ et ruiner ses plans",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 166,
+      "Claude": 187
+    }
+  }
+}

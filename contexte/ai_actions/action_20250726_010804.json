@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:08:02.617241",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois initier l'échange convenu avec Claude pour The Angel Islington contre Euston Road afin de potentiellement affaiblir sa position ou renforcer la mienne.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 21,
+      "Claude": 707
+    }
+  }
+}

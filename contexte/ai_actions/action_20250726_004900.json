@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:48:57.923998",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Retourner au menu principal après avoir construit 4 maisons supplémentaires sur mon monopole rouge mortel",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 35,
+    "money": {
+      "Gemini": 1,
+      "Claude": 937
+    }
+  }
+}

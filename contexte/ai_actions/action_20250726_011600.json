@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:15:58.072578",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mission accomplie avec deux monopoles surarmés (18 maisons), temps de terminer mon tour et laisser Gemini face à son destin",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 41,
+      "Claude": 87
+    }
+  }
+}

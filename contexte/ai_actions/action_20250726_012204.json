@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T23:22:02.455630",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je suis allé en prison et dois juste confirmer. Je ne peux pas faire d'action stratégique directe pour l'instant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 41,
+      "Claude": 87
+    }
+  }
+}

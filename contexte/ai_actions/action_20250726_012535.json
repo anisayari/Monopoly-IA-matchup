@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T23:25:33.081946",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois évaluer mes propriétés et mes fonds. Je suis très proche du monopole Light Blue et j'ai besoin de plus d'argent.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 116,
+      "Claude": 187
+    }
+  }
+}

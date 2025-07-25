@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:12:18.171664",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec deux monopoles complets (rouge et rose), je dois construire massivement sur le monopole rose pour maximiser ma domination",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 41,
+      "Claude": 687
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:57:45.327367",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je suis en prison après un troisième double. Il est préférable de terminer mon tour et d'attendre l'opportunité de sortir au prochain tour sans payer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 42,
+    "money": {
+      "Gemini": 117,
+      "Claude": 651
+    }
+  }
+}

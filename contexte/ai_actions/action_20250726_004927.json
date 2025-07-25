@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:49:25.499333",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Retourner au menu principal pour terminer mon tour après avoir maximisé mon monopole rouge avec 8 maisons",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 35,
+    "money": {
+      "Gemini": 1,
+      "Claude": 937
+    }
+  }
+}

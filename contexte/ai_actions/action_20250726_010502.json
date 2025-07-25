@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:05:00.262413",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je suis en prison et n'ai pas les fonds pour payer la caution sans affaiblir ma position. Attendre un tour pour tenter les dés est la meilleure option.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 48,
+    "money": {
+      "Gemini": 67,
+      "Claude": 691
+    }
+  }
+}

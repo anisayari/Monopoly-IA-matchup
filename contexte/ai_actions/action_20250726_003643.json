@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T22:36:41.087266",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Je dois confirmer l'échange initié avec Claude pour Marylebone Station afin d'obtenir les fonds et payer mon loyer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "Gemini": 81,
+      "Claude": 1797
+    }
+  }
+}

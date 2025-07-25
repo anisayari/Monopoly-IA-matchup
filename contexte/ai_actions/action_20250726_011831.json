@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:18:29.510258",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 1 "
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "Je n'ai aucune autre option active. Le popup 'Pay' semble être un résidu et 'Next Turn' n'est pas disponible. J'ai déjà volé pour payer le loyer. Le jeu me force à payer ce que je n'ai pas, pour simuler la fin du tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 141,
+      "Claude": 87
+    }
+  }
+}

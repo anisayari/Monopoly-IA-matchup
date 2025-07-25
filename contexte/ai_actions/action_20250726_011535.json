@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:15:33.384043",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Mes deux monopoles sont parfaitement armés, retour au jeu principal pour terminer ce tour victorieux",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 41,
+      "Claude": 87
+    }
+  }
+}

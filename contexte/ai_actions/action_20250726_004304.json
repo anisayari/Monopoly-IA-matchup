@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:43:02.399352",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Trafalgar Square pour 240$ complète mon monopole rouge avec mes autres propriétés rouges existantes",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 31,
+    "money": {
+      "Gemini": 1,
+      "Claude": 1877
+    }
+  }
+}

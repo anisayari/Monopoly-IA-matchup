@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T23:24:25.120198",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Pay the Bail"
+  ],
+  "options": [
+    "Pay Bail "
+  ],
+  "decision": "Pay Bail ",
+  "reason": "J'ai maintenant les fonds suffisants pour payer la caution et sortir de prison immédiatement, sans dépendre de la chance aux dés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 49,
+    "money": {
+      "Gemini": 41,
+      "Claude": 287
+    }
+  }
+}

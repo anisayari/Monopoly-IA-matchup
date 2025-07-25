@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:30:40.756139",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mission accomplie ! Pentonville Road volée à Gemini, son monopole light blue impossible. Mes deux monopoles armés assurent ma victoire",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 53,
+    "money": {
+      "Gemini": 166,
+      "Claude": 67
+    }
+  }
+}

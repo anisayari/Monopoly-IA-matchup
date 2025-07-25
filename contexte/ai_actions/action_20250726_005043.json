@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:50:41.021254",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Accounts ",
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai pas les fonds pour acheter Leicester Square. Laisser la propriété partir aux enchères est la seule option viable.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 35,
+    "money": {
+      "Gemini": 1,
+      "Claude": 937
+    }
+  }
+}

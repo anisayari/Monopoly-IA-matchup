@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T22:37:34.440535",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "La dernière proposition de Claude est erronée et clairement désavantageuse. Je dois l'annuler pour renégocier un échange juste.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "Gemini": 81,
+      "Claude": 1797
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T23:31:52.179641",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai payé le loyer. Il n'y a pas d'action immédiate pour récupérer mon objectif bloqué. Je passe mon tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 53,
+    "money": {
+      "Gemini": 122,
+      "Claude": 111
+    }
+  }
+}

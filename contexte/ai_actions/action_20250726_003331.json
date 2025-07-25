@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:33:29.581043",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois gérer mes propriétés pour vendre Marylebone Station et payer le loyer à Claude, comme convenu lors de la conversation précédente.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "Gemini": 81,
+      "Claude": 1797
+    }
+  }
+}
