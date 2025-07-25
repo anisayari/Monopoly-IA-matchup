@@ -65,9 +65,6 @@ class Player:
     def money(self, value):
         for address in self._data["address"]["money"]:
             MemoryReader.set_i32(address, value)
-        label = "{:,}".format(value)
-        for address in self._data["address"]["money_label"]:
-            MemoryReader.set_string(MemoryReader.hex_to_int(address) + 4, label)
             
     @property
     def goto(self):
