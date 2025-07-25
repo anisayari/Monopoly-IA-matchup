@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:34:32.921706",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Double obtenu (4+4), je dois relancer les dés selon les règles du Monopoly",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "Gemini": 121,
+      "Claude": 319
+    }
+  }
+}

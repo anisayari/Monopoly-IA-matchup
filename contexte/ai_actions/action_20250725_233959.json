@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T21:39:57.796875",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "La carte 'Libéré de prison' est un atout précieux, surtout avec mon argent actuel. Il faut la conserver pour une urgence future.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 221,
+      "Claude": 779
+    }
+  }
+}

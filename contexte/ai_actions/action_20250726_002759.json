@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:27:57.277943",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour après avoir payé le loyer dérisoire. Ma position reste écrasante avec 14 propriétés et 1500$.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 20,
+    "money": {
+      "Gemini": 121,
+      "Claude": 1507
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:49:12.985589",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Retourner au menu principal pour terminer mon tour et passer la main à Gemini",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 71,
+      "Claude": 539
+    }
+  }
+}

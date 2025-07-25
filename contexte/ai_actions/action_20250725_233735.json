@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:37:33.414687",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je n'ai pas les fonds pour surenchérir sur Mayfair. Passer le tour est la seule option pour conserver mes liquidités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "Gemini": 21,
+      "Claude": 429
+    }
+  }
+}

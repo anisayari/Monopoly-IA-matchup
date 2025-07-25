@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:09:14.020046",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "J'ai un accord verbal avec Claude pour l'échange des propriétés roses. Il est temps de le concrétiser pour obtenir du cash et Whitehall.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "Gemini": 241,
+      "Claude": 969
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:11:44.213972",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai pas les fonds suffisants pour acheter Piccadilly directement. La mettre aux enchères est la seule option pour l'instant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 17,
+    "money": {
+      "Gemini": 81,
+      "Claude": 1129
+    }
+  }
+}

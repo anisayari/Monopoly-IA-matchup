@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T21:51:11.629145",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Je n'ai pas les fonds pour participer à l'enchère. Je dois passer mon tour et laisser l'autre joueur enchérir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 71,
+      "Claude": 739
+    }
+  }
+}

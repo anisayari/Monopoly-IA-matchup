@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:29:19.505171",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai pas les fonds nécessaires pour acheter la gare. Il est préférable de la mettre aux enchères pour éviter une perte d'argent immédiate.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "Gemini": 196,
+      "Claude": 444
+    }
+  }
+}

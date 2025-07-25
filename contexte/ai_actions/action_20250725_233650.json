@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:36:48.646123",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai pas les fonds suffisants pour acheter Mayfair. La mettre aux enchères est la seule option viable.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "Gemini": 21,
+      "Claude": 429
+    }
+  }
+}

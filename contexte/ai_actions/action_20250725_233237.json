@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:32:35.210936",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai pas les fonds pour acheter Oxford Street au prix affiché. La mettre aux enchères est la meilleure option pour ne pas perdre d'argent et potentiellement la laisser à Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "Gemini": 121,
+      "Claude": 569
+    }
+  }
+}

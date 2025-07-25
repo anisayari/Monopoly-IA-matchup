@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T21:20:19.474615",
+  "trigger": "Order Of Play",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Accepte de lancer les dés pour déterminer l'ordre de jeu et démarrer la partie. C'est l'étape initiale obligatoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

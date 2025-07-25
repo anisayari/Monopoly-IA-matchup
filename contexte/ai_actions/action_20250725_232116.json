@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T21:21:14.364445",
+  "trigger": "Force",
+  "keywords": [
+    "Choose which properties"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "La dernière étape de lancer les dés pour l'ordre de jeu a mené à une égalité. Cliquer 'ok' pour continuer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

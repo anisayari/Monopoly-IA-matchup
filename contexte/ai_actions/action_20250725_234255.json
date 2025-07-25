@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:42:53.312466",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai pas assez d'argent pour acheter Marlborough Street. La mettre aux enchères est la meilleure option pour ne pas bloquer le jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "Gemini": 71,
+      "Claude": 929
+    }
+  }
+}

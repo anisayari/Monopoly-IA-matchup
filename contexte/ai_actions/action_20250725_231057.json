@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:10:55.100426",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai évalué mes propriétés. Aucune construction possible pour l'instant et pas de besoin d'hypothèque. Je retourne au jeu principal.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "Gemini": 110,
+      "Claude": 930
+    }
+  }
+}

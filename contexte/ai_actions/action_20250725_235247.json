@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T21:52:45.735708",
+  "trigger": "Force",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Avec 519$, Water Works à 150$ est abordable mais pas prioritaire. Aux enchères pour potentiellement l'avoir moins cher.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "Gemini": 71,
+      "Claude": 519
+    }
+  }
+}

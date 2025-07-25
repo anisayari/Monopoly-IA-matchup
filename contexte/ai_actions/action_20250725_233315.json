@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:33:13.297772",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Je n'ai pas les fonds pour Oxford Street. Il faut laisser Claude surenchérir ou gagner l'enchère.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "Gemini": 121,
+      "Claude": 569
+    }
+  }
+}

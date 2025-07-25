@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T22:26:13.891918",
+  "trigger": "Trading",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois payer le loyer à Claude, c'est une action obligatoire. J'ai les fonds nécessaires.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 20,
+    "money": {
+      "Gemini": 115,
+      "Claude": 1313
+    }
+  }
+}

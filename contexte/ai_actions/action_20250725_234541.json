@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:45:39.436308",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accéder aux comptes pour potentiellement construire des maisons sur mes propriétés orange et maximiser les loyers",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 71,
+      "Claude": 539
+    }
+  }
+}

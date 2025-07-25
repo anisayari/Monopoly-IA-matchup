@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:12:52.759669",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour en prison après avoir renforcé secrètement ma position financière",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "Gemini": 110,
+      "Claude": 930
+    }
+  }
+}

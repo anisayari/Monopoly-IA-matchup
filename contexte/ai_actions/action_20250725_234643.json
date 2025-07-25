@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:46:41.627159",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "Négocier un échange pour obtenir la troisième propriété orange et créer un monopole destructeur",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 71,
+      "Claude": 539
+    }
+  }
+}

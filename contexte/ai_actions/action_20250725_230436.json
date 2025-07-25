@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:04:34.222309",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour après avoir payé les frais, je garde ma position dominante avec 8 propriétés",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 410,
+      "Claude": 930
+    }
+  }
+}

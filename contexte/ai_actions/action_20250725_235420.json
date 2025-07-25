@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:54:18.308140",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour avec succès après avoir acquis Water Works et renforcé ma position dominante",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 71,
+      "Claude": 469
+    }
+  }
+}

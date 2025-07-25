@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:05:41.375069",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Whitehall pour 140$ complète le groupe rose avec Gemini, créant une opportunité d'échange stratégique",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "Gemini": 205,
+      "Claude": 895
+    }
+  }
+}

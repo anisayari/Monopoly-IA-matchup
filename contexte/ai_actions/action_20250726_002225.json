@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:22:23.417494",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai pas assez d'argent pour acheter la propriété. La mettre aux enchères est la seule option pour l'acquérir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "Gemini": 131,
+      "Claude": 1298
+    }
+  }
+}

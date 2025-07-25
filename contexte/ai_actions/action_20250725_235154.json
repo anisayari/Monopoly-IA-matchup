@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:51:52.313632",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon tour est terminé. Je suis à court de fonds pour toute action et Claude a acheté la dernière propriété mise aux enchères.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "Gemini": 71,
+      "Claude": 519
+    }
+  }
+}

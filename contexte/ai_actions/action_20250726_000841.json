@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T22:08:39.477743",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai exploré mes options et ai amélioré mes liquidités. Je passe le tour à Claude pour avancer le jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "Gemini": 141,
+      "Claude": 969
+    }
+  }
+}

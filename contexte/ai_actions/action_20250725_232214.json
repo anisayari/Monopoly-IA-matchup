@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T21:22:11.952523",
+  "trigger": "Force",
+  "keywords": [
+    "Choose which properties"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Fermer le popup pour commencer la partie et prendre l'avantage rapidement",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

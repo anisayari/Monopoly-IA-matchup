@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:23:48.564617",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Euston Road est une excellente opportunité. C'est une propriété peu coûteuse, ce qui me laisse beaucoup de liquidités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

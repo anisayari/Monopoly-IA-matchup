@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:13:38.571288",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois payer l'impôt sur le revenu. Je vais gérer mes propriétés pour obtenir les fonds nécessaires sans affaiblir ma position.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "Gemini": 110,
+      "Claude": 1230
+    }
+  }
+}

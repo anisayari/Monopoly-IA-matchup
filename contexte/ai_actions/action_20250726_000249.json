@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:02:47.235014",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je dois démarrer l'enchère si je veux une chance d'acquérir la propriété. Même avec peu de fonds, je tente.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "Gemini": 205,
+      "Claude": 945
+    }
+  }
+}

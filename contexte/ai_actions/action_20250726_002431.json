@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T22:24:28.883471",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Carte Chance m'envoie à Mayfair que je possède déjà, donc pas de loyer à payer, parfait !",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 20,
+    "money": {
+      "Gemini": 131,
+      "Claude": 1097
+    }
+  }
+}

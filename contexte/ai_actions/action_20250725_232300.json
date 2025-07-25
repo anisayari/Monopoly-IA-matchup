@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:22:57.960959",
+  "trigger": "Are you sure you want to continue",
+  "keywords": [
+    "Are you sure you want to continue"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "Yes ",
+  "reason": "Confirmer la non-sauvegarde pour démarrer la partie rapidement. Inutile de sauvegarder si tôt dans le jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

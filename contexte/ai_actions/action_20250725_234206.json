@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:42:04.419585",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Passer au tour suivant avec un avantage financier énorme, Gemini affaibli avec seulement 71$ restants",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "Gemini": 221,
+      "Claude": 779
+    }
+  }
+}

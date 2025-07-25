@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:59:43.391404",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter The Angel Islington pour 100$ complète ma collection de propriétés light blue et me rapproche d'un monopole",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "Gemini": 205,
+      "Claude": 1045
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:07:29.602189",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai pas assez d'argent pour acheter directement. Je dois mettre la propriété aux enchères et essayer de l'obtenir à un prix inférieur.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 10,
+      "Claude": 1130
+    }
+  }
+}

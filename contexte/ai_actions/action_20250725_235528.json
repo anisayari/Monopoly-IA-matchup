@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:55:26.505130",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je n'ai pas les fonds pour des actions significatives. La meilleure option est de passer le tour et de me concentrer sur la survie et les opportunités futures.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 45,
+      "Claude": 645
+    }
+  }
+}

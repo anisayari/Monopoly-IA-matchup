@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:56:24.208206",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour après avoir encore renforcé ma position dominante, Gemini est maintenant très affaibli financièrement",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "Gemini": 45,
+      "Claude": 645
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:21:36.672272",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour après avoir consolidé ma position dominante avec 13 propriétés et plus de 1000$ d'avance",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "Gemini": 131,
+      "Claude": 1298
+    }
+  }
+}

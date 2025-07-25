@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:23:41.367448",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai terminé ma phase d'enchère. Il n'y a plus d'actions à faire. Je passe mon tour à Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 20,
+    "money": {
+      "Gemini": 131,
+      "Claude": 1097
+    }
+  }
+}

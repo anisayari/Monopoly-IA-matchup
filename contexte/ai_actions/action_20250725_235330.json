@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:53:28.752001",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Initier l'enchère pour Water Works et voir si Gemini va enchérir malgré ses faibles finances",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "Gemini": 71,
+      "Claude": 519
+    }
+  }
+}

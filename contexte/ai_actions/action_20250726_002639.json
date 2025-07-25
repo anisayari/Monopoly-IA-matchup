@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:26:37.279785",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai peu d'argent et aucune action immédiate pour changer le cours du jeu. Je passe le tour et j'évalue mes options pour la suite.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 20,
+    "money": {
+      "Gemini": 115,
+      "Claude": 1313
+    }
+  }
+}

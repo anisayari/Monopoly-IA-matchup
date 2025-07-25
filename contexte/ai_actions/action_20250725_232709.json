@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:27:07.255234",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon tour est terminé après l'acquisition de la propriété. Il est temps de passer la main à Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 240,
+      "Claude": 400
+    }
+  }
+}

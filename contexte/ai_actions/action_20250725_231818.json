@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:18:16.770532",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Après avoir agi, il est temps de passer le tour. Claude est affaibli et je dois consolider ma position.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

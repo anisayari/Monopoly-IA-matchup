@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:14:40.499129",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Roll Again ",
+    "Accounts "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai les fonds nécessaires pour payer l'impôt sur le revenu. Il est temps de relancer les dés pour avancer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "Gemini": 260,
+      "Claude": 1230
+    }
+  }
+}

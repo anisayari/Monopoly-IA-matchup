@@ -39,9 +39,9 @@
           160,
           250
         ],
-        "current_rent": 2,
+        "current_rent": 0,
         "house_price": 50,
-        "owner": "blue",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -64,9 +64,9 @@
           0,
           0
         ],
-        "current_rent": 0,
+        "current_rent": 25,
         "house_price": 0,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -89,9 +89,9 @@
           400,
           550
         ],
-        "current_rent": 0,
+        "current_rent": 6,
         "house_price": 50,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -114,9 +114,9 @@
           400,
           550
         ],
-        "current_rent": 0,
+        "current_rent": 6,
         "house_price": 50,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -216,7 +216,7 @@
         ],
         "current_rent": 10,
         "house_price": 100,
-        "owner": "red",
+        "owner": "blue",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -239,9 +239,9 @@
           625,
           750
         ],
-        "current_rent": 0,
+        "current_rent": 10,
         "house_price": 100,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -266,7 +266,7 @@
         ],
         "current_rent": 25,
         "house_price": 0,
-        "owner": "blue",
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -339,9 +339,9 @@
           750,
           950
         ],
-        "current_rent": 0,
+        "current_rent": 14,
         "house_price": 100,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -439,9 +439,9 @@
           0,
           0
         ],
-        "current_rent": 0,
+        "current_rent": 25,
         "house_price": 0,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -539,9 +539,9 @@
           975,
           1150
         ],
-        "current_rent": 0,
+        "current_rent": 22,
         "house_price": 150,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -564,9 +564,9 @@
           1100,
           1275
         ],
-        "current_rent": 26,
+        "current_rent": 0,
         "house_price": 200,
-        "owner": "red",
+        "owner": null,
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -589,9 +589,9 @@
           1100,
           1275
         ],
-        "current_rent": 0,
+        "current_rent": 26,
         "house_price": 200,
-        "owner": null,
+        "owner": "red",
         "houses": 0,
         "has_hotel": false,
         "coordinates": {
@@ -702,13 +702,13 @@
         }
       }
     ],
-    "current_turn": 12,
+    "current_turn": 21,
     "player_count": 2,
     "player_names": [
       "Gemini",
       "Claude"
     ],
-    "current_player": "player2",
+    "current_player": "player1",
     "buildings_summary": {
       "total_houses": 0,
       "total_hotels": 0,
@@ -718,144 +718,144 @@
   },
   "events": [
     {
-      "turn": 12,
+      "turn": 20,
       "player": "System",
-      "action": "message",
-      "detail": "1 逄㹐ned",
-      "message": "Message: 1 逄㹐ned"
+      "action": "rent_notification",
+      "detail": "Gemini must pay ~16 to Claude in rent.",
+      "message": "System a effectué l'action 'rent_notification' Gemini must pay ~16 to Claude in rent.."
     },
     {
-      "turn": 12,
-      "player": "System",
-      "action": "message",
-      "detail": "4 逄夰ned",
-      "message": "Message: 4 逄夰ned"
-    },
-    {
-      "turn": 12,
-      "player": "System",
-      "action": "message",
-      "detail": "2 逄䱸ned",
-      "message": "Message: 2 逄䱸ned"
-    },
-    {
-      "turn": 12,
-      "player": "System",
-      "action": "message",
-      "detail": "3 逄僈ned",
-      "message": "Message: 3 逄僈ned"
-    },
-    {
-      "turn": 12,
-      "player": "System",
-      "action": "message",
-      "detail": "逆袘逃눠ortgage Value",
-      "message": "Message: 逆袘逃눠ortgage Value"
-    },
-    {
-      "turn": 12,
-      "player": "Gemini",
-      "action": "pay_money",
-      "detail": "20€ (transaction)",
-      "message": "Gemini paie 20€ pour transaction."
-    },
-    {
-      "turn": 12,
-      "player": "Claude",
-      "action": "receive_money",
-      "detail": "20€ (transaction)",
-      "message": "Claude reçoit 20€ pour transaction."
-    },
-    {
-      "turn": 12,
+      "turn": 20,
       "player": "Gemini",
       "action": "buy_property",
-      "detail": "Marylebone Station pour 200€",
-      "message": "Gemini achète Marylebone Station pour 200€."
+      "detail": "Vine Street pour 200€",
+      "message": "Gemini achète Vine Street pour 200€."
     },
     {
-      "turn": 12,
-      "player": "Gemini",
-      "action": "lose_property",
-      "detail": "Marlborough Street",
-      "message": "Gemini a effectué l'action 'lose_property' Marlborough Street."
-    },
-    {
-      "turn": 12,
-      "player": "Claude",
-      "action": "buy_property",
-      "detail": "Marlborough Street pour 180€",
-      "message": "Claude achète Marlborough Street pour 180€."
-    },
-    {
-      "turn": 12,
-      "player": "Claude",
-      "action": "lose_property",
-      "detail": "Marylebone Station",
-      "message": "Claude a effectué l'action 'lose_property' Marylebone Station."
-    },
-    {
-      "turn": 12,
-      "player": "System",
-      "action": "message",
-      "detail": "Trade is accepted!",
-      "message": "Message: Trade is accepted!"
-    },
-    {
-      "turn": 12,
-      "player": "System",
-      "action": "message",
-      "detail": "Tr",
-      "message": "Message: Tr"
-    },
-    {
-      "turn": 12,
+      "turn": 20,
       "player": "Claude",
       "action": "roll_dice",
-      "detail": "4+2=6",
-      "message": "Claude a lancé les dés et avance de 6 cases."
+      "detail": "5+4=9",
+      "message": "Claude a lancé les dés et avance de 9 cases."
     },
     {
-      "turn": 12,
+      "turn": 20,
       "player": "Claude",
-      "action": "move",
-      "detail": "Community Chest",
-      "message": "Claude arrive sur Community Chest."
+      "action": "move_and_pay",
+      "detail": "Euston Road -> 6€ to Gemini pour Euston Road",
+      "message": "Claude s'est déplacé sur Euston Road et a payé 6€ de loyer à Gemini."
     },
     {
-      "turn": 12,
-      "player": "Claude",
-      "action": "lose_property",
-      "detail": "Marlborough Street",
-      "message": "Claude a effectué l'action 'lose_property' Marlborough Street."
-    },
-    {
-      "turn": 12,
-      "player": "Claude",
-      "action": "lose_property",
-      "detail": "Water Works",
-      "message": "Claude a effectué l'action 'lose_property' Water Works."
-    },
-    {
-      "turn": 12,
+      "turn": 20,
       "player": "Claude",
       "action": "goto",
-      "detail": "Community Chest",
-      "message": "Claude se déplace directement vers Community Chest."
+      "detail": "Euston Road",
+      "message": "Claude se déplace directement vers Euston Road."
     },
     {
-      "turn": 12,
+      "turn": 20,
       "player": "Claude",
-      "action": "move",
-      "detail": "Whitehall",
-      "message": "Claude arrive sur Whitehall."
+      "action": "move_and_buy",
+      "detail": "Old Kent Road -> Old Kent Road pour 60€",
+      "message": "Claude s'est déplacé sur Old Kent Road et l'a acheté pour 60€."
     },
     {
-      "turn": 12,
+      "turn": 20,
       "player": "System",
       "action": "message",
-      "detail": "Pay school fee of ~50.",
-      "message": "Message: Pay school fee of ~50."
+      "detail": "Pa逃ed Go, collect ~200!",
+      "message": "Message: Pa逃ed Go, collect ~200!"
+    },
+    {
+      "turn": 20,
+      "player": "Gemini",
+      "action": "receive_money",
+      "detail": "6€ (transaction)",
+      "message": "Gemini reçoit 6€ pour transaction."
+    },
+    {
+      "turn": 20,
+      "player": "Claude",
+      "action": "pay_money",
+      "detail": "6€ (transaction)",
+      "message": "Claude paie 6€ pour transaction."
+    },
+    {
+      "turn": 20,
+      "player": "System",
+      "action": "rent_notification",
+      "detail": "Claude must pay ~6 to Gemini in rent.",
+      "message": "System a effectué l'action 'rent_notification' Claude must pay ~6 to Gemini in rent.."
+    },
+    {
+      "turn": 20,
+      "player": "Claude",
+      "action": "buy_property",
+      "detail": "Euston Road pour 100€",
+      "message": "Claude achète Euston Road pour 100€."
+    },
+    {
+      "turn": 21,
+      "player": "Gemini",
+      "action": "roll_dice",
+      "detail": "6+5=11",
+      "message": "Gemini a lancé les dés et avance de 11 cases."
+    },
+    {
+      "turn": 21,
+      "player": "Gemini",
+      "action": "move",
+      "detail": "Go To Jail",
+      "message": "Gemini arrive sur Go To Jail."
+    },
+    {
+      "turn": 21,
+      "player": "Gemini",
+      "action": "lose_property",
+      "detail": "Vine Street",
+      "message": "Gemini a effectué l'action 'lose_property' Vine Street."
+    },
+    {
+      "turn": 21,
+      "player": "Gemini",
+      "action": "goto",
+      "detail": "Go To Jail",
+      "message": "Gemini se déplace directement vers Go To Jail."
+    },
+    {
+      "turn": 21,
+      "player": "Gemini",
+      "action": "move",
+      "detail": "Chance",
+      "message": "Gemini arrive sur Chance."
+    },
+    {
+      "turn": 21,
+      "player": "Gemini",
+      "action": "jail_enter",
+      "detail": null,
+      "message": "Gemini est envoyé en prison."
+    },
+    {
+      "turn": 21,
+      "player": "Gemini",
+      "action": "goto",
+      "detail": "Jail / Just Visiting (envoyé en prison)",
+      "message": "Gemini est envoyé directement en prison."
+    },
+    {
+      "turn": 21,
+      "player": "Gemini",
+      "action": "move",
+      "detail": "Jail / Just Visiting",
+      "message": "Gemini arrive sur Jail / Just Visiting."
+    },
+    {
+      "turn": 21,
+      "player": "System",
+      "action": "message",
+      "detail": "Gemini, you are off to jail!",
+      "message": "Message: Gemini, you are off to jail!"
     }
   ],
   "players": {
@@ -863,49 +863,18 @@
       "name": "Gemini",
       "ai_model": "gemini-2.5-flash",
       "provider": "gemini",
-      "current_player": false,
-      "is_current": false,
-      "dice_result": [
-        1,
-        6
-      ],
-      "money": 410,
-      "properties": [
-        {
-          "id": 3,
-          "name": "Whitechapel Road",
-          "group": "brown",
-          "houses": 0,
-          "is_mortgaged": false
-        },
-        {
-          "id": 15,
-          "name": "Marylebone Station",
-          "group": "station",
-          "houses": 0,
-          "is_mortgaged": false
-        }
-      ],
-      "position": 17,
-      "current_space": "Community Chest",
-      "jail": false
-    },
-    "player2": {
-      "name": "Claude",
-      "ai_model": "claude-sonnet-4-0",
-      "provider": "anthropic",
       "current_player": true,
       "is_current": true,
       "dice_result": [
-        4,
-        2
+        6,
+        5
       ],
-      "money": 980,
+      "money": 121,
       "properties": [
         {
-          "id": 21,
-          "name": "Strand",
-          "group": "red",
+          "id": 8,
+          "name": "Euston Road",
+          "group": "light_blue",
           "houses": 0,
           "is_mortgaged": false
         },
@@ -915,18 +884,42 @@
           "group": "pink",
           "houses": 0,
           "is_mortgaged": false
-        },
+        }
+      ],
+      "position": 10,
+      "current_space": "Jail / Just Visiting",
+      "jail": false
+    },
+    "player2": {
+      "name": "Claude",
+      "ai_model": "claude-sonnet-4-0",
+      "provider": "anthropic",
+      "current_player": false,
+      "is_current": false,
+      "dice_result": [
+        5,
+        4
+      ],
+      "money": 1507,
+      "properties": [
         {
-          "id": 31,
-          "name": "Regent Street",
-          "group": "green",
+          "id": 5,
+          "name": "Kings Cross Station",
+          "group": "station",
           "houses": 0,
           "is_mortgaged": false
         },
         {
-          "id": 23,
-          "name": "Fleet Street",
-          "group": "red",
+          "id": 25,
+          "name": "Fenchurch Street Station",
+          "group": "station",
+          "houses": 0,
+          "is_mortgaged": false
+        },
+        {
+          "id": 32,
+          "name": "Oxford Street",
+          "group": "green",
           "houses": 0,
           "is_mortgaged": false
         },
@@ -938,9 +931,23 @@
           "is_mortgaged": false
         },
         {
-          "id": 11,
-          "name": "Pall Mall",
-          "group": "pink",
+          "id": 18,
+          "name": "Marlborough Street",
+          "group": "orange",
+          "houses": 0,
+          "is_mortgaged": false
+        },
+        {
+          "id": 19,
+          "name": "Vine Street",
+          "group": "orange",
+          "houses": 0,
+          "is_mortgaged": false
+        },
+        {
+          "id": 21,
+          "name": "Strand",
+          "group": "red",
           "houses": 0,
           "is_mortgaged": false
         },
@@ -952,15 +959,57 @@
           "is_mortgaged": false
         },
         {
-          "id": 18,
-          "name": "Marlborough Street",
-          "group": "orange",
+          "id": 6,
+          "name": "The Angel Islington",
+          "group": "light_blue",
+          "houses": 0,
+          "is_mortgaged": false
+        },
+        {
+          "id": 23,
+          "name": "Fleet Street",
+          "group": "red",
+          "houses": 0,
+          "is_mortgaged": false
+        },
+        {
+          "id": 11,
+          "name": "Pall Mall",
+          "group": "pink",
+          "houses": 0,
+          "is_mortgaged": false
+        },
+        {
+          "id": 14,
+          "name": "Northumberland Avenue",
+          "group": "pink",
+          "houses": 0,
+          "is_mortgaged": false
+        },
+        {
+          "id": 29,
+          "name": "Piccadilly",
+          "group": "yellow",
+          "houses": 0,
+          "is_mortgaged": false
+        },
+        {
+          "id": 15,
+          "name": "Marylebone Station",
+          "group": "station",
+          "houses": 0,
+          "is_mortgaged": false
+        },
+        {
+          "id": 8,
+          "name": "Euston Road",
+          "group": "light_blue",
           "houses": 0,
           "is_mortgaged": false
         }
       ],
-      "position": 17,
-      "current_space": "Community Chest",
+      "position": 8,
+      "current_space": "Euston Road",
       "jail": false
     }
   },

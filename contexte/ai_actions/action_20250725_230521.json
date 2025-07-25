@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:05:19.728684",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Fenchurch Street Station me donnera 2 stations, augmentant mes chances de revenus futurs et rapprochant un monopole.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 410,
+      "Claude": 930
+    }
+  }
+}

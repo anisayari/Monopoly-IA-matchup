@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:12:30.061781",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Je n'ai pas les fonds pour acheter Piccadilly. Je vais communiquer mon retrait de l'enchère pour éviter de gaspiller des ressources.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 17,
+    "money": {
+      "Gemini": 81,
+      "Claude": 1129
+    }
+  }
+}

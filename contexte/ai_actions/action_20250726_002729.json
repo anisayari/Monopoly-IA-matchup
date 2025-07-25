@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T22:27:27.226228",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer le loyer de 6$ à Gemini sur sa propriété Euston Road, montant dérisoire comparé à ma fortune",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 20,
+    "money": {
+      "Gemini": 121,
+      "Claude": 1507
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:39:05.945216",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Passer au tour suivant avec un avantage financier écrasant de 779$ contre 21$ pour Gemini",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 21,
+      "Claude": 579
+    }
+  }
+}

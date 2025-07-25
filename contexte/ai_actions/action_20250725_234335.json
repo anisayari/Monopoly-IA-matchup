@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:43:33.477815",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je n'ai pas les fonds pour miser. Je dois passer mon tour dans cette enchère et laisser Claude agir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "Gemini": 71,
+      "Claude": 929
+    }
+  }
+}

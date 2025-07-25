@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:25:10.575929",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Première gare stratégique, bon revenu locatif et position importante sur le plateau",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 400,
+      "Claude": 500
+    }
+  }
+}

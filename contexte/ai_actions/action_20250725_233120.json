@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T21:31:18.313746",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter les 100$ de la Community Chest, excellent bonus financier pour mes investissements",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "Gemini": 196,
+      "Claude": 394
+    }
+  }
+}

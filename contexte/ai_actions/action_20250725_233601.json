@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:35:59.562648",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Continuer le jeu avec l'avantage financier obtenu discrètement, prêt pour les prochaines opportunités",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "Gemini": 121,
+      "Claude": 329
+    }
+  }
+}

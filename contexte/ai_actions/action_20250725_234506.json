@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:45:03.912230",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Vine Street pour 200$ renforce mon portefeuille orange et maintient ma domination avec 539$ restants",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 7,
+    "money": {
+      "Gemini": 71,
+      "Claude": 739
+    }
+  }
+}

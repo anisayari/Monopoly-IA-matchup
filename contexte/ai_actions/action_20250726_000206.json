@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:02:04.770020",
+  "trigger": "Force",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai pas assez d'argent pour acheter Fleet Street. La mettre aux enchères est la seule option.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "Gemini": 205,
+      "Claude": 945
+    }
+  }
+}

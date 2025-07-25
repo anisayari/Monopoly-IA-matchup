@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T21:28:03.333963",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer le loyer obligatoire de 6$ pour continuer le jeu normalement",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 246,
+      "Claude": 394
+    }
+  }
+}

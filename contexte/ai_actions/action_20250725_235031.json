@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:50:29.427181",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Accounts ",
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai pas les fonds suffisants pour acheter Strand. La mettre aux enchères est la seule option pour avancer dans le jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 71,
+      "Claude": 739
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:08:06.063270",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je n'ai pas les fonds pour enchérir sur Oxford Street. Je communique ma décision pour ne pas faire monter les prix inutilement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 10,
+      "Claude": 1130
+    }
+  }
+}

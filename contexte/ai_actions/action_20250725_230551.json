@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:05:49.428640",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai acquis une nouvelle station, renforçant ma position. Je passe mon tour pour voir les actions de Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 210,
+      "Claude": 930
+    }
+  }
+}

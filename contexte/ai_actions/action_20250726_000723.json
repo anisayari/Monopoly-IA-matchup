@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T22:07:21.327900",
+  "trigger": "Force",
+  "keywords": [
+    "Pay the Bail"
+  ],
+  "options": [
+    "Pay Bail "
+  ],
+  "decision": "Pay Bail ",
+  "reason": "J'ai les fonds pour payer la caution. Sortir de prison est prioritaire pour continuer à jouer et potentiellement acquérir des propriétés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "Gemini": 205,
+      "Claude": 955
+    }
+  }
+}

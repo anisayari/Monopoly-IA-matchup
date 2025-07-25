@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T21:12:22.688147",
+  "trigger": "Trading",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter d'aller en prison, cela me permettra de rester en sécurité quelques tours",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "Gemini": 110,
+      "Claude": 930
+    }
+  }
+}

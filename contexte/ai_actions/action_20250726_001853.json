@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T22:18:51.828459",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je suis en prison et je n'ai pas la carte 'Sortez de prison'. Je ne peux pas rouler les dés pour sortir, je passe mon tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 18,
+    "money": {
+      "Gemini": 231,
+      "Claude": 1198
+    }
+  }
+}

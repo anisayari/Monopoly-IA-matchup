@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:58:23.077263",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "J'ai les fonds pour acheter Pall Mall ($140). C'est une bonne opportunité d'acquérir une nouvelle propriété et de renforcer ma position.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "Gemini": 345,
+      "Claude": 845
+    }
+  }
+}

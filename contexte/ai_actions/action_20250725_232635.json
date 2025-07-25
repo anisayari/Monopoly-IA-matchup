@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:26:33.730119",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter cette propriété au prix affiché permet de sécuriser un actif sans risquer de la perdre aux enchères ou de la voir achetée par Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 400,
+      "Claude": 400
+    }
+  }
+}

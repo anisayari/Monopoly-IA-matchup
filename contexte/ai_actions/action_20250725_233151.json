@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:31:48.845661",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Passer au tour suivant avec un avantage financier considérable après le vol discret",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "Gemini": 196,
+      "Claude": 494
+    }
+  }
+}

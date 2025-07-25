@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:08:48.880846",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec les fonds supplémentaires, je peux maintenant envisager de construire sur Whitechapel Road, ou au moins évaluer ma situation pour le prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "Gemini": 10,
+      "Claude": 1030
+    }
+  }
+}

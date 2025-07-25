@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T22:09:53.657953",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Je dois initier le dialogue pour finaliser l'échange de propriétés roses avec Claude, comme nous l'avons déjà négocié.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "Gemini": 241,
+      "Claude": 969
+    }
+  }
+}

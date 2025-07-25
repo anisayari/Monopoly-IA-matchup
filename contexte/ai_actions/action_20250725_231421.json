@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:14:19.033052",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Mes fonds sont maintenant suffisants après le vol. Je peux retourner au jeu principal sans besoin de gérer plus de propriétés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "Gemini": 110,
+      "Claude": 1230
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T22:04:25.596733",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai atterri en prison. Je dois confirmer l'action pour continuer le jeu. Je n'ai pas d'autres options pour l'instant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "Gemini": 205,
+      "Claude": 895
+    }
+  }
+}

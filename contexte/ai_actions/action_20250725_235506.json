@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T21:55:04.435563",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois payer le loyer à Claude. Mes fonds sont bas, mais j'ai assez pour couvrir le montant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 45,
+      "Claude": 645
+    }
+  }
+}

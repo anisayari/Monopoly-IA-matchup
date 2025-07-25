@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:09:49.856804",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je veux examiner mes propriétés de plus près pour voir si je peux construire ou hypothéquer, ou me préparer pour un prochain achat.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "Gemini": 110,
+      "Claude": 930
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:57:35.696869",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Roll Again ",
+    "Accounts "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai gagné 100$, ce qui améliore ma situation financière. Je dois relancer les dés pour avancer sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "Gemini": 345,
+      "Claude": 845
+    }
+  }
+}

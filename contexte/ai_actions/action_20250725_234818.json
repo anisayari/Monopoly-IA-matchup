@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T21:48:16.005086",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Accepter de donner 150$ à Gemini pour maintenir de bonnes relations et potentiellement négocier plus tard",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 71,
+      "Claude": 539
+    }
+  }
+}
