@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:36:26.363616",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai fait un double. Le meilleur choix est de lancer à nouveau les dés pour potentiellement avancer ou gagner de l'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 81,
+    "money": {
+      "GPT": 178,
+      "Gemini": 36
+    }
+  }
+}

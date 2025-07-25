@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T17:33:48.614375",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Le loyer doit être payé. Mes fonds sont limités, mais j'évite la faillite pour l'instant et me concentre sur l'avenir.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 72,
+    "money": {
+      "GPT": 278,
+      "Gemini": 36
+    }
+  }
+}

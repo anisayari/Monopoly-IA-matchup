@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:16:35.193584",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Dés-hypothéquer Kings Cross Station (coût $110) est le meilleur investissement pour augmenter mes revenus potentiels avec mes fonds.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 41,
+    "money": {
+      "GPT": 16,
+      "Gemini": 300
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T17:42:07.309098",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai suffisamment de fonds pour payer le loyer. Le régler immédiatement est le meilleur choix.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 91,
+    "money": {
+      "GPT": 543,
+      "Gemini": 196
+    }
+  }
+}

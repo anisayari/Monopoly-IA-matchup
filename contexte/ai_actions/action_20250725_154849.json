@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T13:48:47.076906",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois immédiatement échanger Fleet Street contre Leicester Square, comme convenu avec Claude, pour obtenir le monopole rouge et renforcer ma domination stratégique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 77,
+      "Claude": 116
+    }
+  }
+}

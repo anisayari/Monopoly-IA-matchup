@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:54:40.429653",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Mon cash est bas et plusieurs propriétés stratégiques sont hypothéquées. Je dois gérer/échanger pour maximiser mon potentiel de revenus avant d’avancer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 87,
+      "Gemini": 31
+    }
+  }
+}

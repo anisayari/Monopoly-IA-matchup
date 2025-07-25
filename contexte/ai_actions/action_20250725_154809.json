@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:48:07.692648",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois acheter Fleet Street dès que possible pour obtenir le monopole rouge via l'échange convenu avec Claude. C'est prioritaire pour renforcer ma position.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 77,
+      "Claude": 116
+    }
+  }
+}

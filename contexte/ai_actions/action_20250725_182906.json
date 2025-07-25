@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:29:03.966204",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il faut encore hypothéquer (Electric Company ou vendre une maison) pour atteindre 300$ et éviter la faillite. Mes maisons doivent rester prioritaires.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 171,
+      "Gemini": 80
+    }
+  }
+}

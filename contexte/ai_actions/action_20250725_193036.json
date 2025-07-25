@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:30:34.665387",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Pas de menace immédiate ni d’opportunité avec ce cash. Je conserve ma réserve et laisse la chance tourner dans l’espoir d’un coup de pouce adverse sur mes maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 63,
+    "money": {
+      "GPT": 266,
+      "Gemini": 48
+    }
+  }
+}

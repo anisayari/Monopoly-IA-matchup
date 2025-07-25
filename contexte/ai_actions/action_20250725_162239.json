@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T14:22:37.355094",
+  "trigger": "Force",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Situation stable, rien à optimiser et pas de cash pour négocier. Avancer le tour est la décision la plus rationnelle.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "GPT": 57,
+      "Claude": 53
+    }
+  }
+}

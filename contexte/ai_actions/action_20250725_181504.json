@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:15:02.220819",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Toujours pas assez de fonds disponibles pour investir ou dés-hypothéquer. Avancer, attendre un revenu ou surpris par un paiement adverse est la stratégie optimale.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 16,
+      "Gemini": 100
+    }
+  }
+}

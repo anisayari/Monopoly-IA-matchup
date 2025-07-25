@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T16:12:48.630203",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "La collecte des $100 est obligatoire et augmente mes fonds de $0 à $100, ouvrant de nouvelles opportunités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 41,
+    "money": {
+      "GPT": 16,
+      "Gemini": 0
+    }
+  }
+}

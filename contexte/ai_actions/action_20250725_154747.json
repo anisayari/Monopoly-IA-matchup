@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:47:45.713493",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer le loyer est obligatoire, aucune négociation possible. Permet de passer directement à la suite du tour et à la prochaine opportunité stratégique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 77,
+      "Claude": 116
+    }
+  }
+}

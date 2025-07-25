@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:54:12.966969",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Pay ",
+    "Trade "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai enfin les fonds pour régler immédiatement la dette de 16 M$, ce qui évite toute pénalité ou liquidation. Objectif : survivre pour enclencher l'échange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 103,
+      "Gemini": 15
+    }
+  }
+}

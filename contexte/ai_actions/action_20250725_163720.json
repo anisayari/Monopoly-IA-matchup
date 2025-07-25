@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:37:18.585079",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Trafalgar Square et Pentonville pour avoir assez d'argent pour construire",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 29,
+    "money": {
+      "GPT": 77,
+      "Claude": 33
+    }
+  }
+}

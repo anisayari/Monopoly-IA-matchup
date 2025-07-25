@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T17:49:08.156201",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je ne peux pas payer le loyer avec mes fonds actuels. Le jeu va me forcer à hypothéquer/vendre pour couvrir la dette.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 99,
+    "money": {
+      "GPT": 543,
+      "Gemini": 16
+    }
+  }
+}

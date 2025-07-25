@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:07:18.298377",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Dois équilibrer maisons sur monopole rouge et construire plus pour maximiser revenus",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT": 121,
+      "Claude": 105
+    }
+  }
+}

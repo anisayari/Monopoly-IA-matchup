@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:51:47.711358",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "J’ai désormais de quoi payer le loyer. J’initie immédiatement l’échange convenu avec Gemini pour stabiliser ma trésorerie et améliorer mes options stratégiques.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 3,
+      "Gemini": 15
+    }
+  }
+}

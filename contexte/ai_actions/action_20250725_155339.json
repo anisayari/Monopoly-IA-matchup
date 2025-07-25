@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T13:53:37.095868",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Construire maisons sur monopole dark blue pour maximiser revenus locatifs",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT": 77,
+      "Claude": 124
+    }
+  }
+}

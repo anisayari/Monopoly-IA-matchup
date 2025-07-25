@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:17:35.746811",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai évalué mes options de gestion de propriétés, et avec mes fonds actuels, il est optimal de revenir au jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 53,
+    "money": {
+      "GPT": 252,
+      "Gemini": 69
+    }
+  }
+}

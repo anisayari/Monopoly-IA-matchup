@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:42:10.909048",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Pay ",
+    "Trade "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai assez de liquidités pour régler la dette et poursuivre sans hypothéquer ni vendre. Je sécurise ma position pour le tour suivant et reste compétitif.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 303,
+      "Gemini": 80
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:07:05.991702",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Plus de cash, gestion terminée. Attendre de nouveaux fonds avant toute action pour rester flexible et éviter la faillite sur imprévu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 31,
+    "money": {
+      "GPT": 17,
+      "Gemini": 0
+    }
+  }
+}

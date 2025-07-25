@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:01:50.428072",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes fonds sont très bas. Je dois accumuler de l'argent pour lever des hypothèques et développer mes monopoles à l'avenir.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 105,
+    "money": {
+      "GPT": 723,
+      "Gemini": 107
+    }
+  }
+}

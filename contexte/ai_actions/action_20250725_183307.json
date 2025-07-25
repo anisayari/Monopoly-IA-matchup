@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:33:05.741410",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Electric Company : dernier terrain non résidentiel, je préserve au maximum mon potentiel de loyer pour survivre et contre-attaquer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 166,
+      "Gemini": 80
+    }
+  }
+}

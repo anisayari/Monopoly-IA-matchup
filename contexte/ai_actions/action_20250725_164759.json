@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:47:57.113828",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Sortir de la gestion pour terminer mon tour, pas assez d'argent pour construire",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 34,
+    "money": {
+      "GPT": 103,
+      "Claude": 67
+    }
+  }
+}

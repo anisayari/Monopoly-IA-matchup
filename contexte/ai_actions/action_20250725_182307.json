@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:23:04.945312",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Pentonville Road, puis d'autres petits terrains si besoin. Ma priorité est de réunir rapidement 300$ sans toucher aux groupes à maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 116,
+      "Gemini": 80
+    }
+  }
+}

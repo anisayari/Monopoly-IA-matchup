@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:17:16.807629",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Dés-hypothéquer Kings Cross Station ($110) est la meilleure action pour maximiser les revenus des gares.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 41,
+    "money": {
+      "GPT": 16,
+      "Gemini": 190
+    }
+  }
+}

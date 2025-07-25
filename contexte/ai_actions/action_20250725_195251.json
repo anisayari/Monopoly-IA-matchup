@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:52:49.687674",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai assez d'argent pour lever les hypothèques de mes monopoles rouge et vert afin de les activer et construire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 99,
+    "money": {
+      "GPT": 723,
+      "Gemini": 636
+    }
+  }
+}

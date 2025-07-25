@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:12:36.706497",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Pall Mall n'a pas été vendu. Je dois vendre des maisons sur le groupe Rouge pour dé-hypothéquer une propriété verte.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 53,
+    "money": {
+      "GPT": 252,
+      "Gemini": 185
+    }
+  }
+}

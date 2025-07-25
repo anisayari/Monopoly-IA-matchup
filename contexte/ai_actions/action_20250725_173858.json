@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:38:56.206755",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je n'ai pas suffisamment de liquidités pour agir ni de gestion urgente à effectuer. Attendre un revenu est la meilleure stratégie pour l'instant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "GPT": 121,
+      "Gemini": 99
+    }
+  }
+}

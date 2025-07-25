@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:58:41.379852",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Avec seulement $121, impossible de construire ni lever d'hypothèque efficacement. Je retourne à la fenêtre principale pour économiser et préparer un coup ou un éventuel échange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 121,
+      "Claude": 205
+    }
+  }
+}

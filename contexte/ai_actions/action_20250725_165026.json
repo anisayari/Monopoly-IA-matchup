@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:50:24.551661",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Première option disponible",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 34,
+    "money": {
+      "GPT": 103,
+      "Claude": 67
+    }
+  }
+}

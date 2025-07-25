@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:42:45.385860",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Après avoir construit sur mon monopole rouge, mes fonds sont limités. Je passe le tour pour accumuler plus d'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT": 121,
+      "Gemini": 149
+    }
+  }
+}

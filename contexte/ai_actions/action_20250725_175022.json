@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:50:20.033979",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Avec $111, il vaut mieux conserver des liquidités pour parer à un loyer élevé ou une opportunité future. Gestion terminée pour l’instant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "GPT": 111,
+      "Gemini": 149
+    }
+  }
+}

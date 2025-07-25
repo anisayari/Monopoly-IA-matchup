@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T13:45:55.789956",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "Lever hypothèque Park Lane pour pouvoir construire sur monopole dark blue",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "GPT": 177,
+      "Claude": 91
+    }
+  }
+}

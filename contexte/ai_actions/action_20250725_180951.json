@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:09:49.097728",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Avec seulement $17, je dois négocier agressivement ou laisser l’enchère avancer pour obtenir Pentonville Road au plus bas prix possible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 17,
+      "Gemini": 0
+    }
+  }
+}

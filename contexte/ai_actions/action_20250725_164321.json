@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:43:18.884348",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Retourner au menu pour terminer mon tour après gestion des propriétés",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 30,
+    "money": {
+      "GPT": 77,
+      "Claude": 93
+    }
+  }
+}

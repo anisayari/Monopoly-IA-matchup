@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:30:47.706346",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai plusieurs propriétés hypothéquées et un monopole à construire. Je dois investir pour gagner.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 121,
+      "Gemini": 205
+    }
+  }
+}

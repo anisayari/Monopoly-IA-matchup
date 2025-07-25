@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:50:10.780586",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il faut hypothéquer une propriété nue (orange) pour payer la dette et éviter la faillite avant la finalisation de l'échange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 3,
+      "Gemini": 15
+    }
+  }
+}

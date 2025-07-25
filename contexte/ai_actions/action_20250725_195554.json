@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:55:51.937390",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai dés-hypothéqué mon monopole rouge. Je vais maintenant y construire des maisons pour générer un maximum de revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 100,
+    "money": {
+      "GPT": 723,
+      "Gemini": 152
+    }
+  }
+}

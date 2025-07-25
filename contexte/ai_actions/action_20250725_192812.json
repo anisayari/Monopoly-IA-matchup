@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:28:10.040148",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai levé l'hypothèque de Fleet Street. Je vais maintenant construire sur le monopole Rouge pour générer des revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 58,
+    "money": {
+      "GPT": 266,
+      "Gemini": 279
+    }
+  }
+}

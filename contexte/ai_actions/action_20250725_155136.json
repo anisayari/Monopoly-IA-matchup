@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:51:34.034454",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Carte Chance m'envoie à utility la plus proche, j'en possède déjà une",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT": 77,
+      "Claude": 316
+    }
+  }
+}

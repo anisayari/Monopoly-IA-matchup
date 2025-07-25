@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:20:44.795227",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Tenter un échange ou de lever des fonds auprès de Gemini avant de sacrifier d'autres propriétés. Dernière chance avant actions d'urgence.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 116,
+      "Gemini": 80
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:48:33.472311",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je peux encore lever l’hypothèque de The Angel Islington pour 55$, afin de rapprocher un futur monopole bleu clair, tout en restant liquide.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "GPT": 166,
+      "Gemini": 149
+    }
+  }
+}

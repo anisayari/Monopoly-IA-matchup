@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:41:01.097591",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accéder à la gestion pour construire des maisons sur mon monopole dark blue",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 29,
+    "money": {
+      "GPT": 77,
+      "Claude": 93
+    }
+  }
+}

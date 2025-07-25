@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:48:57.678427",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Formaliser l’échange Oxford Street contre Leicester Square + 15$ avec Gemini. Cela me donne du cash et débloque peut-être son monopole jaune.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 3,
+      "Gemini": 15
+    }
+  }
+}

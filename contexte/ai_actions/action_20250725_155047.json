@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T13:50:45.585494",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je n'ai pas assez de liquidités pour construire et aucune action urgente à faire. Passer le tour maximise mes chances de survie et d’opportunités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 77,
+      "Claude": 116
+    }
+  }
+}

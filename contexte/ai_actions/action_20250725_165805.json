@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:58:03.653963",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai plusieurs monopoles mais peu de cash. Je dois envisager de lever l'hypothèque sur des propriétés clés ou vendre pour renforcer mes positions rentables.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 121,
+      "Claude": 205
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T16:52:13.314335",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Aucune nouvelle action stratégique immédiate possible, j’attends la finalisation technique de l’échange déjà signalé à Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 3,
+      "Gemini": 15
+    }
+  }
+}

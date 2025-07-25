@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:03:29.487542",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec M255 en cash, dois optimiser monopole rouge et lever hypothèques stratégiques",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT": 121,
+      "Claude": 255
+    }
+  }
+}

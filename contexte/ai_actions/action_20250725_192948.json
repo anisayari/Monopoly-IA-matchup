@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:29:46.806518",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai activé mon monopole rouge. Mes fonds sont insuffisants pour construire; le prochain tour est optimal.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 58,
+    "money": {
+      "GPT": 266,
+      "Gemini": 48
+    }
+  }
+}

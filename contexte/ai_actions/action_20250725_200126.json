@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:01:24.602494",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Mes fonds sont insuffisants pour dés-hypothéquer Trafalgar Square ou commencer à construire. Je dois accumuler de l'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 105,
+    "money": {
+      "GPT": 723,
+      "Gemini": 107
+    }
+  }
+}

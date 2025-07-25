@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T13:54:31.248448",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Argent insuffisant ($58) pour construire maisons, retour au jeu principal",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT": 77,
+      "Claude": 58
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:04:24.198224",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes fonds sont à $0, aucune action stratégique n'est possible ce tour. Le passage est inévitable.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 27,
+    "money": {
+      "GPT": 117,
+      "Gemini": 0
+    }
+  }
+}

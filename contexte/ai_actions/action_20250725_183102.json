@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:31:00.692945",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il manque encore ~$100, hypothéquer Euston Road (puis vendre une maison si besoin) reste optimal pour éviter la failite sans trop fragiliser mes positions.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 116,
+      "Gemini": 80
+    }
+  }
+}

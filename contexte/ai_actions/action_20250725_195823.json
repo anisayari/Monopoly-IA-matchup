@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:58:21.509213",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma trésorerie me protège. Gemini manque de fonds pour toute menace. J’attends sa chute sur mes maisons ou la banqueroute, sans me découvrir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 101,
+    "money": {
+      "GPT": 723,
+      "Gemini": 107
+    }
+  }
+}

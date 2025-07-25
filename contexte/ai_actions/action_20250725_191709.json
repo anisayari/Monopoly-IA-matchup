@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:17:07.490019",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Mes fonds sont insuffisants pour dé-hypothéquer ou construire. Il est préférable de terminer la gestion des propriétés et de passer mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 53,
+    "money": {
+      "GPT": 252,
+      "Gemini": 69
+    }
+  }
+}

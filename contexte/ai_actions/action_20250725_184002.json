@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:40:00.316205",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Vendre la maison de Marlborough Street. Cela équilibre le groupe orange, assure plus de liquidités et protège mes groupes aux loyers élevés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 203,
+      "Gemini": 80
+    }
+  }
+}

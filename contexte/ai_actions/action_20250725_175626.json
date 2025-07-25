@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:56:24.007837",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Fonds limités après dés-hypothécation. Aucune action immédiate rentable. Le prochain tour apportera de nouvelles opportunités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 17,
+    "money": {
+      "GPT": 117,
+      "Gemini": 100
+    }
+  }
+}

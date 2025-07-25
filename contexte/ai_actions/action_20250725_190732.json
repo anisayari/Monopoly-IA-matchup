@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:07:29.901302",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai 75$ et dois optimiser mes propriétés. Je vais vendre les maisons sur Pall Mall pour financer des constructions plus rentables sur mes monopoles rouges ou verts.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 53,
+    "money": {
+      "GPT": 252,
+      "Gemini": 75
+    }
+  }
+}

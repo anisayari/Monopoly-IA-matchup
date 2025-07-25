@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:47:32.343951",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement 16$, je ne peux rien construire. Je dois passer mon tour pour accumuler des fonds.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 95,
+    "money": {
+      "GPT": 543,
+      "Gemini": 16
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:57:09.173894",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Avec 107$, je ne peux pas construire. Je dois passer mon tour pour accumuler des fonds pour des développements futurs.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 100,
+    "money": {
+      "GPT": 723,
+      "Gemini": 107
+    }
+  }
+}

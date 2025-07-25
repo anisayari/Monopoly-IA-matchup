@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:11:22.231505",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai vendu les maisons de Pall Mall pour générer 100$ et investir dans des propriétés avec un meilleur potentiel de loyer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 53,
+    "money": {
+      "GPT": 252,
+      "Gemini": 25
+    }
+  }
+}

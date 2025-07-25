@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:42:18.617594",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Gérer Park Lane ou Mayfair pour construire des maisons sur mon monopole",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 30,
+    "money": {
+      "GPT": 77,
+      "Claude": 93
+    }
+  }
+}

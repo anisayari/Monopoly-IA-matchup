@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:01:51.021953",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "Payer la dette de ₥80 pour continuer le jeu normalement",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT": 77,
+      "Claude": 133
+    }
+  }
+}

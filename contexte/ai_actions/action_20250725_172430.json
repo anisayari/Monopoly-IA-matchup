@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:24:28.216342",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Claude est en crise de liquidités ($5). J’attends son prochain mouvement et je garde mon cash pour profiter d’une faillite ou renforcer vite après encaissement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 166,
+      "Claude": 5
+    }
+  }
+}

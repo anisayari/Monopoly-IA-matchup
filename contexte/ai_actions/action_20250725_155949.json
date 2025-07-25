@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:59:47.604140",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer loyer M80 sur Vine Street, pas d'autre choix disponible",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT": 77,
+      "Claude": 58
+    }
+  }
+}

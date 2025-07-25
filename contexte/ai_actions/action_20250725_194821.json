@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:48:19.186426",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec Gemini quasiment à sec, je garde ma trésorerie intacte en attendant qu'il tombe sur une de mes maisons et fasse banqueroute ou hypothèque encore plus.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 95,
+    "money": {
+      "GPT": 543,
+      "Gemini": 16
+    }
+  }
+}

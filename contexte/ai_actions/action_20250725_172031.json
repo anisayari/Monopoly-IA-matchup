@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:20:29.493993",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je peux lever l’hypothèque sur The Angel Islington ($55) ou préparer une maison orange. Débloquer plus de terrains rapporteurs reste optimal vu le faible cash de Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 266,
+      "Claude": 105
+    }
+  }
+}

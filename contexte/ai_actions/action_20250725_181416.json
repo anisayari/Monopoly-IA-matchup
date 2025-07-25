@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:14:14.481120",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes fonds actuels ($100) sont insuffisants pour dés-hypothéquer ou construire, donc je passe le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 41,
+    "money": {
+      "GPT": 16,
+      "Gemini": 100
+    }
+  }
+}

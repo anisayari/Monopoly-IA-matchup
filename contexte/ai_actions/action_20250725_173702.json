@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:37:00.494537",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je n'ai pas assez d'argent pour construire ou lever des hypothèques. Je conserve mes maisons et mes options sans risquer l'insolvabilité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 121,
+      "Gemini": 99
+    }
+  }
+}

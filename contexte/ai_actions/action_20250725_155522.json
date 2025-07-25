@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T13:55:20.348498",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Tour terminé, passer au joueur suivant pour continuer la partie",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT": 77,
+      "Claude": 58
+    }
+  }
+}

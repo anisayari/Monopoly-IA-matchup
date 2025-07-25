@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:51:17.929857",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune optimisation supplémentaire possible sans prendre de risques. Je conserve du cash en attente d’opportunités ou de loyers adverses.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "GPT": 111,
+      "Gemini": 149
+    }
+  }
+}

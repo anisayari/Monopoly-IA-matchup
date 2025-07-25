@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:10:25.652918",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes liquidités sont trop basses pour investir. Je dois attendre une rentrée sur l’adversaire ou une carte de revenu pour sécuriser mes possessions.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 16,
+      "Gemini": 0
+    }
+  }
+}

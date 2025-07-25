@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:45:22.076563",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Fonds insuffisants ($15) pour toute action de gestion. Je quitte la fenêtre pour passer mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 44,
+    "money": {
+      "GPT": 3,
+      "Gemini": 15
+    }
+  }
+}

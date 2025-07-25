@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:51:56.486141",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai hypothéqué des propriétés pour couvrir la dette. Il est impératif de payer pour éviter la faillite et continuer à jouer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 99,
+    "money": {
+      "GPT": 543,
+      "Gemini": 816
+    }
+  }
+}

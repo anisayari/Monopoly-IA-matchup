@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:44:32.930284",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai activé le monopole vert. Avec seulement 31$, je ne peux rien construire, donc je quitte la gestion pour continuer le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 92,
+    "money": {
+      "GPT": 543,
+      "Gemini": 31
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:48:58.285207",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Oxford Street pour obtenir ₥150 et construire sur Park Lane",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 34,
+    "money": {
+      "GPT": 103,
+      "Claude": 67
+    }
+  }
+}

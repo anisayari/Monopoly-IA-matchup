@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T15:44:20.602770",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Fonds limités. Je vais vérifier mes propriétés pour voir si une action mineure est possible, mais sans attente majeure.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT": 121,
+      "Gemini": 149
+    }
+  }
+}

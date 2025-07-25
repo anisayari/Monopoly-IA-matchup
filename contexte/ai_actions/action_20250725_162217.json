@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T14:22:14.979191",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Le cash faible ne permet aucune action de gestion utile. Avancer maximise mes chances de toucher des loyers et de survivre à court terme.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "GPT": 57,
+      "Claude": 53
+    }
+  }
+}

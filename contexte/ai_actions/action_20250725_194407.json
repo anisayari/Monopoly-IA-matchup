@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:44:05.451113",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai réussi à dés-hypothéquer une propriété clé. Mes fonds sont limités, donc je retourne au jeu principal.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 92,
+    "money": {
+      "GPT": 543,
+      "Gemini": 31
+    }
+  }
+}

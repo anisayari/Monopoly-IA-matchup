@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:34:14.005174",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes fonds sont très bas. Aucune action de construction ou de dés-hypothèque n'est possible, je passe le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 72,
+    "money": {
+      "GPT": 278,
+      "Gemini": 36
+    }
+  }
+}

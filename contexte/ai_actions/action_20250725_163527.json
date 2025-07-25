@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T14:35:25.173636",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer loyer de ₥20 sur Trafalgar Square, pas d'autre choix",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 28,
+    "money": {
+      "GPT": 77,
+      "Claude": 33
+    }
+  }
+}

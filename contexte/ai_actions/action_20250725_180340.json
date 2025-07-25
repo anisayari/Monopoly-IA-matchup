@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:03:38.602492",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Gemini n'a plus d'argent et mes liquidités sont limitées. Rester prudent et attendre un passage adverse sur mes propriétés est le plus sûr pour gagner.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 25,
+    "money": {
+      "GPT": 117,
+      "Gemini": 0
+    }
+  }
+}

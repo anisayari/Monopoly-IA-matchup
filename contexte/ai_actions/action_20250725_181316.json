@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:13:13.897780",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai $100. Dés-hypothéquer une gare permet de générer des revenus immédiatement, c'est l'option la plus rentable.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 41,
+    "money": {
+      "GPT": 16,
+      "Gemini": 100
+    }
+  }
+}

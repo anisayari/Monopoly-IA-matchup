@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:24:09.679027",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Rien à gérer avant le prochain tour : sécuriser le cash, attendre la position de Gemini pour agir au moment opportun. Optimiser la défense.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 54,
+    "money": {
+      "GPT": 266,
+      "Gemini": 79
+    }
+  }
+}

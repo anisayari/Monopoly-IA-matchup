@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:50:52.465265",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Vine Street (orange) donne l'argent pour payer le loyer sans toucher aux maisons ou monopoles clés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 3,
+      "Gemini": 15
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:13:33.561905",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec si peu de cash, aucune action utile n'est possible pour l'instant. Je passe pour attendre un revenu (loyer ou carte) et préparer mes futurs investissements.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 121,
+      "Claude": 105
+    }
+  }
+}

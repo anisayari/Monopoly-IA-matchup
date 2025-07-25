@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:38:11.176528",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Fonds insuffisants pour des actions de gestion ou des achats; passer le tour est l'option la plus logique.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT": 121,
+      "Gemini": 99
+    }
+  }
+}

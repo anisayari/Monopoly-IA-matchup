@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T13:51:57.634891",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec $316, lever hypothèques pour activer monopole dark blue et construire",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT": 77,
+      "Claude": 316
+    }
+  }
+}

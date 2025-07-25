@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:20:18.319886",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Avec $452, je peux lever les hypothèques sur mes light_blues (coût bas, bon rendement) pour maximiser mes chances de toucher des loyers critiques sur la prochaine boucle.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 53,
+    "money": {
+      "GPT": 452,
+      "Gemini": 69
+    }
+  }
+}

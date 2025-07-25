@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:16:19.356181",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai vendu une maison pour augmenter mon capital. Je vais construire sur le groupe Rouge pour maximiser les revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 53,
+    "money": {
+      "GPT": 252,
+      "Gemini": 69
+    }
+  }
+}

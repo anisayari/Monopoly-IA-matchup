@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:35:47.855466",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Euston Road, ultime terrain nu restant, pour continuer à réunir le cash et protéger toutes mes maisons pour la survie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 18,
+      "Gemini": 80
+    }
+  }
+}

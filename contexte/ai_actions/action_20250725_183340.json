@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:33:38.515648",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Electric Company est la meilleure solution immédiate pour obtenir les fonds sans affaiblir mes maisons, priorité à la survie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 166,
+      "Gemini": 80
+    }
+  }
+}

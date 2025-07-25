@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:52:59.834650",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Gemini a très peu de liquidités et je dois préserver mon cash. Aucune optimisation immédiate disponible, je sécurise ma position.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "GPT": 111,
+      "Gemini": 49
+    }
+  }
+}

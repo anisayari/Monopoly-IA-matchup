@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:37:24.984986",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes fonds sont limités, je dois attendre des revenus. Aucun échange ou gestion n’est optimal maintenant. Je maximise mes chances en attendant l’opportunité d’encaisser.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 121,
+      "Gemini": 99
+    }
+  }
+}

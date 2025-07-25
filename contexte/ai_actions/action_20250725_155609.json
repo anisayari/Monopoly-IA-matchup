@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T13:56:06.903291",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter The Angel Islington bloque un monopole potentiel à l'adversaire et augmente mon capital d'échange. J'ai assez de liquidités pour ce rachat.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "GPT": 277,
+      "Claude": 58
+    }
+  }
+}

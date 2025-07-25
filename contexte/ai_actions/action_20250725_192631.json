@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:26:29.584916",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai suffisamment de fonds pour dé-hypothéquer Fleet Street et activer mon monopole rouge.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 58,
+    "money": {
+      "GPT": 266,
+      "Gemini": 279
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T16:19:07.402915",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Paiement de loyer obligatoire. Je dois m’exécuter et voir la suite pour éventuellement hypothéquer ou vendre en urgence si nécessaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 16,
+      "Gemini": 80
+    }
+  }
+}

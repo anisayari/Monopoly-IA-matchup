@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:24:24.574498",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Continuer à hypothéquer (Pentonville Road puis Euston Road), objectif : atteindre 300$ pour rembourser la dette sans toucher mes maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 61,
+      "Gemini": 80
+    }
+  }
+}

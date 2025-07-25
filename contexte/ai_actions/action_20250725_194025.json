@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T17:40:23.279876",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter l’argent de la Community Chest est obligatoire et booste ma trésorerie, essentiel pour résister aux coups durs ou lever des hypothèques faibles ensuite.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 89,
+    "money": {
+      "GPT": 428,
+      "Gemini": 86
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:21:41.651007",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Mon cash restant est trop faible pour rentabiliser davantage sans prendre de risques inutiles. Attente stratégique pour encaisser sur mes brown ou faire face aux imprévus.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 166,
+      "Claude": 105
+    }
+  }
+}

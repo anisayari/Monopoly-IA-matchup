@@ -688,7 +688,7 @@ class CentralizedMonitor:
                     
                     # Déplacer la souris au centre de la fenêtre après le clic
                     center_x = win_bbox[0] + win_bbox[2]//2
-                    center_y = win_bbox[1] + 350
+                    center_y = win_bbox[1] + 300
                     pyautogui.moveTo(center_x, center_y, duration=0.3)
                     
                     return True
@@ -728,7 +728,7 @@ class CentralizedMonitor:
                             
                             # Déplacer la souris au centre de la fenêtre
                             center_x = win_bbox[0] + win_bbox[2]//2
-                            center_y = win_bbox[1] + 350
+                            center_y = win_bbox[1] + 300
                             pyautogui.moveTo(center_x, center_y, duration=0.3)
                             
                             return True

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T13:50:22.464828",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Je viens de terminer l'échange et je n'ai plus de trésorerie pour construire ni d'autre gestion à faire. Je retourne à l'écran principal.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 77,
+      "Claude": 116
+    }
+  }
+}

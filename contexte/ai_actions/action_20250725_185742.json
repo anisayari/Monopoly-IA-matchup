@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:57:39.868923",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je vais réévaluer mes hypothèques. Libérer une maison sur les jaunes ou lever une petite hypothèque pour maximiser les risques de loyer adverses.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 102,
+      "Gemini": 16
+    }
+  }
+}

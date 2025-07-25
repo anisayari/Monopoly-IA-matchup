@@ -7,9 +7,9 @@
       "enabled": true
     },
     "player2": {
-      "name": "Claude",
-      "ai_model": "claude-sonnet-4-0",
-      "provider": "anthropic",
+      "name": "Gemini",
+      "ai_model": "gemini-2.5-flash",
+      "provider": "gemini",
       "enabled": true
     }
   },

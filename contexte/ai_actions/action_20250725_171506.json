@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T15:15:04.490282",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Suis sur Piccadilly hypothéquée de GPT, dois gérer mes propriétés et liquidités",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT": 121,
+      "Claude": 105
+    }
+  }
+}

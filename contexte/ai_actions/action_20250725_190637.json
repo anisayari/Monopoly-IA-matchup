@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:06:35.190478",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "La dette est payée. Je dois maintenant optimiser mes propriétés, dé-hypothéquer et construire sur mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 52,
+    "money": {
+      "GPT": 252,
+      "Gemini": 75
+    }
+  }
+}

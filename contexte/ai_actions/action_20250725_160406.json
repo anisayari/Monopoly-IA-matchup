@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:04:04.021339",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je peux construire une maison sur Bow ou Vine Street pour renforcer mes revenus sur mon monopole orange et faire pression sur Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "GPT": 157,
+      "Claude": 53
+    }
+  }
+}

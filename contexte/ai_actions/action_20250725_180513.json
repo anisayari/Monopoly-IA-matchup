@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:05:11.235437",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec $317, il est temps d'investir dans des maisons sur mes monopoles pour maximiser mes revenus et mettre la pression sur l'adversaire sans cash.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 31,
+    "money": {
+      "GPT": 317,
+      "Gemini": 0
+    }
+  }
+}

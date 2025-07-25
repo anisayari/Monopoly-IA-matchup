@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:33:00.902791",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Rien à optimiser en gestion pour l’instant, priorité à préserver le cash ; l’attente me sert tant que Gemini évite de construire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 70,
+    "money": {
+      "GPT": 250,
+      "Gemini": 64
+    }
+  }
+}

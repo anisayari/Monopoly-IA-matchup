@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T13:59:00.775242",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je n'ai plus assez de liquidités pour construire ou acquérir de nouvelles propriétés. Passer le tour permet d'économiser et d'attendre une meilleure opportunité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 77,
+      "Claude": 58
+    }
+  }
+}

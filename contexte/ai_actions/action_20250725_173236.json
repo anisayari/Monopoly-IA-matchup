@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:32:34.360900",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai un monopole rouge complet et assez d'argent pour ajouter des maisons et augmenter le loyer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 121,
+      "Gemini": 89
+    }
+  }
+}

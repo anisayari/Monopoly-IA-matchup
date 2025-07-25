@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T16:55:49.432616",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Il est optimal de discuter avec Gemini pour finaliser rapidement l'échange décisif, clarifier les attentes et bloquer tout malentendu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 87,
+      "Gemini": 31
+    }
+  }
+}

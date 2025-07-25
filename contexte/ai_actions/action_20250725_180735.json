@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:07:33.692053",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Plus de fonds à investir, mieux vaut avancer et attendre des revenus supplémentaires ou un passage adverse sur mes maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 31,
+    "money": {
+      "GPT": 17,
+      "Gemini": 0
+    }
+  }
+}

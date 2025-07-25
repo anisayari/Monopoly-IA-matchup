@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:44:02.434663",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai $180, ce qui me permet de dés-hypothéquer une de mes propriétés pour générer des revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 44,
+    "money": {
+      "GPT": 3,
+      "Gemini": 180
+    }
+  }
+}

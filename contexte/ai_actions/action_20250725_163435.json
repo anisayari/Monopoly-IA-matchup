@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:34:33.266080",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Faibles liquidités, rien à améliorer ou négocier. Je sécurise la carte sortie de prison puis passe le tour pour espérer du loyer ou une opportunité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "GPT": 57,
+      "Claude": 53
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:01:23.504621",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois générer des fonds via une hypothèque ou une vente pour payer ma dette de $150 et éviter la faillite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 52,
+    "money": {
+      "GPT": 102,
+      "Gemini": 16
+    }
+  }
+}

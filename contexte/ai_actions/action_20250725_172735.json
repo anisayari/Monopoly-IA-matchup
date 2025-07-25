@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:27:33.037712",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Avec 166$, lever l’hypothèque sur The Angel Islington puis hypothéquer Euston Road permet potentiel achat de Pentonville Road si j’atterris dessus bientôt.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 166,
+      "Claude": 205
+    }
+  }
+}

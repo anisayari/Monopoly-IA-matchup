@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:19:48.866930",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je peux encore lever l’hypothèque sur The Angel Islington pour peu de cash, ou placer une maison orange. Maximiser la rentabilité immédiate doit rester la priorité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 266,
+      "Claude": 105
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:41:43.417534",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "J’ai désormais assez de liquidités pour régler ma dette sans sacrifier d’autres actifs. Je stabilise la situation et repars à la conquête !",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 303,
+      "Gemini": 80
+    }
+  }
+}

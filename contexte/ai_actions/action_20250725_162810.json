@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T14:28:08.659940",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Aucune option de gestion pertinente avec si peu de cash, il faut laisser tourner la partie pour profiter d’une opportunité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "GPT": 57,
+      "Claude": 53
+    }
+  }
+}

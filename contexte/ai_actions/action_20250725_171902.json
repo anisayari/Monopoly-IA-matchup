@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:19:00.201826",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Lever au moins une hypothèque orange ou light_blue pour redevenir rentable, ou construire une maison orange selon le cash. Maximiser les revenus le plus vite possible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 321,
+      "Claude": 105
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:55:55.548369",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Fonds insuffisants pour des actions de gestion rentables après avoir dés-hypothéqué. Il est temps de revenir à l'écran principal.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 17,
+    "money": {
+      "GPT": 117,
+      "Gemini": 100
+    }
+  }
+}

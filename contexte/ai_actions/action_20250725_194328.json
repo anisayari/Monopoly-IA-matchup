@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:43:26.171397",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai les fonds pour dés-hypothéquer Oxford Street, ce qui activera un monopole clé pour générer des revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 92,
+    "money": {
+      "GPT": 543,
+      "Gemini": 196
+    }
+  }
+}

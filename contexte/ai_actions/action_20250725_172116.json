@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:21:14.706654",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Cash restant faible : pas assez pour lever d’autres hypothèques ou bâtir judicieusement. Je quitte la gestion pour garder une marge de sécurité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 166,
+      "Claude": 105
+    }
+  }
+}

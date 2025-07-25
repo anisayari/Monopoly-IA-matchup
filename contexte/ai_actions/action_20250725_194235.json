@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:42:33.293435",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai assez d'argent pour lever l'hypothèque d'Oxford Street et commencer à développer mes monopoles rentables.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 91,
+    "money": {
+      "GPT": 543,
+      "Gemini": 196
+    }
+  }
+}

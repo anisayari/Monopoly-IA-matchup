@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:47:02.857133",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Construire une maison sur Park Lane pour ₥200, je dois d'abord hypothéquer Oxford Street",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 34,
+    "money": {
+      "GPT": 103,
+      "Claude": 67
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T17:37:14.200672",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Mes fonds sont insuffisants pour payer le loyer. Je dois choisir OK pour déclencher la gestion des actifs et éviter la faillite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 84,
+    "money": {
+      "GPT": 178,
+      "Gemini": 36
+    }
+  }
+}

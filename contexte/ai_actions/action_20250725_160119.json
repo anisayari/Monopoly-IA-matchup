@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:01:17.168093",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 1 "
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai maintenant $133, assez pour payer la dette de $80",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT": 77,
+      "Claude": 133
+    }
+  }
+}

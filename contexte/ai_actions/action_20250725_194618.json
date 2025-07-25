@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:46:16.329165",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Gemini n’a pas de moyens pour construire ni de cash : aucune menace immédiate. Je garde le cash pour réagir si besoin et attendre sa chute.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 93,
+    "money": {
+      "GPT": 543,
+      "Gemini": 31
+    }
+  }
+}

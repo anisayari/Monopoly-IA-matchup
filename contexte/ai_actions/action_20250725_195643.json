@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:56:40.945519",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Mes fonds sont insuffisants pour dés-hypothéquer ou construire sur mes monopoles. Je dois passer mon tour pour accumuler plus d'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 100,
+    "money": {
+      "GPT": 723,
+      "Gemini": 107
+    }
+  }
+}

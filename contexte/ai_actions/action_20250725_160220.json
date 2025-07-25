@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:02:18.351583",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Tour terminé après paiement du loyer, passer au joueur suivant",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT": 157,
+      "Claude": 53
+    }
+  }
+}

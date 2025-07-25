@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:45:49.086645",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Avec seulement 15$, je ne peux ni dés-hypothéquer ni construire. Je quitte la gestion de propriétés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 44,
+    "money": {
+      "GPT": 3,
+      "Gemini": 15
+    }
+  }
+}

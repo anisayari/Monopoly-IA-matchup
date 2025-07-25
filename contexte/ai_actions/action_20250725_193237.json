@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T17:32:35.412444",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Paiement obligatoire du loyer, aucun moyen d'éviter ou de négocier ici. Préserver cash restant pour rester compétitif sur la prochaine boucle.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 70,
+    "money": {
+      "GPT": 250,
+      "Gemini": 64
+    }
+  }
+}

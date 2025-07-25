@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:55:19.248316",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Dés-hypothéquer Leicester Square coûte $143, me laissant $100. C'est un pas vers un monopole jaune.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 17,
+    "money": {
+      "GPT": 117,
+      "Gemini": 243
+    }
+  }
+}

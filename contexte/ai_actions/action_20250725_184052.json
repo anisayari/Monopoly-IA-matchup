@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:40:50.179391",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Vendre la maison restante sur Marlborough Street pour réunir l'argent dû et éviter d'affaiblir les groupes plus rentables.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 253,
+      "Gemini": 80
+    }
+  }
+}

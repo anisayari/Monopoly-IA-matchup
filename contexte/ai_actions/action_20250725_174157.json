@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:41:55.617304",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai ajouté une maison sur Trafalgar Square pour maximiser les revenus de mon monopole rouge.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT": 121,
+      "Gemini": 149
+    }
+  }
+}

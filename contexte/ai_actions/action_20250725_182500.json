@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:24:58.094589",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Euston Road et Pentonville Road. Objectif : atteindre $300 sans toucher aux groupes à maisons, pour maximiser les gains futurs.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 61,
+      "Gemini": 80
+    }
+  }
+}

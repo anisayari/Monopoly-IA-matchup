@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:46:52.578347",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Mes fonds permettent de lever des hypothèques (Euston Rd, Angel) et renforcer mes flux. Investir dans mes monopoles augmente mes revenus et ma sécurité à moyen terme.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "GPT": 321,
+      "Gemini": 149
+    }
+  }
+}

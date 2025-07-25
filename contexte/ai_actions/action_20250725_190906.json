@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:09:04.001765",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Continuer la gestion des propriétés pour vendre les maisons sur Pall Mall et ensuite construire sur les monopoles rouges/verts.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 53,
+    "money": {
+      "GPT": 252,
+      "Gemini": 75
+    }
+  }
+}

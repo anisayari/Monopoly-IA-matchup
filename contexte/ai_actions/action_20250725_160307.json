@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T14:03:05.379806",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai un peu de trésorerie, il est stratégique d’investir sur mes monopoles orange ou rose, pour augmenter mes revenus à chaque passage de Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "GPT": 157,
+      "Claude": 53
+    }
+  }
+}

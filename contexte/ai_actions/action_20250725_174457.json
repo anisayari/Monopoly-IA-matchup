@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:44:55.723533",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Fonds limités ne permettant ni de lever les hypothèques ni d'acheter de nouvelles propriétés rentables.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT": 121,
+      "Gemini": 149
+    }
+  }
+}

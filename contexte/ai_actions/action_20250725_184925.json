@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T16:49:23.664946",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Aucune action supplémentaire directe possible ici, l'échange est déjà proposé. J'attends la résolution du trade au prochain prompt.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 3,
+      "Gemini": 15
+    }
+  }
+}

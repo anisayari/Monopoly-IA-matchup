@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:29:21.976617",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai géré mes propriétés, mais mes fonds sont insuffisants pour d'autres actions immédiates. Je retourne au jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 58,
+    "money": {
+      "GPT": 266,
+      "Gemini": 48
+    }
+  }
+}

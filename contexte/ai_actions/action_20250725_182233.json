@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:22:31.345899",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "La seule option pour rester dans la partie est d’hypothéquer assez de propriétés secondaires non essentielles afin de réunir les fonds nécessaires à la dette.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 116,
+      "Gemini": 80
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:36:24.405325",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Pentonville Road, dernier terrain nu, pour obtenir $60 sans toucher à mes maisons. Priorité à la survie maximale.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 18,
+      "Gemini": 80
+    }
+  }
+}

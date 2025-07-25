@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:41:20.569830",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon cash est correct mais je garde un matelas de sécurité. Gemini reste sous pression, aucune construction ni levée d’hypothèques n’est prioritaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 89,
+    "money": {
+      "GPT": 453,
+      "Gemini": 86
+    }
+  }
+}

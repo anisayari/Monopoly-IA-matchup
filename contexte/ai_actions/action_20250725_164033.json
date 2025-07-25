@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:40:31.114814",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Retourner au menu principal pour accéder aux options de construction",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 29,
+    "money": {
+      "GPT": 77,
+      "Claude": 93
+    }
+  }
+}

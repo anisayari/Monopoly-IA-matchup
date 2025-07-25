@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T14:34:09.657470",
+  "trigger": "Trading",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Récupérer la carte \"Sortie de prison\" offre de la flexibilité ou une valeur d’échange en cas de besoin dans la partie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "GPT": 57,
+      "Claude": 53
+    }
+  }
+}

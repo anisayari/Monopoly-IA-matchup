@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:36:36.498602",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois gérer mes propriétés pour vendre des maisons, hypothéquer ou lever une hypothèque selon mes besoins. Cela maximise mes options et ma flexibilité financière.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 121,
+      "Gemini": 99
+    }
+  }
+}

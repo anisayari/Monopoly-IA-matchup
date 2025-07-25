@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:58:37.520726",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement $100, aucune action significative (dés-hypothéquer ou construire) n'est possible ce tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 18,
+    "money": {
+      "GPT": 117,
+      "Gemini": 100
+    }
+  }
+}

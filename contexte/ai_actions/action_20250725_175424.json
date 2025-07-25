@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:54:22.278724",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je vais gérer mes propriétés, cherchant à lever une hypothèque pour activer un monopole ou libérer des biens stratégiques.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT": 117,
+      "Gemini": 243
+    }
+  }
+}

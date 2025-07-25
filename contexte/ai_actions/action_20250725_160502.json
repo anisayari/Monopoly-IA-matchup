@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:05:00.379190",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Plus assez de cash pour construire ou gérer. Retour à l’écran principal pour poursuivre le tour en sécurité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "GPT": 57,
+      "Claude": 53
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:47:59.627210",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je peux lever l'hypothèque sur The Angel Islington pour compléter mon light_blue et tenter une future acquisition du monopole, tout en gardant une marge de sécurité financière.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "GPT": 166,
+      "Gemini": 149
+    }
+  }
+}

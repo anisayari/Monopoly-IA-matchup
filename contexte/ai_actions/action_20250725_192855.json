@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:28:53.417606",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai dés-hypothéqué Fleet Street, mais mes fonds sont insuffisants pour construire. Je dois retourner au jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 58,
+    "money": {
+      "GPT": 266,
+      "Gemini": 48
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:27:19.497714",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai les fonds pour dés-hypothéquer Fleet Street. Ceci active mon monopole Rouge, ce qui est ma priorité stratégique.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 58,
+    "money": {
+      "GPT": 266,
+      "Gemini": 279
+    }
+  }
+}

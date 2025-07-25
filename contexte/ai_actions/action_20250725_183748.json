@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:37:46.043968",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Euston Road, dernier terrain non rentable restant, pour gagner l’ultime liquidité avant d’envisager la vente de maison. Sauvegarde maximale !",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 78,
+      "Gemini": 80
+    }
+  }
+}

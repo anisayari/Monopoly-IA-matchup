@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:28:46.785647",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Lever l’hypothèque sur The Angel Islington ($55) optimise la préparation light blue. Je garde du cash pour saisir Pentonville Road si j’y tombe ou réagir aux imprévus.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 166,
+      "Claude": 205
+    }
+  }
+}

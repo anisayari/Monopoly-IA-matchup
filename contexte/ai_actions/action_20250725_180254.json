@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:02:52.487520",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai investi tous mes fonds. Aucune autre action immédiate n'est possible, donc je passe le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 25,
+    "money": {
+      "GPT": 117,
+      "Gemini": 0
+    }
+  }
+}

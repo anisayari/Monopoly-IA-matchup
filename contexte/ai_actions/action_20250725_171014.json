@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:10:11.907126",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Monopole rouge optimisé, prêt à collecter les loyers, passer au tour suivant",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT": 121,
+      "Claude": 105
+    }
+  }
+}

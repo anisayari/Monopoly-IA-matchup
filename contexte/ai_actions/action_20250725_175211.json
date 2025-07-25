@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:52:09.221348",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes fonds sont trop bas pour toute action significative (construire, lever hypothèque). Passer le tour est la meilleure option.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT": 111,
+      "Gemini": 49
+    }
+  }
+}

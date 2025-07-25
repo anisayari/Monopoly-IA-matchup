@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:01:24.897588",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Accéder à la gestion de propriété pour construire sur Trafalgar Square est prioritaire avec mes fonds actuels.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 25,
+    "money": {
+      "GPT": 117,
+      "Gemini": 150
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:06:11.573431",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai enfin du cash pour investir en maisons sur mes monopoles. C'est le moment d'accentuer la pression sur Gemini totalement à sec.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 31,
+    "money": {
+      "GPT": 317,
+      "Gemini": 0
+    }
+  }
+}

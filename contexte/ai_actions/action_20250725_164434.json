@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:44:32.194690",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec si peu de cash, toute nouvelle construction est impossible et négocier serait risqué. Je parie sur le prochain tour pour renflouer ma trésorerie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 31,
+    "money": {
+      "GPT": 77,
+      "Claude": 93
+    }
+  }
+}

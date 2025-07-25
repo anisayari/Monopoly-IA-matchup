@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:27:29.870635",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothèques immédiates : Pentonville Road puis Euston Road pour rassembler les fonds. Cela minimise les pertes tout en sécurisant mes groupes-maison.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 61,
+      "Gemini": 80
+    }
+  }
+}

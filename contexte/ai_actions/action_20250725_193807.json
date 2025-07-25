@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:38:05.788966",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai besoin de fonds pour payer le loyer. Hypothéquer une propriété est le seul moyen d'éviter la faillite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 84,
+    "money": {
+      "GPT": 178,
+      "Gemini": 36
+    }
+  }
+}

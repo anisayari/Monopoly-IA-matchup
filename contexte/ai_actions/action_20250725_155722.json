@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T13:57:20.060548",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois investir mon cash pour construire 1 maison de plus sur un monopole orange ou rose, maximisant ainsi mes revenus au prochain passage de Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 177,
+      "Claude": 58
+    }
+  }
+}

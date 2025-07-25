@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:59:07.753127",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement 107$, je ne peux ni dés-hypothéquer de monopole ni construire. Je dois accumuler de l'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 103,
+    "money": {
+      "GPT": 723,
+      "Gemini": 107
+    }
+  }
+}

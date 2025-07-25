@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:04:36.050922",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Plus de cash suffisant pour continuer la gestion ou construire. Je retourne à l'écran principal pour avancer le tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "GPT": 57,
+      "Claude": 53
+    }
+  }
+}

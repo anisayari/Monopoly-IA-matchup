@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:57:34.868595",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes fonds sont insuffisants pour dés-hypothéquer ou construire. Il est préférable de passer mon tour pour accumuler plus d'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 100,
+    "money": {
+      "GPT": 723,
+      "Gemini": 107
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:35:00.445503",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Pentonville Road pour maximiser le cash disponible sans toucher aux maisons. C’est la seule stratégie viable pour survivre à ce tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 84,
+      "Gemini": 80
+    }
+  }
+}

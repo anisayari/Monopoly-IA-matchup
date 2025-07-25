@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:31:46.898251",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Electric Company pour obtenir $75 : ça suffit avec le cash disponible, je protège mes maisons, game on !",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 166,
+      "Gemini": 80
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:54:47.159339",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai encore assez d'argent pour dés-hypothéquer d'autres propriétés de mes monopoles afin d'augmenter mes revenus potentiels.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 100,
+    "money": {
+      "GPT": 723,
+      "Gemini": 383
+    }
+  }
+}

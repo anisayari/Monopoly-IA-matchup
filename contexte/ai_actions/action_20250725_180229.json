@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:02:26.947973",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai utilisé mes fonds pour construire. Aucune autre action de gestion n'est possible ce tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 25,
+    "money": {
+      "GPT": 117,
+      "Gemini": 0
+    }
+  }
+}

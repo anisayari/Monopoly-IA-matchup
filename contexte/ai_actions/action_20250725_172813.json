@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:28:11.799414",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Lever l’hypothèque sur The Angel Islington pour préparer un éventuel achat de Pentonville Road. Opportunité unique de verrouiller la couleur light blue si possible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 166,
+      "Claude": 205
+    }
+  }
+}

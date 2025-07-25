@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:23:49.579681",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois encore hypothéquer une ou deux propriétés secondaires (Pentonville Road, Euston Road) pour couvrir la dette de 300$ sans toucher à mes maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 61,
+      "Gemini": 80
+    }
+  }
+}

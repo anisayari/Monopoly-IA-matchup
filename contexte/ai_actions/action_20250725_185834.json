@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:58:32.141407",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action de gestion immédiate n’améliorera ma situation. Je conserve mon cash pour survivre, en espérant un passage adverse sur mes groupes à maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 102,
+      "Gemini": 16
+    }
+  }
+}

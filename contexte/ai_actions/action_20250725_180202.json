@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:02:00.236930",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai investi tous mes fonds dans une maison. Plus d'actions de gestion possibles, donc je sors.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 25,
+    "money": {
+      "GPT": 117,
+      "Gemini": 0
+    }
+  }
+}

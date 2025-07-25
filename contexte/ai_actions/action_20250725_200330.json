@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T18:03:28.220013",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "La carte 'Libéré de Prison' est un atout précieux pour éviter de perdre des tours ou de payer une amende.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 113,
+    "money": {
+      "GPT": 923,
+      "Gemini": 107
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:19:26.002880",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec $452 en main, priorité à lever des hypothèques sur petits groupes (light_blue) pour préparer la rentabilité record dès que l’adversaire tombe dessus.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 53,
+    "money": {
+      "GPT": 452,
+      "Gemini": 69
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:05:03.787857",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Dois construire plus de maisons sur monopole rouge pour maximiser revenus",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT": 121,
+      "Claude": 255
+    }
+  }
+}

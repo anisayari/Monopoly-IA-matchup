@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:11:56.786873",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement $16, toute gestion serait risquée. Je dois attendre une entrée d’argent avant d’agir pour garder ma position intacte.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 16,
+      "Gemini": 0
+    }
+  }
+}

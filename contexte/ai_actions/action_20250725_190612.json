@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:06:10.791683",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai maintenant les fonds suffisants ($225) pour payer le loyer de $150. C'est la priorité pour éviter la faillite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 52,
+    "money": {
+      "GPT": 102,
+      "Gemini": 225
+    }
+  }
+}

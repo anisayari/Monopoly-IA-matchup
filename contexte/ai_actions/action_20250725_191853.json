@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T17:18:51.301962",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Valider l'action Chance : je n'ai pas le choix, il faut avancer à la prochaine gare (Marylebone), possiblement payer un loyer mais je n'ai aucune alternative ici.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 53,
+    "money": {
+      "GPT": 252,
+      "Gemini": 69
+    }
+  }
+}

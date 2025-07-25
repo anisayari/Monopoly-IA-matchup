@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:49:44.173072",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois lever l'hypothèque sur The Angel Islington maintenant, puis sortir de la gestion pour garder une réserve et rester flexible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "GPT": 166,
+      "Gemini": 149
+    }
+  }
+}

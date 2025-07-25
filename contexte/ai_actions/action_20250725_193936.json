@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:39:34.817153",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai payé ma dette, mais mes fonds sont trop bas pour construire ou dé-hypothéquer. Je passe mon tour pour accumuler de l'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 84,
+    "money": {
+      "GPT": 228,
+      "Gemini": 86
+    }
+  }
+}

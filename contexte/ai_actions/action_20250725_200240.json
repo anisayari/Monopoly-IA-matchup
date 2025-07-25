@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:02:38.732171",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma trésorerie est très solide, Gemini ne peut ni construire ni dés-hypothéquer. Attendre l’échec adverse reste optimal pour garder la pression.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 110,
+    "money": {
+      "GPT": 923,
+      "Gemini": 107
+    }
+  }
+}

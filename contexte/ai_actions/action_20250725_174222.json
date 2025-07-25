@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:42:20.348232",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai maximisé mes constructions rouges avec les fonds actuels. Pas d'autres actions immédiates rentables.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT": 121,
+      "Gemini": 149
+    }
+  }
+}

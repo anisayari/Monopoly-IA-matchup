@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:46:14.443317",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Fonds insuffisants ($15) pour toute action significative. Passer le tour est la meilleure option.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 44,
+    "money": {
+      "GPT": 3,
+      "Gemini": 15
+    }
+  }
+}

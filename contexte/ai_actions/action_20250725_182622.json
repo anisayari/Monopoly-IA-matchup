@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:26:20.702240",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "J’hypothèque Pentonville Road et Euston Road. C’est la meilleure option pour atteindre les 300$ sans liquider mes maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 61,
+      "Gemini": 80
+    }
+  }
+}

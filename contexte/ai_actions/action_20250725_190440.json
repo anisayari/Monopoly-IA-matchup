@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:04:37.919785",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Ma dette de $150 n'est pas payée et mes fonds sont à $0. Je dois vendre des actifs pour générer du cash.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 52,
+    "money": {
+      "GPT": 102,
+      "Gemini": 0
+    }
+  }
+}

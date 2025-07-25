@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T17:21:12.994406",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Je viens de dés-hypothéquer mes light_blues. Je conserve du cash pour assurer ma sécurité en cas de mauvais tirage ou d’opportunité soudaine.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 53,
+    "money": {
+      "GPT": 276,
+      "Gemini": 69
+    }
+  }
+}

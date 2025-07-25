@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T14:28:31.295742",
+  "trigger": "Force",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Aucune opportunité de commerce ou de gestion pertinente tant que mes liquidités sont aussi faibles. Avançons et gardons la pression.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "GPT": 57,
+      "Claude": 53
+    }
+  }
+}

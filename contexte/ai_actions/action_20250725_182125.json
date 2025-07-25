@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:21:23.834068",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Ma trésorerie reste insuffisante. Hypothéquer des terrains légers (light blue) ou des utilitaires pour éviter la faillite et payer la dette.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 116,
+      "Gemini": 80
+    }
+  }
+}

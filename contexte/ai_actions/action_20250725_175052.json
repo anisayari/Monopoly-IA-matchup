@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:50:50.397029",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Mieux vaut garder du cash pour éviter la banqueroute en cas de coup dur. Plus d’optimisation à faire pour l’instant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "GPT": 111,
+      "Gemini": 149
+    }
+  }
+}

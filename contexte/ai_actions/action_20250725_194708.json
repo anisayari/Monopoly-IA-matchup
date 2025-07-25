@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T17:47:06.336446",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai les fonds pour payer l'amende. Je dois la régler pour poursuivre la partie. Mes fonds sont très bas.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 95,
+    "money": {
+      "GPT": 543,
+      "Gemini": 31
+    }
+  }
+}

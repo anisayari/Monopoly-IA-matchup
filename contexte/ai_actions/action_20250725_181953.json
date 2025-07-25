@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:19:51.039797",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois vendre ou hypothéquer des propriétés pour régler ma dette de 300$. Hypothéquer en priorité des terrains moins rentables.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 16,
+      "Gemini": 80
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T14:59:05.896169",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement $121, je dois attendre des revenus avant d'investir ou négocier. Optimiser mon cash est prioritaire pour préparer le développement futur de mes monopoles.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 121,
+      "Claude": 205
+    }
+  }
+}

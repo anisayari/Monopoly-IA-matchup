@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:08:20.038573",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Fonds nuls, aucune action de gestion ou d'achat possible. Il est préférable de passer le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 31,
+    "money": {
+      "GPT": 17,
+      "Gemini": 0
+    }
+  }
+}

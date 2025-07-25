@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:28:04.289124",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Bankrupt ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Pentonville Road et Euston Road immédiatement pour réunir les fonds et rester dans la partie, tout en protégeant mes maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 61,
+      "Gemini": 80
+    }
+  }
+}

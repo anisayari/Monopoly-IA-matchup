@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:34:38.326514",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "L'argent disponible est insuffisant pour des actions significatives de gestion des propriétés; je me retire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 121,
+      "Gemini": 99
+    }
+  }
+}

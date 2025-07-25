@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T18:00:44.820586",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai perdu Bond Street. Mes fonds sont trop bas pour lever l'hypothèque de mes autres propriétés. Je dois revoir ma stratégie.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 105,
+    "money": {
+      "GPT": 723,
+      "Gemini": 107
+    }
+  }
+}

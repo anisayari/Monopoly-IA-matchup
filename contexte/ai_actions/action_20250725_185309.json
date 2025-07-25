@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:53:07.758813",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois confirmer l'hypothèque (Vine Street) pour valider le paiement, tout en restant prêt pour l'échange avec Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 3,
+      "Gemini": 15
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:43:07.246029",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Plus d'action stratégique immédiate possible sans cash. Passer le tour maximise mes chances de survie sur la prochaine rotation.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 3,
+      "Gemini": 380
+    }
+  }
+}

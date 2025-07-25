@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:55:15.509433",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Priorité à relancer l'échange crucial Oxford Street contre Leicester Square + 15$, qui optimise ma position en yellow et renfloue ma trésorerie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 87,
+      "Gemini": 31
+    }
+  }
+}

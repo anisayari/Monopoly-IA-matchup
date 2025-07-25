@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:09:08.325629",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n’ai pas assez de cash pour acheter. Mettre la propriété aux enchères peut permettre de l’obtenir à bas prix ou empêcher Gemini d’en profiter plus tard.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 31,
+    "money": {
+      "GPT": 17,
+      "Gemini": 0
+    }
+  }
+}

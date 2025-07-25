@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T16:39:15.157382",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il ne reste que la vente/destruction de maisons sur orange (peu développées) pour réunir du cash sans toucher aux groupes dominants.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 41,
+    "money": {
+      "GPT": 153,
+      "Gemini": 80
+    }
+  }
+}

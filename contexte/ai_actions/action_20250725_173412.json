@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T15:34:10.383546",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Mon argent est insuffisant pour construire plus de maisons sur le monopole rouge pour le moment.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 121,
+      "Gemini": 99
+    }
+  }
+}
