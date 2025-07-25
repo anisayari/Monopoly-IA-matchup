@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:52:34.389211",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "La gestion des propriétés est prioritaire. Je dois lever l'hypothèque des light blue sans perdre un tour, afin de maximiser mes revenus sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

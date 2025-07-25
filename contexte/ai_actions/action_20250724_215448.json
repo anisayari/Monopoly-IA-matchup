@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:54:45.979008",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai réglé ma dette. Je passe mon tour pour conserver mes liquidités et observer les mouvements de l'adversaire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 145,
+    "money": {
+      "GPT": 121,
+      "Gemini": 336
+    }
+  }
+}

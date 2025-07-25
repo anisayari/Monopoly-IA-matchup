@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:32:21.988110",
+  "trigger": "Force",
+  "keywords": [
+    "Pay the Bail"
+  ],
+  "options": [
+    "Pay Bail "
+  ],
+  "decision": "Pay Bail ",
+  "reason": "J'ai suffisamment de fonds pour payer la caution, ce qui garantit une sortie immédiate et la reprise de mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 110,
+    "money": {
+      "GPT": 74,
+      "Gemini": 92
+    }
+  }
+}

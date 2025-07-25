@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:06:24.149718",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Pall Mall sécurise un atout clé du groupe rose, bloque Gemini, et prépare un futur monopole. Mon cash est suffisant pour d’autres achats rapides.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 486,
+      "Gemini": 164
+    }
+  }
+}

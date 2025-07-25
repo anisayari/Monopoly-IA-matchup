@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:21:49.947255",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accéder à la gestion est la seule façon de pouvoir investir en maisons cette phase décisive. Objectif : maximiser l’impact immédiat sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

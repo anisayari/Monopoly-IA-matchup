@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:08:09.646650",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Whitechapel Road complète le monopole brown. Même peu rentable seul, il ouvre la porte à des hôtels redoutables et bloque Gemini. Excellent rapport coût/stratégie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 30,
+    "money": {
+      "GPT": 229,
+      "Gemini": 102
+    }
+  }
+}

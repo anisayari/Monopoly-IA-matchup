@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:48:24.646919",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il est impératif d’investir maintenant dans la construction de maisons sur mes deux monopoles pour maximiser rapidement la pression et le rendement locatif.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

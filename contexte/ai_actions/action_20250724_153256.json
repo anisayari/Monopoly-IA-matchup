@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:32:54.385407",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J’ai de la trésorerie après le passage de Gemini et aucun risque immédiat. Je peux renforcer encore les maisons roses ou surveiller l’état général.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 306,
+      "Gemini": 34
+    }
+  }
+}

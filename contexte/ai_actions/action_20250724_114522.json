@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:45:20.803170",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Buy ",
+    "Auction "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Pall Mall augmente mes revenus et me rapproche du monopole rouge, essentiel pour le contrôle et la négociation future.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT": 1371,
+      "Gemini": 1014
+    }
+  }
+}

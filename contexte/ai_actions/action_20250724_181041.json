@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:10:39.762163",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai $169 et plusieurs monopoles. Construire des maisons maximise mes revenus et la pression sur Gemini, qui reste fragile financièrement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

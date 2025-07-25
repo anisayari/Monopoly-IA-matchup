@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T11:26:51.764986",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "J'ai une dette de 1150$ avec seulement 748$. Je dois absolument générer plus d'argent, et l'hypothèque est la solution immédiate pour éviter la faillite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 647,
+      "Gemini": 748
+    }
+  }
+}

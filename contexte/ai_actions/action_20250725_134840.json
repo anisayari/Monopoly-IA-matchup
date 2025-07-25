@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:48:37.932714",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec $240, je dois hypothéquer Coventry Street pour récupérer $130 et lever l'hypothèque de Pentonville Road pour $66.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 47,
+    "money": {
+      "GPT": 147,
+      "Claude": 240
+    }
+  }
+}

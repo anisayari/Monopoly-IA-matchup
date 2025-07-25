@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:19:29.221215",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Leicester Square empêche GPT de compléter son monopole jaune, affaiblissant ainsi son potentiel de revenu futur.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 105,
+    "money": {
+      "GPT": 14,
+      "Gemini": 312
+    }
+  }
+}

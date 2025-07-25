@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T11:39:16.498052",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Are you sure you want to continue"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "No ",
+  "reason": "La popup était un bug sur ma propre propriété. L'action 'No' est la plus sûre et confirme que je n'achète rien d'inattendu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "GPT": 1650,
+      "Gemini": 1205
+    }
+  }
+}

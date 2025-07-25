@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T10:37:47.426913",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Je peux obtenir Kings Cross Station à prix réduit, Claude a peu de liquidités ($175). Sa position actuelle rend la surenchère difficile, maximisant mon avantage.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 26,
+    "money": {
+      "GPT": 1004,
+      "Claude": 175
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:36:25.223568",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Mon cash couvre trois maisons supplémentaires, mais garder une marge défensive contre une dépense imprévue est plus sage à ce moment critique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 34,
+    "money": {
+      "GPT": 306,
+      "Gemini": 34
+    }
+  }
+}

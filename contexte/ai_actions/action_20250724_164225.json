@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:42:22.997731",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Quitter le menu trading pour accéder enfin à la gestion de propriétés et investir en maisons orange/rose au plus vite, c'est maintenant ou jamais.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

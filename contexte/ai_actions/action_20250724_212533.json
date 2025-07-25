@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:25:31.068379",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai réussi à sortir de prison et mes fonds sont maintenant plus confortables. Je passe mon tour pour attendre la prochaine opportunité.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 110,
+    "money": {
+      "GPT": 24,
+      "Gemini": 52
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:10:00.630786",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je possède deux des trois propriétés rouges. Initier un échange pour Trafalgar Square (chez GPT) est ma priorité pour former un monopole.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT": 330,
+      "Gemini": 280
+    }
+  }
+}

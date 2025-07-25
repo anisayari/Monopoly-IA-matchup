@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:48:15.816836",
+  "trigger": "Force",
+  "keywords": [
+    "Pay the Bail"
+  ],
+  "options": [
+    "Pay Bail "
+  ],
+  "decision": "Pay Bail ",
+  "reason": "J'ai les fonds nécessaires et mes propriétés rouges sont bien développées, il est crucial de sortir de prison pour reprendre l'offensive.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 101,
+    "money": {
+      "GPT": 32,
+      "Gemini": 87
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:06:02.755086",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Fermer cette fiche pour accéder à la gestion est le seul moyen de lever l’hypothèque des light blue et maximiser la pression sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

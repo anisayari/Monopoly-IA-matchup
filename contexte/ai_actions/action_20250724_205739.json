@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:57:37.133395",
+  "trigger": "Force",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je suis en dette de 50$. Hypothéquer Kings Cross Station (100$) me donne les fonds pour payer et continuer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 27
+    }
+  }
+}

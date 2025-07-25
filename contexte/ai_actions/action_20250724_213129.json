@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:31:27.413919",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai désormais les fonds pour payer le loyer. Cela me permet d'éviter davantage d'hypothèques et de préserver mes options de redéveloppement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 110,
+    "money": {
+      "GPT": 114,
+      "Gemini": 52
+    }
+  }
+}

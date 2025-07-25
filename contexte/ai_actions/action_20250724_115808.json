@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:58:06.832075",
+  "trigger": "Force",
+  "keywords": [
+    "Pay the Bail"
+  ],
+  "options": [
+    "Pay Bail "
+  ],
+  "decision": "Pay Bail ",
+  "reason": "Sortir rapidement de prison permet d'avancer, saisir de nouvelles propriétés et éviter un retard stratégique. Le cash disponible reste suffisant pour investir lors des prochains tours.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 697,
+      "Gemini": 778
+    }
+  }
+}

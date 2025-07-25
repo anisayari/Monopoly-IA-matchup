@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T10:03:03.611084",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Je mets Leicester Square aux enchères pour acheter à bas prix, car Claude a très peu de liquidités ($55) et ne pourra pas suivre longtemps.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 20,
+    "money": {
+      "GPT": 875,
+      "Claude": 55
+    }
+  }
+}

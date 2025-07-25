@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T11:50:50.934060",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel"
+  ],
+  "decision": "Cancel",
+  "reason": "La conversation vient de se terminer et il n'y a pas d'action immédiate ou de propriété à échanger en début de partie. Annuler le popup permet de passer au tour suivant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

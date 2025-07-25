@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:55:08.793606",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Je suis en dette et je n'ai pas assez d'argent. Le commerce est ma seule option pour éviter la faillite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 27
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:31:21.769424",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accès au menu de gestion pour dés-hypothéquer immédiatement mes propriétés light blue, maximisant ainsi mes chances de revenus.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

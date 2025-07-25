@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:19:54.080540",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Étant en prison et sans argent, je dois utiliser ma carte 'Sortie de Prison Gratuite' ou vendre une propriété pour me libérer et générer des revenus sur mon monopole rouge.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 23,
+    "money": {
+      "GPT": 610,
+      "Gemini": 0
+    }
+  }
+}

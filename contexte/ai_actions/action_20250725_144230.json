@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T12:42:28.322392",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Dois payer 75M de dette, besoin d'hypothéquer Mayfair pour avoir assez de cash",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "GPT": 113,
+      "Claude": 64
+    }
+  }
+}

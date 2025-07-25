@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:58:08.605490",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Rien à construire, optimiser ou vendre ici vu mon cash. Prochain focus sur le jeu principal pour encaisser loyers.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 22,
+    "money": {
+      "GPT": 46,
+      "Claude": 14
+    }
+  }
+}

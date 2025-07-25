@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:28:26.619936",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J’ai le monopole rose avec suffisamment de cash, il est crucial de construire des maisons pour mettre la pression maximale sur Claude et sécuriser la victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 39,
+    "money": {
+      "GPT": 563,
+      "Claude": 25
+    }
+  }
+}

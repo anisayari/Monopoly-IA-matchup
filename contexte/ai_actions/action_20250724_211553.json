@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:15:51.232113",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois retourner à la gestion de propriétés pour lever l’hypothèque sur Vine et Marlborough. Fenêtre actuelle = fiche propriété ‘station’.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 105,
+    "money": {
+      "GPT": 212,
+      "Gemini": 312
+    }
+  }
+}

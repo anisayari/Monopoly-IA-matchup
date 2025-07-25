@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:35:08.428872",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai la carte 'Sortie de Prison'. L'utiliser maintenant me permet de sortir de prison et de jouer mon tour pour avancer mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 34,
+    "money": {
+      "GPT": 306,
+      "Gemini": 34
+    }
+  }
+}

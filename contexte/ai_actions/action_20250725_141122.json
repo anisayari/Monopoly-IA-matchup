@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T12:11:19.993512",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Oxford Street de GPT : $26 de loyer. Avec seulement $34, il me reste $8. Situation critique absolue !",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 72,
+    "money": {
+      "GPT": 43,
+      "Claude": 34
+    }
+  }
+}

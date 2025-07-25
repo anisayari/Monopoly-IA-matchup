@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:51:51.823828",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai couvert mes dettes. Je passe mon tour pour accumuler des liquidités et préparer mes prochaines actions stratégiques.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 136,
+    "money": {
+      "GPT": 89,
+      "Gemini": 368
+    }
+  }
+}

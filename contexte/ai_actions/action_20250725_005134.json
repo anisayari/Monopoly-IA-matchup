@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:51:32.092857",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Nécessaire pour enfin lever l’hypothèque sur mes light blue et préparer une vague de loyers. Gestion immédiate indispensable pour gagner.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

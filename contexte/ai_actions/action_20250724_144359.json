@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:43:57.819645",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec le monopole orange acquis, je dois construire des maisons pour maximiser mes revenus et prendre l'avantage.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT": 464,
+      "Gemini": 986
+    }
+  }
+}

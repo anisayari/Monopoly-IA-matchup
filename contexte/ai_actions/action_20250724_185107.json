@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:51:05.463235",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer le loyer est obligatoire. Ensuite, il faudra optimiser chaque dollar restant et surveiller les risques sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 62,
+    "money": {
+      "GPT": 274,
+      "Gemini": 133
+    }
+  }
+}

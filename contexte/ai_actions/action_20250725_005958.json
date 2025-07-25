@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:59:56.516898",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Rendre mes light blue actifs est indispensable pour maximiser les loyers. Je dois lever les hypothèques maintenant pour accélérer la chute de Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

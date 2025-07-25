@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T08:52:00.170342",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois payer $35 de loyer à GPT pour Park Lane. Pas le choix, c'est obligatoire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 7,
+    "money": {
+      "GPT": 1485,
+      "Claude": 210
+    }
+  }
+}

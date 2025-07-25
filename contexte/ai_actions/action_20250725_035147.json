@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:51:45.788848",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Plus assez de cash pour construire. Attendre loyers/ventes avant une nouvelle action de gestion. Maximiser gains orange prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 46,
+      "Claude": 24
+    }
+  }
+}

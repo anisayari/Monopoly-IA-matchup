@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:54:44.253563",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je réduis les maisons des groupes rose et orange au strict minimum pour libérer du cash, en préservant priorité au brown (hôtel + 4 maisons).",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 272,
+      "Gemini": 407
+    }
+  }
+}

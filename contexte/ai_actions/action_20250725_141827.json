@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:18:25.057651",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "Interface d'échange disponible ! Je dois finaliser la transaction avec GPT : ma Coventry Street contre ses $40 cash.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 75,
+    "money": {
+      "GPT": 43,
+      "Claude": 34
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:24:31.651941",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Je n'ai pas les fonds pour enchérir sur Park Lane ($102 vs $350). Je me retire de l'enchère car je ne peux pas me permettre de la prendre.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 45,
+    "money": {
+      "GPT": 0,
+      "Gemini": 102
+    }
+  }
+}

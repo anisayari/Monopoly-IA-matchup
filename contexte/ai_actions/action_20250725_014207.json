@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T23:42:05.110426",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Partie en pause, je dois continuer pour espérer un meilleur placement ou récupérer des loyers. Plus d’attente n’apporte rien.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

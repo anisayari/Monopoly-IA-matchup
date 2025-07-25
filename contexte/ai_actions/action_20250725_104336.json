@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:43:34.748070",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action immédiate à valeur ajoutée. Il est préférable d’attendre de nouvelles opportunités d’achat ou d’enchères au prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "GPT": 1450,
+      "Claude": 535
+    }
+  }
+}

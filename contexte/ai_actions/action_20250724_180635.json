@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:06:32.932021",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai optimisé mes propriétés au maximum avec mes fonds. Il est temps de revenir sur le plateau et de relancer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 29,
+    "money": {
+      "GPT": 29,
+      "Gemini": 102
+    }
+  }
+}

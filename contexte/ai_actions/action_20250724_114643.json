@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:46:41.402911",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "J'ai les fonds et l'acquisition d'une seconde gare est très stratégique pour augmenter mes revenus passifs. Double lancé.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT": 1231,
+      "Gemini": 1014
+    }
+  }
+}

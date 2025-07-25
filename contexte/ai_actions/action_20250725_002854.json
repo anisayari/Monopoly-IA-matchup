@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:28:52.653190",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Quitter la fiche descriptive pour passer enfin au vrai menu de gestion d’actifs et lever les hypothèques prioritaires.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

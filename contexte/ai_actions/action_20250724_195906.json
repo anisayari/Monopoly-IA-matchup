@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:59:03.988589",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Done "
+  ],
+  "decision": "Done ",
+  "reason": "Vendre le set d’hôtels n’est pas optimal tant qu’il reste des maisons ailleurs, priorité à préserver la menace brown. Je refuse la vente.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 272,
+      "Gemini": 407
+    }
+  }
+}

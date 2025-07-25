@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:55:54.303071",
+  "trigger": "Do you want to",
+  "keywords": [
+    "In Jail 2"
+  ],
+  "options": [
+    "Bail Pay ",
+    "Roll Dice "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "Toujours en prison, maximiser l’économie : je tente le double pour sortir sans frais. Claude paie cher mes maisons, je préserve mon avance.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 53,
+    "money": {
+      "GPT": 257,
+      "Claude": 130
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T13:00:59.482892",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Ma trésorerie est insuffisante pour acheter directement Oxford Street. Il est préférable de la mettre aux enchères et d'économiser mes fonds.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 7,
+    "money": {
+      "GPT": 206,
+      "Gemini": 214
+    }
+  }
+}

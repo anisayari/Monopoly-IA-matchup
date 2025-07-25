@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:48:17.293142",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune gestion urgente. Avancer permet de saisir les prochaines propriétés disponibles—objectif, créer ou préparer un monopole rapidement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 464,
+      "Gemini": 856
+    }
+  }
+}

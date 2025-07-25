@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:19:15.655202",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Pas d’action immédiate à effectuer ; j’ai encore peu de propriétés à améliorer. J’attends de nouvelles opportunités d’achat ou d’échange au prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT": 865,
+      "Claude": 1015
+    }
+  }
+}

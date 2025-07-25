@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:12:39.108858",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois hypothéquer Bond Street pour obtenir du cash, assurer ma liquidité et protéger la capacité à construire sur mes couleurs dominantes.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 335
+    }
+  }
+}

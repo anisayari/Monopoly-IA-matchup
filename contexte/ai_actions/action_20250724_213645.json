@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:36:43.380896",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois profiter de ma trésorerie pour lever l’hypothèque d’une propriété orange (Vine ou Bow Street) pour augmenter immédiatement mes chances de revenus et conserver la pression.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 125,
+    "money": {
+      "GPT": 248,
+      "Gemini": 68
+    }
+  }
+}

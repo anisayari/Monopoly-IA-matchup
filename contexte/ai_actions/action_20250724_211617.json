@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:16:15.382802",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois impérativement réactiver mes propriétés orange pour créer une zone piège et augmenter mes chances de victoire à court terme.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 105,
+    "money": {
+      "GPT": 212,
+      "Gemini": 312
+    }
+  }
+}

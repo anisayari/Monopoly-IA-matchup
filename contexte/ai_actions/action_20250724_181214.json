@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:12:12.418362",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois aller dans la vraie fenêtre de gestion pour construire des maisons. Il n’y a ici aucun intérêt à trader ou discuter.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

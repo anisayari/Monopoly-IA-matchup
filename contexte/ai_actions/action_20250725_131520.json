@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:15:18.022214",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucun besoin de gestion immédiate ni de négociation à ce tour. Je maximise mes chances d'acquérir une propriété libre ou d'attendre une opportunité meilleure.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 31,
+    "money": {
+      "GPT": 853,
+      "Claude": 265
+    }
+  }
+}

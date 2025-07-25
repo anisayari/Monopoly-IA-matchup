@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:48:20.868029",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai les fonds nécessaires (303$) pour déshypothéquer Mayfair (220$), c'est une action prioritaire pour mon monopole.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 62,
+    "money": {
+      "GPT": 124,
+      "Gemini": 303
+    }
+  }
+}

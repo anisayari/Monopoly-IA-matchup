@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:00:15.327407",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Toujours l’écran de fiche d’une gare, je dois retourner à la vraie gestion de propriétés ou au tour principal pour agir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

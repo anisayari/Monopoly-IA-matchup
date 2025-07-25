@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:48:55.313735",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Ce menu ne permet pas la gestion. Je dois retourner à la fenêtre principale afin d’investir dans les maisons orange et rose depuis la gestion des propriétés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

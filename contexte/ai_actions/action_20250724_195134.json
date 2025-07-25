@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:51:32.102529",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois encore vendre une maison orange, puis une rose, pour payer la dette, tout en gardant un maximum de flux potentiels.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 272,
+      "Gemini": 407
+    }
+  }
+}

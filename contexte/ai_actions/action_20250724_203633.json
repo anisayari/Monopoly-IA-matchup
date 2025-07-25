@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:36:31.459129",
+  "trigger": "In Jail",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Bail Pay ",
+    "Roll Dice "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "Conserver mes faibles liquidités maximise mes chances de survie si je tombe sur un loyer. Tenter un double est la stratégie la moins risquée.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 37
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:18:03.230129",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je lance les dés pour continuer mon tour et acquérir de nouvelles propriétés disponibles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 725,
+      "Claude": 1015
+    }
+  }
+}

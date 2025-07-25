@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-23T21:55:11.926632",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Après avoir assuré mes fonds, je passe la main. Il est temps de voir la stratégie de l'adversaire et préparer mes prochaines acquisitions.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 2514,
+      "Gemini": 1029
+    }
+  }
+}

@@ -381,27 +381,37 @@ class CentralizedMonitor:
                                 best_text_ratio = ratio
                                 best_text_count = found_count
                 
+                # Cas spécial pour Auction : si on détecte yes+bid+no, forcer Auction
+                auction_detected = False
+                if 'yes' in detected_icons and 'bid' in detected_texts and 'no' in detected_texts:
+                    best_match = 'Auction'
+                    best_match_ratio = 1.0
+                    match_type = "combinaison spéciale (yes+bid+no)"
+                    auction_detected = True
+                    print("🔨 Détection spéciale Auction: yes(icône) + bid(texte) + no(texte)")
+                
                 # Déterminer le meilleur match global entre icônes et textes
-                if best_icon_match and best_text_match:
-                    # Comparer les ratios
-                    if best_icon_ratio >= best_text_ratio:
+                if not auction_detected:
+                    if best_icon_match and best_text_match:
+                        # Comparer les ratios
+                        if best_icon_ratio >= best_text_ratio:
+                            best_match = best_icon_match
+                            best_match_ratio = best_icon_ratio
+                            match_type = "icônes"
+                        else:
+                            best_match = best_text_match
+                            best_match_ratio = best_text_ratio
+                            match_type = "textes"
+                    elif best_icon_match:
                         best_match = best_icon_match
                         best_match_ratio = best_icon_ratio
                         match_type = "icônes"
-                    else:
+                    elif best_text_match:
                         best_match = best_text_match
                         best_match_ratio = best_text_ratio
                         match_type = "textes"
-                elif best_icon_match:
-                    best_match = best_icon_match
-                    best_match_ratio = best_icon_ratio
-                    match_type = "icônes"
-                elif best_text_match:
-                    best_match = best_text_match
-                    best_match_ratio = best_text_ratio
-                    match_type = "textes"
-                else:
-                    best_match = None
+                    else:
+                        best_match = None
 
                 if best_match:
                     if best_match_ratio == 1.0:
@@ -423,6 +433,29 @@ class CentralizedMonitor:
                     if isinstance(icon, str)
                 ]
                 options = [opt for opt in icon_options if opt.get('name', '').strip().lower() in all_icons]
+                
+                # Si aucune option trouvée et qu'on a détecté "ok" dans les textes, l'ajouter
+                if not options:
+                    for opt in text_options:
+                        if opt.get('content', '').strip().lower() == 'ok':
+                            options.append({
+                                'name': 'ok',
+                                'bbox': opt.get('bbox', []),
+                                'type': 'text'
+                            })
+                            break
+                
+                # Si on est dans Trading et qu'on détecte "cancel" dans les textes, l'ajouter
+                if selected_keywords and 'Trading' in selected_keywords and not options:
+                    for opt in text_options:
+                        if opt.get('content', '').strip().lower() == 'cancel':
+                            options.append({
+                                'name': 'cancel',
+                                'bbox': opt.get('bbox', []),
+                                'type': 'text'
+                            })
+                            print("✅ 'cancel' détecté comme texte dans Trading, ajouté comme option cliquable")
+                            break
             else:
                 options = []
             
@@ -500,6 +533,10 @@ class CentralizedMonitor:
             # Étape 3: Demander la décision à l'IA directement
             print("🤖 Demande de décision à l'IA...")
             
+            # Vérifier "You owe" dans la RAM
+            from src.core.memory_reader import MemoryReader
+            you_owe_status = MemoryReader.check_you_owe()
+            print('__________________ \n YOU OWE ?', you_owe_status)
             # Préparer la requête pour l'IA (basée uniquement sur les icônes)
             ai_request = {
                 'popup_text': popup_text,
@@ -509,6 +546,7 @@ class CentralizedMonitor:
                 'keywords': selected_keywords,  # Keywords identifiés via les icônes
                 'all_detected_icons': detected_icons,  # Toutes les icônes détectées
                 'category':category,
+                'you_owe': you_owe_status,  # Ajouter le statut You owe
                 # Envoyer le screenshot en base64
                 'screenshot_base64': screenshot_base64
             }
@@ -650,7 +688,7 @@ class CentralizedMonitor:
                     
                     # Déplacer la souris au centre de la fenêtre après le clic
                     center_x = win_bbox[0] + win_bbox[2]//2
-                    center_y = win_bbox[1] + 200
+                    center_y = win_bbox[1] + 350
                     pyautogui.moveTo(center_x, center_y, duration=0.3)
                     
                     return True
@@ -690,7 +728,7 @@ class CentralizedMonitor:
                             
                             # Déplacer la souris au centre de la fenêtre
                             center_x = win_bbox[0] + win_bbox[2]//2
-                            center_y = win_bbox[1] + 200
+                            center_y = win_bbox[1] + 350
                             pyautogui.moveTo(center_x, center_y, duration=0.3)
                             
                             return True
@@ -1358,7 +1396,6 @@ class CentralizedMonitor:
                         
                         result = self.process_popup(cleaned_text, screenshot, match.get('trigger'))
                         
-                        print('RESULT: ',result)
                         if result is None:
                             print("🔍 No result found, skipping...")
                             continue

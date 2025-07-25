@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:57:54.092228",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai construit une maison sur mes propriétés rouges. Mes fonds sont désormais insuffisants pour d'autres actions de gestion ou achats.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 66,
+    "money": {
+      "GPT": 184,
+      "Gemini": 73
+    }
+  }
+}

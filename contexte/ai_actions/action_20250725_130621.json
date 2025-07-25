@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:06:19.054031",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Le paiement du loyer est obligatoire. C'est un petit montant ($8), donc perte négligeable, je garde de la trésorerie pour des investissements plus importants.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 820,
+      "Claude": 183
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:57:36.424626",
+  "trigger": "Trading",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'accepte d'aller en prison. Avec seulement $125, la prison me protège des loyers élevés tout en me permettant de collecter les loyers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 18,
+    "money": {
+      "GPT": 805,
+      "Claude": 125
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:46:08.141116",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai maintenant 5 propriétés mais seulement $245. Je dois examiner mes options de gestion financière.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 7,
+    "money": {
+      "GPT": 1450,
+      "Claude": 245
+    }
+  }
+}

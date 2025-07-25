@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:04:30.103863",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J’ai du cash, le plateau est riche en propriétés non vendues : avancer pour acheter en priorité brown/light_blue offre la meilleure perspective de monopole vite.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 11,
+    "money": {
+      "GPT": 436,
+      "Gemini": 214
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-25T09:40:39.798808",
+  "trigger": "Force",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "Continue ",
+  "reason": "Poursuivre le jeu me garde dans le rythme tout en surveillant les actions de Claude, qui a peu de liquidités pour acheter de nouvelles propriétés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 1045,
+      "Claude": 125
+    }
+  }
+}

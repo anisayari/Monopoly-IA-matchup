@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-24T13:37:12.512020",
+  "trigger": "In Jail",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Roll Dice ",
+    "Pay Bail ",
+    "Use Card "
+  ],
+  "decision": "Use Card ",
+  "reason": "J'ai une carte 'Sortie de Prison'. L'utiliser est la meilleure option pour me libérer sans frais et continuer à jouer mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 34,
+    "money": {
+      "GPT": 306,
+      "Gemini": 34
+    }
+  }
+}

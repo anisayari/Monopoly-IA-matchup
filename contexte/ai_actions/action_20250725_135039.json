@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:50:37.822889",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je tombe sur Pall Mall avec une maison de GPT. Je dois payer $50 de loyer, il me restera $140.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 49,
+    "money": {
+      "GPT": 197,
+      "Claude": 190
+    }
+  }
+}

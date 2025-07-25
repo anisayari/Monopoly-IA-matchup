@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:39:20.104759",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Plus d’hypothèques orange à lever et fonds trop faibles pour dés-hypothéquer ailleurs ; garder la trésorerie pour parer un imprévu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 125,
+    "money": {
+      "GPT": 39,
+      "Gemini": 68
+    }
+  }
+}

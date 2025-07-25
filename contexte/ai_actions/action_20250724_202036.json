@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:20:34.171763",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "J’ai le cash nécessaire, aucun sacrifice immédiat. Préserve mes groupes maisons. Survie assurée, plus de flexibilité pour rebond.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 86,
+    "money": {
+      "GPT": 212,
+      "Gemini": 22
+    }
+  }
+}

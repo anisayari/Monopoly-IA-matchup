@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:43:31.817265",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Attendre que Claude initie l’échange à son tour, puis investir le cash gagné en maisons orange dès que possible. Optimisation du timing pour maximiser l'impact.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 17,
+    "money": {
+      "GPT": 86,
+      "Claude": 564
+    }
+  }
+}

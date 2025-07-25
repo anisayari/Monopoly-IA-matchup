@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:12:03.295364",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois hypothéquer mes propriétés pour générer de l'argent immédiatement, situation critique avec $0 en caisse.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 31,
+    "money": {
+      "GPT": 903,
+      "Claude": 0
+    }
+  }
+}

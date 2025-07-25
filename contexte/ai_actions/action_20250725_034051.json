@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:40:49.763253",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Peu de cash (86$): il faut attendre de repasser sur Départ ou gagner des loyers avant de construire. Il faut maximiser chaque dollar.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "GPT": 86,
+      "Claude": 464
+    }
+  }
+}

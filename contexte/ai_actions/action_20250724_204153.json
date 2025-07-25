@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:41:51.830427",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Le paiement du loyer est obligatoire et aucune négociation n’est possible. Je laisserai le système déclencher les ventes ou hypothèques nécessaires ensuite.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 101,
+    "money": {
+      "GPT": 32,
+      "Gemini": 87
+    }
+  }
+}

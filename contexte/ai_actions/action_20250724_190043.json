@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:00:41.674345",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois vendre une maison sur Fleet Street pour couvrir le loyer de 50$. Mes fonds actuels (23$) sont insuffisants.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 69,
+    "money": {
+      "GPT": 234,
+      "Gemini": 23
+    }
+  }
+}

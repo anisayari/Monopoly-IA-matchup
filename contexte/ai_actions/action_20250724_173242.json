@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T15:32:39.971181",
+  "trigger": "Bankruptcy",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois payer une dette de $100 et n'ai que $46. Je dois donc hypothéquer des propriétés pour régler cette dette immédiatement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

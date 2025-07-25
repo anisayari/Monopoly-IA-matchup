@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:11:42.621596",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai fait un double, ce qui me donne un lancer supplémentaire. C'est une excellente occasion de progresser et d'augmenter mes revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 12,
+      "Gemini": 312
+    }
+  }
+}

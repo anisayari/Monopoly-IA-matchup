@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:34:47.709699",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "back",
+  "reason": "J'ai $91 disponibles pour payer ma dette M75. Je dois sortir pour la régler.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "GPT": 177,
+      "Claude": 91
+    }
+  }
+}

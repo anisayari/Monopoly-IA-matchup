@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:29:29.966871",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Roll Again ",
+    "Accounts "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai fait un double et je peux relancer les dés. J'ai 152$, ce qui me permet de payer un loyer si je tombe sur une propriété.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 95,
+    "money": {
+      "GPT": 132,
+      "Gemini": 152
+    }
+  }
+}

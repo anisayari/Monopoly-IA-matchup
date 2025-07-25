@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:16:25.512506",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Ma trésorerie est à zéro et j'ai des propriétés hypothéquées. Je dois gérer mes finances pour éviter la faillite et avancer vers des monopoles clés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT": 610,
+      "Gemini": 0
+    }
+  }
+}

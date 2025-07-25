@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:53:03.429200",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai réglé ma dette. Je vais vérifier mes propriétés pour voir si je peux optimiser mes revenus ou déshypothéquer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 137
+    }
+  }
+}

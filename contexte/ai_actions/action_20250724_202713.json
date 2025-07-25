@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:27:11.460591",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec 2$ restants, je ne peux pas agir sur mes propriétés. Le meilleur choix est de passer mon tour et d'attendre plus de liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 89,
+    "money": {
+      "GPT": 132,
+      "Gemini": 52
+    }
+  }
+}

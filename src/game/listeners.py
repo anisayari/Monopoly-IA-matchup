@@ -285,6 +285,9 @@ class MonopolyListeners(EventListeners):
             if tick_count % 1000 == 0:  # Log every 1000 ticks instead of 100
                 print(f"[DEBUG Listeners] Still running, tick {tick_count}, {len(self._players)} players detected")
             
+            # Vérifier "You owe" à chaque tick
+            from src.core.memory_reader import MemoryReader
+            
             if time.time() - self._last_time_player >= self.interval_player:
                 self._last_time_player = time.time()
                 self.player_handler()

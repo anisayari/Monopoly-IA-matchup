@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:15:45.051329",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune gestion de propriété nécessaire pour le moment, il est optimal d’avancer et de viser un nouvel achat à l’opportunité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Claude": 1335
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T10:16:36.138288",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "La conversation est terminée. Je dois choisir de gérer mes propriétés pour avancer ma stratégie de monopoles, même si le jeu est bloqué par des popups.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

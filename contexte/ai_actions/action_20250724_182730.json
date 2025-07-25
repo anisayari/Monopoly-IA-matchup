@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:27:28.242223",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Avec 302$, je peux déshypothéquer Regent Street ($165) pour progresser vers le monopole vert, essentiel pour ma stratégie.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 48,
+    "money": {
+      "GPT": 0,
+      "Gemini": 302
+    }
+  }
+}

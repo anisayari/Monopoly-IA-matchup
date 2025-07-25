@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:16:32.203919",
+  "trigger": "Choose which properties",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "J'accepte l'échange : ma gare + 40$ contre Northumberland Avenue pour commencer un monopole rose.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 725,
+      "Claude": 1015
+    }
+  }
+}

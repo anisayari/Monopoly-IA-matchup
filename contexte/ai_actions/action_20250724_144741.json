@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:47:39.105620",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "C'est une enchère. Il faut discuter pour maximiser le prix ou obtenir un bon deal si Gemini n'est pas motivé.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT": 464,
+      "Gemini": 986
+    }
+  }
+}

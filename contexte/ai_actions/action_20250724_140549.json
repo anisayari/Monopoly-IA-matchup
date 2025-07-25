@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:05:47.502990",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Coventry Street est une case à forte rentabilité. Accumuler des propriétés variées me donne un levier pour échanger et viser un futur monopole.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 725,
+      "Gemini": 1275
+    }
+  }
+}

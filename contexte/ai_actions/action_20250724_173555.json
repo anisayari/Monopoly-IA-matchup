@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-24T15:35:53.808176",
+  "trigger": "In Jail",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Roll Dice ",
+    "Pay Bail ",
+    "Use Card "
+  ],
+  "decision": "Pay Bail ",
+  "reason": "Avec $124, je peux payer la caution ($50) pour sortir de prison immédiatement. Cela me permettra de recommencer à avancer sur le plateau et d'éviter de perdre des tours précieux.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 26,
+      "Gemini": 124
+    }
+  }
+}

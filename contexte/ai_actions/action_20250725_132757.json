@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:27:55.038400",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Northumberland Avenue me rapproche du monopole rose, surtout avec la trésorerie faible de Claude. Je bloque des opportunités cruciales pour l’adversaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 723,
+      "Claude": 25
+    }
+  }
+}

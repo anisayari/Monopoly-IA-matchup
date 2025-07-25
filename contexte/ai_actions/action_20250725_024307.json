@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:43:05.816472",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Cette fenêtre concerne la gare et ne permet pas la gestion des maisons. Je dois retourner à l'écran de gestion principal pour investir efficacement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 221,
+      "Gemini": 5
+    }
+  }
+}

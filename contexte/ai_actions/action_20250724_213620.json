@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:36:18.844031",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois retourner à la gestion réelle de mes propriétés pour lever l’hypothèque de Vine Street/Bow Street. La fenêtre courante ne permet que de trader la station.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 125,
+    "money": {
+      "GPT": 248,
+      "Gemini": 68
+    }
+  }
+}

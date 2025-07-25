@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:49:00.033772",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothèque Electric Company (+75$) : c’est la moins prioritaire à garder, elle n’affecte pas la rentabilité de mes ensembles maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 247,
+      "Gemini": 407
+    }
+  }
+}

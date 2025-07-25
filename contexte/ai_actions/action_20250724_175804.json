@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:58:02.297108",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai terminé mes actions et n'ai pas les fonds pour d'autres développements. Je passe mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 116,
+      "Gemini": 66
+    }
+  }
+}

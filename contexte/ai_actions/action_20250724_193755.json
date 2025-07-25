@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:37:53.193891",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Lever l'hypothèque de Piccadilly (154$) maximise mes opportunités sur le jaune. Je garde le reste en trésorerie de sécurité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 216,
+      "Gemini": 407
+    }
+  }
+}

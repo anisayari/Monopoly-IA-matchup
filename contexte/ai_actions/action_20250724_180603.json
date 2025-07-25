@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:06:01.072975",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Avec $252, je peux déshypothéquer Regent Street ($165) et acheter une maison sur mon monopole rouge ($100), augmentant significativement les loyers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 29,
+    "money": {
+      "GPT": 29,
+      "Gemini": 252
+    }
+  }
+}

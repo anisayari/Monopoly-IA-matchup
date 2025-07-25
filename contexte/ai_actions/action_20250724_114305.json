@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:43:03.215597",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Gain automatique, cet argent doit être récupéré sans délai pour renforcer ma liquidité et acheter des propriétés dès que possible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "GPT": 1153,
+      "Gemini": 1032
+    }
+  }
+}

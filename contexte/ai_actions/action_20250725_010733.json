@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:07:30.968254",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il faut retourner dans la gestion pour lever enfin les hypothèques des light blue. C’est la clé pour maximiser le danger locatif sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

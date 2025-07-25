@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:56:12.959241",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je reviens à la fenêtre principale pour gérer la levée d'hypothèques. Il faut choisir 'manage_property', ici ce n'est que la fiche d'une station.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

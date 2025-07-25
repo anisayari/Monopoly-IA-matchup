@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T11:26:16.682155",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Bankrupt ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai les fonds nécessaires ($748) pour dés-hypothéquer Coventry Street ($143), ce qui est une bonne utilisation de mon argent pour augmenter mes actifs.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 647,
+      "Gemini": 748
+    }
+  }
+}

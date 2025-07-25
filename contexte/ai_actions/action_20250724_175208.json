@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:52:06.570644",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il est temps de lever l’hypothèque d’Euston Road et d’envisager l’ajout de maisons sur mes monopoles pour maximiser le revenu futur.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 171,
+      "Gemini": 146
+    }
+  }
+}

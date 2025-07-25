@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:57:50.630300",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il est essentiel de retourner à la gestion pour lever les hypothèques des light blue. Cela booste mes loyers et renforce ma position face à Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

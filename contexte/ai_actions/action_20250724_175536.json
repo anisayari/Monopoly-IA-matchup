@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:55:34.404340",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec 366$, je peux commencer à lever des hypothèques ou construire des maisons sur mon monopole Rouge pour augmenter mes revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 116,
+      "Gemini": 366
+    }
+  }
+}

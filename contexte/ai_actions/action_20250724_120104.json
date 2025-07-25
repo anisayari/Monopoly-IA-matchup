@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T10:01:02.219833",
+  "trigger": "Force",
+  "keywords": [
+    "Bankruptcy"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "Yes ",
+  "reason": "Accepter la décision de l'enchère est la suite logique après avoir refusé l'achat direct de Mayfair.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

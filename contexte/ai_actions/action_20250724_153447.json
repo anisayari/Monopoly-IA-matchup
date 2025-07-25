@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T13:34:45.512975",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai la carte 'Sortie de Prison', donc être en prison n'est qu'un léger contretemps. Je clique 'OK' pour avancer et me libérer au prochain tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 34,
+    "money": {
+      "GPT": 306,
+      "Gemini": 34
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:02:11.364428",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer le loyer est obligatoire ici. La somme est faible; mon objectif reste de conserver du cash pour être prêt à encaisser ou investir selon l'opportunité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 23,
+    "money": {
+      "GPT": 103,
+      "Gemini": 78
+    }
+  }
+}

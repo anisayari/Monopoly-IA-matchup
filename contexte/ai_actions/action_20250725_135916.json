@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:59:14.294660",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Gestion des maisons terminée, il est temps d’enchaîner pour remettre la pression à Claude avec des loyers maximisés dès son prochain passage.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 53,
+    "money": {
+      "GPT": 207,
+      "Claude": 130
+    }
+  }
+}

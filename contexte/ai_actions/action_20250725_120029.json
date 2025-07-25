@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:00:27.616521",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Échange réussi ! J'ai obtenu Strand et diversifié mon portefeuille. Avec seulement $55, je termine prudemment mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 20,
+    "money": {
+      "GPT": 875,
+      "Claude": 55
+    }
+  }
+}

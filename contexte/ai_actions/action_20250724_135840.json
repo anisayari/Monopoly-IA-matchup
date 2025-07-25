@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T11:58:38.283235",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Paiement de loyer obligatoire. Confirmer pour progresser dans le jeu et éviter tout retard inutile.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1325,
+      "Gemini": 1475
+    }
+  }
+}

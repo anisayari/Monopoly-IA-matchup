@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:45:21.922256",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Mes liquidités sont désormais limitées : il vaut mieux garder un coussin financier pour les loyers et imprévus. J'attends un prochain tour opportun.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 60,
+    "money": {
+      "GPT": 124,
+      "Gemini": 103
+    }
+  }
+}

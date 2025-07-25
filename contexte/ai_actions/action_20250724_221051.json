@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:10:49.799708",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il faut enfin accéder à la gestion pour lever au moins les hypothèques des light blue et renforcer mes revenus critiques.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

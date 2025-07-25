@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:13:09.995883",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Paiement des frais d'hôpital obligatoire. Confirmer pour progresser dans le jeu sans délai inutile.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 627,
+      "Gemini": 1453
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:30:04.489053",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Options permet de finir officiellement la partie et d’activer toute fonction de sauvegarde/fin. C’est la seule action stratégique valide.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

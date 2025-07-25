@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:36:13.989458",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon cash reste insuffisant pour construire ou investir utilement. Je conserve chaque dollar et j'attends une opportunité plus favorable ou un passage adverse.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 51,
+    "money": {
+      "GPT": 98,
+      "Gemini": 129
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:31:44.895077",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois accéder au menu Trade pour finaliser l'échange négocié avec GPT : mes pinks + Strand contre sa Pentonville Road.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT": 874,
+      "Claude": 55
+    }
+  }
+}

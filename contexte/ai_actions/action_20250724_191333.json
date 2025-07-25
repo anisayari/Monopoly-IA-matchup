@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:13:31.105999",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai du capital pour investir. Renforcer mes autres monopoles, surtout orange ou rose, maximisera mes revenus face à un Gemini très fragile.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 82,
+    "money": {
+      "GPT": 360,
+      "Gemini": 57
+    }
+  }
+}

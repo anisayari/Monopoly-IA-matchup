@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:45:28.826798",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai un monopole orange (Marlborough Street, Vine Street, Fleet Street). Je dois construire des maisons pour augmenter mes loyers et ma domination.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT": 464,
+      "Gemini": 986
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T15:37:43.421008",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "La carte Chance exige d'avancer vers le service public le plus proche. Je dois confirmer cette action pour continuer le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "GPT": 54,
+      "Gemini": 46
+    }
+  }
+}

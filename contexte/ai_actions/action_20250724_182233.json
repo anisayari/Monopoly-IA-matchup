@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:22:31.777847",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Mes fonds actuels ($102) ne permettent pas de déshypothéquer ni d'acheter de maisons. Je reviens au plateau.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 44,
+    "money": {
+      "GPT": 0,
+      "Gemini": 102
+    }
+  }
+}

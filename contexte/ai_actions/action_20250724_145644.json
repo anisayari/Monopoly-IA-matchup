@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:56:42.337311",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je dois avancer rapidement pour augmenter mes chances de tomber sur des propriétés disponibles et maximiser mes opportunités d'achat.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "GPT": 384,
+      "Gemini": 456
+    }
+  }
+}

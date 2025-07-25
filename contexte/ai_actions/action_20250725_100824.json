@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T08:08:22.350856",
+  "trigger": "Force",
+  "keywords": [
+    "Choose which properties"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Continuer le jeu après le lancer de dés pour avancer",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Claude": 1500
+    }
+  }
+}

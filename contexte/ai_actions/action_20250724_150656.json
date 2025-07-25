@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:06:54.725932",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Tourner rapidement augmente mes chances de tomber sur l’une des dernières propriétés, visant un monopole pink dès que possible avant Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 346,
+      "Gemini": 164
+    }
+  }
+}

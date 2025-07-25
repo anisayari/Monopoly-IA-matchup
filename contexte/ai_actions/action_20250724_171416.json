@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:14:14.572896",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Même en prison, je dois évaluer mes options de construction sur mon monopole rouge pour optimiser mes revenus à ma sortie.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

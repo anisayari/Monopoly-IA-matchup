@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:20:10.950234",
+  "trigger": "Force",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Options permet d’officialiser et de sauvegarder la victoire, aucun autre choix pertinent ne reste. Maximiser la sécurité en terminant proprement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

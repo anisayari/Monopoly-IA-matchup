@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:11:02.743419",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois hypothéquer Bond Street ou une autre non-prioritaire pour constituer de la trésorerie et mieux sécuriser mon avance et mes investissements en maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 335
+    }
+  }
+}

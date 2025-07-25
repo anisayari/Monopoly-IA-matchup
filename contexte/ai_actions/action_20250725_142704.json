@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:27:02.224179",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois investir mes $413 dans des maisons sur mes monopoles roses et oranges pour maximiser la pression sur Claude, qui est très vulnérable.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 84,
+    "money": {
+      "GPT": 413,
+      "Claude": 64
+    }
+  }
+}

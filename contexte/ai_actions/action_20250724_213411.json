@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:34:09.233349",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma trésorerie reste faible, il n’est pas intéressant de gérer les propriétés maintenant. Je dois attendre des rentrées d’argent pour relancer mon offensive.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 118,
+    "money": {
+      "GPT": 48,
+      "Gemini": 68
+    }
+  }
+}

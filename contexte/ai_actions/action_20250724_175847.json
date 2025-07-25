@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:58:45.698191",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes liquidités sont limitées et aucun achat ou investissement n'est pertinent ce tour. Je dois miser sur la perception de loyers pour me renforcer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 116,
+      "Gemini": 66
+    }
+  }
+}

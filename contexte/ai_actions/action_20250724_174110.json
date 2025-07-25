@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:41:08.250300",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je vais immédiatement passer à la gestion de mes propriétés pour construire des maisons et rentabiliser mes monopoles avec mon cash disponible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 254,
+      "Gemini": 46
+    }
+  }
+}

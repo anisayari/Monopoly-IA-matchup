@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:47:30.342194",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai maintenant les fonds suffisants (303$) pour déshypothéquer Mayfair (200$), essentielle pour mon futur monopole bleu foncé.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 62,
+    "money": {
+      "GPT": 124,
+      "Gemini": 303
+    }
+  }
+}

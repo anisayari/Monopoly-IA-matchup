@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:09:32.500550",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je n'ai aucune maison ni hôtel, donc pas de paiement à effectuer. Continuer permet d'avancer rapidement dans le jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT": 725,
+      "Claude": 1015
+    }
+  }
+}

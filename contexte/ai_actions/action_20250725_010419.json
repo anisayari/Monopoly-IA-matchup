@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:04:17.678775",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il faut retourner au menu gestion pour immédiatement lever les hypothèques des light blue. Action vitale pour sécuriser la victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

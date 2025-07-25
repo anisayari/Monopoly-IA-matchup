@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:40:25.024809",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Fermer la fiche descriptive est nécessaire pour enfin accéder au menu de gestion et optimiser mon empire immobilier.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

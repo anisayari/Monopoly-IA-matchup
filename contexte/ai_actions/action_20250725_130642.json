@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:06:40.347722",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune menace immédiate ni besoin de gérer mes comptes, je maximise mes chances d’acheter une propriété libre ou d’arriver sur une opportunité d’enchère.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 820,
+      "Claude": 183
+    }
+  }
+}

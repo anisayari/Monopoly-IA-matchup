@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:55:33.286331",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J’accepte la carte Community Chest qui me donne 200$. Plus de cash = possibilité de construire sur l’orange dès le prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 22,
+    "money": {
+      "GPT": 246,
+      "Claude": 14
+    }
+  }
+}

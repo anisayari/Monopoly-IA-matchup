@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:53:56.744236",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Encore le monopole rose ! Northumberland Avenue avec maison coûte $60. Il me restera $70, situation très critique.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 52,
+    "money": {
+      "GPT": 257,
+      "Claude": 130
+    }
+  }
+}

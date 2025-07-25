@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:56:01.499838",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Je peux négocier le prix d'enchère avec Claude pour maximiser mes chances d'avoir Bow Street au prix le plus faible possible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 1045,
+      "Claude": 125
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:12:37.338409",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je n'ai pas de liquidités suffisantes pour construire. Il vaut mieux retourner au jeu et attendre un revenu (loyer ou passage Go).",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

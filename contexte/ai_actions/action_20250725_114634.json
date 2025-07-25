@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-25T09:46:31.846221",
+  "trigger": "Force",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "Continue ",
+  "reason": "Rester en prison limite mes risques et Claude n'a pas la liquidité pour de grandes menaces. J’observe et préserve ma trésorerie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 1045,
+      "Claude": 125
+    }
+  }
+}

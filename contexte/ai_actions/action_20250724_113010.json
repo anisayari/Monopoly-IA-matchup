@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:30:08.446453",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Rien à gérer ni à négocier pour l’instant, il est utile de garder le rythme et de voir la stratégie de Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1140,
+      "Gemini": 1540
+    }
+  }
+}

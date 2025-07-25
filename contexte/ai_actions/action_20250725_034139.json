@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:41:37.789177",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'hérite de 100$, c'est une bonne nouvelle ! GPT a maintenant le monopole orange, je dois être prudent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 17,
+    "money": {
+      "GPT": 86,
+      "Claude": 464
+    }
+  }
+}

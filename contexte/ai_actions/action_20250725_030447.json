@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:04:45.469454",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Trafalgar Square est une orange majeure, essentielle pour viser le monopole orange, l’un des plus rentables du jeu. Dépenser maintenant sécurise un fort potentiel.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 965,
+      "Claude": 1280
+    }
+  }
+}

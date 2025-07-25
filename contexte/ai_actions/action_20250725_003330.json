@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:33:28.729559",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Gestion active requise : lever les hypothèques light blue pour maximiser la pression locative dès ce tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

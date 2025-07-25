@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:07:58.110994",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action spécifique n’est prioritaire : je conserve du cash pour saisir d’autres propriétés à venir et avance la partie pour optimiser ma position.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "GPT": 725,
+      "Claude": 1015
+    }
+  }
+}

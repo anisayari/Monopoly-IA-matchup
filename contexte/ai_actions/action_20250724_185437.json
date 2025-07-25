@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:54:35.239599",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer le loyer est obligatoire pour rester dans la partie. Je dois ensuite garder un œil sur mes liquidités et réajuster ma stratégie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 64,
+    "money": {
+      "GPT": 184,
+      "Gemini": 173
+    }
+  }
+}

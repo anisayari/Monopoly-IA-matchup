@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:17:29.433682",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Rien à optimiser pour ce tour : phase gestion terminée, bonne réserve de cash, attendre revenus ou opportunités. Surveillance de Gemini pendant sa phase critique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 82,
+    "money": {
+      "GPT": 160,
+      "Gemini": 57
+    }
+  }
+}

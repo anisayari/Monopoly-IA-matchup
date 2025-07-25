@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:18:18.316624",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Impossible d’agir sans liquidités : priorité à la survie. J’attends la prochaine opportunité pour relancer ma stratégie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 105,
+    "money": {
+      "GPT": 14,
+      "Gemini": 312
+    }
+  }
+}

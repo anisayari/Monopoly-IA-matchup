@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:03:01.682339",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec une trésorerie limitée et aucun monopole à compléter, passer le tour est stratégique pour préserver mes fonds et observer GPT.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 36,
+      "Gemini": 214
+    }
+  }
+}

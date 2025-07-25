@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:18:42.259623",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action pertinente possible avec 14$. Il faut attendre une opportunité de revenu ou de faute adverse pour renverser la partie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 105,
+    "money": {
+      "GPT": 14,
+      "Gemini": 312
+    }
+  }
+}

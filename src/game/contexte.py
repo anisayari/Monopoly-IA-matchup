@@ -206,10 +206,14 @@ class Contexte:
         # Récupérer les propriétés de chaque joueur
         for i, player in enumerate(self.game.players):
             try:
-                for prop in player.properties:
+                # Utiliser owned_properties au lieu de properties pour éviter la confusion avec la position actuelle
+                for prop in player.owned_properties:
                     try:
                         prop_position = prop.position
                         property_owners[prop_position] = player.id
+                        # Debug pour Bond Street
+                        if prop_position == 34:
+                            print(f"[DEBUG] Bond Street owner: player.id={player.id}")
                     except:
                         pass
             except:

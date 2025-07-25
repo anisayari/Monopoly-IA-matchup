@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:29:27.092236",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Mes propriétés sont gérées au mieux de mes fonds. Il est temps de relancer les dés pour avancer et collecter des loyers critiques.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 48,
+    "money": {
+      "GPT": 0,
+      "Gemini": 27
+    }
+  }
+}

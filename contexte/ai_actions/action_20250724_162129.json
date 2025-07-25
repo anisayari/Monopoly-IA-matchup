@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:21:27.176394",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Sortir du menu trading est indispensable pour enfin accéder à la gestion des propriétés et construire un maximum de maisons sur orange et rose.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

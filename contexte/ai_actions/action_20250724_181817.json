@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:18:15.609565",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Je suis en prison et n'ai pas de carte 'Libéré de Prison'. Tenter de faire un double est le meilleur moyen de sortir sans dépenser d'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 34,
+    "money": {
+      "GPT": 69,
+      "Gemini": 102
+    }
+  }
+}

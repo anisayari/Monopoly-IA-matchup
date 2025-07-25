@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:49:48.271509",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Il faut accéder à la gestion des propriétés pour placer des maisons. Restez stratégique et optimisez chaque dollar disponible sur orange et rose.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

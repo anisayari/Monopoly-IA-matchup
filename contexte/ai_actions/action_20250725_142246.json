@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:22:44.671365",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Encore cette station ! Je dois sortir pour accéder à l'interface de gestion de MES propriétés et lever l'hypothèque de Pentonville Road.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 78,
+    "money": {
+      "GPT": 13,
+      "Claude": 64
+    }
+  }
+}

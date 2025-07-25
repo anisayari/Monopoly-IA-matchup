@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:37:10.477492",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois investir en construisant des maisons sur mes deux monopoles (rose et orange) afin d'augmenter mes revenus potentiels et mettre la pression sur Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 11,
+    "money": {
+      "GPT": 413,
+      "Claude": 64
+    }
+  }
+}

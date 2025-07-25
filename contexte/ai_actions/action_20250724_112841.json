@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:28:39.710036",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter le gain de Chance et passer à l'action. Il n'y a pas d'autre option pertinente ici.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1130,
+      "Gemini": 1500
+    }
+  }
+}

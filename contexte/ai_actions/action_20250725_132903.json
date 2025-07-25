@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:29:00.897610",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je veux revenir à la gestion de mes propriétés pour construire des maisons sur mon monopole rose — meilleure option offensive.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 39,
+    "money": {
+      "GPT": 563,
+      "Claude": 25
+    }
+  }
+}

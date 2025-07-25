@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:53:43.228463",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois absolument accéder à la gestion de propriétés pour investir maintenant en maisons sur mes monopoles, c'est la clé du rapport de force.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

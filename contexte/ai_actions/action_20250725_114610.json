@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:46:07.678407",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Je maximise la sécurité de ma trésorerie tant que je suis en prison. Claude a peu de cash et aucune menace immédiate de monopole.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 1045,
+      "Claude": 125
+    }
+  }
+}

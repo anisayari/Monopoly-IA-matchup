@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T10:24:16.691062",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Le jeu est bloqué par un popup générique. L'échange pré-négocié est la prochaine étape logique pour obtenir un monopole.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

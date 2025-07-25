@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:25:58.719780",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune amélioration immédiate possible. J’attends d’atterrir sur une propriété intéressante ou un événement favorable, tout en conservant mon maigre cash.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 87,
+    "money": {
+      "GPT": 82,
+      "Gemini": 102
+    }
+  }
+}

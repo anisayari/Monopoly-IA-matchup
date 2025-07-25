@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:37:00.317322",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai une trésorerie solide et il reste de nombreuses propriétés abordables à acquérir. Un nouveau lancer maximise mon potentiel d'achat ou de négociation sur ce tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 25,
+    "money": {
+      "GPT": 804,
+      "Claude": 175
+    }
+  }
+}

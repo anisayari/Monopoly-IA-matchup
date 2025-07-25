@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:00:29.053287",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois 50£ avec 32£. Vendre une maison sur mon monopole rouge est la meilleure façon de lever les fonds nécessaires sans hypothéquer une propriété entière.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 32
+    }
+  }
+}

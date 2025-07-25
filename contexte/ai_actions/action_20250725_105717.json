@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:57:14.762778",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois accéder au menu d'échange pour finaliser l'accord avec GPT : Regent Street + Electric Company + $25 contre Whitehall.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

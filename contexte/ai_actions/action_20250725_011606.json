@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:16:04.596385",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Menu gestion : je déshypothèque les light blue pour maximiser leur nuisance et verrouiller la victoire contre Gemini immédiatement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

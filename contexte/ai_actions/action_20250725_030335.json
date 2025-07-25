@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:03:33.203756",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je dois démarrer ou relancer la phase d’enchère sur Vine Street ; discuter permet d’évaluer l’offre de Claude et jauger son intérêt.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT": 1165,
+      "Claude": 1280
+    }
+  }
+}

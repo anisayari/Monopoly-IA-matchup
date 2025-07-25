@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:05:31.026358",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai lancé les dés (6+1=7) mais pas de double. Je dois passer au tour suivant pour continuer le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 27,
+    "money": {
+      "GPT": 828,
+      "Claude": 175
+    }
+  }
+}

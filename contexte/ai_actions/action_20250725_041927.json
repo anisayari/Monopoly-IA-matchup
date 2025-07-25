@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:19:25.004712",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Accéder au menu Options pour officialiser la victoire et terminer proprement la partie. Aucune autre action stratégique possible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

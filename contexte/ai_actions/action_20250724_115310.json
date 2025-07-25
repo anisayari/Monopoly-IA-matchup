@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:53:08.063243",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon tour est terminé après avoir tiré une carte Caisse de Communauté et je n'ai pas d'autres actions immédiates.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 919,
+      "Gemini": 796
+    }
+  }
+}

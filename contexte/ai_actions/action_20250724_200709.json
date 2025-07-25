@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:07:07.167052",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Vine Street (orange) pour $100, obtenir un maximum de liquidités rapidement et retarder la banqueroute. Survie et flexibilité absolues.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 442,
+      "Gemini": 407
+    }
+  }
+}

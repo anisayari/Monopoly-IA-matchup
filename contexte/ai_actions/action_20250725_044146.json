@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:41:43.879266",
+  "trigger": "Force",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Sélectionner Options ferme officiellement le jeu et valide la victoire après une partie complète. Aucun mouvement ou négociation n'est possible ailleurs dans ce menu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

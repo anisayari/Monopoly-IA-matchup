@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:48:45.899121",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je veux retourner à la gestion pour investir mon cash en levant l'hypothèque sur Euston Road ou construire une maison supplémentaire si viable.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 171,
+      "Gemini": 146
+    }
+  }
+}

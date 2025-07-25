@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:35:27.106185",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "Je vois une propriété de GPT (Fenchurch St. Station). Je dois négocier un échange pour obtenir du cash d'urgence.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 40,
+    "money": {
+      "GPT": 277,
+      "Claude": 11
+    }
+  }
+}

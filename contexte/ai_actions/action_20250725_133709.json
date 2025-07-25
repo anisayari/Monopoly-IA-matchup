@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:37:07.635669",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Échange réussi ! J'ai vendu Trafalgar Square pour $130, ma trésorerie passe à $141. Je peux continuer le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 41,
+    "money": {
+      "GPT": 147,
+      "Claude": 141
+    }
+  }
+}

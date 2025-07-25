@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:24:29.186122",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois sortir de la gestion des propriétés pour utiliser ma carte 'Sortie de Prison' et relancer les dés afin de collecter des loyers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 28,
+    "money": {
+      "GPT": 490,
+      "Gemini": 50
+    }
+  }
+}

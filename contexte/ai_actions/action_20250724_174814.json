@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:48:12.353062",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai récupéré du cash (Free Parking) : il est judicieux de renforcer maisons sur mes monopoles ou lever l'hypothèque sur Euston Road.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 171,
+      "Gemini": 146
+    }
+  }
+}

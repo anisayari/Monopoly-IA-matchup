@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:55:12.640373",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Je déclenche une enchère pour tenter d'acquérir Bow Street à prix réduit. Claude a peu de liquidités ($125), donc il ne pourra pas beaucoup surenchérir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 1045,
+      "Claude": 125
+    }
+  }
+}

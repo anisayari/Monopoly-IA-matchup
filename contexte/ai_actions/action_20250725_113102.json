@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:31:00.365730",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai obtenu un double (1+1=2), je dois relancer les dés obligatoirement selon les règles du Monopoly.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "GPT": 1045,
+      "Claude": 315
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:37:18.204991",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois retourner à l’écran de gestion de propriétés pour lever l’hypothèque d’une orange. Cet écran station ne sert pas mes intérêts immédiats.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 125,
+    "money": {
+      "GPT": 248,
+      "Gemini": 68
+    }
+  }
+}

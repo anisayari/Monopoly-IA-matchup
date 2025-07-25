@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:58:43.340303",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Pour accéder à la gestion des propriétés et construire sur les monopoles orange et rose, il faut impérativement quitter le menu trading.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T10:00:31.958090",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Auction ",
+  "reason": "Acheter Mayfair me laisserait avec trop peu d'argent. Il est préférable de l'envoyer aux enchères pour conserver des liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

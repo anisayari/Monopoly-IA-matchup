@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:08:10.838028",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois vendre une maison sur Fleet Street pour couvrir le loyer de 26$. Mes fonds sont insuffisants pour l'instant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 77,
+    "money": {
+      "GPT": 134,
+      "Gemini": 23
+    }
+  }
+}

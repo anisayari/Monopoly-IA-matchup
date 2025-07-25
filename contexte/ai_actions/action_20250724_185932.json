@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:59:30.684137",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma priorité reste la gestion prudente des finances. Il n'est pas opportun d'investir ou d'échanger maintenant vu les risques importants sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 66,
+    "money": {
+      "GPT": 184,
+      "Gemini": 73
+    }
+  }
+}

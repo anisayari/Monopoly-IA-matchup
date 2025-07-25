@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T10:15:28.722763",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai terminé la conversation. Il est temps de revenir à la gestion de mes propriétés pour progresser vers les monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

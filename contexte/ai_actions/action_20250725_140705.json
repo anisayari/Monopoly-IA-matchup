@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:07:02.965612",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accord de principe avec GPT : ma Coventry Street contre sa Pall Mall. Je dois d'abord hypothéquer pour avoir des liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 65,
+    "money": {
+      "GPT": 17,
+      "Claude": 180
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:42:15.292014",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois hypothéquer ou vendre une maison pour payer le loyer et éviter l'élimination. Optimiser ma liquidation est impératif.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 101,
+    "money": {
+      "GPT": 32,
+      "Gemini": 87
+    }
+  }
+}

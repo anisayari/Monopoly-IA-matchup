@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:36:05.188932",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes fonds sont bas et je suis en prison. La meilleure stratégie est de tenter de faire un double pour sortir gratuitement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 37
+    }
+  }
+}

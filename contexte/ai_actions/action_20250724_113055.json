@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:30:53.135920",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Buy ",
+    "Auction "
+  ],
+  "decision": "Buy ",
+  "reason": "Acquérir des propriétés tôt est crucial pour établir des revenus et des monopoles. Whitehall est un bon investissement initial.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1140,
+      "Gemini": 1540
+    }
+  }
+}

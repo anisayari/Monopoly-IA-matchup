@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:47:55.977679",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma trésorerie et mes développements sont optimisés. Il est trop risqué de dépenser plus. J'attends que Gemini tombe sur mes maisons pour renflouer mon capital.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 20,
+    "money": {
+      "GPT": 121,
+      "Gemini": 5
+    }
+  }
+}

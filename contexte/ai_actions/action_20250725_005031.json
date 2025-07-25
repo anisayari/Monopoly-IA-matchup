@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:50:29.614491",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accéder au menu gestion est obligatoire pour lever hypothèques light blue—action prioritaire pour maximiser mes revenus et menacer Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

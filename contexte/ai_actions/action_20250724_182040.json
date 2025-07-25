@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:20:38.369600",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai pas les fonds nécessaires ($102 vs $280) pour acheter Piccadilly. La propriété doit donc être mise aux enchères.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 42,
+    "money": {
+      "GPT": 69,
+      "Gemini": 102
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:55:06.263998",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Le menu trading ne permet pas la construction. Quitter pour revenir à la vraie gestion et enfin poser des maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

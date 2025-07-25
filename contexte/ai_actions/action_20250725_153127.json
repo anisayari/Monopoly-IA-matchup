@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:31:25.476311",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "back",
+  "reason": "Je peux payer ma dette ₥75 avec mes $113 disponibles, pas besoin d'hypothéquer",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "GPT": 177,
+      "Claude": 113
+    }
+  }
+}

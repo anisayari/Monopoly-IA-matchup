@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:44:08.332616",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il faut accéder à la gestion immédiatement pour lever les hypothèques light blue et doper mes revenus. Clé pour la victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

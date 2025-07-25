@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:50:27.298297",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois valider la carte Chance pour poursuivre mon tour et voir si je passe par GO, encaissant 200$. Cette ressource serait vitale pour investir plus tard.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 62,
+    "money": {
+      "GPT": 124,
+      "Gemini": 83
+    }
+  }
+}

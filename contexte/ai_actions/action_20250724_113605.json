@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:36:03.186332",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Pas d'action immédiate. Il est stratégique d’attendre de nouvelles opportunités d’achat ou d’échange tout en surveillant la construction de Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1225,
+      "Gemini": 920
+    }
+  }
+}

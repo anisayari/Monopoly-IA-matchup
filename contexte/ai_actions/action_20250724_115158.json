@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:51:56.239462",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je dois avancer pour maximiser mes chances d’acheter d’autres propriétés comme les bleues claires ou Bow Street, tout en gardant l’initiative sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 919,
+      "Gemini": 786
+    }
+  }
+}

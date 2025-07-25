@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:10:55.540187",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Excellent ! J'ai négocié un échange avantageux : mes pinks + Strand contre sa Pentonville Road. Je continue pour concrétiser ce deal.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT": 874,
+      "Claude": 55
+    }
+  }
+}

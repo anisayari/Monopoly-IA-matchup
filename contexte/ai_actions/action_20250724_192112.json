@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:21:09.914412",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai déshypothéqué Mayfair. Mes fonds sont maintenant bas et je ne peux plus agir ce tour. Je passe pour optimiser mes prochains lancers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 85,
+    "money": {
+      "GPT": 160,
+      "Gemini": 407
+    }
+  }
+}

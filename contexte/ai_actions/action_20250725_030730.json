@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:07:28.048430",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je dois discuter pour pousser Claude à révéler son intérêt ou maximiser son enchère afin qu'il dépense plus sur Coventry Street.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 725,
+      "Claude": 1280
+    }
+  }
+}

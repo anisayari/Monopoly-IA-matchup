@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T11:14:40.886771",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Je suis en bonne position et il n'y a pas de raison d'arrêter. Je poursuis le jeu pour construire mon empire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 647,
+      "Gemini": 748
+    }
+  }
+}

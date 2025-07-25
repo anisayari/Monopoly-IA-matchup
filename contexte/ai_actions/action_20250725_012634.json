@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:26:32.018754",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Sans cash, la meilleure stratégie est d'attendre des rentrées via mes maisons. Patience pour piéger Gemini sur mes couleurs rentables.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

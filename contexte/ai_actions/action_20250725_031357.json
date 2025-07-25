@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:13:55.318826",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Carte 'Sortir de prison gratuitement' obtenue, utile pour la stratégie future.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 725,
+      "Claude": 1015
+    }
+  }
+}

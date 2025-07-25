@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:56:09.682140",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je n'ai pas assez de liquidités pour ajouter plusieurs maisons sans risquer de manquer de cash pour payer les loyers adverses. Attente d'un meilleur moment stratégique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

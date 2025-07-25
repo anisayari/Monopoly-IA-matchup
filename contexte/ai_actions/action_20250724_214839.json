@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:48:37.537176",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Mes fonds sont insuffisants pour couvrir la dette de loyer. Je dois hypothéquer des propriétés pour survivre et éviter la faillite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 135,
+    "money": {
+      "GPT": 89,
+      "Gemini": 18
+    }
+  }
+}

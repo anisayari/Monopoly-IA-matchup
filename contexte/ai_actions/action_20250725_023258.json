@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:32:56.628715",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai les fonds pour ajouter des maisons à mon monopole Rouge, augmentant significativement les loyers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "GPT": 21,
+      "Gemini": 125
+    }
+  }
+}

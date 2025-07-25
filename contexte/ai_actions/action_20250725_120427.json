@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:04:25.421769",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma position de force, mon cash et l'absence de menace immédiate justifient de poursuivre. J'économise pour atteindre un éventuel monopole orange ou d'autres acquisitions.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 21,
+    "money": {
+      "GPT": 874,
+      "Claude": 55
+    }
+  }
+}

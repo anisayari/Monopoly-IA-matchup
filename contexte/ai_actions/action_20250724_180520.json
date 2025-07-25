@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:05:17.910012",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai $252, assez pour déshypothéquer Regent Street et construire sur mon monopole rouge pour augmenter les loyers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 29,
+    "money": {
+      "GPT": 29,
+      "Gemini": 252
+    }
+  }
+}

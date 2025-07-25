@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:23:10.594926",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je veux maximiser mes revenus en investissant sur mes monopoles roses, oranges et bruns tout en gérant mes options hypothéquées.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

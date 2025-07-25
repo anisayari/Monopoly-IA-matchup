@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:12:15.832797",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Je n'ai plus assez d'argent pour construire ou investir davantage pour ce tour. Retour au jeu pour optimiser mes prochains mouvements.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

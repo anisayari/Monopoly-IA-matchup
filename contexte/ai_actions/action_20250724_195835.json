@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:58:33.817060",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Initiation obligatoire de la phase d’enchère. Je veux faire monter le prix, limiter l’accès de Gemini, et saisir si bon marché.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 272,
+      "Gemini": 407
+    }
+  }
+}

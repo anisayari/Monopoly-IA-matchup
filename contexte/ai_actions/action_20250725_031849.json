@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:18:47.017033",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Old Kent Road est très peu cher et complète la première étape pour le monopole marron, permettant un rendement élevé à faible coût. Stratégique pour la victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT": 925,
+      "Claude": 1015
+    }
+  }
+}

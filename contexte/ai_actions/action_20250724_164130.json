@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:41:28.514425",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Sortir du menu trading pour accéder à la gestion immobilière et construire immédiatement sur orange puis rose : timing critique contre Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

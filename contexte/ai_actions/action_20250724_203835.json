@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:38:32.911428",
+  "trigger": "In Jail",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Bail Pay ",
+    "Roll Dice "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "Nouvelle tentative obligatoire pour sortir gratuitement : maximiser les chances de survie tout en gardant mes liquidités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 37
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:03:43.969298",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Je dois parler à GPT pour initier l'échange officiel : $275 de ma part pour sa Whitehall et compléter mon monopole rose.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

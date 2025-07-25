@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:12:36.574059",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter la gare assure un revenu et offre un fort potentiel stratégique si je parviens à contrôler plusieurs gares. Mes liquidités me le permettent en début de partie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1650,
+      "Claude": 1485
+    }
+  }
+}

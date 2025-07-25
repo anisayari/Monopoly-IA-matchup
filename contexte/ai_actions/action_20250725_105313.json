@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T08:53:11.100627",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Whitehall est une propriété à faible valeur stratégique ; forcer Claude à payer cher ou l’obtenir à bas prix maximise mes chances de profit.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "GPT": 1485,
+      "Claude": 210
+    }
+  }
+}

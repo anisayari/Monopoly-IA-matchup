@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:45:06.516433",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai déjà investi dans des maisons brown, il est temps d'attendre les prochains loyers vu mes liquidités limitées ($121). Passons au tour suivant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 121,
+      "Gemini": 5
+    }
+  }
+}

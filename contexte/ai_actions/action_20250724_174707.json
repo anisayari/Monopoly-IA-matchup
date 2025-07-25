@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:47:04.937271",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai les fonds ($196) pour acheter Fenchurch Street Station ($200) et la dette de $50 à payer. Le jeu n'offre que 'Pay' ou 'Trade' pour cette interaction, je vais 'Pay' pour acquérir la propriété et régler ma dette.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 121,
+      "Gemini": 196
+    }
+  }
+}

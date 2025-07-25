@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:39:39.384116",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec $254, je peux renforcer mes monopoles (roses/oranges) en construisant des maisons, maximisant le retour sur investissement avant le prochain tour adverse.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 254,
+      "Gemini": 46
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:45:48.949015",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Je dois contacter GPT pour finaliser notre échange Fleet Street contre $280 comme convenu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 17,
+    "money": {
+      "GPT": 86,
+      "Claude": 344
+    }
+  }
+}

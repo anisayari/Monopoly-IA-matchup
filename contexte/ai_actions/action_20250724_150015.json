@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:00:13.082684",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J’ai acquis une 2e gare. Je préserve mon cash pour saisir la prochaine propriété à bas prix ou préparer un échange stratégique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 7,
+    "money": {
+      "GPT": 206,
+      "Gemini": 214
+    }
+  }
+}

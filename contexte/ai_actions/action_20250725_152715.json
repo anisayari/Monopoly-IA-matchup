@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:27:13.408611",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Lever hypothèque Park Lane ($192) pour réactiver monopole dark_blue complet",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "GPT": 177,
+      "Claude": 186
+    }
+  }
+}

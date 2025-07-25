@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:00:59.789613",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter une gare est stratégique, surtout quand l'adversaire en possède déjà une. Cela ouvre la voie à un monopole de gares et génère des revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1165,
+      "Gemini": 1475
+    }
+  }
+}

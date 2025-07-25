@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:30:53.566080",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je suis en prison. Cette action confirme la réception de la notification et me prépare à la prochaine phase de décision pour ma sortie.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 152
+    }
+  }
+}

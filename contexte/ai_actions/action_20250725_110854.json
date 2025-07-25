@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:08:52.175077",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Je dois parler à GPT dans ce menu d'échange pour finaliser officiellement notre accord : $300 pour sa Whitehall.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

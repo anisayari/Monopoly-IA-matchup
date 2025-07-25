@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:16:07.386576",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Paiement du loyer inévitable. Je conserve un cash minimal mais survis, misant sur une rentrée future ou le prochain loyer adverse.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 86,
+    "money": {
+      "GPT": 82,
+      "Gemini": 22
+    }
+  }
+}

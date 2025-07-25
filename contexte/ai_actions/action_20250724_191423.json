@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:14:21.726159",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je peux investir dans mes monopoles roses ou oranges. Ajouter des maisons maintenant augmente fortement la pression sur Gemini et maximise mes revenus potentiels.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 82,
+    "money": {
+      "GPT": 360,
+      "Gemini": 57
+    }
+  }
+}

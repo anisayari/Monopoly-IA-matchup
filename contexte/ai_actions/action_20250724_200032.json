@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:00:29.981986",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Done "
+  ],
+  "decision": "Done ",
+  "reason": "Il ne faut surtout pas vendre mon set d’hôtel brown à ce prix. Je garde la force de mon quartier brown pour garder toute menace.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 272,
+      "Gemini": 407
+    }
+  }
+}

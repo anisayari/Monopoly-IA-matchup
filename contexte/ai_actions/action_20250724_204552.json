@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:45:50.201894",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Marylebone Station : c’est le choix optimal, gain rapide, impact minimisé sur mes revenus et mes menaces principales restent intactes.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 101,
+    "money": {
+      "GPT": 32,
+      "Gemini": 87
+    }
+  }
+}

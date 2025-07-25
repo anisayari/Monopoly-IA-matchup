@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:11:14.786703",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai obtenu la carte et n'ai pas d'autre action immédiate. Il est stratégique de passer mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 487,
+      "Gemini": 1253
+    }
+  }
+}

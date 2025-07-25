@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:10:08.566990",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Je dois négocier directement avec GPT pour proposer des échanges stratégiques qui m'aideront à améliorer ma situation financière.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 29,
+    "money": {
+      "GPT": 820,
+      "Claude": 83
+    }
+  }
+}

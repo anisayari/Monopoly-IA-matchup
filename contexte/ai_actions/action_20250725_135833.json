@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:58:31.636355",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J’ai le cash pour ajouter une deuxième maison sur chaque propriété rose : stratégie d’étouffement maximal contre Claude qui est presque ruiné.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 53,
+    "money": {
+      "GPT": 207,
+      "Claude": 130
+    }
+  }
+}

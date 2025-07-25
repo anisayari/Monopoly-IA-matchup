@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:19:42.539141",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Déshypothéquer Mayfair renforce ma position stratégique et me permet d'augmenter mes revenus futurs. J'ai les fonds nécessaires.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 85,
+    "money": {
+      "GPT": 160,
+      "Gemini": 257
+    }
+  }
+}

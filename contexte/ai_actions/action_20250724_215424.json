@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:54:22.266229",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai les fonds nécessaires pour payer le loyer de 32$. Payer immédiatement est l'action la plus directe et efficace.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 145,
+    "money": {
+      "GPT": 121,
+      "Gemini": 336
+    }
+  }
+}

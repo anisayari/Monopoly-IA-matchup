@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:44:57.916456",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Aucune action utile possible. Cancel termine efficacement, la victoire est déjà acquise. Pas de négociation ou optimisation nécessaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

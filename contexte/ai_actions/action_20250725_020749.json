@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:07:47.228341",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois hypothéquer une propriété non stratégique (ex: Bond Street ou une light_blue) pour obtenir du cash et maintenir ma survie/leverage sur mes couleurs maison.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 335
+    }
+  }
+}

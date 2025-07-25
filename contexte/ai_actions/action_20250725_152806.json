@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:28:03.934248",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Mayfair ($200) pour payer dette M75 et garder liquidités pour construire",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "GPT": 177,
+      "Claude": 186
+    }
+  }
+}

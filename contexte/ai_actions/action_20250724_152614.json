@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:26:12.625529",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J’ai un monopole rose et de la liquidité, il est stratégique d’investir dans des maisons pour maximiser mes revenus pendant que Gemini manque de cash.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 32,
+    "money": {
+      "GPT": 590,
+      "Gemini": 50
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:43:25.843146",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "J’hypothèque Euston Road (55$) : c’est un terrain bleu clair secondaire, encore hors flux crucial. Sécurité maximale face à la dette massive.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 247,
+      "Gemini": 407
+    }
+  }
+}

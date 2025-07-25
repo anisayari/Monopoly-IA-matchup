@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:13:59.628141",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Retour immédiat en gestion : lever hypothèques light blue reste la priorité absolue pour maximiser ma rentabilité et faire vaciller Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

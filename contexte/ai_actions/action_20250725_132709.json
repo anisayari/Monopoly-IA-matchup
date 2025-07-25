@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:27:07.461961",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Pas de double obtenu, je sors automatiquement de prison et passe mon tour. Ma trésorerie reste à $25.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 37,
+    "money": {
+      "GPT": 723,
+      "Claude": 25
+    }
+  }
+}

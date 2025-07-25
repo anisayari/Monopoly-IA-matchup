@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:27:14.632138",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il est urgent d’investir dans des maisons sur le groupe rose tant que Gemini n’a pas de quoi construire sur ses propres monopoles.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 32,
+    "money": {
+      "GPT": 590,
+      "Gemini": 50
+    }
+  }
+}

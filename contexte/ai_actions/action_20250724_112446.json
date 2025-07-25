@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:24:43.980925",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter le résultat initial des dés et commencer la partie. Il n'y a pas d'avantage stratégique à discuter maintenant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:45:48.745542",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je n'ai pas le monopole orange complet (il me manque Vine Street), ni le rouge. Je ne peux donc pas construire de maisons pour l'instant. Je retourne à la fenêtre principale.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT": 464,
+      "Gemini": 986
+    }
+  }
+}

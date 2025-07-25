@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:28:36.872265",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai déshypothéqué Regent Street. Je n'ai plus assez de fonds pour d'autres actions immobilières, il est temps de revenir au plateau.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 48,
+    "money": {
+      "GPT": 0,
+      "Gemini": 27
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:19:34.975524",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Claude n’a pas les moyens de surenchérir. Acheter Oxford Street ajoute une propriété rouge, bloque son monopole et diversifie mon portefeuille à faible risque.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 34,
+    "money": {
+      "GPT": 853,
+      "Claude": 25
+    }
+  }
+}

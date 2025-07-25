@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:24:39.867580",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "La transaction Oxford Street + $90 contre une station me donne du cash d'urgence et la possibilité d'obtenir un atout stratégique, évitant la faillite.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 160,
+      "Gemini": 407
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:04:14.893737",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai renforcé mon portefeuille en début de partie. Avançons rapidement pour saisir d'autres opportunités d'achat avant que l’adversaire ne bloque trop de cases.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 725,
+      "Gemini": 1275
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:39:47.069167",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Rien à faire sur cette fenêtre, je dois préserver mes 39$ et patienter. Prochaines actions lors d'une opportunité de cash ou d'un danger imminent.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 125,
+    "money": {
+      "GPT": 39,
+      "Gemini": 68
+    }
+  }
+}

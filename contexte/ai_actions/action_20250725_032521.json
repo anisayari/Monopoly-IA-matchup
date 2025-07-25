@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:25:18.828865",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action immédiate nécessaire. Il est crucial d’avancer pour tenter d’acheter Whitechapel Road et renforcer mon monopole marron.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 7,
+    "money": {
+      "GPT": 616,
+      "Claude": 1134
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:33:32.033373",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec seulement $25, je dois gérer mes propriétés, potentiellement hypothéquer pour générer du cash et préparer ma stratégie.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 24,
+    "money": {
+      "GPT": 904,
+      "Claude": 25
+    }
+  }
+}

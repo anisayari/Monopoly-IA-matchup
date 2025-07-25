@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:15:02.987544",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Avec $160 restants, je préserve un coussin de secours tout en ayant bien investi. Je reste flexible pour gérer loyers ou imprévus.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 82,
+    "money": {
+      "GPT": 160,
+      "Gemini": 57
+    }
+  }
+}

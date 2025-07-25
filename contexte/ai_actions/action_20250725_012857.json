@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:28:54.998234",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec un solde de 21$, je ne peux ni construire de maisons, ni lever d'hypothèques, ni acheter de nouvelles propriétés. Passer le tour est la seule option viable.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

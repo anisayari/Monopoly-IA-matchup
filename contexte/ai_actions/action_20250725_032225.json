@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:22:23.297063",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Engager Claude pour voir s’il mise fort me permet de jauger sa motivation sur la série light blue. Je peux saluer ou pousser à un prix élevé.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT": 865,
+      "Claude": 1115
+    }
+  }
+}

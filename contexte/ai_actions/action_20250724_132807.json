@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T11:28:04.944006",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Je dois sortir de cet écran pour accéder aux options d'hypothèque ou de vente afin de payer ma dette et éviter la faillite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 647,
+      "Gemini": 748
+    }
+  }
+}

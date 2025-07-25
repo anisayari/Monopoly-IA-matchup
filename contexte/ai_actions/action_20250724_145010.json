@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:50:08.667120",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action urgente, j’ai besoin de cash pour acheter les prochaines propriétés-clefs et rapprocher un monopole, surtout brown/light_blue.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 364,
+      "Gemini": 556
+    }
+  }
+}

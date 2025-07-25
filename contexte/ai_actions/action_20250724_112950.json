@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:29:48.277065",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Action automatique sur la case Community Chest, il est nécessaire d’accepter le gain et de poursuivre le tour sans délai.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1130,
+      "Gemini": 1550
+    }
+  }
+}

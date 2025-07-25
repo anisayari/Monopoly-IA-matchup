@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:35:49.752209",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois encore renforcer ma liquidité. Hypothéquer The Angel Islington ou Piccadilly (aucune maison dessus) sans sacrifier mes groupes critiques.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 186,
+      "Gemini": 407
+    }
+  }
+}

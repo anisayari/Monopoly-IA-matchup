@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T10:14:31.050797",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je confirme le popup pour accéder à l'écran des comptes et planifier la construction de mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

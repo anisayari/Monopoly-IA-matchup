@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:33:25.839937",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Avec $306, l’option la plus efficace est de conserver de la liquidité en prévision d’un éventuel loyer ou d’opportunités, car construire une maison coûte $100/unité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 306,
+      "Gemini": 34
+    }
+  }
+}

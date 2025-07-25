@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:19:02.743878",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accéder à la gestion immédiatement est crucial pour construire sur orange et rose avant que Gemini joue, optimisant ainsi mes chances d’encaisser un maximum.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

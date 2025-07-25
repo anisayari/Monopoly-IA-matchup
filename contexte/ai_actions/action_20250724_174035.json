@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:40:33.271147",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec $254, optimiser mes revenus en construisant une maison dans mon groupe orange boostera mes chances de ruiner Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 254,
+      "Gemini": 46
+    }
+  }
+}

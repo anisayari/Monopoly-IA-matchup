@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:58:44.953052",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes fonds sont insuffisants pour acheter ou lever des hypothèques. Je passe mon tour pour accumuler de l'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 66,
+    "money": {
+      "GPT": 184,
+      "Gemini": 73
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:56:43.749111",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je construis une maison sur Whitehall (rose). Avec le cash et risque adverse, cela maximise la menace sur Gemini et génère du cash-flow.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 572,
+      "Gemini": 407
+    }
+  }
+}

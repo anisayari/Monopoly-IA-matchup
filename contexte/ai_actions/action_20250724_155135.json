@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:51:33.670988",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Ce menu ne permet pas la gestion immobilière. Il faut accéder à la gestion de propriétés pour enfin placer des maisons et activer la vraie menace.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

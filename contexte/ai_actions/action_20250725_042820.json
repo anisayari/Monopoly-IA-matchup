@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:28:17.907742",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Aucune transaction ni négociation utile possible, partie dominée et verrouillée. Clôture en attente.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:08:49.418139",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec seulement $83, je dois gérer mes finances via le menu Accounts pour optimiser ma situation ou négocier.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 29,
+    "money": {
+      "GPT": 820,
+      "Claude": 83
+    }
+  }
+}

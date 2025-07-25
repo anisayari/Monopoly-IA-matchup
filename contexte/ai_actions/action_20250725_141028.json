@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:10:26.455566",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec $17, dépenser ou négocier n’a aucun sens actuellement : attendre, profiter de mes monopoles et guetter la faillite de Claude est optimal.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 70,
+    "money": {
+      "GPT": 17,
+      "Claude": 60
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:24:04.487902",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je possède déjà une light blue et viens d’acquérir Euston Road. Aller sur Accounts me permet d’envisager un échange ou l’achat stratégique d’un 3e light blue pour monopole.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 723,
+      "Claude": 25
+    }
+  }
+}

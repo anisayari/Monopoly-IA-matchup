@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:44:19.919849",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois renforcer mes monopoles (orange/pink/brown) par l'achat de maisons. Cela maximisera ma pression locative alors que l'adversaire est à sec.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 221,
+      "Gemini": 5
+    }
+  }
+}

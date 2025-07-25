@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:53:25.254940",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Il est obligatoire de payer les frais du Community Chest. Je conserve une trésorerie raisonnable pour encaisser les prochains loyers et événements.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 64,
+    "money": {
+      "GPT": 334,
+      "Gemini": 73
+    }
+  }
+}

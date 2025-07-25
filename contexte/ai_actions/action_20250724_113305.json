@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:33:03.147296",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai acheté une propriété, mon tour est terminé. Je dois passer la main à l'autre joueur.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1040,
+      "Gemini": 1180
+    }
+  }
+}

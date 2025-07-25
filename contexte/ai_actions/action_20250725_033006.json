@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:30:04.653537",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois négocier un échange avec GPT pour empêcher son monopole orange ou créer le mien.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 216,
+      "Claude": 914
+    }
+  }
+}

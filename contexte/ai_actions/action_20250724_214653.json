@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:46:51.785048",
+  "trigger": "In Jail",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Bail Pay ",
+    "Roll Dice "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "Tenter un double ne coûte rien et je dois préserver mon faible cash pour éviter la faillite. Attente stratégique en prison maximisée.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 133,
+    "money": {
+      "GPT": 39,
+      "Gemini": 68
+    }
+  }
+}

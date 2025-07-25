@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:38:57.308189",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai tiré un double, donc je peux rejouer. Profiter de cette chance pour potentiellement gagner des loyers ou acheter une propriété stratégique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 254,
+      "Gemini": 46
+    }
+  }
+}

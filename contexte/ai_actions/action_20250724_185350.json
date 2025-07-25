@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:53:48.796630",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai lancé un double, donc je peux rejouer immédiatement. Profiter de ce bonus pour progresser et maximiser mes revenus potentiels.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 64,
+    "money": {
+      "GPT": 284,
+      "Gemini": 73
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T10:03:30.030656",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Bankruptcy"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "Yes ",
+  "reason": "Je dois confirmer cette étape pour que l'enchère de Mayfair puisse se terminer et pour avancer dans le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

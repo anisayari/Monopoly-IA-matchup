@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:34:12.036981",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mieux vaut avancer sans négociation pour l’instant et maximiser mes prochaines acquisitions sur des cases libres.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1225,
+      "Gemini": 1180
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:10:27.221685",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai assez d'argent pour payer le loyer, puis déshypothéquer Regent Street afin de progresser vers le monopole vert.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 77,
+    "money": {
+      "GPT": 134,
+      "Gemini": 248
+    }
+  }
+}

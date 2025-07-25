@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:01:15.068330",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Ecran inutile ici, je dois retourner à la gestion \"manage_property\" pour lever les hypothèques ou passer à l'action sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

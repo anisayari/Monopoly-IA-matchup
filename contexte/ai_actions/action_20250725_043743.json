@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:37:40.946768",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Le jeu est conclu, aucune négociation ou action supplémentaire ne peut améliorer l’avantage. Rien de stratégique à faire dans ce menu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

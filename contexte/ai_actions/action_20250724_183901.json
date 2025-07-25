@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:38:59.753964",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Cash trop faible pour acquisition ou construction, priorité à la survie et la collecte de loyers adverses. Gestion prudente jusqu'à meilleure opportunité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 53,
+    "money": {
+      "GPT": 98,
+      "Gemini": 129
+    }
+  }
+}

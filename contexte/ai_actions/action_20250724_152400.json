@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T13:23:58.025853",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai la carte 'Sortie de Prison' et un monopole presque complet. Je dois gérer mes finances pour construire et me libérer si besoin.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 27,
+    "money": {
+      "GPT": 490,
+      "Gemini": 50
+    }
+  }
+}

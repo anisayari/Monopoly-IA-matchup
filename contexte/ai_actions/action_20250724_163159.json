@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:31:57.056895",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Gestion immobilière urgente pour placer maisons sur orange d'abord, puis rose, avant le tour critique de Gemini. Maximiser mes revenus rapidement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

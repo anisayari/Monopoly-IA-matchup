@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:47:22.728015",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai sélectionné la gestion, il faut maintenant valider et revenir en fenêtre principale pour continuer le paiement du loyer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 101,
+    "money": {
+      "GPT": 32,
+      "Gemini": 87
+    }
+  }
+}

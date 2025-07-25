@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:54:25.087435",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Doubles lancés : relancer pour maximiser mes achats et la probabilité de sécuriser une autre propriété clé.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 679,
+      "Gemini": 796
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:11:52.785220",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il est impératif d'hypothéquer Bond Street pour générer du cash, assurant ma survie immédiate et me permettant de faire face à d'éventuels loyers.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 335
+    }
+  }
+}

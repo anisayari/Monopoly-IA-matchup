@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:04:43.468931",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Première option disponible",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 24,
+    "money": {
+      "GPT": 46,
+      "Claude": 14
+    }
+  }
+}

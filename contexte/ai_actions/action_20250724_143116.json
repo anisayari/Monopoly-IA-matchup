@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:31:14.838711",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Je dois continuer la partie au plus vite pour exploiter les prochaines occasions d’achat et garder l’initiative face à Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 627,
+      "Gemini": 1353
+    }
+  }
+}

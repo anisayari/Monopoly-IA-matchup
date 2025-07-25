@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:17:30.179036",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Argent faible, constructions optimales placées. Je patiente, espérant que Gemini tombe sur mes rues pour renflouer mes finances rapidement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 69,
+      "Gemini": 102
+    }
+  }
+}

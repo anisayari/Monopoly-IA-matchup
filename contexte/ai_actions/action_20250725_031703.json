@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:17:01.201868",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Interface d'échange confuse, je reviens au menu principal pour continuer le jeu normalement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 725,
+      "Claude": 1015
+    }
+  }
+}

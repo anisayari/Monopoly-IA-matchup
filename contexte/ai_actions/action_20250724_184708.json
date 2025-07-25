@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:47:06.769644",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "La carte Chance me demande d'avancer à la gare la plus proche. Je n'ai pas d'autre choix que d'accepter l'action.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 61,
+    "money": {
+      "GPT": 124,
+      "Gemini": 103
+    }
+  }
+}

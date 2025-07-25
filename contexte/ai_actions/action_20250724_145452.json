@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:54:49.984714",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je dois rapidement avancer pour tenter d’acheter Whitechapel Road, Angel Islington ou Pentonville Road et viser un monopole accessible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "GPT": 384,
+      "Gemini": 356
+    }
+  }
+}

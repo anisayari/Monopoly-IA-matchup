@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:08:35.633267",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J’ai enfin accès à la gestion : lever l’hypothèque des light blue tout de suite pour maximiser mes revenus et verrouiller mon avantage.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:39:28.302146",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Ma trésorerie restante est trop faible pour d'autres investissements. Mieux vaut garder du cash pour éviter la faillite sur une case malchanceuse.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 11,
+    "money": {
+      "GPT": 113,
+      "Claude": 64
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:26:03.747932",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai obtenu un double au dernier lancer. Lancer à nouveau maximise mes chances d'obtenir plus de propriétés disponibles.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1265,
+      "Claude": 290
+    }
+  }
+}

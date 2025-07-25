@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:34:38.180326",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Tant que je ne peux pas trader, je dois sécuriser du cash. Hypothèque Euston Road (50$), priorité à la survie immédiate sans toucher aux meilleures lignes.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 86,
+      "Gemini": 407
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:49:11.509072",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec un bonus de Free Parking, je dois lever l'hypothèque d'Euston Road pour renforcer ma rentabilité et remonter en cashflow.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 171,
+      "Gemini": 146
+    }
+  }
+}

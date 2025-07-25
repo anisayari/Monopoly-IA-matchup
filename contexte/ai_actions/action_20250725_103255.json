@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:32:53.239710",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Analyser mes propriétés et évaluer opportunités d'échange avec Claude pour créer monopoles",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT": 1500,
+      "Claude": 935
+    }
+  }
+}

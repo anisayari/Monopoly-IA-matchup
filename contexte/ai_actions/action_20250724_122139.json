@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T10:21:37.432220",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Un accord d'échange a été conclu durant la conversation. Je dois tenter d'initier cet échange pour avancer mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

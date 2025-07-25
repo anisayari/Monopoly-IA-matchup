@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:16:53.293102",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Claude n'a plus aucune chance ni propriété. Je reste en contrôle, la partie est virtuellement gagnée. Pas besoin d'agir davantage.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

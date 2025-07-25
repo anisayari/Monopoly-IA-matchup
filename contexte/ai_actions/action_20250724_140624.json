@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:06:22.039321",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai acheté plusieurs propriétés clés et mon cash reste suffisant. Enchaînons les tours pour maximiser mes opportunités d’achat lors du prochain passage.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 465,
+      "Gemini": 1275
+    }
+  }
+}

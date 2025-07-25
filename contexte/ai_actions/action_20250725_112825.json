@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:28:22.910681",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "En prison, rester passif maximise ma trésorerie et minimise les risques. J’attends le prochain tour pour relancer ou tenter une sortie opportuniste.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1240,
+      "Claude": 315
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:41:21.262338",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "La fenêtre proposée concerne la gare et je ne peux rien optimiser pour l'instant. Mieux vaut retourner à la gestion principale pour investir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 221,
+      "Gemini": 5
+    }
+  }
+}

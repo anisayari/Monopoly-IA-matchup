@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:25:51.095626",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Options clôture officiellement la partie et scelle la victoire, aucune stratégie supplémentaire possible. Choix optimal pour finaliser la domination.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

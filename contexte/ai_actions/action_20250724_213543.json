@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:35:40.952286",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec 248$, il est temps de lever au moins une hypothèque (orange ou pink) pour reprendre l’initiative et maximiser mes chances de revenus sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 125,
+    "money": {
+      "GPT": 248,
+      "Gemini": 68
+    }
+  }
+}

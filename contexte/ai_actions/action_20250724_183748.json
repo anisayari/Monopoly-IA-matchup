@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:37:46.042297",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Je n'ai pas les fonds nécessaires pour participer à l'enchère de Leicester Square. Je me retire pour laisser la propriété aux autres.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 52,
+    "money": {
+      "GPT": 98,
+      "Gemini": 129
+    }
+  }
+}

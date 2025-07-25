@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:43:43.336800",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Construire des maisons sur bruns, oranges et roses pour transformer cash en loyers élevés et piéger Gemini à court terme. Maximisation de la pression.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 60,
+    "money": {
+      "GPT": 324,
+      "Gemini": 103
+    }
+  }
+}

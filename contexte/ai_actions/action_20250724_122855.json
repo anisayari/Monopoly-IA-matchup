@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T10:28:53.610792",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Le popup est bloquant et ne permet pas d'avancer l'échange convenu. Annuler est la seule option pour débloquer le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

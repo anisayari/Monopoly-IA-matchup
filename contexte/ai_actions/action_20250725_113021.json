@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:30:19.310521",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je dois communiquer avec GPT pendant l'enchère pour négocier ou voir s'il compte enchérir sur Pentonville Road.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1240,
+      "Claude": 315
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:44:41.278964",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "J’hypothèque maintenant The Angel Islington (+50$). Cela protège mes groupes à maisons, priorité à la résistance sans toucher au flux principal.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 247,
+      "Gemini": 407
+    }
+  }
+}

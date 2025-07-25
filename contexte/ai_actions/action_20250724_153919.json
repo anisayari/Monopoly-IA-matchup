@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:39:17.652377",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois acquérir Trafalgar Square pour compléter mon monopole rouge, ma meilleure opportunité de générer des revenus élevés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 35,
+    "money": {
+      "GPT": 306,
+      "Gemini": 234
+    }
+  }
+}

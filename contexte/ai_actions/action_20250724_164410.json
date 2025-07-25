@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:44:08.703646",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Sortir du menu trading est nécessaire pour accéder enfin à la gestion et acheter immédiatement des maisons sur orange puis rose.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

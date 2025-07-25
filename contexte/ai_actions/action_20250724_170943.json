@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:09:41.402064",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je n'ai pas pu gérer mes propriétés par manque de fonds. Il est préférable de passer mon tour et d'attendre de meilleurs revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 246,
+      "Gemini": 124
+    }
+  }
+}

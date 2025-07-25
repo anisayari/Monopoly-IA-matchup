@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:06:46.342153",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai déjà renforcé mes brunes. Je conserve du cash pour éviter d'être trop vulnérable aux imprévus (cartes/louer). Priorité à la sécurité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 75,
+    "money": {
+      "GPT": 134,
+      "Gemini": 23
+    }
+  }
+}

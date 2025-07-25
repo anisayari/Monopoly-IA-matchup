@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:33:49.565698",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je garde ma trésorerie : pas assez pour une 2e maison partout et mieux vaut attendre un choc de liquidité chez Gemini ou une opportunité d’achat.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 306,
+      "Gemini": 34
+    }
+  }
+}

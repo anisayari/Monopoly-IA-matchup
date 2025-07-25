@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:52:45.716676",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je collecte l'argent de la carte Caisse de Communauté. C'est un bonus bienvenu pour mes finances.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 919,
+      "Gemini": 786
+    }
+  }
+}

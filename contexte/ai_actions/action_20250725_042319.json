@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:23:17.339134",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Il reste seulement à attendre la clôture du jeu, aucun échange ou mouvement possible. La victoire est totale.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

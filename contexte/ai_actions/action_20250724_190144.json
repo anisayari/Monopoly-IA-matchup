@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:01:42.863256",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Gemini est vulnérable. Je dois optimiser mes maisons sur mes monopoles tant qu’il ne peut pas surenchérir, maximisant ainsi mes chances de le faire tomber.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 75,
+    "money": {
+      "GPT": 234,
+      "Gemini": 23
+    }
+  }
+}

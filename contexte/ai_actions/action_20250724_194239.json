@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:42:37.409815",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois encore monter la trésorerie. J’hypothèque The Angel Islington, terrain peu stratégique, avant d'impacter des groupes centraux.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 302,
+      "Gemini": 407
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:23:20.323540",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je suis en prison et mes fonds sont trop bas pour déshypothéquer ou construire. Je dois passer mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 110,
+    "money": {
+      "GPT": 14,
+      "Gemini": 52
+    }
+  }
+}

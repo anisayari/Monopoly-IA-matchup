@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:36:35.056161",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J’accède au menu gestion pour lever les hypothèques light blue, maximiser mon potentiel de loyer et passer à l’offensive.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

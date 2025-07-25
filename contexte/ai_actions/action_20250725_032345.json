@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:23:43.328810",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je paie les 6$ de loyer obligatoire pour Euston Road appartenant à GPT.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 7,
+    "money": {
+      "GPT": 641,
+      "Claude": 1109
+    }
+  }
+}

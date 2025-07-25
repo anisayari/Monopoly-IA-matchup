@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:16:31.408516",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement $25 restants, je finis mon tour. J'ai bloqué le monopole orange de GPT avec Trafalgar Square.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 32,
+    "money": {
+      "GPT": 853,
+      "Claude": 25
+    }
+  }
+}

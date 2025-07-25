@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:08:41.366222",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois investir dans des maisons sur mes monopoles brown/orange/pink pour maximiser mes loyers et profiter de la fragilité financière de Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

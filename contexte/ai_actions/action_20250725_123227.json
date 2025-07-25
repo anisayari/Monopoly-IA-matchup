@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T10:32:25.487521",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Je dois contacter GPT pour initier l'échange que nous avons convenu : mes pinks + Strand contre sa Pentonville Road.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT": 874,
+      "Claude": 55
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:36:54.161453",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Avec $326, priorité à lever les hypothèques Euston Road et Angel Islington (110$) pour regagner du flux sur les bleus clairs, puis réserve pour urgences.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 326,
+      "Gemini": 407
+    }
+  }
+}

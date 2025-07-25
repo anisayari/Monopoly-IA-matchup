@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:48:56.311468",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai atterri sur ma propre propriété et mes fonds sont faibles. Le mieux est de passer mon tour pour accumuler des liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 37
+    }
+  }
+}

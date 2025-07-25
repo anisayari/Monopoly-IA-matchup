@@ -30,14 +30,21 @@ from dotenv import load_dotenv
 # Charger les variables d'environnement depuis .env
 load_dotenv()
 
-CHEAT_MODE = True
-ENABLE_TTS = True
+CHEAT_MODE = False
+ENABLE_TTS = False
 
 class MonopolyHUD(BaseModel):
     popup_title: str = Field(..., description="Title of the popup if there is one.")
     popup_text: str = Field(..., description="Text of the popup if there is one.")
     action_buttons: List[str] = Field(..., description="List of available action buttons.")
-    
+
+class MonopolyHUD_you_owe(BaseModel):
+    popup_title: str = Field(..., description="Title of the popup if there is one.")
+    popup_text: str = Field(..., description="Text of the popup if there is one.")
+    you_owe_popup: str = Field(..., description="You owe popup if there is one, with the amount of money owed, return empty string if there is no 'You owe' popup.")
+    action_buttons: List[str] = Field(..., description="List of available action buttons.")
+
+
 class AIService:
     """Service IA pour prendre des décisions dans Monopoly"""
     
@@ -204,7 +211,7 @@ class AIService:
             # Ignorer les erreurs si le monitor n'est pas lancé
             pass
     
-    def _extract_information_from_screenshot(self, game_context: Dict, screenshot_base64: str) -> Dict:
+    def _extract_information_from_screenshot(self, game_context: Dict, screenshot_base64: str, you_owe) -> Dict:
         """
         Extrait les informations de la capture d'écran
         """
@@ -257,7 +264,7 @@ class AIService:
                     ],
                 }
             ],
-            response_format=MonopolyHUD,
+            response_format=MonopolyHUD if not you_owe else MonopolyHUD_you_owe,
             store=True
         )
 
@@ -273,7 +280,7 @@ class AIService:
             print(hud_data.parsed.model_dump_json())
         return hud_data.parsed
 
-    def make_decision(self, popup_text: str, options: List[str], game_context: Dict, category: str, screenshot_base64: str) -> Dict:
+    def make_decision(self, popup_text: str, options: List[str], game_context: Dict, category: str, screenshot_base64: str, you_owe: bool = False) -> Dict:
         """
         Prend une décision basée sur le contexte
         
@@ -281,6 +288,9 @@ class AIService:
             popup_text: Le texte du popup
             options: Liste des options disponibles (strings)
             game_context: Contexte complet du jeu
+            category: Catégorie du popup
+            screenshot_base64: Screenshot en base64
+            you_owe: Flag indiquant si "You owe" est détecté dans la RAM
             
         Returns:
             Dict avec 'decision', 'reason', 'confidence'
@@ -305,8 +315,13 @@ class AIService:
             model = game_context.get('players', {}).get(current_player, {}).get('ai_model', "gpt-4.1-mini")
             
             hud_data = None
-            if category in ['chance', 'community_chest', 'in_jail', 'go_to_jail', 'buy', 'pay_bail', 'pay_rent', 'pause']:
-                hud_data = self._extract_information_from_screenshot(game_context, screenshot_base64)
+            if category in ['chance', 'community_chest', 'in_jail', 'go_to_jail', 'buy', 'pay_bail', 'pay_rent', 'pause'] or (category=="property" and you_owe):
+                hud_data = self._extract_information_from_screenshot(game_context, screenshot_base64, (category=="property" and you_owe))
+            
+            # Afficher le statut "You owe" si détecté
+            if you_owe:
+                self.logger.info(f"💰 You owe détecté pour {player_name}!")
+                print(f"[AI Service] You owe: True - Le joueur {player_name} a une dette")
             
             # Envoyer la pensée d'analyse au monitor de chat
             self._send_to_monitor('thought', {
@@ -316,7 +331,8 @@ class AIService:
                     'popup': hud_data.popup_text if hud_data else popup_text,
                     'options': options,
                     'options_count': len(options),
-                    'argent': game_context.get('players', {}).get(current_player, {}).get('money', 0)
+                    'argent': game_context.get('players', {}).get(current_player, {}).get('money', 0),
+                    'you_owe': you_owe  # Ajouter le flag dans la pensée
                 },
                 'context': {
                     'tour': game_context.get('global', {}).get('current_turn', 0),
@@ -353,6 +369,7 @@ class AIService:
     - Titre du popup: "{hud_data.popup_title if hud_data else "Aucun titre"}"
     - Texte du popup: "{hud_data.popup_text if hud_data else popup_text}"
     - Options disponibles: {', '.join(extended_options)}
+    {f'- Tu as une dette à payer: {hud_data.you_owe_popup}' if hud_data and hasattr(hud_data, "you_owe_popup") and hud_data.you_owe_popup else ""}
 </popup_data>
 
 <chat_global>
@@ -429,7 +446,7 @@ Choisis la meilleure option stratégique."""
                 extended_options = ["talk_to_other_players"]
 
             if is_property_management_available:
-                talk_to_other_players_message += "\nTu es actuellement sur la fenêtre de gestion de propriétés, tu peux utiliser la decision `manage_property` pour acheter, vendre, hypotéquer, dés-hypotéquer des propriétés à partir de cette fenêtre ou tu peux faire retour à la fenêtre principale en utilisant la decision `back` quand tu as terminé."
+                talk_to_other_players_message += "\nTu es actuellement sur la fenêtre de gestion de propriétés (pour construire !!), renvoi la decision `make_property_management` pour acheter, vendre, hypotéquer, dés-hypotéquer des propriétés à partir de cette fenêtre ou tu peux faire retour à la fenêtre principale en utilisant la decision `back` pour ne pas managé tes propriétés. Tu dois renvoyer la décision 'make_property_management' dans le json pour te permettre d'initier ici la gestion de tes propriétés , clic sur back uniquement quand tu as fini ou si tu changes d'avis! Tu peux aussi toujours décider de 'trade' pour échanger / discuter avec l'autre IA adverse. "
                 extended_options.append("manage_property")
                 
             if is_next_turn_available:
@@ -464,7 +481,7 @@ Choisis la meilleure option stratégique."""
                 "required": ["decision", "reason", "confidence", "chat_message"],
                 "additionalProperties": False
             }
-            system_prompt = f"""Tu es une IA qui joue au Monopoly dans une compétition contre une autre IA. 
+            system_prompt = f"""Tu es une IA qui joue au Monopoly contre une autre IA dans une itnerface où tu dois prendre des décisions pour jouer sur la Wii, tu es guidé pour prendre des décisions dans tes messages et ton prompts system. 
             Ton objectif est de GAGNER.
 
 Tu as accés au contexte du jeu entre chaque tour. Et tu dois prendre des décisions en fonctions de tes options.
@@ -520,8 +537,23 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             
             # Appeler l'API avec Structured Outputs
             
-            response = ai_client.chat.completions.create(**request_data)
-            print(f"-------------- \n response {response}")
+            # Retry logic with exponential backoff
+            max_retries = 10
+            retry_delay = 2  # seconds
+            
+            for attempt in range(max_retries):
+                try:
+                    response = ai_client.chat.completions.create(**request_data)
+                    print(f"-------------- \n response {response}")
+                    break  # Success, exit retry loop
+                except Exception as e:
+                    if attempt < max_retries - 1:
+                        self.logger.warning(f"⚠️  API call failed (attempt {attempt + 1}/{max_retries}): {e}")
+                        self.logger.info(f"⏳ Retrying in {retry_delay} seconds...")
+                        time.sleep(retry_delay)
+                    else:
+                        self.logger.error(f"❌ API call failed after {max_retries} attempts")
+                        raise
             # Parser la réponse
             result = json.loads(response.choices[0].message.content)
             
@@ -810,8 +842,12 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
             current_player = game_context.get('global', {}).get('current_player', 'Unknown')
             current_player_position = players.get(current_player, {}).get('current_space', 'Unknown')
             # Récupérer la propriété en cours d'enchère
+            print(f"[DEBUG] Position du joueur pour l'enchère: {current_player_position}")
             current_property = property_manager.get_property_details(current_player_position)
-            context_str += f"\nEnchère en cours:\nPropriété en cours d'enchère: {current_property.get('name', 'Unknown')} (Valeur: ${current_property.get('value', 'Unknown')})\n"
+            if current_property:
+                context_str += f"\nEnchère en cours:\nPropriété en cours d'enchère: {current_property.get('name', 'Unknown')} (Valeur: ${current_property.get('value', 'Unknown')})\n"
+            else:
+                context_str += f"\nEnchère en cours:\nPropriété en cours d'enchère: Position {current_player_position} (Propriété non identifiée)\n"
         
         if category == "property":
             # Ajouter des informations détaillées pour la gestion de propriétés
@@ -1187,7 +1223,7 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         
         Règles importantes:
         
-        - Les maisons/hôtels sont construits uniformément sur une propriété, ton JSON de décision doit respecter l'ordre d'achat / vente des maisons/hôtels. Tu dois commencer par les propriétés qui ont le moins de maisons/hôtels pour les achats et les propriétés qui ont le plus de maisons/hôtels pour les ventes.
+        - Les maisons/hôtels sont construits uniformément sur une propriété, ton JSON de décision doit respecter l'ordre d'achat / vente des maisons/hôtels. Tu dois commencer par les propriétés qui ont le moins de maisons/hôtels pour les achats et les propriétés qui ont le plus de maisons/hôtels pour les ventes mais tu peux aussi cliquer sur trade pour arriver sur une interface d'échange et de discussion avec une ton adversaire.
         - Pour hypotéquer une propriété qui a des maisons/hôtels, tu dois d'abord vendre les maisons/hôtels puis après ça faire l'hypothèque.
         
         L'ordre des "decisions" est important.
@@ -1363,35 +1399,50 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
         """
         self.logger.info(f"💬 ({current_player} - {player_name}) Début de la gestion de propriétés: {chat_message}")
         
-        response = ai_client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": """
-                 Tu es une IA qui joue au Monopoly contre une autre IA. Tu as choisi de gérer tes propriétés, tu dois maintenant expliquer clairement ce que tu veux faire avec tes propriétés.
-                 Tu peux construire / vendre / hypotéquer / dés-hypotéquer des propriétés.
-                 
-                 Les règles à respecter:
-                 - Tu peux acheter des maisons/hôtels sur une propriété uniquement si tu possède déjà le groupe de couleur de la propriété.
-                 - Tu dois construire uniformément les maisons/hôtels sur une propriété, tu ne peux pas construire 1 maison sur une propriété et 3 maisons sur une autre.
-                 - Tu peux hypotéquer une propriété uniquement si elle n'est pas déjà hypotéquée et si il n'y a pas de maisons/hôtels sur la propriété.
-                 - Tu peux dés-hypotéquer une propriété uniquement si elle est hypotéquée
-                 - Tu dois faire attention a tes ressources, tu ne peux pas acheter de maisons/hôtels si tu n'as pas l'argent nécessaire.
-                 
-                 
-                 Tu es le joueur: {current_player} ({player_name})
-                 """},
-                {"role": "user", "content": f"""
-    <game_context>
-        Contexte actuel:
-        {context_str}
-    </game_context>
-    
-    <actual_chat_message>
-        {player_name}: {chat_message}
-    </actual_chat_message>
-    """}
-            ]
-        )
+        # Retry logic with exponential backoff
+        max_retries = 10
+        retry_delay = 2  # seconds
+        
+        for attempt in range(max_retries):
+            try:
+                response = ai_client.chat.completions.create(
+                    model=model,
+                    messages=[
+                        {"role": "system", "content": """
+                         Tu es une IA qui joue au Monopoly contre une autre IA. Tu as choisi de gérer tes propriétés, tu dois maintenant expliquer clairement ce que tu veux faire avec tes propriétés.
+                         Tu peux construire / vendre / hypotéquer / dés-hypotéquer des propriétés.
+                         
+                         Les règles à respecter:
+                         - Tu peux acheter des maisons/hôtels sur une propriété uniquement si tu possède déjà le groupe de couleur de la propriété.
+                         - Tu dois construire uniformément les maisons/hôtels sur une propriété, tu ne peux pas construire 1 maison sur une propriété et 3 maisons sur une autre.
+                         - Tu peux hypotéquer une propriété uniquement si elle n'est pas déjà hypotéquée et si il n'y a pas de maisons/hôtels sur la propriété.
+                         - Tu peux dés-hypotéquer une propriété uniquement si elle est hypotéquée
+                         - Tu dois faire attention a tes ressources, tu ne peux pas acheter de maisons/hôtels si tu n'as pas l'argent nécessaire.
+                         
+                         
+                         Tu es le joueur: {current_player} ({player_name})
+                         """},
+                        {"role": "user", "content": f"""
+            <game_context>
+                Contexte actuel:
+                {context_str}
+            </game_context>
+            
+            <actual_chat_message>
+                {player_name}: {chat_message}
+            </actual_chat_message>
+            """}
+                    ]
+                )
+                break  # Success, exit retry loop
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    self.logger.warning(f"⚠️  Property management API call failed (attempt {attempt + 1}/{max_retries}): {e}")
+                    self.logger.info(f"⏳ Retrying in {retry_delay} seconds...")
+                    time.sleep(retry_delay)
+                else:
+                    self.logger.error(f"❌ Property management API call failed after {max_retries} attempts")
+                    raise
         
         # data_json = json.loads(response.choices[0].message.content)
         ai_message = response.choices[0].message.content
@@ -1479,12 +1530,42 @@ RÉPONSE OBLIGATOIRE en JSON valide avec :
     """}
             ]
             
-            # Get AI response
-            response = ai_client.chat.completions.create(
-                model=current_config['model'],
-                messages=messages,
-            )
+            # Get AI response with retry logic
+            max_retries = 10
+            retry_delay = 2  # seconds
+            
+            for attempt in range(max_retries):
+                try:
+                    # Log détaillé pour debug
+                    self.logger.info(f"🔍 Appel API pour {player_need_answer} ({current_config['name']}) avec provider: {current_config['provider']}, model: {current_config['model']}")
+                    
+                    response = ai_client.chat.completions.create(
+                        model=current_config['model'],
+                        messages=messages,
+                    )
+                    
+                    # Log de la réponse
+                    self.logger.info(f"✅ Réponse reçue pour {player_need_answer}: {response}")
+                    break  # Success, exit retry loop
+                except Exception as e:
+                    self.logger.error(f"❌ Erreur détaillée: {type(e).__name__}: {str(e)}")
+                    if attempt < max_retries - 1:
+                        self.logger.warning(f"⚠️  Conversation API call failed (attempt {attempt + 1}/{max_retries}): {e}")
+                        self.logger.info(f"⏳ Retrying in {retry_delay} seconds...")
+                        time.sleep(retry_delay)
+                    else:
+                        self.logger.error(f"❌ Conversation API call failed after {max_retries} attempts")
+                        raise
+            # Vérifier que la réponse est bien formatée
+            if not response or not response.choices or not response.choices[0].message:
+                self.logger.error(f"❌ Réponse mal formatée: {response}")
+                raise ValueError("Réponse API mal formatée")
+            
             conversation_result = response.choices[0].message.content
+            if not conversation_result:
+                self.logger.error(f"❌ Contenu de réponse vide pour {player_need_answer}")
+                conversation_result = "[Erreur: Réponse vide]"
+            
             conversation_data.append(f"{player_need_answer} : {conversation_result}")
             self.logger.info(f"💬 {player_need_answer} : {conversation_result}")
             

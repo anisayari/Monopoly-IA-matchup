@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:40:02.371310",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Renforcer orange puis rose avec des maisons est vital maintenant pour piéger Gemini, priorité à la gestion des propriétés avant sa prochaine boucle.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

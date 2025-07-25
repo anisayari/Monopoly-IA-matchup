@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:06:00.924303",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je suis sur Free Parking, case neutre. Je lance les dés pour acquérir plus de propriétés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 725,
+      "Claude": 1280
+    }
+  }
+}

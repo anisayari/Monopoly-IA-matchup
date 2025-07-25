@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T12:53:42.601329",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Dois cliquer sur une propriété spécifique pour la gérer, commencer par payer la dette",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 177,
+      "Claude": 175
+    }
+  }
+}

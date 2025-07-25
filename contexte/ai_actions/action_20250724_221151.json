@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:11:49.712184",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Enfin accéder au menu de gestion pour dés-hypothéquer mes light blue et accélérer les revenus potentiels contre Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

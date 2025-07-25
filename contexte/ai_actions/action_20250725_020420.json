@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:04:17.878460",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai que $21 donc je ne peux pas acheter Bond Street. En mettant en enchère, je tente d'empêcher Gemini d'obtenir facilement une bonne propriété.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 8,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

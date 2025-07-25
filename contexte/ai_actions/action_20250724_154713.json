@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:47:11.363233",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Retour au menu principal nécessaire pour accéder à la gestion des constructions. Chaque tour compte, il faut aller investir dès que la fenêtre gestion propriétés sera disponible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

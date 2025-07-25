@@ -522,31 +522,6 @@
     },
     {
       "id": "Property19",
-      "name": "Water Works",
-      "value": 150,
-      "mortgage": 75,
-      "adresse_mortgage": "9303F040",
-      "rent": {
-        "multiplier": {
-          "oneUtility": 4,
-          "twoUtilities": 10
-        }
-      },
-      "type": "utility",
-      "coordinates": {
-        "x_relative": 0.5664,
-        "y_relative": 0.1833,
-        "x_pixel": 1036,
-        "y_pixel": 187,
-        "window_size": {
-          "width": 1254,
-          "height": 693
-        },
-        "timestamp": "2025-07-21 16:13:41"
-      }
-    },
-    {
-      "id": "Property20",
       "name": "Coventry Street",
       "value": 260,
       "mortgage": 130,
@@ -566,6 +541,31 @@
         "y_relative": 0.1824,
         "x_pixel": 1103,
         "y_pixel": 186,
+        "window_size": {
+          "width": 1254,
+          "height": 693
+        },
+        "timestamp": "2025-07-21 16:13:41"
+      }
+    },
+    {
+      "id": "Property20",
+      "name": "Water Works",
+      "value": 150,
+      "mortgage": 75,
+      "adresse_mortgage": "9303F040",
+      "rent": {
+        "multiplier": {
+          "oneUtility": 4,
+          "twoUtilities": 10
+        }
+      },
+      "type": "utility",
+      "coordinates": {
+        "x_relative": 0.5664,
+        "y_relative": 0.1833,
+        "x_pixel": 1036,
+        "y_pixel": 187,
         "window_size": {
           "width": 1254,
           "height": 693

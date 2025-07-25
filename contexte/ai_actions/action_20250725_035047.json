@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:50:45.387016",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J’investis tout le cash dispo dans 1 maison sur chaque orange. Cela maximise les loyers sans tomber à zéro en cash, impact immédiat sur Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 146,
+      "Claude": 24
+    }
+  }
+}

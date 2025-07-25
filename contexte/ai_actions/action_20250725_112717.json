@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:27:15.832860",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J’ai eu deux doubles consécutifs, je profite de mon prochain lancer pour tenter d’obtenir une nouvelle propriété ou d’avancer vers une case stratégique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1240,
+      "Claude": 315
+    }
+  }
+}

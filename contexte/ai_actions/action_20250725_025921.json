@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:59:19.769808",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Investir dans l’achat rapide de propriétés est clé. Aucune gestion ou transaction n’est urgente, mieux vaut poursuivre la prise de positions.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1165,
+      "Claude": 1475
+    }
+  }
+}

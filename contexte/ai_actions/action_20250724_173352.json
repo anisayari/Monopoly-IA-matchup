@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T15:33:50.674365",
+  "trigger": "Bankruptcy",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois hypothéquer pour éviter de vendre des maisons ou perdre des groupes. L’idéal : hypothéquer Euston Road et The Angel Islington (50$ chacun).",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

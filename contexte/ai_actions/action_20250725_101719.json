@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:17:17.376119",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Pall Mall fait partie du groupe rose, bon investissement pour créer un monopole",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1500,
+      "Claude": 1535
+    }
+  }
+}

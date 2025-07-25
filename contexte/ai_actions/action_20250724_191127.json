@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:11:24.999254",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai payé la dette de 26$. Mes fonds sont trop bas (57$) pour toute autre action stratégique. Je passe mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 77,
+    "money": {
+      "GPT": 134,
+      "Gemini": 83
+    }
+  }
+}

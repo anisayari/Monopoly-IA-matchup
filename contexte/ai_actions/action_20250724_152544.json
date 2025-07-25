@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:25:42.395446",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter The Angel Islington m’approche du monopole light_blue à faible coût, et bloque Gemini d’acquérir un groupe utile. Forte liquidité, risque minimal.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 30,
+    "money": {
+      "GPT": 690,
+      "Gemini": 50
+    }
+  }
+}

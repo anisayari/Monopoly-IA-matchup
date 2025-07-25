@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:23:25.655128",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Je dois initier l’enchère pour Euston Road. Claude manque de liquidités, je peux probablement remporter ce bien à prix réduit ou le bloquer stratégiquement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 36,
+    "money": {
+      "GPT": 753,
+      "Claude": 25
+    }
+  }
+}

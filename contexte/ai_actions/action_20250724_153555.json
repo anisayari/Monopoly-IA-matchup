@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:35:53.025761",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Gemini est fragilisé et je dispose de suffisamment de cash pour potentiellement ajouter une 2e maison sur chaque propriété rose, pour maximiser le risque de banqueroute adverse.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 34,
+    "money": {
+      "GPT": 306,
+      "Gemini": 34
+    }
+  }
+}

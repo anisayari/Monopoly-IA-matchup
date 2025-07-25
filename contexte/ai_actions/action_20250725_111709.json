@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:17:07.533066",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois utiliser le menu Trade pour concrétiser définitivement l'échange convenu : $290 + Electric Company contre Whitehall de GPT.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:41:08.838445",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "J’hypothèque Piccadilly (140$), qui n’a pas de maison et n’entame pas la rentabilité immédiate, pour garantir un matelas cash et survivre.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 162,
+      "Gemini": 407
+    }
+  }
+}

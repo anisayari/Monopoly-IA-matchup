@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:32:56.867744",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai payé la caution de prison et suis tombé sur une propriété adverse hypothéquée. Mes fonds sont très bas, je dois passer le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 112,
+    "money": {
+      "GPT": 74,
+      "Gemini": 42
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:54:54.751535",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Claude manque de liquidités et aucun échange avantageux n'est envisageable. Je garde mes options ouvertes pour acheter ou négocier plus tard.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "GPT": 1485,
+      "Claude": 90
+    }
+  }
+}

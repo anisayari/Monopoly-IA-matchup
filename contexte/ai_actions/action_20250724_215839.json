@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:58:37.072207",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois concrètement lever l'hypothèque des light blue (Euston Road et Angel Islington) pour restaurer du cashflow et préparer ma progression, tout en gardant un matelas financier.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

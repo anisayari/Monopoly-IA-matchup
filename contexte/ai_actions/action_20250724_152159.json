@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:21:57.635783",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Gemini n’a que 50$ et ne peut rien construire. Je dois continuer rapidement pour tomber sur une case à acheter et viser un monopole avant qu'elle ne se renfloue.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 23,
+    "money": {
+      "GPT": 560,
+      "Gemini": 50
+    }
+  }
+}

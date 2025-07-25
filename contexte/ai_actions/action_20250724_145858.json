@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:58:56.660617",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma trésorerie est faible après le loyer. Je n'ai pas de monopole à construire ni d'échange évident. Je passe mon tour pour observer GPT.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "GPT": 406,
+      "Gemini": 214
+    }
+  }
+}

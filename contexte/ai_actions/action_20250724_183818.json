@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:38:16.326348",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Leicester Square n'a pas été achetée aux enchères et je n'ai pas les fonds pour d'autres actions immobilières. Je passe le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 53,
+    "money": {
+      "GPT": 98,
+      "Gemini": 129
+    }
+  }
+}

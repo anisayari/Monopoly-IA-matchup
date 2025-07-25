@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:30:25.273166",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Dés-hypothéquer les gares est prioritaire pour générer des revenus passifs et rentables rapidement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "GPT": 21,
+      "Gemini": 335
+    }
+  }
+}

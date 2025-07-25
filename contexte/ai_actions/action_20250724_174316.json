@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:43:14.030355",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai optimisé les constructions pour ce tour. Je conserve du cash pour éviter la faillite sur tuiles coûteuses. Attente de nouveaux loyers.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 121,
+      "Gemini": 46
+    }
+  }
+}

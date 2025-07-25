@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:13:15.115928",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec 212$, je peux envisager de lever l’hypothèque d’une propriété orange et de renforcer une couleur, afin d’augmenter mes revenus potentiels, surtout sur mes monopoles.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 105,
+    "money": {
+      "GPT": 212,
+      "Gemini": 312
+    }
+  }
+}

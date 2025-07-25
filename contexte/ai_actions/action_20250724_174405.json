@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:44:03.006567",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes investissements sont réalisés, rien à optimiser sans nouvelle info ou ressources. Passer le tour permet d’attendre l’impact sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 121,
+      "Gemini": 46
+    }
+  }
+}

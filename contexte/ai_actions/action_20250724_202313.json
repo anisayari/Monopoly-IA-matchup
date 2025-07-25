@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:23:11.423767",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai négocié un règlement via transfert de propriétés hypothéquées + $1. Accepter concrétise cet accord, évite la banqueroute immédiate et laisse une chance de rebond.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 86,
+    "money": {
+      "GPT": 22,
+      "Gemini": 212
+    }
+  }
+}

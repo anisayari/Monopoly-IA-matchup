@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:39:09.535516",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Buy ",
+    "Auction "
+  ],
+  "decision": "Buy ",
+  "reason": "Old Kent Road est très abordable. L'acheter empêche l'adversaire de le prendre et peut servir pour un futur monopole ou des échanges.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1175,
+      "Gemini": 1270
+    }
+  }
+}

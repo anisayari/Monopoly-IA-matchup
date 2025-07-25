@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:56:18.853871",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois gérer mes propriétés pour lever l'hypothèque sur Marylebone Station ou construire des maisons sur mon monopole Rouge afin d'augmenter mes revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 116,
+      "Gemini": 366
+    }
+  }
+}

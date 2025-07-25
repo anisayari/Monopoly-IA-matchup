@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T08:15:21.960479",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J’accepte le dividende de 50$ pour augmenter ma trésorerie, utile pour sécuriser des propriétés clés aux prochains tours.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1450,
+      "Claude": 1335
+    }
+  }
+}

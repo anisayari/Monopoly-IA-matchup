@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:10:10.295821",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Pas de gestion ou échange urgent ; mon portefeuille est équilibré, il vaut mieux avancer pour saisir de nouvelles propriétés et maximiser mon avance.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 487,
+      "Gemini": 1253
+    }
+  }
+}

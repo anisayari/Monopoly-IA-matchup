@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:18:43.346611",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Accéder au menu Options pour finir la partie est la seule action efficace et cohérente en situation de victoire totale.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

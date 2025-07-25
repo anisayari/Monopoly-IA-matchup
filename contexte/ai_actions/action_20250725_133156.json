@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:31:54.144010",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Aucune nouvelle action de gestion urgente à faire, maisons déjà placées sur les roses. Je sors pour poursuivre le tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 39,
+    "money": {
+      "GPT": 263,
+      "Claude": 25
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:47:19.536035",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je n'ai pas obtenu de double pour sortir de prison, le cash est limité : je reste en prison, stratégie défensive efficace dans ce contexte.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 47,
+    "money": {
+      "GPT": 147,
+      "Claude": 100
+    }
+  }
+}

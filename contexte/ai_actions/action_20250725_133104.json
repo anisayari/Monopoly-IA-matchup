@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:31:02.550389",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il est temps d’acheter des maisons sur le groupe rose pour capitaliser mon monopole et maximiser la pression financière sur Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 39,
+    "money": {
+      "GPT": 563,
+      "Claude": 25
+    }
+  }
+}

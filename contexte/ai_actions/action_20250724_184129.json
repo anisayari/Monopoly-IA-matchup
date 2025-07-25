@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:41:27.207542",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois accéder à la gestion de mes propriétés pour construire sur mes monopoles. Je reviens au menu adéquat pour commencer à bâtir immédiatement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 60,
+    "money": {
+      "GPT": 324,
+      "Gemini": 103
+    }
+  }
+}

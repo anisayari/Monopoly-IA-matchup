@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:46:10.634660",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je n'ai pas de monopole complet pour l'instant. Passer le tour pour que GPT joue et créer de nouvelles opportunités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT": 464,
+      "Gemini": 986
+    }
+  }
+}

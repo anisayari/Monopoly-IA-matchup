@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T13:09:38.948346",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer le loyer est obligatoire. Je garde mes fonds et mon focus sur les monopoles rouge et vert, malgré cette petite dépense.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT": 330,
+      "Gemini": 280
+    }
+  }
+}

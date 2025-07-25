@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:52:05.492264",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "L'interface ne me permet pas d'accéder à mes propriétés. Je passe le tour avec $190, j'essaierai plus tard.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 50,
+    "money": {
+      "GPT": 197,
+      "Claude": 190
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:00:14.593788",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Vine Street coûte $200 mais je n'ai que $130. Je dois passer aux enchères pour préserver mes liquidités limitées.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 53,
+    "money": {
+      "GPT": 207,
+      "Claude": 130
+    }
+  }
+}

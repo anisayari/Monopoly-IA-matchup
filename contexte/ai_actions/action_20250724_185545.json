@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:55:43.442924",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai les fonds suffisants (173$) pour construire une deuxième maison sur une de mes propriétés rouges (Fleet Street coûte 150$), maximisant mes loyers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 66,
+    "money": {
+      "GPT": 184,
+      "Gemini": 173
+    }
+  }
+}

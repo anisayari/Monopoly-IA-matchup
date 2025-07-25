@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:21:15.047348",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Lever hypothèque Park Lane pour activer monopole dark_blue et construire maisons rentables",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "GPT": 177,
+      "Claude": 220
+    }
+  }
+}

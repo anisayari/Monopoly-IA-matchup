@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:20:24.786202",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois sortir de prison pour commencer à générer des revenus sur mon monopole rouge. Je reviens à la fenêtre principale pour utiliser ma carte.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 23,
+    "money": {
+      "GPT": 610,
+      "Gemini": 0
+    }
+  }
+}

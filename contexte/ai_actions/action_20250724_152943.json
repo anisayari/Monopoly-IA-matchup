@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:29:41.388920",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il est temps de placer des maisons sur le monopole rose pour maximiser les loyers et profiter du faible cash de Gemini. Momentum décisif.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 32,
+    "money": {
+      "GPT": 590,
+      "Gemini": 50
+    }
+  }
+}

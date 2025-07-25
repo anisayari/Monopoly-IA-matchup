@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:32:08.470228",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois générer des fonds pour payer ma dette de £28. Hypothéquer une propriété est la seule solution ici.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 50,
+    "money": {
+      "GPT": 0,
+      "Gemini": 27
+    }
+  }
+}

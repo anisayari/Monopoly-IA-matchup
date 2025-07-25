@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:35:07.065127",
+  "trigger": "Force",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Pay ",
+    "Trade "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai suffisamment d'argent pour payer la dette de M100. Cela me permet de rester dans la partie sans sacrifier d'autres propriétés ou maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 126,
+      "Gemini": 124
+    }
+  }
+}

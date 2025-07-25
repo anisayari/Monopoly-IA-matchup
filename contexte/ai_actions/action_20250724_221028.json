@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:10:26.397270",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Encore une fiche gare, retour rapide au menu principal pour enfin lancer la gestion hypothèques/déblocages d’actifs.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

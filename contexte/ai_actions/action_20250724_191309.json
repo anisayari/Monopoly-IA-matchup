@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:13:07.436434",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je n'ai pas besoin d'échanger ou gérer en trading. Il faut retourner à la gestion de mes maisons, où je vais investir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 82,
+    "money": {
+      "GPT": 360,
+      "Gemini": 57
+    }
+  }
+}

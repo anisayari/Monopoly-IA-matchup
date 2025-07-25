@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:30:51.887173",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action de gestion utile restante : priorité au jeu, faire tourner la boucle et piéger Gemini sur mes maisons roses.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 32,
+    "money": {
+      "GPT": 290,
+      "Gemini": 50
+    }
+  }
+}

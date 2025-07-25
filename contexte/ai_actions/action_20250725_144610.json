@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:46:07.885890",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Dois hypothéquer une propriété pour payer ma dette de 75M, j'ai que 64M",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "GPT": 113,
+      "Claude": 64
+    }
+  }
+}

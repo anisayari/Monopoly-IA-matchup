@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T11:57:50.604087",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Pas d'opportunité d'achat ou d’échange actuellement ; priorité à l'avancée rapide du jeu pour maximiser mes chances sur les prochains achats.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1300,
+      "Gemini": 1500
+    }
+  }
+}

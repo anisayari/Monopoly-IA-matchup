@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:01:38.467570",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J’utilise Accounts pour lever les hypothèques sur Euston Road et The Angel Islington afin de rétablir du cashflow immédiat.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

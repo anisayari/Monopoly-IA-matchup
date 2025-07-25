@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:03:44.128540",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois utiliser le menu Accounts pour enfin dés-hypothéquer Euston Road et The Angel Islington, maximisant ainsi mes revenus et menaçant Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

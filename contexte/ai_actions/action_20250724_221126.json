@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:11:24.772472",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Quitter la fiche info pour permettre enfin d’accéder au vrai menu de gestion et relancer la stratégie immobilière.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

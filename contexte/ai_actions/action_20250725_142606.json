@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:26:03.889855",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J’ai assez de liquidités pour commencer à construire sur mes monopoles roses et oranges, mettant une pression maximale sur Claude en crise de cash.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 84,
+    "money": {
+      "GPT": 413,
+      "Claude": 64
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:14:15.769732",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois lever l’hypothèque d’au moins une propriété orange pour préparer la pose de maisons et maximiser le potentiel de revenu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 105,
+    "money": {
+      "GPT": 212,
+      "Gemini": 312
+    }
+  }
+}

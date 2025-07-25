@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:13:31.323725",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai payé les frais. Aucune autre action requise. Il faut passer au tour suivant pour relancer les dés et acquérir des propriétés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 627,
+      "Gemini": 1353
+    }
+  }
+}

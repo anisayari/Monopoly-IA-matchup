@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:10:31.103561",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "J'ai deux propriétés rouges et GPT en a une. Je dois absolument acquérir Trafalgar Square pour compléter mon monopole et générer des revenus élevés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 20,
+    "money": {
+      "GPT": 330,
+      "Gemini": 280
+    }
+  }
+}

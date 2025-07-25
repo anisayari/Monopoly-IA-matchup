@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:34:19.051842",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai construit une maison, mais je n'ai plus assez d'argent pour d'autres actions de gestion. Je dois passer au tour suivant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "GPT": 21,
+      "Gemini": 105
+    }
+  }
+}

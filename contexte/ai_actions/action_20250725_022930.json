@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:29:28.741278",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Mon argent est trop faible pour le moment. Je dois accéder à mes comptes pour hypothéquer ou vendre des propriétés et augmenter mes liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "GPT": 21,
+      "Gemini": 335
+    }
+  }
+}

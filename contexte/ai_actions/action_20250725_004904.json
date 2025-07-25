@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:49:02.455320",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Fermeture de la fiche pour revenir à la gestion et activer la levée d’hypothèques, première étape décisive vers la victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

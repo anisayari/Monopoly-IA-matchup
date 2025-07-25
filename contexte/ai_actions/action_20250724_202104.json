@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:21:01.917328",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Roll Again ",
+    "Accounts "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Tour encore actif grâce au double. J’optimise mes chances de tomber sur une propriété libre ou d’encaisser un événement positif.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 86,
+    "money": {
+      "GPT": 122,
+      "Gemini": 112
+    }
+  }
+}

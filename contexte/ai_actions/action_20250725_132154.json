@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:21:52.069309",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J’ai obtenu un double, c’est obligatoire de relancer. Plus de déplacements = plus de chances d’acheter ou de tomber sur de nouvelles opportunités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 35,
+    "money": {
+      "GPT": 753,
+      "Claude": 25
+    }
+  }
+}

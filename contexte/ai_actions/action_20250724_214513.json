@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:45:10.958145",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Valider l'action pour aller en prison est obligatoire. Je préserverai mon cash et tenterai la sortie par double aux prochaines étapes.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 131,
+    "money": {
+      "GPT": 39,
+      "Gemini": 68
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:26:07.979203",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Buy ",
+    "Auction "
+  ],
+  "decision": "Buy ",
+  "reason": "Les compagnies rapportent avec chaque passage d'adversaire. Acheter tôt donne du levier pour négocier et compléter la collection plus tard.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:58:39.845655",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Rien à ajuster ce tour : je viens de sortir de prison, je reste liquide pour saisir la prochaine propriété non acquise, priorité à l’expansion avant négociation.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 647,
+      "Gemini": 778
+    }
+  }
+}

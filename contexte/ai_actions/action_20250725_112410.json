@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:24:07.803337",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Je sors du menu Accounts pour terminer mon tour, l'échange ayant échoué. Je garde mes propriétés pour de futures opportunités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

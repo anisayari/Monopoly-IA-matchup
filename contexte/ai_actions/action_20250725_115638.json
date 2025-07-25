@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:56:36.146934",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je viens d'obtenir Bow Street et possède beaucoup de liquidités. Continuer me permet d’acquérir plus de propriétés et d’éviter toute négociation inutile maintenant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 16,
+    "money": {
+      "GPT": 805,
+      "Claude": 125
+    }
+  }
+}

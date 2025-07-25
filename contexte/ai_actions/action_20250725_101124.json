@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T08:11:22.506794",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter l'amende de 15$ pour continuer le jeu rapidement",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1650,
+      "Claude": 1500
+    }
+  }
+}

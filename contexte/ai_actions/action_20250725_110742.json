@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:07:39.841788",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Je ferme ce popup pour procéder à l'échange officiel : $300 pour Whitehall de GPT et obtenir mon monopole rose complet.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:56:48.042144",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Gestion essentielle : lever les hypothèques light blue est le levier clé pour générer plus de loyers et acculer Gemini. Il faut agir maintenant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

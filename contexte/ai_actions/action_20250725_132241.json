@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:22:38.970064",
+  "trigger": "Force",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Je possède déjà une position dominante, et ce groupe n’apporte aucun monopole. Mieux vaut garder mon cash et forcer Claude à hypothéquer ou laisser l’achat invendu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 35,
+    "money": {
+      "GPT": 753,
+      "Claude": 25
+    }
+  }
+}

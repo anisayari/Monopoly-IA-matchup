@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:30:54.507370",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je souhaite retourner à la gestion de mes propriétés pour construire sur orange ou rose et maximiser mes revenus à ce moment critique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 11,
+    "money": {
+      "GPT": 413,
+      "Claude": 64
+    }
+  }
+}

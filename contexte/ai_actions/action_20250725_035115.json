@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:51:13.427391",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Construire immédiatement 1 maison sur Marlborough, Vine et Bow Street maximise le retour immédiat vu mon faible cash. Impact direct sur Claude à court terme !",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 146,
+      "Claude": 24
+    }
+  }
+}

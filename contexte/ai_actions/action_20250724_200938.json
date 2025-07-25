@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:09:35.986317",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Coventry Street (yellow) pour $130 afin de maximiser le cash immédiat et sécuriser la survie face à l’adversaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 722,
+      "Gemini": 407
+    }
+  }
+}

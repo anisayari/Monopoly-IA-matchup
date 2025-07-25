@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:30:29.399525",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement 21$, je ne peux ni construire de maisons, ni lever d'hypothèques, ni acheter de propriétés disponibles. Passer le tour est la seule option viable.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

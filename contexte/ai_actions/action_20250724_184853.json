@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:48:51.648860",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Mayfair est déshypothéquée. Mes fonds sont trop bas pour construire ou acheter d'autres propriétés actuellement. Retour au plateau.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 62,
+    "money": {
+      "GPT": 124,
+      "Gemini": 83
+    }
+  }
+}

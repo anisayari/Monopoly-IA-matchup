@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:30:29.835615",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Aucune action commerciale utile maintenant. Il vaut mieux revenir à la fenêtre principale et surveiller Gemini, qui a peu de liquidités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 32,
+    "money": {
+      "GPT": 290,
+      "Gemini": 50
+    }
+  }
+}

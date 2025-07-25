@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:22:47.212305",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Je dois sortir de cette pause pour reprendre le jeu normal et pouvoir effectuer l'échange négocié avec GPT.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT": 874,
+      "Claude": 55
+    }
+  }
+}

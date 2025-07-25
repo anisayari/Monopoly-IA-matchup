@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:10:14.283396",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai rassemblé suffisamment de cash pour régler ma dette sans toucher à mes groupes maisons restants. Priorité à la survie immédiate.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 722,
+      "Gemini": 407
+    }
+  }
+}

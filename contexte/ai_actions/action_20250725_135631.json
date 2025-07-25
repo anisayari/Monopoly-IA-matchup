@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:56:29.441989",
+  "trigger": "Force",
+  "keywords": [
+    "Pay the Bail"
+  ],
+  "options": [
+    "Pay Bail "
+  ],
+  "decision": "Pay Bail ",
+  "reason": "Il n'y a pas d'autre choix, je dois payer la caution pour sortir. Je garde une avance solide et Claude reste fragile.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 53,
+    "money": {
+      "GPT": 257,
+      "Claude": 130
+    }
+  }
+}

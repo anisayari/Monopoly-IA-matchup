@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:51:43.896408",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "L’objectif est de retourner à la gestion de mes propres propriétés pour lever l’hypothèque ou construire, maximisant ainsi mes revenus avant toute autre action.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 171,
+      "Gemini": 146
+    }
+  }
+}

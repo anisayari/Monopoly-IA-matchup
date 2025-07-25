@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:44:35.629311",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Auction ",
+  "reason": "Avec seulement $535, acheter Regent Street à $300 me laisserait $235. Trop risqué financièrement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "GPT": 1450,
+      "Claude": 535
+    }
+  }
+}

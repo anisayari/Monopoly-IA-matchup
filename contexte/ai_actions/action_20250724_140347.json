@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:03:45.497293",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Trafalgar Square est une propriété puissante. Investir tôt maximise mes chances de créer un monopole et limite les options adverses.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 965,
+      "Gemini": 1275
+    }
+  }
+}

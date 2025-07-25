@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:08:52.119184",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Priorité au menu Accounts pour lever les hypothèques clés, maximiser mes rentrées et préparer la pression sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:34:19.637296",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma trésorerie est trop basse pour bâtir ou négocier. La meilleure option est d’attendre des loyers adverses ou une opportunité d’investissement/marchandage.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 50,
+    "money": {
+      "GPT": 28,
+      "Gemini": 199
+    }
+  }
+}

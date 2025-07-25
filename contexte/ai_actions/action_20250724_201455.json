@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:14:53.090228",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai déshypothéqué Mayfair et Regent Street. Mes liquidités sont faibles, je retourne à l'écran principal pour passer mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 86,
+    "money": {
+      "GPT": 82,
+      "Gemini": 22
+    }
+  }
+}

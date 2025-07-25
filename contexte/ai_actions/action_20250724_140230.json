@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:02:28.252247",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Vine Street augmente mon portefeuille et limite l’accès aux couleurs clés à l’adversaire. Bonne valeur pour sécuriser des échanges futurs.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1165,
+      "Gemini": 1275
+    }
+  }
+}

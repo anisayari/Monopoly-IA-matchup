@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:33:50.102178",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Pas de gestion immédiate pertinente. Il faut économiser pour Whitechapel Road et maximiser les chances de monopoliser marron ou orange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 166,
+      "Claude": 964
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:20:39.441305",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n’ai pas les fonds pour acheter. Forcer une enchère pourrait épuiser les ressources déjà faibles de Gemini ou lui compliquer les choix.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 105,
+    "money": {
+      "GPT": 14,
+      "Gemini": 52
+    }
+  }
+}

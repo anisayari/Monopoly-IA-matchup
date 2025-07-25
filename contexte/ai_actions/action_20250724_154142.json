@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:41:40.707698",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai les fonds pour construire une maison sur chaque propriété rouge, ce qui maximisera mes loyers potentiels sur ce monopole.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 174
+    }
+  }
+}

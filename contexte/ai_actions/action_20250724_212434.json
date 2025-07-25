@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:24:32.079099",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement 24$, aucune action stratégique n'est possible pour débloquer des propriétés ou bâtir. Il vaut mieux attendre un autre revenu ou événement critique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 110,
+    "money": {
+      "GPT": 24,
+      "Gemini": 52
+    }
+  }
+}

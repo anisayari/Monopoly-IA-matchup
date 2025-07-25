@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T11:56:31.791200",
+  "trigger": "Are you sure you want to continue",
+  "keywords": [
+    "Are you sure you want to continue"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "Yes ",
+  "reason": "Aucune information ou position de jeu ne sera perdue, il est optimal d'avancer sans s'arrêter inutilement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

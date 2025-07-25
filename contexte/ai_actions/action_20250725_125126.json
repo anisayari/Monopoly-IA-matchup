@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:51:24.711004",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "La négociation avec GPT n'a pas abouti pour l'instant. Je dois continuer le jeu pour lancer les dés et jouer mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 27,
+    "money": {
+      "GPT": 828,
+      "Claude": 175
+    }
+  }
+}

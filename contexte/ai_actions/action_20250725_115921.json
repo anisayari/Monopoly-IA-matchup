@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:59:19.548668",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Je dois négocier directement avec GPT pour proposer un échange stratégique qui nous donnerait chacun un monopole rentable.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 18,
+    "money": {
+      "GPT": 805,
+      "Claude": 125
+    }
+  }
+}

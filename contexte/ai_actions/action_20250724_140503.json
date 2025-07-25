@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:05:01.087141",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je suis sur 'Free Parking', aucune action n'est requise. Je passe mon tour pour que le jeu continue.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 725,
+      "Gemini": 1275
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:31:06.585356",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Il n'y a plus aucune action stratégique utile. Partie clôturée, victoire totale, rien à négocier.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

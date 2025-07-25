@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:42:33.088878",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il est temps d'utiliser ma trésorerie pour construire des maisons sur mes rues orange et rose : maximum de cashflow, Gemini est vulnérable.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 254,
+      "Gemini": 46
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:35:05.771980",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai acheté Regent Street, maintenant je continue à jouer pour chercher d'autres opportunités d'achat.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 166,
+      "Claude": 664
+    }
+  }
+}

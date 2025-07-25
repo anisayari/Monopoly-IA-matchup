@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:48:12.235999",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai déjà fait deux doubles et mon tour est terminé. Je dois passer la main pour la prochaine phase de jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT": 1231,
+      "Gemini": 814
+    }
+  }
+}

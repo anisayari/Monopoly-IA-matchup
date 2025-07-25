@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:26:07.297616",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action optimale immédiate. J’ai maximisé le tour, aucun échange intéressant ni gestion de propriété à faire : je dois progresser et tenter d’atterrir sur une case libre.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 723,
+      "Claude": 25
+    }
+  }
+}

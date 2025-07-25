@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:14:26.524265",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai déshypothéqué mes propriétés clés. Avec 22$, je ne peux pas construire. Je retourne à l'écran principal pour la fin de mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 86,
+    "money": {
+      "GPT": 82,
+      "Gemini": 22
+    }
+  }
+}

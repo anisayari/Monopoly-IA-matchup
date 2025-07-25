@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:50:09.223061",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Le meilleur choix est de construire sur orange et rose immédiatement. Cela maximise la menace et exploite mon cash avant qu’un imprévu ne survienne.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

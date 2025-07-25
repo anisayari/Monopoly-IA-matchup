@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:29:57.519497",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois revenir à la gestion principale pour construire immédiatement des maisons et maximiser la pression sur Claude.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 39,
+    "money": {
+      "GPT": 563,
+      "Claude": 25
+    }
+  }
+}

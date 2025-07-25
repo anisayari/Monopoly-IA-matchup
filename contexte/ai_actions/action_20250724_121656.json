@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T10:16:54.761411",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois avancer au-delà de ce popup. Tenter un échange est une option, même si le popup semble générique, pour progresser vers mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

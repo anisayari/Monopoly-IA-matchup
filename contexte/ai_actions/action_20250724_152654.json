@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:26:52.330269",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Pour construire, il faut utiliser la gestion des propriétés. Je retourne en gestion pour investir immédiatement sur le groupe rose.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 32,
+    "money": {
+      "GPT": 590,
+      "Gemini": 50
+    }
+  }
+}

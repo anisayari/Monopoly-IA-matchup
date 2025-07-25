@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:49:03.222409",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "J'ai les fonds, et Regent Street est une propriété de grande valeur, essentielle pour potentiellement former un monopole plus tard.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 464,
+      "Gemini": 856
+    }
+  }
+}

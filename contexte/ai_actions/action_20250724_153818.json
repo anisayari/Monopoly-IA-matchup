@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:38:16.079616",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai maintenant les fonds nécessaires pour chercher à compléter mon monopole rouge et construire sur mes propriétés pour générer des revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 35,
+    "money": {
+      "GPT": 306,
+      "Gemini": 234
+    }
+  }
+}

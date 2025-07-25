@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:46:20.437609",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois investir immédiatement en maisons sur orange puis rose pour maximiser le cash à mon prochain tour, juste avant le passage de Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

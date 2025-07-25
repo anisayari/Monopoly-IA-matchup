@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:35:57.484557",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement $66, il faut conserver le cash. Mon focus : tomber sur Whitechapel Road et négocier plus tard si possible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 66,
+      "Claude": 664
+    }
+  }
+}

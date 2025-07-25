@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:31:49.323621",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois accéder à la gestion pour investir dans des maisons sur mes deux monopoles alors que Claude ne peut pas suivre, c'est le moment de frapper.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 11,
+    "money": {
+      "GPT": 413,
+      "Claude": 64
+    }
+  }
+}

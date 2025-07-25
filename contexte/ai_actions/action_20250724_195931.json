@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:59:29.744613",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Done "
+  ],
+  "decision": "Done ",
+  "reason": "Refus de vente d’hôtel : je garde mon pôle brown maximizeur de cash et de menace. Surtout avec d'autres maisons encore présentes.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 272,
+      "Gemini": 407
+    }
+  }
+}

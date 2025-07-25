@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:50:44.396027",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois revenir à la gestion active de mes propriétés pour lever l'hypothèque ou construire, plutôt que poursuivre un échange inutile actuellement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 171,
+      "Gemini": 146
+    }
+  }
+}

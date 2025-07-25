@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:52:46.844782",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "C'est la seule option qui permet d'accéder à la gestion immobilière pour réellement construire les maisons et faire basculer la partie en ma faveur.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

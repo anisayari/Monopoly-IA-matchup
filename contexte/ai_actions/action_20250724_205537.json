@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:55:35.547957",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois 50$ et n'ai que 27$. La seule option pour éviter la faillite est de tenter un échange.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 27
+    }
+  }
+}

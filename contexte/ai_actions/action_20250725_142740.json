@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:27:38.785593",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Cette fenêtre n’est pas la bonne pour construire. Je dois retourner à la gestion de propriétés pour investir sur mes monopoles orange/rose.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 84,
+    "money": {
+      "GPT": 413,
+      "Claude": 64
+    }
+  }
+}

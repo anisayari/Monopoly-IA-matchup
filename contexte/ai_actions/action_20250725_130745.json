@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:07:42.919459",
+  "trigger": "In Jail",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Pay Bail "
+  ],
+  "decision": "Pay Bail ",
+  "reason": "Après 3 tours en prison, je dois obligatoirement payer la caution pour sortir et reprendre le jeu actif.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 28,
+    "money": {
+      "GPT": 820,
+      "Claude": 183
+    }
+  }
+}

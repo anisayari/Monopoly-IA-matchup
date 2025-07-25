@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T10:04:12.353638",
+  "trigger": "Force",
+  "keywords": [
+    "Bankruptcy"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "Yes ",
+  "reason": "Je dois confirmer pour permettre à l'enchère de Mayfair de se conclure et de passer à la prochaine étape du tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

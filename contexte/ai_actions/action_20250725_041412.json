@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T02:14:10.029426",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Bankrupt ",
+  "reason": "Je ne peux pas payer ma dette de $50 avec seulement $14. Je dois hypothéquer des propriétés ou faire faillite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 24,
+    "money": {
+      "GPT": 46,
+      "Claude": 14
+    }
+  }
+}

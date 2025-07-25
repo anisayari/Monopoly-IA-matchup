@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:23:55.683555",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "ENFIN ! Interface de gestion accessible ! Je lève l'hypothèque de Pentonville Road pour $66 avec mes $64 disponibles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 79,
+    "money": {
+      "GPT": 13,
+      "Claude": 64
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T11:57:20.586790",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter une gare tôt offre de bons revenus, contrôle du plateau et potentiel de monopole. Investissement rentable en début de partie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

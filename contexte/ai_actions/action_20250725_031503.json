@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:15:00.901884",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois explorer des échanges avec GPT pour créer des monopoles mutuellement bénéfiques.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 725,
+      "Claude": 1015
+    }
+  }
+}

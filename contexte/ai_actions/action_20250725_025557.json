@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T00:55:55.550330",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Débuter une discussion d'enchère est critique pour déterminer la valeur perçue et obtenir la propriété à un bon prix ou faire monter l'enchère.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Claude": 1500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:14:58.968171",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Sortir du menu trading est indispensable pour pouvoir gérer mes propriétés et construire maisons sur orange et rose, menaçant Gemini immédiatement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

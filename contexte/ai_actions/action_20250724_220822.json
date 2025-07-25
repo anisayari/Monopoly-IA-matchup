@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:08:19.940395",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Encore une fiche info. Il faut absolument revenir au menu de gestion pour débloquer les hypothèques et relancer les loyers.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

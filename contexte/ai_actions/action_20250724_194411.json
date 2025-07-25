@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:44:09.553844",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothèque d’Oxford Street : +150$ sans sacrifier groupe à maisons ; objectif : rester en vie jusqu’au retour de cash-flow.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 247,
+      "Gemini": 407
+    }
+  }
+}

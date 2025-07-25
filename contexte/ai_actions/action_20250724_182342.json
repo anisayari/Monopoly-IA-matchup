@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:23:40.437062",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai pas les fonds suffisants pour acheter Park Lane. La mettre aux enchères est la seule option viable.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 45,
+    "money": {
+      "GPT": 0,
+      "Gemini": 102
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:08:58.306201",
+  "trigger": "Force",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai que $17 : impossible d’acheter. Mieux vaut envoyer la station aux enchères pour éventuellement faire surpayer Claude ou la récupérer à bas prix plus tard.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 65,
+    "money": {
+      "GPT": 17,
+      "Claude": 180
+    }
+  }
+}

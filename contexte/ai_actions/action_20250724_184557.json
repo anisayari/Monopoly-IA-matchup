@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:45:55.451417",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Mes liquidités deviennent basses, il est risqué d'investir davantage maintenant. Mieux vaut préserver du cash pour traverser les prochains tours incertains.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 60,
+    "money": {
+      "GPT": 124,
+      "Gemini": 103
+    }
+  }
+}

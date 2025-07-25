@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:43:47.826840",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Ma seule vraie chance de sortir de prison gratuitement est de relancer les dés pour réaliser un double. Je conserve mon faible cash pour survivre.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 131,
+    "money": {
+      "GPT": 39,
+      "Gemini": 68
+    }
+  }
+}

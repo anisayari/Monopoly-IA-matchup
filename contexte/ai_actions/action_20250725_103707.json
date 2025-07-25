@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T08:37:05.091835",
+  "trigger": "Force",
+  "keywords": [
+    "Choose which properties"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Négociations terminées sans accord. Je garde mes propriétés et continue le jeu normalement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT": 1500,
+      "Claude": 935
+    }
+  }
+}

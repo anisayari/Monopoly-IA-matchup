@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:17:18.011490",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Monopole rouge complet, mais trésorerie à zéro. Attendre un loyer est prioritaire pour construire, et GPT doit jouer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 22,
+    "money": {
+      "GPT": 610,
+      "Gemini": 0
+    }
+  }
+}

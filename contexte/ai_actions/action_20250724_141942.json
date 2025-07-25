@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:19:40.697354",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Le jeu est en pause, je dois le reprendre pour ne pas perdre de temps et poursuivre ma stratégie d’expansion.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 627,
+      "Gemini": 1353
+    }
+  }
+}

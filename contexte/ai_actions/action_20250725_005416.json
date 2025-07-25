@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:54:14.567730",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Fermer la fiche descriptive est indispensable pour poursuivre la gestion des hypothèques et passer à l’activation de mes light blue.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

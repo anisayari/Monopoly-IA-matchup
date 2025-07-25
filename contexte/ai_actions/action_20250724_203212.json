@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:32:10.664785",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois gérer mes propriétés pour payer ma sortie de prison et ensuite évaluer la construction de maisons sur mon monopole rouge.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 152
+    }
+  }
+}

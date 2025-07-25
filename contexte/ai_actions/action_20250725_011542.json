@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:15:40.107082",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois fermer cette fiche pour accéder à la gestion des propriétés et libérer immédiatement les light blue, clé de la pression.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

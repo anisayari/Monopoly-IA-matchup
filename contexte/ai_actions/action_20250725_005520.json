@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:55:18.498079",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois fermer la fiche descriptive, seule issue pour accéder au menu et activer la gestion des light blue. Priorité à la pression sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

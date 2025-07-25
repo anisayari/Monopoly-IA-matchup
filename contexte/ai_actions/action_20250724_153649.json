@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:36:47.669813",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Rien à construire d’optimal avec $306 : priorité à la prudence, garder des liquidités pour parer aux imprévus ou profiter d’une vente forcée de Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 34,
+    "money": {
+      "GPT": 306,
+      "Gemini": 34
+    }
+  }
+}

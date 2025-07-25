@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T12:17:51.816670",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Échange initié avec GPT ! Je dois sortir de ce popup pour accéder à l'interface d'échange officielle et finaliser la transaction.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 75,
+    "money": {
+      "GPT": 43,
+      "Claude": 34
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:33:47.173164",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai assez de fonds pour lever l'hypothèque de Regent Street et acheter deux maisons sur mon monopole rouge, augmentant ainsi mes revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 352
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:40:57.018968",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai fait un double, ce qui me permet de relancer les dés gratuitement. C'est l'occasion de maximiser mes gains.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 127,
+    "money": {
+      "GPT": 39,
+      "Gemini": 68
+    }
+  }
+}

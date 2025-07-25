@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:07:08.934410",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Investissements terminés pour ce tour. Je conserve mon cash, je maximise la pression et attends que Gemini commette une erreur.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 75,
+    "money": {
+      "GPT": 134,
+      "Gemini": 23
+    }
+  }
+}

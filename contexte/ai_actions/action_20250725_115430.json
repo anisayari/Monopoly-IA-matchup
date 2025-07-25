@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:54:28.847807",
+  "trigger": "Force",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "accounts "
+  ],
+  "decision": "accounts ",
+  "reason": "Vérifier ou ajuster mes finances et cartes me prépare pour une potentielle sortie de prison et maximise mes prochaines opportunités d'achat ou d’échange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 1045,
+      "Claude": 125
+    }
+  }
+}

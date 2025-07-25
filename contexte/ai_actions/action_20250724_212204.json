@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:22:02.472677",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action pertinente possible avec 14$. Il faut patienter pour une rentrée d'argent via loyers ou cartes, et éviter d'aggraver la situation.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 108,
+    "money": {
+      "GPT": 14,
+      "Gemini": 52
+    }
+  }
+}

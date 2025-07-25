@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:02:07.031258",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Il faut appliquer la carte Chance, aucune manœuvre stratégique n’est possible avant de connaître la nouvelle position.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1165,
+      "Gemini": 1275
+    }
+  }
+}

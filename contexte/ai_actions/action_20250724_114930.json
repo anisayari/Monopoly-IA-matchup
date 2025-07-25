@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:49:28.624406",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Achat réalisé, priorité à avancer rapidement pour viser d’autres groupes clés et optimiser la chance d'obtenir un monopole.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT": 1071,
+      "Gemini": 814
+    }
+  }
+}

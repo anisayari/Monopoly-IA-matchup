@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:24:56.921135",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes liquidités sont trop basses pour d'autres opérations. Il est optimal d'attendre des revenus sur mes maisons pour renforcer ma position.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

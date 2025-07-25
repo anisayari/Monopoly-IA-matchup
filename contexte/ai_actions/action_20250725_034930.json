@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:49:28.377208",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Pousser Claude à enchérir sur la gare avec le peu de cash qu’il lui reste pour l’empêcher d’acheter d’autres propriétés et maximiser ma réserve d’argent.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 18,
+    "money": {
+      "GPT": 406,
+      "Claude": 24
+    }
+  }
+}

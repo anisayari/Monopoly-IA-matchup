@@ -87,3 +87,39 @@ class MemoryReader:
     def set_bytes(addr: int, value: bytes) -> None:
         dme.write_bytes(MemoryReader.hex_to_int(addr), value)
     
+    @staticmethod
+    def check_you_owe(addr: Hex = 0x90083E99) -> bool:
+        """
+        Vérifie si la string "You owe" est présente dans une plage d'adresses
+        Retourne True si trouvée, False sinon
+        """
+        try:
+            base_addr = MemoryReader.hex_to_int(addr)
+            # Scanner une plage de 0x100 bytes (256 bytes) à partir de l'adresse de base
+            scan_range = 0x100
+            
+            # Lire toute la plage en une seule fois
+            chunk = dme.read_bytes(base_addr, scan_range)
+            
+            # Chercher "You owe" en UTF-16LE dans le chunk
+            search_pattern = "You owe".encode("utf-16-le")
+            
+            if search_pattern in chunk:
+                # Trouver la position exacte
+                offset = chunk.find(search_pattern)
+                found_addr = base_addr + offset
+                
+                # Lire la string complète à cette position
+                string_at_addr = MemoryReader.get_string(found_addr, max_length=50, byteorder="little")
+                
+                print(f"[You Owe Check] You owe: True - Found at 0x{found_addr:08X}")
+                print(f"[You Owe Check] Found string: '{string_at_addr}'")
+                return True
+            else:
+                print(f"[You Owe Check] You owe: False - Not found in range 0x{base_addr:08X}-0x{base_addr + scan_range:08X}")
+                return False
+                
+        except Exception as e:
+            print(f"[You Owe Check] Error scanning range starting at 0x{base_addr:08X}: {e}")
+            return False
+    

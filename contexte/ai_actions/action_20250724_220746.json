@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:07:44.808927",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J’ai enfin besoin d’accéder à la gestion des comptes pour lever les hypothèques prioritaires et améliorer mes revenus rapidement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

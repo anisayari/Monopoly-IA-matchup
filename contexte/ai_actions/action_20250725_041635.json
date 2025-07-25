@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:16:32.858619",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Claude n'a plus d'argent et n'a plus de propriétés utiles. Je contrôle pratiquement tout, victoire acquise. Passer à l'écran d'options pour conclure la partie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

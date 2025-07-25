@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:37:31.885139",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Je consulte juste les informations sur Fenchurch St. Station. Je retourne au menu principal.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT": 1500,
+      "Claude": 935
+    }
+  }
+}

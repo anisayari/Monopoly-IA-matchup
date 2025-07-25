@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:57:37.749003",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois lever les hypothèques (Euston Road, Angel Islington) pour augmenter mon cashflow et sécuriser des loyers. C'est la priorité avant toute autre action.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

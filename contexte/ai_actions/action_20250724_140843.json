@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:08:41.058402",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J’ai de nombreuses propriétés différentes. Je dois préparer des échanges stratégiques ou surveiller mes finances pour des opportunités futures.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 487,
+      "Gemini": 1253
+    }
+  }
+}

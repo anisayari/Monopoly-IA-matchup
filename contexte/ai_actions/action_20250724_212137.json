@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:21:35.042094",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je dois participer à l’enchère Pentonville Road et la faire monter, tout en évitant de l’acheter, épuisant ainsi la trésorerie de Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 105,
+    "money": {
+      "GPT": 14,
+      "Gemini": 52
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:38:03.607519",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Choisir Options permet de clôturer officiellement la partie et d’acter la victoire. Aucun gain supplémentaire n’est possible via un autre menu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

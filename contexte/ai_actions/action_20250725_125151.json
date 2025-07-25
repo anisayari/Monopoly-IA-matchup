@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:51:49.764285",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Je dois absolument sortir de cette pause pour pouvoir jouer normalement et lancer les dés pour mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 27,
+    "money": {
+      "GPT": 828,
+      "Claude": 175
+    }
+  }
+}

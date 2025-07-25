@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:14:07.822904",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois revenir à l’écran de gestion de propriétés pour investir mes $169 en maisons sur les monopoles brown ou orange et maximiser mes revenus.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

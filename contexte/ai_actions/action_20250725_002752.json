@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:27:50.606079",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Quitter la fiche info pour enfin accéder à la gestion des hypothèques et optimiser mes propriétés immédiatement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

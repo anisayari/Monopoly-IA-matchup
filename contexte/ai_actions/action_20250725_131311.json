@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:13:09.457129",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai hypothéqué mes propriétés et maintenant j'ai $265. Je peux retourner au jeu principal pour continuer mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 31,
+    "money": {
+      "GPT": 903,
+      "Claude": 265
+    }
+  }
+}

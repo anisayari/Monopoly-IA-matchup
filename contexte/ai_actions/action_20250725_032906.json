@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:29:04.178211",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Fleet Street est une propriété rouge précieuse, j'ai les liquidités et ça diversifie mon portefeuille.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 216,
+      "Claude": 1134
+    }
+  }
+}

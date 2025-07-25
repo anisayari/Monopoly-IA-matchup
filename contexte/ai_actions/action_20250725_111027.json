@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:10:25.672551",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois utiliser le menu d'échange pour finaliser officiellement l'accord : $280 + Electric Company contre Whitehall de GPT.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

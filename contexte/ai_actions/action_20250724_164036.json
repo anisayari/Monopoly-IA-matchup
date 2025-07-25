@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:40:34.101580",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Sortir du menu trading pour accéder à la gestion des propriétés et bâtir des maisons immédiatement, maximisant les risques pour Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

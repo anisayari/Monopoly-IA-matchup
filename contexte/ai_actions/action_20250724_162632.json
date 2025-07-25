@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:26:30.776803",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Passer en gestion pour investir tout mon argent en maisons sur orange et rose maximise la pression sur Gemini avant son prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

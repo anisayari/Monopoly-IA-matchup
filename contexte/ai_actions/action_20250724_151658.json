@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:16:56.241115",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Le monopole rouge est complet et prêt à générer des revenus. Ma trésorerie à zéro exige de revenir au jeu pour commencer à percevoir les loyers.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 22,
+    "money": {
+      "GPT": 610,
+      "Gemini": 0
+    }
+  }
+}

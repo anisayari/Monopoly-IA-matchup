@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:45:17.002578",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois faire l'échange convenu avec GPT : Fleet Street contre $280 pour avoir 2/3 rouges.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 17,
+    "money": {
+      "GPT": 86,
+      "Claude": 344
+    }
+  }
+}

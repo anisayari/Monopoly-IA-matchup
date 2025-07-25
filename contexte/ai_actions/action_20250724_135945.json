@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T11:59:43.170112",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Northumberland Avenue est un bon investissement en début de partie pour bloquer des monopoles et augmenter la valeur de mes actifs.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1325,
+      "Gemini": 1475
+    }
+  }
+}

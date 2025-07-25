@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:36:37.187893",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Valider Options confirme la clôture de la partie et la victoire. Aucun autre choix stratégique n’a d’effet dans ce contexte de fin de partie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

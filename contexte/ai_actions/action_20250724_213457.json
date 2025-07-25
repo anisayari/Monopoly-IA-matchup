@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:34:55.365666",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai collecté mes gains en passant par la case départ. Mes fonds sont stables. Je passe mon tour pour évaluer les actions de l'adversaire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 121,
+    "money": {
+      "GPT": 48,
+      "Gemini": 68
+    }
+  }
+}

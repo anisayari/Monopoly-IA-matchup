@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:48:36.420158",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Auction ",
+  "reason": "Garder le cash pour construire sur l’orange, qui rapporte plus que les gares à ce stade. Le station n’aide pas à un monopole crucial.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 18,
+    "money": {
+      "GPT": 406,
+      "Claude": 24
+    }
+  }
+}

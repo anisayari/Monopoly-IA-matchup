@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:12:10.024029",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J’anticipe un futur échange clé si Claude acquiert une propriété que je cible. Il faut surveiller et préparer les options de négoce.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT": 725,
+      "Claude": 1015
+    }
+  }
+}

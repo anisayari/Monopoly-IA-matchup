@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:27:59.188139",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il me reste $20 à trouver, donc une simple hypothèque (ex: Euston Road ou Angel Islington) suffit pour régler la dette sans toucher aux maisons critiques.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 160,
+      "Gemini": 407
+    }
+  }
+}

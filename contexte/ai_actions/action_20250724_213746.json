@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:37:44.755741",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Cet écran permet finalement de manipuler mes propriétés ; je procède à la levée d’hypothèque orange pour relancer les revenus et garder du cash d’urgence.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 125,
+    "money": {
+      "GPT": 248,
+      "Gemini": 68
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:23:59.064711",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "L'échange avec GPT est validé. Je dois maintenant lever les hypothèques de mes nouvelles propriétés pour compléter des monopoles et construire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 86,
+    "money": {
+      "GPT": 22,
+      "Gemini": 212
+    }
+  }
+}

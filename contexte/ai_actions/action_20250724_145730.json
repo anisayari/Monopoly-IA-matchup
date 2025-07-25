@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:57:28.164318",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Buy ",
+    "Auction "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Strand me rapproche d'un monopole rouge et me permet de bloquer GPT dans ce groupe.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "GPT": 384,
+      "Gemini": 456
+    }
+  }
+}

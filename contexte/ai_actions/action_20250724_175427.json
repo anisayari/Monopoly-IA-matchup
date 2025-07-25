@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:54:25.338816",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma gestion immobilière est terminée et mes liquidités faibles. Il est temps de poursuivre le jeu et d’espérer encaisser des loyers.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 116,
+      "Gemini": 146
+    }
+  }
+}

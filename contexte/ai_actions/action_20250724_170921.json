@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:09:19.129298",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je n'ai pas assez d'argent pour construire des maisons sur mon monopole rouge ou pour lever des hypothèques rentables.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 246,
+      "Gemini": 124
+    }
+  }
+}

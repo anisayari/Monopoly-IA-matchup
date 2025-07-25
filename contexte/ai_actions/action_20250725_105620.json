@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T08:56:17.981372",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Carte Chance obligatoire. Je n'ai pas de maisons/hôtels donc pas de frais à payer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

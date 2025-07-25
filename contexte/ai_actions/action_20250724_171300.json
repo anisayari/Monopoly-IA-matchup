@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:12:58.865039",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je n'ai plus assez de fonds pour de nouveaux achats ou constructions. Je dois attendre de recevoir des loyers ou de passer par la case Départ.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

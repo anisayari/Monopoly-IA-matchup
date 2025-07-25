@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:13:55.411377",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois déshypothéquer Mayfair pour activer cette propriété stratégique et renforcer mes revenus. J'ai les fonds nécessaires.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 86,
+    "money": {
+      "GPT": 82,
+      "Gemini": 242
+    }
+  }
+}

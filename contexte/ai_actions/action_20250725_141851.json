@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T12:18:48.923330",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Popup de simulation forcée ! Je dois le fermer pour accéder à la vraie interface d'échange et finaliser la transaction.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 75,
+    "money": {
+      "GPT": 43,
+      "Claude": 34
+    }
+  }
+}

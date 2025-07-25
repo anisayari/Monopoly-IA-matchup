@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:58:22.125321",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai construit sur mes propriétés rouges. Mes fonds sont insuffisants pour d'autres actions, je retourne au plateau.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 66,
+    "money": {
+      "GPT": 184,
+      "Gemini": 73
+    }
+  }
+}

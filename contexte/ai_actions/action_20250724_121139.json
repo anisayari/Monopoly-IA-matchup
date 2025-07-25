@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T10:11:37.871972",
+  "trigger": "Force",
+  "keywords": [
+    "Bankruptcy"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "Yes ",
+  "reason": "Il est impératif de confirmer ce popup générique pour débloquer le jeu et progresser dans mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

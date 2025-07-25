@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:32:37.191743",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Auction ",
+  "reason": "Avec peu de cash ($166), acheter Water Works n’aide pas à obtenir un monopole. Une enchère force Claude à dépenser et conserve ma trésorerie pour la couleur marron.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 166,
+      "Claude": 964
+    }
+  }
+}

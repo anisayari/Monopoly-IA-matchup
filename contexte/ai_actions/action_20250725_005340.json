@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:53:37.851594",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois absolument gérer mes propriétés maintenant : lever l’hypothèque des light blue est capital pour bloquer Gemini et sécuriser la victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

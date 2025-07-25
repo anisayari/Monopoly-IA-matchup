@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:26:36.377057",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Roll Again ",
+    "Accounts "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai fait un double, donc j'ai droit à un tour supplémentaire. Mieux vaut tirer profit de la dynamique et acquérir plus de propriétés tôt.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1350,
+      "Gemini": 1500
+    }
+  }
+}

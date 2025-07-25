@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T12:46:45.083349",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Dois négocier avec GPT pour échanger Park Lane contre liquidités, seul moyen viable",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "GPT": 113,
+      "Claude": 64
+    }
+  }
+}

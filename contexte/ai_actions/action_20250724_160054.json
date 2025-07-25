@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:00:51.891380",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il est essentiel de gérer mes propriétés pour enfin construire des maisons et maximiser mes chances de gagner rapidement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

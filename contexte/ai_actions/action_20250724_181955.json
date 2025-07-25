@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:19:53.325702",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucun investissement supplémentaire possible ni action immédiate pertinente. Mieux vaut conserver mon cash limité et attendre une opportunité ou revenu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 42,
+    "money": {
+      "GPT": 69,
+      "Gemini": 102
+    }
+  }
+}

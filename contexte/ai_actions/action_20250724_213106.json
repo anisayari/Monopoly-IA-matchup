@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:31:04.604353",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Maintenant que la dette est réglée, je vais planifier la réactivation d’un maximum d’actifs clés : priorité au déblocage Vine Street ou Bow Street (orange).",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 110,
+    "money": {
+      "GPT": 114,
+      "Gemini": 52
+    }
+  }
+}

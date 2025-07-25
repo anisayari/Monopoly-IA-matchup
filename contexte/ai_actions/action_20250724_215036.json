@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:50:34.717396",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'hypothèque Trafalgar Square ($120) pour générer les fonds nécessaires et régler ma dette de loyer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 136,
+    "money": {
+      "GPT": 89,
+      "Gemini": 18
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:56:44.090082",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Mes fonds sont insuffisants pour ma dette. Hypothéquer Kings Cross Station est la meilleure option pour obtenir le cash nécessaire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 27
+    }
+  }
+}

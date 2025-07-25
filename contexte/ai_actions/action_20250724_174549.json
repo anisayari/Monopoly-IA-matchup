@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:45:47.475160",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois générer de l'argent pour payer ma dette de $50. Je vais gérer mes propriétés pour hypothéquer et couvrir ce montant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 121,
+      "Gemini": 46
+    }
+  }
+}

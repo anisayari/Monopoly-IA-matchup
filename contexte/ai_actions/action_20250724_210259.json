@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:02:57.416421",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Une carte chance me permet de collecter 150$, augmentant significativement mes liquidités. C'est un gain pur.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 82,
+      "Gemini": 42
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T13:03:49.804548",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Recevoir $200 me renfloue et me place en position d’attaque pour de futurs achats critiques ou négociations en vue d’un monopole.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 11,
+    "money": {
+      "GPT": 236,
+      "Gemini": 214
+    }
+  }
+}

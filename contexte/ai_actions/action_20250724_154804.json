@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:48:02.679020",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois retourner à la gestion pour débloquer la fenêtre d’achat de maisons sur mes monopoles. Ce mode ne permet pas d’investir immédiatement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

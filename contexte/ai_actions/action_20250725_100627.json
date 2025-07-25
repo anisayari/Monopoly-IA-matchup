@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-25T08:06:25.692992",
+  "trigger": "Force",
+  "keywords": [
+    "Who's playing"
+  ],
+  "options": [
+    "Back ",
+    "House Rules ",
+    "Next "
+  ],
+  "decision": "Next ",
+  "reason": "Le contexte ne propose aucune action stratégique particulière. Je dois passer cette popup pour continuer la progression du jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 0,
+      "Claude": 0
+    }
+  }
+}

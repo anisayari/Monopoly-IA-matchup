@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T13:18:47.747690",
+  "trigger": "Trading",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter la carte est automatique et bénéfique. Je la garde précieusement pour une éventuelle sortie de prison future, sans dépenser d'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 22,
+    "money": {
+      "GPT": 610,
+      "Gemini": 0
+    }
+  }
+}

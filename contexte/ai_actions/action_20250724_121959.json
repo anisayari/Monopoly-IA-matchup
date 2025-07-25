@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T10:19:57.516348",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Le popup est bloquant et la discussion n'a pas progressé. Tenter un échange est l'autre option disponible pour potentiellement avancer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:31:54.089878",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "L'échange est fait ! GPT a maintenant 2/3 rouge, je dois continuer à jouer et chercher de nouvelles opportunités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "GPT": 166,
+      "Claude": 964
+    }
+  }
+}

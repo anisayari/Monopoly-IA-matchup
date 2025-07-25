@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:07:31.821361",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai payé le loyer dû et ne suis pas sur une propriété achetable. Je dois passer au tour suivant pour relancer les dés et avancer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 487,
+      "Gemini": 1253
+    }
+  }
+}

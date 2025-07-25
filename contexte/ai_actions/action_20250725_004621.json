@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:46:19.782666",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Le menu gestion est vital pour lever les hypothèques sur Euston Road et The Angel Islington et retrouver la pression locative.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

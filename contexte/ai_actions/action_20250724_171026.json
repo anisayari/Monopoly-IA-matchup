@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:10:24.461040",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je possède deux monopoles (rose et orange), il est crucial d'investir immédiatement dans des maisons pour maximiser les loyers et mettre la pression sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 246,
+      "Gemini": 124
+    }
+  }
+}

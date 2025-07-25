@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:03:13.489413",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J’accède au menu gestion pour lever l’hypothèque des light blue, maximiser les revenus et verrouiller l’avantage stratégique contre Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

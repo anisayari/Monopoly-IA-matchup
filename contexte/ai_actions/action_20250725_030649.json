@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:06:47.331790",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Coventry Street est chère et n’entre pas dans mes collections actuelles. L’enchère peut forcer Claude à payer plus ou me permettre un achat à prix réduit.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 725,
+      "Claude": 1280
+    }
+  }
+}

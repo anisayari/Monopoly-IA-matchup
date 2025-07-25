@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:06:29.497505",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai construit une maison pour maximiser les revenus. Mes fonds sont maintenant optimisés pour le prochain tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 82,
+      "Gemini": 92
+    }
+  }
+}

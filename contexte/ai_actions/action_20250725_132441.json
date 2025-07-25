@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:24:39.268705",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "Fenchurch St. Station débloque un trio de gares. Je peux tenter d’acquérir la station auprès de Claude, qui a besoin de liquidités, en échange d’argent.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 723,
+      "Claude": 25
+    }
+  }
+}

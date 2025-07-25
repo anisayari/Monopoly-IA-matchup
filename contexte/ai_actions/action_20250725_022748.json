@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:27:46.103587",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai plusieurs monopoles et peu de liquidités, il est crucial de lever des hypothèques ou vendre/bâtir stratégiquement pour maximiser mes loyers et sécuriser la trésorerie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 12,
+    "money": {
+      "GPT": 21,
+      "Gemini": 335
+    }
+  }
+}

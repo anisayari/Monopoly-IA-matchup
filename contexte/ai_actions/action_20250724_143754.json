@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:37:52.603592",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "C’est une enchère : je dois discuter, poser ou relancer un prix pour forcer Gemini à payer plus ou gagner Euston Road à bon prix.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 627,
+      "Gemini": 1353
+    }
+  }
+}

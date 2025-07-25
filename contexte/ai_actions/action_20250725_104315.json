@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T08:43:12.897577",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter l'héritage augmente ma trésorerie et me place en bonne position pour acheter des propriétés stratégiques lors de mes prochains tours.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "GPT": 1350,
+      "Claude": 535
+    }
+  }
+}

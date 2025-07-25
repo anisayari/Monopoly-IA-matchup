@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T15:50:08.257096",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "cancel"
+  ],
+  "decision": "cancel",
+  "reason": "Les échanges ne sont pas nécessaires, mes priorités sont le développement immobilier et lever les hypothèques. Je conserve mes forces pour gagner.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 171,
+      "Gemini": 146
+    }
+  }
+}

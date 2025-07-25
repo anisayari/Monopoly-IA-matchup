@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:24:15.076666",
+  "trigger": "Force",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Bankrupt ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Malgré de faibles liquidités, explorer la fenêtre d’échange pourrait révéler de nouvelles opportunités ou déboucher sur une proposition inattendue profitable.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

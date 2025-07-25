@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:15:12.723697",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Interface défaillante ! Impossible de pointer sur mes propriétés ! Je dois sortir et chercher une autre solution d'urgence.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 74,
+    "money": {
+      "GPT": 43,
+      "Claude": 34
+    }
+  }
+}

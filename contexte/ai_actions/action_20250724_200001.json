@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:59:58.905376",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Phase d’enchère, je dois au minimum acter ou faire monter la surenchère. Obligatoire pour la propriété aux enchères.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 272,
+      "Gemini": 407
+    }
+  }
+}

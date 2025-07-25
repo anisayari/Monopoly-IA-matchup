@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:21:56.428448",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Accounts ",
+  "reason": "GPT est à $0. Je dois consolider ma position, déshypothéquer Regent Street et/ou construire sur le monopole rouge pour maximiser les loyers et faire banqueroute GPT.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 43,
+    "money": {
+      "GPT": 0,
+      "Gemini": 102
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:24:57.395592",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Le paiement de loyer est obligatoire. Ensuite il faudra surveiller Whitechapel Road et d’autres achats pour avancer vers le monopole marron.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 7,
+    "money": {
+      "GPT": 616,
+      "Claude": 1134
+    }
+  }
+}

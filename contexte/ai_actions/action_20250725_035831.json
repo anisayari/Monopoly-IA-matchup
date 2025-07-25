@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:58:29.723685",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Rien à construire ni à négocier sans cash. Place au tour suivant, les maisons orange rapporteront bientôt.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 22,
+    "money": {
+      "GPT": 46,
+      "Claude": 14
+    }
+  }
+}

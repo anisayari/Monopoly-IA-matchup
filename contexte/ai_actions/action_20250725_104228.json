@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:42:26.340210",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai remporté Fenchurch St. Station pour $400. Avec seulement $535 restants, je dois être prudent maintenant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "GPT": 1150,
+      "Claude": 535
+    }
+  }
+}

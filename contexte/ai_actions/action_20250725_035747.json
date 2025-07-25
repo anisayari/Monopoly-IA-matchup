@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:57:45.384650",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Plus assez de cash pour continuer à construire. Le mieux est d’attendre les prochains passages, les loyers orange sont maintenant redoutables.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 22,
+    "money": {
+      "GPT": 46,
+      "Claude": 14
+    }
+  }
+}

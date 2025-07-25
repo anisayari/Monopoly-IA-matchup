@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:20:32.388251",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois accéder à la gestion pour lever les hypothèques light blue immédiatement et maximiser la pression sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

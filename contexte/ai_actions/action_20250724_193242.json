@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:32:40.850360",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "J’ai maintenant $350, trois hypothèques. Je dois lever l’hypothèque d’Euston Road et Angel Islington (seulement $110), restaurant ainsi du potentiel de revenus et des leviers futurs.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 350,
+      "Gemini": 407
+    }
+  }
+}

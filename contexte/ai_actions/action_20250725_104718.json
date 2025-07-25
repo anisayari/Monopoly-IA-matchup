@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:47:16.073286",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon tour est terminé avec $245 restants et 5 propriétés. Je passe au tour suivant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 7,
+    "money": {
+      "GPT": 1450,
+      "Claude": 245
+    }
+  }
+}

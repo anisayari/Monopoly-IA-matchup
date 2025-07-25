@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:00:56.718828",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Done "
+  ],
+  "decision": "Done ",
+  "reason": "Refuser encore la vente de l’hôtel brown : priorité maximale à la menace et au potentiel de cash, surtout à ce prix dérisoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 322,
+      "Gemini": 407
+    }
+  }
+}

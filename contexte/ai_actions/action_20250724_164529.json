@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:45:27.264046",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il faut passer à la gestion immobilière afin d’investir tout de suite dans des maisons sur orange/rose et verrouiller l’avantage sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

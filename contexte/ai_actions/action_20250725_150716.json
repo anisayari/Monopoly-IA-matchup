@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:07:14.198984",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Parfait ! Avec 271M je peux lever hypothèque Park Lane (192M) puis construire maisons",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 177,
+      "Claude": 271
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:36:52.920648",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter le gain de la carte Chance pour augmenter mes fonds. Aucune raison de refuser ou de discuter.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1225,
+      "Gemini": 920
+    }
+  }
+}

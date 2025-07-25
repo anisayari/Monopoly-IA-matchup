@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:34:35.229273",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Regent Street est une propriété verte très rentable, j'ai les liquidités et ça diversifie mon portefeuille.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 166,
+      "Claude": 964
+    }
+  }
+}

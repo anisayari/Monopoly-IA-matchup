@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:56:00.323430",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "L'option 'Trade' n'a pas mené à une interface de négociation. Je dois annuler pour revenir aux options de paiement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 27
+    }
+  }
+}

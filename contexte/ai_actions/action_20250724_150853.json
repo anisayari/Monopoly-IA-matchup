@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:08:51.684563",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Il y a encore plusieurs propriétés abordables à acheter, et Gemini a peu de cash. Avancer vite maximise mes chances d’acquérir un monopole avant elle.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 17,
+    "money": {
+      "GPT": 328,
+      "Gemini": 82
+    }
+  }
+}

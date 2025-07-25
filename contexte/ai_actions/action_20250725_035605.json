@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:56:03.877159",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'utilise mon cash pour construire encore plus de maisons sur l’orange, maximisant les loyers avant que Claude ne repasse dessus. Effet boule de neige pour la victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 22,
+    "money": {
+      "GPT": 446,
+      "Claude": 14
+    }
+  }
+}

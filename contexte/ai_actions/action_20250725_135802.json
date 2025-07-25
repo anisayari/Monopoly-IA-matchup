@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:58:00.687324",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J’ai 207$ : investir dans une 2ème maison rose sur chaque propriété maximisera les loyers et asphyxiera financièrement Claude, qui n’a presque plus de cash.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 53,
+    "money": {
+      "GPT": 207,
+      "Claude": 130
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T15:22:14.369694",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "cancel"
+  ],
+  "decision": "cancel",
+  "reason": "J'ai déjà deux monopoles et peu de liquidités. Il vaut mieux ne pas agir et conserver mes ressources pour renforcer mes positions.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

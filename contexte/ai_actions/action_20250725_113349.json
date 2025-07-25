@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:33:46.860225",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai acquis Marlborough Street pour $190. Avec seulement $125 restants, je termine mon tour et conserve mes liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 15,
+    "money": {
+      "GPT": 1045,
+      "Claude": 125
+    }
+  }
+}

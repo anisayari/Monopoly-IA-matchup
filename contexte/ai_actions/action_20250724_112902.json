@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:29:00.085249",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon tour vient de commencer. Je dois lancer les dés et avancer pour commencer à acquérir des propriétés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1130,
+      "Gemini": 1550
+    }
+  }
+}

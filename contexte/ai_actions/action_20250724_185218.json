@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:52:16.685576",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai les fonds suffisants (73$) pour payer le loyer de 60$. Je dois régler cette dette pour continuer la partie.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 64,
+    "money": {
+      "GPT": 334,
+      "Gemini": 73
+    }
+  }
+}

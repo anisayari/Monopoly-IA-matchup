@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T15:24:42.607446",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "cancel"
+  ],
+  "decision": "cancel",
+  "reason": "Aucune proposition concrète d'échange. Mes ressources étant limitées, il est trop risqué d'agir sans offre précise.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

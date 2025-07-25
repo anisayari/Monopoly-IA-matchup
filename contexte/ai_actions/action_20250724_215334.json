@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:53:32.074055",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action de gestion urgente ni d’opportunité. J’attends le résultat du passage sur Mayfair hypothéqué et conserve mes maigres liquidités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 141,
+    "money": {
+      "GPT": 89,
+      "Gemini": 368
+    }
+  }
+}

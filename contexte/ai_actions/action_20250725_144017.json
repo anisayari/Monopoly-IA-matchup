@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:40:15.523297",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Rien à gérer ni échanger pour l'instant, et j'ai sécurisé mes positions pour maximiser mes chances au tour suivant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 11,
+    "money": {
+      "GPT": 113,
+      "Claude": 64
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:14:55.438596",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Le paiement des frais Community Chest est obligatoire. Perte mineure : je conserve 853 $ cash, assez pour investir dès que j'obtiens ou complète un groupe.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 31,
+    "money": {
+      "GPT": 903,
+      "Claude": 265
+    }
+  }
+}

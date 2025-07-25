@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:52:18.387696",
+  "trigger": "Force",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Bail Pay ",
+    "Roll Dice "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "Je dois encore prioriser la préservation de mon cash. Un double me sortirait gratuitement. Dépenser 50$ pour la caution me fragiliserait trop.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 136,
+    "money": {
+      "GPT": 89,
+      "Gemini": 368
+    }
+  }
+}

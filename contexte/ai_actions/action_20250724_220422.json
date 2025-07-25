@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:04:20.570630",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois sortir définitivement de cet écran de fiche de gare pour passer à la gestion active de mes hypothèques.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:44:58.938365",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai maximisé mes constructions pour l'instant et j'ai besoin de liquidités. Passer le tour est la seule option viable.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

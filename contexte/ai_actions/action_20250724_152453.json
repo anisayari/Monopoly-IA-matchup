@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:24:51.491177",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai la carte 'Sortie de Prison'. Je peux donc relancer les dés sans payer pour me libérer et profiter de mon monopole rouge.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 28,
+    "money": {
+      "GPT": 490,
+      "Gemini": 50
+    }
+  }
+}

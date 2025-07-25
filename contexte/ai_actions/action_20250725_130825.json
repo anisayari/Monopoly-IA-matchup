@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:08:23.273861",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois payer les frais de scolarité de $50. Pas le choix, c'est une obligation de la carte Community Chest.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 29,
+    "money": {
+      "GPT": 820,
+      "Claude": 133
+    }
+  }
+}

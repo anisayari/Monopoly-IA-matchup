@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:33:34.369956",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai réglé ma dette. Aucune autre action immobilière stratégique n'est possible avec mes fonds actuels. Je passe le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 50,
+    "money": {
+      "GPT": 28,
+      "Gemini": 199
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T13:11:42.671512",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Poursuivre la négociation pour Trafalgar Square est crucial pour obtenir le monopole rouge et accroître mes revenus locatifs.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 20,
+    "money": {
+      "GPT": 330,
+      "Gemini": 280
+    }
+  }
+}

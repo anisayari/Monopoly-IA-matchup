@@ -4,10 +4,10 @@
   "delay_seconds": 2,
   "priority_order": ["buy", "next turn", "roll again", "auction", "trade", "back", "accounts"],
   "keywords": {
-    "Bankruptcy":{
-      "text" : ["Bankruptcy"],
-      "icon": ["no","yes"],
-      "category":"bankrupt"
+    "Auction": {
+      "text": ["Bid"],
+      "icon": ["Yes", "No"],
+      "category": "auction"
     },
     "Order Of Play":{
       "text": ["Order of Play"],
@@ -23,6 +23,11 @@
       "text": ["Whitout saving"],
       "icon": ["yes", "no"],
       "category": "continue_without_saving"
+    },
+    "Do you want to": {
+      "text": ["Do you want to"],
+      "icon": ["auction","accounts"],
+      "category": "buy"
     },
     "whitout saving": {
       "text": ["Whitout saving"],
@@ -61,6 +66,16 @@
       "icon": ["auction", "buy"],
       "category": "buy"
     },
+    "a Property you 1 ": {
+      "text": ["a Property you own"],
+      "icon": ["trade","pay"],
+      "category": "property"
+    },
+    "a Property you 2 ": {
+      "text": ["a Property you own"],
+      "icon": ["bankrupt","trade"],
+      "category": "property"
+    },
     "a Property you": {
       "text": ["a Property you own"],
       "icon": ["bankrupt","trade","pay","back","cancel"],
@@ -86,16 +101,22 @@
       "icon": ["Pay Bail", "Roll Dice", "Use Card", "bail pay"],
       "category": "in_jail"
     },
+    "In Jail 2": {
+      "text": ["In Jail"],
+      "icon": [ "Roll Dice","bail pay"],
+      "category": "in_jail"
+    },
+    "In Jail 3": {
+      "text": ["In Jail"],
+      "icon": [ "Roll Dice","bail pay", "Use Card"],
+      "category": "in_jail"
+    },
     "Community Chest": {
       "text": ["Community Chest"],
       "icon": ["OK"],
       "category": "community_chest"
     },
-    "Auction": {
-      "text": ["Bid"],
-      "icon": ["Yes", "No"],
-      "category": "auction"
-    },
+
     "Accounts 1": {
       "text": ["Accounts"],
       "icon": ["OK"],
@@ -122,7 +143,7 @@
       "category": "pay_bail"
     },
     "Property Deeds": {
-      "text": ["Property Deeds","property deeds"],
+      "text": ["Property Deeds"],
       "icon": ["back", "trade","done","pay","bankrupt"],
       "category": "property"
     },
@@ -145,6 +166,11 @@
       "text": ["Press to continue"],
       "icon": ["press to continue"],
       "category": "press_to_continue"
+  },
+  "Bankruptcy":{
+    "text" : ["Bankruptcy"],
+    "icon": ["no","yes"],
+    "category":"bankrupt"
   }
   }
 }

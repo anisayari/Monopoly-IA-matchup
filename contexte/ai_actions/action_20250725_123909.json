@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:39:07.810824",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je possède deux gares, une bonne trésorerie et aucun risque immédiat. Continuer me permet de garder la main tout en surveillant les prochaines occasions d’achat ou d’échange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 27,
+    "money": {
+      "GPT": 828,
+      "Claude": 175
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:28:06.696953",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je n'ai pas assez d'argent pour investir plus ou lever des hypothèques, donc je poursuis, espérant encaisser sur mes maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

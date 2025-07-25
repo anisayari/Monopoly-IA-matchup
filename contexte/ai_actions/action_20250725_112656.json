@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:26:54.320427",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Le paiement de loyer de $25 est obligatoire. Je conserve assez de liquidités pour continuer à acheter des propriétés clés aux prochains tours.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1240,
+      "Claude": 315
+    }
+  }
+}

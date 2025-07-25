@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:40:17.237190",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer le loyer immédiatement limite les retards et montre que je respecte les règles tout en gardant de bonnes relations pour d’éventuels futurs échanges.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "GPT": 478,
+      "Gemini": 1372
+    }
+  }
+}

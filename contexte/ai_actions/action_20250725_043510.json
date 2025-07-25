@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:35:08.462104",
+  "trigger": "Force",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Valider Options boucle le jeu et entérine la victoire. Il s'agit de la meilleure action dans ce contexte de main menu final.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

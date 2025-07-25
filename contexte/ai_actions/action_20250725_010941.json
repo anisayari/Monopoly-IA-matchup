@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:09:39.499570",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois retourner dans la gestion pour lever les hypothèques des light blue et rendre mon monopole dangereux immédiatement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

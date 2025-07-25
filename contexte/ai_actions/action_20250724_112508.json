@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:25:06.532473",
+  "trigger": "Force",
+  "keywords": [
+    "whitout saving"
+  ],
+  "options": [
+    "Continue without saving/loading "
+  ],
+  "decision": "Continue without saving/loading ",
+  "reason": "Aucune décision critique à ce stade initial, le jeu vient de commencer. Il vaut mieux avancer pour évaluer la stratégie de l'adversaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

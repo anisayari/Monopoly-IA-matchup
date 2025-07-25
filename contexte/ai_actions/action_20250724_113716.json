@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:37:14.093056",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai géré l'événement 'Chance'. Mon tour continue et je dois lancer les dés pour avancer et potentiellement acquérir plus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1225,
+      "Gemini": 1070
+    }
+  }
+}

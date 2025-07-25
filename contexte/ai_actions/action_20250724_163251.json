@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:32:49.721827",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accéder immédiatement à la gestion immobilière pour placer des maisons sur les groupes orange et rose avant le prochain tour de Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

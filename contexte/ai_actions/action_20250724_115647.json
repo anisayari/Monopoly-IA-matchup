@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:56:45.491366",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai payé le loyer, mon tour se termine. Je dois passer la main et observer les mouvements de GPT.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 697,
+      "Gemini": 778
+    }
+  }
+}

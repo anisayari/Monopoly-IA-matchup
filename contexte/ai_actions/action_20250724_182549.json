@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:25:47.168396",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec $0 en caisse, je ne peux pas investir ni négocier pour l’instant. Je dois attendre qu’un adversaire tombe sur mes propriétés pour me renflouer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 47,
+    "money": {
+      "GPT": 0,
+      "Gemini": 102
+    }
+  }
+}

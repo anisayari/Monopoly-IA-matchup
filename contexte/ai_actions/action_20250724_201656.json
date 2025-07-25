@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:16:54.727546",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Coventry Street (yellow) pour obtenir $130 et payer le loyer sans sacrifier de maisons importantes.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 86,
+    "money": {
+      "GPT": 82,
+      "Gemini": 22
+    }
+  }
+}

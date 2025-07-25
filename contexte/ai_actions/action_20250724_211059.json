@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:10:57.240263",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement $12, aucune option offensive ou défensive n'est disponible. Priorité à la survie, il faut patienter pour de meilleures opportunités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 104,
+    "money": {
+      "GPT": 12,
+      "Gemini": 312
+    }
+  }
+}

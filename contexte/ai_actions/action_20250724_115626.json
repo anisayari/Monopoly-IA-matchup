@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:56:24.509058",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois payer le loyer. Il n'y a pas d'autre option stratégique ici que d'accepter et de continuer la partie.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 697,
+      "Gemini": 778
+    }
+  }
+}

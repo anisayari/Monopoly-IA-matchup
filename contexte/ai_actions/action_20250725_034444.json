@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:44:41.915821",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Roll Again ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois faire l'échange convenu avec GPT : acheter Fleet Street pour $280 pour compléter mes rouges.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 17,
+    "money": {
+      "GPT": 86,
+      "Claude": 344
+    }
+  }
+}

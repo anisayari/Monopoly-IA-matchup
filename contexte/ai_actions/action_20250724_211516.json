@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:15:14.424672",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois immédiatement lever une ou plusieurs hypothèques orange pour activer mon monopole, puis investir si possible et maximiser les risques pour Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 105,
+    "money": {
+      "GPT": 212,
+      "Gemini": 312
+    }
+  }
+}

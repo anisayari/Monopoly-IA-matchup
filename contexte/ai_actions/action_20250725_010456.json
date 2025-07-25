@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:04:54.390944",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois fermer la fiche de la gare pour accéder enfin à la gestion et libérer les light blue. Priorité absolue pour gagner.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

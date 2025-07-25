@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:22:05.220672",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois accéder à la gestion de mes propriétés pour lever l'hypothèque de Pentonville Road avec mes $64.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 77,
+    "money": {
+      "GPT": 13,
+      "Claude": 64
+    }
+  }
+}

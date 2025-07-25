@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:00:09.965727",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "200$ trop cher pour une station seule, préfère enchères pour prix plus bas.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1165,
+      "Claude": 1475
+    }
+  }
+}

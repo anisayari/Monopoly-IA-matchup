@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:04:55.940193",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois sortir du menu trading pour pouvoir enfin accéder à la gestion et construire des maisons sur mes monopoles.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

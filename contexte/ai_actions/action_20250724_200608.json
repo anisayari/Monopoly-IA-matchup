@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:06:06.178393",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Euston Road pour obtenir $50 et continuer à rassembler du cash. Objectif: tenir le plus longtemps possible, éviter la banqueroute.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 392,
+      "Gemini": 407
+    }
+  }
+}

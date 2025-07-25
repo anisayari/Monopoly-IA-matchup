@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:02:04.328168",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il est vital d’aller en gestion pour lever les hypothèques des light blue et accélérer la pression sur Gemini. Action indispensable pour la victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

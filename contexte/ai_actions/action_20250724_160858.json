@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:08:56.322455",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois absolument accéder à la gestion pour investir tout mon cash en maisons sur orange et rose et piéger Gemini dès ses prochains lancés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

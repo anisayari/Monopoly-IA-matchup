@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:17:17.852177",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je ne peux pas compléter de groupe immédiatement et Claude n’a plus de cash. Je maximise mes chances d’acheter des propriétés libres ou de forcer Claude à vendre.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 32,
+    "money": {
+      "GPT": 853,
+      "Claude": 25
+    }
+  }
+}

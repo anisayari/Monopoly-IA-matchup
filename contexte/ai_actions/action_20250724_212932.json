@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:29:30.213690",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Aucune vente directe possible, je dois hypothéquer une propriété (Bow Street) pour combler la dette et maximiser la sécurité du monopole orange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 110,
+    "money": {
+      "GPT": 24,
+      "Gemini": 52
+    }
+  }
+}

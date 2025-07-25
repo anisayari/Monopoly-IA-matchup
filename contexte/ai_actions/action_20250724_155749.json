@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:57:47.779444",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Quitter le menu trading est nécessaire pour accéder à la véritable gestion et construire sur orange et rose immédiatement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

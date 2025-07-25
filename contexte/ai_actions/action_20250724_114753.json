@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:47:51.030920",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "L'achat de Kings Cross Station est stratégique. J'ai les fonds, et cela me rapproche du monopole des gares, une source de revenu passive puissante.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT": 1231,
+      "Gemini": 1014
+    }
+  }
+}

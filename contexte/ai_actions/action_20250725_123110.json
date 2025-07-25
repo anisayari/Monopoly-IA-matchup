@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:31:08.268152",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Parfait ! J'ai enfin accès au menu Accounts pour finaliser l'échange négocié avec GPT (mes pinks + Strand contre sa Pentonville Road).",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT": 874,
+      "Claude": 55
+    }
+  }
+}

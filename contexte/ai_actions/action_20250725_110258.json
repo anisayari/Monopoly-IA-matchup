@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:02:56.363974",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois accéder au menu d'échange pour finaliser l'accord avec GPT : $275 pour sa Whitehall et obtenir mon monopole rose.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:17:38.632899",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Je retourne au menu principal pour continuer le jeu et lancer les dés pour mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 725,
+      "Claude": 1015
+    }
+  }
+}

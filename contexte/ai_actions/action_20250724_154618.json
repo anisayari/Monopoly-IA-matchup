@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:46:16.621636",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Le bon choix stratégique est d’investir immédiatement dans les maisons orange : il faut utiliser la gestion (donc Accounts) et non cette fenêtre. Je dois revenir au menu principal.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:42:03.272522",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "J’accrois ma sécurité avec l’hypothèque de Coventry Street (130$). Je préserve ainsi mes groupes à maisons pour le cash-flow.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 302,
+      "Gemini": 407
+    }
+  }
+}

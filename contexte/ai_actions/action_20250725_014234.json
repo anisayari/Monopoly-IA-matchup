@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-24T23:42:32.256057",
+  "trigger": "Force",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "Continue ",
+  "reason": "Pour maximiser mes chances de revenir et profiter de tout faux pas adverse, je dois continuer et laisser la partie se dérouler.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

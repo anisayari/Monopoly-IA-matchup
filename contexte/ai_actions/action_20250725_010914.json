@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:09:12.568620",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je ferme la fiche pour accéder à la vraie gestion de mes propriétés et lever les hypothèques light blue sans délai pour bloquer Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

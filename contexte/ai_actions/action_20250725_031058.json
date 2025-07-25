@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:10:55.886365",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Je n'ai aucun intérêt immédiat à échanger ou à gérer mes propriétés ni de raison d’acheter cette station. Mieux vaut revenir à la partie principale.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT": 725,
+      "Claude": 1015
+    }
+  }
+}

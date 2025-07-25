@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:17:43.452937",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Continuer le jeu pour acquérir plus de propriétés et développer mon portefeuille",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1500,
+      "Claude": 1395
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:30:23.677161",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il reste $640 à payer, seulement $110 en caisse. J’hypothèque les terrains non améliorés (light blue, yellow, Oxford St, Electric Co) pour rassembler la somme vitale.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 110,
+      "Gemini": 407
+    }
+  }
+}

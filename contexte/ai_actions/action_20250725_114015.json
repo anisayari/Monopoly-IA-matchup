@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:40:13.760995",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Il est préférable de poursuivre la partie pour surveiller les opportunités d'achat et d'échange, surtout que Claude dispose de peu de liquidités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 1045,
+      "Claude": 125
+    }
+  }
+}

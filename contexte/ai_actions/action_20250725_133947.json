@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:39:45.060738",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je dois initier l'enchère pour Coventry Street et négocier le prix avec GPT dans cette vente aux enchères.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 45,
+    "money": {
+      "GPT": 147,
+      "Claude": 141
+    }
+  }
+}

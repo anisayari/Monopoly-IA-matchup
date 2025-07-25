@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:44:36.083968",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai construit ce que je pouvais sur le groupe rouge. Je me retire de la gestion pour le moment pour lancer les dés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

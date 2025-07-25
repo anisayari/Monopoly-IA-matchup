@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:02:34.930426",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Vendre une maison sur Old Kent Road (brown) pour obtenir du cash immédiat, continuer à repousser la banqueroute et préserver le cash-flow.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 347,
+      "Gemini": 407
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:11:57.862242",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Old Kent Road est peu cher et augmente mes actifs. Plus de propriétés signifie un meilleur levier d'échanges et un contrôle accru sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 687,
+      "Gemini": 1253
+    }
+  }
+}

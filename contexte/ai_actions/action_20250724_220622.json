@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:06:20.197905",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Quitte la fiche gare pour revenir à la gestion. Seule la gestion active permet d'agir sur hypothèques et développement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

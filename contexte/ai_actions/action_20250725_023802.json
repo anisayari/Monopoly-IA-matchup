@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:38:00.946222",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai encore des fonds pour construire une maison sur mon monopole Rouge, ce qui augmentera mes revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT": 221,
+      "Gemini": 105
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:06:18.763356",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "J’ai effectué l’achat stratégique sur les brunes. Je dois conserver du cash en réserve pour faire face à des imprévus.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 75,
+    "money": {
+      "GPT": 134,
+      "Gemini": 23
+    }
+  }
+}

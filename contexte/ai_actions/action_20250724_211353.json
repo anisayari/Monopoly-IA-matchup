@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:13:51.580798",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Pour accéder à la gestion de mes propriétés (lever des hypothèques orange), je dois retourner à la fenêtre principale (Accounts).",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 105,
+    "money": {
+      "GPT": 212,
+      "Gemini": 312
+    }
+  }
+}

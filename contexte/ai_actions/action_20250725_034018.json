@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:40:16.755068",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Il est capital de jauger l’intérêt de Claude pour Bow Street et d’essayer de pousser son enchère le plus haut possible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 266,
+      "Claude": 464
+    }
+  }
+}

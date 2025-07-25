@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:48:10.476683",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "J'ai $300 maintenant ! Old Kent Road à $60 est abordable et me donne une propriété brown pour diversifier mon portfolio.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 47,
+    "money": {
+      "GPT": 147,
+      "Claude": 300
+    }
+  }
+}

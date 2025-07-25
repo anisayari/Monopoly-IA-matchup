@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T11:43:26.428025",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Démarrer l'enchère pour obtenir Northumberland Avenue à un prix potentiellement inférieur à sa valeur et empêcher l'adversaire de constituer des monopoles.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1650,
+      "Gemini": 1480
+    }
+  }
+}

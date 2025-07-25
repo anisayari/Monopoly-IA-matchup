@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:25:12.767999",
+  "trigger": "Force",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Bankrupt ",
+    "Trade "
+  ],
+  "decision": "Bankrupt ",
+  "reason": "J'ai suffisamment de propriétés pour rester compétitif ; cependant aucune action n'est possible ici autre que passer. Il faut ignorer l'option Bankrupt car elle n'est pas justifiée.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:48:13.411879",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Mes fonds sont insuffisants pour payer le loyer. Je suis contraint de déclencher le mécanisme de vente/hypothèque pour couvrir la dette.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 135,
+    "money": {
+      "GPT": 89,
+      "Gemini": 18
+    }
+  }
+}

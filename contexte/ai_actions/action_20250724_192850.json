@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:28:48.657140",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Ma dette remonte à $640 : il faut continuer de vendre des maisons et hypothéquer des terrains pour rassembler la somme et éviter la banqueroute.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 160,
+      "Gemini": 407
+    }
+  }
+}

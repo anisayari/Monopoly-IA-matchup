@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:01:07.975035",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je dois initier l'enchère pour Vine Street. Avec $130, je peux enchérir prudemment contre GPT qui a $207.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 53,
+    "money": {
+      "GPT": 207,
+      "Claude": 130
+    }
+  }
+}

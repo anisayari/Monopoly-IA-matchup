@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:40:09.405490",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai payé le loyer. Mes fonds sont bas et ne permettent pas d'actions immobilières stratégiques. Je passe le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 55,
+    "money": {
+      "GPT": 124,
+      "Gemini": 103
+    }
+  }
+}

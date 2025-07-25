@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:44:34.626748",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois valider la carte \"Aller en prison\" pour poursuivre le jeu. Ensuite, je maximiserai mes chances de sortir sans dépenser mon précieux cash.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 131,
+    "money": {
+      "GPT": 39,
+      "Gemini": 68
+    }
+  }
+}

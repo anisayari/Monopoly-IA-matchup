@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:46:22.490471",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "L'interface ne me permet pas d'accéder à mes propriétés. Je passe le tour en espérant pouvoir gérer après.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 47,
+    "money": {
+      "GPT": 147,
+      "Claude": 100
+    }
+  }
+}

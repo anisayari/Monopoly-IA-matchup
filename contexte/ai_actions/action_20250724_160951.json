@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:09:49.156054",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il faut absolument aller en gestion pour construire rapidement sur orange et rose et exploiter l’avantage maximal du cash et des monopoles contre Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

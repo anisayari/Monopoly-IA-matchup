@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:47:46.971016",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "L'hypothèque et le paiement sont effectués. Passer au prochain tour est vital, aucun autre mouvement productif n'est possible maintenant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 101,
+    "money": {
+      "GPT": 32,
+      "Gemini": 87
+    }
+  }
+}

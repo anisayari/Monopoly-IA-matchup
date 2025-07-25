@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:27:57.827060",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Le menu Options permet de sauvegarder, quitter ou valider la victoire officiellement. Pas d'autre action stratégique pertinente possible dans cette situation.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

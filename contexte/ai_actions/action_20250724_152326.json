@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:23:24.048069",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Ma trésorerie est insuffisante et Whitehall n'est pas stratégique pour mes monopoles. Je me retire de l'enchère.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 26,
+    "money": {
+      "GPT": 560,
+      "Gemini": 50
+    }
+  }
+}

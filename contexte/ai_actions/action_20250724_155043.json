@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:50:41.082849",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Ce menu ne permet pas de gérer les constructions. Il faut retourner au menu principal pour accéder à la gestion des propriétés et investir dans les maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

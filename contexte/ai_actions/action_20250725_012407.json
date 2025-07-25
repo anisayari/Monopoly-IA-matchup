@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:24:05.171054",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai optimisé mes maisons. Avec seulement $21 restants, aucune action supplémentaire n'est possible pour l'instant. Je dois revenir au jeu et attendre de rentrer de l'argent.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:25:36.232981",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je ne peux ni acheter ni échanger la station car elle est encore disponible sur le plateau, je dois retourner aux options globales.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 723,
+      "Claude": 25
+    }
+  }
+}

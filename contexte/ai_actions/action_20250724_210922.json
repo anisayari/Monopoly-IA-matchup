@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:09:20.438004",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai amplement les fonds nécessaires pour payer le loyer. Il est préférable de procéder sans délai.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 62,
+      "Gemini": 312
+    }
+  }
+}

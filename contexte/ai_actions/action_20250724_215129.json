@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:51:27.412496",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Ma dette est couverte. Je sors du menu de gestion pour reprendre le déroulement normal du jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 136,
+    "money": {
+      "GPT": 89,
+      "Gemini": 368
+    }
+  }
+}

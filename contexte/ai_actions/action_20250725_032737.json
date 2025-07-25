@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:27:35.097774",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "GPT a pris Marlborough Street et avance vers un monopole orange dangereux, je dois continuer à jouer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 216,
+      "Claude": 1134
+    }
+  }
+}

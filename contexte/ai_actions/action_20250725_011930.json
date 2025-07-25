@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:19:27.961378",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Menu gestion immédiat pour lever hypothèques Euston Road et Angel Islington, maximiser la pression locative sur Gemini, et garder le contrôle du rythme.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

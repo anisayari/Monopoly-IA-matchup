@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:00:34.020756",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois fermer cette fiche de station pour retrouver la vraie fenêtre de gestion et libérer mes light blue. Passage obligé pour gagner.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

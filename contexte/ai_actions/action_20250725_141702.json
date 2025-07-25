@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T12:17:00.583231",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Interface d'échange fermée ! Je dois contacter GPT directement pour finaliser notre accord : Coventry Street contre $40 cash.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 75,
+    "money": {
+      "GPT": 43,
+      "Claude": 34
+    }
+  }
+}

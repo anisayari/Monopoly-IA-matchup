@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:15:53.895906",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai investi et optimisé mes placements immobiliers. Je laisse l'action à Gemini pour engranger des loyers potentiels et observer ses prochains mouvements.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 82,
+    "money": {
+      "GPT": 160,
+      "Gemini": 57
+    }
+  }
+}

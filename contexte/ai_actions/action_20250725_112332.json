@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:23:29.908563",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "L'échange a échoué. Je ferme ce popup pour continuer le jeu et chercher d'autres opportunités stratégiques pour progresser.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

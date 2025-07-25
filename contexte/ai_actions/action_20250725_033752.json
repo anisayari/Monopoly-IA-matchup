@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:37:50.574139",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec $266 et Whitechapel Road encore disponible, il faut avancer rapidement pour prioriser l'achat du monopole marron ou dénicher une opportunité d’échange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 266,
+      "Claude": 264
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:31:54.395122",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement 74$, investir dans le rachat d’hypothèques serait risqué. Je conserve la trésorerie pour faire face à un imprévu ou à une chance d’achat.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 110,
+    "money": {
+      "GPT": 74,
+      "Gemini": 92
+    }
+  }
+}

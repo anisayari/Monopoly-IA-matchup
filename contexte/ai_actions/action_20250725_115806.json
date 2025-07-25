@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:58:04.087223",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec seulement $125, je dois gérer mes propriétés et chercher des échanges pour créer un monopole ou améliorer ma situation financière.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 18,
+    "money": {
+      "GPT": 805,
+      "Claude": 125
+    }
+  }
+}

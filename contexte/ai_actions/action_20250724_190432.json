@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:04:30.688721",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois accéder à la gestion des propriétés pour construire des maisons maintenant que Gemini est fragilisé et incapable de contre-attaquer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 75,
+    "money": {
+      "GPT": 234,
+      "Gemini": 23
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:42:38.503390",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Clin d'œil : fermer la fiche reste essentiel pour enfin activer la gestion et lever les hypothèques light blue.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

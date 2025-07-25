@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:40:11.883097",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je ne veux pas initier d'échange maintenant. Priorité à la gestion de mes maisons pour rentabiliser mes monopoles avant de trader.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 254,
+      "Gemini": 46
+    }
+  }
+}

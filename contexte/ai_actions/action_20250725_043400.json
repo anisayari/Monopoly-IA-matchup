@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:33:58.195981",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Aucune action stratégique possible ici, le jeu est terminé et aucune transaction ne changerait le résultat.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

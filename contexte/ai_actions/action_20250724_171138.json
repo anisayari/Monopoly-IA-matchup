@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:11:36.308742",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je reste en gestion pour acheter des maisons sur mes monopoles ou hypothéquer des terrains secondaires si besoin d'argent pour construire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 246,
+      "Gemini": 124
+    }
+  }
+}

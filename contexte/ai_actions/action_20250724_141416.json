@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:14:14.297616",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Euston Road n'est pas essentiel pour un monopole vu mon portefeuille. Je peux économiser du cash et forcer Gemini à payer plus cher en cas d'intérêt.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 627,
+      "Gemini": 1353
+    }
+  }
+}

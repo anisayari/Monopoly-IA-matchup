@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:53:31.811915",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "No ",
+  "reason": "Avec seulement $24, je ne peux pas me permettre d'acheter Oxford Street à $300. Je dois préserver ma liquidité.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT": 46,
+      "Claude": 24
+    }
+  }
+}

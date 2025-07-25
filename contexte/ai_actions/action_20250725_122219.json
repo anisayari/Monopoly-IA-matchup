@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:22:17.203312",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Je dois continuer pour sortir de cette pause et accéder aux options de jeu normales incluant le menu Trade pour l'échange.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 21,
+    "money": {
+      "GPT": 874,
+      "Claude": 55
+    }
+  }
+}

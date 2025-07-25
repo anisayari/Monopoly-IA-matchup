@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:34:40.904214",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Avec 187$, je peux acheter une maison de plus sur Fleet Street, renforçant ainsi mon monopole rouge et mes revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 187
+    }
+  }
+}

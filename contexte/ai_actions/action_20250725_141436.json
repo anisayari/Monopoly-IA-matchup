@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:14:34.235685",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Interface d'hypothèque ! Je dois pointer sur Coventry Street et appuyer A pour l'hypothéquer et récupérer $130 vitaux.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 74,
+    "money": {
+      "GPT": 43,
+      "Claude": 34
+    }
+  }
+}

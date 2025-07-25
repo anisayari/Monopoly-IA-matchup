@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:53:28.968997",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J’agis pour lever l’hypothèque d’Euston Road. Je pourrais aussi investir dans des maisons où possible sur mes monopoles. Maximiser mes cashflows est essentiel.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 171,
+      "Gemini": 146
+    }
+  }
+}

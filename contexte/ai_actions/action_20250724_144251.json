@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:42:49.829500",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Il n'y a aucune gestion de propriété ou échange urgent. J'ai assez de liquidités pour saisir la prochaine occasion d'achat en avançant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT": 464,
+      "Gemini": 1206
+    }
+  }
+}

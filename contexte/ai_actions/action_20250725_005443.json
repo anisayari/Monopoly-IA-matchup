@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:54:41.039943",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "La gestion de propriété est indispensable pour lever l’hypothèque des light blue et optimiser mes loyers, afin de dominer Gemini rapidement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

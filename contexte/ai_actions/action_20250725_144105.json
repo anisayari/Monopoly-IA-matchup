@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:41:03.048217",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Mayfair trop cher à 400M avec seulement 64M en cash, auction plus avantageuse",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 11,
+    "money": {
+      "GPT": 113,
+      "Claude": 64
+    }
+  }
+}

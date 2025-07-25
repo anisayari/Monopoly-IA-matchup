@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:48:58.574446",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Northumberland Avenue consolide le groupe rose, ouvre la voie au monopole et bloque Gemini, qui possède déjà un rose. Forte position pour négocier et construire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT": 1231,
+      "Gemini": 814
+    }
+  }
+}

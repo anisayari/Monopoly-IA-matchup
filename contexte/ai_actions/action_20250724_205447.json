@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:54:45.153544",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je n'ai pas les fonds pour déshypothéquer ou construire. Il est préférable de clore la gestion et de passer mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 27
+    }
+  }
+}

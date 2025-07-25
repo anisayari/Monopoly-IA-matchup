@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:25:05.273160",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "La transaction ne peut pas être validée ici, ni de gestion utile sur ce menu. Je dois retourner à la gestion pour avancer sur la résolution de la dette.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 160,
+      "Gemini": 407
+    }
+  }
+}

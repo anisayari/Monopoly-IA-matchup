@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:23:07.018905",
+  "trigger": "Force",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Ma liquidité est trop faible pour investir et je n'ai pas de perspective d'échange intéressée. Il est préférable d'envisager un échange avec Gemini pour renforcer ma position.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

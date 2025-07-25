@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:30:46.471951",
+  "trigger": "Force",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Sélectionner Options est le moyen standard de finaliser et d’acter la victoire officiellement dans ce contexte de victoire totale.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

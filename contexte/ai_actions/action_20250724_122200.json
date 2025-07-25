@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T10:21:58.668595",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Le popup 'Tradingelec' ne permet pas d'action directe pour finaliser l'échange. Annuler pour tenter de débloquer le jeu afin que l'échange s'exécute.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

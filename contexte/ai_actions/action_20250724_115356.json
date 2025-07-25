@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:53:54.762920",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Trafalgar Square est clé pour le monopole rouge, groupement très lucratif. Cela bloque Gemini et offre une forte capacité de négociation ou de développement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 919,
+      "Gemini": 796
+    }
+  }
+}

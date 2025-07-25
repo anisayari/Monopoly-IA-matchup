@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:46:19.415433",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon cash est bas, j’ai assez construit pour piéger Gemini. Je garde des liquidités pour survivre et observer ses prochains choix.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 60,
+    "money": {
+      "GPT": 124,
+      "Gemini": 103
+    }
+  }
+}

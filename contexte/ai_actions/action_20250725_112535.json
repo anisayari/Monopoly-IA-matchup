@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:25:33.200416",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Strand est une propriété orange très rentable, et il est crucial de bloquer l’accès à ce groupe pour préparer un futur monopole ou des échanges stratégiques.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:43:34.015003",
+  "trigger": "a Property you",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Impossible d'agir depuis la prison pour l’instant. J’accepte et j’utilise mon passage pour bloquer Claude et économiser mes fonds.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 47,
+    "money": {
+      "GPT": 147,
+      "Claude": 0
+    }
+  }
+}

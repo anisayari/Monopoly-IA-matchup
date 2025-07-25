@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:43:09.707780",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Sélectionner Options dans ce menu confirme la victoire et termine officiellement la session, sans aucune action restante pour optimiser. Décision finale optimale.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

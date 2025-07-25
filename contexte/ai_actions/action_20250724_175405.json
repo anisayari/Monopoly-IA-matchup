@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:54:03.369694",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "J’ai levé l’hypothèque d’Euston Road, il reste trop peu de cash pour construire plus. Retour au jeu et observation des prochains mouvements.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 116,
+      "Gemini": 146
+    }
+  }
+}

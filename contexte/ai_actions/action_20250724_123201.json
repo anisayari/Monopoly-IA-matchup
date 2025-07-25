@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T10:31:58.994071",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Le popup 'Property Deed' est présent et 'Trade' est une option. Je dois retenter de finaliser l'échange crucial pour le monopole rose.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

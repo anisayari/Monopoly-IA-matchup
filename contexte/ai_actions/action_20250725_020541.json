@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:05:39.261193",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Avec $21 je ne peux pas réellement enchérir. Je vais négocier ou influencer Gemini pour maximiser mes chances (hausser le prix ou prévoir un futur échange).",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

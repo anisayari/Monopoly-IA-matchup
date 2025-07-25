@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:35:20.227872",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai complété le monopole rose. Mon tour est terminé, je dois passer la main et attendre mon prochain tour pour construire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1225,
+      "Gemini": 920
+    }
+  }
+}

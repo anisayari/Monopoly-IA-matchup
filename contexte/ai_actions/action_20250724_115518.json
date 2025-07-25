@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:55:16.086530",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Il n’y a rien à faire pour ce tour, aller en prison me ralentit mais peut limiter mes loyers à payer. Je garde mes fonds pour de futures opportunités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 679,
+      "Gemini": 796
+    }
+  }
+}

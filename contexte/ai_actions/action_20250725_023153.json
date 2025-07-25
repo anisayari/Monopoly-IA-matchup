@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:31:51.188348",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Accéder aux options de gestion pour construire sur les monopoles ou hypothéquer si besoin de fonds.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "GPT": 21,
+      "Gemini": 115
+    }
+  }
+}

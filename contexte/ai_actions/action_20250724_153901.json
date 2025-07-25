@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:38:59.915085",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai les fonds pour acheter des maisons. Je vais prioriser l'acquisition du monopole rouge et construire sur mes propriétés existantes.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 35,
+    "money": {
+      "GPT": 306,
+      "Gemini": 234
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:25:44.288690",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je n'ai pas d'argent pour construire, ni pour lever des hypothèques. Il est préférable de passer le tour pour que Gemini agisse.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

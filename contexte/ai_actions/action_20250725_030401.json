@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:03:59.235054",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Après acquisition d’une nouvelle propriété, il est essentiel d’avancer vite pour saisir d'autres opportunités et optimiser mon portefeuille avant que Claude ne rattrape.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 965,
+      "Claude": 1280
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:46:55.594339",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Auction ",
+  "reason": "Eau et électricité sont rarement rentables seules. Mettre en enchère peut forcer Gemini à surpayer ou m'offrir l'achat à bas prix.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT": 464,
+      "Gemini": 986
+    }
+  }
+}

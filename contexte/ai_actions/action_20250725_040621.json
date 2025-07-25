@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T02:06:19.636686",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Bankrupt ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois absolument négocier avec GPT pour Trafalgar Square. J'ai une dette de $50 à payer aussi.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 24,
+    "money": {
+      "GPT": 46,
+      "Claude": 14
+    }
+  }
+}

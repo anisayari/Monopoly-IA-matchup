@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:20:46.279419",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Étant en prison et sans argent, je n'ai pas d'option viable immédiate. Je passe mon tour en attendant de pouvoir me libérer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 23,
+    "money": {
+      "GPT": 610,
+      "Gemini": 0
+    }
+  }
+}

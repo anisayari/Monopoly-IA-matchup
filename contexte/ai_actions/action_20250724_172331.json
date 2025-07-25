@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T15:23:29.788039",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "cancel"
+  ],
+  "decision": "cancel",
+  "reason": "Aucune offre d\u00139\u0019\u0019\u0019change n\u0012939\u001229\u0012939 a abouti et mes liquidit\u001419s sont faibles. Il vaut mieux conserver mes actifs pour l\u001419instant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

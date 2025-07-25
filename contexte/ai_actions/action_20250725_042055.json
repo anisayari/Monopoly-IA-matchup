@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:20:53.533521",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Options est le meilleur choix pour valider ou conclure officiellement la partie gagnée. Aucun autre enjeu stratégique n’existe.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

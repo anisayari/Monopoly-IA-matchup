@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:30:20.780304",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "make_auction",
+  "reason": "Démarrer une enchère maximise mes chances d'obtenir Piccadilly à un prix avantageux ou d'obliger l'adversaire à payer plus cher.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1500,
+      "Claude": 1395
+    }
+  }
+}

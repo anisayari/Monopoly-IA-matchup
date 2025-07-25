@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:59:05.743957",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il faut gérer les propriétés maintenant pour construire sur orange et rose. C’est l’étape clef pour maximiser la pression sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

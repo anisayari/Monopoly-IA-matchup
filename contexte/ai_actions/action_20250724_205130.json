@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:51:28.432831",
+  "trigger": "Force",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois hypothéquer pour payer le loyer. Water Works est le meilleur choix pour générer les fonds sans pénaliser mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 37
+    }
+  }
+}

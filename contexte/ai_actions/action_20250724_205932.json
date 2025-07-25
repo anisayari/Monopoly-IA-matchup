@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:59:30.914592",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Mes fonds sont insuffisants pour couvrir ma dette. Hypothéquer une propriété est nécessaire pour l'éviter.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 32
+    }
+  }
+}

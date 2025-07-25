@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:04:33.753692",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement $29, aucun investissement ou échange pertinent n'est possible. Je dois espérer des rentrées par loyers et éviter les mauvaises cases adverses.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 29,
+      "Gemini": 52
+    }
+  }
+}

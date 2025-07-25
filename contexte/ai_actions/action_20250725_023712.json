@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:37:10.397015",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai un monopole rouge avec des maisons, ce qui me permet d'augmenter significativement mes revenus en y ajoutant plus de maisons.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT": 221,
+      "Gemini": 105
+    }
+  }
+}

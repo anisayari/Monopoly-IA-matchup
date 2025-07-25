@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:09:44.533819",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai payé le loyer et mes fonds sont élevés. Mes monopoles sont optimisés, donc je passe mon tour et me prépare pour le prochain.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 62,
+      "Gemini": 312
+    }
+  }
+}

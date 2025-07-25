@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:17:07.011599",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Argent restant trop faible pour d’autres investissements. Je conserve le cash pour gérer un éventuel passage sur les propriétés Gemini ou des imprévus.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 69,
+      "Gemini": 102
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:30:21.173055",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "back",
+  "reason": "J'ai $179 en cash, je peux payer la dette ₦75 directement sans hypothéquer",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "GPT": 177,
+      "Claude": 179
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:21:04.114237",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Échange réussi ! J'ai $64 maintenant. Je dois hypothéquer mes propriétés pour lever d'autres hypothèques et stabiliser ma situation.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 76,
+    "money": {
+      "GPT": 13,
+      "Claude": 64
+    }
+  }
+}

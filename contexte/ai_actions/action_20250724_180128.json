@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:01:25.894617",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je suis tombé sur ma propriété et mes fonds sont insuffisants pour des constructions ou hypothèques. Je passe mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT": 115,
+      "Gemini": 66
+    }
+  }
+}

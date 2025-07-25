@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:34:30.636041",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J’accède à la gestion pour lever les hypothèques des propriétés light blue et maximiser mes revenus, stratégie essentielle pour la victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

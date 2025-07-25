@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T13:39:56.031934",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "J'ai besoin de Trafalgar Square pour mon monopole rouge. Je dois initier une négociation avec GPT pour l'obtenir.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 35,
+    "money": {
+      "GPT": 306,
+      "Gemini": 234
+    }
+  }
+}

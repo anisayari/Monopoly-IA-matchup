@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:08:47.412008",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Bow Street (orange) pour encore $90, maximiser le cash immédiat. Cela augmente la survie face à la dette restante, priorité absolue.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 632,
+      "Gemini": 407
+    }
+  }
+}

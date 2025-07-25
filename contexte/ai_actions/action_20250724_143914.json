@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:39:11.976920",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Le paiement du loyer est obligatoire. Confirmer rapidement pour reprendre la main et avancer dans le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT": 503,
+      "Gemini": 1347
+    }
+  }
+}

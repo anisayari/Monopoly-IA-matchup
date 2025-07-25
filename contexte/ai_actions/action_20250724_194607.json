@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:46:04.940444",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothèque Coventry Street (+130$) : logique, terrain nu, cela protège mon potentiel de flux sans entamer mes quartiers à maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 297,
+      "Gemini": 407
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-24T23:36:37.339789",
+  "trigger": "Auction",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "Continue ",
+  "reason": "Continuer est la seule option logique pour rester dans la partie et espérer profiter d’un mauvais pas de Gemini ou d’un bon tirage.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

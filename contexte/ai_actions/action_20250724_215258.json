@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:52:55.997479",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois avancer sur Mayfair, décision imposée par la carte Chance. Je préparerai la réponse une fois déplacé.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 141,
+    "money": {
+      "GPT": 89,
+      "Gemini": 368
+    }
+  }
+}

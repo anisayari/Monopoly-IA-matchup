@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:33:50.680512",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Il s'agit d'une amende automatique, il faut valider pour continuer la partie et revenir rapidement à l'achat de propriétés clés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1240,
+      "Gemini": 1180
+    }
+  }
+}

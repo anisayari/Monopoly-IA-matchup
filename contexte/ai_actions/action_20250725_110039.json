@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:00:37.855348",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "J'accepte l'échange : $275 pour Whitehall de GPT. Cela me donnera le monopole rose complet !",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:44:27.215561",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J’hypothèquerai Marylebone Station maintenant pour obtenir 100$, payer le loyer et garder mes groupes offensifs intacts.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 101,
+    "money": {
+      "GPT": 32,
+      "Gemini": 87
+    }
+  }
+}

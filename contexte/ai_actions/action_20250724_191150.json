@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:11:48.532623",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai payé le loyer et déshypothéqué Regent Street. Mes fonds sont très limités, je passe mon tour pour récupérer de l'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 77,
+    "money": {
+      "GPT": 160,
+      "Gemini": 57
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:12:27.367233",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai atterri sur Free Parking, aucun coût ou achat. Mes propriétés sont optimisées, je passe le tour pour que GPT puisse atterrir sur mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 105,
+    "money": {
+      "GPT": 12,
+      "Gemini": 312
+    }
+  }
+}

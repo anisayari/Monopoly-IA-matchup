@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:24:32.285574",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Aucune action efficace possible sans liquidités, je dois absolument attendre des rentrées pour agir. Passer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

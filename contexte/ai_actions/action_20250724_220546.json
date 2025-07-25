@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:05:43.995020",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois profiter de la fenêtre ouverte pour lever l’hypothèque sur Euston Road et The Angel Islington, rentrant vite dans la guerre des loyers.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

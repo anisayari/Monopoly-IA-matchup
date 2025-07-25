@@ -109,6 +109,7 @@ class UnifiedDecisionServer:
                 keywords = data.get('keywords', [])
                 all_detected_icons = data.get('all_detected_icons', [])
                 screenshot_base64 = data.get('screenshot_base64', '')
+                you_owe = data.get('you_owe', False)  # Récupérer le flag you_owe
                 
                 # Utiliser le service AI pour prendre la décision
                 result = self.ai_service.make_decision(
@@ -116,7 +117,8 @@ class UnifiedDecisionServer:
                     options=options,
                     game_context=game_context,
                     category = category,
-                    screenshot_base64 = screenshot_base64
+                    screenshot_base64 = screenshot_base64,
+                    you_owe = you_owe  # Passer le flag à ai_service
                 )
                 
                 # Retourner la réponse formatée

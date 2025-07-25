@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:58:54.021460",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Bankrupt ",
+  "reason": "Avec 32$ et 950$ de dette, la faillite est inévitable car mes propriétés ne suffisent pas à couvrir la somme.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 32
+    }
+  }
+}

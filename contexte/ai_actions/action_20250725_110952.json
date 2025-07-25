@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:09:50.461238",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Je ferme ce popup pour procéder à l'échange convenu : $280 + Electric Company contre Whitehall de GPT pour mon monopole rose.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

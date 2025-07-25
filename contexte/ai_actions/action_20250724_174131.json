@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:41:29.601145",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois investir mes liquidités dans des maisons pour maximiser mes revenus et piéger Gemini, qui a peu de cash.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 254,
+      "Gemini": 46
+    }
+  }
+}

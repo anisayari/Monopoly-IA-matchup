@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:33:44.289957",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Paiement du loyer obligatoire. Je conserve une petite trésorerie cruciale ; négociation ou action ultérieure dès qu’une ouverture se présente.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 118,
+    "money": {
+      "GPT": 48,
+      "Gemini": 68
+    }
+  }
+}

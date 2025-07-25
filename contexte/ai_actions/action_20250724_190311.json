@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:03:09.228333",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois accéder à la gestion des constructions, non à l’échange. Retour pour bâtir des maisons et maximiser la menace.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 75,
+    "money": {
+      "GPT": 234,
+      "Gemini": 23
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:19:23.642162",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Initier un deal ou proposer une vente de propriété inutilisée pour lever un peu de cash avant le prochain tour, profitant de la trêve négociée.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 86,
+    "money": {
+      "GPT": 212,
+      "Gemini": 22
+    }
+  }
+}

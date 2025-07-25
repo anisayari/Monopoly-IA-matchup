@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T11:54:59.859814",
+  "trigger": "Order Of Play",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Une égalité impose un nouveau tirage, aucun avantage à retarder le jeu ici. Nous devons relancer les dés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

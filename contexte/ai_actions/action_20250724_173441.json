@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:34:39.523822",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Pay ",
+    "Trade "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai désormais assez d'argent ($126) pour payer la dette de ₩100 sans sacrifier d'autres propriétés ou maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 126,
+      "Gemini": 124
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:56:46.140926",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Construire 2 maisons supplémentaires sur chaque orange avec 446$ pour maximiser les loyers. Claude n'a presque plus de cash, c'est le moment d'appuyer.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 22,
+    "money": {
+      "GPT": 446,
+      "Claude": 14
+    }
+  }
+}

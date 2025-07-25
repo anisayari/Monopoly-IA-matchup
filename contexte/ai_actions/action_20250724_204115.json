@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:41:13.690892",
+  "trigger": "Force",
+  "keywords": [
+    "Pay the Bail"
+  ],
+  "options": [
+    "Pay Bail "
+  ],
+  "decision": "Pay Bail ",
+  "reason": "Obligation de payer : c'est la règle après trois tours. Je sors avec 82$ pour tenter de survivre sur le plateau et préparer le rebond.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 37
+    }
+  }
+}

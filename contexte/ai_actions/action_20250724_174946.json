@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:49:44.787280",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Trade ",
+  "reason": "Je peux essayer d’obtenir un atout stratégique via un échange avec Gemini, ou détériorer sa position en négociant un deal intéressant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 171,
+      "Gemini": 146
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:57:49.960272",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Roll Again ",
+    "Accounts "
+  ],
+  "decision": "Roll Again ",
+  "reason": "J'ai effectué mon achat. Je dois maintenant lancer les dés pour poursuivre mon tour et potentiellement acquérir plus de propriétés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "GPT": 384,
+      "Gemini": 236
+    }
+  }
+}

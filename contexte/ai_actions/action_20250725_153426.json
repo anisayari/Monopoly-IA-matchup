@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:34:24.292328",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "back",
+  "reason": "J'ai $91, suffisant pour payer la dette ₩75. Je sors pour régler cette dette.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "GPT": 177,
+      "Claude": 91
+    }
+  }
+}

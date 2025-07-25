@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:01:57.236885",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Je dois accéder au menu d'échange pour finaliser l'accord avec GPT : donner $275 pour recevoir sa Whitehall et compléter mon monopole rose.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

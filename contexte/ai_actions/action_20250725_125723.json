@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:57:21.472867",
+  "trigger": "Pause",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Je suis bloqué dans cette pause depuis plusieurs tours. Je dois absolument cliquer Continue pour débloquer la situation et reprendre le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 27,
+    "money": {
+      "GPT": 828,
+      "Claude": 175
+    }
+  }
+}

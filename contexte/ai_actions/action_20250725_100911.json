@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:09:09.049251",
+  "trigger": "Are you sure you want to continue",
+  "keywords": [
+    "Are you sure you want to continue"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "Yes ",
+  "reason": "Continuer sans sauvegarder accélère le jeu en phase de mise en place. Aucun intérêt stratégique à sauvegarder maintenant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Claude": 1500
+    }
+  }
+}

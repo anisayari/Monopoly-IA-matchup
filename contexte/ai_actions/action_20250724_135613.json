@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T11:56:11.862078",
+  "trigger": "Force",
+  "keywords": [
+    "whitout saving"
+  ],
+  "options": [
+    "Continue without saving/loading "
+  ],
+  "decision": "Continue without saving/loading ",
+  "reason": "Aucune action ou opportunité stratégique n'est disponible, il faut poursuivre le jeu pour accéder aux choix importants.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

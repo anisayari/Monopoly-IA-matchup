@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:39:32.001833",
+  "trigger": "Force",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Sélectionner Options confirme la victoire et termine la partie. Aucun autre choix n'apporterait d'avantage stratégique dans ce contexte de fin de jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

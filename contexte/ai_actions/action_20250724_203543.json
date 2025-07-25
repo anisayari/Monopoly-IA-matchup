@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:35:41.024193",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai maximisé mes constructions pour l'instant et mes fonds sont trop bas pour d'autres actions. Je dois revenir au jeu principal.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 37
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:41:22.506252",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "J'ai les fonds et l'achat de Marlborough Street m'aide à diversifier mes propriétés, empêchant GPT de la récupérer et potentiellement de former un monopole.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT": 478,
+      "Gemini": 1372
+    }
+  }
+}

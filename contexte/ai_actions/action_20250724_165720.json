@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T14:57:18.676137",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Je ne peux pas acheter la gare directement avec mes fonds actuels ($124 vs $200). L'envoyer aux enchères est ma seule option pour potentiellement l'acquérir ou empêcher l'adversaire de le faire trop facilement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

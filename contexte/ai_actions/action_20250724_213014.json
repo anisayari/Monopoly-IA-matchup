@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:30:12.316878",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "L'échange est refusé. Je dois hypothéquer Bow Street pour payer la dette, car c'est le moins pénalisant pour la viabilité du monopole orange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 110,
+    "money": {
+      "GPT": 24,
+      "Gemini": 52
+    }
+  }
+}

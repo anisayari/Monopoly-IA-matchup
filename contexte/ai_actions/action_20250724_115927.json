@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:59:25.460341",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "L'achat de Coventry Street me rapproche du monopole jaune. J'ai les fonds et cela renforce ma position.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 647,
+      "Gemini": 778
+    }
+  }
+}

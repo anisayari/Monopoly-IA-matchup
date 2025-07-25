@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:24:57.709470",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je ne peux rien acheter ni construire. GPT est à $0. Je passe le tour, l'objectif étant de le mettre en faillite.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 46,
+    "money": {
+      "GPT": 0,
+      "Gemini": 102
+    }
+  }
+}

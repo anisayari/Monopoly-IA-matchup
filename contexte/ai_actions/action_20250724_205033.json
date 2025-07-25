@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:50:31.144493",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois payer 50$ de loyer à GPT, mais je n'ai que 37$. Je vais devoir hypothéquer pour couvrir cette dette.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 37
+    }
+  }
+}

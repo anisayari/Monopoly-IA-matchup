@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T15:44:47.875102",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois confirmer le paiement du loyer. Ne pouvant pas payer, le jeu me forcera à hypothéquer des propriétés pour couvrir cette dette.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 121,
+      "Gemini": 46
+    }
+  }
+}

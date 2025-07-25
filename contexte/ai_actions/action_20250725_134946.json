@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:49:44.635887",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "L'interface ne me permet pas d'accéder à mes propriétés. Je lance les dés pour continuer le jeu avec $240.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 47,
+    "money": {
+      "GPT": 147,
+      "Claude": 240
+    }
+  }
+}

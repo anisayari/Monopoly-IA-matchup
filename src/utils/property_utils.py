@@ -65,16 +65,20 @@ class PropertyManager:
                 
         return None
     
-    def get_property_details(self, property_name: str) -> Optional[Dict]:
+    def get_property_details(self, property_name: Union[str, int]) -> Optional[Dict]:
         """
         Récupère les détails d'une propriété
         
         Args:
-            property_name: Nom de la propriété
+            property_name: Nom de la propriété ou ID/position
             
         Returns:
             Dict avec value, mortgage, rent, type, etc. ou None
         """
+        # Convertir en string si c'est un nombre
+        property_name = str(property_name)
+        
+        # Chercher par nom d'abord
         prop = self.properties_by_name.get(property_name.lower())
         if not prop:
             # Essayer de trouver par ID

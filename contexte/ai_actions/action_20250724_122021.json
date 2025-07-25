@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T10:20:19.467113",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Le popup ne propose pas d'action utile pour échanger. Il est préférable de l'annuler pour tenter de progresser dans le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

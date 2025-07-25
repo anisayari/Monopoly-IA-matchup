@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:41:50.346414",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J’ai les fonds pour ajouter des maisons sur mes monopoles roses, oranges ou bruns. Il faut renforcer pour maximiser le risque pour Gemini et accélérer sa faillite.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 60,
+    "money": {
+      "GPT": 324,
+      "Gemini": 103
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T15:33:16.084172",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois hypothéquer des propriétés rapidement pour payer ma dette et rester dans la partie. Gérer mes actifs est prioritaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

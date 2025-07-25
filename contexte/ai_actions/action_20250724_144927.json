@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:49:24.950190",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai acheté la propriété. Je n'ai pas de monopole immédiat à construire. Je passe mon tour pour que GPT joue.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 464,
+      "Gemini": 556
+    }
+  }
+}

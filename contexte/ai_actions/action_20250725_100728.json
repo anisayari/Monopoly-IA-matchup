@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T08:07:26.384564",
+  "trigger": "Order Of Play",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Il faut valider pour lancer les dés et potentiellement déterminer l’ordre du jeu. Ce choix est nécessaire pour progresser.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Claude": 1500
+    }
+  }
+}

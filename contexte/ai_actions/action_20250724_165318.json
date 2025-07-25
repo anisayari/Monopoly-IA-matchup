@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:53:16.871078",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je suis déjà dans la fenêtre de gestion et souhaite construire; je retourne à la gestion de propriétés pour placer des maisons, priorisant les monopoles pink et orange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

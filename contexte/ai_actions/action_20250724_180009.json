@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:00:07.560088",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je n'ai que $66, bien en dessous du prix de Electric Company ($150). Je ne peux pas enchérir, donc je notifie l'autre joueur de mon incapacité.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 16,
+    "money": {
+      "GPT": 116,
+      "Gemini": 66
+    }
+  }
+}

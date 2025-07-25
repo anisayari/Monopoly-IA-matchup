@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:54:59.135841",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma priorité est de conserver ma trésorerie et d’attendre une meilleure opportunité ou une faiblesse chez Gemini avant d’investir ou négocier.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 64,
+    "money": {
+      "GPT": 184,
+      "Gemini": 173
+    }
+  }
+}

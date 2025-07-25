@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:10:53.924110",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "La carte 'Libéré de Prison' est un atout stratégique précieux. L'accepter immédiatement est la meilleure action.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 487,
+      "Gemini": 1253
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:44:12.818964",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Je ne peux pas construire d'autres maisons avec mes fonds actuels. Je préfère garder mon argent et sortir de la gestion.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:42:26.141299",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Décision par défaut (IA non disponible)",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 17,
+    "money": {
+      "GPT": 86,
+      "Claude": 564
+    }
+  }
+}

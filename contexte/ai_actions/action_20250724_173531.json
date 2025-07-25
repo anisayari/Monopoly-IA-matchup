@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:35:28.854935",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai peu de cash ($26), donc pas d'achat ou de gestion pour l'instant. Il vaut mieux avancer et espérer des rentrées via loyers.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 26,
+      "Gemini": 124
+    }
+  }
+}

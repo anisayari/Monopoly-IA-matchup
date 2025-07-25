@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:41:48.583776",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acquérir une gare est stratégique pour des revenus passifs. J'ai les fonds et cela diversifie mes actifs.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "GPT": 1153,
+      "Gemini": 1232
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:15:46.281798",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il est crucial d’investir mon cash sur des maisons (priorité bruns et oranges) pour maximiser la menace sur Gemini dès maintenant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:46:23.213644",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes fonds sont limités. Je dois passer mon tour pour accumuler des liquidités et potentiellement construire sur mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 133,
+    "money": {
+      "GPT": 39,
+      "Gemini": 68
+    }
+  }
+}

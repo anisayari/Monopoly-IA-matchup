@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:05:39.202780",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma trésorerie est trop basse pour des achats importants ou constructions. Je dois économiser et attendre une opportunité d'échange pour mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "GPT": 486,
+      "Gemini": 164
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:18:01.685851",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Gemini n’a aucun cash. Il faut profiter rapidement de sa vulnérabilité pour acheter des propriétés libres et renforcer ma domination avant qu’elle ne renfloue sa caisse.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 22,
+    "money": {
+      "GPT": 610,
+      "Gemini": 0
+    }
+  }
+}

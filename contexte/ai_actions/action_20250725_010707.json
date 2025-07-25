@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:07:05.602891",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois fermer cette fiche pour accéder immédiatement à la gestion et enfin lever les hypothèques des light blue, ce qui est vital pour gagner.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

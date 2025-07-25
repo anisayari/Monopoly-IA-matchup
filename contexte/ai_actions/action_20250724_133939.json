@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T11:39:37.955622",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Are you sure you want to continue"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "No ",
+  "reason": "Le popup est un bug récurrent sur ma propriété. Re-choisir 'No' est la seule option pour tenter de le faire disparaître et avancer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "GPT": 1650,
+      "Gemini": 1205
+    }
+  }
+}

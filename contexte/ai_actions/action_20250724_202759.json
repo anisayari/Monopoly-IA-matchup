@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:27:57.202644",
+  "trigger": "Force",
+  "keywords": [
+    "Choose which properties"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Rien à faire pendant mon tour en prison et aucun échange pertinent. Je conserve mon cash pour pouvoir agir immédiatement à ma sortie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 94,
+    "money": {
+      "GPT": 132,
+      "Gemini": 52
+    }
+  }
+}

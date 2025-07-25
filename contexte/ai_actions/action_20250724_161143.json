@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:11:41.429176",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il faut aller dans la gestion pour placer des maisons sur orange et rose, maximisant la pression immobilière sur Gemini. C’est la clé pour gagner ce duel.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

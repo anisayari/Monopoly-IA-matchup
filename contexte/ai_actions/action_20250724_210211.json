@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:02:09.400806",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Dette payée et propriétés gérées. Je n'ai plus d'actions urgentes et mon solde est suffisant pour passer le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 82,
+      "Gemini": 42
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:21:41.258782",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Encore cette station ! Je dois sortir pour accéder à MES propriétés et gérer mes hypothèques avec mes $64.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 77,
+    "money": {
+      "GPT": 13,
+      "Claude": 64
+    }
+  }
+}

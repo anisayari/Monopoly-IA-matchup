@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:06:59.345800",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai amélioré mon monopole rouge. Avec $102 restants, je ne peux pas lever les hypothèques coûteuses. Il est temps de revenir au jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 29,
+    "money": {
+      "GPT": 29,
+      "Gemini": 102
+    }
+  }
+}

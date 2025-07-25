@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:44:41.334042",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il me reste assez de cash pour continuer à investir dans des maisons sur les groupes bruns, oranges et roses. Il faut maximiser la menace et la rentabilité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 60,
+    "money": {
+      "GPT": 224,
+      "Gemini": 103
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T13:37:54.126199",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Cette carte me donne des fonds cruciaux pour construire sur mes monopoles rouge et bleu foncé, augmentant ainsi mes revenus potentiels et ma force de frappe.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 35,
+    "money": {
+      "GPT": 306,
+      "Gemini": 34
+    }
+  }
+}

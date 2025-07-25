@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T11:30:52.320286",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai maintenant 1288$, ce qui est suffisant pour payer ma dette de 1150$. Je dois régler cette dette pour continuer le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 647,
+      "Gemini": 1288
+    }
+  }
+}

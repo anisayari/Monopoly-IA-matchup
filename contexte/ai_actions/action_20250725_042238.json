@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:22:36.375338",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Aucun échange ou négociation pertinent. Tout avantage est maximisé. La victoire ne peut être remise en cause.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

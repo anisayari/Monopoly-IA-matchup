@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:07:20.452955",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai déjà investi mes fonds dans des maisons. Je n'ai plus d'action immédiate profitable et dois accumuler des revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 82,
+      "Gemini": 92
+    }
+  }
+}

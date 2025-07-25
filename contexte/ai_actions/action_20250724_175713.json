@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:57:11.782936",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Avec seulement 66$, je ne peux ni construire ni lever d'hypothèque. Je retourne au jeu principal pour la prochaine action.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 116,
+      "Gemini": 66
+    }
+  }
+}

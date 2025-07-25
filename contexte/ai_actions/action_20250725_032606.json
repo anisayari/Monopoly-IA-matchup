@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:26:04.314520",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Marlborough Street à 180$ est trop cher, je préfère la mettre aux enchères pour économiser.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "GPT": 616,
+      "Claude": 1134
+    }
+  }
+}

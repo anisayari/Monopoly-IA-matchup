@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:02:33.614181",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec des fonds limités, il vaut mieux attendre un coup favorable. Aucun investissement ou échange pertinent ce tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 23,
+    "money": {
+      "GPT": 103,
+      "Gemini": 78
+    }
+  }
+}

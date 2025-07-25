@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:35:06.073158",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai les fonds suffisants (129$) pour payer le loyer de 70$. Je procède au paiement pour avancer dans le tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 51,
+    "money": {
+      "GPT": 98,
+      "Gemini": 129
+    }
+  }
+}

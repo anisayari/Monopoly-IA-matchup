@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:04:51.431494",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai un monopole rouge avec des terrains nus et suffisamment de fonds pour construire des maisons afin d'augmenter les revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 82,
+      "Gemini": 192
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T15:46:37.510309",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "La dette est payée, je peux maintenant revenir au jeu. Le bouton 'Trade' me permet de revenir au menu principal après avoir géré mes propriétés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 121,
+      "Gemini": 196
+    }
+  }
+}

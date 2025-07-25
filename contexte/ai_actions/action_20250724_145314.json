@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:53:12.938156",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je suis en prison et n'ai pas de monopole à construire ni de propriétés à vendre ou hypothéquer. Je retourne à l'écran principal.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "GPT": 564,
+      "Gemini": 356
+    }
+  }
+}

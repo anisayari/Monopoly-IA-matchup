@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T15:55:11.769477",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je reçois un remboursement d'impôts de M20. C'est un événement positif, je dois confirmer pour l'encaisser.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 116,
+      "Gemini": 346
+    }
+  }
+}

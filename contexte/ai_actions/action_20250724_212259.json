@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:22:56.981233",
+  "trigger": "Trading",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je suis en prison, et 'OK' est la seule action directe pour confirmer. Je préparerai ma sortie et mon prochain mouvement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 110,
+    "money": {
+      "GPT": 14,
+      "Gemini": 52
+    }
+  }
+}

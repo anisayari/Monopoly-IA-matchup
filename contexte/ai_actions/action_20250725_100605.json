@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-25T08:06:03.683011",
+  "trigger": "Force",
+  "keywords": [
+    "Who's playing"
+  ],
+  "options": [
+    "Back ",
+    "House Rules ",
+    "Next "
+  ],
+  "decision": "Next ",
+  "reason": "Début du jeu, pas d'action stratégique disponible sur ce popup. Passer pour avancer le jeu et passer à la phase d'achat ou de lancement de dés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 0,
+      "Claude": 0
+    }
+  }
+}

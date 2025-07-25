@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T10:25:58.373181",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Le popup est 'Trading' et l'échange pour le monopole rose est confirmé. Je dois le lancer pour débloquer la situation et progresser.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

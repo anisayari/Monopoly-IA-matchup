@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T10:31:29.987607",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Le popup est bloquant et ne permet pas la finalisation de l'échange. Annuler est la seule action pour tenter de débloquer le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

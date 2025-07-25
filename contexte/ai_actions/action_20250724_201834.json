@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:18:32.162375",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer The Angel Islington (light blue) pour $55 de cash rapide, maintenir mes groupes à maisons sans vendre de construction.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 86,
+    "money": {
+      "GPT": 212,
+      "Gemini": 22
+    }
+  }
+}

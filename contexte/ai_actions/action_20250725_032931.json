@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:29:29.357470",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois explorer des échanges stratégiques, GPT avance vers un monopole orange dangereux.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 216,
+      "Claude": 914
+    }
+  }
+}

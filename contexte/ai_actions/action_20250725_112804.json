@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:28:02.148489",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Aller en prison est une étape obligée ici. Cela me permet de conserver du cash tout en limitant le risque de tomber sur les propriétés de Claude pendant quelques tours.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1240,
+      "Claude": 315
+    }
+  }
+}

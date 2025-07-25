@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T16:30:12.634401",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je n'ai pas les fonds suffisants (27$) pour payer le loyer de 28$. Le jeu va me forcer à hypothéquer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 50,
+    "money": {
+      "GPT": 0,
+      "Gemini": 27
+    }
+  }
+}

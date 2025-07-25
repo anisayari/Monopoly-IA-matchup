@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:09:44.903147",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Il vaut mieux discuter et faire durer l’enchère. Espérer faire monter le prix pour épuiser la trésorerie de Claude et acheter très bas si possible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 67,
+    "money": {
+      "GPT": 17,
+      "Claude": 180
+    }
+  }
+}

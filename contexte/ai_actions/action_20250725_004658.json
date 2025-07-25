@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:46:56.819788",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Fermer obligatoirement la fiche descriptive pour accéder enfin à la gestion effective des propriétés et relancer mon offensive light blue.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

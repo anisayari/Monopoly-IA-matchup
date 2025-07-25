@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:59:28.902917",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois payer le loyer de $50 à GPT sur sa gare. Pas le choix, c'est obligatoire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 24,
+    "money": {
+      "GPT": 46,
+      "Claude": 14
+    }
+  }
+}

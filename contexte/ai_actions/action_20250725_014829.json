@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-24T23:48:27.086652",
+  "trigger": "Auction",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "Continue ",
+  "reason": "Seule option pertinente pour rester compétitif : continuer la partie, profiter d’erreurs adverses ou de revenus impromptus.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:39:39.564869",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai optimisé mes propriétés rouges et n'ai plus de fonds pour d'autres constructions ou levées d'hypothèque. Je dois quitter la gestion.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT": 221,
+      "Gemini": 5
+    }
+  }
+}

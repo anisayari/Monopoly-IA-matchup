@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:49:27.172378",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Menu gestion indispensable pour lever hypothèques light blue. C’est la clé tactique pour reprendre l’avantage et menacer Gemini immédiatement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

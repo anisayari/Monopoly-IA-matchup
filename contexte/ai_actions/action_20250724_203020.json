@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:30:18.396417",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'accepte la carte 'Aller en Prison'. Je devrai choisir de payer pour sortir ou de tenter les dés au prochain tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 95,
+    "money": {
+      "GPT": 132,
+      "Gemini": 152
+    }
+  }
+}

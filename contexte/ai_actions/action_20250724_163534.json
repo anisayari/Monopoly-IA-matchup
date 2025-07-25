@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:35:32.123005",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il est urgent d’accéder à la gestion immobilière pour poser un maximum de maisons sur orange puis rose et piéger Gemini au prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T12:04:19.081295",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois payer ce loyer, aucune alternative. La priorité sera ensuite de protéger mon cash restant et maximiser les revenus sur mes monopoles.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 64,
+    "money": {
+      "GPT": 17,
+      "Claude": 180
+    }
+  }
+}

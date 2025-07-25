@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:35:27.663407",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai suffisamment d'argent pour lever une petite hypothèque, construire une maison ou re-hypothéquer. Cela pourrait augmenter mes revenus au prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 17,
+    "money": {
+      "GPT": 221,
+      "Gemini": 105
+    }
+  }
+}

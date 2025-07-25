@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:12:26.398704",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je ferme la fiche pour ouvrir la vraie gestion : priorité absolue à lever les hypothèques sur les light blue et activer la pression sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:41:23.553347",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter la carte Chance pour potentiellement acquérir une gare. Les gares sont d'excellents actifs.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1153,
+      "Gemini": 1232
+    }
+  }
+}

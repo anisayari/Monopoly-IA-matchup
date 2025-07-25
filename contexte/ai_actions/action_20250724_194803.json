@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:48:01.571259",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je vais hypothéquer Coventry Street (130$), terrain nu jaune : pas de flux immédiat sacrifié, sécurité financière renforcée face à la dette.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 447,
+      "Gemini": 407
+    }
+  }
+}

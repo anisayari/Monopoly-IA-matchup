@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:03:02.526973",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Dois pointer spécifiquement sur Mayfair et appuyer A pour gérer cette propriété",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 177,
+      "Claude": 113
+    }
+  }
+}

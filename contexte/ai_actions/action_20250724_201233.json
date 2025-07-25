@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:12:31.227068",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai les fonds pour sortir de prison (50$). C'est ma priorité pour redevenir actif et agir sur mes propriétés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 86,
+    "money": {
+      "GPT": 82,
+      "Gemini": 407
+    }
+  }
+}

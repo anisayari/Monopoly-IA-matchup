@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:51:58.969854",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Gemini est short cash, je conserve mes liquidités pour acheter Whitechapel Road puis light blue, profitant de sa faiblesse de trésorerie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 4,
+    "money": {
+      "GPT": 564,
+      "Gemini": 156
+    }
+  }
+}

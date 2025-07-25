@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:10:16.841976",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Retour à la gestion permettant d’accéder à l’écran où construire des maisons sur mes monopoles brown/orange/pink, maximisant ainsi les loyers adverses.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

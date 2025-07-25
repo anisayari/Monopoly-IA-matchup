@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:09:42.985965",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois investir mes liquidités dans des maisons sur mes monopoles. Cela maximisera mes gains potentiels et la pression sur Gemini qui reste fragile.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

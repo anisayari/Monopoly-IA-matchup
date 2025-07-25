@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:12:26.489339",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune gestion immédiate requise. Je dois avancer pour saisir d'autres propriétés et accroître mon avantage sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 627,
+      "Gemini": 1253
+    }
+  }
+}

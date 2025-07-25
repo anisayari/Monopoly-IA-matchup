@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:45:00.097873",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois hypothéquer Marylebone Station pour immédiatement disposer des fonds nécessaires et payer le loyer. Décision rapide, vitale.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 101,
+    "money": {
+      "GPT": 32,
+      "Gemini": 87
+    }
+  }
+}

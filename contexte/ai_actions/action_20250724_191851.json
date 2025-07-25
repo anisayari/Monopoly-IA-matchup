@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:18:49.082868",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai 257$ et je peux déshypothéquer Mayfair (220$). C'est une propriété stratégique à récupérer pour augmenter mon potentiel de revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 85,
+    "money": {
+      "GPT": 160,
+      "Gemini": 257
+    }
+  }
+}

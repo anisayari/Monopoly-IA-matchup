@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:57:39.770783",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je n'ai pas les fonds pour construire de maisons ou lever d'hypothèques pour le moment. Je retourne au menu principal.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 116,
+      "Gemini": 66
+    }
+  }
+}

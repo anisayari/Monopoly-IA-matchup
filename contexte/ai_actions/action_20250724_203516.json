@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:35:14.193825",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai optimisé mes propriétés rouges et je n'ai pas assez d'argent pour d'autres actions, je retourne au jeu principal.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 37
+    }
+  }
+}

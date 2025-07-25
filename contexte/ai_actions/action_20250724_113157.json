@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:31:55.135572",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action de gestion ou négociation nécessaire. Garder de la liquidité et attendre plus d’options d’achat ou d’échange est optimal.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1040,
+      "Gemini": 1400
+    }
+  }
+}

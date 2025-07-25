@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:51:08.870705",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je suis de retour sur le menu gestion : priorité à lever l’hypothèque d’Euston Road ou construire une maison rose/orange pour maximiser mes gains.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 171,
+      "Gemini": 146
+    }
+  }
+}

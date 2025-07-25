@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:08:07.682814",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer le loyer est obligatoire, aucun compromis ou alternative possible. La survie l’exige, même si cela réduit mon cash flow.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 104,
+    "money": {
+      "GPT": 42,
+      "Gemini": 132
+    }
+  }
+}

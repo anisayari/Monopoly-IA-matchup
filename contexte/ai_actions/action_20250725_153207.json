@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:32:05.084784",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Lever hypothèque Electric Company ($82) pour réactiver cette propriété rentable",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "GPT": 177,
+      "Claude": 113
+    }
+  }
+}

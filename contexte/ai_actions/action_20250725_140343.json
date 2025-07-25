@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T12:03:41.880112",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai déjà toutes les stations principales. Payer un loyer double à moi-même est sans effet, donc avancer est la seule option logique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 60,
+    "money": {
+      "GPT": 67,
+      "Claude": 130
+    }
+  }
+}

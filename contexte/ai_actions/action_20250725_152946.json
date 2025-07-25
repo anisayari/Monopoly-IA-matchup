@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T13:29:44.460490",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Hypothéquer Electric Company ($75) pour payer la dette M75 exactement",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "GPT": 177,
+      "Claude": 104
+    }
+  }
+}

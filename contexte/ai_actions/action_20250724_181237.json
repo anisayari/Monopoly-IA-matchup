@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:12:35.395815",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois investir tout de suite dans la construction de maisons. Cela maximise la rentabilité de mes nombreux monopoles et place Gemini sous pression.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

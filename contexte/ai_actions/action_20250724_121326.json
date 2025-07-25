@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T10:13:24.210263",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Bankruptcy"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "Yes ",
+  "reason": "Je dois continuer à confirmer pour débloquer cette série de popups et permettre au jeu de progresser vers mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

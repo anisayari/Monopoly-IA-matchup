@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:47:27.697870",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai réglé ma dette et n'ai plus d'action immédiate. Je passe mon tour à l'autre joueur.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 171,
+      "Gemini": 146
+    }
+  }
+}

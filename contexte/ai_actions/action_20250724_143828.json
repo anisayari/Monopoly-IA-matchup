@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:38:25.927181",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma trésorerie est suffisante, aucun échange ou gestion urgente. Je dois viser les propriétés abordables restantes pour progresser vers un monopole.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 497,
+      "Gemini": 1353
+    }
+  }
+}

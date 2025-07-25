@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:49:15.888799",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je vois encore la station de GPT. Je dois retourner à MES propriétés pour gérer mes hypothèques correctement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 47,
+    "money": {
+      "GPT": 147,
+      "Claude": 240
+    }
+  }
+}

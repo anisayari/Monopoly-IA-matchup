@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:23:27.386804",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois vendre des maisons puis hypothéquer propriétés non stratégiques afin de payer la dette et rester dans la partie. Mon portefeuille offre la marge nécessaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 160,
+      "Gemini": 407
+    }
+  }
+}

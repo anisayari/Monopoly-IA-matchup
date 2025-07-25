@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:24:53.383742",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Interface buggée ! Je passe mon tour avec $64. Je dois attendre un meilleur moment pour gérer mes hypothèques.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 79,
+    "money": {
+      "GPT": 13,
+      "Claude": 64
+    }
+  }
+}

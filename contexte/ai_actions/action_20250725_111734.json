@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T09:17:32.548604",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Je ferme ce popup forcé pour pouvoir effectuer l'échange final et obtenir Whitehall pour compléter mon monopole rose stratégique.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 1485,
+      "Claude": 290
+    }
+  }
+}

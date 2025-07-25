@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:40:15.012698",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Le paiement de loyer est obligatoire et immédiatement exécutable. Il faut payer pour conserver le flux du jeu et chercher la prochaine opportunité d'achat.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1153,
+      "Gemini": 1232
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:00:21.928184",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "Yes ",
+  "reason": "Décision par défaut (IA non disponible)",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 10,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

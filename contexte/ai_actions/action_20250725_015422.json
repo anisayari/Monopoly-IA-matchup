@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-24T23:54:20.317699",
+  "trigger": "Auction",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "Continue ",
+  "reason": "Je n'ai aucune action utile à part continuer, espèrent un coup de chance ou une erreur majeure de Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:02:41.919034",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Gemini est fragile et ne peut pas investir. Construire des maisons sur mes monopoles maximisera les risques pour lui et ma rentabilité à court terme.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 75,
+    "money": {
+      "GPT": 234,
+      "Gemini": 23
+    }
+  }
+}

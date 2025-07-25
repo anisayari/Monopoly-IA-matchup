@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:11:13.857581",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Retour à l'écran de gestion pour pouvoir ensuite construire des maisons sur mes monopoles. Le menu trade n’a aucun intérêt actuellement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

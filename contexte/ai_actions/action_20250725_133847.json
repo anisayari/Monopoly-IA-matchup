@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:38:45.411018",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Coventry Street coûte $260 mais j'ai seulement $141. Je passe aux enchères pour économiser mon cash limité.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 45,
+    "money": {
+      "GPT": 147,
+      "Claude": 141
+    }
+  }
+}

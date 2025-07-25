@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:25:34.668015",
+  "trigger": "Bankruptcy",
+  "keywords": [
+    "Bankruptcy"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "No ",
+  "reason": "Ma position est toujours compétitive avec deux monopoles et des propriétés variées. La faillite n’est absolument pas justifiée maintenant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:31:15.016022",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois construire sur mes monopoles orange et rose pendant que Claude a peu de liquidités, ce qui maximisera mes revenus au tour suivant.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 11,
+    "money": {
+      "GPT": 413,
+      "Claude": 64
+    }
+  }
+}

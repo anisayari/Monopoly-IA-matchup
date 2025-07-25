@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:29:42.346516",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Aucune action stratégique, la partie est scellée. Il faut simplement attendre la conclusion officielle.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

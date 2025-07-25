@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:13:08.181410",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune transaction ni échange utile actuellement ; je garde mon cash pour acheter les prochaines propriétés abordables du plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT": 725,
+      "Claude": 1015
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T02:15:00.014831",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "Yes ",
+  "reason": "Décision par défaut (IA non disponible)",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 24,
+    "money": {
+      "GPT": 46,
+      "Claude": 14
+    }
+  }
+}

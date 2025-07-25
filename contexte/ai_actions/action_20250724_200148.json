@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:01:45.963650",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Vendre encore une maison sur Whitechapel Road (brown) pour obtenir du cash, préserver la survie et retarder banqueroute.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 322,
+      "Gemini": 407
+    }
+  }
+}

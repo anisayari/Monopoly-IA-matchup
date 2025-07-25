@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:39:14.820953",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Maximiser le cash en début de partie, pas d'échange intéressant ni urgence à négocier. Acquérir d'autres propriétés au prochain tour est prioritaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT": 1150,
+      "Claude": 935
+    }
+  }
+}

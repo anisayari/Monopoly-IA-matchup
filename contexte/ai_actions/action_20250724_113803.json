@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T09:38:01.452327",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Il s’agit d’une dépense obligatoire. Mieux vaut la valider rapidement pour se concentrer sur les futures acquisitions et négociations.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1225,
+      "Gemini": 1070
+    }
+  }
+}

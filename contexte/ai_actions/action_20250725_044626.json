@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:46:24.224473",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Aucune optimisation ni négociation possible, la victoire est acquise. Cancel termine proprement le tour sans redondance.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

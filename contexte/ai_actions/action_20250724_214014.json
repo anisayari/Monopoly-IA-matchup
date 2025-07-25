@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:40:11.992325",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je dois préserver mes 39$ pour éviter la faillite et attendre de meilleures opportunités, car aucune action rentable immédiate n'est possible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 125,
+    "money": {
+      "GPT": 39,
+      "Gemini": 68
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:26:40.038205",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Cette fenêtre concerne la station de Claude. Il faut revenir à la gestion de mes propriétés pour construire maisons sur mes monopoles, donc sortir de ce menu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 84,
+    "money": {
+      "GPT": 413,
+      "Claude": 64
+    }
+  }
+}

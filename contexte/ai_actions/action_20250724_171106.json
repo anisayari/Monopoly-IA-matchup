@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:11:03.913419",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai deux monopoles, il faut construire des maisons ou hypothéquer des propriétés secondaires pour renforcer mes quartiers clés et maximiser mes rentrées de loyers.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 246,
+      "Gemini": 124
+    }
+  }
+}

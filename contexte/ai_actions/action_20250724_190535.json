@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:05:33.303245",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J’ai la fenêtre adéquate pour bâtir. Construire des maisons sur mes monopoles maximisera mes gains et mettra Gemini sous pression.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 75,
+    "money": {
+      "GPT": 234,
+      "Gemini": 23
+    }
+  }
+}

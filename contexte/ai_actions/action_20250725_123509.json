@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:35:07.380872",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Parfait ! J'ai hypothéqué Regent Street et j'ai maintenant $175. Je peux retourner au jeu principal avec un cash suffisant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 24,
+    "money": {
+      "GPT": 904,
+      "Claude": 175
+    }
+  }
+}

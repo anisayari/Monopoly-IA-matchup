@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T09:32:56.278883",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je dois communiquer avec GPT pendant l'enchère pour Marlborough Street afin de négocier ou voir ses intentions d'enchérir.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 13,
+    "money": {
+      "GPT": 1045,
+      "Claude": 315
+    }
+  }
+}

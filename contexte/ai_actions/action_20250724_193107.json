@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:31:05.466506",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois continuer d’hypothéquer Euston Road, Angel Islington, Coventry Street, Piccadilly, Oxford Street et Electric Company pour couvrir la dette de 640.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 110,
+      "Gemini": 407
+    }
+  }
+}

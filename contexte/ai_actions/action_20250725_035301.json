@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:52:58.914310",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Accounts ",
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Décision par défaut (IA non disponible)",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 19,
+    "money": {
+      "GPT": 46,
+      "Claude": 24
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T22:27:22.158363",
+  "trigger": "Trading",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Vérifier les options d’échanges potentielles pour Pentonville Road avant de retourner à la gestion ou d’agir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

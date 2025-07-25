@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:46:47.330137",
+  "trigger": "Do you want to",
+  "keywords": [
+    "In Jail 2"
+  ],
+  "options": [
+    "Bail Pay ",
+    "Roll Dice "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "Je tente un double pour sortir de prison gratuitement afin de préserver mon cash. C'est la solution la plus économique vu ma bonne position.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 47,
+    "money": {
+      "GPT": 147,
+      "Claude": 100
+    }
+  }
+}

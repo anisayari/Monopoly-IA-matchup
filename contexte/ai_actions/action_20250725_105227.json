@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:52:24.876711",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai payé le loyer, il me reste $175. Mon tour est terminé, je passe au suivant.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 7,
+    "money": {
+      "GPT": 1485,
+      "Claude": 210
+    }
+  }
+}

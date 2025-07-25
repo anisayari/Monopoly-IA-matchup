@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:49:43.975792",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune action productive possible avec seulement $32. Attendre une opportunité, et guetter la faillite ou les erreurs adverses.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 37
+    }
+  }
+}

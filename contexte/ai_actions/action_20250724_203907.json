@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:39:05.700076",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je viens de rater un double. Aucun intérêt à utiliser mes fonds : attendre le prochain round reste optimal.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 37
+    }
+  }
+}

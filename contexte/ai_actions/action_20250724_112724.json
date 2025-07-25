@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:27:22.109162",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Fleet Street est une propriété rouge, très rentable avec trois maisons. L'ajouter tôt maximise mes revenus potentiels et me rapproche d'un monopole stratégique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1350,
+      "Gemini": 1500
+    }
+  }
+}

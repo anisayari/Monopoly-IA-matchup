@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:50:53.880962",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Mayfair me donne une propriété de grande valeur, affaiblissant GPT et me positionnant pour des monopoles futurs.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 364,
+      "Gemini": 556
+    }
+  }
+}

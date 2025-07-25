@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:25:26.354511",
+  "trigger": "Are you sure you want to continue",
+  "keywords": [
+    "Are you sure you want to continue"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "Yes ",
+  "reason": "Rien d'important à sauvegarder à ce stade. Le jeu commence, il faut avancer rapidement pour prendre l'avantage sur les propriétés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

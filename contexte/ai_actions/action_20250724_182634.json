@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:26:32.440995",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec 302$, je peux déshypothéquer Regent Street ($165), me rapprochant du monopole vert et augmentant mon potentiel de revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 48,
+    "money": {
+      "GPT": 0,
+      "Gemini": 302
+    }
+  }
+}

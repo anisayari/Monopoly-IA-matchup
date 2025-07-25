@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:22:55.843452",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune nouvelle gestion ni échange prioritaire à faire, et il est urgent d’acquérir d’autres propriétés pour viser un monopole light blue ou marron.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 7,
+    "money": {
+      "GPT": 635,
+      "Claude": 1115
+    }
+  }
+}

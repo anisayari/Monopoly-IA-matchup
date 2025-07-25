@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T08:16:40.874230",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Avancer à Pall Mall et collecter 200$ en passant par GO, excellent boost financier",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Claude": 1335
+    }
+  }
+}

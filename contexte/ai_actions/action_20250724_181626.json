@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:16:24.473640",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J’ai assez de cash pour construire 1 maison sur chaque propriété brune, maximisant les risques pour Gemini aux prochains passages.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

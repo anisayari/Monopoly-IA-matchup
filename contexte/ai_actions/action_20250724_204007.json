@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:40:05.593466",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "N'ayant pas fait de double et sans fonds pour payer, je dois passer mon tour en prison pour retenter ma chance.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 37
+    }
+  }
+}

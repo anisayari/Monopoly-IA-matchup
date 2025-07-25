@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:17:37.099974",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Il n'y a plus aucune action à prendre et j'ai sécurisé la victoire. Attendre la résolution finale du jeu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

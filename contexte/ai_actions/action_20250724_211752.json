@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:17:49.991680",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Plus d’actions financières possibles ce tour : fonds épuisés, monopoles débloqués. Retourner sur le plateau pour attendre la prochaine opportunité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 105,
+    "money": {
+      "GPT": 14,
+      "Gemini": 312
+    }
+  }
+}

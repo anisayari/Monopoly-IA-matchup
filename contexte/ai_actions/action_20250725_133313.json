@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:33:11.419733",
+  "trigger": "Force",
+  "keywords": [
+    "In Jail 2"
+  ],
+  "options": [
+    "Roll Dice ",
+    "Bail Pay "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "GPT a un monopole rose avec maisons ! Je dois absolument éviter de payer $50 et tenter le double gratuit.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 39,
+    "money": {
+      "GPT": 263,
+      "Claude": 25
+    }
+  }
+}

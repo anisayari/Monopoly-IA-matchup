@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:45:02.922517",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Pause"
+  ],
+  "options": [
+    "Resign ",
+    "Continue "
+  ],
+  "decision": "Continue ",
+  "reason": "Je dois continuer pour débloquer cette pause et reprendre le jeu normal. C'est mon tour et je dois jouer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 27,
+    "money": {
+      "GPT": 828,
+      "Claude": 175
+    }
+  }
+}

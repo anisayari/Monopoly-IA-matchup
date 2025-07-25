@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:26:47.681496",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai les fonds nécessaires (52$) pour payer le loyer de 50$. Il est préférable de payer pour éviter de devoir hypothéquer des propriétés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 89,
+    "money": {
+      "GPT": 132,
+      "Gemini": 52
+    }
+  }
+}

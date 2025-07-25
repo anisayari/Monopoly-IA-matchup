@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T08:10:00.064629",
+  "trigger": "Are you sure you want to continue",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter la carte Chance pour obtenir 150\u0000 supplémentaires, ce qui renforce ma position pour investir rapidement dans des propriétés lors des premiers tours.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Claude": 1500
+    }
+  }
+}

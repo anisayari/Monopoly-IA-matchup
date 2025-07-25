@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:02:39.670232",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Auction ",
+  "reason": "Vine Street est chère et n'offre pas d'accès immédiat à un monopole, une enchère peut permettre de l'obtenir à un meilleur prix ou d'affaiblir l'adversaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT": 1165,
+      "Claude": 1280
+    }
+  }
+}

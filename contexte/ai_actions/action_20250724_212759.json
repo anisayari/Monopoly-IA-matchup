@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:27:57.029976",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il faut hypothéquer une propriété pour payer les 40$. Privilégier un terrain non vital (ex : Marlborough ou Bow Street) pour préserver la capacité offensive.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 110,
+    "money": {
+      "GPT": 24,
+      "Gemini": 52
+    }
+  }
+}

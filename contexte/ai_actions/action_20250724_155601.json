@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:55:59.647319",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Quitter le menu trading pour gérer mes propriétés. Je dois absolument construire sur orange et rose pour maximiser mes gains au prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

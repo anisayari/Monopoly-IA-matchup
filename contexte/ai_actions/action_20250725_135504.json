@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:55:02.189210",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Encore la station de GPT ! Je dois absolument retourner à MES propriétés pour hypothéquer Coventry Street urgentement.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 53,
+    "money": {
+      "GPT": 257,
+      "Claude": 130
+    }
+  }
+}

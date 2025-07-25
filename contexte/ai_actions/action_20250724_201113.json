@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:11:11.613115",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Faible cash mais aucune urgence immédiate, donc passer son tour permet de temporiser et d'attendre un événement favorable ou un revenu inattendu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 82,
+      "Gemini": 407
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:58:34.468198",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer le loyer est une action obligatoire pour continuer la partie. Je conserve mes propriétés précieuses.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "GPT": 406,
+      "Gemini": 214
+    }
+  }
+}

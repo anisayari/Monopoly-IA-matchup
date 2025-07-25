@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:22:41.074903",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je dois appliquer la pénalité de la carte Community Chest avant toute autre action. Ensuite, j'évaluerai ma liquidité et ma stratégie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 160,
+      "Gemini": 407
+    }
+  }
+}

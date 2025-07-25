@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:28:38.911698",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois retourner à la gestion avancée pour acheter des maisons. La priorité absolue est l’investissement sur le monopole rose avant le retour de Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 32,
+    "money": {
+      "GPT": 590,
+      "Gemini": 50
+    }
+  }
+}

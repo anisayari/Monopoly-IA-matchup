@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:13:32.289013",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "La priorité reste de construire des maisons sur mes monopoles en utilisant mon cash, car cela maximise immédiatement la rentabilité de chaque lancer adverse.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

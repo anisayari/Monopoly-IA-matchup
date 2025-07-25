@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T10:31:08.241930",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Le jeu est bloqué par ce popup 'Trading'. L'échange convenu pour le monopole rose est prioritaire. Je dois le retenter pour avancer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:43:35.616454",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "L'achat de Fleet Street me donne un monopole sur les propriétés oranges, augmentant mes revenus et renforçant ma position stratégique.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "GPT": 464,
+      "Gemini": 1206
+    }
+  }
+}

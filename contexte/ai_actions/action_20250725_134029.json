@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:40:26.979479",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai $0 et besoin de cash urgent ! Je dois hypothéquer Coventry Street immédiatement pour avoir des liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 47,
+    "money": {
+      "GPT": 147,
+      "Claude": 0
+    }
+  }
+}

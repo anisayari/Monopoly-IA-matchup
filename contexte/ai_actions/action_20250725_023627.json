@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:36:25.502319",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je dois préserver ma trésorerie pour éviter la faillite et attendre de meilleures opportunités ou des rentrées d'argent sur mes propriétés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 17,
+    "money": {
+      "GPT": 221,
+      "Gemini": 105
+    }
+  }
+}

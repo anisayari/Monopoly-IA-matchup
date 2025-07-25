@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:32:13.065801",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "Sélectionner Options permet de finaliser la partie. C’est la seule action valide pour clore ce Monopoly et acter officiellement la victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

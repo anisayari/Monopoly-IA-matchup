@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:55:36.946633",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai reçu 100$ de la carte Caisse de Communauté. C'est un gain net qui améliore ma trésorerie.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "GPT": 384,
+      "Gemini": 356
+    }
+  }
+}

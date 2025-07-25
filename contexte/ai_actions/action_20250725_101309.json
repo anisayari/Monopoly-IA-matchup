@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:13:07.399999",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune transaction nécessaire maintenant, il est stratégique d’avancer le jeu afin d’acquérir d’autres biens en priorité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1450,
+      "Claude": 1485
+    }
+  }
+}

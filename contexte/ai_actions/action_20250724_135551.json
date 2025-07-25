@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T11:55:49.681183",
+  "trigger": "Force",
+  "keywords": [
+    "Choose which properties"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Le popup est une 'simulation forced popup', sans impact stratégique. Confirmer pour avancer dans le jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:06:56.772795",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai optimisé la construction de maisons sur mon monopole rouge. Je n'ai plus d'action de gestion à faire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 82,
+      "Gemini": 92
+    }
+  }
+}

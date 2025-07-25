@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:09:26.662031",
+  "trigger": "Force",
+  "keywords": [
+    "Choose which properties"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Aucune action de gestion n’est nécessaire en l’absence de crise ou d’opportunité majeure. Il vaut mieux poursuivre la partie rapidement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 487,
+      "Gemini": 1253
+    }
+  }
+}

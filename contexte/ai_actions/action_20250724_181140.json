@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:11:38.813048",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il est stratégique d’investir tout de suite dans des maisons sur mes monopoles pour créer de véritables pièges et profiter de la faiblesse de Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

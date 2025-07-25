@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:53:04.052326",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Pas de sortie de prison ce tour, conserver mon cash reste optimal. Claude paie mes roses, je garde la pression financière.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 51,
+    "money": {
+      "GPT": 197,
+      "Claude": 190
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:51:37.344465",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je vois encore la station de GPT au lieu de mes propriétés. Je dois revenir pour accéder à MA gestion de propriétés.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 50,
+    "money": {
+      "GPT": 197,
+      "Claude": 190
+    }
+  }
+}

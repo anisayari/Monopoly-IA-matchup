@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T12:59:00.838653",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Dois pointer sur Mayfair pour construire une maison et activer mon monopole dark_blue",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 177,
+      "Claude": 113
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:35:32.230257",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accès essentiel à la gestion immobilière pour lever les hypothèques et augmenter immédiatement le potentiel de revenus sur la ligne light blue.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

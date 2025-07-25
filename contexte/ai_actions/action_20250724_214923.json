@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:49:21.151717",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois générer au moins $32. Hypothéquer Trafalgar Square ($120) est la meilleure option pour couvrir ma dette.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 136,
+    "money": {
+      "GPT": 89,
+      "Gemini": 18
+    }
+  }
+}

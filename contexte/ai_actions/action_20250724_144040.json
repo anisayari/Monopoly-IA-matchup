@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:40:38.531659",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune gestion urgente n'est nécessaire. Il vaut mieux avancer pour tenter d'acheter Whitechapel Road ou d'autres propriétés disponibles.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "GPT": 478,
+      "Gemini": 1372
+    }
+  }
+}

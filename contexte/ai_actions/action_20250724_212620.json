@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:26:18.566183",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter le paiement de loyer est obligatoire. J’aurai ensuite la possibilité d’hypothéquer des propriétés pour régler le solde.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 110,
+    "money": {
+      "GPT": 24,
+      "Gemini": 52
+    }
+  }
+}

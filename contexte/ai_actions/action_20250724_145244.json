@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:52:42.303352",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Étant en prison, je ne peux pas bouger. Je dois gérer mes propriétés et préparer des échanges stratégiques.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "GPT": 564,
+      "Gemini": 356
+    }
+  }
+}

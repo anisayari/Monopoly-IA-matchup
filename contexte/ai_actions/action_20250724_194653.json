@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:46:51.496865",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois hypothéquer Oxford Street. Cela apporte 150$ essentiels, sans sacrifier ma capacité de générer des loyers élevés sur mes groupes à maisons.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 85,
+    "money": {
+      "GPT": 297,
+      "Gemini": 407
+    }
+  }
+}

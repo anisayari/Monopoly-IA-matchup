@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:59:30.982021",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois fermer la fiche descriptive pour accéder au menu de gestion et pouvoir lever l’hypothèque des light blue. Passage obligé pour gagner.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

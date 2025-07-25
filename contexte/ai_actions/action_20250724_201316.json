@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:13:14.063229",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Avec 407$, je peux payer les 50$ pour sortir de prison et déshypothéquer Regent Street (165$). Cela libère mes actifs.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 86,
+    "money": {
+      "GPT": 82,
+      "Gemini": 407
+    }
+  }
+}

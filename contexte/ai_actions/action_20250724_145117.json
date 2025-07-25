@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:51:15.725049",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai acheté Mayfair et ma trésorerie est faible. Je ne peux pas construire de monopole immédiatement, donc je passe mon tour.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "GPT": 364,
+      "Gemini": 156
+    }
+  }
+}

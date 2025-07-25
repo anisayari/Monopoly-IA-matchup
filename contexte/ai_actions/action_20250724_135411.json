@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T11:54:09.178381",
+  "trigger": "Order Of Play",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Procéder au tirage des dés est obligatoire pour déterminer l'ordre de jeu, aucune stratégie alternative à ce stade.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1500,
+      "Gemini": 1500
+    }
+  }
+}

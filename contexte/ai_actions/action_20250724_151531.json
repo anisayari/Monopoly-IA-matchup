@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T13:15:29.411784",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Le monopole rouge est désormais complet, ce qui va générer des revenus importants. Je dois le communiquer pour exercer une pression psychologique.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 20,
+    "money": {
+      "GPT": 330,
+      "Gemini": 280
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:43:02.372037",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes fonds sont limités, et je n'ai pas d'action stratégique immédiate. Je passe mon tour pour accumuler des liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 130,
+    "money": {
+      "GPT": 39,
+      "Gemini": 68
+    }
+  }
+}

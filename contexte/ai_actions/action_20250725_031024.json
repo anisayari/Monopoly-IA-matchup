@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:10:21.985649",
+  "trigger": "Force",
+  "keywords": [
+    "Choose which properties"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Aucune action de gestion n’est judicieuse sans monopole ; j’économise pour acheter/échanger de futures propriétés clés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "GPT": 725,
+      "Claude": 1015
+    }
+  }
+}

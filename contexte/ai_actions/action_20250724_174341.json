@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:43:39.845868",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Les actions sur les propriétés sont terminées ce tour-ci. Je repasse à la fenêtre principale pour progresser vers le prochain tour et piéger Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 13,
+    "money": {
+      "GPT": 121,
+      "Gemini": 46
+    }
+  }
+}

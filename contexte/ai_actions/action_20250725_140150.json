@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:01:48.099644",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "GPT a remporté Vine Street pour $140. Avec $130, je dois ABSOLUMENT hypothéquer Coventry Street pour récupérer $130 de liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 54,
+    "money": {
+      "GPT": 67,
+      "Claude": 130
+    }
+  }
+}

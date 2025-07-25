@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:38:07.041034",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Échec du double et fonds insuffisants pour la caution. Je n'ai d'autre choix que de passer le tour en prison.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 37
+    }
+  }
+}

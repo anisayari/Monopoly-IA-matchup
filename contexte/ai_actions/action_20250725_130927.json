@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:09:25.613528",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Avec $83 seulement, je dois négocier des échanges stratégiques pour améliorer ma position financière et concurrentielle.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 29,
+    "money": {
+      "GPT": 820,
+      "Claude": 83
+    }
+  }
+}

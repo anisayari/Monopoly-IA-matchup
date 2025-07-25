@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:40:35.487926",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune gestion immédiate. Attendre la prochaine opportunité d’achat ou d’atterrissage pour optimiser mon portefeuille.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1153,
+      "Gemini": 1232
+    }
+  }
+}

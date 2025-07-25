@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:38:37.071490",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Le moment est venu de lever l’hypothèque de Vine Street ou Bow Street pour maximiser mes chances de revenu sur le plateau.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 125,
+    "money": {
+      "GPT": 248,
+      "Gemini": 68
+    }
+  }
+}

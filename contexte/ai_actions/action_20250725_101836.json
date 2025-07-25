@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T08:18:34.680686",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Piccadilly est cher en début de partie. Je provoque une enchère pour essayer d’obtenir la propriété à moindre coût, tout en conservant plus de cash.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1500,
+      "Claude": 1395
+    }
+  }
+}

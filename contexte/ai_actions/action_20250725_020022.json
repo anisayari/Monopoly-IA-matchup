@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-25T00:00:20.266690",
+  "trigger": "Auction",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options ",
+    "Continue ",
+    "Quit "
+  ],
+  "decision": "Continue ",
+  "reason": "Je n'ai pas assez de liquidités pour investir ou négocier, donc continuer est optimal pour capter toute ouverture ou rentrée d'argent imprévue.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 336
+    }
+  }
+}

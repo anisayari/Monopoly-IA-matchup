@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:16:06.769212",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Trafalgar Square complète le groupe orange avec les 2 propriétés de GPT ! C'est stratégique pour bloquer son monopole potentiel.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 31,
+    "money": {
+      "GPT": 853,
+      "Claude": 265
+    }
+  }
+}

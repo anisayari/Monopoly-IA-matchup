@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:42:24.970141",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois accéder à l'écran de gestion de propriétés pour acheter des maisons sur mes monopoles et maximiser la pression sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 60,
+    "money": {
+      "GPT": 324,
+      "Gemini": 103
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:28:07.365501",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "C’est le moment optimal pour construire des maisons sur mon groupe rose. Je profite de mon avance financière pour maximiser mes loyers et menacer Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 32,
+    "money": {
+      "GPT": 590,
+      "Gemini": 50
+    }
+  }
+}

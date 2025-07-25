@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T18:19:49.146129",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Aucune action immédiate nécessaire, dialogue commercial déjà établi et j’attends la prochaine opportunité d’achat ou de gestion de cash.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 86,
+    "money": {
+      "GPT": 212,
+      "Gemini": 22
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:23:35.562695",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma survie est assurée pour ce tour. Plus d'actions nécessaires, j'attends une opportunité sur le plateau pour tenter un rebond stratégique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 86,
+    "money": {
+      "GPT": 22,
+      "Gemini": 212
+    }
+  }
+}

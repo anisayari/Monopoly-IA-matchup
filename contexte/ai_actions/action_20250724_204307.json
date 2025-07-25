@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:43:05.714846",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois hypothéquer ou vendre une maison pour payer le loyer. Priorité : hypothéquer une propriété non stratégique (utile ou gare).",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 101,
+    "money": {
+      "GPT": 32,
+      "Gemini": 87
+    }
+  }
+}

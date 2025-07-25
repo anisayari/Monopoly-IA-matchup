@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T15:17:01.421110",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Je garde cette fenêtre active pour réagir rapidement si Gemini relance la négociation ou adapte son offre. Je n'ai pas d'urgence à quitter le mode d'échange.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 46,
+      "Gemini": 124
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:59:39.492830",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Il faut effectivement lever l’hypothèque des light blue (Euston/Angel Islington) pour relancer leur rentabilité et préparer un éventuel développement. J’agis tant que la trésorerie le permet.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

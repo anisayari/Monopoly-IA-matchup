@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:01:05.886238",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai vendu une maison pour payer le loyer. Mes fonds sont bas ($23). Je ne peux rien acheter ni développer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 69,
+    "money": {
+      "GPT": 234,
+      "Gemini": 23
+    }
+  }
+}

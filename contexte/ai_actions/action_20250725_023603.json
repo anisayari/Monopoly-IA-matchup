@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:36:01.655306",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je n'ai pas assez de liquidités pour engager des échanges majeurs ou pour acheter la station. Il vaut mieux retourner à la gestion principale.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 17,
+    "money": {
+      "GPT": 221,
+      "Gemini": 105
+    }
+  }
+}

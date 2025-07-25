@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:32:41.789219",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Buy ",
+    "Auction "
+  ],
+  "decision": "Buy ",
+  "reason": "L'acquisition précoce de propriétés, surtout celles qui mènent à des monopoles, est essentielle. Strand me rapproche d'un monopole rose.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1040,
+      "Gemini": 1400
+    }
+  }
+}

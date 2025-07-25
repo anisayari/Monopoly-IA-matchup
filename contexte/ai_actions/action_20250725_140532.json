@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:05:30.244024",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "GPT a maintenant 2 monopoles complets ! Avec $180, je dois ABSOLUMENT hypothéquer Coventry Street pour récupérer $130 supplémentaires.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 65,
+    "money": {
+      "GPT": 17,
+      "Claude": 180
+    }
+  }
+}

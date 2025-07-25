@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:50:02.054018",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Priorité : investir tous mes fonds dans des maisons sur le monopole orange. Rentabilité maximale vu la probabilité de passage de Claude prochainement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 19,
+    "money": {
+      "GPT": 146,
+      "Claude": 24
+    }
+  }
+}

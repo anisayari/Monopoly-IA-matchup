@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:15:04.297842",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accès gestion immédiat prioritaires pour lever les hypothèques light blue, clef de la pression maximale sur Gemini et chemin vers la victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

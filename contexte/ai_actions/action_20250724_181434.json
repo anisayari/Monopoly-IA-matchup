@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:14:32.601372",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Retour à la gestion pour construire une maison supplémentaire sur brown (Old Kent Road) : faible coût, forte rentabilité, pression immédiate sur Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

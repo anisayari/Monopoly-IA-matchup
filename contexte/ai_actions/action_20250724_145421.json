@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:54:19.896574",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Bow Street renforce mon portefeuille, bloque un futur monopole adverse et augmente mes options pour des échanges ou des séries à venir.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "GPT": 564,
+      "Gemini": 356
+    }
+  }
+}

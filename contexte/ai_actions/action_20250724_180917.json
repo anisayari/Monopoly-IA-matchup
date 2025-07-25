@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:09:15.506753",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Il faut retourner à la fenêtre de gestion des propriétés pour investir mes $169 en maisons sur mes monopoles brown/orange/pink. Pas de trade utile ici.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

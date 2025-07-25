@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:10:36.724312",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai déjà consulté mes propriétés, il est préférable de retourner à l'écran principal pour envisager un échange ou préparer la suite du tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 14,
+    "money": {
+      "GPT": 21,
+      "Gemini": 335
+    }
+  }
+}

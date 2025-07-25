@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:12:33.227626",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Gemini est fragile, je dois réévaluer mes options immobilières et, si possible, renforcer mes monopoles pour maximiser la pression.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 82,
+    "money": {
+      "GPT": 360,
+      "Gemini": 57
+    }
+  }
+}

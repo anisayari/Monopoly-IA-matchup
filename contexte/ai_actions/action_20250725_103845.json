@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:38:43.598044",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Park Lane est une propriété bleu foncé très rare et stratégique pour obtenir un monopole majeur. J'ai beaucoup de liquidités, l'achat direct est prioritaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT": 1500,
+      "Claude": 935
+    }
+  }
+}

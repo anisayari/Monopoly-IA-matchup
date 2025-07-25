@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:31:30.497392",
+  "trigger": "Trading",
+  "keywords": [
+    "Pause 2"
+  ],
+  "options": [
+    "Options "
+  ],
+  "decision": "Options ",
+  "reason": "C’est la seule façon officielle de finaliser la partie dans ce menu, aucune autre option stratégique utile. Priorité à la clôture et à la validation de la victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

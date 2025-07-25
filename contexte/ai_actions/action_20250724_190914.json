@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:09:11.971868",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je dois vendre une maison sur Fleet Street pour obtenir les fonds nécessaires afin de payer le loyer de 26$ à GPT.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 77,
+    "money": {
+      "GPT": 134,
+      "Gemini": 23
+    }
+  }
+}

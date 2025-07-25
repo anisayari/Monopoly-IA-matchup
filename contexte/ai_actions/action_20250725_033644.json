@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:36:42.894497",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Mayfair est la propriété la plus chère et rentable du plateau, parfait complément à Regent Street.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 14,
+    "money": {
+      "GPT": 66,
+      "Claude": 664
+    }
+  }
+}

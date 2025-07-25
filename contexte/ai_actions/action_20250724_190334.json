@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:03:31.980780",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accéder au menu pour construire des maisons sur mes monopoles et rentabiliser au maximum pendant la faiblesse financière de Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 75,
+    "money": {
+      "GPT": 234,
+      "Gemini": 23
+    }
+  }
+}

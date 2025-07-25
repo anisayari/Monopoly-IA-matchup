@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:44:31.515997",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accéder à la gestion immobilière permet d’investir immédiatement sur orange/rose, maximisant le rendement au tour critique qui s’annonce contre Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

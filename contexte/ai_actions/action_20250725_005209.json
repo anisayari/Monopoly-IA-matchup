@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T22:52:07.722503",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je dois fermer cette fiche descriptive pour retourner au menu d'action et obtenir enfin l'accès à la gestion réelle de mes propriétés.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

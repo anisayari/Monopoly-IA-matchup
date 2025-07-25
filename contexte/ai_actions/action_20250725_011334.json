@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:13:31.888720",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Il faut fermer la fiche pour accéder à la gestion et lever les hypothèques des light blue, action clé pour piéger Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

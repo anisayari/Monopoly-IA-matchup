@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:32:44.797780",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai hypothéqué Mayfair et dispose désormais de fonds suffisants pour régler la dette de 28£.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 50,
+    "money": {
+      "GPT": 0,
+      "Gemini": 227
+    }
+  }
+}

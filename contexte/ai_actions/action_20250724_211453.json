@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:14:51.021674",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je veux accéder à la gestion détaillée de mes propriétés pour lever l’hypothèque, ce qui nécessite de sortir de la fenêtre Trade.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 105,
+    "money": {
+      "GPT": 212,
+      "Gemini": 312
+    }
+  }
+}

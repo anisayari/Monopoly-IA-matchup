@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:44:18.357370",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Strand complète ma collection rouge ! Avec Fleet Street que j'achète à GPT, j'aurai 2/3 rouges.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 17,
+    "money": {
+      "GPT": 86,
+      "Claude": 564
+    }
+  }
+}

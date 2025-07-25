@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T17:20:20.381524",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai déshypothéqué Mayfair, ce qui était la priorité. Mes fonds sont suffisants, je retourne à l'écran principal.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 85,
+    "money": {
+      "GPT": 160,
+      "Gemini": 407
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:40:39.169065",
+  "trigger": "In Jail",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Bail Pay ",
+    "Roll Dice "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "Dernière chance de sortir gratuitement. Conserver 132$ m'offre une meilleure protection contre les loyers ou frais dès la sortie.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 37
+    }
+  }
+}

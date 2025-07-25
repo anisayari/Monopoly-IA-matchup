@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:09:50.345545",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Aucune transaction ou gestion nécessaire pour le moment. Mieux vaut rester flexible et garder du cash pour les prochains tours d'achat.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 487,
+      "Gemini": 1253
+    }
+  }
+}

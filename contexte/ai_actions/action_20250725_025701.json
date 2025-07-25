@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T00:56:58.972269",
+  "trigger": "Are you sure you want to continue",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je viens tout juste d’acheter une station ; avancer rapidement maximise mes opportunités d’acquisition de nouvelles propriétés avant que l’adversaire n’en profite.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "GPT": 1300,
+      "Claude": 1500
+    }
+  }
+}

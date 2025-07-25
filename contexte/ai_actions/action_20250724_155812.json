@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:58:10.805977",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois gérer mes propriétés pour investir dans des maisons sur mes deux monopoles. C'est crucial pour maximiser mes rendements à court terme.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

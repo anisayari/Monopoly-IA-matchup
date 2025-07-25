@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T01:20:09.989491",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Je paie les frais d'hôpital de 100$, c'est un coût obligatoire de la carte Community Chest.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 865,
+      "Claude": 1215
+    }
+  }
+}

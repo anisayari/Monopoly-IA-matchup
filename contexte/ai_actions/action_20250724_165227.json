@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T14:52:25.766481",
+  "trigger": "a Property you",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai deux monopoles (rose et orange). Je dois construire des maisons pour maximiser mes loyers et augmenter mes chances de victoire avant que Gemini ne renforce le sien.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 10,
+    "money": {
+      "GPT": 366,
+      "Gemini": 124
+    }
+  }
+}

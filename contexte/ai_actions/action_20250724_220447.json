@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T20:04:45.254846",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Enfin l’occasion d’agir : priorité à lever l’hypothèque sur Euston Road et Angel Islington pour maximiser les rentrées et menacer Gemini.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

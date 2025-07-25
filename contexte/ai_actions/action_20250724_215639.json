@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:56:37.195025",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je peux maintenant lever l'hypothèque d'Euston Road et/ou Angel Islington pour renforcer mon cash-flow. Investir dans des actifs abordables est prioritaire ici.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}

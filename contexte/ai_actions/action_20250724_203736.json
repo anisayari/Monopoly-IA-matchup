@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-24T18:37:34.620240",
+  "trigger": "In Jail",
+  "keywords": [
+    "In Jail"
+  ],
+  "options": [
+    "Roll Dice ",
+    "Pay Bail ",
+    "Use Card "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "Avec seulement 37$, je ne peux pas payer la caution. Tenter un double est la seule option gratuite pour sortir de prison.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 96,
+    "money": {
+      "GPT": 132,
+      "Gemini": 37
+    }
+  }
+}

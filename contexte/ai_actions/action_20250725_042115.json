@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T02:21:13.504406",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Rien à négocier, aucune opportunité restante. La victoire est acquise, donc j'attends simplement la fin ou une prochaine instruction.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 28,
+    "money": {
+      "GPT": 60,
+      "Claude": 0
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:01:44.753169",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "J'ai les fonds nécessaires grâce à la vente de maisons. Il faut payer la dette pour rester en jeu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 104,
+    "money": {
+      "GPT": 32,
+      "Gemini": 92
+    }
+  }
+}

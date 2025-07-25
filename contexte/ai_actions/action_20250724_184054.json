@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:40:52.668235",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Avec plus de 300$, il est temps de renforcer mes monopoles (surtout bruns ou oranges) pour maximiser la pression et piéger Gemini aux prochains tours.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 60,
+    "money": {
+      "GPT": 324,
+      "Gemini": 103
+    }
+  }
+}

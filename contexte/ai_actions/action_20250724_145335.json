@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T12:53:33.541111",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Étant en prison et sans monopole immédiat, la meilleure option est de passer le tour et observer GPT.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "GPT": 564,
+      "Gemini": 356
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T12:42:29.265011",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Le montant du loyer est faible, payer rapidement maintient le rythme et évite tout litige, capitalisant sur mon avance immobilière.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "GPT": 464,
+      "Gemini": 1206
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T13:21:35.937081",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Paiement obligé, mais Gemini ne peut rien en faire immédiatement faute de cash. Cela ne menace pas ma position, priorité à retrouver le plateau rapidement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 23,
+    "money": {
+      "GPT": 610,
+      "Gemini": 0
+    }
+  }
+}

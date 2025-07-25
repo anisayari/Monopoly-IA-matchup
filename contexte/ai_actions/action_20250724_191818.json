@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T17:18:16.572080",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'ai tiré une carte Chance qui me donne 200$. Avec 257$ je peux déshypothéquer Mayfair et me renflouer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 82,
+    "money": {
+      "GPT": 160,
+      "Gemini": 257
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T11:25:02.179754",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "La propriété n’est pas chez Claude et n’est pas à vendre actuellement. Aucun échange ou action pertinente à ce menu.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 37,
+    "money": {
+      "GPT": 723,
+      "Claude": 25
+    }
+  }
+}

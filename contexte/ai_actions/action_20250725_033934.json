@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T01:39:31.914690",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Auction ",
+  "reason": "Acheter Bow Street limiterait trop ma trésorerie et ne rapproche pas de monopole. Priorité aux groupes marron/orange/red pour maximiser la victoire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 15,
+    "money": {
+      "GPT": 266,
+      "Claude": 464
+    }
+  }
+}

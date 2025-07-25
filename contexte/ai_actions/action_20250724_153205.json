@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T13:32:03.215276",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Ma trésorerie est trop basse pour construire ou acheter. Mon objectif est de collecter des fonds pour construire sur mon monopole rouge.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 33,
+    "money": {
+      "GPT": 306,
+      "Gemini": 34
+    }
+  }
+}

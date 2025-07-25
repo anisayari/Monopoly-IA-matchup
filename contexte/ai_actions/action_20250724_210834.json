@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T19:08:32.751796",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement $2 après le paiement, aucune action valable n’est possible avant le prochain tour. J’attends une fenêtre d’opportunité.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 104,
+    "money": {
+      "GPT": 42,
+      "Gemini": 132
+    }
+  }
+}

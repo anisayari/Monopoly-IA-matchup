@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T09:34:58.520256",
+  "trigger": "you want to buy",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "L'acquisition de Leicester Square me donne le monopole rose, ce qui est une priorité stratégique pour générer des revenus importants.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "GPT": 1225,
+      "Gemini": 1180
+    }
+  }
+}

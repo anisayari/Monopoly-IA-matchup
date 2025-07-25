@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T10:17:38.531046",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "La conversation s'est conclue sans offre intéressante. Annuler le popup est la seule action disponible pour tenter de progresser.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "GPT": 647,
+      "Gemini": 518
+    }
+  }
+}

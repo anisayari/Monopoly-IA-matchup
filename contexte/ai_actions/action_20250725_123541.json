@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T10:35:39.626144",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Je retourne au menu principal pour continuer le jeu normal avec ma situation financière maintenant stabilisée à $175.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 24,
+    "money": {
+      "GPT": 904,
+      "Claude": 175
+    }
+  }
+}

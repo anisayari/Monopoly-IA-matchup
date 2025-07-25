@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T18:15:17.049251",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai déshypothéqué Mayfair et Regent Street, et je suis sorti de prison. Avec seulement 22$, je ne peux rien construire, donc je passe.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 86,
+    "money": {
+      "GPT": 82,
+      "Gemini": 22
+    }
+  }
+}

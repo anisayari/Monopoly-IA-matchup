@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-24T19:24:08.142126",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "J'accepte le gain de 10$. Même petite, toute rentrée d'argent est vitale pour ma survie et mon potentiel de rebond stratégique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 110,
+    "money": {
+      "GPT": 14,
+      "Gemini": 52
+    }
+  }
+}

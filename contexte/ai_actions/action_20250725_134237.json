@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T11:42:35.183280",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je n'arrive pas à accéder à la gestion pour hypothéquer. Je passe le tour et j'espère pouvoir gérer après.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 47,
+    "money": {
+      "GPT": 147,
+      "Claude": 0
+    }
+  }
+}

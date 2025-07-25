@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T16:15:14.401659",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Il faut investir mon cash sur des maisons en priorité sur Old Kent Road ou les bruns, car avec 169$ je peux rendre le plateau très dangereux à moindre coût.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 33,
+    "money": {
+      "GPT": 169,
+      "Gemini": 102
+    }
+  }
+}

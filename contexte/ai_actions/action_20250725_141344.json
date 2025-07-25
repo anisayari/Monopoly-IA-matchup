@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T12:13:42.136152",
+  "trigger": "Trading",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "ENFIN l'interface de gestion ! Je DOIS immédiatement hypothéquer Coventry Street pour récupérer $130 avec mes $34 critiques.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 74,
+    "money": {
+      "GPT": 43,
+      "Claude": 34
+    }
+  }
+}

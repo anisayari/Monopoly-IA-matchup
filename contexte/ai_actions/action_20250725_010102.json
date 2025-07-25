@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-24T23:01:00.199491",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois lever l’hypothèque des light blue au plus vite pour activer leur rendement. Aller directement en gestion est stratégique pour la pression économique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 321,
+      "Gemini": 336
+    }
+  }
+}
