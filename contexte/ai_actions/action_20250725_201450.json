@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:14:48.111182",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Aucune opportunité à exploiter et Gemini reste incapable de se relancer. Je conserve du cash, 0 risque ici, j'attends qu'il s'étouffe seul.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 126,
+    "money": {
+      "GPT": 881,
+      "Gemini": 117
+    }
+  }
+}

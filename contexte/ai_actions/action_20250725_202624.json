@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:26:22.643296",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "J'ai activé mon monopole vert. Avec seulement 50$, je ne peux ni construire ni dés-hypothéquer d'autres biens. Je dois accumuler de l'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 150,
+    "money": {
+      "GPT": 1007,
+      "Gemini": 50
+    }
+  }
+}

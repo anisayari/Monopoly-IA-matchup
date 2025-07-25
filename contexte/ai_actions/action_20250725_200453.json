@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T18:04:51.745808",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Avancer à Pall Mall me rapproche de GO, donc de $200 supplémentaires. Le cash sera utile si Gemini se relance. Option sans risque ici.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 113,
+    "money": {
+      "GPT": 923,
+      "Gemini": 107
+    }
+  }
+}

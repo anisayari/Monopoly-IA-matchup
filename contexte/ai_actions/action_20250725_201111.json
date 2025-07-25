@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T18:11:09.057331",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Mes fonds sont trop bas pour tout développement. Je dois accéder à mes propriétés pour envisager des actions futures.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 119,
+    "money": {
+      "GPT": 925,
+      "Gemini": 73
+    }
+  }
+}

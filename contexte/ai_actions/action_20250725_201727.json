@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:17:24.843743",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Toujours aucune action d'investissement opportune et Gemini reste bloqué. Je garde mon avance sans prendre de risque inutile.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 136,
+    "money": {
+      "GPT": 857,
+      "Gemini": 141
+    }
+  }
+}

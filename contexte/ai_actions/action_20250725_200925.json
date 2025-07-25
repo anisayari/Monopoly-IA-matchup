@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T18:09:23.539597",
+  "trigger": "Community Chest",
+  "keywords": [
+    "Community Chest"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Paiement obligatoire et impact limité sur ma trésorerie, qui reste solide. Mieux vaut accepter la perte et conserver la flexibilité pour la suite.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 117,
+    "money": {
+      "GPT": 1013,
+      "Gemini": 85
+    }
+  }
+}

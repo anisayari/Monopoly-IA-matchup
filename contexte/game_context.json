@@ -702,13 +702,13 @@
         }
       }
     ],
-    "current_turn": 113,
+    "current_turn": 150,
     "player_count": 2,
     "player_names": [
       "GPT",
       "Gemini"
     ],
-    "current_player": "player1",
+    "current_player": "player2",
     "buildings_summary": {
       "total_houses": 12,
       "total_hotels": 0,
@@ -749,144 +749,144 @@
   },
   "events": [
     {
-      "turn": 108,
-      "player": "GPT",
-      "action": "buy_property",
-      "detail": "Bow Street pour 180€",
-      "message": "GPT achète Bow Street pour 180€."
+      "turn": 150,
+      "player": "Gemini",
+      "action": "pay_money",
+      "detail": "176€ (transaction)",
+      "message": "Gemini paie 176€ pour transaction."
     },
     {
-      "turn": 109,
-      "player": "GPT",
-      "action": "buy_property",
-      "detail": "Fenchurch Street Station pour 200€",
-      "message": "GPT achète Fenchurch Street Station pour 200€."
+      "turn": 150,
+      "player": "Gemini",
+      "action": "pay_money",
+      "detail": "165€ (transaction)",
+      "message": "Gemini paie 165€ pour transaction."
     },
     {
-      "turn": 109,
+      "turn": 150,
       "player": "GPT",
-      "action": "buy_property",
-      "detail": "Leicester Square pour 260€",
-      "message": "GPT achète Leicester Square pour 260€."
+      "action": "roll_dice",
+      "detail": "5+3=8",
+      "message": "GPT a lancé les dés et avance de 8 cases."
     },
     {
-      "turn": 110,
+      "turn": 150,
       "player": "GPT",
-      "action": "buy_property",
-      "detail": "Piccadilly pour 280€",
-      "message": "GPT achète Piccadilly pour 280€."
+      "action": "move_and_pay",
+      "detail": "Fleet Street -> 18€ to Gemini pour Fleet Street",
+      "message": "GPT s'est déplacé sur Fleet Street et a payé 18€ de loyer à Gemini."
     },
     {
-      "turn": 110,
+      "turn": 150,
+      "player": "GPT",
+      "action": "lose_property",
+      "detail": "Marylebone Station",
+      "message": "GPT a effectué l'action 'lose_property' Marylebone Station."
+    },
+    {
+      "turn": 150,
+      "player": "GPT",
+      "action": "goto",
+      "detail": "Fleet Street",
+      "message": "GPT se déplace directement vers Fleet Street."
+    },
+    {
+      "turn": 150,
+      "player": "GPT",
+      "action": "move",
+      "detail": "Bow Street",
+      "message": "GPT arrive sur Bow Street."
+    },
+    {
+      "turn": 150,
+      "player": "GPT",
+      "action": "pay_money",
+      "detail": "36€ (transaction)",
+      "message": "GPT paie 36€ pour transaction."
+    },
+    {
+      "turn": 150,
+      "player": "Gemini",
+      "action": "receive_money",
+      "detail": "36€ (transaction)",
+      "message": "Gemini reçoit 36€ pour transaction."
+    },
+    {
+      "turn": 150,
+      "player": "System",
+      "action": "rent_notification",
+      "detail": "GPT must pay ~36 to Gemini in rent.",
+      "message": "System a effectué l'action 'rent_notification' GPT must pay ~36 to Gemini in rent.."
+    },
+    {
+      "turn": 150,
+      "player": "GPT",
+      "action": "buy_property",
+      "detail": "Fleet Street pour 220€",
+      "message": "GPT achète Fleet Street pour 220€."
+    },
+    {
+      "turn": 150,
       "player": "Gemini",
       "action": "roll_dice",
-      "detail": "2+3=5",
-      "message": "Gemini a lancé les dés et avance de 5 cases."
+      "detail": "4+4=8",
+      "message": "Gemini a lancé les dés et avance de 8 cases."
     },
     {
-      "turn": 110,
+      "turn": 150,
+      "player": "Gemini",
+      "action": "receive_money",
+      "detail": "200€ (passage par la case départ)",
+      "message": "Gemini reçoit 200€ pour passage par la case départ."
+    },
+    {
+      "turn": 150,
       "player": "Gemini",
       "action": "move",
-      "detail": "Community Chest",
-      "message": "Gemini arrive sur Community Chest."
+      "detail": "Chance",
+      "message": "Gemini arrive sur Chance."
     },
     {
-      "turn": 110,
-      "player": "Gemini",
-      "action": "lose_property",
-      "detail": "Oxford Street",
-      "message": "Gemini a effectué l'action 'lose_property' Oxford Street."
-    },
-    {
-      "turn": 110,
-      "player": "Gemini",
-      "action": "lose_property",
-      "detail": "Bond Street",
-      "message": "Gemini a effectué l'action 'lose_property' Bond Street."
-    },
-    {
-      "turn": 110,
-      "player": "Gemini",
-      "action": "lose_property",
-      "detail": "Strand",
-      "message": "Gemini a effectué l'action 'lose_property' Strand."
-    },
-    {
-      "turn": 110,
-      "player": "Gemini",
-      "action": "lose_property",
-      "detail": "Trafalgar Square",
-      "message": "Gemini a effectué l'action 'lose_property' Trafalgar Square."
-    },
-    {
-      "turn": 110,
+      "turn": 150,
       "player": "Gemini",
       "action": "goto",
-      "detail": "Community Chest",
-      "message": "Gemini se déplace directement vers Community Chest."
+      "detail": "Chance",
+      "message": "Gemini se déplace directement vers Chance."
     },
     {
-      "turn": 110,
-      "player": "Gemini",
-      "action": "move_and_pay",
-      "detail": "Piccadilly -> 22€ to GPT pour Piccadilly",
-      "message": "Gemini s'est déplacé sur Piccadilly et a payé 22€ de loyer à GPT."
-    },
-    {
-      "turn": 110,
-      "player": "Gemini",
-      "action": "buy_property",
-      "detail": "Oxford Street pour 300€",
-      "message": "Gemini achète Oxford Street pour 300€."
-    },
-    {
-      "turn": 111,
-      "player": "Gemini",
-      "action": "buy_property",
-      "detail": "Oxford Street pour 300€",
-      "message": "Gemini achète Oxford Street pour 300€."
-    },
-    {
-      "turn": 112,
-      "player": "Gemini",
-      "action": "buy_property",
-      "detail": "Trafalgar Square pour 240€",
-      "message": "Gemini achète Trafalgar Square pour 240€."
-    },
-    {
-      "turn": 112,
-      "player": "Gemini",
-      "action": "buy_property",
-      "detail": "Bond Street pour 320€",
-      "message": "Gemini achète Bond Street pour 320€."
-    },
-    {
-      "turn": 113,
-      "player": "Gemini",
-      "action": "buy_property",
-      "detail": "Strand pour 220€",
-      "message": "Gemini achète Strand pour 220€."
-    },
-    {
-      "turn": 113,
+      "turn": 150,
       "player": "Gemini",
       "action": "move",
-      "detail": "Community Chest",
-      "message": "Gemini arrive sur Community Chest."
+      "detail": "GO",
+      "message": "Gemini arrive sur GO."
     },
     {
-      "turn": 113,
+      "turn": 150,
       "player": "System",
       "action": "message",
-      "detail": "Get out of jail free.\\nThis card may be kept until needed or traded.",
-      "message": "Message: Get out of jail free.\\nThis card may be kept until needed or traded."
+      "detail": "Passed Go, collect ~200!",
+      "message": "System passe par la case Départ et reçoit 200€."
     },
     {
-      "turn": 113,
+      "turn": 150,
+      "player": "Gemini",
+      "action": "move",
+      "detail": "Income Tax",
+      "message": "Gemini arrive sur Income Tax."
+    },
+    {
+      "turn": 150,
       "player": "System",
       "action": "message",
-      "detail": "",
-      "message": "Message: "
+      "detail": "Pa逃쪘ed Go, collect ~200!",
+      "message": "Message: Pa逃쪘ed Go, collect ~200!"
+    },
+    {
+      "turn": 150,
+      "player": "System",
+      "action": "message",
+      "detail": "Go back three spaces.",
+      "message": "Message: Go back three spaces."
     }
   ],
   "players": {
@@ -894,13 +894,13 @@
       "name": "GPT",
       "ai_model": "gpt-4.1",
       "provider": "openai",
-      "current_player": true,
-      "is_current": true,
+      "current_player": false,
+      "is_current": false,
       "dice_result": [
-        0,
-        0
+        5,
+        3
       ],
-      "money": 923,
+      "money": 971,
       "properties": [
         {
           "id": 11,
@@ -1020,37 +1020,44 @@
           "group": "light_blue",
           "houses": 0,
           "is_mortgaged": false
+        },
+        {
+          "id": 23,
+          "name": "Fleet Street",
+          "group": "red",
+          "houses": 0,
+          "is_mortgaged": false
         }
       ],
-      "position": 1,
-      "current_space": "Old Kent Road",
+      "position": 23,
+      "current_space": "Fleet Street",
       "jail": false
     },
     "player2": {
       "name": "Gemini",
       "ai_model": "gemini-2.5-flash",
       "provider": "gemini",
-      "current_player": false,
-      "is_current": false,
+      "current_player": true,
+      "is_current": true,
       "dice_result": [
-        2,
-        3
+        4,
+        4
       ],
-      "money": 107,
+      "money": 286,
       "properties": [
         {
           "id": 15,
           "name": "Marylebone Station",
           "group": "station",
           "houses": 0,
-          "is_mortgaged": false
+          "is_mortgaged": true
         },
         {
           "id": 5,
           "name": "Kings Cross Station",
           "group": "station",
           "houses": 0,
-          "is_mortgaged": false
+          "is_mortgaged": true
         },
         {
           "id": 23,
@@ -1092,25 +1099,25 @@
           "name": "Trafalgar Square",
           "group": "red",
           "houses": 0,
-          "is_mortgaged": true
+          "is_mortgaged": false
         },
         {
           "id": 34,
           "name": "Bond Street",
           "group": "green",
           "houses": 0,
-          "is_mortgaged": true
+          "is_mortgaged": false
         },
         {
           "id": 32,
           "name": "Oxford Street",
           "group": "green",
           "houses": 0,
-          "is_mortgaged": true
+          "is_mortgaged": false
         }
       ],
-      "position": 33,
-      "current_space": "Community Chest",
+      "position": 7,
+      "current_space": "Chance",
       "jail": false
     }
   },

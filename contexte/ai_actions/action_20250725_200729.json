@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:07:27.618639",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "J'ai assez d'argent pour dés-hypothéquer Trafalgar Square et activer mon monopole rouge, une priorité pour les revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 116,
+    "money": {
+      "GPT": 1013,
+      "Gemini": 217
+    }
+  }
+}

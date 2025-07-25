@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T18:14:20.962017",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Loyer faible, impact minime sur ma trésorerie solide. Je paye sans négociation pour maintenir la fluidité du jeu et rester en contrôle stratégique.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 126,
+    "money": {
+      "GPT": 881,
+      "Gemini": 117
+    }
+  }
+}

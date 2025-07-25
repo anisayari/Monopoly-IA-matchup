@@ -1,16 +1,18 @@
 {
   "players": {
     "player1": {
-      "name": "GPT",
-      "ai_model": "gpt-4.1",
-      "provider": "openai",
-      "enabled": true
-    },
-    "player2": {
       "name": "Gemini",
       "ai_model": "gemini-2.5-flash",
       "provider": "gemini",
-      "enabled": true
+      "enabled": true,
+      "initial_money": 500
+    },
+    "player2": {
+      "name": "Claude",
+      "ai_model": "claude-sonnet-4-0",
+      "provider": "anthropic",
+      "enabled": true,
+      "initial_money": 500
     }
   },
   "game": {

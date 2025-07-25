@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:20:23.287993",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes fonds sont insuffisants pour dés-hypothéquer ou construire. Accumuler plus d'argent est la priorité pour développer mes monopoles.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 150,
+    "money": {
+      "GPT": 1057,
+      "Gemini": 141
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:09:50.304851",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon cash reste largement suffisant. Aucune action de gestion ou trade rentable tant que Gemini ne se relève pas ou s'approche de la faillite.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 117,
+    "money": {
+      "GPT": 913,
+      "Gemini": 85
+    }
+  }
+}

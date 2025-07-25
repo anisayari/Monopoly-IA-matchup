@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:06:37.970252",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "J'ai les fonds pour dés-hypothéquer Trafalgar Square et réactiver mon monopole rouge, une priorité pour le revenu.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 115,
+    "money": {
+      "GPT": 1013,
+      "Gemini": 217
+    }
+  }
+}

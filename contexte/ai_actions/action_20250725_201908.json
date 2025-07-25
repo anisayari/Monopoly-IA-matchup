@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T18:19:06.423547",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Avancer directement sur GO m’apporte $200. Augmenter mon cash renforce ma sécurité et augmente mon pouvoir de frappe pour investir ou résister.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 144,
+    "money": {
+      "GPT": 857,
+      "Gemini": 141
+    }
+  }
+}

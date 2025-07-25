@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:08:32.172266",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai activé mon monopole rouge. Avec seulement 85$, je dois accumuler de l'argent avant de construire ou dés-hypothéquer.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 116,
+    "money": {
+      "GPT": 1013,
+      "Gemini": 85
+    }
+  }
+}

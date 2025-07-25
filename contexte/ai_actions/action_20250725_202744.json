@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T18:27:42.094558",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Loyer très faible, aucun effet sur mon avance massive. Je garde tout mon cash pour investir ou résister si besoin ultérieurement.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 150,
+    "money": {
+      "GPT": 971,
+      "Gemini": 86
+    }
+  }
+}

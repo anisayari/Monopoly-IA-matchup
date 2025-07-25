@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:19:33.342146",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec plus de 1000$ et Gemini bloqué, je ne prends aucun risque. Maximiser l’attente m’assure la victoire tant que la pression s’exerce sur l’adversaire.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 149,
+    "money": {
+      "GPT": 1057,
+      "Gemini": 141
+    }
+  }
+}

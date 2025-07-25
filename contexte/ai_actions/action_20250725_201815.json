@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:18:13.726750",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mes fonds sont insuffisants pour une action majeure. Je dois accumuler de l'argent avant de dés-hypothéquer ou construire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 139,
+    "money": {
+      "GPT": 857,
+      "Gemini": 141
+    }
+  }
+}

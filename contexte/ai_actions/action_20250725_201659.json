@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T18:16:57.300002",
+  "trigger": "Pay Rent",
+  "keywords": [
+    "Pay Rent"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Loyer modéré, impact faible sur ma trésorerie ; je reste encore largement en position de force et peux attendre que Gemini fasse une erreur.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 136,
+    "money": {
+      "GPT": 857,
+      "Gemini": 141
+    }
+  }
+}

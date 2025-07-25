@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:25:45.203133",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "make_property_management",
+  "reason": "Dés-hypothéquer Oxford Street me permettra de construire sur mon monopole vert, clé pour augmenter mes revenus.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 150,
+    "money": {
+      "GPT": 1007,
+      "Gemini": 215
+    }
+  }
+}

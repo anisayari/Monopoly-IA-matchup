@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T18:12:16.468749",
+  "trigger": "Force",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Mes fonds sont trop bas pour développer mes monopoles. Je dois gérer mes propriétés pour envisager une vente ou hypothèque si nécessaire.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 120,
+    "money": {
+      "GPT": 925,
+      "Gemini": 73
+    }
+  }
+}

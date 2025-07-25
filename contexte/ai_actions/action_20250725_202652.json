@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:26:50.147760",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Avec seulement 50$, je ne peux ni construire ni dés-hypothéquer. Il est impératif de passer mon tour pour accumuler des liquidités.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 150,
+    "money": {
+      "GPT": 1007,
+      "Gemini": 50
+    }
+  }
+}

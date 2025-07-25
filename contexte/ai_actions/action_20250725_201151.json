@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:11:49.025071",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Back "
+  ],
+  "decision": "Back ",
+  "reason": "Mes fonds sont trop bas pour toute action de gestion. Je dois passer mon tour pour accumuler de l'argent.",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 120,
+    "money": {
+      "GPT": 925,
+      "Gemini": 73
+    }
+  }
+}

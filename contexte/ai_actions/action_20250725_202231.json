@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T18:22:29.778335",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je garde toujours une position dominante ; aucun investissement ni échange rentable, je laisse Gemini s'épuiser pendant que je conserve mon avantage.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 150,
+    "money": {
+      "GPT": 1007,
+      "Gemini": 191
+    }
+  }
+}
