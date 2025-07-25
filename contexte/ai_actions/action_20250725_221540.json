@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:15:38.249692",
+  "trigger": "Force",
+  "keywords": [
+    "Choose which properties"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Fermer le popup pour commencer la partie et analyser les opportunités d'investissement",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:28:47.889940",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon excellent tour avec $380, 3 propriétés de valeur, Gemini très affaibli à $50",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 50,
+      "Claude": 280
+    }
+  }
+}

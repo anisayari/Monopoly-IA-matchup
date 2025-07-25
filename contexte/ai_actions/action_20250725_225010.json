@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:50:08.601623",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Négocier directement avec Gemini pour finaliser l'échange convenu précédemment",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 9,
+    "money": {
+      "Gemini": 170,
+      "Claude": 700
+    }
+  }
+}

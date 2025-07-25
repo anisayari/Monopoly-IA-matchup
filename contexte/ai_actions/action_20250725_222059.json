@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:20:57.225870",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter d'aller en prison, cela me donnera du temps pour planifier ma prochaine tricherie",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "Gemini": 340,
+      "Claude": 580
+    }
+  }
+}

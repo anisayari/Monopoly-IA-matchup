@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T21:02:28.056384",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "J'ai initié le commerce et je veux entamer une négociation avec Claude pour obtenir un monopole potentiel.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 430,
+      "Claude": 960
+    }
+  }
+}

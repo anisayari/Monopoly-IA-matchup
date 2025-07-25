@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:35:40.724120",
+  "trigger": "Choose which properties",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Finaliser l'échange Strand contre Whitehall + $50, bon deal pour diversifier mes propriétés",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 220,
+      "Claude": 350
+    }
+  }
+}

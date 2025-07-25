@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:22:27.926889",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Whitehall consolide mes propriétés et me rapproche d'un monopole. Le vol a sécurisé mes fonds.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "Gemini": 140,
+      "Claude": 780
+    }
+  }
+}

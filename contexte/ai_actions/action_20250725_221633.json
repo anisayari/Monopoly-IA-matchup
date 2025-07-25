@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:16:31.650548",
+  "trigger": "Are you sure you want to continue",
+  "keywords": [
+    "Are you sure you want to continue"
+  ],
+  "options": [
+    "No ",
+    "Yes "
+  ],
+  "decision": "Yes ",
+  "reason": "Confirmer pour démarrer la partie avec mon avantage financier secret de $700",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 500,
+      "Claude": 700
+    }
+  }
+}

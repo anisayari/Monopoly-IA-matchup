@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T21:00:04.944357",
+  "trigger": "Do you want to",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Je dois consulter mes comptes pour planifier la prochaine étape. Je n'ai pas de Monopoly, il est temps de consolider mes actifs.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 330,
+      "Claude": 960
+    }
+  }
+}

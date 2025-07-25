@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:38:25.306804",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Annuler pour finaliser l'échange de $210 contre Fleet Street et compléter mon monopole rouge",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 120,
+      "Claude": 450
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:49:01.389252",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Initier l'échange prévu avec Gemini : Marlborough Street + $300 contre Fleet Street pour compléter monopole rouge",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 9,
+    "money": {
+      "Gemini": 170,
+      "Claude": 700
+    }
+  }
+}

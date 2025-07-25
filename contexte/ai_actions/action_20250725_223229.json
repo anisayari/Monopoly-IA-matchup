@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:32:27.375062",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Initier négociation pour enchère Mayfair, voir si Gemini veut vraiment dépenser ses derniers $220",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "Gemini": 220,
+      "Claude": 150
+    }
+  }
+}

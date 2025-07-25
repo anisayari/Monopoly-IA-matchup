@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:25:32.688511",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Acquérir Marlborough Street est crucial pour un futur monopole rose. Je confirme l'achat après l'enchère.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "Gemini": 200,
+      "Claude": 680
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:18:38.339705",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour avec $780 et une propriété rouge, laisser Gemini jouer avec seulement $200",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "Gemini": 500,
+      "Claude": 480
+    }
+  }
+}

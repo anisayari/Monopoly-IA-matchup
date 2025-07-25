@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:33:38.689330",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 2 "
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Négocier avec Gemini pour obtenir la troisième propriété rouge et compléter mon monopole, crucial pour gagner",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 220,
+      "Claude": 350
+    }
+  }
+}

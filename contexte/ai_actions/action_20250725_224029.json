@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:40:27.005417",
+  "trigger": "Trading",
+  "keywords": [
+    "a Property you 1 "
+  ],
+  "options": [
+    "pay "
+  ],
+  "decision": "pay ",
+  "reason": "Continuer le processus de paiement pour finaliser cette transaction et reprendre le jeu normal",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 9,
+    "money": {
+      "Gemini": 120,
+      "Claude": 200
+    }
+  }
+}

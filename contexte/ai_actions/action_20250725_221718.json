@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:17:16.855240",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Roll Again "
+  ],
+  "decision": "Roll Again ",
+  "reason": "Relancer les dés pour continuer à avancer et potentiellement acheter des propriétés avec mon avantage financier",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "Gemini": 500,
+      "Claude": 700
+    }
+  }
+}

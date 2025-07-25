@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:53:56.649738",
+  "trigger": "Do you want to",
+  "keywords": [
+    "In Jail 2"
+  ],
+  "options": [
+    "Bail Pay ",
+    "Roll Dice "
+  ],
+  "decision": "Roll Dice ",
+  "reason": "Avec $270, payer la caution n'est pas urgent. Tenter un double est le moyen le moins coûteux de sortir de prison pour le moment.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 11,
+    "money": {
+      "Gemini": 270,
+      "Claude": 600
+    }
+  }
+}

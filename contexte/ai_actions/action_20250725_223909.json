@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:39:07.770563",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 1 "
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Trade ",
+  "reason": "Finaliser l'échange de $210 contre Fleet Street pour obtenir le monopole rouge complet",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 120,
+      "Claude": 450
+    }
+  }
+}

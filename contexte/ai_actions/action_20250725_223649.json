@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:36:47.507778",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Trade ",
+    "Bankrupt "
+  ],
+  "decision": "Trade ",
+  "reason": "Continuer les négociations avec Gemini, maintenant qu'il a moins d'argent, pour obtenir Fleet Street",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 220,
+      "Claude": 350
+    }
+  }
+}

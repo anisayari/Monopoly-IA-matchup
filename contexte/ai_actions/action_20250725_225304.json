@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:53:02.115019",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Water Works pour $150, c'est un investissement rentable et j'ai les moyens",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 11,
+    "money": {
+      "Gemini": 270,
+      "Claude": 600
+    }
+  }
+}

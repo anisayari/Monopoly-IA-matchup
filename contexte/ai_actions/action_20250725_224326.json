@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:43:24.547813",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Construire des maisons sur mes propriétés rouges pour maximiser les revenus locatifs",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 9,
+    "money": {
+      "Gemini": 120,
+      "Claude": 650
+    }
+  }
+}

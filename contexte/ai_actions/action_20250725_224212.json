@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:42:10.019980",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Vérifier mes propriétés et construire des maisons sur mon monopole rouge avec mes $650",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 9,
+    "money": {
+      "Gemini": 120,
+      "Claude": 650
+    }
+  }
+}

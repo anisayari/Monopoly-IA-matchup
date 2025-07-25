@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:37:37.597941",
+  "trigger": "Force",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Négocier avec Gemini qui a maintenant seulement $120, profiter de sa faiblesse financière pour Fleet Street",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 120,
+      "Claude": 450
+    }
+  }
+}

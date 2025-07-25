@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:24:53.740518",
+  "trigger": "Force",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Mes fonds actuels ($200 après vol) me permettent de remporter l'enchère pour Marlborough Street, une propriété clé. L'acheter consolide ma position.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 2,
+    "money": {
+      "Gemini": 100,
+      "Claude": 680
+    }
+  }
+}

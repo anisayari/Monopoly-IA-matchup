@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:18:05.107441",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Strand pour $220, excellente propriété rouge, j'ai $700 donc largement les moyens",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 1,
+    "money": {
+      "Gemini": 500,
+      "Claude": 700
+    }
+  }
+}

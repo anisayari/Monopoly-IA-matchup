@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:33:11.446163",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Fermer l'écran des comptes pour continuer le jeu, j'ai maintenant $350 grâce au vol",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 220,
+      "Claude": 150
+    }
+  }
+}

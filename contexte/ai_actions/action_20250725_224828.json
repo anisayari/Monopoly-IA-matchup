@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:48:26.334890",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Accounts ",
+  "reason": "Accéder aux comptes pour finaliser l'échange prévu avec Gemini et compléter mon monopole rouge",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 9,
+    "money": {
+      "Gemini": 170,
+      "Claude": 700
+    }
+  }
+}

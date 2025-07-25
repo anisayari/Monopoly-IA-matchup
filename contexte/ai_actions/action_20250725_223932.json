@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:39:30.759356",
+  "trigger": "Trading",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "Cancel ",
+  "reason": "Fermer ce popup pour voir si l'échange s'est effectué et vérifier mes nouvelles propriétés",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 120,
+      "Claude": 600
+    }
+  }
+}

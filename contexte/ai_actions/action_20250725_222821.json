@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:28:19.027223",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Regent Street pour $300, excellente propriété jaune, Gemini n'a que $50 donc pas de concurrence",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 4,
+    "money": {
+      "Gemini": 50,
+      "Claude": 580
+    }
+  }
+}

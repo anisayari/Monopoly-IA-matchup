@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:40:03.723864",
+  "trigger": "Force",
+  "keywords": [
+    "a Property you 1 "
+  ],
+  "options": [
+    "Trade ",
+    "Pay "
+  ],
+  "decision": "Pay ",
+  "reason": "Payer ma dette de $400, j'ai $600 donc je peux me le permettre facilement",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 120,
+      "Claude": 600
+    }
+  }
+}

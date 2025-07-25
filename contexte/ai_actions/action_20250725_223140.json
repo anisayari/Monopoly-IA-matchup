@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:31:38.643151",
+  "trigger": "Auction",
+  "keywords": [
+    "Do you want to"
+  ],
+  "options": [
+    "Auction ",
+    "Accounts "
+  ],
+  "decision": "Auction ",
+  "reason": "Je n'ai que $150, pas assez pour Mayfair à $400. Lancer enchères, Gemini n'a que $220",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 6,
+    "money": {
+      "Gemini": 220,
+      "Claude": 150
+    }
+  }
+}

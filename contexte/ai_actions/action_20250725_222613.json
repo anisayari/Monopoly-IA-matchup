@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:26:10.916191",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon tour est terminé. Je passe la main à Claude, qui est toujours en prison, pour qu'il tente sa chance.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "Gemini": 200,
+      "Claude": 480
+    }
+  }
+}

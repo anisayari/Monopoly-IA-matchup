@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:54:26.574246",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Je n'ai pas réussi à faire de double et je suis toujours en prison. La seule option est de passer mon tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 11,
+    "money": {
+      "Gemini": 270,
+      "Claude": 600
+    }
+  }
+}

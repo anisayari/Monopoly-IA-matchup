@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:45:33.914320",
+  "trigger": "Trading",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter d'aller en prison est la seule option logique. Je dois planifier ma sortie pour le prochain tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 9,
+    "money": {
+      "Gemini": 120,
+      "Claude": 650
+    }
+  }
+}

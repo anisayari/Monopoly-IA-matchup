@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:30:18.923578",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Je confirme l'acquisition de Fleet Street suite à l'enchère. C'est une propriété clé pour mes monopoles futurs.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 5,
+    "money": {
+      "Gemini": 220,
+      "Claude": 380
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:34:52.118579",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Négocier directement avec Gemini pour échanger Fleet Street contre une de mes propriétés plus argent",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 8,
+    "money": {
+      "Gemini": 220,
+      "Claude": 350
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:51:17.287148",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour après l'échange réussi et le vol discret pour passer la main",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 11,
+    "money": {
+      "Gemini": 470,
+      "Claude": 400
+    }
+  }
+}

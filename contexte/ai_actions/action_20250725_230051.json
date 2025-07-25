@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:00:49.415660",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "make_property_management",
+  "reason": "Je suis dans la fenêtre 'Accounts', et je dois initier la gestion de mes propriétés pour potentiellement les construire ou les échanger.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 430,
+      "Claude": 960
+    }
+  }
+}

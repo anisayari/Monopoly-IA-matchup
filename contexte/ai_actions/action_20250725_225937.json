@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:59:35.026692",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter le gain de $10 de la carte Caisse de Communauté pour augmenter mes liquidités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 320,
+      "Claude": 960
+    }
+  }
+}

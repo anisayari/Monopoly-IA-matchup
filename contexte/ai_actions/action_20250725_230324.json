@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:03:22.253734",
+  "trigger": "Trading",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "J'ai finalisé une transaction et je suis sorti de prison. Je n'ai pas de Monopoly à développer immédiatement, donc je passe le tour.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 410,
+      "Claude": 980
+    }
+  }
+}

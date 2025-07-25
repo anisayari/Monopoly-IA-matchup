@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:57:59.712735",
+  "trigger": "Force",
+  "keywords": [
+    "point at a property"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Back ",
+  "reason": "Retourner au menu principal pour terminer mon tour, je ne peux pas construire sans monopole complet",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 270,
+      "Claude": 960
+    }
+  }
+}

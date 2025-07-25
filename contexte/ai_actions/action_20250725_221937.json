@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:19:35.423527",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Whitechapel Road est une bonne stratégie pour obtenir une propriété bon marché et commencer un monopole brun. C'est un investissement initial faible.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 1,
+    "money": {
+      "Gemini": 200,
+      "Claude": 780
+    }
+  }
+}

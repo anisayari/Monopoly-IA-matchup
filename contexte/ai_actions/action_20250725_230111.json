@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T21:01:09.260461",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Je ne peux pas encore construire. Je vais tenter une discussion avec Claude pour un échange, ce qui pourrait débloquer un monopole.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 430,
+      "Claude": 960
+    }
+  }
+}

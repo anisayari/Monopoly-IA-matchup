@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:30:48.921248",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Accounts ",
+    "Next Turn "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Mon tour est terminé. Je n'ai pas pu acquérir Fleet Street, mais j'ai une bonne base de propriétés et de l'argent.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 6,
+    "money": {
+      "Gemini": 220,
+      "Claude": 150
+    }
+  }
+}

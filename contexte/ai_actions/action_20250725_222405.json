@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:24:03.282861",
+  "trigger": "Force",
+  "keywords": [
+    "would you like"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Next Turn ",
+  "reason": "Terminer mon tour en prison avec $680, Gemini maintenant très affaibli financièrement à $100",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 2,
+    "money": {
+      "Gemini": 200,
+      "Claude": 580
+    }
+  }
+}

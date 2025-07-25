@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:55:59.914230",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "Acheter Pall Mall pour $140 me donne 2/3 du groupe pink, excellente opportunité stratégique",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 12,
+    "money": {
+      "Gemini": 270,
+      "Claude": 800
+    }
+  }
+}

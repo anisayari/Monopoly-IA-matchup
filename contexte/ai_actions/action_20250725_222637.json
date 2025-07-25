@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:26:35.410195",
+  "trigger": "Do you want to",
+  "keywords": [
+    "In Jail 2"
+  ],
+  "options": [
+    "Bail Pay ",
+    "Roll Dice "
+  ],
+  "decision": "Bail Pay ",
+  "reason": "Payer la caution pour sortir immédiatement et pouvoir jouer activement, j'ai assez d'argent",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 3,
+    "money": {
+      "Gemini": 200,
+      "Claude": 480
+    }
+  }
+}

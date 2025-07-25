@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:48:02.246061",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Payer $50 à Gemini comme demandé par la carte Chance, j'ai les moyens",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 9,
+    "money": {
+      "Gemini": 120,
+      "Claude": 750
+    }
+  }
+}

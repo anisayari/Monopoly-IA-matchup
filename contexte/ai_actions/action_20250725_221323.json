@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:13:21.193624",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Vérifier l'état de mes propriétés et fonds est crucial avant de terminer mon tour. Cela peut révéler des opportunités.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 3,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

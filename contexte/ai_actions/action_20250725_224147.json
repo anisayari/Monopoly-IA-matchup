@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:41:45.550331",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter ce magnifique dividende de $2450 qui va considérablement améliorer ma situation financière",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 9,
+    "money": {
+      "Gemini": 120,
+      "Claude": 600
+    }
+  }
+}

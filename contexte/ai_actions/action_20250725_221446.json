@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:14:44.101678",
+  "trigger": "Order Of Play",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "ok"
+  ],
+  "decision": "ok",
+  "reason": "Accepter le popup pour lancer les dés et déterminer l'ordre de jeu. Aucune autre option stratégique n'est disponible à ce stade.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 0,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}
