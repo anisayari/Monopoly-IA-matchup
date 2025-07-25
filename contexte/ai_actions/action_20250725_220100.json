@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:00:58.846719",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Trading"
+  ],
+  "options": [
+    "Cancel "
+  ],
+  "decision": "make_trade",
+  "reason": "Proposer un échange stratégique à Gemini pour compléter mes monopoles orange ou pink",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 22,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:03:24.274751",
+  "trigger": "Force",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Auction ",
+    "Buy "
+  ],
+  "decision": "Buy ",
+  "reason": "J'ai les fonds nécessaires et cette propriété est essentielle pour compléter le monopole Light Blue. C'est un achat stratégique immédiat.",
+  "game_context": {
+    "current_player": "player1",
+    "current_turn": 22,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

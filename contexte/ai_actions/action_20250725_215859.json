@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:58:57.816781",
+  "trigger": "would you like to",
+  "keywords": [
+    "would you like to"
+  ],
+  "options": [
+    "Next Turn ",
+    "Accounts "
+  ],
+  "decision": "Accounts ",
+  "reason": "Gérer mes propriétés et potentiellement construire des maisons sur mon monopole brown",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 22,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

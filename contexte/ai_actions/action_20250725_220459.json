@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:04:57.233205",
+  "trigger": "Auction",
+  "keywords": [
+    "you want to buy"
+  ],
+  "options": [
+    "Buy ",
+    "Auction "
+  ],
+  "decision": "Auction ",
+  "reason": "Gemini a déjà le monopole des utilités, ne pas lui donner plus d'avantage",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 22,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

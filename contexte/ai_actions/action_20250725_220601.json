@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T20:05:59.106826",
+  "trigger": "Force",
+  "keywords": [
+    "Auction"
+  ],
+  "options": [
+    "Yes ",
+    "No "
+  ],
+  "decision": "make_auction",
+  "reason": "Initier l'enchère pour Electric Company et négocier le prix avec Gemini",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 22,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

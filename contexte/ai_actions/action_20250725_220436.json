@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-25T20:04:34.720092",
+  "trigger": "Force",
+  "keywords": [
+    "Order Of Play"
+  ],
+  "options": [
+    "OK "
+  ],
+  "decision": "OK ",
+  "reason": "Accepter la carte Chance qui m'amène vers une utilité, potentiellement profitable",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 22,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T19:59:59.676384",
+  "trigger": "Property Deeds",
+  "keywords": [
+    "Property Deeds"
+  ],
+  "options": [
+    "Back ",
+    "Trade "
+  ],
+  "decision": "Trade ",
+  "reason": "Négocier un échange pour compléter un monopole, particulièrement le groupe orange ou pink",
+  "game_context": {
+    "current_player": "player2",
+    "current_turn": 22,
+    "money": {
+      "Gemini": 500,
+      "Claude": 500
+    }
+  }
+}
