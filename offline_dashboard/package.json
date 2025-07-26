@@ -9,11 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "formidable": "^3.5.4",
+    "lucide-react": "^0.263.1",
     "next": "15.0.3",
     "react": "^19.0.0-rc",
     "react-dom": "^19.0.0-rc",
-    "recharts": "^2.10.4",
-    "lucide-react": "^0.263.1"
+    "recharts": "^2.10.4"
   },
   "devDependencies": {
     "@types/node": "^20",
