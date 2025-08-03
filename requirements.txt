@@ -13,7 +13,7 @@ keyboard>=0.13.5
 redis==5.0.1
 flask-socketio==5.3.6
 python-socketio==5.11.0
-openai==1.5.0
+openai==1.98.0
 
 # OmniParser dependencies
 numpy==1.26.4  # Version fixe pour éviter NumPy 2.x
